@@ -1,0 +1,2128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>操作系统 on 请跟我一起踏上编程之旅</title>
+    <link>https://www.zhugeqing.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+    <description>Recent content in 操作系统 on 请跟我一起踏上编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, “不可能”这三个字，你说的太多了！</copyright>
+    <lastBuildDate>Wed, 05 May 2021 12:00:56 +0900</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>01</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/1/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/1/</guid>
+        <description>芯片：计算能源 我们知道第一次工业革命出现了蒸汽机，能源是煤炭。第二次工业革命出现了发电机，能源是电。20 世纪四五十年代，又发生了第三次科技革命，革命产物是计算机。而第四次科技革命，就发生在当下，出现了人工智能，能源是数据。 说到这里，你可能会有个疑问：第三次科技革命的能源是什么呢？ 你的第一反应可能是电，但是细想又觉得不对。前两次工业革命都有带来能源变革，为什么第三次科技革命就没有了能源变革？其实，第</description>
+        <content:encoded>&lt;h2 id=&#34;芯片计算能源&#34;&gt;芯片：计算能源&lt;/h2&gt;
+&lt;p&gt;我们知道第一次工业革命出现了蒸汽机，&lt;code&gt;能源是煤炭&lt;/code&gt;。第二次工业革命出现了发电机，&lt;code&gt;能源是电&lt;/code&gt;。20 世纪四五十年代，又发生了第三次科技革命，革命产物是计算机。而第四次科技革命，就发生在当下，出现了人工智能，&lt;code&gt;能源是数据&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;说到这里，你可能会有个疑问：第三次科技革命的能源是什么呢？&lt;/p&gt;
+&lt;p&gt;你的第一反应可能是电，但是细想又觉得不对。前两次工业革命都有带来能源变革，为什么第三次科技革命就没有了能源变革？其实，第三次科技革命的&lt;code&gt;能源是一种数字能量，本质是计算&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;下面我们来看一看这种数字能量是如何产生的。电能供给给芯片，芯片中的一种电子元件晶振（也就是石英晶体）通电后产生震荡，震荡会产生频率稳定的脉冲信号。通常这是一种高频的脉冲信号，每秒可达百万次。然后，我们通过谐振效应发放这个信号，形成方波。再通过电子元件调整这种脉冲的频率，把脉冲信号转换为我们需要的频率，这就形成了驱动芯片工作的时钟信号。这种信号的频率，我们也称作芯片的时钟频率。最后，时钟信号驱动着芯片工作，就像人体的脉搏一样，每一次脉冲到来，都让芯片的状态发生一次变化，用这种方法，最终存储器中的指令被一行行执行。指令被执行，其实就是数据被计算，这就是我说的计算能量。&lt;/p&gt;
+&lt;p&gt;芯片普及后，不仅给计算机和手机提供支持，它们还被安装到了航天设备、能源设备、医疗设备及通信设备中，甚至小到电灯、微波炉、咖啡机、热水器里面都有了芯片。有了芯片，设备通电后才可以计算，有了计算，这些设备才能够实现更加复杂而精确的功能。&lt;/p&gt;
+&lt;h2 id=&#34;摩尔定律计算能力的发展&#34;&gt;摩尔定律：计算能力的发展&lt;/h2&gt;
+&lt;p&gt;值得一提的是，历史上是先有计算机，后有的芯片。世界上第一个芯片，也被称作集成电路， 1958 年由美国德州仪器公司的工程师杰克·基尔比发明。而世界上第一台通用计算机 ENIAC 则是在 1946 年诞生于美国陆军弹道研究实验室。&lt;/p&gt;
+&lt;p&gt;看到这里你可能会有疑问，为什么是先发明计算机再发明芯片呢？&lt;/p&gt;
+&lt;p&gt;其实，这个道理就好比很多程序员先实现产品功能，再考虑封装和复用。ENIAC 中负责计算的模块和后来的芯片原理是一样的，都是利用电路实现逻辑运算。只不过在 20 世纪 40 年代人们还没有将这种能力抽象成一个独立的产品，而且也没有办法解决电路体积的问题，ENIAC的体积看上去就像一所学校那么大。&lt;/p&gt;
+&lt;p&gt;芯片的计算能力来源于芯片内部的集成电路，集成电路大大减小了电路的体积，所有的元件都是用同一块半导体材料制作而成，也就是把所有的电路都集成到了一个单一的硅片上。为了提高计算性能，集成电路越来越复杂，里面的电子元件也越来越多。从最早拥有 100 个左右晶体管的小型集成电路，发展到 21 世纪初，拥有上亿电子元件的巨大规模集成电路。&lt;/p&gt;
+&lt;p&gt;芯片的发展，带来了计算能力的飞跃，ENIAC 只能每秒计算 5000 次加法和 400 次乘法，到 1978 年 8086 芯片已经可以每秒计算百万次了。而今天随便一个芯片不但可以轻轻松松每秒计算数亿次，而且不只有一个核心，是多个核心都能达到这一量级的计算能力。&lt;/p&gt;
+&lt;p&gt;在当时那个年代，Intel 的创始人之一摩尔就观察到了这个现象，并提出了摩尔定律：当价格不变时，集成电路中可容纳的晶体管数目约每隔 18～24 个月就会增加一倍，性能也将提升一倍。这一定律揭示了信息技术发展的速度，但到今天，摩尔定律失效了。因为随着芯片越来越小，在尺寸和散热等方面已经挑战了人类的极限，芯片中无法再放入更多的电子元件了。&lt;/p&gt;
+&lt;p&gt;但是计算能力又开始以另一种方式发展，比如一个普普通通的 NVIDA 显卡中就拥有了几百个核心，这样就可以进行大量的并发计算；另外，一个分布式的大数据集群，里面就可能有上千个核心。&lt;/p&gt;
+&lt;p&gt;展望未来，计算能力还有更多的增长点，不仅有可以无限提高计算能力的量子计算机，还有利用光学元件替代晶体元件的光电集成电路。&lt;/p&gt;
+&lt;h1 id=&#34;可计算理论图灵机&#34;&gt;可计算理论：图灵机&lt;/h1&gt;
+&lt;p&gt;当然，在科学家们尝试发明计算机和芯片之前，他们必须回答一个问题，那就是计算或者程序可以用来做什么？比如：计算可不可以用来做饭？换一个更专业的说法，做饭可不可以被计算？&lt;/p&gt;
+&lt;p&gt;生活在数字时代的我们，用着导航、玩着游戏，本能地知道很多问题是可以被计算的，但是生活在 20 世纪初的科学家们，需要在没有计算机和芯片的时代就想清楚这些问题，并不是一件容易的事情。&lt;/p&gt;
+&lt;h2 id=&#34;公理化体系和不完备性定理&#34;&gt;公理化体系和不完备性定理&lt;/h2&gt;
+&lt;p&gt;最早在 19 世纪初，德国著名数学家希尔伯特提出：这个世界可以建立一套完善的公理体系，由少数几个公理出发，推导出所有的定理和推论。这样就可以逐渐通过这种方法将世界上的万事万物都统一到一个体系中。&lt;/p&gt;
+&lt;p&gt;当然，这只是一个非常美好的设想，如果万事万物都可以用形式化（简单理解就是程序化规范化）的手段统一到一套体系中，也就意味着计算能力将被无限扩展，只要给定足够的时间和空间，计算机就可以完成任何工作。&lt;/p&gt;
+&lt;p&gt;但在不久后，美籍数学家哥德尔就提出了哥德尔不完备性定理，内容是：即便在完善的公理体系中仍然可以找到不能被证明也不能被证伪的命题。&lt;/p&gt;
+&lt;p&gt;这让我联想到，一说谎，鼻子就会变长的匹诺曹。如果他说“我说谎了”，那么他的鼻子应该变长还是变短呢？对于人类而言，这个问题可以理解，但是对于计算机来说这个问题是不可以被计算的。&lt;/p&gt;
+&lt;p&gt;正是因为世界上存在着大量的这种“公说公有理，婆说婆有理”的问题，才让大家认识到计算不能解决所有问题，所以：&lt;code&gt;计算机能力也是有边界的。哥德尔的不完备性定理，让大家看到了世界上还有大量不可计算的问题。&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;图灵机和可计算理论&#34;&gt;图灵机和可计算理论&lt;/h2&gt;
+&lt;p&gt;于是人们意识到了需要一个理论，专门回答这样的问题：&lt;code&gt;哪些问题可以被计算，哪些不可以被计算，这就是可计算性理论，该理论是计算机科学的理论基础之一。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;1936 年，被誉为人工智能之父的阿兰·图灵提出了图灵机，它是一种不断执行指令的抽象计算机。之所以说抽象，是因为图灵并没有真的造出这台机器，而是把它当成理论去和大家探讨可计算问题。&lt;/p&gt;
+&lt;p&gt;图灵发现如果一个问题是可计算的，那么它的解决方案就必须可以被具化成一条条的指令，也就是可以使用图灵机处理。因此，不能使用图灵机处理的问题，都是不可计算的问题。&lt;/p&gt;
+&lt;p&gt;比如一个马达的控制程序是可计算的，因为控制过程是可以被抽象成一条条指令的（即可以写程序实现）。比如程序可以先读入传感器的数据，然后根据数据计算出下面要进行加速还是减速。&lt;/p&gt;
+&lt;h2 id=&#34;不可计算问题&#34;&gt;不可计算问题&lt;/h2&gt;
+&lt;p&gt;但当图灵机遇到“素数是不是有无穷多个？”这样的问题时，事情就变得复杂了。虽然，我们可以通过有限的步骤计算出下一个素数。比如可以每次尝试一个更大的数字，然后通过一系列计算过程判断该数字是不是素数，直到找到一个更大的素数。古希腊数学家埃拉托斯特尼就发明了筛选出给定范围内所有素数的方法。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/1.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;如上图所示，我们利用埃拉托斯特尼筛法找到的素数越来越多。但是，我们还是不能回答“素数是不是有无穷多个”这样的问题。因为要回答这样的问题，我们会不停地寻找下一个素数。如果素数是无穷的，那么我们的计算就是无穷无尽的，所以这样的问题&lt;code&gt;不可计算&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;停机问题&#34;&gt;停机问题&lt;/h2&gt;
+&lt;p&gt;我们也无法实现用一个通用程序去判断另一个程序是否会停止。比如你用运行这段程序来检查一个程序是否会停止时，你会发现不能因为这个程序执行了 1 天，就判定它不会停止，也不能因为这个程序执行了 10 年，从而得出它不会停止的结论。这个问题放到图灵机领域，叫作停机问题，我们无法给出一个判断图灵机是否会停机的通用方法，因此停机问题是一个经典的不可计算问题。&lt;/p&gt;
+&lt;h2 id=&#34;计算能力的边界在哪里&#34;&gt;计算能力的边界在哪里？&lt;/h2&gt;
+&lt;p&gt;我们可以把世界上想解决的事情都称作问题，解决问题往往需要消耗芯片的计算能力，这通常称作时间开销，另外解决问题还需要消耗内存，称作空间开销。&lt;/p&gt;
+&lt;h2 id=&#34;问题的分类&#34;&gt;问题的分类&lt;/h2&gt;
+&lt;p&gt;世界上有一类问题，无论我们消耗多少时间和空间也无法解决，这类问题就包括“停机问题”，称作不可计算问题，我们无法用计算机精确地解决这类问题。世界上不可计算问题多，还是可计算问题多，也是一个不可计算问题，但直觉告诉我们一定是不可计算问题更多。&lt;/p&gt;
+&lt;p&gt;另外在可计算的问题中，有困难问题，也有简单问题，我们通常用复杂度来衡量，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;“求数组第 10 个元素”，计算这种问题，时间开销、空间开销都不会随着问题规模增长，我们记为 O(1)；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;“求数组中的最大值”，计算这种问题，时间开销会随着数组规模线性增大，记作 O(N)，N 是问题的规模；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;还有像“求一个n*n矩阵的和”，如果n是规模，那么时间开销会随着问题规模的平方增长，我们称作 O(N^2)；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当然也有更加复杂的数学模型，比如说O(N^3)、O(N^4)、O(N^100)等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;p-问题-vs-np-问题&#34;&gt;P 问题 vs NP 问题&lt;/h2&gt;
+&lt;p&gt;按照摩尔定律所说，人类的计算能力每 18～24 个月翻一倍，我们的计算能力在呈指数形式上升。因此，在所有可以计算的问题中，像 O(N^1000)的问题，虽然现在的计算能力不够，但是相信在遥远的未来，我们会拥有能力解决。这种我们有能力解决的问题，统称为多项式时间（ Polynomial time）问题。我们今天能解决的问题，都是多项式时间的问题，下面记为 P 类型的问题。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/1.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;另外，还有一类问题复杂度本身也是指数形式的问题，比如 O(2^N)的问题。这类型的问题随着规模 N 上升，时间开销的增长速度和人类计算能力增长速度持平甚至更快。因此虽然这类问题可以计算，但是当 N 较大时，因为计算能力不足，最终结果依然无法被解决。&lt;/p&gt;
+&lt;p&gt;由此可见，不是所有可以计算的问题都可以被解决，问题如果不能在多项式时间内找到答案，我们记为 NP 问题。&lt;/p&gt;
+&lt;p&gt;有一部分 NP 问题可以被转化为 P 问题，比如斐波那契数列求第 N 项，可以用缓存、动态规划等方式转化为 O(N) 的问题。但还有更多的 NP 问题，比如一个集合，找出和为零的子集，就没能找到一个合适的转换方法。其实说这么多，就是想告诉大家：如今还有很多问题无法解决，它的数量远远大于我们可以解决的问题，科学家、工程师们也只能望洋兴叹了。&lt;/p&gt;
+&lt;h2 id=&#34;人工智能&#34;&gt;人工智能&lt;/h2&gt;
+&lt;p&gt;此外，包括停机问题、包括 NP 问题在内的很多问题，虽然不能解决，但可以努力让计算机的解决方案超过人类的水平，这就是人工智能。&lt;/p&gt;
+&lt;p&gt;比如下围棋，围棋盘是 19*19 的，共有 361！种情况，如果遍历 361！种情况，并进行打分，共有 10 的 170 次方种可能，因此，我们的计算能力是远远不足的。但是如果使用人工智能方法对可能出现的部分情况进行概率判断，在不追求绝对精确的情况下，人工智能就可以超过人类选手。&lt;/p&gt;
+&lt;p&gt;AlphaGo 战胜李世石就是利用了基于概率的不完全解法，这种解法已经可以超过部分人类职业选手了，也就是说计算机的解法已经超过了人类。当然，人类的强项在于理解和分析，人有两种思维，归纳和假设，这两种思维都是计算机无法计算的。机器用概率理解围棋，局部来说机器下得更好，但是人可以制造机器，因此，人的感悟更有意义，谈不上孰优孰劣。&lt;/p&gt;
+&lt;p&gt;针对这种解决问题的方法，20 世纪中人工智能之父图灵，提出图灵测试，就是在一次人机对话中，随机抽样一部分的实验者和机器对话，如果这部分实验者有较大的百分比判断对面是人而不是机器，那这台机器就通过了图灵测试。在围棋领域，可以说，AI 通过了图灵测试。但围棋的 AI 不能下象棋，这也是 AI 的一个劣势。所以广义的 AI 还没有出现，现在出现的是在某个专业领域的 AI。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;下面我们进行总结。本课时是一个理解操作系统知识必不可少的计算机原理引导课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我们学习了芯片，芯片将电能转化为计算能量，计算能量推动程序执行；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接着提到了摩尔定律，了解到我们的计算能力仍在飞速发展；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;还花了篇幅讲了图灵机，从而进一步认识了人工智能之父阿兰·图灵，图灵机具体的设计和构造，这将在02 课时程序的执行部分进一步讨论。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后普及了图灵测试和人工智能的基本概念，带你了解了计算机的能力边界。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面我们回到最初的问题：“可不可以计算一个人程序写得好不好？”&lt;/p&gt;
+&lt;p&gt;这个问题可以这样来思考，如果把问题降级，变成：“可不可以计算一个人写的程序会不会停机？”&lt;/p&gt;
+&lt;p&gt;这个问题就如同停机问题，无法计算，因此这是一个不可计算的问题。但是我们通过设立规则，比如检查缩进、检查函数的复用情况、检查类的命名情况，给写程序的人更好的建议。另外，我们也可以通过 AI 技术，让机器在“程序写得好不好”这个问题的判定能力上，达到人类的水平，通过图灵测试。&lt;/p&gt;
+&lt;p&gt;综上，从绝对的对错角度去看，这是一个不可计算问题，因为它没有办法被完全解决；但是从图灵测试层面来看，虽然目前无法解决这个问题，但是我们有理由相信，在未来，计算机对这个问题的解决方案，是可以超过人类的。&lt;/p&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>01</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter2/1/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter2/1/</guid>
+        <description>什么是 Shell 在我们学习 Linux 指令之前，先来说一下什么是 Shell？Shell 把我们输入的指令，传递给操作系统去执行，所以 Shell 是一个命令行的用户界面。 早期程序员没有图形界面用，就用 Shell。而且图形界面制作成本较高，不能实现所有功能，因此今天的程序员依然在用 Shell。 你平时还经常会看到一个词叫作bash（Bourne Again Shell），它是用 Shell 组成的程序。这里的 Bourne 是一个人名，Steve Bourne 是 bash 的发明者。 我们今天</description>
+        <content:encoded>&lt;h2 id=&#34;什么是-shell&#34;&gt;什么是 Shell&lt;/h2&gt;
+&lt;p&gt;在我们学习 Linux 指令之前，先来说一下什么是 Shell？Shell 把我们输入的指令，传递给操作系统去执行，所以 Shell 是一个命令行的用户界面。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;早期程序员没有图形界面用，就用 Shell。而且图形界面制作成本较高，不能实现所有功能，因此今天的程序员依然在用 Shell。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;你平时还经常会看到一个词叫作bash（Bourne Again Shell），它是用 Shell 组成的程序。这里的 Bourne 是一个人名，Steve Bourne 是 bash 的发明者。&lt;/p&gt;
+&lt;p&gt;我们今天学习的所有指令，不是写死在操作系统中的，而是一个个程序。比如&lt;code&gt;rm&lt;/code&gt;指令，你可以用&lt;code&gt;which&lt;/code&gt;指令查看它所在的目录。如下图所示，你会发现rm指令在&lt;code&gt;/usr/bin/rm&lt;/code&gt;目录中。&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/28.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示，ramroll是我的英文名字，ubuntu 是我这台机器的名字。我输入了&lt;code&gt;which rm&lt;/code&gt;，然后获得了&lt;code&gt;/usr/bin/rm&lt;/code&gt;的结果，最终执行这条指令的是操作系统，连接我和操作系统的程序就是 Shell。&lt;/p&gt;
+&lt;p&gt;Linux 对文件目录操作的指令就工作在 Shell 上，接下来我们讲讲文件目录操作指令。&lt;/p&gt;
+&lt;h2 id=&#34;linux-对文件目录的抽象&#34;&gt;Linux 对文件目录的抽象&lt;/h2&gt;
+&lt;p&gt;Linux 对文件进行了一个树状的抽象。&lt;code&gt;/&lt;/code&gt;代表根目录，每一节目录也用&lt;code&gt;/&lt;/code&gt;分开，所以在上图所展示的&lt;code&gt;/usr/bin/rm&lt;/code&gt;中，第一级目录是&lt;code&gt;/&lt;/code&gt;根目录，第二级目录是&lt;code&gt;usr&lt;/code&gt;目录，第三级是&lt;code&gt;bin&lt;/code&gt;目录。最后的&lt;code&gt;rm&lt;/code&gt;是一个文件。&lt;/p&gt;
+&lt;h2 id=&#34;路径path&#34;&gt;路径（path）&lt;/h2&gt;
+&lt;p&gt;像&lt;code&gt;/usr/bin/rm&lt;/code&gt;称为可执行文件&lt;code&gt;rm&lt;/code&gt;的路径。路径就是一个文件在文件系统中的地址。如果文件系统是树形结构，那么通常一个文件只有一个地址（路径）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目标文件的绝对路径（Absolute path），也叫作完全路径（full path），是从&lt;code&gt;/&lt;/code&gt;开始，接下来每一层都是一级子目录，直到定位到目标文件为止。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示的例子中，&lt;code&gt;/usr/bin/rm&lt;/code&gt;就是一个绝对路径。&lt;/p&gt;
+&lt;h2 id=&#34;工作目录&#34;&gt;工作目录&lt;/h2&gt;
+&lt;p&gt;为了方便你工作，Shell 还抽象出了工作目录。当用户打开 Shell 的时候，Shell 就会给用户安排一个工作目录。因此也就产生了相对路径。&lt;/p&gt;
+&lt;p&gt;相对路径（Relative path）是以工作目录为基点的路径。比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;当用户在&lt;code&gt;/usr&lt;/code&gt;目录下的时候，&lt;code&gt;rm&lt;/code&gt;文件的相对路径就是&lt;code&gt;bin/rm&lt;/code&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果用户在&lt;code&gt;/usr/bin&lt;/code&gt;目录下的时候，&lt;code&gt;rm&lt;/code&gt;文件的路径就是&lt;code&gt;./rm&lt;/code&gt;或者&lt;code&gt;rm&lt;/code&gt;，这里用.代表当前目录；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果用户在&lt;code&gt;/usr/bin/somedir&lt;/code&gt;下，那么&lt;code&gt;rm&lt;/code&gt;的相对路径就是&lt;code&gt;../rm&lt;/code&gt;，这里用&lt;code&gt;..&lt;/code&gt;代表上一级目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们使用&lt;code&gt;cd（change directory）&lt;/code&gt;指令切换工作目录，既可以用绝对路径，也可以用相对路径。 这里我要强调几个注意事项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;输入&lt;code&gt;cd&lt;/code&gt;，不带任何参数会切换到用户的家目录，Linux 中通常是&lt;code&gt;/home/{用户名}&lt;/code&gt;。以我自己为例，我的家目录是&lt;code&gt;/home/ramroll&lt;/code&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入&lt;code&gt;cd .&lt;/code&gt;什么都不会发生，因为&lt;code&gt;.&lt;/code&gt;代表当前目录；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;输入&lt;code&gt;cd..&lt;/code&gt;会回退一级目录，因为&lt;code&gt;..&lt;/code&gt;代表上级目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;利用上面这 3 种能力，你就可以方便的构造相对路径了。&lt;/p&gt;
+&lt;p&gt;Linux提供了一个指令&lt;code&gt;pwd（Print Working Directory）&lt;/code&gt;查看工作目录。下图是我输入&lt;code&gt;pwd&lt;/code&gt;的结果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/29.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;你可以看到我正在&lt;code&gt;/home/ramroll/Documents&lt;/code&gt;目录下工作。&lt;/p&gt;
+&lt;h2 id=&#34;几种常见的文件类型&#34;&gt;几种常见的文件类型&lt;/h2&gt;
+&lt;p&gt;另一方面，Linux 下的目录也是一种文件；但是文件也不只有目录和可执行文件两种。常见的文件类型有以下 7 种:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;普通文件（比如一个文本文件）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;目录文件（目录也是一个特殊的文件，它用来存储文件清单，比如/也是一个文件）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可执行文件（上面的rm就是一个可执行文件）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;管道文件（我们会在 07 课时讨论管道文件）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Socket 文件（我们会在模块七网络部分讨论 Socket 文件）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;软链接文件（相当于指向另一个文件所在路径的符号）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬链接文件（相当于指向另一个文件的指针，关于软硬链接我们将在模块六文件系统部分讨论）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;你如果使用&lt;code&gt;ls -F&lt;/code&gt;就可以看到当前目录下的文件和它的类型。比如下面这种图：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;结尾的是可执行文件；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;= 结尾的是 Socket 文件；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;@ 结尾的是软链接；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;| 结尾的管道文件；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有符号结尾的是普通文件；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;/ 结尾的是目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/30.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;设备文件&#34;&gt;设备文件&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Socket 是网络插座，是客户端和服务器之间同步数据的接口&lt;/code&gt;。其实，Linux 不只把 Socket 抽象成了文件，设备基本也都被抽象成了文件。因为设备需要不断和操作系统交换数据。而交换方式只有两种——读和写。所以设备是可以抽象成文件的，因为文件也支持这两种操作。&lt;/p&gt;
+&lt;p&gt;Linux 把所有的设备都抽象成了文件，比如说打印机、USB、显卡等。这让整体的系统设计变得高度统一。&lt;/p&gt;
+&lt;p&gt;至此，我们了解了 Linux 对文件目录的抽象，接下来我们看看具体的增删改查指令。&lt;/p&gt;
+&lt;h2 id=&#34;文件的增删改查&#34;&gt;文件的增删改查&lt;/h2&gt;
+&lt;h3 id=&#34;增加&#34;&gt;增加&lt;/h3&gt;
+&lt;p&gt;创建一个普通文件的方法有很多，最常见的有&lt;code&gt;touch&lt;/code&gt;指令。比如下面我们创建了一个 a.txt 文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/31.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;touch&lt;/code&gt;指令本来是用来更改文件的时间戳的，但是如果文件不存在&lt;code&gt;touch&lt;/code&gt;也会帮助创建一个空文件。&lt;/p&gt;
+&lt;p&gt;如果你拿到一个指令不知道该怎么用，比如&lt;code&gt;touch&lt;/code&gt;，你可以用&lt;code&gt;man touch&lt;/code&gt;去获得帮助。&lt;code&gt;man&lt;/code&gt;意思是&lt;code&gt;manual&lt;/code&gt;，就是说明书的意思，这里指的是系统的手册。如果你不知道&lt;code&gt;man&lt;/code&gt;是什么，也可以使用&lt;code&gt;man man&lt;/code&gt;。下图是使用&lt;code&gt;man man&lt;/code&gt;的结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/32.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;另外如果我们需要增加一个目录，就需要用到&lt;code&gt;mkdir&lt;/code&gt;指令（ make directory），比如我们创建一个&lt;code&gt;hello&lt;/code&gt;目录，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/33.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;查看&#34;&gt;查看&lt;/h3&gt;
+&lt;p&gt;创建之后我们可以用&lt;code&gt;ls&lt;/code&gt;指令看到这个文件，&lt;code&gt;ls&lt;/code&gt;是 list 的缩写。下面是指令 &amp;lsquo;ls&amp;rsquo; 的执行结果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/34.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我们看到在当前的目录下有一个&lt;code&gt;a.txt&lt;/code&gt;文件，还有一个&lt;code&gt;hello&lt;/code&gt;目录。如果你知道当前的工作目录，就可以使用&lt;code&gt;pwd&lt;/code&gt;指令。&lt;/p&gt;
+&lt;p&gt;如果想看到&lt;code&gt;a.txt&lt;/code&gt;更完善的信息，还可以使用&lt;code&gt;ls -l&lt;/code&gt;。&lt;code&gt;-l&lt;/code&gt;是&lt;code&gt;ls&lt;/code&gt;指令的可选参数。下图是&lt;code&gt;ls -l&lt;/code&gt;的结果，你可以看到&lt;code&gt;a.txt&lt;/code&gt;更详细的描述。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/35.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示，我们看到两个&lt;code&gt;ramroll&lt;/code&gt;，它们是&lt;code&gt;a.txt&lt;/code&gt;所属的用户和所属的用户分组，刚好重名了。&lt;code&gt;Sep 13&lt;/code&gt;是日期。 中间有一个&lt;code&gt;0&lt;/code&gt;是&lt;code&gt;a.txt&lt;/code&gt;的文件大小，目前&lt;code&gt;a.txt&lt;/code&gt;中还没有写入内容，因此大小是&lt;code&gt;0&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;另外虽然&lt;code&gt;hello&lt;/code&gt;是空的目录，但是目录文件 Linux 上来就分配了&lt;code&gt;4096&lt;/code&gt;字节的空间。这是因为目录内需要保存很多文件的描述信息。&lt;/p&gt;
+&lt;h2 id=&#34;删除&#34;&gt;删除&lt;/h2&gt;
+&lt;p&gt;如果我们想要删除a.txt可以用rm a.txt；如我们要删除hello目录，可以用rm hello。rm是 remove 的缩写。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/36.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;但是当我们输入&lt;code&gt;rm hello&lt;/code&gt;的时候，会提示&lt;code&gt;hello&lt;/code&gt;是一个目录，不可以删除。因此我们需要增加一个可选项，比如&lt;code&gt;-r&lt;/code&gt;即 &lt;code&gt;recursive（递归）&lt;/code&gt;。目录是一个递归结构，所以需要用递归删除。最后，你会发现&lt;code&gt;rm hello -r&lt;/code&gt;删除了&lt;code&gt;hello&lt;/code&gt;目录。&lt;/p&gt;
+&lt;p&gt;接下来我们尝试在&lt;code&gt;hello&lt;/code&gt;目录下新增一个文件，比如相对路径是&lt;code&gt;hello/world/os.txt&lt;/code&gt;。需要先创建&lt;code&gt;hello/world&lt;/code&gt;目录。这种情况会用到&lt;code&gt;mkdir&lt;/code&gt;的&lt;code&gt;-p&lt;/code&gt;参数，这个参数控制&lt;code&gt;mkdir&lt;/code&gt;当发现目标目录的父级目录不存在的时候会递归的创建。以下是我们的执行结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/37.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;修改&#34;&gt;修改&lt;/h2&gt;
+&lt;p&gt;如果需要修改一个文件，可以使用&lt;code&gt;nano&lt;/code&gt;或者&lt;code&gt;vi&lt;/code&gt;编辑器。类似的工具还有很多，但是&lt;code&gt;nano&lt;/code&gt;和&lt;code&gt;vi&lt;/code&gt;一般是&lt;code&gt;linux&lt;/code&gt;自带的。&lt;/p&gt;
+&lt;p&gt;这里我不展开讲解了，你可以自己去尝试。在尝试的过程中如果遇到什么问题，可以写在留言区，我会逐一为你解答。&lt;/p&gt;
+&lt;h2 id=&#34;查阅文件内容&#34;&gt;查阅文件内容&lt;/h2&gt;
+&lt;p&gt;在了解了文件的增删改查操作后，下面我们来学习查阅文件内容。我们知道，Linux 下查阅文件内容，可以根据不同场景选择不同的指令。&lt;/p&gt;
+&lt;p&gt;当文件较小时，比如一个配置文件，想要快速浏览这个文件，可以用&lt;code&gt;cat&lt;/code&gt;指令。下面 cat 指令帮助我们快速查看&lt;code&gt;/etc/hosts&lt;/code&gt;文件。&lt;code&gt;cat&lt;/code&gt;指令将文件连接到标准输出流并打印到屏幕上。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/38.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;标准输出流（Standard Output）也是一种文件，进程可以将要输出的内容写入标准输出流文件，这样就可以在屏幕中打印。&lt;/p&gt;
+&lt;p&gt;如果用&lt;code&gt;cat&lt;/code&gt;查看大文件，比如一个线上的日志文件，因为动辄有几个 G，控制台打印出所有的内容就要非常久，而且刷屏显示看不到东西。&lt;/p&gt;
+&lt;p&gt;而且如果在线上进行查看大文件的操作，会带来不必要的麻烦：&lt;/p&gt;
+&lt;p&gt;首先因为我们需要把文件拷贝到输入输出流，这需要花费很长时间，这个过程会占用机器资源；&lt;/p&gt;
+&lt;p&gt;其次，本身文件会读取到内存中，这时内存被大量占用，很危险，这可能导致其他应用内存不足。因此我们需要一些不用加载整个文件，就能查看文件内容的指令。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;more&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;more&lt;/code&gt;可以帮助我们读取文件，但不需要读取整个文件到内存中。本身&lt;code&gt;more&lt;/code&gt;的定位是一个阅读过滤器，比如你在&lt;code&gt;more&lt;/code&gt;里除了可以向下翻页，还可以输入一段文本进行搜索。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/39.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示，我在&lt;code&gt;more&lt;/code&gt;查看一个 nginx 日志后，先输入一个&lt;code&gt;/&lt;/code&gt;，然后输入&lt;code&gt;192.168&lt;/code&gt;看到的结果。&lt;code&gt;more&lt;/code&gt;帮我找到了&lt;code&gt;192.168&lt;/code&gt;所在的位置，然后又帮我定位到了这个位置。整个过程 &lt;code&gt;more&lt;/code&gt; 指令只读取我们需要的部分到内存中。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;less&lt;br /&gt;
+&lt;code&gt;less&lt;/code&gt;是一个和&lt;code&gt;more&lt;/code&gt;功能差不多的工具，打开&lt;code&gt;man&lt;/code&gt;能够看到&lt;code&gt;less&lt;/code&gt;的介绍上写着自己是&lt;code&gt;more&lt;/code&gt;的反义词（opposite of more）。这样你可以看出&lt;code&gt;linux&lt;/code&gt;生态其实也是很自由的一个生态，在这里创造工具也可以按照自己的喜好写文档。&lt;code&gt;less&lt;/code&gt;支持向上翻页，这个功能&lt;code&gt;more&lt;/code&gt;是做不到的。所以现在&lt;code&gt;less&lt;/code&gt;用得更多一些。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;head/tail&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;head&lt;/code&gt;和&lt;code&gt;tail&lt;/code&gt;是一组，它们用来&lt;code&gt;读取一个文件的头部 N 行或者尾部 N 行&lt;/code&gt;。比如一个线上的大日志文件，当线上出了 bug，服务暂停的时候，我们就可以用&lt;code&gt;tail -n 1000&lt;/code&gt;去查看最后的 &lt;code&gt;1000&lt;/code&gt; 行日志文件，寻找导致服务异常的原因。&lt;/p&gt;
+&lt;p&gt;另一个比较重要的用法是，如果你想看一个实时的nginx日志，可以使用&lt;code&gt;tail -f&lt;/code&gt; 文件名，这样你会看到用户的请求不断进来。查一下&lt;code&gt;man&lt;/code&gt;，你会发现&lt;code&gt;-f&lt;/code&gt;是 &lt;code&gt;follow&lt;/code&gt; 的意思，就是文件追加的内容会跟随输出到标准输出流。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;grep&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有时候你需要查看一个指定&lt;code&gt;ip&lt;/code&gt;的nginx日志，或者查看一段时间内的&lt;code&gt;nginx&lt;/code&gt;日志。如果不想用&lt;code&gt;less&lt;/code&gt;和&lt;code&gt;more&lt;/code&gt;进入文件中去查看，就可以用&lt;code&gt;grep&lt;/code&gt;命令。Linux 的文件命名风格都很短，所以也影响了很多人，比如之前我看到过一个大牛的程序，变量名从来不超过 5 个字母，而且都有意义。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep 这个词，我们分成三段来看，是 g|re|p&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;g&lt;/code&gt; 就是 &lt;code&gt;global&lt;/code&gt;，全局；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;re&lt;/code&gt; 就是 &lt;code&gt;regular expression&lt;/code&gt;，正则表达式；&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;p&lt;/code&gt; 就是 &lt;code&gt;pattern&lt;/code&gt;，模式。&lt;/p&gt;
+&lt;p&gt;所以这个指令的作用是通过正则表达式全局搜索一个文件找到匹配的模式。我觉得这种命名真的很牛，软件命名也是一个世纪难题，grep这个名字不但发音不错，而且很有含义，又避免了名字过长，方便记忆。&lt;/p&gt;
+&lt;p&gt;下面我们举两个例子看看 grep 的用法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例 1：查找 ip 地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们可以通过&lt;code&gt;grep&lt;/code&gt;命令定位某个&lt;code&gt;ip&lt;/code&gt;地址的用户都做了什么事情，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/40.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例 2：查找时间段的日志&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们可以通过 grep 命令查找某个时间段内用户都做了什么事情。如下图所示，你可以看到在某个 5 分钟内所有用户的访问情况。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/41.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;查找文件&#34;&gt;查找文件&lt;/h2&gt;
+&lt;p&gt;用户经常还会有一种诉求，就是查找文件。&lt;/p&gt;
+&lt;p&gt;之前我们使用过一个&lt;code&gt;which&lt;/code&gt;指令，这个指令可以查询一个指令文件所在的位置，比如&lt;code&gt;which grep&lt;/code&gt;会，你会看到&lt;code&gt;grep&lt;/code&gt;指令被安装的位置是&lt;code&gt;/usr/bin&lt;/code&gt;。但是我们还需要一个更加通用的指令查找文件，也就是 &lt;code&gt;find&lt;/code&gt; 指令。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;find&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;find 指令帮助我们在文件系统中查找文件。 比如我们如果想要查找所有&lt;code&gt;.txt&lt;/code&gt; 扩展名的文件，可以使用&lt;code&gt;find / -iname &amp;quot;*.txt&amp;quot;&lt;/code&gt;，&lt;code&gt;-iname&lt;/code&gt;这个参数是用来匹配查找的，i 字母代表忽略大小写，这里也可以用&lt;code&gt;-name&lt;/code&gt;替代。输入这条指令，你会看到不断查找文件，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/42.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;这节课我们学习了很多指令，不知道你记住了多少？最后，我们再一起复习一下。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pwd&lt;/code&gt;指令查看工作目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cd&lt;/code&gt;指令切换工作目录。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;指令查找一个执行文件所在的路径。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ls&lt;/code&gt;显示文件信息。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;rm&lt;/code&gt;删除文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;touch&lt;/code&gt;修改一个文件的时间戳，如果文件不存在会触发创建文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;vi&lt;/code&gt;和&lt;code&gt;nano&lt;/code&gt;可以用来编辑文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cat&lt;/code&gt;查看完成的文件适合小型文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;more less&lt;/code&gt;查看一个文件但是只读取用户看到的内容到内存，因此消耗资源较少，适合在服务器上看日志。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;head````tail&lt;/code&gt;可以用来看文件的头和尾。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;指令搜索文件内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;find&lt;/code&gt;指令全局查找文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在这里，我再强调一个指令，即&lt;code&gt;man&lt;/code&gt;指令，它是所有指令的手册，所以你一定要多多运用，熟练掌握。另外，一个指令通常有非常多的参数，但都需要用&lt;code&gt;man&lt;/code&gt;指令去仔细研究。&lt;/p&gt;
+&lt;h2 id=&#34;面试题目rm--rf-的作用是&#34;&gt;面试题目：rm -rf /的作用是？&lt;/h2&gt;
+&lt;p&gt;【解析】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;/是文件系统根目录；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;rm是删除指令；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;-r是 recursive（递归）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;-f是 force（强制），遇到只读文件也不提示，直接删除。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;所以rm -rf /就是删除整个文件系统上的所有文件，而且不用给用户提示。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;小知识：&lt;br /&gt;
+如果想用man看中文手册&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.打开终端，输入以下命令安装中文 man 手册&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;sudo apt-get install manpages-zh
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;2.查看man 手册安装到哪里&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;dpkg -L manpages-zh | less
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查看到安装在/usr/share/man/zh_CN&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3.设一个中文man别名&lt;br /&gt;
+     修改 ~/.bashrc 添加一个alias :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;#第一步在终端输入
+vim ~/.bashrc
+#按i进入编辑模式，将下面添加到# some more ls aliases的下面
+alias cman=&#39;man -M /usr/share/man/zh_CN&#39;
+#按esc,输入wq!强制保存并退出
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;4.重启一个终端就可以用&lt;code&gt;cman&lt;/code&gt;查看中文&lt;code&gt;man&lt;/code&gt;手册了，当然查英文手册还是用&lt;code&gt;man&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>02</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/2/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/2/</guid>
+        <description>我们先来看一道常规的面试题：相比 32 位，64 位的优势是什么？ 面试官考察这种类型的问题，主要是想看求职者是否有扎实的计算机基础，同时想知道求职者在工作中是否充满好奇，会主动学习、寻根问底，毕竟 32、64 位是经常出现在程序员视野的词汇，常见的东西都弄明白了，那说明这个人学习能力强。 其实 ，面试官在这里给你挖了一个陷阱，因为他没有说清楚 32、64 位指的是操作系统、是软件、还是 CPU？ 如果是软件，那么我们的数</description>
+        <content:encoded>&lt;h2 id=&#34;我们先来看一道常规的面试题相比-32-位64-位的优势是什么&#34;&gt;我们先来看一道常规的面试题：相比 32 位，64 位的优势是什么？&lt;/h2&gt;
+&lt;p&gt;面试官考察这种类型的问题，主要是想看求职者是否有扎实的计算机基础，同时想知道求职者在工作中是否充满好奇，会主动学习、寻根问底，毕竟 32、64 位是经常出现在程序员视野的词汇，常见的东西都弄明白了，那说明这个人学习能力强。&lt;/p&gt;
+&lt;p&gt;其实 ，面试官在这里给你挖了一个陷阱，因为他没有说清楚 32、64 位指的是操作系统、是软件、还是 CPU？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果是软件，那么我们的数据库有 32 位和 64 位版本；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果是操作系统，那么在阿里云上选择 Centos 和 Debian 版本的时候，也会有 32/64 版本；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果是 CPU，那么有 32 位 CPU，也有 64 位 CPU。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来请你带着问题开始今天的课程学习，本课时的重点是带你学懂程序执行的原理。&lt;/p&gt;
+&lt;h2 id=&#34;图灵机的构造&#34;&gt;图灵机的构造&lt;/h2&gt;
+&lt;p&gt;想要学懂程序执行的原理，就要从图灵机说起了。它在计算机科学方面有两个巨大的贡献：&lt;/p&gt;
+&lt;p&gt;第一，它清楚地定义了计算机能力的边界，也就是可计算理论；&lt;/p&gt;
+&lt;p&gt;第二，它定义了计算机由哪些部分组成，程序又是如何执行的。&lt;/p&gt;
+&lt;p&gt;我们先来看一看图灵机的内部构造：&lt;/p&gt;
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;&lt;p&gt;1.图灵机拥有一条无限长的纸带，纸带上是一个格子挨着一个格子，格子中可以写字符，你可以把纸带看作内存，而这些字符可以看作是内存中的数据或者程序。&lt;/p&gt;
+&lt;p&gt;2.图灵机有一个读写头，读写头可以读取任意格子上的字符，也可以改写任意格子的字符。&lt;/p&gt;
+&lt;p&gt;3.读写头上面的盒子里是一些精密的零件，包括图灵机的存储、控制单元和运算单元。&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;图灵机如何执行程序&#34;&gt;图灵机如何执行程序&lt;/h2&gt;
+&lt;p&gt;下面我们来举一个例子，让大家弄清楚图灵机是如何工作的，比如我们要计算 11 + 15 的值，具体的运算步骤如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先，我们将“11、15、+” 分别写入纸带上的 3 个格子（现在纸带上的字符串是11、15、 +)，然后将读写头先停在 11 对应的格子上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/2.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;接下来，图灵机通过读写头读入 11 到它的存储设备中（这个存储设备也叫作图灵机的状态）。图灵机没有说读写头为什么可以识别纸带上的字符，而是假定读写头可以做到这点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/3.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;然后读写头向右移动一个格，用同样的方法将 15 读入图灵机的状态中。现在图灵机的状态中有两个连续的数字，11 和 15。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/4.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;接下来重复上面的过程，会读到一个+号。下面我详细说一下这个运算流程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;读写头读到一个 + 号 ；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后将 + 号传输给控制单元 ；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;控制单元发现是一个 + 号，所以没有存入状态中。因为 + 号是一个我们预设的控制符（指令），它的作用是加和目前状态。因此，控制单元识别出是控制符，并通知运算单元工作；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运算单元从状态中读入 11、15 并进行计算，将结果 26 存储到状态；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运算单元将结果回传给控制单元；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;控制单元将结果传输给读写头。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/5.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;读写头向右移动，将结果 26 写入纸带。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/6.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;这样，我们就通过图灵机计算出了 11+15 的值。不知道你有没有发现，图灵机构造的这一台机器，主要功能就是读写纸带然后计算；纸带中有数据、也有控制字符（也就是指令），这个设计和我们今天的计算机是一样的。&lt;/p&gt;
+&lt;p&gt;图灵通过数学证明了，一个问题如果可以拆解成图灵机的可执行步骤，那问题就是可计算的。另一方面，图灵机定义了计算机的组成以及工作原理，但是没有给出具体的实现。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/7.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;具体的实现是 1945 年冯诺依曼和其他几位科学家在著名的 101 页报告中提出的。报告遵循了图灵机的设计，并提出用电子元件构造计算机，约定了用二进制进行计算和存储，并且将计算机结构分成以下 5 个部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.输入设备；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.输出设备；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.内存；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;4.中央处理器；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;5.总线。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个模型也被称为冯诺依曼模型，下面我们具体来看看这 5 部分的作用。&lt;/p&gt;
+&lt;h2 id=&#34;内存&#34;&gt;内存&lt;/h2&gt;
+&lt;p&gt;在冯诺依曼模型中，程序和数据被存储在一个被称作内存的线性排列存储区域。存储的数据单位是一个二进制位，英文是 bit。最小的存储单位叫作字节，也就是 8 位，英文是 byte，每一个字节都对应一个内存地址。内存地址由 0 开始编号，比如第 1 个地址是 0，第 2 个地址是 1， 然后自增排列，最后一个地址是内存中的字节数减 1。&lt;/p&gt;
+&lt;p&gt;我们通常说的内存都是随机存取器，也就是读取任何一个地址数据的速度是一样的，写入任何一个地址数据的速度也是一样的。&lt;/p&gt;
+&lt;h2 id=&#34;cpu&#34;&gt;CPU&lt;/h2&gt;
+&lt;p&gt;冯诺依曼模型中 CPU 负责控制和计算。为了方便计算较大的数值，CPU 每次可以计算多个字节的数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果 CPU 每次可以计算 4 个 byte，那么我们称作 32 位 CPU；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果 CPU 每次可以计算 8 个 byte，那么我们称作 64 位 CPU。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里的 32 和 64，称作 CPU 的位宽。&lt;/p&gt;
+&lt;p&gt;为什么 CPU 要这样设计呢？ 因为一个 byte 最大的表示范围就是 0~255。比如要计算 20000*50，就超出了byte 最大的表示范围了。因此，CPU 需要支持多个 byte 一起计算。当然，CPU 位数越大，可以计算的数值就越大。但是在现实生活中不一定需要计算这么大的数值。比如说 32 位 CPU 能计算的最大整数是 4294967295，这已经非常大了。&lt;/p&gt;
+&lt;h2 id=&#34;控制单元和逻辑运算单元&#34;&gt;控制单元和逻辑运算单元&lt;/h2&gt;
+&lt;p&gt;CPU 中有一个控制单元专门负责控制 CPU 工作；还有逻辑运算单元专门负责计算。具体的工作原理我们在指令部分给大家分析。&lt;/p&gt;
+&lt;h2 id=&#34;寄存器&#34;&gt;寄存器&lt;/h2&gt;
+&lt;p&gt;CPU 要进行计算，比如最简单的加和两个数字时，因为 CPU 离内存太远，所以需要一种离自己近的存储来存储将要被计算的数字。这种存储就是寄存器。寄存器就在 CPU 里，离控制单元和逻辑运算单元非常近，因此速度很快。&lt;/p&gt;
+&lt;p&gt;寄存器中有一部分是可供用户编程用的，比如用来存加和指令的两个参数，是通用寄存器。&lt;/p&gt;
+&lt;p&gt;还有一部分寄存器有特殊的用途，叫作特殊寄存器。比如程序指针，就是一个特殊寄存器。它存储了 CPU 要执行的下一条指令所在的内存地址。注意，程序指针不是存储了下一条要执行的指令，此时指令还在内存中，程序指针只是存储了下一条指令的地址。&lt;/p&gt;
+&lt;p&gt;下一条要执行的指令，会从内存读入到另一个特殊的寄存器中，这个寄存器叫作指令寄存器。指令被执行完成之前，指令都存储在这里。&lt;/p&gt;
+&lt;h2 id=&#34;总线&#34;&gt;总线&lt;/h2&gt;
+&lt;p&gt;CPU 和内存以及其他设备之间，也需要通信，因此我们用一种特殊的设备进行控制，就是总线。总线分成 3 种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;一种是地址总线，专门用来指定 CPU 将要操作的内存地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;还有一种是数据总线，用来读写内存中的数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当 CPU 需要读写内存的时候，先要通过地址总线来指定内存地址，再通过数据总线来传输数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最后一种总线叫作控制总线，用来发送和接收关键信号，比如后面我们会学到的中断信号，还有设备复位、就绪等信号，都是通过控制总线传输。同样的，CPU 需要对这些信号进行响应，这也需要控制总线。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;输入输出设备&#34;&gt;输入、输出设备&lt;/h2&gt;
+&lt;p&gt;输入设备向计算机输入数据，计算机经过计算，将结果通过输出设备向外界传达。如果输入设备、输出设备想要和 CPU 进行交互，比如说用户按键需要 CPU 响应，这时候就需要用到控制总线。&lt;/p&gt;
+&lt;p&gt;到这里，相信你已经对冯诺依曼模型的构造有了一定的了解。这里我再强调几个问题：&lt;/p&gt;
+&lt;h2 id=&#34;1-线路位宽问题&#34;&gt;1. 线路位宽问题&lt;/h2&gt;
+&lt;p&gt;第一个问题是，你可能会好奇数据如何通过线路传递。其实是通过操作电压，低电压是 0，高电压是 1。&lt;/p&gt;
+&lt;p&gt;如果只有一条线路，每次只能传递 1 个信号，因为你必须在 0,1 中选一个。比如你构造高高低低这样的信号，其实就是 1100，相当于你传了一个数字 10 过去。大家注意，这种传递是相当慢的，因为你需要传递 4 次。&lt;/p&gt;
+&lt;p&gt;这种一个 bit 一个 bit 发送的方式，我们叫作串行。如果希望每次多传一些数据，就需要增加线路，也就是需要并行。&lt;/p&gt;
+&lt;p&gt;如果只有 1 条地址总线，那每次只能表示 0-1 两种情况，所以只能操作 2 个内存地址；如果有 10 条地址总线，一次就可以表示 210 种情况，也就是可以操作 1024 个内存地址；如果你希望操作 4G 的内存，那么就需要 32 条线，因为 2^32 是 4G。&lt;/p&gt;
+&lt;p&gt;到这里，你可能会问，那我串行发送行不行？当然也不是不行，只是速度会很慢，因为每多增加一条线路速度就会翻倍。&lt;/p&gt;
+&lt;h2 id=&#34;2-64-位和-32-位的计算&#34;&gt;2. 64 位和 32 位的计算&lt;/h2&gt;
+&lt;p&gt;第二个问题是，CPU 的位宽会对计算造成什么影响？&lt;/p&gt;
+&lt;p&gt;我们来看一个具体场景：要用 32 位宽的 CPU，加和两个 64 位的数字。&lt;/p&gt;
+&lt;p&gt;32 位宽的 CPU 控制 40 位宽的地址总线、数据总线工作会非常麻烦，需要双方制定协议。 因此通常 32 位宽 CPU 最多操作 32 位宽的地址总线和数据总线。&lt;/p&gt;
+&lt;p&gt;因此必须把两个 64 位数字拆成 2 个 32 位数字来计算，这样就需要一个算法，比如用像小时候做加法竖式一样，先加和两个低位的 32 位数字，算出进位，然后加和两个高位的 32 位数字，最后再加上进位。&lt;/p&gt;
+&lt;p&gt;而 64 位的 CPU 就可以一次读入 64 位的数字，同时 64 位的 CPU 内部的逻辑计算单元，也支持 64 位的数字进行计算。但是你千万不要仅仅因为位宽的区别，就认为 64 位 CPU 性能比 32 位高很多。&lt;/p&gt;
+&lt;p&gt;要知道大部分应用不需要计算超过 32 位的数字，比如你做一个电商网站，用户的金额通常是 10 万以下的，而 32 位有符号整数，最大可以到 20 亿。所以这样的计算在 32 位还是 64 位中没有什么区别。&lt;/p&gt;
+&lt;p&gt;还有一点要注意，32 位宽的 CPU 没办法控制超过 32 位的地址总线、数据总线工作。比如说你有一条 40 位的地址总线（其实就是 40 条线），32 位的 CPU 没有办法一次给 40 个信号，因为它最多只有 32 位的寄存器。因此 32 位宽的 CPU 最多操作 2^32 个内存地址，也就是 4G 内存地址。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;关于计算机组成和指令部分，我们就先学到这里。这节课我们通过图灵机和冯诺依曼模型学习了计算机的组成、CPU 的工作原理等。此外，我们还顺带讨论了 32 位和 64 位的区别，现在，你可以回答 &lt;code&gt;64 位和 32 位比较有哪些优势了吗？&lt;/code&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>02</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter2/2/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter2/2/</guid>
+        <description>进程 为了弄清楚这节课程的内容，也就是管道，我们先来讨论一下进程。 我们知道，应用的可执行文件是放在文件系统里，把可执行文件启动，就会在操作系统里（具体来说是内存中）形成一个应用的副本，这个副本就是进程。 插一个小知识，以后你再遇到面试题：什么是进程？ 可以回答：进程是应用的执行副本；而不要回答进程是操作系统分配资源的最小单位。前者是定义，后者是作用。 ps 如果你要看当前的进程，可以用ps指令。p 代表 proc</description>
+        <content:encoded>&lt;h2 id=&#34;进程&#34;&gt;进程&lt;/h2&gt;
+&lt;p&gt;为了弄清楚这节课程的内容，也就是管道，我们先来讨论一下进程。&lt;/p&gt;
+&lt;p&gt;我们知道，应用的可执行文件是放在文件系统里，把可执行文件启动，就会在操作系统里（具体来说是内存中）形成一个应用的副本，这个副本就是进程。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;插一个小知识，以后你再遇到面试题：什么是进程？&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;可以回答：进程是应用的执行副本；而不要回答进程是操作系统分配资源的最小单位。前者是定义，后者是作用。&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ps&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你要看当前的进程，可以用&lt;code&gt;ps&lt;/code&gt;指令。&lt;code&gt;p 代表 processes&lt;/code&gt;，也就是进程；&lt;code&gt;s 代表 snapshot&lt;/code&gt;，也就是快照。所谓快照，就是像拍照一样。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/43.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示，我启动了两个进程，&lt;code&gt;ps&lt;/code&gt;和&lt;code&gt;bash&lt;/code&gt;。&lt;code&gt;ps&lt;/code&gt; 就是我刚刚启动的，被&lt;code&gt;ps&lt;/code&gt;自己捕捉到了；&lt;code&gt;bash&lt;/code&gt;是因为我开了这个控制台，执行的shell是&lt;code&gt;bash&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;当然操作系统也不可能只有这么几个进程，这是因为不带任何参数的&lt;code&gt;ps&lt;/code&gt;指令显示的是同一个电传打字机（TTY上）的进程。&lt;code&gt;TTY&lt;/code&gt; 这个概念是一个历史的概念，过去用来传递信息，现在已经被传真、邮件、微信等取代。&lt;/p&gt;
+&lt;p&gt;操作系统上的 &lt;code&gt;TTY&lt;/code&gt; 是一个输入输出终端的概念，比如用户打开 &lt;code&gt;bash&lt;/code&gt;，操作系统就为用户分配了一个输入输出终端。没有加任何参数的&lt;code&gt;ps&lt;/code&gt;只显示在同一个 &lt;code&gt;TTY&lt;/code&gt; 的进程。&lt;/p&gt;
+&lt;p&gt;如果想看到所有的进程，可以用&lt;code&gt;ps -e&lt;/code&gt;，&lt;code&gt;-e&lt;/code&gt;没有特殊含义，只是为了和&lt;code&gt;-A&lt;/code&gt;区分开。我们通常不直接用&lt;code&gt;ps -e&lt;/code&gt;而是用&lt;code&gt;ps -ef&lt;/code&gt;，这是因为&lt;code&gt;-f&lt;/code&gt;可以带上更多的描述字段，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/44.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;UID 指进程的所有者；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PID 是进程的唯一标识；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PPID 是进程的父进程 ID；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;C 是 CPU 的利用率（就是 CPU 占用）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;STIME 是开始时间；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TTY 是进程所在的 TTY，如果没有 TTY 就是 ？号；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TIME；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CMD 是进程启动时的命令，如果不是一个 Shell 命令，而是用方括号括起来，那就是系统进程或者内核过程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;另外一个用得比较多的是&lt;code&gt;ps aux&lt;/code&gt;，它和&lt;code&gt;ps -ef&lt;/code&gt;能力差不多，但是是 &lt;code&gt;BSD&lt;/code&gt; 风格的。就是加州伯克利分校研发的 &lt;code&gt;Unix&lt;/code&gt; 分支版本的衍生风格，这种风格其实不太好描述，我截了一张图，你可以体会一下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/45.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;在 BSD 风格中有些字段的叫法和含义变了，如果你感兴趣，可以作为课后延伸学习的内容。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;br /&gt;
+另外还有一个和&lt;code&gt;ps&lt;/code&gt;能力差不多，但是显示的不是快照而是实时更新数据的&lt;code&gt;top&lt;/code&gt;指令。因为自带的&lt;code&gt;top&lt;/code&gt;显示的内容有点少， 所以我喜欢用一个叫作&lt;code&gt;htop&lt;/code&gt;的指令，具体的安装全方法我会在 &lt;code&gt;10 | 软件的安装： 编译安装和包管理器安装有什么优势和劣势？&lt;/code&gt;中给你介绍。本课时，我们先看一下使用效果，如下图所示：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/46.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;以上，我们一起把进程学了一个皮毛，更多关于进程的内容我们会在模块四：进程和线程中讨论。&lt;/p&gt;
+&lt;h2 id=&#34;管道pipeline&#34;&gt;管道（Pipeline）&lt;/h2&gt;
+&lt;p&gt;现在你已经掌握了一点点进程的基础，下面我们来学习管道，管道（Pipeline）的作用是在命令和命令之间，传递数据。比如说一个命令的结果，就可以作为另一个命令的输入。我们了解了进程，所以这里说的&lt;code&gt;命令就是进程&lt;/code&gt;。更准确地说，&lt;code&gt;管道在进程间传递数据&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;输入输出流&#34;&gt;输入输出流&lt;/h2&gt;
+&lt;p&gt;每个进程拥有自己的&lt;code&gt;标准输入流&lt;/code&gt;、&lt;code&gt;标准输出流&lt;/code&gt;、&lt;code&gt;标准错误流&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;这几个标准流说起来很复杂，但其实都是文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;标准输入流（用 0 表示）可以作为进程执行的上下文（进程执行可以从输入流中获取数据）。&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;标准输出流（用 1 表示）中写入的结果会被打印到屏幕上。&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;如果进程在执行过程中发生异常，那么异常信息会被记录到标准错误流（用 2 表示）中。&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;重定向&#34;&gt;重定向&lt;/h2&gt;
+&lt;p&gt;我们执行一个指令，比如&lt;code&gt;ls -l&lt;/code&gt;，结果会写入标准输出流，进而被打印。这时可以用重定向符将结果重定向到一个文件，比如说&lt;code&gt;ls -l &amp;gt; out&lt;/code&gt;，这样&lt;code&gt;out&lt;/code&gt;文件就会有&lt;code&gt;ls -l&lt;/code&gt;的结果；而屏幕上也不会再打印&lt;code&gt;ls -l&lt;/code&gt;的结果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/47.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;具体来说&lt;code&gt;&amp;gt;&lt;/code&gt;符号叫作&lt;code&gt;覆盖重定向&lt;/code&gt;；&lt;code&gt;&amp;gt;&amp;gt;叫作追加重定向&lt;/code&gt;。&lt;code&gt;&amp;gt;&lt;/code&gt;每次都会把目标文件覆盖，&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;会在目标文件中追加。比如你每次启动一个程序日志都写入&lt;code&gt;/var/log/somelogfile&lt;/code&gt;中，可以这样操作，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;start.sh &amp;gt;&amp;gt; /var/log/somelogfile
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;经过这样的操作后，每次执行程序日志就不会被覆盖了。&lt;/p&gt;
+&lt;p&gt;另外还有一种情况，比如我们输入:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ls1 &amp;gt; out
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果并不会存入&lt;code&gt;out&lt;/code&gt;文件，因为&lt;code&gt;ls1&lt;/code&gt;指令是不存在的。结果会输出到&lt;code&gt;标准错误流&lt;/code&gt;中，仍然在屏幕上。这里我们可以&lt;code&gt;把标准错误流也重定向到标准输出流&lt;/code&gt;，然后再&lt;code&gt;重定向到文件&lt;/code&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ls1 &amp;amp;&amp;gt; out
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个写法等价于：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ls1 &amp;gt; out 2&amp;gt;&amp;amp;1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/48.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;相当于把&lt;code&gt;ls1&lt;/code&gt;的标准输出流重定向到&lt;code&gt;out&lt;/code&gt;，因为&lt;code&gt;ls1 &amp;gt; out&lt;/code&gt;出错了，&lt;code&gt;所以标准错误流被定向到了标准输出流&lt;/code&gt;。&lt;code&gt;&amp;amp;&lt;/code&gt;代表一种引用关系，具体代表的是&lt;code&gt;ls1 &amp;gt; out&lt;/code&gt;的标准输出流。&lt;/p&gt;
+&lt;h2 id=&#34;管道的作用和分类&#34;&gt;管道的作用和分类&lt;/h2&gt;
+&lt;p&gt;有了进程和重定向的知识，接下来我们梳理下管道的作用。&lt;code&gt;管道（Pipeline）将一个进程的输出流定向到另一个进程的输入流，就像水管一样，作用就是把这两个文件接起来。如果一个进程输出了一个字符 X，那么另一个进程就会获得 X 这个输入。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;管道和重定向很像，但是管道是一个连接一个进行计算，重定向是将一个文件的内容定向到另一个文件，这二者经常会结合使用。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Linux 中的管道也是文件，有两种类型的管道：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;匿名管道（Unnamed Pipeline），这种管道也在文件系统中，但是它只是一个存储节点，不属于任何一个目录。说白了，就是没有路径。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;命名管道（Named Pipeline），这种管道就是一个文件，有自己的路径。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;fifo&#34;&gt;FIFO&lt;/h2&gt;
+&lt;p&gt;管道具有 &lt;code&gt;FIFO（First In First Out）&lt;/code&gt;，&lt;code&gt;FIFO&lt;/code&gt; 和排队场景一样，先排到的先获得。所以先流入管道文件的数据，也会先流出去传递给管道下游的进程。&lt;/p&gt;
+&lt;h2 id=&#34;使用场景分析&#34;&gt;使用场景分析&lt;/h2&gt;
+&lt;p&gt;接下来我们以多个场景举例帮助你深入学习管道。&lt;/p&gt;
+&lt;h2 id=&#34;排序&#34;&gt;排序&lt;/h2&gt;
+&lt;p&gt;比如我们用ls，希望按照文件名排序倒序，可以使用匿名管道，将ls的结果传递给sort指令去排序。你看，这样ls的开发者就不用关心排序问题了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/49.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;去重&#34;&gt;去重&lt;/h2&gt;
+&lt;p&gt;另一个比较常见的场景是去重，比如有一个字典文件，里面都是词语。如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Apple
+
+Banana
+
+Apple
+
+Banana
+
+……
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果我们想要去重可以使用&lt;code&gt;uniq&lt;/code&gt;指令，&lt;code&gt;uniq&lt;/code&gt;指令能够找到文件中相邻的重复行，然后去重。但是我们上面的文件重复行是交替的，所以不可以直接用&lt;code&gt;uniq&lt;/code&gt;，因此可以先&lt;code&gt;sort&lt;/code&gt;这个文件，然后利用管道将&lt;code&gt;sort&lt;/code&gt;的结果重定向到&lt;code&gt;uniq&lt;/code&gt;指令。指令如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/50.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;筛选&#34;&gt;筛选&lt;/h2&gt;
+&lt;p&gt;有时候我们想根据正则模式筛选对应的内容。比如说我们想找到项目文件下所有文件名中含有&lt;code&gt;Spring&lt;/code&gt;的文件。就可以利用&lt;code&gt;grep&lt;/code&gt;指令，操作如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;find ./ | grep Spring
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;find ./&lt;/code&gt;递归列出当前目录下所有目录中的文件。&lt;code&gt;grep&lt;/code&gt;从&lt;code&gt;find&lt;/code&gt;的输出流中找出含有&lt;code&gt;Spring&lt;/code&gt;关键字的行。&lt;/p&gt;
+&lt;p&gt;如果我们希望包含&lt;code&gt;Spring&lt;/code&gt;但不包含&lt;code&gt;MyBatis&lt;/code&gt;就可以这样操作：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;find ./ | grep Spring | grep -v MyBatis
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;grep -v&lt;/code&gt;是匹配不包含 MyBatis 的结果。&lt;/p&gt;
+&lt;h2 id=&#34;数行数&#34;&gt;数行数&lt;/h2&gt;
+&lt;p&gt;还有一个比较常见的场景是数行数。比如你写了一个 Java 文件想知道里面有多少行，就可以使用&lt;code&gt;wc -l&lt;/code&gt;指令，如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/51.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;但是如果你想知道当前目录下有多少个文件，可以用ls | wc -l，如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/52.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;接下来请你思考一个问题：我们如何知道当前java的项目目录下有多少行代码？&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;提示一下。你可以使用下面这个指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;find -i &amp;quot;.java&amp;quot; ./ | wc -l  
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;中间结果&#34;&gt;中间结果&lt;/h2&gt;
+&lt;p&gt;管道一个接着一个，是一个计算逻辑。有时候我们想要把中间的结果保存下来，这就需要用到&lt;code&gt;tee&lt;/code&gt;指令。&lt;code&gt;tee指令从标准输入流中读取数据到标准输出流。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这时候，你可能会问： 老师， 这不是什么都没做吗？&lt;/p&gt;
+&lt;p&gt;别急，&lt;code&gt;tee&lt;/code&gt;还有一个能力，就是自己利用这个过程把输入流中读取到的数据存到文件中。比如下面这条指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;find ./ -i &amp;quot;*.java&amp;quot; | tee JavaList | grep Spring
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这句指令的意思是从当前目录中找到所有含有 Spring 关键字的 Java 文件。tee 本身不影响指令的执行，但是 tee 会把 find 指令的结果保存到 JavaList 文件中。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tee&lt;/code&gt;这个执行就像英文字母中的 &lt;code&gt;T&lt;/code&gt; 一样，连通管道两端，下面又开了口。这个开口，在函数式编程里面叫作副作用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;xargs&lt;/code&gt;&lt;br /&gt;
+上面我们学习的内容难度，已经由小学 1 年级攀升到了小学 6 年级，最后我们来看看初中难度的&lt;code&gt;xargs&lt;/code&gt;指令。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;xargs&lt;/code&gt;指令从标准数据流中构造并执行一行行的指令。&lt;code&gt;xargs&lt;/code&gt;从输入流获取字符串，然后利用空白、换行符等切割字符串，在这些字符串的基础上构造指令，最后一行行执行这些指令。&lt;/p&gt;
+&lt;p&gt;举个例子，如果我们重命名当前目录下的所有 .a 的文件，想在这些文件前面加一个前缀&lt;code&gt;prefix_&lt;/code&gt;。比如说x.a文件需要重命名成&lt;code&gt;prefix_x.a&lt;/code&gt;，我们就可以用&lt;code&gt;xargs&lt;/code&gt;指令构造模块化的指令。&lt;/p&gt;
+&lt;p&gt;现在我们有&lt;code&gt;x.a y.a z.a&lt;/code&gt;三个文件，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/53.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;然后使用下图中的指令构造我们需要的指令：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/54.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我们用&lt;code&gt;ls&lt;/code&gt;找到所有的文件；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;-I&lt;/code&gt;参数是查找替换符，这里我们用&lt;code&gt;GG&lt;/code&gt;替代&lt;code&gt;ls&lt;/code&gt;找到的结果；&lt;code&gt;-I GG&lt;/code&gt;后面的字符串 &lt;code&gt;GG&lt;/code&gt; 会被替换为&lt;code&gt;x.a,x.b或x.z&lt;/code&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;echo&lt;/code&gt;是一个在命令行打印字符串的指令。使用&lt;code&gt;echo&lt;/code&gt;主要是为了安全，帮助我们检查指令是否有错误。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们用&lt;code&gt;xargs&lt;/code&gt;构造了 3 条指令。这里我再多讲一个词，叫作样板代码。如果你没有用&lt;code&gt;xargs&lt;/code&gt;指令，而是用一条条&lt;code&gt;mv&lt;/code&gt;指令去敲，这样就构成了样板代码。&lt;/p&gt;
+&lt;p&gt;最后去掉 &lt;code&gt;echo&lt;/code&gt;，就是我们想要的结果，如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/55.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;管道文件&#34;&gt;管道文件&lt;/h2&gt;
+&lt;p&gt;上面我们花了较长的一段时间讨论匿名管道，用|就可以创造和使用。匿名管道也是利用了文件系统的能力，是一种文件结构。当你学到模块六文件系统的内容，会知道匿名管道拥有一个自己的&lt;code&gt;inode&lt;/code&gt;，但不属于任何一个文件夹。&lt;/p&gt;
+&lt;p&gt;还有一种管道叫作命名管道（Named Pipeline）。命名管道是要挂到文件夹中的，因此需要创建。用&lt;code&gt;mkfifo&lt;/code&gt;指令可以创建一个命名管道，下面我们来创建一个叫作&lt;code&gt;pipe1&lt;/code&gt;的命名管道，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/56.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;命名管道和匿名管道能力类似，可以连接一个输出流到另一个输入流，也是 &lt;code&gt;First In First Out&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;当执行&lt;code&gt;cat pipe1&lt;/code&gt;的时候，你可以观察到，当前的终端处于等待状态。因为我们&lt;code&gt;cat pipe1&lt;/code&gt;的时候&lt;code&gt;pipe1&lt;/code&gt;中没有内容。&lt;/p&gt;
+&lt;p&gt;如果这个时候我们再找一个终端去写一点东西到&lt;code&gt;pipe&lt;/code&gt;中，比如说:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;XXX&amp;quot; &amp;gt; pipe1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个时候，&lt;code&gt;cat pipe1&lt;/code&gt;就会返回，并打印出xxx，如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/57.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我们可以像上图那样演示这段程序，在&lt;code&gt;cat pipe1&lt;/code&gt;后面增加了一个&lt;code&gt;&amp;amp;&lt;/code&gt;符号。这个&lt;code&gt;&amp;amp;&lt;/code&gt;符号代表&lt;code&gt;指令在后台执行&lt;/code&gt;，不会阻塞用户继续输入。然后我们通过&lt;code&gt;echo&lt;/code&gt;指令往&lt;code&gt;pipe1&lt;/code&gt;中写入东西，接着就会看到xxx被打印出来。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;这节课我们为了学习管道，先简单接触了进程的概念，然后学习了重定向。之后我们学习了匿名管道的应用场景，匿名管道帮助我们把 Linux 指令串联起来形成很强的计算能力。特别是&lt;code&gt;xargs&lt;/code&gt;指令支持模板化的生成指令，&lt;code&gt;拓展了指令的能力&lt;/code&gt;。最后我们还学习了命名管道，命名管道让我们可以真实拿到一个管道文件，让多个程序之间可以方便地进行通信。&lt;/p&gt;
+&lt;h2 id=&#34;面试题目xargs-的作用&#34;&gt;面试题目：xargs 的作用？&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;【解析】 xargs 将标准输入流中的字符串分割成一条条子字符串，然后再按照我们自己想要的方式构建成一条条指令，大大拓展了 Linux 指令的能力。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;比如我们可以用来按照某种特定的方式逐个处理一个目录下所有的文件；根据一个 IP 地址列表逐个 ping 这些 IP，收集到每个 IP 地址的延迟等。&lt;/code&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>03</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/3/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/3/</guid>
+        <description>程序的执行过程 当 CPU 执行程序的时候： 1.首先，CPU 读取 PC 指针指向的指令，将它导入指令寄存器。具体来说，完成读取指令这件事情有 3 个步骤： 步骤 1：CPU 的控制单元操作地址总线指定需要访问的内存地址（简单理解，就是把 PC 指针中的值拷贝到地址总线中）。 步骤 2：CPU 通知内存设备准备数据（内存设备准备好了，就通过数据总线将数据传送给 CPU）。 步骤 3：CPU 收到内存传来的数据后，将这个数据存入指令寄存器。 完成以</description>
+        <content:encoded>&lt;h2 id=&#34;程序的执行过程&#34;&gt;程序的执行过程&lt;/h2&gt;
+&lt;p&gt;当 CPU 执行程序的时候：&lt;/p&gt;
+&lt;p&gt;1.首先，CPU 读取 PC 指针指向的指令，将它导入指令寄存器。具体来说，完成读取指令这件事情有 3 个步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;步骤 1：CPU 的控制单元操作地址总线指定需要访问的内存地址（简单理解，就是把 PC 指针中的值拷贝到地址总线中）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;步骤 2：CPU 通知内存设备准备数据（内存设备准备好了，就通过数据总线将数据传送给 CPU）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;步骤 3：CPU 收到内存传来的数据后，将这个数据存入指令寄存器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;完成以上 3 步，CPU 成功读取了 PC 指针指向指令，存入了指令寄存器。&lt;/p&gt;
+&lt;p&gt;2.然后，CPU 分析指令寄存器中的指令，确定指令的类型和参数。&lt;/p&gt;
+&lt;p&gt;3.如果是计算类型的指令，那么就交给逻辑运算单元计算；如果是存储类型的指令，那么由控制单元执行。&lt;/p&gt;
+&lt;p&gt;4.PC 指针自增，并准备获取下一条指令。&lt;/p&gt;
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;比如在 32 位的机器上，指令是 32 位 4 个字节，需要 4 个内存地址存储，因此 PC 指针会自增 4。&lt;/div&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/8.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;了解了程序的执行过程后，我还有一些问题想和大家一起讨论：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.内存虽然是一个随机存取器，但是我们通常不会把指令和数据存在一起，这是为了安全起见。具体的原因我会在模块四进程部分展开讲解&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.程序指针也是一个寄存器，64 位的 CPU 会提供 64 位的寄存器，这样就可以使用更多内存地址。特别要说明的是，64 位的寄存器可以寻址的范围非常大，但是也会受到地址总线条数的限制。比如和 64 位 CPU 配套工作的地址总线只有 40 条，那么可以寻址的范围就只有 1T，也就是 2^40。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.从 PC 指针读取指令、到执行、再到下一条指令，构成了一个循环，这个不断循环的过程叫作&lt;code&gt;CPU 的指令周期&lt;/code&gt;，下面我们会详细讲解这个概念。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;详解-a--11--15-的执行过程&#34;&gt;详解 a = 11 + 15 的执行过程&lt;/h2&gt;
+&lt;p&gt;上面我们了解了基本的程序执行过程，接下来我们来看看如果用冯诺依曼模型执行a=11+15是一个怎样的过程。&lt;/p&gt;
+&lt;p&gt;我们再 Review 下这个问题：程序员写的程序a=11+15是字符串，CPU 不能执行字符串，只能执行指令。所以这里需要用到一种特殊的程序——编译器。编译器的核心能力是翻译，它把一种程序翻译成另一种程序语言。&lt;/p&gt;
+&lt;p&gt;这里，我们需要编译器将程序员写的程序翻译成 CPU 认识的指令（指令我们认为是一种低级语言，我们平时书写的是高级语言）。你可以先跟我完整地学完操作系统，再去深入了解编译原理的内容。&lt;/p&gt;
+&lt;p&gt;下面我们来详细阐述 a=11+15 的执行过程：&lt;/p&gt;
+&lt;p&gt;1.编译器通过分析，发现 11 和 15 是数据，因此编译好的程序启动时，会在内存中开辟出一个专门的区域存这样的常数，这个专门用来存储常数的区域，就是数据段，如下图所示：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;11 被存储到了地址 0x100；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;15 被存储到了地址 0x104；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/9.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;2.编译器将&lt;code&gt;a=11+15&lt;/code&gt;转换成了 4 条指令，程序启动后，这些指令被导入了一个专门用来存储指令的区域，也就是正文段。如上图所示，这 4 条指令被存储到了 0x200-0x20c 的区域中：&lt;/p&gt;
+&lt;p&gt;0x200 位置的 load 指令将地址 0x100 中的数据 11 导入寄存器 R0；&lt;/p&gt;
+&lt;p&gt;0x204 位置的 load 指令将地址 0x104 中的数据 15 导入寄存器 R1；&lt;/p&gt;
+&lt;p&gt;0x208 位置的 add 指令将寄存器 R0 和 R1 中的值相加，存入寄存器 R2；&lt;/p&gt;
+&lt;p&gt;0x20c 位置的 store 指令将寄存器 R2 中的值存回数据区域中的 0x1108 位置。&lt;/p&gt;
+&lt;p&gt;3.具体执行的时候，PC 指针先指向 0x200 位置，然后依次执行这 4 条指令。&lt;/p&gt;
+&lt;p&gt;这里还有几个问题要说明一下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;变量 a 实际上是内存中的一个地址，a 是给程序员的助记符。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;为什么 0x200 中代表加载数据到寄存器的指令是 0x8c000100，我们会在下面详细讨论。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不知道细心的同学是否发现，在上面的例子中，我们每次操作 4 个地址，也就是 32 位，这是因为我们在用 32 位宽的 CPU 举例。在 32 位宽的 CPU 中，指令也是 32 位的。但是数据可以小于 32 位，比如可以加和两个 8 位的字节。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关于数据段和正文段的内容，会在模块四进程和线程部分继续讲解。&lt;/p&gt;
+&lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
+&lt;p&gt;接下来我会带你具体分析指令的执行过程。&lt;/p&gt;
+&lt;p&gt;在上面的例子中，load 指令将内存中的数据导入寄存器，我们写成了 16 进制：0x8c000100，拆分成二进制就是：&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/10.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;最左边的 6 位，叫作操作码，英文是 OpCode，100011 代表 load 指令；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中间的 4 位 0000是寄存器的编号，这里代表寄存器 R0；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;后面的 22 位代表要读取的地址，也就是 0x100。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以我们是把操作码、寄存器的编号、要读取的地址合并到了一个 32 位的指令中。&lt;/p&gt;
+&lt;p&gt;我们再来看一条求加法运算的 add 指令，16 进制表示是 0x08048000，换算成二进制就是：&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/11.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;最左边的 6 位是指令编码，代表指令 add；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;紧接着的 4 位 0000 代表寄存器 R0；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后再接着的 4 位 0001 代表寄存器 R1；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再接着的 4 位 0010 代表寄存器 R2；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后剩下的 14 位没有被使用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;构造指令的过程，叫作指令的编码&lt;/code&gt;，通常由&lt;code&gt;编译器&lt;/code&gt;完成；&lt;code&gt;解析指令的过程，叫作指令的解码&lt;/code&gt;，由&lt;code&gt;CPU&lt;/code&gt;完成。由此可见 CPU 内部有一个循环：&lt;/p&gt;
+&lt;p&gt;首先 CPU 通过 PC 指针读取对应内存地址的指令，我们将这个步骤叫作 &lt;code&gt;Fetch&lt;/code&gt;，就是获取的意思。&lt;/p&gt;
+&lt;p&gt;CPU 对指令进行解码，我们将这个部分叫作 &lt;code&gt;Decode&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;CPU 执行指令，我们将这个部分叫作 &lt;code&gt;Execution&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;CPU 将结果存回寄存器或者将寄存器存入内存，我们将这个步骤叫作 &lt;code&gt;Store&lt;/code&gt;。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/12.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;上面 4 个步骤，我们叫作&lt;code&gt;CPU 的指令周期&lt;/code&gt;。CPU 的工作就是一个周期接着一个周期，周而复始。&lt;/p&gt;
+&lt;h2 id=&#34;指令的类型&#34;&gt;指令的类型&lt;/h2&gt;
+&lt;p&gt;通过上面的例子，你会发现不同类型（不同 OpCode）的指令、参数个数、每个参数的位宽，都不一样。而参数可以是以下这三种类型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.寄存器；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.内存地址；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.数值（一般是整数和浮点）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当然，无论是寄存器、内存地址还是数值，它们都是&lt;code&gt;数字&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;指令从&lt;code&gt;功能角度&lt;/code&gt;来划分，大概有以下 5 类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.I/O 类型的指令，比如处理和内存间数据交换的指令 store/load 等；再比如将一个内存地址的数据转移到另一个内存地址的 mov 指令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.计算类型的指令，最多只能处理两个寄存器，比如加减乘除、位运算、比较大小等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.跳转类型的指令，用处就是修改 PC 指针。比如编程中大家经常会遇到需要条件判断+跳转的逻辑，比如 if-else，swtich-case、函数调用等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;4.信号类型的指令，比如发送中断的指令 trap。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;5.闲置 CPU 的指令 nop，一般 CPU 都有这样一条指令，执行后 CPU 会空转一个周期。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;指令还有一个分法，就是&lt;code&gt;寻址模式&lt;/code&gt;，比如同样是求和指令，可能会有 2 个版本：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.将两个寄存器的值相加的 &lt;code&gt;add&lt;/code&gt; 指令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.将一个寄存器和一个整数相加的 &lt;code&gt;addi&lt;/code&gt; 指令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;另外，同样是加载内存中的数据到寄存器的 load 指令也有不同的寻址模式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.比如直接加载一个内存地址中的数据到寄存器的指令&lt;code&gt;la&lt;/code&gt;，叫作直接寻址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.直接将一个数值导入寄存器的指令&lt;code&gt;li&lt;/code&gt;，叫作寄存器寻址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.将一个寄存器中的数值作为地址，然后再去加载这个地址中数据的指令&lt;code&gt;lw&lt;/code&gt;，叫作间接寻址或者寄存器间接寻址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;因此寻址模式是从指令如何获取数据的角度，对指令的一种分类，目的是给编写指令的人更多选择。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;了解了指令的类型后，我再强调几个细节问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1.关于寻址模式和所有的指令，只要你不是嵌入式开发人员，就不需要记忆，理解即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2.不同 CPU 的指令和寄存器名称都不一样，因此这些名称也不需要你记忆。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3.有几个寄存器在所有 CPU 里名字都一样，比如 PC 指针、指令寄存器等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;指令的执行速度&#34;&gt;指令的执行速度&lt;/h2&gt;
+&lt;p&gt;之前我们提到过 CPU 是用石英晶体产生的脉冲转化为时钟信号驱动的，每一次时钟信号高低电平的转换就是一个周期，我们称为时钟周期。CPU 的主频，说的就是时钟信号的频率。比如一个 1GHz 的 CPU，说的是时钟信号的频率是 1G。&lt;/p&gt;
+&lt;p&gt;到这里你可能会有疑问：是不是每个时钟周期都可以执行一条指令？其实，不是的，多数指令不能在一个时钟周期完成，通常需要 2 个、4 个、6 个时钟周期。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;接下来我们来做一个总结。这节课我们深入讨论了指令和指令的分类。接下来，我们来看一看在 02 课时中留下的问题：&lt;code&gt;64 位和 32 位比较有哪些优势？&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;【解析】 其实，这个问题需要分类讨论。&lt;/p&gt;
+&lt;p&gt;如果说的是 64 位宽 CPU，那么有 2 个优势。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;优势 1&lt;/code&gt;：64 位 CPU 可以执行更大数字的运算，这个优势在普通应用上不明显，但是对于数值计算较多的应用就非常明显。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;优势 2&lt;/code&gt;：64 位 CPU 可以寻址更大的内存空间&lt;/p&gt;
+&lt;p&gt;如果 32 位/64 位说的是程序，那么说的是指令是 64 位还是 32 位的。&lt;code&gt;32 位指令在 64 位机器上执行，困难不大，可以兼容&lt;/code&gt;。 &lt;code&gt;如果是 64 位指令，在 32 位机器上执行就困难了&lt;/code&gt;。因为 32 位指令在 64 位机器执行的时候，需要的是&lt;code&gt;一套兼容机制&lt;/code&gt;；但是 64 位指令在 32 位机器上执行，32 位的寄存器都&lt;code&gt;存不下&lt;/code&gt;指令的参数。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;操作系统也是一种程序，如果是 64 位操作系统，也就是操作系统中程序的指令都是 64 位指令，因此不能安装在 32 位机器上。&lt;/code&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>04</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/4/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/4/</guid>
+        <description>我看到过一道非常不错的面试题：不支持递归的程序语言如何实现递归程序？ 之所以说这道题好，是因为： 首先，它不是纯粹考概念和死记硬背，求职者在回答问题之前需要进行一定的思考； 其次，这道题目可以继续深挖，比如可以让求职者具体写一个程序，就变成了一道编程题； 最后，这道题目有实战意义，它背后考察的是求职者的编程功底。 为了弄清楚这道题目，你需要对程序有一个更深层次的认识，不仅仅停留在指令的执行层面，而是要灵活使</description>
+        <content:encoded>&lt;h2 id=&#34;我看到过一道非常不错的面试题不支持递归的程序语言如何实现递归程序&#34;&gt;我看到过一道非常不错的面试题：不支持递归的程序语言如何实现递归程序？&lt;/h2&gt;
+&lt;p&gt;之所以说这道题好，是因为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;首先，它不是纯粹考概念和死记硬背，求职者在回答问题之前需要进行一定的思考；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;其次，这道题目可以继续深挖，比如可以让求职者具体写一个程序，就变成了一道编程题；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后，这道题目有实战意义，它背后考察的是求职者的编程功底。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了弄清楚这道题目，你需要对程序有一个更深层次的认识，不仅仅停留在指令的执行层面，而是要灵活使用指令，去实现更加复杂的功能。&lt;/p&gt;
+&lt;h2 id=&#34;for-循环如何被执行&#34;&gt;for 循环如何被执行&lt;/h2&gt;
+&lt;p&gt;首先，我们来看 for 循环是如何实现的。&lt;/p&gt;
+&lt;p&gt;下面是一个求 1 加到 100 的 Java 程序，请你思考如何将它转换为指令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;指令是简单的，像积木一样，程序是复杂的，像房子一样。我们将简单的事情组合，然后去完成复杂的事情，这就是程序员每天在做的。在这个过程中，你会产生思考，比如如何排列组合，如何搭积木，才能更快更准地完成项目？所以这也是训练思维的一个过程。&lt;/p&gt;
+&lt;p&gt;经过思考，如果按照顺序执行上面的程序，则需要很多指令，因为 for 循环可以执行 1 次，也可以执行 100W 次，还可以执行无数次。因此，指令的设计者提供了一种 &lt;code&gt;jump&lt;/code&gt; 类型的指令，让你可以在程序间跳跃，比如:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;loop:
+  jump loop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这就实现了一个无限循环，程序执行到 &lt;code&gt;jumploop&lt;/code&gt; 的时候，就会跳回 &lt;code&gt;loop&lt;/code&gt; 标签。&lt;/p&gt;
+&lt;p&gt;用这种方法，我们可以将 &lt;code&gt;for&lt;/code&gt; 循环用底层的指令实现：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;64
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;65
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;66
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;67
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;68
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;69
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;70
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;71
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;72
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;73
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;74
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;75
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;76
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;77
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;78
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;79
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;80
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;81
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;82
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;对应&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Java&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;代码&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;我们首先将&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;和&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;存储到两个地址&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;这两个地址我们用&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;和&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$s&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;表示&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;store&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 将数字 1 存入i的地址
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;store&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$s&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 将数字 0 存入 s 的地址
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;接下来循环要开始了&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;我们在这里预留一个&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;标签&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;是一个自定义标签&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;它代表指令的相对位置&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;后续我们可以用&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jump&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;指令跳转回这个位置实现循环&lt;/span&gt;
+&lt;span class=&#34;nl&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;loop:&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;循环标签&lt;/span&gt;
+
+
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;100&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;接下来我们开始实现循环控制&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;我们先首先&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;100的比较&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;我们先将变量&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;的地址&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;也就是&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;导入寄存器&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;然后我们用&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;比较指令&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;和数字&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;100&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 比较 R0 和数字 100
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;注意指令不会有返回值&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;它会进行计算&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;然后改变机器的状态&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;也就是寄存器&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;比较后&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;有几个特殊的寄存器会保存比较结果&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;然后我们用&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ja&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;（&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;jump&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;above&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;）&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;如果比较结果&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;比&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;大&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;那么我们就跳转到&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;end&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;标签&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;实现循环的跳出&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;ja&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;end&lt;/span&gt; 
+
+&lt;span class=&#34;n&#34;&gt;nop&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;如果&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;那么ja&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;end&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;没有生效&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;这时我们处理&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;首先我们把变量&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;所在地址的数据导入寄存器&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R1&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R1&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;然后我们把寄存器R0和R1加和&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;把结果存储寄存器&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R2&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;add&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R2&lt;/span&gt; 
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;这时&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;我们把寄存器&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R2&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;的值存入变量&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;所在的地址&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;store&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$s&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;刚才我们完成了一次循环&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;我们还需要维护变量&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;的自增&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;现在&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;的值在&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;中&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;我们首先将整数&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;叠加到&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;上&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;add&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;再把&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;的值存入i所在的内存地址&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;store&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;$i&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;这时我们的循环体已经全部执行完成&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;我们需要调转回上面&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;标签所在的位置&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;继续循环&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;jump&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;loop&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;nop&lt;/span&gt;
+&lt;span class=&#34;nl&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;end:&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通过上面的方法，我们成功将 for 循环的程序转换成了指令，然后再将它们编码成二进制，就可以存储到内存中了。&lt;/p&gt;
+&lt;p&gt;讲到这里，我要强调几个事情：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;jump 指令直接操作 PC 指针，但是很多 CPU 会抢先执行下一条指令，因此通常我们在 jump 后面要跟随一条 nop 指令，让 CPU 空转一个周期，避免 jump 下面的指令被执行。&lt;code&gt;是不是到了微观世界，和你所认识的程序还不太一样？&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;上面我写指令的时候用到了 add/store 这些指令，它们叫作助记符，是帮助你记忆的。整体这段程序，我们就称作汇编程序。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因为不同的机器助记符也不一样，所以你不用太关注我用的是什么汇编语言，也不用去记忆这些指令。当你拿到指定芯片的时候，直接去查阅芯片的说明书就可以了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;虽然不同 CPU 的指令不一样，但也是有行业标准的。现在使用比较多的是 RISC（精简指令集）和 CISC（复杂指令集）。比如目前Inte 和 AMD 家族主要使用 CISC 指令集，ARM 和 MIPS 等主要使用RISC 指令集。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;条件控制程序&#34;&gt;条件控制程序&lt;/h2&gt;
+&lt;p&gt;条件控制程序有两种典型代表，一种是 &lt;code&gt;if-else&lt;/code&gt; ，另一种是 &lt;code&gt;switch-case&lt;/code&gt; 。 总体来说， &lt;code&gt;if-else&lt;/code&gt; 翻译成指令，是比较简单的，你需要用跳转指令和比较指令处理它的跳转逻辑。&lt;/p&gt;
+&lt;p&gt;当然，它们的使用场景不同，这块我不展开了。在这里我主要想跟你说说，它们的内部实现是不一样的。&lt;code&gt;if-else&lt;/code&gt; 是一个自上向下的执行逻辑， &lt;code&gt;switch-case&lt;/code&gt;是一种精确匹配算法。比如你有 1000 个 case，如果用 &lt;code&gt;if-else&lt;/code&gt; 你需要一个个比较，最坏情况下需要比较 999 次；而如果用 &lt;code&gt;switch-case&lt;/code&gt; ，就不需要一个个比较，通过算法就可以直接定位到对应的&lt;code&gt;case&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;举个具体的例子，比如一个根据数字返回星期的程序。如果用&lt;code&gt;if-else&lt;/code&gt;，那么你需要这样做：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;week&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;周一&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;week&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;周二&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;err&#34;&gt;……&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果用 &lt;code&gt;switch-case&lt;/code&gt; 的逻辑，你可能会这样计算：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;跳转位置&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;当前PC&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;week&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;你不用太关心上面的数学关系，我只是举一个例子告诉你， &lt;code&gt;switch-case&lt;/code&gt; 实现更多是依赖数学关系，直接算出 case 所在指令的位置，而不是一行行执行和比较。&lt;/p&gt;
+&lt;h2 id=&#34;函数&#34;&gt;函数&lt;/h2&gt;
+&lt;p&gt;了解了循环和条件判断，我们再来看看函数是如何被执行的。函数的执行过程必须深入到底层，也会涉及一种叫作栈的数据结构。&lt;/p&gt;
+&lt;p&gt;下面是一段 C 程序，传入两个参数，然后返回两个参数的和：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里我先不说具体的解决方案，希望你可以先自己思考。其实到这里，你已经学了不少知识了。下面我们一起分析一下，一种思考的方向是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;通过观察，我们发现函数的参数 a,b 本质是内存中的数据，因此需要给它们分配内存地址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;函数返回值也是内存中的数据，也就是返回值也需要分配内存地址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;调用函数其实就是跳转到函数体对应的指令所在的位置，因此函数名可以用一个标签，调用时，就用 &lt;code&gt;jump&lt;/code&gt; 指令跟这个标签。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;# 首先我们定义一个叫作add的标签
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;nl&#34;&gt;add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+
+&lt;span class=&#34;cp&#34;&gt;# 然后我们将a和b所在地址中的数据都导入寄存器
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R1&lt;/span&gt;
+
+&lt;span class=&#34;cp&#34;&gt;# 然后我们将寄存器求和，并将结果回写到返回地址
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;add&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R0&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R2&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;store&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;R2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;当我们需要调用这个函数的时候，我们就构造下面这样的指令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;n&#34;&gt;jump&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;add&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;细心的同学可能已经发现，这里有 2 个问题还没有解决：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;参数如何传递给函数？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;返回值如何传递给调用者？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;为了解决这 2 个问题，我们就需要用到前面提到的一个叫作栈的数据结构。栈的英文是 &lt;code&gt;Stack&lt;/code&gt;，意思是码放整齐的一堆东西。首先在调用方，我们将参数传递给栈；然后在函数执行过程中，我们从栈中取出参数。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;函数执行过程中，先将执行结果写入栈中，然后在返回前把之前压入的参数出栈，调用方再从栈中取出执行结果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/14.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;将参数传递给 Stack 的过程，叫作压栈。取出结果的过程，叫作出栈。栈就好像你书桌上的一摞书，压栈就是把参数放到书上面，出栈就是把顶部的书拿下来。&lt;/p&gt;
+&lt;p&gt;因为栈中的每个数据大小都一样，所以在函数执行的过程中，我们可以通过参数的个数和参数的序号去计算参数在栈中的位置。&lt;/p&gt;
+&lt;p&gt;接下来我们来看看函数执行的整体过程：假设要计算 11 和 15 的和，我们首先在内存中开辟一块单独的空间，也就是栈。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/15.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;就如前面所讲，栈的使用方法是不断往上堆数据，所以需要一个栈指针（Stack Pointer， SP）指向栈顶（也就是下一个可以写入的位置）。每次将数据写入栈时，就把数据写到栈指针指向的位置，然后将 SP 的值增加。&lt;/p&gt;
+&lt;p&gt;为了提高效率，我们通常会用一个特殊的寄存器来存储栈指针，这个寄存器就叫作 Stack Pointer，在大多数芯片中都有这个特殊的寄存器。一开始，SP 指向 0x100 位置，而 0x100 位置还没有数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;压栈参数11&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来我们开始传参，我们先将 11 压栈，之所以称作压栈（ Push)，就好像我们把数据 11 堆在内存中一样。模拟压栈的过程是下面两条指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;store #11 -&amp;gt; $SP // 将11存入SP指向的地址0x100
+
+add SP, 4, SP  // 栈指针增加4（32位机器）
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;第一条 store 指令将 SP 寄存器指向的内存地址设置为常数 11。&lt;/p&gt;
+&lt;p&gt;第二条指令将栈指针自增 4。&lt;/p&gt;
+&lt;p&gt;这里用美元符号代表将 11 存入的是 SP 寄存器指向的内存地址，这是一次间接寻址。存入后，栈指针不是自增 1 而是自增了 4，因为我在这里给你讲解时，用的是一个 32 位宽的 CPU 。如果是 64 位宽的 CPU，那么栈指针就需要自增 8。&lt;/p&gt;
+&lt;p&gt;压栈完成后，内存变成下图中所示的样子。11 被写入内存，并且栈指针指向了 0x104 位置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/16.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;压栈参数15&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后我们用同样的方法将参数 15 压栈。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;压栈后，11 和 15 都被放入了对应的内存位置，并且栈指针指向了 0x108。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;将返回值压栈&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来，我们将返回值压栈。到这里你可能会问，返回值还没有计算呢，怎么就压栈了？其实这相当于一个占位，后面我们会改写这个地址。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;调用函数&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当我们完成了上面的压栈后，就开始调用函数，一种简单的做法是用 jump 指令直接跳转到函数的标签，比如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jump add
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这个时候，要加和在栈中的数据 11 和 15，我们可以利用 SP 指针寻找数据。11 距离当前 SP 指针差 3 个位置，15 距离 SP 指针差 2 个位置。这种寻址方式是一种复合的寻址方式，是间接 + 偏移量寻址。&lt;/p&gt;
+&lt;p&gt;我们可以用下面的代码完成将 11 和 15 导入寄存器的过程：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;load $(SP - 12) -&amp;gt; R0
+load $(SP - 8) -&amp;gt; R1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后进行加和，将结果存入 R2。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;load R0 R1 R2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后我们可以再次利用数学关系将结果写入返回值所在的位置。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;store R2 -&amp;gt; $(SP-4) 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面我们用到了一种间接寻址的方式来进行加和运算，也就是利用 SP 中的地址做加减法操作内存。&lt;/p&gt;
+&lt;p&gt;经过函数调用的结果如下图所示，运算结果 26 已经被写入了返回值的位置：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/19.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;发现-解决问题&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个好的解决方案，也会面临问题。现在我们就遇到了麻烦：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;函数计算完成，这时应该跳转回去。可是我们没有记录函数调用前 PC 指针的位置，因此这里需要改进，我们需要存储函数调用前的 PC 指针方便调用后恢复。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;栈不可以被无限使用，11和 15 作为参数，计算出了结果 26，那么它们就可以清空了。如果用调整栈指针的方式去清空，我们就会先清空 26。此时就会出现顺序问题，因此我们需要调整压栈的顺序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;具体顺序你可以看下图。首先，我们将函数参数和返回值换位，这样在清空数据的时候，就会先清空参数，再清空返回值。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/20.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;然后我们在调用函数前，还需要将返回地址压栈。这样在函数计算完成前，就能跳转回对应的返回地址。翻译成指令，就是下面这样：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;
+
+&lt;span class=&#34;cp&#34;&gt;## 压栈返回值
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;add&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SP&lt;/span&gt; 
+
+
+
+&lt;span class=&#34;cp&#34;&gt;# 计算返回地址
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;cp&#34;&gt;# 我们需要跳转到清理堆栈那行，也就是16行
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;MOV&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PC&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;参数个数&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SP&lt;/span&gt;
+
+
+
+&lt;span class=&#34;cp&#34;&gt;# 压栈参数的程序
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;……&lt;/span&gt;
+
+
+
+&lt;span class=&#34;cp&#34;&gt;# 执行函数，计算返回值
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;call&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;function&lt;/span&gt;
+
+
+
+&lt;span class=&#34;cp&#34;&gt;# 清理堆栈
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;add&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;参数个数&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;，&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SP&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;递归函数如何被执行&#34;&gt;递归函数如何被执行&lt;/h2&gt;
+&lt;p&gt;我们刚刚使用了栈解决了函数的调用问题。但是这个方案究竟合不合理，还需要用更复杂的情况来验证。&lt;/p&gt;
+&lt;p&gt;如下所示，我们给出一个递归函数，请你判断是否可以用上面的方法执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;递归的时候，我们每次执行函数都形成一个如下所示的栈结构：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/21.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;比如执行 sum(100)，我们就会形成一个复杂的栈，第一次调用 n = 100，第二次递归调用 n = 99：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;它们堆在了一起，就形成了一个很大的栈，简化一下就是这样的一个模型，如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/23.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;到这里，递归消耗了更多空间，但是也保证了中间计算的独立性。当递归执行到 100 次的时候，就会执行下面的语句：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;于是触发第 99 次递归执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// sum(1) = 1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;上面程序等价于&lt;code&gt;return 3&lt;/code&gt;，接着再触发第 98 次递归的执行，然后是第 97 次，最终触发到第一次函数调用返回结果。&lt;/p&gt;
+&lt;p&gt;由此可见，栈这种结构同样适合递归的计算。事实上，计算机编程语言就是用这种结构来实现递归函数。&lt;/p&gt;
+&lt;h2 id=&#34;类型class如何实现&#34;&gt;类型（class）如何实现&lt;/h2&gt;
+&lt;p&gt;按照我们之前已经学习到的知识：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;变量是一个内存地址，所以只需要分配内存就好了；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;循环控制可以用跳转加判断实现；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;条件控制也可以用跳转加判断实现，只不过如果是 switch-case 还需要一定的数学计算；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;函数调用需要压栈参数、返回值和返回地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后，我们来说说类型是如何实现的，也就是很多语言都支持的 class 如何被翻译成指令。其实 class 实现非常简单，首先一个 class 会分成两个部分，一部分是数据（也称作属性），另一部分是函数（也称作方法）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/24.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;class 有一个特殊的方法叫作构造函数，它会为 class 分配内存。构造函数执行的时候，开始扫描类型定义中所有的属性和方法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果遇到属性，就为属性分配内存地址；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果遇到方法，方法本身需要存到正文段（也就是程序所在的内存区域），再将方法的值设置为方法指令所在的内存地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当我们调用一个 class 方法的时候，本质上是执行了一个函数，因此和函数调用是一致的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先把返回值和返回地址压栈；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后压栈参数；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后执行跳转。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这里有一个小问题，有时候 class 的方法会用到&lt;code&gt;this&lt;/code&gt; ，这其实并不复杂，你仔细想想， &lt;code&gt;this&lt;/code&gt;指针不就是构造函数创建的一个指向 class 实例的地址吗？那么，有一种简单的实现，就是我们可以把 this 作为函数的第一个参数压栈。这样，类型的函数就可以访问类型的成员了，而类型也就可以翻译成指令了。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;下面我们做一个简单的总结：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;我们写的程序需要翻译成指令才能被执行，在 03 课时中我们提到过，这个翻译工具叫作编译器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;平时你编程做的事情，用机器指令也能做，所以从计算能力上来说它们是等价的，最终这种计算能力又和图灵机是等价的。如果一个语言的能力和图灵机等价，我们就说这个语言是图灵完备的语言。现在市面上的绝大多数语言都是图灵完备的语言，但也有一些不是，比如 HTML、正则表达式和 SQL 等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们通过汇编语言构造高级程序；通过高级程序构造自己的业务逻辑，这些都是工程能力的一种体现。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;那么通过这节课的学习，你现在可以来回答本节关联的面试题目：&lt;code&gt;一个程序语言如果不支持递归函数的话，该如何实现递归算法？&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;老规矩，请你先在脑海里思考问题的答案，并把你的思考写在留言区，然后再来看我接下来的分析。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;【解析】 思路如下：&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我们需要用到一个栈（其实用数组就可以）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们还需要一个栈指针，支持寄存器的编程语言能够直接用寄存器，而不支持直接用寄存器的编程语言，比如 Java，我们可以用一个变量；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后我们可以实现压栈、出栈的操作，并按照上面学习的函数调用方法操作我们的栈。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>05</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/5/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/5/</guid>
+        <description>近两年我在面试求职者的时候，喜欢问这样一道面试题：SSD、内存和 L1 Cache 相比速度差多少倍？ 其实比起复杂的技术问题，我更喜欢在面试中提问这种像生活常识一样的简单问题。因为我觉得，复杂的问题是由简单的问题组成的，如果你把简单的问题学扎实了，那么复杂问题也是可以自己推导的。 如果你不知道 L1 Cache，可能会错误地判断内存执行速度。我们写程序，会用寄存器、内存以及硬盘，所以按照墨菲定律，如果这里有一个认知是错误</description>
+        <content:encoded>&lt;h2 id=&#34;近两年我在面试求职者的时候喜欢问这样一道面试题ssd内存和-l1-cache-相比速度差多少倍&#34;&gt;近两年我在面试求职者的时候，喜欢问这样一道面试题：SSD、内存和 L1 Cache 相比速度差多少倍？&lt;/h2&gt;
+&lt;p&gt;其实比起复杂的技术问题，我更喜欢在面试中提问这种像生活常识一样的简单问题。因为我觉得，复杂的问题是由简单的问题组成的，如果你把简单的问题学扎实了，那么复杂问题也是可以自己推导的。&lt;/p&gt;
+&lt;p&gt;如果你不知道 L1 Cache，可能会错误地判断内存执行速度。我们写程序，会用寄存器、内存以及硬盘，所以按照墨菲定律，如果这里有一个认知是错误的，那么最终的结果就会产生问题。&lt;/p&gt;
+&lt;p&gt;下面，回到我们今天的问题，这个问题关联的知识点是存储器分级策略。接下来，请你带着问题开始学习今天的内容。&lt;/p&gt;
+&lt;h2 id=&#34;为什么会有存储器分级策略&#34;&gt;为什么会有存储器分级策略？&lt;/h2&gt;
+&lt;p&gt;要想弄清楚存储器分级策略。&lt;/p&gt;
+&lt;p&gt;首先，你要弄清楚，“我们希望存储器是什么样子的”，也就是“我们的需求是什么”？&lt;/p&gt;
+&lt;p&gt;然后，你要弄清楚，我们的需求有哪些“实现约束”。&lt;/p&gt;
+&lt;p&gt;从需求上讲，我们希望存储器速度快、体积小、空间大、能耗低、散热好、断电数据不丢失。但在现实中，我们往往无法把所有需求都实现。&lt;/p&gt;
+&lt;p&gt;下面我们举几个例子，带你深入体会一下，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;如果一个存储器的体积小，那它存储空间就会受到制约。&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;如果一个存储器电子元件密度很大，那散热就会有问题。因为电子元件都会产生热能，所以电子元件非常集中的 CPU，就需要单独的风扇或者水冷帮助电子元件降温。&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;如果一个存储器离 CPU 较远，那么在传输过程中必然会有延迟，因此传输速度也会下降。&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里你可能会有疑问，因为在大多数人的认知里，光速是很快的，而信号又是以光速传输的。既然光速这么快，那信号的延迟应该很小才对。但事实并不是这样，比如时钟信号是 1GHz 的 CPU，1G 代表 10 个亿，因此时钟信号的一个周期是 1/10 亿秒。而光的速度是 3×10 的 8 次方米每秒，就是 3 亿米每秒。所以在一个周期内，光只能前进 30 厘米。&lt;/p&gt;
+&lt;p&gt;你看！虽然在宏观世界里光速非常快，但是到计算机世界里，光速并没有像我们认知中的那么快。所以即使元件离 CPU 的距离稍微远了一点，运行速度也会下降得非常明显。&lt;/p&gt;
+&lt;p&gt;你可能还会问，那干吗不把内存放到 CPU 里？&lt;/p&gt;
+&lt;p&gt;如果你这么做的话，除了整个电路散热和体积会出现问题，服务器也没有办法做定制内存了。也就是说 CPU 在出厂时就决定了它的内存大小，如果你想换更大的内存，就要换 CPU，而组装定制化是你非常重要的诉求，这肯定是不能接受的。&lt;/p&gt;
+&lt;p&gt;此外，在相同价格下，一个存储器的速度越快，那么它的能耗通常越高。能耗越高，发热量越大。&lt;/p&gt;
+&lt;p&gt;因此，我们上面提到的需求是不可能被全部满足的，除非将来哪天存储技术有颠覆性的突破。&lt;/p&gt;
+&lt;h2 id=&#34;存储器分级策略&#34;&gt;存储器分级策略&lt;/h2&gt;
+&lt;p&gt;既然我们不能用一块存储器来解决所有的需求，那就必须把需求分级。&lt;/p&gt;
+&lt;p&gt;一种可行的方案，就是根据数据的使用频率使用不同的存储器：高频使用的数据，读写越快越好，因此用最贵的材料，放到离 CPU 最近的位置；使用频率越低的数据，我们放到离 CPU 越远的位置，用越便宜的材料。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/25.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;具体来说，通常我们把存储器分成这么几个级别：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;寄存器；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;L1-Cache；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;L2-Cache；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;L3-Cahce；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内存；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;硬盘/SSD。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;寄存器register&#34;&gt;寄存器（Register）&lt;/h2&gt;
+&lt;p&gt;寄存器紧挨着 CPU 的控制单元和逻辑计算单元，它所使用的材料速度也是最快的。就像我们前面讲到的，存储器的速度越快、能耗越高、产热越大，而且花费也是最贵的，因此数量不能很多。&lt;/p&gt;
+&lt;p&gt;寄存器的数量通常在几十到几百之间，每个寄存器可以用来存储一定字节（byte）的数据。比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;32 位 CPU 中大多数寄存器可以存储 4 个字节；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;64 位 CPU 中大多数寄存器可以存储 8 个字节。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;寄存机的访问速度非常快，一般要求在半个 CPU 时钟周期内完成读写。比如一条要在 4 个周期内完成的指令，除了读写寄存器，还需要解码指令、控制指令执行和计算。如果寄存器的速度太慢，那 4 个周期就可能无法完成这条指令了。&lt;/p&gt;
+&lt;h2 id=&#34;l1-cache&#34;&gt;L1-Cache&lt;/h2&gt;
+&lt;p&gt;L1- 缓存在 CPU 中，相比寄存器，虽然它的位置距离 CPU 核心更远，但造价更低。通常 L1-Cache 大小在几十 Kb 到几百 Kb 不等，读写速度在 2~4 个 CPU 时钟周期。&lt;/p&gt;
+&lt;h2 id=&#34;l2-cache&#34;&gt;L2-Cache&lt;/h2&gt;
+&lt;p&gt;L2- 缓存也在 CPU 中，位置比 L1- 缓存距离 CPU 核心更远。它的大小比 L1-Cache 更大，具体大小要看 CPU 型号，有 2M 的，也有更小或者更大的，速度在 10~20 个 CPU 周期。&lt;/p&gt;
+&lt;h2 id=&#34;l3-cache&#34;&gt;L3-Cache&lt;/h2&gt;
+&lt;p&gt;L3- 缓存同样在 CPU 中，位置比 L2- 缓存距离 CPU 核心更远。大小通常比 L2-Cache 更大，读写速度在 20~60 个 CPU 周期。L3 缓存大小也是看型号的，比如 i9 CPU 有 512KB L1 Cache；有 2MB L2 Cache； 有16MB L3 Cache。&lt;/p&gt;
+&lt;h2 id=&#34;内存&#34;&gt;内存&lt;/h2&gt;
+&lt;p&gt;内存的主要材料是半导体硅，是插在主板上工作的。因为它的位置距离 CPU 有一段距离，所以需要用总线和 CPU 连接。因为内存有了独立的空间，所以体积更大，造价也比上面提到的存储器低得多。现在有的个人电脑上的内存是 16G，但有些服务器的内存可以到几个 T。内存速度大概在 200~300 个 CPU 周期之间。&lt;/p&gt;
+&lt;h2 id=&#34;ssd-和硬盘&#34;&gt;SSD 和硬盘&lt;/h2&gt;
+&lt;p&gt;SSD 也叫固态硬盘，结构和内存类似，但是它的优点在于断电后数据还在。内存、寄存器、缓存断电后数据就消失了。内存的读写速度比 SSD 大概快 10~1000 倍。以前还有一种物理读写的磁盘，我们也叫作硬盘，它的速度比内存慢 100W 倍左右。因为它的速度太慢，现在已经逐渐被 SSD 替代。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/26.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;当 CPU 需要内存中某个数据的时候，如果寄存器中有这个数据，我们可以直接使用；如果寄存器中没有这个数据，我们就要先查询 L1 缓存；L1 中没有，再查询 L2 缓存；L2 中没有再查询 L3 缓存；L3 中没有，再去内存中拿。&lt;/p&gt;
+&lt;h2 id=&#34;缓存条目结构&#34;&gt;缓存条目结构&lt;/h2&gt;
+&lt;p&gt;上面我们介绍了存储器分级结构大概有哪些存储以及它们的特点，接下来还有一些缓存算法和数据结构的设计困难要和你讨论。比如 CPU 想访问一个内存地址，那么如何检查这个数据是否在 L1- 缓存中？换句话说，缓存中的数据结构和算法是怎样的？&lt;/p&gt;
+&lt;p&gt;无论是缓存，还是内存，它们都是一个线性存储器，也就是数据一个挨着一个的存储。如果我们把内存想象成一个只有 1 列的表格，那么缓存就是一个多列的表格，这个表格中的每一行叫作一个缓存条目。&lt;/p&gt;
+&lt;h2 id=&#34;方案-1&#34;&gt;方案 1&lt;/h2&gt;
+&lt;p&gt;缓存本质上是一个 Key-Value 的存储，它的 Key 是内存地址，值是缓存时刻内存地址中的值。我们先思考一种简单的方案，一个缓存条目设计 2 列：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;内存的地址；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缓存的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;CPU 读取到一个内存地址，我们就增加一个条目。当我们要查询一个内存地址的数据在不在 L1- 缓存中的时候，可以遍历每个条目，看条目中的内存地址是否和查询的内存地址相同。如果相同，我们就取出条目中缓存的值。&lt;/p&gt;
+&lt;p&gt;这个方法需要遍历缓存中的每个条目，因此计算速度会非常慢，在最坏情况下，算法需要检查所有的条目，所以这不是一个可行的方案。&lt;/p&gt;
+&lt;h2 id=&#34;方案-2&#34;&gt;方案 2&lt;/h2&gt;
+&lt;p&gt;其实很多优秀的方案，往往是从最笨的方案改造而来的。现在我们已经拥有了一个方案，但是这个方案无法快速确定一个内存地址缓存在哪一行。因此我们想要找到一个更好的方法，让我们看到一个内存地址，就能够快速知道它在哪一行。&lt;/p&gt;
+&lt;p&gt;这里，我们可以用一个数学的方法。比如有 1000 个内存地址，但只有 10 个缓存条目。内存地址的编号是 0、1、2、3，&amp;hellip;，999，缓存条目的编号是 0~9。我们思考一个内存编号，比如 701，然后用数学方法把它映射到一个缓存条目，比如 701 整除 10，得到缓存条目 1。&lt;/p&gt;
+&lt;p&gt;用这种方法，我们每次拿到一个内存地址，都可以快速确定它的缓存条目；然后再比较缓存条目中的第一列内存地址和查询的内存地址是否相同，就可以确定内存地址有没有被缓存。&lt;/p&gt;
+&lt;p&gt;延伸一下，这里用到了一种类似哈希表的方法：&lt;code&gt;地址 % 10&lt;/code&gt;，其实就构成了一个简单的哈希函数。&lt;/p&gt;
+&lt;h2 id=&#34;指令的预读&#34;&gt;指令的预读&lt;/h2&gt;
+&lt;p&gt;接下来我们讨论下指令预读的问题。&lt;/p&gt;
+&lt;p&gt;之前我们学过，CPU 顺序执行内存中的指令，CPU 执行指令的速度是非常快的，一般是 2~6 个 CPU 时钟周期；这节课，我们学习了存储器分级策略，发现内存的读写速度其实是非常慢的，大概有 200~300 个时钟周期。&lt;/p&gt;
+&lt;p&gt;不知道你发现没有？这也产生了一个非常麻烦的问题：CPU 其实是不能从内存中一条条读取指令再执行的，如果是这样做，那每执行一条指令就需要 200~300 个时钟周期了。&lt;/p&gt;
+&lt;p&gt;那么，这个问题如何处理呢？&lt;/p&gt;
+&lt;p&gt;这里我再多说一句，你在做业务开发 RPC 调用的时候，其实也会经常碰到这种情况，远程调用拖慢了整体执行效率，下面我们一起讨论这类问题的解决方案。&lt;/p&gt;
+&lt;p&gt;一个解决办法就是 CPU 把内存中的指令预读几十条或者上百条到读写速度较快的 L1- 缓存中，因为 L1- 缓存的读写速度只有 2~4 个时钟周期，是可以跟上 CPU 的执行速度的。&lt;/p&gt;
+&lt;p&gt;这里又产生了另一个问题：如果数据和指令都存储在 L1- 缓存中，如果数据缓存覆盖了指令缓存，就会产生非常严重的后果。因此，L1- 缓存通常会分成两个区域，一个是指令区，一个是数据区。&lt;/p&gt;
+&lt;p&gt;与此同时，又出现了一个问题，L1- 缓存分成了指令区和数据区，那么 L2/L3 需不需要这样分呢？其实，是不需要的。因为 L2 和 L3，不需要协助处理指令预读的问题。&lt;/p&gt;
+&lt;h2 id=&#34;缓存的命中率&#34;&gt;缓存的命中率&lt;/h2&gt;
+&lt;p&gt;接下来，还有一个重要的问题需要解决。就是 L1/L2/L3 加起来，缓存的命中率有多少？&lt;/p&gt;
+&lt;p&gt;所谓命中就是指在缓存中找到需要的数据。和命中相反的是穿透，也叫 miss，就是一次读取操作没有从缓存中找到对应的数据。&lt;/p&gt;
+&lt;p&gt;据统计，L1 缓存的命中率在 80% 左右，L1/L2/L3 加起来的命中率在 95% 左右。因此，CPU 缓存的设计还是相当合理的。只有 5% 的内存读取会穿透到内存，95% 都能读取到缓存。 这也是为什么程序语言逐渐取消了让程序员操作寄存器的语法，因为缓存保证了很高的命中率，多余的优化意义不大，而且很容易出错。&lt;/p&gt;
+&lt;h2 id=&#34;缓存置换问题&#34;&gt;缓存置换问题&lt;/h2&gt;
+&lt;p&gt;最后的一个问题，比如现在 L1- 缓存条目已经存满了，接下来 CPU 又读了内存，需要把一个新的条目存到 L1- 缓存中，既然有一个新的条目要进来，那就有一个旧的条目要出去。所以，这个时候我们就需要用一个算法去计算哪个条目应该被置换出去。这个问题叫作缓存置换问题。有关缓存置换问题，我会在 “21 | 进程的调度：进程调度都有哪些方法？”中和你讨论。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;这节课我们讲到了存储器分级策略，讨论了 L1/L2/L3 缓存的工作原理。本课时学习的内容，是所有缓存知识的源头。所有缓存系统的设计，都是存储资源的分级。我们在设计缓存的时候，除了要关心整体架构外，还需要注意细节，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;条目怎么设计？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;算法怎么设计？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;命中率怎么统计？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缓存怎么置换等？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在我们来说一下课前提出的问题：&lt;code&gt;SSD、内存和 L1 Cache 相比速度差多少倍？&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;还是老规矩，请你先自己思考这个问题的答案，写在留言区，然后再来看我接下来的分析。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;【解析】 因为内存比 SSD 快 10~1000 倍，L1 Cache 比内存快 100 倍左右。因此 L1 Cache 比 SSD 快了 1000~100000 倍。所以你有没有发现 SSD 的潜力很大，好的 SSD 已经接近内存了，只不过造价还略高。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这个问题告诉我们，不同的存储器之间性能差距很大，构造存储器分级很有意义，分级的目的是要构造缓存体系。&lt;/p&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>06</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/6/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/6/</guid>
+        <description>01 | 计算机是什么：“如何把程序写好”这个问题是可计算的吗？ 【问题】 可不可以构造一段程序证明停机问题无解?如果可以，请用自己熟悉的语言写出这段程序。 【解析】拿到这道题，我们可以先从问题的抽象入手。 判断一段程序是否会停机的方法可以抽象成一个函数。 一段程序，也可以抽象成一个函数。 因此，问题可以转换为：存不存在一个通用函数判断另一个函数是否会停止？ 接下来，再来构造冲突。 假设存在一个函数 willStop，它</description>
+        <content:encoded>&lt;h2 id=&#34;01--计算机是什么如何把程序写好这个问题是可计算的吗&#34;&gt;01 | 计算机是什么：“如何把程序写好”这个问题是可计算的吗？&lt;/h2&gt;
+&lt;p&gt;&lt;font color=Turquoise size=4&gt;【问题】 可不可以构造一段程序证明停机问题无解?如果可以，请用自己熟悉的语言写出这段程序。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;【解析】拿到这道题，我们可以先从问题的抽象入手。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;判断一段程序是否会停机的方法可以抽象成一个函数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一段程序，也可以抽象成一个函数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，问题可以转换为：存不存在一个通用函数判断另一个函数是否会停止？&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;接下来，再来构造冲突。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;假设存在一个函数 willStop，它只有一个参数 func，willStop 可以判断任意函数 func 是否会停止：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果会停止，返回 true；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果不会停止返回 false。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;willStop 具体如何实现我们无法给出，这里只是做一个假设。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;willStop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+   &lt;span class=&#34;c1&#34;&gt;//...
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下面我们构造一组冲突，构造一个叫作&lt;code&gt;wrappedWillStop&lt;/code&gt;函数，它调用&lt;code&gt;willStop&lt;/code&gt;构造冲突。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;wrappedWillStop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;willStop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;wrappedWillStop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;
+
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;nf&#34;&gt;wrappedWillStop&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;wrapped&lt;/code&gt;版本构造冲突方法如下：调用&lt;code&gt;willStop&lt;/code&gt;并把自己传进去。如果&lt;code&gt;willStop&lt;/code&gt;认为&lt;code&gt;wrapped&lt;/code&gt;会停止，那么就执行一个死循环。 如果&lt;code&gt;willStop&lt;/code&gt;认为&lt;code&gt;wrapped&lt;/code&gt;不会停止，就直接返回。&lt;/p&gt;
+&lt;p&gt;通过上述的方法，我们就知道&lt;code&gt;willStop&lt;/code&gt;这样的函数肯定是无法被实现的；也就是停机问题无解。&lt;/p&gt;
+&lt;h2 id=&#34;03--程序的执行相比-32-位-64-位的优势是什么&#34;&gt;03 | 程序的执行：相比 32 位 64 位的优势是什么？&lt;/h2&gt;
+&lt;p&gt;&lt;font color=Turquoise size=4&gt;【问题】 CPU 中有没有求对数的指令？如果没有那么程序如何去计算？&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;【解析】 CPU 中求一个数字的 2 倍，可以通过左移指令。比如 10 代表数字 2，左移 1 位变成 100 就代表数字 4。CPU 提供了乘法指令，所以如果求一个数字的幂，比如 33，可以拿 3*3 再乘以 3，需要计算 2 次。&lt;/p&gt;
+&lt;p&gt;但是如果求 3^100 次方，就不会去计算 100 次。比如你可以先计算出 3^25，然后再求 (3^50)^2，就是 3^100。所以这样就节省了 1 倍的运算。&lt;/p&gt;
+&lt;p&gt;我举例主要是想告诉大家，CPU 没有提供很复杂的指令，但是这里有很多算法可以降低我们的时间开销。&lt;/p&gt;
+&lt;p&gt;然后我们来说说求对数，求对数也是没有指令的。因为对数是指数的逆运算，当然我们可以利用乘法运算一点点尝试。比如计算 log_2^10，我们可以先尝试 2^3，再尝试 2^3.1 等等，一直找到以 2 为底 10 的对数。这其实是个近似算法。&lt;/p&gt;
+&lt;p&gt;另外，在这个问题上聪明的数学家提出了很多近似算法，提升了计算效率。具体这里比较超纲，面试通常只考到有没有求对数的指令，感兴趣的同学可以学习泰勒级数、牛顿迭代法等。&lt;/p&gt;
+&lt;h2 id=&#34;补充内容1-位的-cpu-能操作多大的内存空间&#34;&gt;【补充内容】1 位的 CPU 能操作多大的内存空间？&lt;/h2&gt;
+&lt;p&gt;在 03 课时程序的执行中，有个问题我讲的不是很明白，在这里我们再讨论一下。&lt;/p&gt;
+&lt;p&gt;之前提到过 32 位机器只能操作小于 32 位的地址总线，这里其实讲的不太清晰，历史上出现过 32 位操作 40 位地址总线的情况。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;接下来再和你探讨一个极端情况，1 位的 CPU 能操作多大的内存空间。&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  &lt;p&gt;答案是：无限大。&lt;/p&gt;
+&lt;p&gt;&lt;font color=CadetBlue size=3 &gt;比如说，地址总线 40 位，说明 CPU 上有 40 个引脚接了地址总线。CPU 只有 1 位，因此操作这 40 个引脚可以分成 40 步。每次设置 1 根引脚的电平是 0 还是 1。所以本身 CPU 多少位和能操作多少位地址总线，没有本质联系。但是如果需要分步操作，效率会低，需要多次操作，不如一次完成来得划算。 因此我们今天的设计通常不拿 32 位 CPU 操作 40 位地址总线，而是用 64 位 CPU 操作。&lt;/font&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;h2 id=&#34;04--构造复杂的程序--将一个递归函数转成非递归函数的通用方法&#34;&gt;04 | 构造复杂的程序 : 将一个递归函数转成非递归函数的通用方法？&lt;/h2&gt;
+&lt;p&gt;&lt;font color=Turquoise size=4&gt;【问题】 假设你使用的程序语言不支持递归程序，如果要求用栈来模拟下面这个斐波那契求第 n 项的程序，应该如何转换成等价的基于栈的非递归实现？&lt;/font&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+ &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+   &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;【解析】其实这道题目等同于递归的函数如何非递归表达？改写斐波那契数列第 N 项目。&lt;/p&gt;
+&lt;p&gt;下面是我的一个伪代码，需要实现一个 Stack。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;57
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;n&#34;&gt;fib&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+  &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+
+
+
+  &lt;span class=&#34;c1&#34;&gt;// 构造Stack
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;// stack中每一项是一个Record
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;// Record第一项是数据（参数或者返回值）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;// Record第二项是递归方向(down=1代表向下，up=2代表向上)
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;down&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;));&lt;/span&gt;
+
+
+
+  &lt;span class=&#34;c1&#34;&gt;// stack中只有一项的时候递归停止
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+    &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;phase&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+
+
+
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phase&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;down&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+        &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-))&lt;/span&gt;
+
+        &lt;span class=&#34;k&#34;&gt;continue&lt;/span&gt;
+
+      &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+      &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;down&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt;
+
+      &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;up&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt;
+
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+
+      &lt;span class=&#34;n&#34;&gt;last1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt;
+
+      &lt;span class=&#34;n&#34;&gt;last2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt;
+
+      &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;push&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;last1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;last2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;up&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt;
+
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;stack&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;pop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;];&lt;/span&gt;
+
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;05--存储器分级-ssd内存和-l1-cache-相比速度差多少倍&#34;&gt;05 | 存储器分级 ：SSD、内存和 L1 Cache 相比速度差多少倍？&lt;/h2&gt;
+&lt;p&gt;&lt;font color=Turquoise size=4&gt;【问题】 假设有一个二维数组，总共有 1M 个条目，如果我们要遍历这个二维数组，应该逐行遍历还是逐列遍历？&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;【解析】 二维数组本质还是 1 维数组。只不过进行了脚标运算。比如说一个 N 行 M 列的数组，第 y 行第 x 列的坐标是： x + y*M。因此当行坐标增加时，内存空间是跳跃的。列坐标增加时，内存空间是连续的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/operatingSystem/27.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;当 CPU 遍历二维数组的时候，会先从 CPU 缓存中取数据。&lt;/p&gt;
+&lt;p&gt;关键因素在于现在的 CPU 设计不是每次读取一个内存地址，而是读取每次读取相邻的多个内存地址（内存速度 200～300 CPU 周期，预读提升效率）。所以这相当于机器和人的约定，如果程序员不按照这个约定，就无法利用预读的优势。&lt;/p&gt;
+&lt;p&gt;另一方面当读取内存地址跳跃较大的时候，会触发内存的页面置换，这个知识在“模块五：内存管理”中学习。&lt;/p&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

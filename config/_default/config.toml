@@ -1,0 +1,57 @@
+# 网站地址
+baseURL = "https://www.zhugeqing.top"
+title = "请跟我一起踏上编程之旅"
+theme = "hugo-theme-zzo"
+publishDir = "docs"
+# viewportSize = "normal" # 博客屏幕大小
+viewportSize = "960px" # 博客屏幕大小
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+hasCJKLanguage = true
+
+summaryLength = 200 # 列表页面上帖子描述的长度。
+buildFuture = true # 如果为true，我们可以使用“未来日期”作为“对话”页面
+
+copyright = "&copy;{year}, “不可能”这三个字，你说的太多了！" # 版权符号：$ copy;当前年份：{year}
+timeout = 10000
+enableEmoji = true
+paginate = 13 # 分页列表中每页的项目数。
+rssLimit = 100
+
+enableGitInfo = false
+googleAnalytics = ""
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xHTML = true
+  [markup.highlight]
+    codeFences = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+  section = ["HTML", "RSS", "SearchIndex"]
+  taxonomyTerm = ["HTML", "RSS", "SearchIndex"]
+  taxonomy = ["HTML", "RSS", "SearchIndex"]
+
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+
+[taxonomies]
+  category = "categories"# Hugo包含对用户定义的内容分类（称为分类法）的支持。分类法是内容之间逻辑关系的分类。
+  tag = "tags"
+  series = "series"

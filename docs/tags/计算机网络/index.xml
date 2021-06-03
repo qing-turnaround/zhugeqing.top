@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>计算机网络 on 请跟我一起踏上编程之旅</title>
+    <link>https://www.zhugeqing.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 计算机网络 on 请跟我一起踏上编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, “不可能”这三个字，你说的太多了！</copyright>
+    <lastBuildDate>Wed, 05 May 2021 12:00:56 +0900</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>01</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/computernetwork/chapter1/1/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/computernetwork/chapter1/1/</guid>
+        <description>网络的组成 我们习惯称今天的时代为云时代，整个世界可以看作一张巨大的、立体的网。在这个时代里产生的各种服务，就好像水和电一样，打开即用。透过这张巨大的网去观察，里面还会有一个个小型的网络。你可以想象，用无数个节点构成一个个小型网络，再用小型网络组成中型网络，再组成大型网络，以此类推，最后组成完整的一个如星河般的世界。 公司内网 如果你仔细分析一个小型网络，比如一个公司网络，就会得到下图 1 所示的结构： 图 1</description>
+        <content:encoded>&lt;h2 id=&#34;网络的组成&#34;&gt;网络的组成&lt;/h2&gt;
+&lt;p&gt;我们习惯称今天的时代为云时代，整个世界可以看作一张巨大的、立体的网。在这个时代里产生的各种服务，就好像水和电一样，打开即用。透过这张巨大的网去观察，里面还会有一个个小型的网络。你可以想象，用无数个节点构成一个个小型网络，再用小型网络组成中型网络，再组成大型网络，以此类推，最后组成完整的一个如星河般的世界。&lt;/p&gt;
+&lt;h2 id=&#34;公司内网&#34;&gt;公司内网&lt;/h2&gt;
+&lt;p&gt;如果你仔细分析一个小型网络，比如一个公司网络，就会得到下图 1 所示的结构：&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/1.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 1：公司内网结构示例&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;公司网络从&lt;code&gt;本地网络服务提供商 （Internet Service Provider）&lt;/code&gt;接入，然后内部再分成一个个子网。上图 1 中，你看到的线路，也被称作&lt;code&gt;通信链路（Communication Link）&lt;/code&gt;，用于传输网络信号。你可以观察到，有的网络节点，同时接入了 2 条以上的链路，这个时候因为路径发生了分叉，数据传输到这些节点需要选择方向，因此我们在这些节点需要进行&lt;code&gt;交换（Switch）&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;数据发生交换的时候，会先从一条链路进入交换设备，然后缓存下来，再转发（切换）到另一条路径，如下图 2 所示：&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/2.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 2：封包交换（Packet Switch）&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;交换技术的本质，就是让&lt;code&gt;数据切换路径&lt;/code&gt;。因为，网络中的数据是以分组或封包（Packet）的形式传输，因此这个技术也称作&lt;code&gt;封包交换技术（Packet Switch）&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;比如说，你要传递一首 2Mb 的 MP3 的歌曲，歌曲本身不是一次传输完成的，而是被拆分成很多个封包。每个封包只有歌曲中的一部分数据，而封包一旦遇到岔路口，就需要封包交换技术帮助每个封包选择最合理的路径。&lt;/p&gt;
+&lt;p&gt;在网络中，常见的具有交换能力的设备是&lt;code&gt;路由器（Router）和链路层交换机（Link-Layer Switch）&lt;/code&gt;。通常情况下，两个网络可以通过路由器进行连接，多台设备可以通过交换机进行连接。&lt;code&gt;但是路由器通常也具有交换机的功能&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在上图 1 中，公司内部网络也被分成了多级子网。每个路由器、交换机构成一级子网。最高级的路由器在公司网络的边缘，它可以将网络内部节点连接到其他的网络（网络外部）。本地网络提供商（ISP）提供的互联网先到达边缘的路由器，然后再渗透到内部的网络节点。公司内部的若干服务器可以通过交换机形成一个局域网络；公司内部的办公设备，比如电脑和笔记本，也可以通过无线路由器或者交换机形成局域网络。&lt;code&gt;局域网络之间，可以通过路由器、交换机进行连接，从而构成一个更大的局域网&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;移动网络&#34;&gt;移动网络&lt;/h2&gt;
+&lt;p&gt;前面我们提到，网络传输需要通信链路（Communication Link），而通信链路是一个抽象概念。这里说的抽象，就是面向对象中抽象类和继承类的关系，比如同轴电缆是通信链路，无线信号的发送接收器可以构成通信链路，蓝牙信道也可以构成通信链路。&lt;/p&gt;
+&lt;p&gt;在移动网络中，无线信号构成了通信链路。在移动网络的设计中，通信的核心被称作&lt;code&gt;蜂窝塔（Cellular Tower）&lt;/code&gt;，有时候也称作&lt;code&gt;基站（BaseStation）&lt;/code&gt;。之所以有这样的名称，是因为每个蜂窝塔只覆盖一个六边形的范围，如果要覆盖一个很大的区域就需要很多的蜂窝塔（六边形）排列在一起，像极了蜜蜂的巢穴。这种六边形的结构，可以让信号无死角地覆盖。想象一下，如果是圆形结构，那么圆和圆之间就会有间隙，造成一部分无法覆盖的信号死角，而六边形就完美地解决了这个问题。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/3.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 3：蜂巢网络示意图&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;对于构成移动网络最小的网络结构——蜂窝网络来说，构造大体如图 4 所示：&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/4.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 4：蜂窝移动网络构成&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;图 4 中，国家或全球网络提供商将网络供给处于蜂窝网络边缘的路由器，路由器连接蜂窝塔，再通过蜂窝塔（基站）提供给处于六边形地区中的设备。通常是国家级别的网络服务提供商负责部署基站，比如中国电信、中国联通。将网络提供给一个子网的行为，通常称为&lt;code&gt;网络提供（Network Provider）&lt;/code&gt;，反过来，对一个子网连接提供商的网络，称为&lt;code&gt;网络接入（Network Access）&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;随着移动网络的发展，一个蜂窝网格中的设备越来越多，也出现了基站覆盖有重叠关系的网格，如下图 5 所示：&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/5.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 5 ：基站重叠的网格和边缘计算节点&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;这样设计的好处是，当一个基站过载、出现故障，或者用户设备周边信号出现不稳定，就可以切换到另一个基站的网络，不影响用户继续使用网络服务。&lt;/p&gt;
+&lt;p&gt;另一方面，在一定范围内的区域，离用户较近的地方还可以部署服务器，帮助用户完成计算。这相当于计算资源的下沉，称为&lt;code&gt;边缘计算&lt;/code&gt;。相比中心化的计算，&lt;code&gt;边缘计算延迟低、链路短&lt;/code&gt;，能够将更好的体验带给距离边缘计算集群最近的节点。从而让用户享受到更优质、延迟更低、算力更强的服务。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/6.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 6：边缘计算&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&#34;家用网络&#34;&gt;家用网络&lt;/h2&gt;
+&lt;p&gt;还有一个值得讨论的是家用网络。近些年，家用联网设备越来越多。比如说冰箱、空调、扫地机器人、灯光、电动窗帘……&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/7.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 7： 家用网络结构&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;如上图 7 所示，家用网络现在已经发展成一种网格状的连接。一方面家用网络会通过路由器接入本地 ISP 提供的网络服务。另一方面，一些设备，比如电脑、笔记本、手机、冰箱等都可以直接和路由器连接。&lt;code&gt;路由器也承担了链路层网关的作用，作为家用电器之间信息的交换设备&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;还有一些家用设备，比如说 10 多块钱的灯泡，不太适合内部再嵌入一个几十块钱可以接收 WI-FI 的芯片，这个时候就可以考虑用蓝牙控制电灯。路由器提供蓝牙不现实，因此一些家用电器也承担了蓝牙设备的控制器——比如说智能音箱。上图 7 中的智能音箱把家用网络带向了一个网格状，有的设备会同时连接路由器（WI-FI）和智能音箱，这样手机和音箱都可以直接控制这些设备。这样的设计，即便网络断开，仍然可以控制这些家用设备。&lt;/p&gt;
+&lt;h2 id=&#34;整体关系&#34;&gt;整体关系&lt;/h2&gt;
+&lt;p&gt;以上，我们了解了 3 种常见的网络：公司网络、移动网络和家用网络。它们的整体关系如下图 8 所示：&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/8.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 8：互联网整体结构&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;最顶部的全球或国家大型的 ISP 之间联网，构成了网络的主干。然后区域性的 ISP 承接主干网络，在这个基础之上再向家庭和公司提供接入服务。&lt;code&gt;移动蜂窝网络因为部署复杂，往往也是由大型 ISP 直接提供&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;数据的传输&#34;&gt;数据的传输&lt;/h2&gt;
+&lt;p&gt;上述的网络结构中，由庞大数目的个人、公司、组织、基站，形成一个个网络。在这些网络中，传递数据不是一件容易的事情。&lt;/p&gt;
+&lt;p&gt;为了传递数据，在网络中有几个特别重要的抽象。最终提供服务或者享受服务的设备，称为&lt;code&gt;终端（Terminal），或者端系统（End System）&lt;/code&gt;，有时候简单称为&lt;code&gt;主机（Host）&lt;/code&gt;。比如说：电脑、手机、冰箱、汽车等，我们都可以看作是一个主机（Host）。&lt;/p&gt;
+&lt;p&gt;然后，我们可以把网络传输分成两类，一类是端到端（Host-to-Host）的能力，由 TCP/IP 协议群提供。还有一类是广播的能力，是一对多、多对多的能力，可以看作是端到端（Host-to-Host）能力的延伸。&lt;/p&gt;
+&lt;p&gt;你可以思考一下，一个北京的主机（Host）向一个深圳的主机（Host）发送消息。那么，中间会穿越大量的网络节点，这些节点可以是路由器、交换机、基站等。在发送消息的过程中，可能跨越很多网络、通过很多边缘，也可能会通过不同的网络提供商提供的网络……而且，传输过程中，可能会使用不同材质的通信链路（Communication Link），比如同轴电缆、双绞线、光纤，或者通过无线传输的 WI-FI、卫星等。&lt;/p&gt;
+&lt;p&gt;网络基础设施往往不能一次性传输太大的数据量，因此通常会将数据分片传输。比如传输一个 MP3，我们会将 MP3 内容切分成很多个组，每个组也称作一个封包，英文都是 Packet。这样，如果一个封包损坏，只需要重发损坏的封包，而不需要重发所有数据。你可以类比下中文的活字印刷技术。&lt;/p&gt;
+&lt;p&gt;另一方面，网络中两点间的路径非常多，如果一条路径阻塞了，部分封包可以考虑走其他路径。发送端将数据拆分成封包（Packet），封包在网络中遇到岔路，由交换器和路由器节点决定走向，图 9 中是对封包交换技术的一个演示。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/1.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;图 9：封包交换技术&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;互联网是一个非常庞大的结构，从整体来看，互联网是一个立体的、庞大的网状结构。但是如果将它放大、再放大，将镜头拉近，在微观层面，我们会看到一个个网络、一台台设备，还会看到大量的封包在交换、有设备在不断地改变封包的走向、损坏的封包被重发、一个个光电信号被转化和传输。&lt;/p&gt;
+&lt;p&gt;这个过程看似复杂，但任何一个局部的设计都在井然有序地运行着。每次我想要深入研究互联网的设计时，都不禁再次感叹它的浩瀚——如今你看到的网络，是经过几个时代的发展沉淀下来的“宝藏”。不是某个人、某个团队就可以设计出来。所以从这个角度，我们可以把计算机网络看作是优秀的分层设计、精密的模块组装、准确的数值运算等一系列设计思想、工程方法的集合。如果你想学习软件架构，互联网就是一个最好的参照。&lt;/p&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>计算机网络</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>02</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/computernetwork/chapter1/2/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/computernetwork/chapter1/2/</guid>
+        <description>TCP 协议 TCP（Transport Control Protocol）是一个传输层协议，提供 Host-To-Host 数据的可靠传输，支持全双工，是一个连接导向的协议。 这里面牵涉很多概念，比如主机到主机、连接、会话、双工/单工及可靠性等，接下来我会为你逐一解释。 主机到主机（Host-To-Host） TCP 提供的是 Host-To-Host 传输，一台主机通过 TCP 发送数据给另一台主机。这里的主机（Host）是一个抽象的概念，可以是手机、平板、手表等。收发数据的设备都是主机</description>
+        <content:encoded>&lt;h2 id=&#34;tcp-协议&#34;&gt;TCP 协议&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;TCP（Transport Control Protocol）是一个传输层协议，提供 Host-To-Host 数据的可靠传输，支持全双工，是一个连接导向的协议。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里面牵涉很多概念，比如主机到主机、连接、会话、双工/单工及可靠性等，接下来我会为你逐一解释。&lt;/p&gt;
+&lt;h2 id=&#34;主机到主机host-to-host&#34;&gt;主机到主机（Host-To-Host）&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt; TCP 提供的是 Host-To-Host 传输，一台主机通过 TCP 发送数据给另一台主机&lt;/code&gt;。这里的主机（Host）是一个抽象的概念，可以是手机、平板、手表等。收发数据的设备都是主机，所以双方是平等的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; TCP 协议往上是应用到应用（Application-To-Application）的协议。&lt;/code&gt;什么是应用到应用的协议呢？比如你用微信发信息给张三，你的微信客户端、微信聊天服务都是应用。微信有自己的聊天协议，微信的聊天协议是应用到应用的协议；如果微信的聊天协议想要工作，就需要一个主机到主机的协议帮助它实现通信。&lt;/p&gt;
+&lt;p&gt;而 TCP 上层有太多的应用，不仅仅有微信，还有原神、抖音、网易云音乐……因此 TCP 上层的应用层协议使用 TCP 能力的时候，需要告知 TCP 是哪个应用——这就是&lt;code&gt;端口号。端口号用于区分应用&lt;/code&gt;，下文中我们还会详细讨论。&lt;/p&gt;
+&lt;p&gt;TCP 要实现主机到主机通信，就需要知道主机们的&lt;code&gt;网络地址（IP 地址）&lt;/code&gt;，但是 TCP 不负责实际地址到地址（Address-To-Address）的传输，因此 TCP 协议把 &lt;code&gt;IP 地址给底层的互联网层处理&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;互联网层，也叫网络层（Netowrk Layer），提供地址到地址的通信&lt;/code&gt;，IP 协议就在这一层工作。互联网层解决地址到地址的通信，但是不负责信号在具体两个设备间传递。因此，网络层会调用下方的链路层在两个相邻设备间传递信息。当信号在两个设备间传递的时候，科学家又设计出了物理层封装最底层的物理设备、传输介质等，由最下方的物理层提供最底层的传输能力。&lt;/p&gt;
+&lt;p&gt;以上的 5 层架构，我们称为&lt;code&gt;互联网协议群&lt;/code&gt;，也称作 &lt;code&gt;TCP/IP 协议群&lt;/code&gt;。总结下，&lt;code&gt;主机到主机（Host-To-Host）为应用提供应用间通信的能力&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;什么是连接和会话&#34;&gt;什么是连接和会话？&lt;/h2&gt;
+&lt;p&gt;下一个关联的概念是&lt;code&gt;连接（Connection）——连接是数据传输双方的契约&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;连接是通信双方的一个约定，目标是让两个在通信的程序之间产生一个默契，保证两个程序都在线，而且尽快地响应对方的请求，这就是&lt;code&gt;连接（Connection）&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;设计上，连接是一种传输数据的行为。传输之前，建立一个连接。具体来说，数据收发双方的内存中都建立一个用于维护数据传输状态的对象，比如双方 IP 和端口是多少？现在发送了多少数据了？状态健康吗？传输速度如何？等。所以，&lt;code&gt;连接是网络行为状态的记录&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;和连接关联的还有一个名词，叫作会&lt;code&gt;话（Session），会话是应用的行为&lt;/code&gt;。比如微信里张三和你聊天，那么张三和你建立一个会话。你要和张三聊天，你们创建一个聊天窗口，这个就是会话。你开始 Typing，开始传输数据，你和微信服务器间建立一个连接。如果你们聊一段时间，各自休息了，约定先不要关微信，1 个小时后再回来。那么连接会断开，因为聊天窗口没关，所以会话还在。&lt;/p&gt;
+&lt;p&gt;在有些系统设计中，会话会自动重连（也就是重新创建连接），或者帮助创建连接。 此外，会话也负责在多次连接中保存状态，比如 HTTP Session 在多次 HTTP 请求（连接）间保持状态（如用户信息）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;总结下，会话是应用层的概念，连接是传输层的概念。&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;双工单工问题&#34;&gt;双工/单工问题&lt;/h2&gt;
+&lt;p&gt;接下来我们聊聊什么是&lt;code&gt;双工/单工&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在任何一个时刻，如果数据只能单向发送，就是&lt;code&gt;单工&lt;/code&gt;，所以单工需要至少一条线路。如果在某个时刻数据可以向一个方向传输，也可以向另一个方向反方向传输，而且交替进行，叫作&lt;code&gt;半双工&lt;/code&gt;；半双工需要至少 1 条线路。最后，如果任何时刻数据都可以双向收发，这就是&lt;code&gt;全双工&lt;/code&gt;，全双工需要大于 1 条线路。当然这里的线路，是一个抽象概念，你可以并发地处理信号，达到模拟双工的目的。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;TCP 是一个双工协议，数据任何时候都可以双向传输。&lt;/code&gt;这就意味着客户端和服务端可以平等地发送、接收信息。正因为如此，客户端和服务端在 TCP 协议中有一个平等的名词——&lt;code&gt;Host（主机）&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;什么是可靠性&#34;&gt;什么是可靠性？&lt;/h2&gt;
+&lt;p&gt;上文提到 TCP 提供可靠性，那么可靠性是什么？&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;可靠性指数据保证无损传输&lt;/code&gt;。如果发送方按照顺序发送，然后数据无序地在网络间传递，就必须有一种算法在接收方将数据恢复原有的顺序。另外，如果发送方同时要把消息发送给多个接收方，这种情况叫作多播，可靠性要求每个接收方都无损收到相同的副本。多播情况还有强可靠性，就是如果有一个消息到达任何一个接收者，那么所有接受者都必须收到这个消息。说明一下，本专栏中，我们都是基于单播讨论可靠性。&lt;/p&gt;
+&lt;h2 id=&#34;tcp-的握手和挥手&#34;&gt;TCP 的握手和挥手&lt;/h2&gt;
+&lt;p&gt;TCP 是一个连接导向的协议，设计有&lt;code&gt;建立连接（握手）&lt;/code&gt;和&lt;code&gt;断开连接（挥手）&lt;/code&gt;的过程。TCP 没有设计会话（Session），因为会话通常是一个应用的行为。&lt;/p&gt;
+&lt;h2 id=&#34;tcp-协议的基本操作&#34;&gt;TCP 协议的基本操作&lt;/h2&gt;
+&lt;p&gt;TCP 协议有这样几个基本操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果一个 Host 主动向另一个 Host 发起连接，称为 SYN（Synchronization），请求同步；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果一个 Host 主动断开请求，称为 FIN（Finish），请求完成；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果一个 Host 给另一个 Host 发送数据，称为 PSH（Push），数据推送。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上 3 种情况，接收方收到数据后，都需要给发送方一个 &lt;code&gt;ACK（Acknowledgement）&lt;/code&gt;响应。请求/响应的模型是可靠性的要求，如果一个请求没有响应，发送方可能会认为自己需要重发这个请求。&lt;/p&gt;
+&lt;h2 id=&#34;建立连接的过程三次握手&#34;&gt;建立连接的过程（三次握手）&lt;/h2&gt;
+&lt;p&gt;因为要保持连接和可靠性约束，TCP 协议要保证每一条发出的数据必须给返回，返回数据叫作 ACK（也就是响应）。&lt;/p&gt;
+&lt;p&gt;按照这个思路，你可以看看建立连接是不是需要 3 次握手：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;客户端发消息给服务端（SYN）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;服务端准备好进行连接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;服务端针对客户端的 SYN 给一个 ACK&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;你可以能会问，到这里不就可以了吗？2 次握手就足够了。但其实不是，因为服务端还没有确定客户端是否准备好了。比如步骤 3 之后，服务端马上给客户端发送数据，这个时候客户端可能还没有准备好接收数据。因此还需要增加一个过程。&lt;/p&gt;
+&lt;p&gt;接下来还会发生以下操作：&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;服务端发送一个 SYN 给客户端&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;客户端准备就绪&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;客户端给服务端发送一个 ACK&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;你可能会问，上面不是 6 个步骤吗？ 怎么是 3 次握手呢？下面我们一起分析一下其中缘由。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;步骤 1 是 1 次握手；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;步骤 2 是服务端的准备，不是数据传输，因此不算握手；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;步骤 3 和步骤 4，因为是同时发生的，可以合并成一个 SYN-ACK 响应，作为一条数据传递给客户端，因此是第 2 次握手；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;步骤 5 不算握手；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;步骤 6 是第 3 次握手。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了方便你理解步骤 3 和步骤 4，这里我画了一张图。可以看到下图中 SYN 和 ACK 被合并了，因此建立连接一共需要 3 次握手，过程如下图所示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;从上面的例子中，你可以进一步思考 SYN、ACK、PSH 这些常见的标识位（Flag）在传输中如何表示。&lt;/p&gt;
+&lt;p&gt;一种思路是为 TCP 协议增加协议头。在协议头中取多个位（bit），其中 SYN、ACK、PSH 都占有 1 个位。比如 SYN 位，1 表示 SYN 开启，0 表示关闭。因此，SYN-ACK 就是 SYN 位和 ACK 位都置 1。这种设计，我们也称为&lt;code&gt;标识（Flag）&lt;/code&gt;。标识位是放在 TCP 头部的，关于标识位和 TCP 头的内容，我会在“04 | TCP 的稳定性：滑动窗口和流速控制是怎么回事？中详细介绍。&lt;/p&gt;
+&lt;h2 id=&#34;断开连接的过程4-次挥手&#34;&gt;断开连接的过程（4 次挥手）&lt;/h2&gt;
+&lt;p&gt;继续上面的思路，如果断开连接需要几次握手？给你一些提示，你可以在脑海中这样构思。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;客户端要求断开连接，发送一个断开的请求，这个叫作（FIN）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;服务端收到请求，然后给客户端一个 ACK，作为 FIN 的响应。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这里你需要思考一个问题，可不可以像握手那样马上传 FIN 回去？&lt;br /&gt;
+其实这个时候服务端不能马上传 FIN，因为断开连接要处理的问题比较多，比如说服务端可能还有发送出去的消息没有得到 ACK；也有可能服务端自己有资源要释放。因此断开连接不能像握手那样操作——将两条消息合并。所以，服务端经过一个等待，确定可以关闭连接了，再发一条 FIN 给客户端。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;客户端收到服务端的 FIN，同时客户端也可能有自己的事情需要处理完，比如客户端有发送给服务端没有收到 ACK 的请求，客户端自己处理完成后，再给服务端发送一个 ACK。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;经过以上分析，就可以回答上面这个问题了。是不是刚刚好 4 次挥手？过程如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/computerNetwork/12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;在学习 3 次握手、4 次挥手时，你一定要理解为什么这么设计，而不是死记硬背。最后。我们一起总结一下今天的重点知识。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;TCP 提供连接（Connection），让双方的传输更加稳定、安全。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TCP 没有直接提供会话，因为应用对会话的需求多种多样，比如聊天程序会话在保持双方的聊天记录，电商程序会话在保持购物车、订单一致，所以会话通常在 TCP 连接上进一步封装，在应用层提供。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TCP 是一个面向连接的协议（Connection -oriented Protocol），说的就是 TCP 协议参与的双方（Host）在收发数据之前会先建立连接。后面我们还会学习 UDP 协议，UDP 是一个面向报文（Datagram-oriented）的协议——协议双方不需要建立连接，直接传送报文（数据）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最后，连接需要消耗更多的资源。比如说，在传输数据前，必须先协商建立连接。因此，不是每种场景都应该用连接导向的协议。像视频播放的场景，如果使用连接导向的协议，服务端每向客户端推送一帧视频，客户端都要给服务端一次响应，这是不合理的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;那么通过这一讲的学习，你现在可以尝试来回答本讲关联的面试题目：TCP 为什么是 3 次握手，4 次挥手？&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;【解析】TCP 是一个双工协议，为了让双方都保证，建立连接的时候，连接双方都需要向对方发送 SYC（同步请求）和 ACK（响应）。&lt;/p&gt;
+&lt;p&gt;握手阶段双方都没有烦琐的工作，因此一方向另一方发起同步（SYN）之后，另一方可以将自己的 ACK 和 SYN 打包作为一条消息回复，因此是 3 次握手——需要 3 次数据传输。&lt;/p&gt;
+&lt;p&gt;到了挥手阶段，双方都可能有未完成的工作。收到挥手请求的一方，必须马上响应（ACK），表示接收到了挥手请求。&lt;code&gt;类比现实世界中，你收到一个 Offer，出于礼貌你先回复考虑一下，然后思考一段时间再回复 HR 最后的结果&lt;/code&gt;。最后等所有工作结束，再发送请求中断连接（FIN），因此是 4 次挥手。&lt;/p&gt;
+</content:encoded>
+        <dc:creator>林䭽</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>计算机网络</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

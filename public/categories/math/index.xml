@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>math on 请跟我一起踏上编程之旅</title>
+    <link>www.zhugeqing.top/categories/math/</link>
+    <description>Recent content in math on 请跟我一起踏上编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, “不可能”这三个字，你说的太多了！</copyright>
+    <lastBuildDate>Sat, 16 Nov 2019 12:00:06 +0900</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="www.zhugeqing.top/categories/math/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>MathJax support</title>
+        <link>www.zhugeqing.top/posts/test-mathjax/</link>
+        <pubDate>Sat, 16 Nov 2019 12:00:06 +0900</pubDate>
+        
+        <atom:modified>Sat, 16 Nov 2019 12:00:06 +0900</atom:modified>
+        <guid>www.zhugeqing.top/posts/test-mathjax/</guid>
+        <description>When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</description>
+        <content:encoded>&lt;p&gt;When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are&lt;br /&gt;
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="www.zhugeqing.topimages/feature1/infinity.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>math</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Katex support</title>
+        <link>www.zhugeqing.top/posts/test-katex/</link>
+        <pubDate>Fri, 15 Nov 2019 12:00:06 +0900</pubDate>
+        
+        <atom:modified>Fri, 15 Nov 2019 12:00:06 +0900</atom:modified>
+        <guid>www.zhugeqing.top/posts/test-katex/</guid>
+        <description>The following
+$$ \int_{a}^{b} x^2 dx $$
+Is an integral
+$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$
+Enable Katex in the config file by setting the katex param to true. This will import the necessary Katex CSS/JS.
+See the online reference of supported TeX functions.
+Note: For inline math to render correctly, your content file extension must be .mmark. See the official mmark site.
+Inline math: $ \varphi = \dfrac{1+\sqrt5}{2}= 1.</description>
+        <content:encoded>&lt;p&gt;The following&lt;/p&gt;
+&lt;p&gt;$$ \int_{a}^{b} x^2 dx $$&lt;/p&gt;
+&lt;p&gt;Is an integral&lt;/p&gt;
+&lt;p&gt;$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$&lt;/p&gt;
+&lt;p&gt;Enable Katex in the config file by setting the &lt;code&gt;katex&lt;/code&gt; param to &lt;code&gt;true&lt;/code&gt;. This will import the necessary Katex CSS/JS.&lt;/p&gt;
+&lt;p&gt;See the online reference of &lt;a href=&#34;https://katex.org/docs/supported.html&#34;&gt;supported TeX functions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; For inline math to render correctly, your content file extension must be &lt;code&gt;.mmark&lt;/code&gt;. See the &lt;a href=&#34;https://mmark.nl/&#34;&gt;official mmark site&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Inline math: $ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline math: $ \varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Block math:
+
+$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$ \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } } $$&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="www.zhugeqing.topimages/feature2/mathbook.png" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>math</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

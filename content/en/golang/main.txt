@@ -1,0 +1,24 @@
+{{< alert theme="info" >}}
+  
+{{< /alert >}}
+
+<font color=red></font>
+<font color=black></font>
+<font color=VioletRed></font>
+<font color=SkyBlue></font>
+<font color=MediumTurquoise></font>
+<font color=Fuchsia></font>
+<font color=LightSlateBlue></font>
+<font color=GreenYellow></font>
+	 黑色
+<p style="color:#000000";></p>
+    蓝色
+ <p style="color:#00FFFF";></p>
+    黄色
+<p style="color:#FFFF00";></p>
+    红色
+<p style="color:#FF0000";></p>
+青色
+<p style="color:#0099CC";></p>
+
+	<font face="黑体" color=green size=5>我是黑体，绿色，尺寸为5</font> 

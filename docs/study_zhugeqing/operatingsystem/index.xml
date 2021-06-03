@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>重学操作系统——选自拉勾教育 on 请跟我一起踏上编程之旅</title>
+    <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/</link>
+    <description>Recent content in 重学操作系统——选自拉勾教育 on 请跟我一起踏上编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, “不可能”这三个字，你说的太多了！</copyright>
+    <lastBuildDate>Wed, 05 May 2021 12:00:56 +0900</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/study_zhugeqing/operatingsystem/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>模块一</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter1/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>模块二</title>
+        <link>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter2/</link>
+        <pubDate>Wed, 05 May 2021 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Wed, 05 May 2021 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/study_zhugeqing/operatingsystem/chapter2/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

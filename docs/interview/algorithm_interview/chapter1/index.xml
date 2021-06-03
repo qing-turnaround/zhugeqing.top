@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>第一章 on 请跟我一起踏上编程之旅</title>
+    <link>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/</link>
+    <description>Recent content in 第一章 on 请跟我一起踏上编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, “不可能”这三个字，你说的太多了！</copyright>
+    <lastBuildDate>Sun, 13 Dec 2020 12:00:59 +0900</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/interview/algorithm_interview/chapter1/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>第一章第一节</title>
+        <link>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/1/</link>
+        <pubDate>Sun, 13 Dec 2020 12:00:59 +0900</pubDate>
+        
+        <atom:modified>Sun, 13 Dec 2020 12:00:59 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/1/</guid>
+        <description>在面对面试中的算法问题时，有一个合理的思考路径 面对算法问题，不畏惧 不代表能够“正确”回答每一个算法问题，但合理的思考方向其实更重要 算法面试优秀不意味着技术面试优秀 技术面试优秀不意味着能够拿到offer 算法面试不是高考，把这个过程看作是和面试官一起探讨一个问题的解决方案，对于问题的细节和应用环境，可以和面试官沟通 比如：我们需要对一组数据进行排序 看使用的具体环境： 这组数据有什么样的特征： 有没有可能包含</description>
+        <content:encoded>&lt;h2 id=&#34;在面对面试中的算法问题时有一个合理的思考路径&#34;&gt;在面对面试中的算法问题时，有一个合理的思考路径&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;面对算法问题，不畏惧&lt;/li&gt;
+&lt;li&gt;不代表能够“正确”回答每一个算法问题，但合理的思考方向其实更重要&lt;/li&gt;
+&lt;li&gt;算法面试优秀不意味着技术面试优秀&lt;/li&gt;
+&lt;li&gt;技术面试优秀不意味着能够拿到offer&lt;/li&gt;
+&lt;li&gt;算法面试不是高考，&lt;font color=GreenYellow size=3 &gt;把这个过程看作是和面试官一起探讨一个问题的解决方案，对于问题的细节和应用环境，可以和面试官沟通&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;比如：我们需要对一组数据进行排序&lt;br /&gt;
+看使用的具体环境：&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;这组数据有什么样的特征：&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有没有可能包含有大量重复的元素&lt;/li&gt;
+&lt;li&gt;如果有这种可能的话，&lt;font color=CadetBlue size=3 &gt;三路快排（请自行百度）&lt;/font&gt;是更好的选择&lt;br /&gt;
+&lt;font color=GreenYellow size=3 &gt;    &lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;这组数据有什么样的特征：&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否大部分数据离它正确的位置很近？是否近乎有序？&lt;/li&gt;
+&lt;li&gt;如果是这样的话，&lt;font color=CadetBlue size=3 &gt;插入排序（请自行百度）&lt;/font&gt;是更好的选择&lt;br /&gt;
+&lt;font color=GreenYellow size=3 &gt;    &lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;这组数据有什么样的特征：&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否数据的取值范围非常有限？比如对学生成绩排序。&lt;/li&gt;
+&lt;li&gt;如果是这样的话，&lt;font color=CadetBlue size=3 &gt;计数排序（请自行百度）&lt;/font&gt;是更好的选择&lt;br /&gt;
+&lt;font color=GreenYellow size=3 &gt;    &lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;对排序有什么额外的要求？&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否需要稳定的排序&lt;/li&gt;
+&lt;li&gt;如果是的话，&lt;font color=CadetBlue size=3 &gt;归并排序（请自行百度）&lt;/font&gt;是更好的选择&lt;br /&gt;
+&lt;font color=GreenYellow size=3 &gt;    &lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;数据的存储状况是怎样的？&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否是使用链表存储的？&lt;/li&gt;
+&lt;li&gt;如果是的话，&lt;font color=CadetBlue size=3 &gt;归并排序（请自行百度）&lt;/font&gt;是更好的选择&lt;br /&gt;
+&lt;font color=GreenYellow size=3 &gt;    &lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;数据的存储状况是怎样的？&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据的大小是否可以装载在内存里&lt;/li&gt;
+&lt;li&gt;数据量很大，或者内存很小，不足以装载在内存里，需要使用&lt;font color=CadetBlue size=3 &gt;外排序算法&lt;/font&gt;&lt;br /&gt;
+&lt;font color=GreenYellow size=3 &gt;    &lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;排序算法思考总结&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有没有可能包含有大量重复的元素&lt;/li&gt;
+&lt;li&gt;是否大部分数据离它正确的位置很近？是否近乎有序？&lt;/li&gt;
+&lt;li&gt;是否数据的取值范围非常有限？比如对学生成绩排序。&lt;/li&gt;
+&lt;li&gt;是否需要稳定的排序&lt;/li&gt;
+&lt;li&gt;是否是使用链表存储的？&lt;/li&gt;
+&lt;li&gt;数据的大小是否可以装载在内存里&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/font&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;“正确”的回答一个算法问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;“正确”包含对问题的独到见解；优化；代码规范；容错性；关键在于你所表达出解决问题的思路。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过表达解题思路的方向，得出结论：这个问题的解决方案，应该在哪一个领域，我可以通过查阅或者进一步学习解决问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>算法</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>第一章第二节</title>
+        <link>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/2/</link>
+        <pubDate>Sun, 13 Dec 2020 12:00:58 +0900</pubDate>
+        
+        <atom:modified>Sun, 13 Dec 2020 12:00:58 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/2/</guid>
+        <description>算法优秀不意味着技术面试优秀 算法面试只是技术面试的一部分 根据你的简历和应聘职位的不同，势必要考察其他技术方面 比如： 1.项目经历和项目中遇到的实际问题 2.你遇到的印象最深的bug是什么 3.面向对象 4.设计模式 5.网络相关；安全相关；内存相关；并发相关；&amp;hellip; 6.系统设计：scalability（近些年比较重视） 技术面试优秀不意味着能够拿到offer 技术面试只是面试的一部分，面试不仅仅是考察</description>
+        <content:encoded>&lt;h2 id=&#34;算法优秀不意味着技术面试优秀&#34;&gt;算法优秀不意味着技术面试优秀&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;算法面试只是技术面试的一部分&lt;br /&gt;
+根据你的简历和应聘职位的不同，势必要考察其他技术方面&lt;br /&gt;
+比如：&lt;br /&gt;
+1.项目经历和项目中遇到的实际问题&lt;br /&gt;
+2.你遇到的印象最深的bug是什么&lt;br /&gt;
+3.面向对象&lt;br /&gt;
+4.设计模式&lt;br /&gt;
+5.网络相关；安全相关；内存相关；并发相关；&amp;hellip;&lt;br /&gt;
+6.系统设计：scalability（近些年比较重视）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;技术面试优秀不意味着能够拿到offer&#34;&gt;技术面试优秀不意味着能够拿到offer&lt;/h2&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;技术面试只是面试的一部分，面试不仅仅是考察你的技术水平，还是了解你的过去以及形成的思考行为方式&lt;br /&gt;
+比如：&lt;br /&gt;
+1.参与项目至关重要，对于本科生，毕业设计和其他的课程设计本身就是一个项目经历&lt;br /&gt;
+2.如何找到项目：实习，参与实战课程学习（慕课网，等等，我博客的推荐网站&amp;hellip;）&lt;br /&gt;
+3.创建自己的项目：自己做小应用：计划表，备忘录，播放器&amp;hellip;；自己解决小问题：爬虫，数据分析，词频统计&amp;hellip;；“不是项目”的项目：一本优秀的技术书籍的代码整理等&amp;hellip;；分享：自己的技术博客,github等等&lt;br /&gt;
+4.行为类问题：遇到的最大的挑战？犯过最大的错误？遭遇的失败？最享受的工作内容？遇到冲突的处理方式？做的最与众不同的事？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;准备好合适的问题问面试官&lt;br /&gt;
+比如：&lt;br /&gt;
+1.整个小组的大概运行模式是怎样的？&lt;br /&gt;
+2.整个项目的后续规划是如何的？&lt;br /&gt;
+3.这个产品的某个问题是如何解决的？&lt;br /&gt;
+4.为什么会选择某些技术？标准?来实现某个需求&lt;br /&gt;
+5.我对某个技术很感兴趣，在你的小组中我会有怎样的机会深入这种技术？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>算法</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>第一章第三节</title>
+        <link>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/3/</link>
+        <pubDate>Sun, 13 Dec 2020 12:00:57 +0900</pubDate>
+        
+        <atom:modified>Sun, 13 Dec 2020 12:00:57 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/3/</guid>
+        <description>算法面试并没有那么难 远远不需要啃完一本《算法导论》 强理论证明 高级数据结构和算法在面试时提及的概率很低 红黑树 计算几何 B-Tree 数论 斐波那契堆 FFT 远远不需要到达信息学竞赛的水平 算法面试的准备范围 不要轻视基础算法和数据结构，而只关注“有意思”的题目 各种排序算法(特点与比较) 基础数据结构和算法的实现：如堆、二叉树、图&amp;hellip; 基础数据结构的使用：如链表、栈、队列、哈希表、图、Trie、并查集&amp;hellip; 基</description>
+        <content:encoded>&lt;h1 id=&#34;算法面试并没有那么难&#34;&gt;算法面试并没有那么难&lt;/h1&gt;
+&lt;h2 id=&#34;远远不需要啃完一本算法导论&#34;&gt;远远不需要啃完一本《算法导论》&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;强理论证明&lt;br /&gt;
+高级数据结构和算法在面试时提及的概率很低&lt;br /&gt;
+红黑树 计算几何 B-Tree 数论 斐波那契堆 FFT&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;远远不需要到达信息学竞赛的水平&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;算法面试的准备范围&#34;&gt;算法面试的准备范围&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;不要轻视基础算法和数据结构，而只关注“有意思”的题目&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;各种排序算法(特点与比较)&lt;/li&gt;
+&lt;li&gt;基础数据结构和算法的实现：如堆、二叉树、图&amp;hellip;&lt;/li&gt;
+&lt;li&gt;基础数据结构的使用：如链表、栈、队列、哈希表、图、Trie、并查集&amp;hellip;&lt;/li&gt;
+&lt;li&gt;基础算法：深度优先、广度优先、二分查找、递归&amp;hellip;&lt;/li&gt;
+&lt;li&gt;基本的算法思想：递归、分治、回溯搜索、贪心、动态规划&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;选择合适的OJ(online judge在线判题系统)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;LeetCode(&lt;a href=&#34;http://www.leetcode.com&#34;&gt;http://www.leetcode.com&lt;/a&gt;)(专门为面试的一个OJ)&lt;/li&gt;
+&lt;li&gt;HackerRank(&lt;a href=&#34;http://www.hackerrank.com&#34;&gt;http://www.hackerrank.com&lt;/a&gt;)(对问题的分类很详细)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;（Tips:在学习和实践做题之间，要掌握平衡）&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>算法</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>第一章第四节</title>
+        <link>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/4/</link>
+        <pubDate>Sun, 13 Dec 2020 12:00:56 +0900</pubDate>
+        
+        <atom:modified>Sun, 13 Dec 2020 12:00:56 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/4/</guid>
+        <description>解决算法面试问题的整体思路 注意题目中的条件 比如： 给定一个有序的数组&amp;hellip;（二分查找） 设计一个O(nlogn)的算法 无需考虑额外的空间（开辟额外的空间来换取时间） 数据规模大概是10000 当没有思路的时候 自己给自己几个简单的测试用例，实验一下 不要忽视暴力解法。暴力解法通常是思考的起点 优化算法 遍历常见的算法思路 遍历常见的数据结构 空间与时间的交换（哈希表） 预处理信息（排序 ） 实际编写问题 极端条件的</description>
+        <content:encoded>&lt;h1 id=&#34;解决算法面试问题的整体思路&#34;&gt;解决算法面试问题的整体思路&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;注意题目中的条件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;比如：&lt;br /&gt;
+给定一个有序的数组&amp;hellip;（二分查找）&lt;br /&gt;
+设计一个O(nlogn)的算法&lt;br /&gt;
+无需考虑额外的空间（开辟额外的空间来换取时间）&lt;br /&gt;
+数据规模大概是10000&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;当没有思路的时候&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;自己给自己几个简单的测试用例，实验一下&lt;/li&gt;
+&lt;li&gt;不要忽视暴力解法。暴力解法通常是思考的起点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;优化算法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;遍历常见的算法思路&lt;/li&gt;
+&lt;li&gt;遍历常见的数据结构&lt;/li&gt;
+&lt;li&gt;空间与时间的交换（哈希表）&lt;/li&gt;
+&lt;li&gt;预处理信息（排序 ）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;实际编写问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;极端条件的判断&lt;br /&gt;
+数组为空？字符串为空？数量为0？指针为NULL？&lt;/li&gt;
+&lt;li&gt;变量名的撰写规范&lt;/li&gt;
+&lt;li&gt;模块化，复用性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;对于基本问题，做到白板编程&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>算法</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

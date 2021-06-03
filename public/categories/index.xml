@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Categories on 请跟我一起踏上编程之旅</title>
+    <link>www.zhugeqing.top/categories/</link>
+    <description>Recent content in Categories on 请跟我一起踏上编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, “不可能”这三个字，你说的太多了！</copyright>
+    <lastBuildDate>Fri, 20 Dec 2019 12:00:06 +0900</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="www.zhugeqing.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>syntax</title>
+        <link>www.zhugeqing.top/categories/syntax/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        
+        
+        <guid>www.zhugeqing.top/categories/syntax/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>themes</title>
+        <link>www.zhugeqing.top/categories/themes/</link>
+        <pubDate>Fri, 20 Dec 2019 12:00:06 +0900</pubDate>
+        
+        
+        <guid>www.zhugeqing.top/categories/themes/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>hugo</title>
+        <link>www.zhugeqing.top/categories/hugo/</link>
+        <pubDate>Wed, 18 Dec 2019 10:33:41 +0900</pubDate>
+        
+        
+        <guid>www.zhugeqing.top/categories/hugo/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>diagram</title>
+        <link>www.zhugeqing.top/categories/diagram/</link>
+        <pubDate>Mon, 18 Nov 2019 21:00:06 +0900</pubDate>
+        
+        
+        <guid>www.zhugeqing.top/categories/diagram/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>math</title>
+        <link>www.zhugeqing.top/categories/math/</link>
+        <pubDate>Sat, 16 Nov 2019 12:00:06 +0900</pubDate>
+        
+        
+        <guid>www.zhugeqing.top/categories/math/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

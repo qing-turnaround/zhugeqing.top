@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>智力题 on 请跟我一起踏上编程之旅</title>
+    <link>https://www.zhugeqing.top/intelligence/</link>
+    <description>Recent content in 智力题 on 请跟我一起踏上编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, “不可能”这三个字，你说的太多了！</copyright>
+    <lastBuildDate>Sat, 27 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/intelligence/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>智力题2.1</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part2/%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88_1/</link>
+        <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 27 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part2/%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88_1/</guid>
+        <description>题目：65,8,50,15,37,24,()。括号中的数字是()？ A. 25 B. 26 C. 22 D. 27 答案： 65=8^2+1 这里将8作为65的特征 8=3^2-1 这里得到3 50=7^2+1 这里得到7 15=4^2-1 这里得到4 37=6^2+1 这里得到6 24=5^2-1 这里得到5 我们发现8,3,7,4,6,5 这组数的特点，以奇数项开始 奇数项加偶数项的和为11， 以偶数项开始的话 偶数项+奇数项的和为10 8+3=7+4=6+5 3+7=4+6=5+x 这里得到x为5 特征为5 转换为5^2+1 得到26</description>
+        <content:encoded>&lt;h2 id=&#34;题目65850153724括号中的数字是&#34;&gt;题目：65,8,50,15,37,24,()。括号中的数字是()？&lt;/h2&gt;
+&lt;p&gt;A. 25&lt;/p&gt;
+&lt;p&gt;B. 26&lt;/p&gt;
+&lt;p&gt;C. 22&lt;/p&gt;
+&lt;p&gt;D. 27&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;答案：
+65=8^2+1 这里将8作为65的特征
+8=3^2-1    这里得到3
+50=7^2+1  这里得到7
+15=4^2-1  这里得到4
+37=6^2+1 这里得到6
+24=5^2-1  这里得到5
+我们发现8,3,7,4,6,5 这组数的特点，以奇数项开始 奇数项加偶数项的和为11，
+以偶数项开始的话 偶数项+奇数项的和为10 
+8+3=7+4=6+5 3+7=4+6=5+x 这里得到x为5 特征为5 转换为5^2+1 得到26
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题2.2</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part2/%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88_2/</link>
+        <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 27 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part2/%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88_2/</guid>
+        <description>题目：5 , 6 , 6 , 9 ,（）, 90。括号中的数字是()？ A. 12 B. 15 C. 18 D. 21 答案：整个数列规律为： （5-3）*（6-3）=6 （6-3）*（6-3）=9 （6-3）*（9-3）=18 （9-3）*（18-3）=90 规律很多，仅供参考，自我挖掘！</description>
+        <content:encoded>&lt;h2 id=&#34;题目5--6--6--9--90括号中的数字是&#34;&gt;题目：5 , 6 , 6 , 9 ,（）, 90。括号中的数字是()？&lt;/h2&gt;
+&lt;p&gt;A. 12&lt;/p&gt;
+&lt;p&gt;B. 15&lt;/p&gt;
+&lt;p&gt;C. 18&lt;/p&gt;
+&lt;p&gt;D. 21&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;答案：整个数列规律为：
+（5-3）*（6-3）=6
+（6-3）*（6-3）=9
+（6-3）*（9-3）=18
+（9-3）*（18-3）=90
+
+规律很多，仅供参考，自我挖掘！
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题2.3</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part2/%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88_3/</link>
+        <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 27 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part2/%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88_3/</guid>
+        <description>题目：2 ，3 ，10 ，15 ，26 ，35 ，( )。括号中的数字是是什么？ A. 40 B. 45 C. 50 D. 55 1^2+1=2 2^2-1=3 3^2+1=10 4^2-1=15 5^2+1+26 6^2-1=35 奇数项平方加一，偶数项平方减一</description>
+        <content:encoded>&lt;h2 id=&#34;题目2-3-10-15-26-35--括号中的数字是是什么&#34;&gt;题目：2 ，3 ，10 ，15 ，26 ，35 ，( )。括号中的数字是是什么？&lt;/h2&gt;
+&lt;p&gt;A. 40&lt;/p&gt;
+&lt;p&gt;B. 45&lt;/p&gt;
+&lt;p&gt;C. 50&lt;/p&gt;
+&lt;p&gt;D. 55&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1^2+1=2 
+
+2^2-1=3 
+
+3^2+1=10 
+
+4^2-1=15 
+
+5^2+1+26 
+
+6^2-1=35 
+
+奇数项平方加一，偶数项平方减一
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题1.3</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part1/%E6%97%B6%E9%92%88%E4%B8%8E%E5%88%86%E9%92%88%E9%87%8D%E5%90%88/</link>
+        <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 20 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part1/%E6%97%B6%E9%92%88%E4%B8%8E%E5%88%86%E9%92%88%E9%87%8D%E5%90%88/</guid>
+        <description>题目：一台指针式钟表的时针和分针指向的重合的时间间隔是？ 答案： 由于分针总是比时针走的快，所以问题就转换成时针在一圈的范围内追击分针的问题： 分针走的角速度是360°/60分 = 6°/分 时针走的角速度是360°/720分 = 0.5°/分 下一次追到比上一次追到，分针比时针多走过的角度是360°， 那么在一圈的角度内 360°/(6°/分-0.5°/分) = 720/11 分钟， 经过这么多时间 分针和时间重合一次， 所以引申到一昼夜</description>
+        <content:encoded>&lt;p&gt;题目：一台指针式钟表的时针和分针指向的重合的时间间隔是？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;答案：
+
+由于分针总是比时针走的快，所以问题就转换成时针在一圈的范围内追击分针的问题：
+
+分针走的角速度是360°/60分 = 6°/分
+
+时针走的角速度是360°/720分 = 0.5°/分
+
+下一次追到比上一次追到，分针比时针多走过的角度是360°，
+
+那么在一圈的角度内 360°/(6°/分-0.5°/分) = 720/11 分钟，
+
+经过这么多时间  分针和时间重合一次，
+
+所以引申到一昼夜时间内分针 时针相遇多少次：24*60/(720/11) = 22 次
+
+
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题1.4</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part1/%E6%9C%80%E5%90%8E%E4%B8%BA%E5%85%B3%E7%86%84%E7%8A%B6%E6%80%81%E7%9A%84%E7%81%AF%E6%9C%89%E5%87%A0%E4%B8%AA/</link>
+        <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 20 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part1/%E6%9C%80%E5%90%8E%E4%B8%BA%E5%85%B3%E7%86%84%E7%8A%B6%E6%80%81%E7%9A%84%E7%81%AF%E6%9C%89%E5%87%A0%E4%B8%AA/</guid>
+        <description>题目：对一批编号为1～100，全部开关朝上(开)的灯进行以下操作： 凡是1的倍数反方向拨一次开关；2的倍数反方向又拨一次开关； 3的倍数反方向又拨一次开关……100的倍数反方向又拨一次开关 , 问：最后为关熄状态的灯有几个? 答案：分析：所有的灯都会根据它是否是某数的倍数来拨动开关，比如1是1的倍数， 但它不是其他剩余99个数的倍数，故只拨动一次开关，初始状态为开， 只要经过奇数次拨动开关，最终状态都会是关着的</description>
+        <content:encoded>&lt;p&gt;题目：对一批编号为1～100，全部开关朝上(开)的灯进行以下操作：&lt;/p&gt;
+&lt;p&gt;凡是1的倍数反方向拨一次开关；2的倍数反方向又拨一次开关；&lt;/p&gt;
+&lt;p&gt;3的倍数反方向又拨一次开关……100的倍数反方向又拨一次开关 ,&lt;/p&gt;
+&lt;p&gt;问：最后为关熄状态的灯有几个?&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;答案：分析：所有的灯都会根据它是否是某数的倍数来拨动开关，比如1是1的倍数，
+
+但它不是其他剩余99个数的倍数，故只拨动一次开关，初始状态为开，
+
+只要经过奇数次拨动开关，最终状态都会是关着的灯
+
+进一步分析：上述分析又可以根据题意来化解为只有这个编号含有奇数个因数的灯，
+
+在经过所有关灯操作之后，它的最终状态就是关闭的，所以2不是（1，2），
+
+3不是（1,3）,4是(1，2，4)，...9是（1,3,9）,...16是（1,2,4,8,16），
+
+发现规律的吧，1的平方，2的平方，3的平方，4的平方，
+
+所有1-100一共有10个最后为关熄状态的灯。
+
+
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题1.5</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part1/%E5%8E%9F%E5%A7%8B%E7%9A%845%E4%BD%8D%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+        <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 20 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part1/%E5%8E%9F%E5%A7%8B%E7%9A%845%E4%BD%8D%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+        <description>题目：假设一个5位数字的180度旋转图像是另一个5位数字，并且这两个数字之间的差是78633，那么原始的5位数字是什么？ 答案： 首先，只有0，1，2，6，8，9，6个数字反转仍有效。另外要注意，旋转180度， 数字所在位也变了。考虑首位和末位，要求差为7和3，只有1和8满足。 1xxx8和8xxx1。考虑倒数第二位3，由于末位退位，要求差4，只有0和6。 所以是10x68和89x01。最后看中间，7863</description>
+        <content:encoded>&lt;p&gt;题目：假设一个5位数字的180度旋转图像是另一个5位数字，并且这两个数字之间的差是78633，那么原始的5位数字是什么？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;答案：
+
+首先，只有0，1，2，6，8，9，6个数字反转仍有效。另外要注意，旋转180度，
+数字所在位也变了。考虑首位和末位，要求差为7和3，只有1和8满足。
+1xxx8和8xxx1。考虑倒数第二位3，由于末位退位，要求差4，只有0和6。
+所以是10x68和89x01。最后看中间，78633+10x68=89x01。
+所有原始数字是10968或者89601
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题3.1</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part3/%E8%BF%99%E4%BD%8D%E8%AF%B4%E8%AF%9D%E7%9A%84%E4%BA%BA%E6%98%AF%E4%BB%80%E4%B9%88%E6%80%A7%E5%88%AB%E5%92%8C%E8%81%8C%E5%8A%A1/</link>
+        <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 20 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part3/%E8%BF%99%E4%BD%8D%E8%AF%B4%E8%AF%9D%E7%9A%84%E4%BA%BA%E6%98%AF%E4%BB%80%E4%B9%88%E6%80%A7%E5%88%AB%E5%92%8C%E8%81%8C%E5%8A%A1/</guid>
+        <description>题目：医院里的医务人员，包括我在内，总共是16名医生和护士。下面讲到的人员情况，无论是否把我计算在内，都不会有任何变化。在这些医务人员中： (1)护士多于医生;(2)男医生多于男护士;(3)男护士多於女护士;(4)至少有一位女医生。 这位说话的人是什么性别和职务？ 答案： 先考虑不把说话者计算在内的情况，这时医生和护士共有15名。 首先由条件（1）可知，则护士至少应有8名；再由条件（3）可知， 则男护士至少有</description>
+        <content:encoded>&lt;p&gt;题目：医院里的医务人员，包括我在内，总共是16名医生和护士。下面讲到的人员情况，无论是否把我计算在内，都不会有任何变化。在这些医务人员中： (1)护士多于医生;(2)男医生多于男护士;(3)男护士多於女护士;(4)至少有一位女医生。 这位说话的人是什么性别和职务？&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;答案：
+
+先考虑不把说话者计算在内的情况，这时医生和护士共有15名。
+首先由条件（1）可知，则护士至少应有8名；再由条件（3）可知，
+则男护士至少有5名；接着由条件（2）可知，男医生至少有6名；
+结合条件（4）可知，医生至少有7名，则护士至多8名。所以，
+要满足条件，只能是护士8名，其中男护士5名，女护士3名，医生7名，
+其中男医生6名，女医生1名。加上说话者后，要仍满足这四个条件，
+由条件（1）可知，说话者是护士；由条件（2）可知，说话者不能是男护士，
+所以只能是女护士。
+
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题4.1</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part4/%E8%BF%98%E8%87%B3%E5%B0%91%E9%9C%80%E8%A6%81%E5%BB%BA%E8%AE%BE%E5%87%A0%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84%E6%B0%B4%E5%BA%93/</link>
+        <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 20 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part4/%E8%BF%98%E8%87%B3%E5%B0%91%E9%9C%80%E8%A6%81%E5%BB%BA%E8%AE%BE%E5%87%A0%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84%E6%B0%B4%E5%BA%93/</guid>
+        <description>题目： 已知每个城市的用水需求相同，每月水库的进水速率恒定不变。现有一座水库供水，如果供应10个城市的话，一个月水库就会枯竭；如果供应8个城市的话，一个半月水库就会枯竭。当前城市化进程不断加快，新的城市不断产生，为了能够持续满足12个城市的供水，还至少需要建设几个这样的水库？ 假设水库库存的水量为M 水库每月进水为X 每个城市每月消耗水m 由题意： M + X = 10 * m M + 1.5 * X = 8 * m * 1.5 解得： X = 4m 因此： 要维持</description>
+        <content:encoded>&lt;p&gt;题目：&lt;br /&gt;
+已知每个城市的用水需求相同，每月水库的进水速率恒定不变。现有一座水库供水，如果供应10个城市的话，一个月水库就会枯竭；如果供应8个城市的话，一个半月水库就会枯竭。当前城市化进程不断加快，新的城市不断产生，为了能够持续满足12个城市的供水，还至少需要建设几个这样的水库？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-按照下面的思路：&#34; data-lang=&#34;按照下面的思路：&#34;&gt;    假设水库库存的水量为M
+    水库每月进水为X
+    每个城市每月消耗水m
+
+由题意：
+    M + X = 10 * m
+    M + 1.5 * X = 8 * m * 1.5
+
+解得：
+    X = 4m
+
+因此：
+    要维持12个城市每月持续不断的供水，要满足：(?) * X = m * 12
+
+解得：(?) = 3
+
+题目问的是：&amp;quot;还至少需要建设几个这样的水库？&amp;quot;
+
+不应该是2个吗？(因为现在已经有一个水库了...)
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题4.2</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part4/%E8%87%B3%E5%B0%91%E8%A6%81%E5%88%86%E4%B8%BA%E5%A4%9A%E5%B0%91%E7%BB%84/</link>
+        <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 20 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part4/%E8%87%B3%E5%B0%91%E8%A6%81%E5%88%86%E4%B8%BA%E5%A4%9A%E5%B0%91%E7%BB%84/</guid>
+        <description>题目：把21、26、65、99、10、35、18、77分成若干组，要求每组中任意两个数都互质，至少要分成多少组。 答案：1.首先把含有相同因数的数分到一组，或者是没有相同因数的质数分为一组 2.列出来：含有因数3的：21，99，18。含有因数5的：10，35，65。 是质数（77不是质数，但剩下的数里面没有和它有相同因数的，故分到一组）的：26，77 3.然后把这些组组合起来，所以至少是三组。 解惑（思路有</description>
+        <content:encoded>&lt;p&gt;题目：把21、26、65、99、10、35、18、77分成若干组，要求每组中任意两个数都互质，至少要分成多少组。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;答案：1.首先把含有相同因数的数分到一组，或者是没有相同因数的质数分为一组
+
+2.列出来：含有因数3的：21，99，18。含有因数5的：10，35，65。
+
+是质数（77不是质数，但剩下的数里面没有和它有相同因数的，故分到一组）的：26，77
+
+3.然后把这些组组合起来，所以至少是三组。
+
+解惑（思路有很多，比如也可以在第一第二步选择将偶数分为一组，然后再细分）
+
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题1.1</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part1/%E8%80%81%E9%BC%A0%E6%B5%8B%E6%AF%92%E8%8D%AF/</link>
+        <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 17 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part1/%E8%80%81%E9%BC%A0%E6%B5%8B%E6%AF%92%E8%8D%AF/</guid>
+        <description>题目：1000 个瓶子中有一瓶毒药，一只老鼠吃到毒药一周之内会死，如果要在一周之内检测出有毒药的一瓶，问至少需要几只老鼠？ A:8 B:10 C:24 D:999 答案是十只 000=0 001=1 010=2 011=3 100=4 101=5 110=6 111=7 一位表示一个老鼠，0-7表示8个瓶子。 也就是分别将1、3、5、7号瓶子的药混起来给老鼠1吃， 2、3、6、7号瓶子的药混起来给老鼠2吃， 4、5、6、7号瓶子的药混起来给老鼠3吃， 哪个老鼠死了，相应的位标为1。 如老鼠1死了、老鼠2没死、老鼠3死了， 那</description>
+        <content:encoded>&lt;p&gt;题目：1000 个瓶子中有一瓶毒药，一只老鼠吃到毒药一周之内会死，如果要在一周之内检测出有毒药的一瓶，问至少需要几只老鼠？&lt;/p&gt;
+&lt;p&gt;A:8&lt;/p&gt;
+&lt;p&gt;B:10&lt;/p&gt;
+&lt;p&gt;C:24&lt;/p&gt;
+&lt;p&gt;D:999&lt;/p&gt;
+&lt;h1 id=&#34;答案是十只&#34;&gt;答案是十只&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-根据2^10=1024，所以10个老鼠可以确定1000个瓶子具体哪个瓶子有毒。具体实现跟3个老鼠确定8个瓶子原理一样。&#34; data-lang=&#34;根据2^10=1024，所以10个老鼠可以确定1000个瓶子具体哪个瓶子有毒。具体实现跟3个老鼠确定8个瓶子原理一样。&#34;&gt;000=0
+001=1
+010=2
+011=3
+100=4
+101=5
+110=6
+111=7
+一位表示一个老鼠，0-7表示8个瓶子。
+也就是分别将1、3、5、7号瓶子的药混起来给老鼠1吃，
+2、3、6、7号瓶子的药混起来给老鼠2吃，
+4、5、6、7号瓶子的药混起来给老鼠3吃，
+哪个老鼠死了，相应的位标为1。
+如老鼠1死了、老鼠2没死、老鼠3死了，
+那么就是101=5号瓶子有毒。
+同样道理10个老鼠可以确定1000个瓶子
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title>智力题1.2</title>
+        <link>https://www.zhugeqing.top/intelligence/niuke_part1/%E4%B8%8B%E4%B8%80%E8%A1%8C%E8%AF%A5%E8%BE%93%E5%87%BA%E4%BB%80%E4%B9%88/</link>
+        <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 17 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/intelligence/niuke_part1/%E4%B8%8B%E4%B8%80%E8%A1%8C%E8%AF%A5%E8%BE%93%E5%87%BA%E4%BB%80%E4%B9%88/</guid>
+        <description>1 1 1 2 1 1 2 1 1 1 1 1 2 2 1 下一行是什么 A:1111211 B:312211 C:312112 D:213112 微软的题 答案：后一行数是前一行数的描述，把“个”字去掉组成新的数： -1：1个1 ——11 - 11：2个1——21 - 21：1个2，1个1——1211 - 1211：1个1,1个2,2个1——111221 - 111221：3个1，2个2，1个1——312211</description>
+        <content:encoded>&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;1 1&lt;/p&gt;
+&lt;p&gt;2 1&lt;/p&gt;
+&lt;p&gt;1 2 1 1&lt;/p&gt;
+&lt;p&gt;1 1 1 2 2 1&lt;/p&gt;
+&lt;p&gt;下一行是什么&lt;/p&gt;
+&lt;p&gt;A:1111211&lt;/p&gt;
+&lt;p&gt;B:312211&lt;/p&gt;
+&lt;p&gt;C:312112&lt;/p&gt;
+&lt;p&gt;D:213112&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;微软的题
+答案：后一行数是前一行数的描述，把“个”字去掉组成新的数：
+-1：1个1 ——11
+- 11：2个1——21
+- 21：1个2，1个1——1211
+- 1211：1个1,1个2,2个1——111221
+- 111221：3个1，2个2，1个1——312211
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

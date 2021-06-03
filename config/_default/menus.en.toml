@@ -1,0 +1,72 @@
+[[main]]
+  identifier = "article"
+  name = "文章"
+  url = "article"
+  weight = 1
+
+[[main]]
+  identifier = "about"
+  name = "笔记"
+  url = "about"
+  weight = 1
+
+[[main]]
+  name = "智力题"
+  url = "intelligence"
+ weight = 7
+
+
+[[main]]
+  identifier = "数据库"
+  name = "数据库"
+  url = "databases"
+  weight = 8
+
+[[main]]
+  identifier = "面试"
+  name = "面试"
+  url = "interview"
+  weight = 9
+
+[[main]]
+  parent = "面试"
+  name = "剑指offer"
+  url = "interview/algorithm"
+
+[[main]]
+  parent = "面试"
+  name = "排序算法"
+  url = "interview/sort"
+
+[[main]]
+  parent = "面试"
+  name = "算法实战"
+  url = "interview/algorithm_interview"
+
+[[main]]
+  name = "进击的诸葛青"
+  identifier = "进击的诸葛青"
+  url = "study_zhugeqing"
+  weight = 10  
+
+[[main]]
+  name = "重学操作系统"
+  parent = "进击的诸葛青"
+  url = "study_zhugeqing/operatingsystem"
+
+[[main]]
+  name = "通关计算机网络"
+  parent = "进击的诸葛青"
+  url = "study_zhugeqing/computernetwork"
+
+[[main]]
+  name = "推荐网站"
+  url = "recommend_site"
+ weight = 11
+
+
+[[main]]
+  identifier = "archive"
+  name = "更新日志"
+  url = "archive"
+  weight = 12

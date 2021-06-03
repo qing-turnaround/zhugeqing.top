@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>网络 on 请跟我一起踏上编程之旅</title>
+    <link>https://www.zhugeqing.top/tags/%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 网络 on 请跟我一起踏上编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy;{year}, “不可能”这三个字，你说的太多了！</copyright>
+    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/tags/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>图解 | 你管这破玩意儿叫TCP？</title>
+        <link>https://www.zhugeqing.top/article/network/interesting/2/</link>
+        <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 13 Dec 2020 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/article/network/interesting/2/</guid>
+        <description>此文章取自于微信公众号“低并发编程” 你是一台电脑，你的名字叫 A 经过《如果让你来设计网络》这篇文章中的一番折腾，只要你知道另一位伙伴 B 的 IP 地址，且你们之间的网络是通的，无论多远，你都可以将一个数据包发送给你的伙伴 B 这就是物理层、数据链路层、网络层这三层所做的事情。 站在第四层的你，就可以不要脸地利用下三层所做的铺垫，随心所欲地发送数据，而不必担心找不到对方了。 虽然你此时还什么都没干，但你还是给自己这一</description>
+        <content:encoded>  &lt;p style=&#34;color:#00FFFF&#34;;&gt;此文章取自于微信公众号“低并发编程”&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=5&gt;你是一台电脑，你的名字叫 A&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/323.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;经过&lt;a href=&#34;https://www.zhugeqing.top/article/network/interesting/1&#34;&gt;《如果让你来设计网络》&lt;/a&gt;这篇文章中的一番折腾，只要你知道另一位伙伴 B 的 IP 地址，且你们之间的网络是通的，无论多远，你都可以将一个数据包发送给你的伙伴 B&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/54.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;这就是&lt;font color=GreenYellow  size=3 &gt;物理层&lt;/font&gt;、&lt;font color=GreenYellow  size=3 &gt;数据链路层&lt;/font&gt;、&lt;font color=GreenYellow  size=3 &gt;网络层&lt;/font&gt;这三层所做的事情。&lt;/p&gt;
+&lt;p&gt;站在第四层的你，就可以不要脸地利用下三层所做的铺垫，随心所欲地发送数据，而不必担心找不到对方了。&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/98.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;虽然你此时还什么都没干，但你还是给自己这一层起了个响亮的名字，叫做&lt;font color=GreenYellow size=3 &gt;传输层&lt;/font&gt;。&lt;/p&gt;
+&lt;p&gt;你本以为自己所在的第四层万事大吉，啥事没有，但很快问题就接踵而至。&lt;/p&gt;
+&lt;center&gt;&lt;font color=red size=5&gt;问题来了&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;前三层协议只能把数据包从一个主机搬到另外一台主机，但是，到了目的地以后，数据包具体交给哪个&lt;font color=LightSeaGreen size=3 &gt;程序（进程）&lt;/font&gt;呢？&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/432.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;所以，你需要把通信的进程区分开来，于是就给每个进程分配一个数字编号，你给它起了一个响亮的名字：&lt;font color=GreenYellow  size=3 &gt;端口号&lt;/font&gt;。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/34.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;然后你在要发送的数据包上，增加了传输层的头部，&lt;font color=GreenYellow size=3 &gt;源端口号&lt;/font&gt;与&lt;font color=GreenYellow size=3 &gt;目标端口号&lt;/font&gt;。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/213.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;OK，这样你将原本主机到主机的通信，升级为了&lt;font color=GreenYellow  size=3 &gt;进程和进程之间的通信&lt;/font&gt;。&lt;/p&gt;
+&lt;p&gt;你没有意识到，你不知不觉实现了 &lt;font color=GreenYellow  size=3 &gt;UDP 协议！&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=LightSeaGreen size=3 &gt;（当然 UDP 协议中不光有源端口和目标端口，还有数据包长度和校验值，我们暂且略过）&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;就这样，你用 UDP 协议无忧无虑地同 B 进行着通信，一直没发生什么问题。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/23.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;但很快，你发现事情变得非常复杂......&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=red size=6&gt;丢包问题&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;由于网络的不可靠，数据包可能在半路丢失，而 A 和 B 却无法察觉。&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/324.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=CadetBlue size=3&gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font face=&#34;微软雅黑&#34;&gt;对于丢包问题，只要解决两个事就好了。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;第一个，A 怎么知道包丢了？&lt;/div&gt;&lt;br /&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  答案：让 B 告诉 A
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;第二个，丢了的包怎么办？&lt;/div&gt;&lt;br /&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  答案：重传
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;于是你设计了如下方案，A 每发一个包，都必须收到来自 B 的&lt;font color=GreenYellow size=3 &gt;确认（ACK）&lt;/font&gt;，再发下一个，否则在一定时间内没有收到确认，就&lt;font color=GreenYellow  size=3 &gt;重传&lt;/font&gt;这个包。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/65.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;你管它叫&lt;font color=GreenYellow  size=3 &gt;停止等待协议&lt;/font&gt;。只要按照这个协议来，虽然 A 无法保证 B 一定能收到包，但 A 能够确认 B 是否收到了包，收不到就重试，尽最大努力让这个通信过程变得可靠，于是你们现在的通信过程又有了一个新的特征，&lt;font color=GreenYellow size=3 &gt;可靠交付&lt;/font&gt;。&lt;/p&gt;
+&lt;center&gt;&lt;font color=RED size=6&gt;效率问题&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=CadetBlue size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;停止等待虽然能解决问题，但是效率太低了，A 原本可以在发完第一个数据包之后立刻开始发第二个数据包，但由于停止等待协议，A 必须等数据包到达了 B ，且 B 的 ACK 包又回到了 A，才可以继续发第二个数据包，这效率慢得可不是一点两点。&lt;br /&gt;
+于是你对这个过程进行了改进，采用&lt;font color=GreenYellow size=3 &gt;流水线（Pipelining）&lt;/font&gt;的方式，不再傻傻地等。&lt;/p&gt;
+&lt;p&gt;&lt;font color=CadetBlue size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=RED size=6&gt;顺序问题&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=CadetBlue size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;但是网路是复杂的、不可靠的。&lt;/p&gt;
+&lt;p&gt;有的时候 A 发出去的数据包，分别走了不同的路由到达 B，可能无法保证和发送数据包时一样的顺序。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/3421.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;在流水线中有多个数据包和ACK包在&lt;font color=GreenYellow size=3 &gt;乱序流动&lt;/font&gt;，他们之间对应关系就乱掉了。&lt;/p&gt;
+&lt;p&gt;难道还回到停止等待协议？A 每收到一个包的确认（ACK）再发下一个包，那就根本不存在顺序问题。应该有更好的办法！&lt;/p&gt;
+&lt;p&gt;A 在发送的数据包中增加一个&lt;font color=GreenYellow size=3 &gt;序号（seq）&lt;/font&gt;，同时 B 要在 ACK 包上增加一个&lt;font color=GreenYellow size=3 &gt;确认号（ack）&lt;/font&gt;，这样不但解决了停止等待协议的效率问题，也通过这样标序号的方式解决了顺序问题。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/33465.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;而 B 这个确认号意味深长：比如 B 发了一个确认号为 ack = 3，它不仅仅表示 A 发送的序号为 2 的包收到了，还表示 2 之前的数据包都收到了。这种方式叫&lt;font color=GreenYellow size=3 &gt;累计确认&lt;/font&gt;或&lt;font color=GreenYellow size=3 &gt;累计应答&lt;/font&gt;。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/33466.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;div class=&#34;notices warning&#34; data-title=&#34;Warning&#34;&gt;
+  注意，实际上 ack 的号是收到的最后一个数据包的序号 seq + 1，也就是告诉对方下一个应该发的序号是多少。但图中为了便于理解，ack 就表示收到的那个序号，不必纠结。
+&lt;/div&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=RED size=6&gt;流量问题&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;有的时候，A 发送数据包的速度太快，而 B 的接收能力不够，但 B 却没有告知 A 这个情况。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/4554.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;怎么解决呢？&lt;/p&gt;
+&lt;p&gt;很简单，B 告诉 A 自己的接收能力，A 根据 B 的&lt;font color=GreenYellow size=3 &gt;接收能力&lt;/font&gt;，相应控制自己的发送速率，就好了。&lt;/p&gt;
+&lt;p&gt;B 怎么告诉 A 呢？B 跟 A 说&amp;quot;我很强&amp;quot;这三个字么？那肯定不行，得有一个严谨的规范。&lt;/p&gt;
+&lt;p&gt;于是 B 决定，每次发送数据包给 A 时，顺带传过来一个值，叫&lt;font color=GreenYellow size=3 &gt;窗口大小（win)&lt;/font&gt;，这个值就表示 B 的&lt;font color=GreenYellow size=3 &gt;接收能力&lt;/font&gt;。同理，每次 A 给 B 发包时也带上自己的窗口大小，表示 A 的&lt;font color=GreenYellow size=3 &gt;接收能力&lt;/font&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/432.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;    &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;B 告诉了 A 自己的窗口大小值，A 怎么利用它去做 A 这边发包的流量控制呢？&lt;/p&gt;
+&lt;p&gt;很简单，假如 B 给 A 传过来的窗口大小 win = 5，那 A 根据这个值，把自己要发送的数据分成这么几类。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/45.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;图片过于清晰，就不再文字解释了。&lt;/p&gt;
+&lt;p&gt;当 A 不断发送数据包时，&lt;font color=GreenYellow size=3 &gt;已发送的最后一个序号&lt;/font&gt;就往右移动，直到碰到了窗口的上边界，此时 A 就无法继续发包，达到了流量控制。&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/60532.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;但是当 A 不断发包的同时，A 也会收到来自 B 的确认包，此时整个窗口会往右移动，因此上边界也往右移动，A 就能发更多的数据包了。&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/60616.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;以上都是在窗口大小不变的情况下，而 B 在发给 A 的 ACK 包中，每一个都可以&lt;font color=GreenYellow size=3 &gt;重新设置&lt;/font&gt;一个新的窗口大小，如果 A 收到了一个新的窗口大小值，A 会随之调整。&lt;br /&gt;
+如果 A 收到了比原窗口值更大的窗口大小，比如 win = 6，则 A 会直接将窗口上边界向右移动 1 个单位。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/60837.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;如果 A 收到了比原窗口值小的窗口大小，比如 win = 4，则 A 暂时不会改变窗口大小，更不会将窗口上边界向左移动，而是等着 ACK 的到来，不断将左边界向右移动，直到窗口大小值收缩到新大小为止。&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/160916.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;OK，终于将流量控制问题解决得差不多了，你看着上面一个个小动图，给这个窗口起了一个更生动的名字，&lt;font color=GreenYellow size=3 &gt;滑动窗口(一种算法)&lt;/font&gt;。&lt;/p&gt;
+&lt;center&gt;&lt;font color=RED size=6&gt;拥塞问题&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;但有的时候，不是 B 的接受能力不够，而是网络不太好，造成了&lt;font color=GreenYellow size=3 &gt;网络拥塞&lt;/font&gt;。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/161151.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;拥塞控制与流量控制有些像，但流量控制是受 B 的接收能力影响，而拥塞控制是受&lt;font color=GreenYellow size=3 &gt;网络环境&lt;/font&gt;的影响。&lt;/p&gt;
+&lt;p&gt;拥塞控制的解决办法依然是通过设置一定的窗口大小，只不过，流量控制的窗口大小是 B 直接告诉 A 的，而拥塞控制的窗口大小按理说就应该是网络环境主动告诉 A。&lt;/p&gt;
+&lt;p&gt;但网络环境怎么可能主动告诉 A 呢？只能 A 单方面通过&lt;font color=GreenYellow size=3 &gt;试探&lt;/font&gt;，不断感知网络环境的好坏，进而确定自己的拥塞窗口的大小。&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/61340.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;拥塞窗口大小的计算有很多复杂的算法，就不在本文中展开了，假如拥塞窗口的大小为  &lt;font color=GreenYellow size=3 &gt;cwnd&lt;/font&gt;，上一部分流量控制的&lt;font color=GreenYellow size=3 &gt;滑动窗口的大小为 rwnd&lt;/font&gt;，那么窗口的右边界受这两个值共同的影响，需要取它俩的最小值。&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=4&gt;窗口大小 = min(cwnd, rwnd)&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;含义很容易理解，当 B 的接受能力比较差时，即使网络非常通畅，A 也需要根据 B 的接收能力限制自己的发送窗口。当网络环境比较差时，即使 B 有很强的接收能力，A 也要根据网络的拥塞情况来限制自己的发送窗口。正所谓受其&lt;font color=GreenYellow size=3 &gt;短板&lt;/font&gt;的影响嘛~&lt;/p&gt;
+&lt;center&gt;&lt;font color=RED size=6&gt;连接问题&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;有的时候，B 主机的相应进程还没有准备好或是挂掉了，A 就开始发送数据包，导致了浪费。&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/162051.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;这个问题在于，A 在跟 B 通信之前，没有事先确认 B 是否已经准备好，就开始发了一连串的信息。就好比你和另一个人打电话，你还没有&amp;quot;喂&amp;quot;一下确认对方有没有在听，你就巴拉巴拉说了一堆。&lt;br /&gt;
+这个问题该怎么解决呢？&lt;/p&gt;
+&lt;p&gt;地球人都知道，&lt;font color=GreenYellow size=3 &gt;三次握手&lt;/font&gt;嘛！&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;* A：我准备好了(SYN)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;* B：我知道了(ACK)，我也准备好了(SYN)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;* A：我知道了(ACK)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/162208.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;A 与 B 各自在内存中维护着自己的状态变量，三次握手之后，双方的状态都变成了&lt;font color=GreenYellow size=3 &gt;连接已建立（ESTABLISHED）&lt;/font&gt;。&lt;/p&gt;
+&lt;p&gt;虽然就只是发了三次数据包，并且在各自的内存中维护了状态变量，但这么说总觉得太 low，你看这个过程相当于双方建立连接的过程，于是你灵机一动，就叫它&lt;font color=GreenYellow size=3 &gt;面向连接&lt;/font&gt;吧。&lt;/p&gt;
+&lt;div class=&#34;notices warning&#34; data-title=&#34;Warning&#34;&gt;
+  注意：这个连接是虚拟的，是由 A 和 B 这两个终端共同维护的，在网络中的设备根本就不知道连接这回事儿！
+&lt;/div&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;但凡事有始就有终，有了建立连接的过程，就要考虑释放连接的过程，又是地球人都知道，&lt;font color=GreenYellow size=3 &gt;四次挥手&lt;/font&gt;嘛！&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;* A：再见，我要关闭了(FIN)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;* B：我知道了(ACK)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=LightSteelBlue size=3 &gt;   给 B 一段时间把自己的事情处理完&amp;hellip;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;* B：再见，我要关闭了(FIN)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed size=3 &gt;* A：我知道了(ACK)&lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/162425.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;center&gt;&lt;font color=Turquoise size=6&gt;总结&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;以上讲述的，就是 TCP 协议的核心思想，上面过程中需要传输的信息，就体现在 TCP 协议的头部，这里放上最常见的 TCP 协议头解读的图。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/162552.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;不知道你现在再看下面这句话，是否能理解：&lt;/p&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  TCP 是&lt;br /&gt;
+面向连接的、可靠的、基于字节流的&lt;br /&gt;
+传输层通信协议
+&lt;/div&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;面向连接、可靠，这两个词通过上面的讲述很容易理解，那什么叫做基于字节流呢？&lt;/p&gt;
+&lt;p&gt;很简单，TCP 在建立连接时，需要告诉对方 MSS（最大报文段大小）。&lt;/p&gt;
+&lt;p&gt;也就是说，如果要发送的数据很大，在 TCP 层是需要按照 MSS 来切割成一个个的&lt;font color=GreenYellow size=3 &gt;TCP 报文段&lt;/font&gt; 的。&lt;/p&gt;
+&lt;p&gt;切割的时候我才不管你原来的数据表示什么意思，需要在哪里断句啥的，我就把它当成一串毫无意义的字节，在我想要切割的地方咔嚓就来一刀，标上序号，只要接收方再根据这个序号拼成最终想要的完整数据就行了。&lt;/p&gt;
+&lt;p&gt;在我 TCP 传输这里，我就把它当做一个个的&lt;font color=GreenYellow size=3 &gt;字节&lt;/font&gt;，也就是基于字节流的含义了。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/162818.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=LightSeaGreen size=5 &gt;最后留给大家一个作业，模拟 A 与 B 建立一个 TCP 连接。&lt;/font&gt;&lt;/p&gt;
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;&lt;p style=&#34;color:#00FFFF&#34;;&gt;第一题：A 给 B 发送 &#34;aaa&#34; ，然后 B 给 A 回复一个简单的字符串 &#34;success&#34;，并将此过程抓包。&lt;/div&gt;
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;&lt;p style=&#34;color:#00FFFF&#34;;&gt;第二题：A 给 B 发送 &#34;aaaaaa ... a&#34; 超过最大报文段大小，然后 B 给 A 回复一个简单的字符串 &#34;success&#34;，并将此过程抓包。&lt;/div&gt;
+&lt;p&gt;下面是我抓的包（第二题）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;三次握手阶段
+A -&amp;gt; B	[SYN] Seq=0 Win=64240 Len=0
+                        MSS=1460 WS=256
+B - &amp;gt;A	[SYN, ACK] Seq=0 Ack=1 Win=29200 Len=0
+                        MSS=1424 WS=512
+A -&amp;gt; B	[ACK] Seq=1 Ack=1 Win=132352 Len=0
+
+数据发送阶段
+A -&amp;gt; B	[ACK] Seq=1 Ack=1 Win=132352 Len=1424
+A -&amp;gt; B	[ACK] Seq=1425 Ack=1 Win=132352 Len=1424
+A -&amp;gt; B	[PSH, ACK] Seq=2849 Ack=1 Win=132352 Len=1247
+B -&amp;gt; A	[ACK] Seq=1 Ack=1425 Win=32256 Len=0
+B -&amp;gt; A	[ACK] Seq=1 Ack=2849 Win=35328 Len=0
+B -&amp;gt; A	[ACK] Seq=1 Ack=4096 Win=37888 Len=0
+B -&amp;gt; A	[PSH, ACK] Seq=1 Ack=4096 Win=37888 Len=7
+
+四次挥手阶段
+B -&amp;gt; A	[FIN, ACK] Seq=8 Ack=4096 Win=37888 Len=0
+A -&amp;gt; B	[ACK] Seq=4096 Ack=9 Win=132352 Len=0
+A -&amp;gt; B	[FIN, ACK] Seq=4096 Ack=9 Win=132352 Len=0（下面少复制了一行ACK，抱歉）
+
+&lt;/code&gt;&lt;/pre&gt;&lt;center&gt;&lt;font color=Turquoise size=6&gt;后记&lt;/font&gt;&lt;/center&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=3 &gt;一提到 TCP，可能很多人都想起被三次握手和四次挥手所支配的恐惧。但其实你跟着文中的思路你就会发现，三次握手与四次挥手只占 TCP 所解决的核心问题中很小的一部分，只是因为它在面试中很适合作为知识点进行考察，所以在很多人的印象中就好像 TCP 的核心就是握手和挥手似的。&lt;br /&gt;
+本文希望你能从问题出发，真正理解 TCP 所想要解决的问题，你会发现很多原理就好像生活常识一样顺其自然，并不复杂，希望你有收获～&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>网络</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>如果让你来设计网络，你会把它弄成啥样？</title>
+        <link>https://www.zhugeqing.top/article/network/interesting/1/</link>
+        <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 13 Dec 2020 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/article/network/interesting/1/</guid>
+        <description>此文章取自于微信公众号“低并发编程” 正文开始： 你是一台电脑，你的名字叫 A 很久很久之前，你不与任何其他电脑相连接，孤苦伶仃。 直到有一天，你希望与另一台电脑 B 建立通信，于是你们各开了一个网口，用一根网线连接了起来。 用一根网线连接起来怎么就能&amp;quot;通信&amp;quot;了呢？我可以给你讲 IO、讲中断、讲缓冲区，但这不是研究网络时该关心的问题。 如果你纠结，要么去研究一下操作系统是如何处理网络 IO 的，要么去研</description>
+        <content:encoded>  &lt;p style=&#34;color:#00FFFF&#34;;&gt;此文章取自于微信公众号“低并发编程”&lt;/p&gt;
+&lt;p style=&#34;color:#FFFF00&#34;;&gt;正文开始：&lt;/p&gt;
+ &lt;p style=&#34;color:#00FFFF&#34;;&gt; 你是一台电脑，你的名字叫 A&lt;/p&gt;
+&lt;p&gt;很久很久之前，你不与任何其他电脑相连接，孤苦伶仃。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/tcp1.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+直到有一天，你希望与另一台电脑 B 建立通信，于是你们各开了一个网口，用一根网线连接了起来。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/tcp2.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;用一根网线连接起来怎么就能&amp;quot;通信&amp;quot;了呢？我可以给你讲 IO、讲中断、讲缓冲区，但这不是研究网络时该关心的问题。&lt;/p&gt;
+&lt;p&gt;如果你纠结，要么去研究一下操作系统是如何处理网络 IO 的，要么去研究一下包是如何被网卡转换成电信号发送出去的，要么就仅仅把它当做电脑里有个小人在开枪吧~&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;反正，你们就是连起来了，并且可以通信。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/tcp3.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;有一天，一个新伙伴 C 加入了，但聪明的你们很快发现，可以每个人开两个网口，用一共三根网线，彼此相连。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.webp.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;随着越来越多的人加入，你发现身上开的网口实在太多了，而且网线密密麻麻，混乱不堪。&lt;p style=&#34;color:#FF0000&#34;&gt;（而实际上一台电脑根本开不了这么多网口，所以这种连线只在理论上可行，所以连不上的我就用红色虚线表示了，就是这么严谨哈哈~）&lt;/p&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.webp%20%281%29.jpg&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;于是你们发明了一个中间设备，你们将网线都插到这个设备上，由这个设备做转发，就可以彼此之间通信了，本质上和原来一样，只不过网口的数量和网线的数量减少了，不再那么混乱。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;你给它取名叫&lt;strong&gt;集线器&lt;/strong&gt;，它仅仅是无脑将电信号&lt;strong&gt;转发到所有出口（广播）&lt;/strong&gt;，不做任何处理，你觉得它是没有智商的，因此把人家定性在了&lt;strong&gt;物理层&lt;/strong&gt;。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%281%29.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;由于转发到了所有出口，那 &lt;strong&gt;BCDE&lt;/strong&gt; 四台机器怎么知道数据包是不是发给自己的呢？&lt;/p&gt;
+&lt;p&gt;首先，你要给所有的连接到集线器的设备，都起个名字。原来你们叫 ABCD，但现在需要一个更专业的，&lt;strong&gt;全局唯一&lt;/strong&gt;的名字作为标识，你把这个更高端的名字称为&lt;strong&gt;MAC 地址&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你的 MAC 地址是 aa-aa-aa-aa-aa-aa，你的伙伴 b 的 MAC 地址是 bb-bb-bb-bb-bb-bb，以此类推，不重复就好。&lt;/p&gt;
+&lt;p&gt;这样，A 在发送数据包给 B 时，只要在头部拼接一个这样结构的数据，就可以了。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/6403.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+B 在收到数据包后，根据头部的目标 MAC 地址信息，判断这个数据包的确是发给自己的，于是便&lt;strong&gt;收下&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;其他的 CDE 收到数据包后，根据头部的目标 MAC 地址信息，判断这个数据包并不是发给自己的，于是便&lt;strong&gt;丢弃&lt;/strong&gt;。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%282%29.gif&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;虽然集线器使整个布局干净不少，但原来我只要发给电脑 B 的消息，现在却要发给连接到集线器中的所有电脑，这样既不安全，又不节省网络资源。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/6044.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+如果把这个集线器弄得更智能一些，&lt;strong&gt;只发给目标 MAC 地址指向的那台电脑&lt;/strong&gt;，就好了&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%283%29.gif&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+虽然只比集线器多了这一点点区别，但看起来似乎有智能了，你把这东西叫做交换机。也正因为这一点点智能，你把它放在了另一个层级，&lt;strong&gt;数据链路层&lt;/strong&gt;。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%281%29.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;如上图所示，你是这样设计的。&lt;/p&gt;
+&lt;p&gt;交换机内部维护一张 &lt;strong&gt;MAC 地址表&lt;/strong&gt;，记录着每一个 MAC 地址的设备，连接在其哪一个端口上。&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/6045.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;假如你仍然要发给 B 一个数据包，构造了如下的数据结构从网口出去。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%282%29.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;到达交换机时，交换机内部通过自己维护的 MAC 地址表，发现&lt;strong&gt;目标机器 B 的 MAC 地址 bb-bb-bb-bb-bb-bb 映射到了端口 1 上&lt;/strong&gt;，于是把数据从 1 号端口发给了 B，完事~&lt;/p&gt;
+&lt;p&gt;你给这个通过这样传输方式而组成的小范围的网络，叫做&lt;strong&gt;以太网&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;当然最开始的时候，MAC 地址表是空的，是怎么逐步建立起来的呢？&lt;/p&gt;
+&lt;p&gt;假如在 MAC 地址表为空是，你给 B 发送了如下数据：&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%282%29.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;由于这个包从端口 4 进入的交换机，所以此时交换机就可以在 MAC地址表记录第一条数据：&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/6047.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;交换机看目标 MAC 地址（bb-bb-bb-bb-bb-bb）在地址表中并没有映射关系，于是将此包发给了&lt;strong&gt;所有端口&lt;/strong&gt;，也即发给了所有机器。&lt;/p&gt;
+&lt;p&gt;之后，只有机器 B 收到了确实是发给自己的包，于是做出了&lt;strong&gt;响应&lt;/strong&gt;，响应数据从端口 1 进入交换机，于是交换机此时在地址表中更新了第二条数据：&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/6666.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+过程如下：&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%284%29.gif&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;经过该网络中的机器不断地通信，交换机最终将 MAC 地址表建立完毕~&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%285%29.gif&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;随着机器数量越多，交换机的端口也不够了，但聪明的你发现，只要将多个交换机连接起来，这个问题就轻而易举搞定~&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.webp%20%282%29.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;你完全不需要设计额外的东西，只需要按照之前的设计和规矩来，按照上述的接线方式即可完成所有电脑的互联，所以交换机设计的这种规则，真的很巧妙。你想想看为什么（比如 A 要发数据给 F）。&lt;/p&gt;
+&lt;p&gt;但是你要注意，上面那根&lt;em&gt;&lt;strong&gt;红色&lt;/strong&gt;&lt;/em&gt;的线，最终在 MAC 地址表中可不是一条记录呀，而是要把 EFGH 这四台机器与该端口（端口6）的映射全部记录在表中。&lt;/p&gt;
+&lt;p&gt;最终，&lt;strong&gt;两个交换机将分别记录 A ~ H 所有机器的映射记录&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;左边的交换机&lt;/strong&gt;&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/6667.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+&lt;strong&gt;右边的交换机&lt;/strong&gt;&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/6668.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;这在只有 8 台电脑的时候还好，甚至在只有几百台电脑的时候，都还好，所以这种交换机的设计方式，已经足足支撑一阵子了。&lt;/p&gt;
+&lt;p&gt;但很遗憾，人是贪婪的动物，很快，电脑的数量就发展到几千、几万、几十万。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/6669.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;交换机已经无法记录如此庞大的映射关系了。&lt;/p&gt;
+&lt;p&gt;此时你动了歪脑筋，你发现了问题的根本在于，连出去的那根&lt;font color=red&gt;&lt;strong&gt;红色的网线&lt;/strong&gt;&lt;/font&gt;，后面不知道有多少个设备不断地连接进来，从而使得地址表越来越大。&lt;/p&gt;
+&lt;p&gt;那我可不可以让那根&lt;font color=red&gt;红色的网线&lt;/font&gt;，接入一个&lt;font color=black&gt;新的设备&lt;/font&gt;，这个设备就跟电脑一样有自己独立的 MAC 地址，而且同时还能帮我把数据包做一次&lt;font color=black&gt;转发&lt;/font&gt;呢？&lt;/p&gt;
+&lt;p&gt;这个设备就是&lt;font color=black&gt;路由器&lt;/font&gt;，它的功能就是，作为一台独立的拥有 MAC 地址的设备，并且可以帮我把数据包做一次转发，你把它定在了&lt;font color=black&gt;网络层&lt;/font&gt;。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%283%29.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+&lt;font color=red&gt;注意，路由器的每一个端口，都有独立的 MAC 地址。&lt;/font&gt;&lt;br /&gt;
+好了，现在交换机的 MAC 地址表中，只需要多出一条 MAC 地址 ABAB 与其端口的映射关系，就可以成功把数据包转交给路由器了，这条搞定。&lt;/p&gt;
+&lt;p&gt;那如何做到，把发送给 C 和 D，甚至是把发送给 DEFGH&amp;hellip;. 的数据包，统统先发送给路由器呢？&lt;/p&gt;
+&lt;p&gt;不难想到这样一个点子，假如电脑 C 和 D 的 MAC 地址拥有共同的前缀，比如分别是：&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/7777.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;那我们就可以说，将目标 MAC 地址为 &lt;font color=VioletRed&gt;FFFF-FFFF-？开头的&lt;/font&gt;，统统先发送给路由器。&lt;/p&gt;
+&lt;p&gt;这样是否可行呢？答案是否定的。&lt;/p&gt;
+&lt;p&gt;我们先从现实中 MAC 地址的结构入手，MAC地址也叫物理地址、硬件地址，长度为 48 位，一般这样来表示： &lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/7778.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;它是由网络设备制造商生产时烧录在网卡的EPROM（一种闪存芯片，通常可以通过程序擦写）。其中&lt;font color=VioletRed&gt;前 24 位（00-16-EA）代表网络硬件制造商的编号，后 24 位（AE-3C-40）是该厂家自己分配的，一般表示系列号&lt;/font&gt;。只要不更改自己的 MAC 地址，MAC 地址在世界是唯一的。形象地说，MAC地址就如同身份证上的身份证号码，具有唯一性。&lt;/p&gt;
+&lt;p&gt;那如果你希望向上面那样将目标 MAC 地址表示为 FFFF-FFFF-？开头的，统一从路由器出去发给某一群设备（后面会提到这其实是子网的概念），那你就需要要求某一子网下统统买一个厂商制造的设备，要么你就需要要求厂商在生产网络设备烧录 MAC 地址时，提前按照你规划好的子网结构来定 MAC 地址，并且日后这个网络的结构都不能轻易改变。&lt;/p&gt;
+&lt;p&gt;这显然是不现实的。&lt;/p&gt;
+&lt;p&gt;于是你发明了一个新的地址，给每一台机器一个 32 位的编号，如：&lt;br /&gt;
+&lt;font color=SkyBlue&gt;11000000101010000000000000000001&lt;/font&gt;&lt;br /&gt;
+你觉得有些不清晰，于是把它分成四个部分，中间用点相连。&lt;br /&gt;
+&lt;font color=SkyBlue&gt;11000000.10101000.00000000.00000001&lt;/font&gt;&lt;br /&gt;
+你还觉得不清晰，于是把它转换成 10 进制。&lt;br /&gt;
+&lt;font color=SkyBlue&gt;192.168.0.1&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;最后你给了这个地址一个响亮的名字，&lt;font color=MediumTurquoise&gt;IP 地址&lt;/font&gt;。现在每一台电脑，同时有自己的 MAC 地址，又有自己的 IP 地址，只不过 IP 地址是&lt;font color=MediumTurquoise&gt;软件层面&lt;/font&gt;上的，可以随时修改，MAC 地址一般是无法修改的。&lt;/p&gt;
+&lt;p&gt;这样一个可以随时修改的 IP 地址，就可以根据你规划的网络拓扑结构，来调整了。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%284%29.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;如上图所示，假如我想要发送数据包给 ABCD 其中一台设备，不论哪一台，我都可以这样描述，&lt;font color=Fuchsia&gt;&amp;ldquo;将 IP 地址为 192.168.0 开头的全部发送给到路由器，之后再怎么转发，交给它！&amp;quot;&lt;/font&gt;，巧妙吧。&lt;/p&gt;
+&lt;p&gt;那交给路由器之后，路由器又是怎么把数据包准确转发给指定设备的呢？&lt;/p&gt;
+&lt;p&gt;别急我们慢慢来。&lt;/p&gt;
+&lt;p&gt;我们先给上面的组网方式中的每一台设备，加上自己的 IP 地址。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%285%29.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+现在两个设备之间传输，除了加上数据链路层的头部之外，还要再增加一个网络层的头部。&lt;/p&gt;
+&lt;p&gt;假如 A 给 B 发送数据，由于它们直接连着交换机，所以 A 直接发出如下数据包即可，其实网络层没有体现出作用。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.webp%20%283%29.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;但假如 A 给 C 发送数据，A 就需要先转交给路由器，然后再由路由器转交给 C。由于最底层的传输仍然需要依赖以太网，所以数据包是分成两段的。&lt;/p&gt;
+&lt;p&gt;A ~ 路由器这段的包如下： &lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.webp%20%284%29.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+路由器到 C 这段的包如下：&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%286%29.png&#34;/&gt; 
+&lt;/figure&gt;
+ &lt;br /&gt;
+好了，上面说的两种情况（A-&amp;gt;B，A-&amp;gt;C），相信细心的读者应该会有不少疑问，下面我们一个个来展开。&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;A 给 C 发数据包，怎么知道是否要通过路由器转发呢？&lt;/div&gt;&lt;br /&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  答案：子网
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;如果源 IP 与目的 IP 处于一个子网，直接将包通过交换机发出去。&lt;/p&gt;
+&lt;p&gt;如果源 IP 与目的 IP 不处于一个子网，就交给路由器去处理。&lt;/p&gt;
+&lt;p&gt;好，那现在只需要解决，什么叫处于一个子网就好了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;192.168.0.1 和 192.168.0.2 处于同一个子网&lt;/li&gt;
+&lt;li&gt;192.168.0.1 和 192.168.1.1 处于不同子网&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这两个是我们人为规定的，即我们想表示，对于 192.168.0.1 来说：&lt;br /&gt;
+&lt;font color=SkyBlue&gt;192.168.0.xxx 开头的，就算是在一个子网，否则就是在不同的子网。  &lt;/font&gt;&lt;br /&gt;
+那对于计算机来说，怎么表达这个意思呢？于是人们发明了&lt;font color=LightSlateBlue&gt;子网掩码&lt;/font&gt;的概念。&lt;/p&gt;
+&lt;p&gt;假如某台机器的子网掩码定为 255.255.255.0。&lt;/p&gt;
+&lt;p&gt;这表示，将源 IP 与目的 IP 分别同这个子网掩码进行&lt;font color=VioletRed&gt;与运算，相等则是在一个子网，不相等就是在不同子网，&lt;/font&gt;就这么简单。&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font color=SkyBlue&gt;A电脑&lt;/font&gt;：192.168.0.1 &amp;amp; 255.255.255.0 = 192.168.0.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font color=SkyBlue&gt;B电脑&lt;/font&gt;：192.168.0.2 &amp;amp; 255.255.255.0 = 192.168.0.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font color=SkyBlue&gt;C电脑&lt;/font&gt;：192.168.1.1 &amp;amp; 255.255.255.0 = 192.168.1.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font color=SkyBlue&gt;D电脑&lt;/font&gt;：192.168.1.2 &amp;amp; 255.255.255.0 = 192.168.1.0&lt;br /&gt;
+那么 A 与 B 在同一个子网，C 与 D 在同一个子网，但是 A 与 C 就不在同一个子网，与 D 也不在同一个子网，以此类推。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.webp%20%285%29.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以如果 A 给 C 发消息，A 和 C 的 IP 地址分别 &amp;amp; A 机器配置的子网掩码，发现不相等，则 A 认为 C 和自己不在同一个子网，于是把包发给路由器，就不管了，&lt;font color=MediumTurquoise&gt;之后怎么转发，A 不关心。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;A 如何知道，哪个设备是路由器？&lt;/div&gt;&lt;br /&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  答案：在 A 上要设置默认网关
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;上一步 A 通过是否与 C 在同一个子网内，判断出自己应该把包发给路由器，那路由器的 IP 是多少呢？&lt;/p&gt;
+&lt;p&gt;其实说发给路由器不准确，应该说 A 会把包发给&lt;font color=MediumTurquoise&gt;默认网关&lt;/font&gt;。&lt;/p&gt;
+&lt;p&gt;对 A 来说，A 只能&lt;font color=MediumTurquoise&gt;直接&lt;/font&gt;把包发给同处于一个子网下的某个 IP 上，所以发给路由器还是发给某个电脑，对 A 来说也不关心，只要这个设备有个 IP 地址就行。&lt;/p&gt;
+&lt;p&gt;所以&lt;font color=MediumTurquoise&gt;默认网关，就是 A 在自己电脑里配置的一个 IP 地址，&lt;/font&gt;以便在发给不同子网的机器时，发给这个 IP 地址。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.webp%20%286%29.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;路由器如何知道C在哪里？&lt;/div&gt;&lt;br /&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  答案：路由表
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;现在 A 要给 C 发数据包，已经可以成功发到路由器这里了，最后一个问题就是，&lt;font color=VioletRed&gt;路由器怎么知道，收到的这个数据包，该从自己的哪个端口出去，&lt;/font&gt;才能直接（或间接）地最终到达目的地 C 呢。&lt;/p&gt;
+&lt;p&gt;路由器收到的数据包有目的 IP 也就是 C 的 IP 地址，需要转化成从自己的哪个端口出去，很容易想到，应该有个表，就像 MAC 地址表一样。&lt;/p&gt;
+&lt;p&gt;这个表就叫&lt;font color=Fuchsia&gt;路由表&lt;/font&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;font color=red&gt;至于这个路由表是怎么出来的，有很多路由算法，本文不展开，因为我也不会哈哈~&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;不同于 MAC 地址表的是，路由表并不是一对一这种明确关系，我们下面看一个路由表的结构。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/3243.PNG&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;我们学习一种新的表示方法，由于子网掩码其实就表示前多少位表示子网的网段，所以如 192.168.0.0（255.255.255.0） 也可以简写为 192.168.0.0/24。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/3236.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+这就很好理解了，路由表就表示，&lt;font color=VioletRed&gt;这个子网下的，都转发到 0 号端口，192.168.1.xxx 这个子网下的，都转发到 1 号端口&lt;/font&gt;192.168.0.xxx 。下一跳列还没有值，我们先不管。&lt;/p&gt;
+&lt;p&gt;配合着结构图来看（这里把子网掩码和默认网关都补齐了）结果应该是 0&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%286%29.gif&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;刚才说的都是 IP 层，但发送数据包的数据链路层需要知道 MAC 地址，可是我只知道 IP 地址该怎么办呢？&lt;/div&gt;&lt;br /&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  答案：arp
+&lt;/div&gt;&lt;!--  --&gt;&lt;br /&gt;
+假如你（A）此时&lt;strong&gt;不知道&lt;/strong&gt;你同伴 B 的 MAC 地址（现实中就是不知道的，刚刚我们只是假设已知），你只知道它的 IP 地址，你该怎么把数据包准确传给 B 呢？&lt;/p&gt;
+&lt;p&gt;答案很简单，在网络层，&lt;font color=SkyBlue&gt;我需要把 IP 地址对应的 MAC 地址找到&lt;/font&gt;，也就是通过某种方式，找到&lt;font color=SkyBlue&gt;192.168.0.2 &lt;/font&gt; 对应的 MAC 地址 &lt;font color=SkyBlue&gt;BBBB&lt;/font&gt;。&lt;/p&gt;
+&lt;p&gt;这种方式就是 &lt;strong&gt;arp 协议&lt;/strong&gt;，同时电脑 A 和 B 里面也会有一张 &lt;strong&gt;arp 缓存表&lt;/strong&gt;，表中记录着 &lt;strong&gt;IP 与 MAC 地址&lt;/strong&gt;的对应关系。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/xihuanxingyouji.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;一开始的时候这个表是&lt;font color=SkyBlue&gt;空的&lt;/font&gt;，电脑 A 为了知道电脑 B（192.168.0.2）的 MAC 地址，将会&lt;font color=SkyBlue&gt;广播&lt;/font&gt;一条 arp 请求，B 收到请求后，带上自己的 MAC 地址给 A 一个&lt;font color=SkyBlue&gt;响应&lt;/font&gt;。此时 A 便更新了自己的 arp 表。&lt;/p&gt;
+&lt;p&gt;这样通过大家不断广播 arp 请求，最终所有电脑里面都将 arp 缓存表更新完整&lt;/p&gt;
+&lt;h2 id=&#34;总结一下&#34;&gt;总结一下&lt;/h2&gt;
+&lt;p&gt;好了，总结一下，到目前为止就几条规则：&lt;br /&gt;
+&lt;font color=SkyBlue&gt;从各个节点的视角来看&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;电脑视角：&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;首先我要知道我的 IP 以及对方的 IP&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过子网掩码判断我们是否在同一个子网&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在同一个子网就通过 arp 获取对方 mac 地址直接扔出去&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不在同一个子网就通过 arp 获取默认网关的 mac 地址直接扔出去&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;交换机视角：&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我收到的数据包必须有目标 MAC 地址&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过 MAC 地址表查映射关系&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查到了就按照映射关系从我的指定端口发出去&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查不到就所有端口都发出去&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;路由器视角：&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;我收到的数据包必须有目标 IP 地址&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过路由表查映射关系&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查到了就按照映射关系从我的指定端口发出去（不在任何一个子网范围，走其路由器的默认网关也是查到了）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查不到则返回一个路由不可达的数据包&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你嗅觉足够敏锐，你应该可以感受到下面这句话：&lt;/p&gt;
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;网络层（IP协议）本身没有传输包的功能，包的实际传输是委托给数据链路层（以太网中的交换机）来实现的。&lt;/div&gt;
+&lt;p&gt;&lt;font color=LightSlateBlue&gt;涉及到的三张表分别是&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;交换机中有 &lt;font color=GreenYellow&gt;MAC地址表&lt;/font&gt;用于映射 MAC 地址和它的端口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;路由器中有&lt;font color=GreenYellow&gt;路由表&lt;/font&gt;用于映射 IP 地址(段)和它的端口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;电脑和路由器中都有 &lt;font color=LightSlateBlue&gt;arp 缓存表&lt;/font&gt;用于缓存 IP 和 MAC 地址的映射关系&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;font color=LightSlateBlue&gt;这三张表是怎么来的&lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;MAC 地址表是通过以太网内各节点之间不断通过交换机通信，不断完善起来的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;路由表是各种路由算法 + 人工配置逐步完善起来的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;arp 缓存表是不断通过 arp 协议的请求逐步完善起来的。&lt;br /&gt;
+知道了以上这些，目前网络上两个节点是如何发送数据包的这个过程，就完全可以解释通了！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那接下来我们就放上本文 &lt;font color=GreenYellow size=5&gt;最后一个&lt;/font&gt;网络拓扑图吧，请做好  &lt;font color=GreenYellow size=5&gt;战斗&lt;/font&gt;准备！&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%287%29.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;这时路由器 1 连接了路由器 2，所以其路由表有了下一条地址这一个概念，所以它的路由表就变成了这个样子。如果匹配到了有下一跳地址的一项，则需要再次匹配，找到其端口，并找到下一跳 IP 的 MAC 地址。&lt;/p&gt;
+&lt;p&gt;也就是说找来找去，最终必须能映射到一个端口号，然后从这个端口号把数据包发出去。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/hahaha.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;font color=AntiqueWhite&gt;这时如果 A 给 F 发送一个数据包，能不能通呢？如果通的话整个过程是怎样的呢？&lt;/font&gt;&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%288%29.png&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=AntiqueWhite&gt;思考一分钟&amp;hellip;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=Cyan&gt;详细过程文字描述：&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=GreenYellow size=5 &gt;1.&lt;/font&gt; 首先&lt;font color=GreenYellow&gt;A（192.168.0.1）&lt;/font&gt; 通过子网掩码&lt;font color=GreenYellow &gt;（255.255.255.0）&lt;/font&gt;计算出自己与&lt;font color=GreenYellow size=3&gt;F（192.168.2.2）&lt;/font&gt; 并不在同一个子网内，于是决定发送给&lt;font color=GreenYellow size=3 &gt;默认网关（192.168.0.254）   &lt;/font&gt;。&lt;br /&gt;
+&lt;font color=GreenYellow size=3 &gt;2.&lt;/font&gt; A 通过 ARP 找到&lt;font color=GreenYellow size=3 &gt;默认网关 192.168.0.254&lt;/font&gt;  的 MAC 地址。&lt;br /&gt;
+&lt;font color=GreenYellow size=3 &gt;3.&lt;/font&gt; A 将&lt;font color=GreenYellow size=3 &gt;源 MAC 地址（AAAA）&lt;/font&gt;与&lt;font color=GreenYellow size=3 &gt;网关 MAC 地址（ABAB）&lt;/font&gt;封装在数据链路层头部，又将&lt;font color=GreenYellow size=3 &gt;源 IP 地址（192.168.0.1）&lt;/font&gt;和&lt;font color=GreenYellow size=3 &gt;目的 IP 地址（192.168.2.2）&lt;/font&gt;&lt;font color=LightSeaGreen size=3 &gt;（注意这里千万不要以为填写的是默认网关的 IP 地址，从始至终这个数据包的两个 IP 地址都是不变的，只有 MAC 地址在不断变化）&lt;/font&gt;封装在网络层头部，然后发包。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640.webp%20%287%29.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;font color=LightSeaGreen size=3 &gt;4.&lt;/font&gt; 交换机 1 收到数据包后，发现目标 MAC 地址是 &lt;font color=LightSeaGreen size=3 &gt;ABAB&lt;/font&gt;，转发给路由器 1。&lt;br /&gt;
+&lt;font color=LightSeaGreen size=3 &gt;5.&lt;/font&gt; 数据包来到了路由器 1，发现其目标 IP 地址是 &lt;font color=LightSeaGreen size=3 &gt;192.168.2.2&lt;/font&gt;，查看其路由表，发现了下一跳的地址是 &lt;font color=LightSeaGreen size=3 &gt;192.168.100.5&lt;/font&gt;。&lt;br /&gt;
+&lt;font color=LightSeaGreen size=3 &gt;6.&lt;/font&gt; 所以此时路由器 1 需要做两件事，第一件是再次匹配路由表，发现匹配到了端口为 2，于是将其封装到数据链路层，最后把包从&lt;font color=LightSeaGreen size=3 &gt; 2 号口&lt;/font&gt;发出去。&lt;br /&gt;
+&lt;font color=LightSeaGreen size=3 &gt;7.&lt;/font&gt; 此时路由器 2 收到了数据包，看到其目的地址是 &lt;font color=LightSeaGreen size=3 &gt;192.168.2.2&lt;/font&gt;，查询其路由表，匹配到端口号为 1，准备从&lt;font color=LightSeaGreen size=3 &gt;1 号口&lt;/font&gt; 把数据包送出去。&lt;br /&gt;
+&lt;font color=LightSeaGreen size=3 &gt;8.&lt;/font&gt; 但此时路由器 2 需要知道&lt;font color=LightSeaGreen size=3 &gt;192.168.2.2&lt;/font&gt;  的 MAC 地址了，于是查看其 arp 缓存，找到其 MAC 地址为&lt;font color=LightSeaGreen size=3 &gt;FFFF&lt;/font&gt; ，将其封装在数据链路层头部，并从 &lt;font color=LightSeaGreen size=3 &gt;1 号端口&lt;/font&gt;把包发出去。&lt;br /&gt;
+&lt;font color=LightSeaGreen size=3 &gt;9.&lt;/font&gt;交换机 3 收到了数据包，发现目的 MAC 地址为&lt;font color=LightSeaGreen size=3 &gt;FFFF&lt;/font&gt; ，查询其 MAC 地址表，发现应该从其&lt;font color=LightSeaGreen size=3 &gt;6 号端口&lt;/font&gt; 出去，于是从 &lt;font color=LightSeaGreen size=3 &gt;6 号端口&lt;/font&gt;把数据包发出去。&lt;br /&gt;
+&lt;font color=LightSeaGreen size=3 &gt;10.&lt;/font&gt; &lt;font face=&#34;STCAIYUN&#34;&gt;F 最终收到了数据包！&lt;/font&gt;并且发现目的 MAC 地址就是自己，于是收下了这个包。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/houji.jpg&#34;/&gt; 
+&lt;/figure&gt;
+&lt;br /&gt;
+至此，经过物理层、数据链路层、网络层这前三层的协议，以及根据这些协议设计的各种网络设备（网线、集线器、交换机、路由器），理论上只要拥有对方的 IP 地址，就已经将地球上任意位置的两个节点连通了。&lt;br /&gt;
+&lt;figure&gt;
+    &lt;img src=&#34;https://www.zhugeqing.top/images/article/640%20%289%29.png&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;font face=&#34;STCAIYUN&#34; color=LightSeaGreen size=5&gt;&lt;center&gt;- 完 -&lt;/center&gt;&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>网络</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
