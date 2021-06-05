@@ -6,12 +6,12 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>排序算法系列 on 请跟我一起踏上编程之旅</title>
+    <title>排序算法系列 on 诸葛青的编程之旅</title>
     <link>https://www.zhugeqing.top/series/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/</link>
-    <description>Recent content in 排序算法系列 on 请跟我一起踏上编程之旅</description>
+    <description>Recent content in 排序算法系列 on 诸葛青的编程之旅</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/), ![]()[公安](http://www.beian.gov.cn/)</copyright>
+    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)</copyright>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/series/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/index.xml" rel="self" type="application/rss+xml" />
@@ -20,11 +20,11 @@
       
       <item>
         <title>各种排序算法(特点与比较)</title>
-        <link>https://www.zhugeqing.top/interview/sort/</link>
+        <link>https://www.zhugeqing.top/data_structure_and_sort/sort/</link>
         <pubDate>Fri, 16 Oct 2020 12:00:13 +0900</pubDate>
         
         
-        <guid>https://www.zhugeqing.top/interview/sort/</guid>
+        <guid>https://www.zhugeqing.top/data_structure_and_sort/sort/</guid>
         <description>如牛顿所言，正是站在巨人的肩膀上，我们才能望得更远。本系列文章我们就来一起梳理一下排序算法的前世今生。 以下文章摘自力扣排序算法全解析来深度掌握排序算法</description>
         <content:encoded>&lt;p&gt;&lt;font color=CadetBlue size=3 &gt;如牛顿所言，正是站在巨人的肩膀上，我们才能望得更远。本系列文章我们就来一起梳理一下排序算法的前世今生。&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;以下文章摘自&lt;a href=&#34;https://leetcode-cn.com/leetbook/read/sort-algorithms/&#34;&gt;力扣排序算法全解析&lt;/a&gt;来深度掌握排序算法&lt;/p&gt;

@@ -35,24 +35,30 @@
 
 [[main]]
   parent = "面试"
-  name = "排序算法"
-  url = "interview/sort"
-
-[[main]]
-  parent = "面试"
-  name = "数据结构"
-  url = "interview/datastructure"
-
-[[main]]
-  parent = "面试"
   name = "算法实战"
   url = "interview/algorithm_interview"
+
+[[main]]
+  identifier = "数据结构与排序算法"
+  name = "必知必会"
+  url = "data_structure_and_sort"
+  weight = 10
+
+[[main]]
+  parent = "数据结构与排序算法"
+  name = "数据结构"
+  url = "data_structure_and_sort/datastructure"
+
+[[main]]
+  parent = "数据结构与排序算法"
+  name = "排序算法"
+  url = "data_structure_and_sort/sort"
 
 [[main]]
   name = "进击的诸葛青"
   identifier = "进击的诸葛青"
   url = "study_zhugeqing"
-  weight = 10  
+  weight = 11  
 
 [[main]]
   name = "重学操作系统"
@@ -67,11 +73,11 @@
 [[main]]
   name = "推荐网站"
   url = "recommend_site"
- weight = 11
+ weight = 12
 
 
 [[main]]
   identifier = "archive"
   name = "更新日志"
   url = "archive"
-  weight = 12
+  weight = 13

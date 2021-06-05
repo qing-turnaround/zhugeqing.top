@@ -6,13 +6,12 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>数据结构 on 请跟我一起踏上编程之旅</title>
+    <title>数据结构 on 诸葛青的编程之旅</title>
     <link>https://www.zhugeqing.top/interview/datastructure/</link>
-    <description>Recent content in 数据结构 on 请跟我一起踏上编程之旅</description>
+    <description>Recent content in 数据结构 on 诸葛青的编程之旅</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/), ![]()[公安](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Fri, 16 Oct 2020 12:00:13 +0900</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/interview/datastructure/index.xml" rel="self" type="application/rss+xml" />
@@ -22,9 +21,9 @@
       <item>
         <title>堆</title>
         <link>https://www.zhugeqing.top/interview/datastructure/heap/</link>
-        <pubDate>Fri, 16 Oct 2020 12:00:13 +0900</pubDate>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <atom:modified>Fri, 16 Oct 2020 12:00:13 +0900</atom:modified>
+        
         <guid>https://www.zhugeqing.top/interview/datastructure/heap/</guid>
         <description>堆的定义 根据 维基百科 的定义，堆 是一种特别的二叉树，满足以下条件的二叉树，可以称之为 堆： 1.完全二叉树； 2.每一个节点的值都必须 大于等于或者小于等于 其孩子节点的值。 堆 具有以下的特点： 1.可以在 O(logN) 的时间复杂度内向 堆 中插入元素； 2.可以在 O(logN) 的时间复杂度内向 堆 中删除元素； 3.可以在 O(1) 的时间复杂度内获取 堆 中的最大值或最小值。 堆的分类 堆 分为两种类型：最大堆 和 最小堆。 最大堆：堆中每一个节点的值 都大于等于 其孩子节</description>
         <content:encoded>&lt;h2 id=&#34;堆的定义&#34;&gt;堆的定义&lt;/h2&gt;
@@ -50,7 +49,7 @@
 &lt;h2 id=&#34;堆的操作&#34;&gt;堆的操作&lt;/h2&gt;
 &lt;p&gt;在&lt;code&gt;堆&lt;/code&gt;的数据结构中，我们常用堆的&lt;code&gt;插入&lt;/code&gt;、&lt;code&gt;删除&lt;/code&gt;、&lt;code&gt;获取堆顶元素&lt;/code&gt;的操作。&lt;br /&gt;
 接下来我们一一进行学习：&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;堆初始化操作&#34;&gt;堆初始化操作&lt;/h2&gt;
 
 &lt;div id=&#34;4b6eb6ea18320242&#34; class=&#34;codetab&#34;&gt;
   &lt;div class=&#34;codetab__links&#34;&gt;
