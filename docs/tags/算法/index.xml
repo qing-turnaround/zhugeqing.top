@@ -11,7 +11,7 @@
     <description>Recent content in 算法 on 请跟我一起踏上编程之旅</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)</copyright>
+    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/), ![]()[公安](http://www.beian.gov.cn/)</copyright>
     <lastBuildDate>Thu, 06 May 2021 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
@@ -6323,7 +6323,11 @@ F(N) = F(N - 1) + F(N - 2), 其中 N &amp;gt; 1.&lt;/p&gt;
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content:encoded>
+&lt;/div&gt;&lt;h2 id=&#34;优先队列&#34;&gt;优先队列&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;优先队列的底层实现：堆&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
         

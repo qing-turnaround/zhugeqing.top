@@ -76,7 +76,7 @@ bioImageUrl = "" #图片，头像链接
 useGravatar = false # 我们使用此选项的最高优先级
 location = "地球，中国" # “位置”
 organization = "星际自由者" # 组织
-link = "https://zhugeqing.top" # 网站
+link = "https://www.zhugeqing.top" # 网站
 
 # sidebar
 enableBio = true # 在主页侧边栏中

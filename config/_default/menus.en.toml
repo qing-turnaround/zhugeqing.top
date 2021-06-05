@@ -40,6 +40,11 @@
 
 [[main]]
   parent = "面试"
+  name = "数据结构"
+  url = "interview/datastructure"
+
+[[main]]
+  parent = "面试"
   name = "算法实战"
   url = "interview/algorithm_interview"
 
