@@ -12,12 +12,204 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)</copyright>
-    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Mar 2021 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>数组</title>
+        <link>https://www.zhugeqing.top/data_structure_and_sort/datastructure/array/</link>
+        <pubDate>Wed, 17 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 17 Mar 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/data_structure_and_sort/datastructure/array/</guid>
+        <description>数组的定义 根据 维基百科 的定义，在计算机科学中，数组数据结构（英语：array data structure），简称数组（英语：Array），是由相同类型的元素（element）的集合所组成的数据结构，分配一块连续的内存来存储。利用元素的索引（index）可以计算出该元素对应的存储地址 数组的分类 数组 分为两种类型：一维数组 和 多维数组。 一维数组：一维（或单维）数组是一种线性数组，其中元素的访问是以行或列索引的单一</description>
+        <content:encoded>&lt;h2 id=&#34;数组的定义&#34;&gt;数组的定义&lt;/h2&gt;
+&lt;p&gt;根据 &lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%95%B0%E7%BB%84&#34;&gt;维基百科&lt;/a&gt; 的定义，在计算机科学中，&lt;code&gt;数组数据结构&lt;/code&gt;（英语：&lt;code&gt;array data structure&lt;/code&gt;），简称&lt;code&gt;数组&lt;/code&gt;（英语：&lt;code&gt;Array&lt;/code&gt;），是由&lt;code&gt;相同类型&lt;/code&gt;的&lt;code&gt;元素（element）的集合&lt;/code&gt;所组成的数据结构，分配一块&lt;code&gt;连续&lt;/code&gt;的内存来存储。利用元素的&lt;code&gt;索引（index）&lt;/code&gt;可以计算出该元素对应的&lt;code&gt;存储地址&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;数组的分类&#34;&gt;数组的分类&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;数组&lt;/code&gt; 分为两种类型：&lt;code&gt;一维数组&lt;/code&gt; 和 &lt;code&gt;多维数组&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;一维数组&lt;/code&gt;：&lt;code&gt;一维（或单维）数组&lt;/code&gt;是一种线性数组，其中元素的访问是以行或列索引的&lt;code&gt;单一下标&lt;/code&gt;表示。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;多维数组&lt;/code&gt;：&lt;code&gt;多维数组&lt;/code&gt;是由多个低维数组组成的一种数组，其中元素的访问是以&lt;code&gt;多个下标&lt;/code&gt;为索引来表示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/dataStructure/array/array1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;多维数组&lt;/code&gt;的&lt;code&gt;存储空间&lt;/code&gt;本质上跟&lt;code&gt;一维数组&lt;/code&gt;一样，都是&lt;code&gt;连续存储&lt;/code&gt;的，只不过&lt;code&gt;多维数组&lt;/code&gt;将一个大容量的数组&lt;code&gt;分隔&lt;/code&gt;开来，分成多个小的数组，比如二维数组是由0个或多个一维数组组成的数组，三维数组是由0个或多个二维数组组成数组，以此类推&amp;hellip;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;数组的查找&#34;&gt;数组的查找&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;当计算机需要随机访问&lt;code&gt;数组&lt;/code&gt;中的&lt;code&gt;某个元素&lt;/code&gt;时，它会首先通过下面的&lt;code&gt;寻址公式&lt;/code&gt;，计算出该元素存储的&lt;code&gt;内存地址&lt;/code&gt;：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;a[i]_address = base_address + i * data_type_size
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中 &lt;code&gt;data_type_size&lt;/code&gt; 表示数组中&lt;code&gt;每个元素的大小&lt;/code&gt;（即&lt;code&gt;存储数据类型的大小&lt;/code&gt;），假如数组中存放的是&lt;code&gt;int类型&lt;/code&gt;，那么data_type_size就是4个字节，&lt;code&gt;a[i]_address&lt;/code&gt;就是需要查找的元素的&lt;code&gt;内存地址&lt;/code&gt;，&lt;code&gt;base_address&lt;/code&gt;就是&lt;code&gt;数组的首地址&lt;/code&gt;（即：&lt;code&gt;a[0]的内存地址&lt;/code&gt;）&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;通过一个简单的例子来明白&lt;code&gt;数组元素&lt;/code&gt;的&lt;code&gt;内存地址的计算&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;从&lt;code&gt;数组&lt;/code&gt;存储的&lt;code&gt;内存模型&lt;/code&gt;上来看，&lt;code&gt;“下标”&lt;/code&gt;最确切的定义应该是&lt;code&gt;“偏移（offset）”&lt;/code&gt;。前面也讲到，如果用 &lt;code&gt;a&lt;/code&gt; 来表示数组的首地址，&lt;code&gt;a[0]&lt;/code&gt; 就是偏移为 &lt;code&gt;0&lt;/code&gt; 的位置，也就是&lt;code&gt;首地址&lt;/code&gt;，&lt;code&gt;a[k]&lt;/code&gt; 就表示偏移 &lt;code&gt;k&lt;/code&gt; 个 data_type_size 的位置，所以计算 &lt;code&gt;a[k]&lt;/code&gt; 的内存地址只需要用这个公式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;a[k]_address = base_address + k * data_type_size
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//（这里k应该在区间[0,3)内）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a[k]_address = base_address + k * type_size式子成立~&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a[k]_address = base_address + k * type_size式子不成立！&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;因为当一个地址与一个整型数相加时，在进行加法运算之前会自动将整型数转换k*data_type_size的形式，所以当请不要尝试k+sizeof(int)，以免混淆记忆。&lt;/div&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;为什么大多数编程语言中，数组要从 &lt;code&gt;0&lt;/code&gt; 开始&lt;code&gt;编号&lt;/code&gt;，而不是从 &lt;code&gt;1&lt;/code&gt; 开始呢？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  &lt;p&gt;答案：从刚才那个&lt;code&gt;计算公式&lt;/code&gt;就可以知道，倘若从数组1开始编号，那么计算数组元素 &lt;code&gt;a[k]&lt;/code&gt; 的&lt;code&gt;内存地址&lt;/code&gt;就会变为：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;a[k]_address = base_address + (k-1)*type_size&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;对比两个公式&lt;/code&gt;，我们不难发现，从 1 开始编号，每次随机访问数组元素都&lt;code&gt;多了一次减法运算&lt;/code&gt;，对于 &lt;code&gt;CPU&lt;/code&gt; 来说，就是&lt;code&gt;多了一次减法指令&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;数组&lt;/code&gt;作为非常基础的数据结构，通过下标随机访问数组元素又是其非常基础的编程操作，&lt;code&gt;效率的优化&lt;/code&gt;就要尽可能做到极致。所以为了减少一次减法操作，数组选择了从 &lt;code&gt;0&lt;/code&gt; 开始编号，而不是从 &lt;code&gt;1&lt;/code&gt; 开始。&lt;/p&gt;
+&lt;p&gt;不过我认为，上面解释得再多其实都算不上压倒性的证明，说数组起始编号非 0 开始不可。所以我觉得最主要的原因可能是&lt;code&gt;历史原因  &lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C 语言设计者&lt;/code&gt;用 &lt;code&gt;0&lt;/code&gt; 开始计数数组下标，之后的 &lt;code&gt;Java、JavaScript 等高级语言&lt;/code&gt;都效仿了&lt;code&gt; C 语言&lt;/code&gt;，或者说，为了在一定程度上减少 C 语言程序员学习 Java 的学习成本，因此继续沿用了从 0 开始计数的习惯。实际上，很多语言中数组也并不是从 0 开始计数的，比如 &lt;code&gt;Matlab&lt;/code&gt;。甚至还有一些语言支持负数下标，比如 &lt;code&gt;Python&lt;/code&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数据结构与算法之美作者——王争 的原话&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;/div&gt;
+&lt;p&gt;&lt;font color=LightSeaGreen size=3 &gt;  &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;总结：数组根据下标随机访问的时间复杂度为 &lt;code&gt;O(1)&lt;/code&gt;，用给定元素查找的时间复杂度为&lt;code&gt;O(n)&lt;/code&gt;。（上述内容虽然未涉及到查找操作，但理解的可以自行尝试，&lt;code&gt;最好的情况&lt;/code&gt;，从&lt;code&gt;下标0&lt;/code&gt;开始就找到，&lt;code&gt;最坏情况&lt;/code&gt;，在&lt;code&gt;最后一个下标&lt;/code&gt;才找到）&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;数组的插入&#34;&gt;数组的插入&lt;/h2&gt;
+&lt;p&gt;假设数组的&lt;code&gt;长度&lt;/code&gt;为 &lt;code&gt;n&lt;/code&gt;，现在，如果我们需要将&lt;code&gt;一个数据&lt;/code&gt;插入到数组中的第 &lt;code&gt;k&lt;/code&gt; 个位置。为了把第 &lt;code&gt;k&lt;/code&gt; 个位置腾出来，给新来的数据，我们需要将第 &lt;code&gt;k～n&lt;/code&gt; 这部分的元素都顺序地往&lt;code&gt;后挪一位&lt;/code&gt;。那&lt;code&gt;插入操作&lt;/code&gt;的&lt;code&gt;时间复杂度&lt;/code&gt;是多少呢？&lt;/p&gt;
+&lt;p&gt;如果在数组的末尾插入元素，那就不需要移动数据了，这时的时间复杂度为 O(1)。但如果在数组的开头插入元素，那所有的数据都需要依次往后移动一位，所以最坏时间复杂度是 O(n)。 因为我们在每个位置插入元素的概率是一样的，所以&lt;code&gt;平均情况时间复杂度为 (1+2+…n)/n=O(n)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/dataStructure/array/array2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如果数组中的数据是&lt;code&gt;有序的&lt;/code&gt;，我们在某个位置&lt;code&gt;插入一个新的元素&lt;/code&gt;时，就必须按照刚才的方法搬移 &lt;code&gt;k&lt;/code&gt; 之后的数据。但是，如果数组中存储的&lt;code&gt;数据并没有任何规律&lt;/code&gt;，数组只是被当作&lt;code&gt;一个存储数据的集合&lt;/code&gt;。在这种情况下，如果要将某个数组插入到&lt;code&gt;第 k 个位置&lt;/code&gt;，&lt;code&gt;为了避免大规模的数据搬移&lt;/code&gt;，我们还有一个简单的办法就是，直接将&lt;code&gt;第 k 位的数据&lt;/code&gt;搬移到&lt;code&gt;数组元素的最后&lt;/code&gt;，&lt;code&gt;把新的元素直接放入第 k 个位置&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/dataStructure/array/array3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;利用这种处理技巧，在特定场景下，&lt;code&gt;在第 k 个位置&lt;/code&gt;插入一个元素的&lt;code&gt;时间复杂度&lt;/code&gt;就会降为 &lt;code&gt;O(1)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;总结：数组在&lt;code&gt;需要保持有序&lt;/code&gt;的状态下，将元素插入到第k个位置的时间复杂度&lt;code&gt;O(n)&lt;/code&gt;，数组在&lt;code&gt;无需保持有序&lt;/code&gt;的状态下，将元素插入到第k个位置的时间复杂度为&lt;code&gt;O(1)&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id=&#34;数组的删除&#34;&gt;数组的删除&lt;/h2&gt;
+&lt;p&gt;跟&lt;code&gt;插入数据&lt;/code&gt;类似，如果我们要&lt;code&gt;删除&lt;/code&gt;第 k 个位置的数据，为了内存的连续性，也需要搬移数据，不然中间就会出现空洞，&lt;code&gt;内存就不连续了&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;和插入类似，如果&lt;code&gt;删除数组末尾的数据&lt;/code&gt;，则最好情况时间复杂度为 &lt;code&gt;O(1)&lt;/code&gt;；如果&lt;code&gt;删除开头的数据&lt;/code&gt;，则最坏情况时间复杂度为 &lt;code&gt;O(n)&lt;/code&gt;；平均情况时间复杂度也为 &lt;code&gt;O(n)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/dataStructure/array/array4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;警惕数组的访问越界问题&#34;&gt;警惕数组的访问越界问题&lt;/h2&gt;
+&lt;p&gt;请分析如下代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[])&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;hello world&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;你发现问题了吗？这段代码的&lt;code&gt;运行结果&lt;/code&gt;并非是&lt;code&gt;打印三行&lt;/code&gt;“hello word”，而是会&lt;code&gt;无限&lt;/code&gt;打印“hello world”，这是为什么呢？&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;因为，数组大小为 3，a[0]，a[1]，a[2]，而我们的代码因为书写错误，导致 for 循环的结束条件错写为了 i&amp;lt;=3 而非 i&amp;lt;3，所以当 i=3 时，数组 a[3] 访问越界。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我们知道，在 C 语言中，&lt;code&gt;只要不是访问受限的内存&lt;/code&gt;，&lt;code&gt;所有的内存空间都是可以自由访问的&lt;/code&gt;。根据我们前面讲的数组寻址公式，&lt;code&gt;a[3] 也会被定位到某块不属于数组的内存地址上&lt;/code&gt;，而这个地址正好是存储变量 &lt;code&gt;i&lt;/code&gt; 的内存地址，那么 &lt;code&gt;a[3]=0 就相当于 i=0&lt;/code&gt;，所以就会&lt;code&gt;导致代码无限循环&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;所有只需再随便加一个变量即可，使得i不再变为0，就可解决无限循环问题，因为它会将j变为0&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[])&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;99&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;hello world&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;j = %d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;数组越界&lt;/code&gt;在 &lt;code&gt;C 语言&lt;/code&gt;中是一种&lt;code&gt;未决行为&lt;/code&gt;，并没有规定&lt;code&gt;数组访问越界&lt;/code&gt;时编译器应该如何处理。因为，访问数组的&lt;code&gt;本质&lt;/code&gt;就是访问一段连续内存，``只要数组通过偏移计算得到的内存地址是可用的，那么程序就可能不会报任何错误。&lt;/p&gt;
+&lt;p&gt;这种情况下，一般都会出现莫名其妙的&lt;code&gt;逻辑错误&lt;/code&gt;，而且，很多&lt;code&gt;计算机病毒&lt;/code&gt;也正是利用到了代码中的&lt;code&gt;数组越界&lt;/code&gt;可以访问&lt;code&gt;非法地址&lt;/code&gt;的&lt;code&gt;漏洞&lt;/code&gt;，来&lt;code&gt;攻击系统&lt;/code&gt;，所以写代码的时候一定要&lt;code&gt;警惕数组越界&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;目前的主流的语言如java这样的会自己检查数组越界，而无须程序员自己检查。&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>数据结构</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>堆</title>
