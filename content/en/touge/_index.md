@@ -1,7 +1,7 @@
 ---
 date: 2020-12-13
 title: "头歌"
-description: "如果说数学是皇冠上的一颗明珠，那么算法就是这颗明珠上的光芒，算法让这颗明珠更加熠熠生辉，为科技进步和社会发展照亮了前进的路"
+description: "一天只有84600秒，你还要等多久！"
 image: "images/recommend_site/xingyouji.jpg"
 title: "头歌"
 author: 诸葛青
