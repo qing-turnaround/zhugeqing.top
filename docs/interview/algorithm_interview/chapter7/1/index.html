@@ -1902,7 +1902,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 12, 2020 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;4&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1924,7 +1924,8 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <p><a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">104. 二叉树的最大深度</a></p>
+      <p>``二叉树的问题都能用前、中、后序遍历的框架解决`</p>
+<p><a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">104. 二叉树的最大深度</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -2416,7 +2417,184 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
+</div><p><a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/">222. 完全二叉树的节点个数</a>　</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">countNodes</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nf">countNodes</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">Left</span><span class="p">)</span> <span class="o">+</span> <span class="nf">countNodes</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">Right</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
+</div><p><a href="https://leetcode-cn.com/problems/balanced-binary-tree/">110. 平衡二叉树</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang">
+<span class="kd">func</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="c1">//因为-1是不平衡的信号，使用要查看是否大于0
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nf">height</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+<span class="p">}</span>
+
+
+<span class="kd">func</span> <span class="nf">height</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span><span class="kt">int</span><span class="p">{</span>
+    <span class="c1">//后序遍历
+</span><span class="c1"></span>    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="p">}</span>
+
+    <span class="c1">//求左右子树的高度
+</span><span class="c1"></span>    <span class="nx">leftHeight</span> <span class="o">:=</span> <span class="nf">height</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">Left</span><span class="p">)</span>
+    <span class="nx">rightHeight</span> <span class="o">:=</span> <span class="nf">height</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">Right</span><span class="p">)</span>
+
+    <span class="c1">//-1传递一个不平衡的信号，abs（）来检验是否两边节点数之差已经大于了1
+</span><span class="c1"></span>    <span class="k">if</span> <span class="nx">leftHeight</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">rightHeight</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nf">abs</span><span class="p">(</span><span class="nx">leftHeight</span> <span class="o">-</span> <span class="nx">rightHeight</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">1</span><span class="p">{</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="p">}</span>
+
+    <span class="c1">//加1算上它自身，
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nf">max</span><span class="p">(</span><span class="nx">leftHeight</span><span class="p">,</span><span class="nx">rightHeight</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="p">}</span>
+
+
+<span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">x</span> <span class="p">&gt;</span> <span class="nx">y</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">x</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">y</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">abs</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span><span class="kt">int</span><span class="p">{</span>
+    <span class="k">if</span> <span class="nx">x</span> <span class="p">&lt;</span> <span class="mi">0</span><span class="p">{</span>
+        <span class="k">return</span> <span class="o">-</span><span class="nx">x</span> 
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">return</span> <span class="nx">x</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://leetcode-cn.com/problems/sum-of-left-leaves/">404. 左叶子之和</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">sumOfLeftLeaves</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="p">}</span>
+
+    <span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span>
+    
+    <span class="kd">var</span> <span class="nx">sum</span> <span class="kd">func</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span>
+
+    <span class="nx">sum</span> <span class="p">=</span> <span class="kd">func</span> <span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">){</span>
+        <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+        
+        <span class="c1">//递归终止条件
+</span><span class="c1"></span>        <span class="k">if</span> <span class="nx">root</span><span class="p">.</span><span class="nx">Left</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">root</span><span class="p">.</span><span class="nx">Left</span><span class="p">.</span><span class="nx">Left</span> <span class="o">==</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">root</span><span class="p">.</span><span class="nx">Left</span><span class="p">.</span><span class="nx">Right</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
+            <span class="nx">res</span> <span class="o">+=</span> <span class="nx">root</span><span class="p">.</span><span class="nx">Left</span><span class="p">.</span><span class="nx">Val</span>
+
+        <span class="p">}</span>
+        <span class="nf">sum</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">Left</span><span class="p">)</span>
+        <span class="nf">sum</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">Right</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nf">sum</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<ul>
+<li>遍历完某条路径用前序遍历递归框架</li>
+</ul>
+
     </article>
     
     
@@ -2705,11 +2883,11 @@
     <ul class="related-ul">
         
         <li>
-          <a href="/interview/algorithm_interview/chapter5/2/" class="related__link">第五章第二节</a>
+          <a href="/interview/algorithm_interview/chapter4/1/" class="related__link">第四章第一节</a>
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter5/1/" class="related__link">第五章第一节</a>
+          <a href="/interview/algorithm_interview/chapter5/2/" class="related__link">第五章第二节</a>
         </li>
         
         <li>
@@ -2717,11 +2895,11 @@
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter4/1/" class="related__link">第四章第一节</a>
+          <a href="/interview/algorithm_interview/chapter3/1/" class="related__link">第三章第一节</a>
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter4/2/" class="related__link">第四章第二节</a>
+          <a href="/interview/algorithm_interview/chapter5/1/" class="related__link">第五章第一节</a>
         </li>
         
     </ul>
@@ -3799,6 +3977,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </li>
       </ul>
     </li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
         </div>
