@@ -10,11 +10,11 @@ themecolor = ""
 
 themeOptions = ["dark", "light", "hacker", "solarized", "kimbie"] # 选择不同的主题
 # 不允许出现在主页的目录名
-notAllowedTypesInHome = ["study_zhugeqing","interview","databases","contact", "about","archive", "presentation", "resume","intelligence","devil_footprints"]
+notAllowedTypesInHome = ["touge","study_zhugeqing","interview","databases","contact", "about","archive", "presentation", "resume","intelligence","devil_footprints"]
 # 不允许出现在主页侧边栏的目录名
-notAllowedTypesInHomeSidebar = ["about","gallery","archive","recommend_sites","intelligence","devil_footprints"]
+notAllowedTypesInHomeSidebar = ["touge","about","gallery","archive","recommend_sites","intelligence","devil_footprints"]
 # 不允许被日志记录的目录名
-notAllowedTypesInArchive = ["gallery","archive"]
+notAllowedTypesInArchive = ["touge","gallery","archive"]
 
 notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
 # 主页大小
