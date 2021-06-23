@@ -1902,7 +1902,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 12, 2020 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;1&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;4&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1925,6 +1925,7 @@
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
       <h2 id="组合问题">组合问题</h2>
+<p><a href="https://leetcode-cn.com/problems/combinations/">77. 组合</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -2004,6 +2005,556 @@
     <span class="nf">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://leetcode-cn.com/problems/combination-sum/">39. 组合总和</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">combinationSum</span><span class="p">(</span><span class="nx">candidates</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">target</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="c1">//返回结果数组res
+</span><span class="c1"></span>	<span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="c1">//暂存数组
+</span><span class="c1"></span>	<span class="nx">temp</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+	<span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">candidates</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="nx">dfs</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">,</span><span class="nx">sum</span> <span class="kt">int</span><span class="p">)</span>
+
+	<span class="nx">dfs</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">,</span><span class="nx">sum</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+
+		<span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">start</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">n</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+			<span class="k">if</span> <span class="nx">sum</span><span class="o">+</span><span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="nx">target</span><span class="p">{</span>
+				<span class="c1">//如果满足条件，直接加入结果集
+</span><span class="c1"></span>				<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span><span class="nb">append</span><span class="p">([]</span><span class="nb">int</span><span class="p">(</span><span class="kc">nil</span><span class="p">),</span><span class="nb">append</span><span class="p">(</span><span class="nx">temp</span><span class="p">,</span><span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span><span class="o">...</span><span class="p">))</span>
+			<span class="p">}</span>
+
+			<span class="c1">//进行剪枝
+</span><span class="c1"></span>			<span class="k">if</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">target</span><span class="p">{</span>
+				<span class="k">continue</span>
+			<span class="p">}</span>
+			<span class="nx">temp</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">temp</span><span class="p">,</span><span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+			<span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">sum</span><span class="o">+</span><span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+
+			<span class="c1">//回溯之后，删除暂存数组加入的元素
+</span><span class="c1"></span>			<span class="nx">temp</span> <span class="p">=</span> <span class="nx">temp</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">temp</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="p">}</span>
+
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+
+	<span class="c1">//start表示数组中的下标
+</span><span class="c1"></span>	<span class="c1">//sum表示当前暂存组合的和
+</span><span class="c1"></span>	<span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://leetcode-cn.com/problems/combination-sum-ii/">40. 组合总和 II</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">combinationSum2</span><span class="p">(</span><span class="nx">candidates</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">target</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="c1">//返回结果数组res
+</span><span class="c1"></span>	<span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="c1">//暂存数组
+</span><span class="c1"></span>	<span class="nx">temp</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+	<span class="c1">//增加一个used用来记录数组的该元素是否被使用
+</span><span class="c1"></span>	<span class="nx">used</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">bool</span><span class="p">)</span>
+	<span class="c1">//先进行排序
+</span><span class="c1"></span>	<span class="nx">sort</span><span class="p">.</span><span class="nf">Ints</span><span class="p">(</span><span class="nx">candidates</span><span class="p">)</span>
+	<span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">candidates</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="nx">dfs</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">,</span><span class="nx">sum</span> <span class="kt">int</span><span class="p">)</span>
+
+	<span class="nx">dfs</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">,</span><span class="nx">sum</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">sum</span> <span class="o">==</span> <span class="nx">target</span><span class="p">{</span>
+			<span class="c1">//如果满足条件，直接加入结果集
+</span><span class="c1"></span>			<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span><span class="nb">append</span><span class="p">([]</span><span class="nb">int</span><span class="p">(</span><span class="kc">nil</span><span class="p">),</span><span class="nx">temp</span><span class="o">...</span><span class="p">))</span>
+		<span class="p">}</span>
+
+		<span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">start</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">n</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+			<span class="k">if</span> <span class="nx">i</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">!</span><span class="nx">used</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">]{</span>
+				<span class="k">continue</span>
+			<span class="p">}</span>
+
+			<span class="c1">//进行剪枝
+</span><span class="c1"></span>			<span class="k">if</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">target</span><span class="p">{</span>
+                <span class="c1">//因为已经升序排序，所以可以直接退出for循环
+</span><span class="c1"></span>				<span class="k">break</span>
+			<span class="p">}</span>
+			<span class="nx">temp</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">temp</span><span class="p">,</span><span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+			<span class="nx">used</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="kc">true</span>
+			<span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nx">sum</span><span class="o">+</span><span class="nx">candidates</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+			<span class="nb">delete</span><span class="p">(</span><span class="nx">used</span><span class="p">,</span><span class="nx">i</span><span class="p">)</span>
+			<span class="c1">//回溯之后，删除暂存数组加入的元素
+</span><span class="c1"></span>			<span class="nx">temp</span> <span class="p">=</span> <span class="nx">temp</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">temp</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="p">}</span>
+
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+
+	<span class="c1">//start表示数组中的下标
+</span><span class="c1"></span>	<span class="c1">//sum表示当前暂存组合的和
+</span><span class="c1"></span>	<span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://leetcode-cn.com/problems/combination-sum-iii/">216. 组合总和 III</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">combinationSum3</span><span class="p">(</span><span class="nx">k</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">n</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">k</span> <span class="p">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="nx">n</span> <span class="p">&lt;</span> <span class="mi">1</span><span class="p">{</span>
+		<span class="k">return</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">{}</span>
+	<span class="p">}</span>
+	<span class="c1">//回溯+剪枝
+</span><span class="c1"></span>	<span class="c1">//返回结果数组
+</span><span class="c1"></span>	<span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="c1">//递归函数
+</span><span class="c1"></span>	<span class="kd">var</span> <span class="nx">dfs</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="p">,</span><span class="nx">sum</span> <span class="kt">int</span><span class="p">)</span>
+
+	<span class="c1">//暂存数组
+</span><span class="c1"></span>	<span class="nx">temp</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+	<span class="nx">dfs</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="p">,</span><span class="nx">sum</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">sum</span> <span class="o">==</span> <span class="nx">n</span> <span class="o">&amp;&amp;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">temp</span><span class="p">)</span> <span class="o">==</span> <span class="nx">k</span><span class="p">{</span>
+			<span class="c1">//满足，加入结果集
+</span><span class="c1"></span>			<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span><span class="nb">append</span><span class="p">([]</span><span class="nb">int</span><span class="p">(</span><span class="kc">nil</span><span class="p">),</span><span class="nx">temp</span><span class="o">...</span><span class="p">))</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+
+		<span class="c1">//递归细节
+</span><span class="c1"></span>		<span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">start</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+			<span class="c1">//进行剪枝
+</span><span class="c1"></span>			<span class="k">if</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">i</span> <span class="p">&gt;</span> <span class="nx">n</span><span class="p">{</span>
+				<span class="c1">//因为是升序，所以直接退出即可
+</span><span class="c1"></span>				<span class="k">break</span>
+			<span class="p">}</span>
+			<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">temp</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span> <span class="p">&gt;</span> <span class="nx">k</span><span class="p">{</span>
+				<span class="k">break</span>
+			<span class="p">}</span>
+			<span class="nx">temp</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">temp</span><span class="p">,</span><span class="nx">i</span><span class="p">)</span>
+			<span class="c1">//进行递归
+</span><span class="c1"></span>			<span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nx">sum</span><span class="o">+</span><span class="nx">i</span><span class="p">)</span>
+			<span class="c1">//进行回溯
+</span><span class="c1"></span>			<span class="nx">temp</span> <span class="p">=</span> <span class="nx">temp</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">temp</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="p">}</span>
+
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="c1">//从数字1开始
+</span><span class="c1"></span>	<span class="nf">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://leetcode-cn.com/problems/subsets/">78. 子集</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">subsets</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="c1">//返回结果数组
+</span><span class="c1"></span>	<span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="c1">//先加入一个空集
+</span><span class="c1"></span>	<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,[]</span><span class="kt">int</span><span class="p">{})</span>
+
+	<span class="c1">//暂存数组
+</span><span class="c1"></span>	<span class="nx">temp</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="c1">//回溯
+</span><span class="c1"></span>	<span class="c1">//数组的长度
+</span><span class="c1"></span>	<span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="nx">dfs</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">)</span>
+
+	<span class="nx">dfs</span> <span class="p">=</span>  <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">){</span>
+		<span class="k">if</span> <span class="nx">start</span> <span class="o">&gt;=</span> <span class="nx">n</span><span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">start</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">n</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+			<span class="nx">temp</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">temp</span><span class="p">,</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+			<span class="c1">//递归
+</span><span class="c1"></span>			<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span><span class="nb">append</span><span class="p">([]</span><span class="nb">int</span><span class="p">(</span><span class="kc">nil</span><span class="p">),</span><span class="nx">temp</span><span class="o">...</span><span class="p">))</span>
+			<span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+			<span class="c1">//回溯
+</span><span class="c1"></span>			<span class="nx">temp</span> <span class="p">=</span> <span class="nx">temp</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">temp</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+		<span class="p">}</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://leetcode-cn.com/problems/subsets-ii/">90. 子集 II</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">subsetsWithDup</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[][]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="c1">//返回结果数组
+</span><span class="c1"></span>	<span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="c1">//先加入一个空集
+</span><span class="c1"></span>	<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,[]</span><span class="kt">int</span><span class="p">{})</span>
+	<span class="c1">//暂存结果数组
+</span><span class="c1"></span>	<span class="nx">temp</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+	<span class="c1">//帮助记录重复元素
+</span><span class="c1"></span>	<span class="nx">used</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">bool</span><span class="p">)</span>
+	<span class="c1">//数组长度
+</span><span class="c1"></span>	<span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span>
+	<span class="c1">//为了避免重复结果，先对数组进行排序
+</span><span class="c1"></span>	<span class="nx">sort</span><span class="p">.</span><span class="nf">Ints</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span>
+	<span class="c1">//回溯+剪枝
+</span><span class="c1"></span>	<span class="kd">var</span> <span class="nx">dfs</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">)</span>
+
+	<span class="nx">dfs</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">){</span>
+		<span class="k">if</span> <span class="nx">start</span> <span class="o">&gt;=</span> <span class="nx">n</span><span class="p">{</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+
+		<span class="c1">//递归细节
+</span><span class="c1"></span>		<span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">start</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">n</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+			<span class="k">if</span> <span class="nx">i</span><span class="p">&gt;</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">!</span><span class="nx">used</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">]{</span>
+				<span class="k">continue</span>
+			<span class="p">}</span>
+			<span class="nx">used</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="kc">true</span>
+			<span class="nx">temp</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">temp</span><span class="p">,</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+			<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span><span class="nb">append</span><span class="p">([]</span><span class="nb">int</span><span class="p">(</span><span class="kc">nil</span><span class="p">),</span><span class="nx">temp</span><span class="o">...</span><span class="p">))</span>
+			<span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+			<span class="nx">used</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="kc">false</span>
+			<span class="nx">temp</span> <span class="p">=</span> <span class="nx">temp</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">temp</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://leetcode-cn.com/problems/binary-watch/">401. 二进制手表</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">readBinaryWatch</span><span class="p">(</span><span class="nx">turnedOn</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">string</span> <span class="p">{</span>
+    <span class="c1">//组合问题，从下面数组中选取turnedOn个数来进行组合合成一个时间
+</span><span class="c1"></span>    <span class="nx">temp</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">32</span><span class="p">}</span>
+    <span class="c1">//返回数组
+</span><span class="c1"></span>    <span class="nx">ans</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1">//暂存组合数结果
+</span><span class="c1"></span>    <span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    
+
+    <span class="c1">//start开始遍历的地方，
+</span><span class="c1"></span>    <span class="kd">var</span> <span class="nx">dfs</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">)</span>
+
+    <span class="nx">dfs</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">start</span> <span class="kt">int</span><span class="p">){</span>
+        <span class="c1">//递归终止条件
+</span><span class="c1"></span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">==</span> <span class="nx">turnedOn</span><span class="p">{</span>
+            <span class="c1">//时钟数
+</span><span class="c1"></span>            <span class="nx">hour</span> <span class="o">:=</span> <span class="mi">0</span>
+            <span class="c1">//分钟数
+</span><span class="c1"></span>            <span class="nx">minute</span> <span class="o">:=</span> <span class="mi">0</span>
+            <span class="c1">//%02d不足2个数，自动往前面补0
+</span><span class="c1"></span>            <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">turnedOn</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+                <span class="c1">//大于等于3说明是分钟数灯泡，否则就是时钟数
+</span><span class="c1"></span>                <span class="k">if</span> <span class="nx">res</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">{</span>
+                    <span class="nx">minute</span> <span class="o">+=</span> <span class="nx">temp</span><span class="p">[</span><span class="nx">res</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="nx">hour</span> <span class="o">+=</span> <span class="nx">temp</span><span class="p">[</span><span class="nx">res</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="c1">//时间合理性
+</span><span class="c1"></span>            <span class="k">if</span> <span class="nx">minute</span> <span class="p">&lt;</span> <span class="mi">60</span> <span class="o">&amp;&amp;</span> <span class="nx">hour</span> <span class="p">&lt;</span> <span class="mi">12</span><span class="p">{</span>
+                <span class="nx">ans</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">ans</span><span class="p">,</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%d:%02d&#34;</span><span class="p">,</span><span class="nx">hour</span><span class="p">,</span><span class="nx">minute</span><span class="p">))</span>            
+            <span class="p">}</span>
+
+            <span class="k">return</span> 
+        <span class="p">}</span>
+
+
+
+        <span class="c1">//递归细节
+</span><span class="c1"></span>        <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">start</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+
+            <span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span><span class="nx">i</span><span class="p">)</span>
+            <span class="c1">//递归
+</span><span class="c1"></span>            <span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1">//回溯
+</span><span class="c1"></span>            <span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span>
+    <span class="p">}</span>
+
+    <span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nx">ans</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -2296,7 +2847,11 @@
     <ul class="related-ul">
         
         <li>
-          <a href="/interview/algorithm_interview/chapter5/1/" class="related__link">第五章第一节</a>
+          <a href="/interview/algorithm_interview/chapter7/1/" class="related__link">第七章第一节</a>
+        </li>
+        
+        <li>
+          <a href="/interview/algorithm_interview/chapter3/1/" class="related__link">第三章第一节</a>
         </li>
         
         <li>
@@ -2308,11 +2863,7 @@
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter8/1/" class="related__link">第八章第一节</a>
-        </li>
-        
-        <li>
-          <a href="/interview/algorithm_interview/chapter3/1/" class="related__link">第三章第一节</a>
+          <a href="/interview/algorithm_interview/chapter7/2/" class="related__link">第七章第二节</a>
         </li>
         
     </ul>
