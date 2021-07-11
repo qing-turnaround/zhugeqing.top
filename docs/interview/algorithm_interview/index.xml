@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sun, 13 Dec 2020 12:00:56 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Dec 2020 12:00:50 +0900</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/interview/algorithm_interview/index.xml" rel="self" type="application/rss+xml" />
@@ -236,6 +236,61 @@
         <guid>https://www.zhugeqing.top/interview/algorithm_interview/chapter9/</guid>
         <description></description>
         <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>第十章——贪心算法</title>
+        <link>https://www.zhugeqing.top/interview/algorithm_interview/chapter10/</link>
+        <pubDate>Sun, 13 Dec 2020 12:00:50 +0900</pubDate>
+        
+        <atom:modified>Sun, 13 Dec 2020 12:00:50 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/algorithm_interview/chapter10/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>结尾</title>
+        <link>https://www.zhugeqing.top/interview/algorithm_interview/chapter11/</link>
+        <pubDate>Sun, 13 Dec 2020 12:00:50 +0900</pubDate>
+        
+        <atom:modified>Sun, 13 Dec 2020 12:00:50 +0900</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/algorithm_interview/chapter11/</guid>
+        <description>1.做到不畏惧算法 2.不忽视基础 3.不断前进，持之以恒</description>
+        <content:encoded>&lt;p&gt;1.&lt;code&gt;做到不畏惧算法&lt;/code&gt;&lt;br /&gt;
+2.&lt;code&gt;不忽视基础&lt;/code&gt;&lt;br /&gt;
+3.&lt;code&gt;不断前进，持之以恒&lt;/code&gt;&lt;/p&gt;
+</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
