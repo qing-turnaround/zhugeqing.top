@@ -5,7 +5,7 @@ image: "/images/xingyouji.jpg"
 title: "图解|KMP算法"
 author: 诸葛青
 authorEmoji: 🎅
-pinned: true
+pinned: false
 tags:
 - 算法
 series:

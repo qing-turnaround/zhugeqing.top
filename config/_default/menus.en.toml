@@ -55,22 +55,6 @@
   url = "data_structure_and_sort/sort"
 
 [[main]]
-  name = "进击的诸葛青"
-  identifier = "进击的诸葛青"
-  url = "study_zhugeqing"
-  weight = 11  
-
-[[main]]
-  name = "重学操作系统"
-  parent = "进击的诸葛青"
-  url = "study_zhugeqing/operatingsystem"
-
-[[main]]
-  name = "通关计算机网络"
-  parent = "进击的诸葛青"
-  url = "study_zhugeqing/computernetwork"
-
-[[main]]
   name = "推荐网站"
   url = "recommend_site"
  weight = 12
