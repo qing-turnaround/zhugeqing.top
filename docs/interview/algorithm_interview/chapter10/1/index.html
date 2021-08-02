@@ -1943,29 +1943,57 @@
 </code></pre></td></tr></table>
 </div>
 </div><p><a href="https://leetcode-cn.com/problems/is-subsequence/">392. 判断子序列</a></p>
-<pre><code>func isSubsequence(s string, t string) bool {
-    //t字符串当前的下标
-    tStart := 0
-    sStart := 0
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isSubsequence</span><span class="p">(</span><span class="nx">s</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">t</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+    <span class="c1">//t字符串当前的下标
+</span><span class="c1"></span>    <span class="nx">tStart</span> <span class="o">:=</span> <span class="mi">0</span>
+    <span class="nx">sStart</span> <span class="o">:=</span> <span class="mi">0</span>
 
-    for sStart &lt; len(s){
-        if tStart &gt;= len(t){
-            return false
-        }
+    <span class="k">for</span> <span class="nx">sStart</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span>
+        <span class="k">if</span> <span class="nx">tStart</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">t</span><span class="p">){</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
 
-        if s[sStart] == t[tStart]{
-            sStart++
-            tStart++
-        }else{
-            tStart++
-        }
-    }
+        <span class="k">if</span> <span class="nx">s</span><span class="p">[</span><span class="nx">sStart</span><span class="p">]</span> <span class="o">==</span> <span class="nx">t</span><span class="p">[</span><span class="nx">tStart</span><span class="p">]{</span>
+            <span class="nx">sStart</span><span class="o">++</span>
+            <span class="nx">tStart</span><span class="o">++</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nx">tStart</span><span class="o">++</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
 
-    return true
+    <span class="k">return</span> <span class="kc">true</span>
     
-}
-</code></pre><p><a href="https://leetcode-cn.com/problems/non-overlapping-intervals/">435. 无重叠区间</a></p>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://leetcode-cn.com/problems/non-overlapping-intervals/">435. 无重叠区间</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -2325,11 +2353,11 @@
     <ul class="related-ul">
         
         <li>
-          <a href="/interview/algorithm_interview/chapter8/5/" class="related__link">第八章第五节——AI算法的基础是回溯算法</a>
+          <a href="/interview/algorithm_interview/chapter6/1/" class="related__link">第六章第一节</a>
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter7/1/" class="related__link">第七章第一节</a>
+          <a href="/interview/algorithm_interview/chapter8/3/" class="related__link">第八章第三节——组合</a>
         </li>
         
         <li>
@@ -2337,11 +2365,11 @@
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter4/1/" class="related__link">第四章第一节</a>
+          <a href="/interview/algorithm_interview/chapter8/5/" class="related__link">第八章第五节——AI算法的基础是回溯算法</a>
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter6/1/" class="related__link">第六章第一节</a>
+          <a href="/interview/algorithm_interview/chapter9/1/" class="related__link">第九章第一节</a>
         </li>
         
     </ul>
