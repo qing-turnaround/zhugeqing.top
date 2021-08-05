@@ -6,7 +6,11 @@
 <font color=black></font>
 <font color=VioletRed></font>
 <font color=SkyBlue></font>
+
+
 <font color=MediumTurquoise></font>
+
+
 <font color=Fuchsia></font>
 <font color=LightSlateBlue></font>
 <font color=GreenYellow></font>
@@ -22,3 +26,18 @@
 <p style="color:#0099CC";></p>
 
 	<font face="黑体" color=green size=5>我是黑体，绿色，尺寸为5</font> 
+
+
+    表情符号一：😐 😐 😐 😐 😐 😐 😐 😐
+
+表情符号二：😗 😗 😗 😗 😗 😗 😗 😗
+
+表情符号三：😡 😡 😡 😡 😡 😡 😡 😡
+
+表情符号四：😒 😒 😒 😒 😒 😒 😒 😒
+
+表情符号五：😦 😦 😦 😦 😦 😦 😦 😦
+
+表情符号六：😃 😃 😃 😃 😃 😃 😃 😃
+
+表情符号七：😕 😕 😕 😕 😕 😕 😕 😕

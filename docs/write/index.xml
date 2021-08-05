@@ -6,13 +6,13 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Writes on 诸葛青的编程之旅</title>
+    <title>日常写作 on 诸葛青的编程之旅</title>
     <link>https://www.zhugeqing.top/write/</link>
-    <description>Recent content in Writes on 诸葛青的编程之旅</description>
+    <description>Recent content in 日常写作 on 诸葛青的编程之旅</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Mon, 02 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 May 2021 12:00:56 +0900</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/write/index.xml" rel="self" type="application/rss+xml" />
@@ -20,28 +20,154 @@
 
       
       <item>
-        <title>持续行动</title>
-        <link>https://www.zhugeqing.top/write/2021-8-2/</link>
-        <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
+        <title>Golang字符串</title>
+        <link>https://www.zhugeqing.top/write/2021-8-5/</link>
+        <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
         
-        <atom:modified>Mon, 02 Aug 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/write/2021-8-2/</guid>
-        <description>持续行动从今天做起 从小到大，每个人都听过各种各样的技巧，比如，小时候的数学培训（这也算是一个技巧，以为报了班就能过练就出一身功夫），考试时候的投机取巧，比如小时候写作文，字数不够，写不出真材实料，就开始胡编乱造，等等&amp;hellip;&amp;hellip;</description>
-        <content:encoded>&lt;h2 id=&#34;持续行动从今天做起&#34;&gt;持续行动从今天做起&lt;/h2&gt;
-&lt;p&gt;从小到大，每个人都听过各种各样的技巧，比如，小时候的数学培训（这也算是一个技巧，以为报了班就能过练就出一身功夫），考试时候的投机取巧，比如小时候写作文，字数不够，写不出真材实料，就开始胡编乱造，等等&amp;hellip;&amp;hellip;&lt;/p&gt;
+        <atom:modified>Wed, 04 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-5/</guid>
+        <description>字符集 众所周知，变量都存在在计算机内存中，同时以二进制的形式存储， 比如int8类型的6在计算机中就应该是0000 0110，这很容易理解，因为这就是6的二进制形式，而加入是一个字符&amp;rsquo;a&amp;rsquo;呢，在没学到ASCII码集的时候，让你写出字符&amp;rsquo;a&amp;rsquo;的二进制形式你可能会相当懵。所以就诞生了字符集，通俗点讲，字符串就是用阿拉伯数字对字符进行编号，ASCII码集最初一</description>
+        <content:encoded>&lt;h2 id=&#34;字符集&#34;&gt;字符集&lt;/h2&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;众所周知，变量都存在在计算机内存中，同时以二进制的形式存储， 比如int8类型的6在计算机中就应该是0000 0110，这很容易理解，因为这就是6的二进制形式，而加入是一个字符&amp;rsquo;a&amp;rsquo;呢，在没学到ASCII码集的时候，让你写出字符&amp;rsquo;a&amp;rsquo;的二进制形式你可能会相当懵。所以就诞生了字符集，通俗点讲，字符串就是用阿拉伯数字对字符进行编号，ASCII码集最初一共收录了128个字符，我们所常用的字母字符，数字字符，常用符号字符都包含于ASCII码集，直接上图吧&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/write/string1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;而之后ASCII码字符集的扩展收录了256个字符，但是后面发现缺少汉字也不行，所以又出现了GB2312,而这也没有繁体字啊,随后又出现了BIG5，但是依然有许多字符没有被收录，比如日语，而后又有了GBK等等字符集，但最后本着全球统一化标准的的目的，Unicode字符集就诞生了，实现了跨语言，跨平台的文本转换和处理，字符集促成了字符与二进制的合作。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;但是这并不代表这结束，来看另外一个问题，如何存储一个字符串，比如s := &amp;ldquo;hello世界&amp;rdquo;，那么它在如何以二进制形式存储于计算机中呢，可能你会想直接代入字符集的编号不就行了，这确实可以，但是，这一串二进制数应该如何划分呢？如果没有一个划分规则的话，可能你存储的和取出的不是一个字符串了，有一种方法叫定长编码，就是一个字符由n个字节组成，如果这个字符位数不够，那么就高位补零，这样假如这个字符串每一个字符都占2个字节，那么我们解码的时候就直接每2个字节做一个字符翻译，但是这有很大的不足，可能像汉字这样的一些字符需要2个字节，但是常用的字母只需要一个字节就能表示，所以显然定长编码造成了显著的浪费。那就换一种，使用不定长编码，小编号只占少字节，而高编号就占多字节，但这样同样需要一个划分规则，直接上图&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/write/string2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;比如字符&amp;rsquo;e&amp;rsquo;的编码就是0110 0101（在区间[0,127]），而字符&amp;rsquo;世&amp;rsquo;的编码就是11100100        10111000  10010110  &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;可以尝试运行下面代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;e世&amp;#34;&lt;/span&gt;
+
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%b\t&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;font color=MediumTurquoise&gt;而这个编码方式也就是go语言的默认编码方式UTF-8编码&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&#34;字符串类型的结构&#34;&gt;字符串类型的结构&lt;/h2&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;首先在内存中找到这个字符串得有一个起始地址，而对于结尾，内存非常大，无法得知这个字符串的结尾在哪里，对于C语言字符串采取的是在尾部放一个编号为0的字符&#39;\0&#39;，而go语言设计者并没有这样做，而是在放一个长度，这个长度指的是的字符串的字节个数，如下图&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/write/string3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;go语言的字符串可以进行读，但是不能进行修改，所以go语言编译器会把定义的字符串分配的只读内存段。假如能够对字符串进行修改，那么如果有两个字符串变量同时指向了一个字符串，由于字符串变量是可以共用底层字符串内容的，通过其中一个变量对字符串进行修改，那么另个一个字符串变量同样被修改，这样的影响是不可预测的，所以要修改字符串变量就只能重新指向一个字符串&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第三天！&lt;/font&gt;&lt;/p&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
-        
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
           
             
-              <category>体会</category>
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>慢慢来，事情会办好的！</title>
+        <link>https://www.zhugeqing.top/write/2021-8-4/</link>
+        <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 04 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-4/</guid>
+        <description>改变趁现在 对于一个好的习惯，也许只要一些偶然的机会就可以使得一个好习惯永远消失。可能你会想：“这怎么可能？无论是好习惯还是坏习惯都是习惯，而习惯是很难改变的”，习惯是指“长期形成的不易改变的行为、生活方式或社会风尚”。“不易改变”很重要，但也代表着不是不能改变，举一个例子，我们每个人在小时候都有的好习惯“早睡早起”，这是无法反驳的，青少年小时候都会早睡早起，因为那时的晚上并没有太多诱惑，而如今，信</description>
+        <content:encoded>&lt;h2 id=&#34;改变趁现在&#34;&gt;改变趁现在&lt;/h2&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;对于一个好的习惯，也许只要一些偶然的机会就可以使得一个好习惯永远消失。可能你会想：“这怎么可能？无论是好习惯还是坏习惯都是习惯，而习惯是很难改变的”，习惯是指“长期形成的不易改变的行为、生活方式或社会风尚”。“不易改变”很重要，但也代表着不是不能改变，举一个例子，我们每个人在小时候都有的好习惯“早睡早起”，这是无法反驳的，青少年小时候都会早睡早起，因为那时的晚上并没有太多诱惑，而如今，信息化的社会充斥着诱惑，比如“网络游戏”，“抖音”，“QQ聊天”，等等娱乐方式都在潜移默化的影响我们的习惯，而早睡早起这一样好的习惯早就成为了云烟。但不可否认的是，现在的生活节奏很快，有些人忙不过来，也有些人玩不过来，显然，我更偏向于后者，没有人是天生爱学习的，但是所有人都应该是爱成长的，无论哪一个方面的成长，就算是打游戏，也代表你在玩某款游戏方面有了些许进步。回到原话题，好习惯太难发掘了，可能还没有人发现这个好习惯，就随这一些坏的变化而发展成坏习惯。而对于坏习惯，它很狡猾，它很容易让人察觉到它，但一个人很难消灭它，因为它每天都会给人多巴胺，使人沉浸于其中而不能自拔，这是无法或者“极其困难”通过某些偶然的机会改变的。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;如何发现一个坏习惯？很简单，问问自己的身体就知道了，或者去医院问问医生也能知道，比如你的皮肤有了什么变化，你的体态有了什么变化，你的器官有了什么变化？举个最简单的例子，就算所有的人都知道“吸烟有害身体”这个事实，但还是有不少人依旧吸烟，而这一坏习惯往往和“瘾”相关联。吸烟能得到什么？我小时候抽过烟，我那时的感受有两个，一是“我感觉抽烟的我好帅，我要在别人面前抽烟（当然，排除在家长面前抽烟）”；二是“抽烟有点呛人呀”。所以我到目前为止抽过的烟要低于十只，现在想想，还好我没有抽烟的习惯，不然钱没了，肺也在不断受到伤害。一个客观的事实，“你很难劝一个人去戒烟”，不要问我为什么，因为我劝了好多次了，但如上文所述，一个坏习惯很难改变，而不抽烟的好习惯可能在经过几次诱惑之后就变成爱抽烟了。慢慢发觉自己的坏习惯，要慢慢改变，循循善诱，比如以前一天要抽五只烟的，可以变成4只，然后发现自己还能少抽一点，再然后发现自己原来不抽烟也没什么关系，从而戒掉烟瘾！&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;对于改变要学会慢慢来，不要急，而我，今天是坚持写作的第二天，因为坚持和“慢慢来”使我今天还能继续写作，我写作是为了寻求内在，问问自己的心，从而也发现一些坏习惯，再慢慢改变。每一次改变总要有个第一天，那就从下定决心的那天开始，改变趁现在！&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第二天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
             
           
         
         
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2021-8-3/</link>
+        <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 03 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-3/</guid>
+        <description>为什么要持续行动 从小到大，每个人都听过各种各样的技巧，比如，小时候的数学培训（这也算是一个技巧，以为报了班就能过练就出一身功夫），考试时候的投机取巧，比如小时候写作文，字数不够，写不出真材实料，就开始胡编乱造，甚至题目要求写了需要流露出真实情感，也需要用技巧来填充，等等...... 我是一个很懒惰的人，如果有种东西可以通过技巧来快速获得，我肯定乐意学习该技巧，前提是这东西对我有所帮助。值得一说的是，</description>
+        <content:encoded>&lt;h2 id=&#34;为什么要持续行动&#34;&gt;为什么要持续行动&lt;/h2&gt;
+&lt;font color=MediumTurquoise&gt;
+从小到大，每个人都听过各种各样的技巧，比如，小时候的数学培训（这也算是一个技巧，以为报了班就能过练就出一身功夫），考试时候的投机取巧，比如小时候写作文，字数不够，写不出真材实料，就开始胡编乱造，甚至题目要求写了需要流露出真实情感，也需要用技巧来填充，等等......
+&lt;/font&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;   &lt;/font&gt;&lt;br /&gt;
+&lt;font color=MediumTurquoise&gt;&lt;br /&gt;
+我是一个很懒惰的人，如果有种东西可以通过技巧来快速获得，我肯定乐意学习该技巧，前提是这东西对我有所帮助。值得一说的是，这个类似东西似乎常常伴于学生，就是考试成绩，对于考试，每个人都有不同的技巧，而对那些学霸拥有的技巧更是数不胜数，而对于技巧，有个东西值得一说，那就是——“努力”。努力的范围很广阔，今天记录几十个单词是努力，今天跑上了5公里是努力，今天做了家务是努力，只要你愿意，努力就可以由你自己来定义，而努力就需要用一个“持续”来修饰。假如没有持续，今天我跑上了5公里，明天、后天、大后天、甚至几个星期后都没有去跑步，那么今天的5公里只能说是脑子突然一股狂热，认为自己该努力，该锻炼身体了，但这种不持续的努力只能有非常短暂的效果。&lt;br /&gt;
+&lt;/font&gt;&lt;br /&gt;
+&lt;font color=Fuchsia&gt;  &lt;/font&gt;&lt;br /&gt;
+&lt;font color=MediumTurquoise&gt;那么持续努力的周期应该如何定义呢，这完全可以取决于自身，地球的自转周期为一天，所以一天就是一个很好的参考单位，比如记单词，每天都愿意花上半的小时来记单词，再愿意花上半个小时来复习以前的单词。这就是一种持续，所以扯了这么多，持续行动和技巧有什么关系？有，有关系的，如今的互联网，就如微信公众号文章，短视频都会取一些标题来吸引读者和观者，例如，“英语如何到达高分的技巧”，“数学如何学好？”，这样的数不胜数，技巧的背后是什么？技巧的背后是由经验支撑的，所谓经验就是通过不断摸索，不断学习所得出的认识，而技巧就是副产物，就好比一个超级玛丽，本来你是一步一步往前进的，结果你旁边的小伙计告诉你，哪里有管道，可以快速通过一段距离，更有甚者告诉你哪里有个隐藏的地方可以直接跳过这个大关，然后你想：这不是挺好吗？使用这些“技巧”就可以快速过关，省下时间和躲避一些危险，甚至可以通关。但，人生不是游戏，人生抛弃死亡，是没有终点的，但你定下的目标有终点，如果你的目标是下次英语考试或者数学考试及格，采用一些技巧那绝对是明智的选择，但如果在后面几年里都需要这种数学，英语能力，那么所谓技巧可能能够帮到我们的可能性会大大降低，对于一个可以轻松通关游戏的高手，必然是经过了不断的努力，当他有了持续行动后，在持续行动的过程中还产生了快速通过此关的“技巧”，而这些技巧的产生的起因只是为了帮它的造物主（持续行动的高手）在以后再遇到关卡时，能够简单从容地过关，而对于新手而言，掌握这些技巧可能在一些关卡面前有用，但是越到后面就会感到越吃力，越力不从心。&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&#34;持续行动的好处&#34;&gt;持续行动的好处&lt;/h2&gt;
+&lt;font color=MediumTurquoise&gt;
+现在我们每一个人的环境都承载了所有前辈的过去，包括出生的家庭环境、所处的城市，都是前辈逐渐积攒下来的结果。这是我们无法选择的“默认参数”，我们一出生，身上就带了这些参数，需要背着它不断去优化，走完此生。
+&lt;/font&gt;
+&lt;p&gt;&lt;font color=Fuchsia&gt;   &lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;陶渊明先生有一句话叫作“悟已往之不谏，知来者之可追”，意思是过去的事情已经无法改变，只有现在、未来才是可以触及的。如果我们想要重构现在和未来的话，就像我们的过去被定义的方式一样，都是一个缓慢而持续的过程。也就是说，即使我们想改变，但改变的效果要显现，也需要非常漫长的时间。&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;世界是残酷的，我们大部分人都不能拥有衣食无忧，家庭富裕的生活，世界是公平的，无论是穷人还是富人所拥有的时间是一样的，而对于我们这样的普通人，持续行动就是我们变得越来越优秀的最大技巧。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;持续行动是容易被动摇的，但不能被孤独打败，不能说“我感觉今天所记的单词没有一点用处，过几天肯定忘了”而变得犹豫，甚至有了放弃在后面的日子记单词的想法。持续行动是孤独的，当你一个人默默的学习，锻炼身体，而同龄人在游戏，娱乐时，你会变得感觉像是一个与世界格格不入的人，但这份孤独是正向的，连这份孤独都抗下来了，那相信你以后面对其他消极情绪也能轻松消灭掉。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第一天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
         
       </item>
       

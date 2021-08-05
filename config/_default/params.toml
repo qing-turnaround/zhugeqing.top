@@ -13,8 +13,8 @@ themeOptions = ["dark", "light", "hacker", "solarized", "kimbie"] # 选择不同
 notAllowedTypesInHome = ["touge","interview","databases","contact", "about","archive", "presentation", "resume","intelligence","devil_footprints"]
 # 不允许出现在主页侧边栏的目录名
 notAllowedTypesInHomeSidebar = ["touge","about","gallery","archive","recommend_sites","intelligence","devil_footprints"]
-# 不允许被日志记录的目录名
-notAllowedTypesInArchive = ["touge","gallery","archive"]
+# 不允许被日志记录的目录名（以后删除日志）
+notAllowedTypesInArchive = ["touge","gallery","archive","write"]
 
 notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
 # 主页大小
