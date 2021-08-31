@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Wed, 05 May 2021 12:00:56 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/write/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +20,650 @@
 
       
       <item>
-        <title>Golang字符串</title>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-25/</link>
+        <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 25 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-25/</guid>
+        <description>记：持续行动的第二十三天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第二十三天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-24/</link>
+        <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 24 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-24/</guid>
+        <description>记：持续行动的第二十二天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第二十二天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-23/</link>
+        <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 23 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-23/</guid>
+        <description>记：持续行动的第二十一天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第二十一天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Linux就该这么学</title>
+        <link>https://www.zhugeqing.top/write/2021-8-22/</link>
+        <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 22 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-22/</guid>
+        <description>四个用于终端的快捷键 Tab键: 在Bash解释器的快捷键中，Tab绝对是使用频率最高的，它能够实现对命令、参数或文件的内容补全。 Ctrl+c键：当同时按下键盘上的“Ctrl”和字母“c”的时候，意味着对当前进程进行终止操作。假如执行了一个错误命令，又或者执行命令后无法结束了，这种情形下一定要保持冷静的按下“Ctrl+c”键，可以立刻夺回命令行终端的控制权。 Ctrl+d键：当同时按下键盘上的“Ctrl</description>
+        <content:encoded>&lt;h2 id=&#34;四个用于终端的快捷键&#34;&gt;四个用于终端的快捷键&lt;/h2&gt;
+&lt;font color=MediumTurquoise&gt;
+&lt;p&gt;&lt;code&gt;Tab键&lt;/code&gt;: 在Bash解释器的快捷键中，Tab绝对是使用频率最高的，它能够实现对命令、参数或文件的内容补全。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Ctrl+c键&lt;/code&gt;：当同时按下键盘上的“Ctrl”和字母“c”的时候，意味着对当前进程进行终止操作。假如执行了一个错误命令，又或者执行命令后无法结束了，这种情形下一定要保持冷静的按下“Ctrl+c”键，可以立刻夺回命令行终端的控制权。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Ctrl+d键&lt;/code&gt;：当同时按下键盘上的“Ctrl”和字母“d”的时候，代表键盘输入结束（End OF Input），简称EOF。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Ctrl+l键&lt;/code&gt;：清空当前终端中已有的内容，相当于清屏操作(类似于命令“clear”)。&lt;/p&gt;
+&lt;/font&gt;
+&lt;h2 id=&#34;常用系统工作命令&#34;&gt;常用系统工作命令&lt;/h2&gt;
+&lt;font color=MediumTurquoise&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;echo&lt;/code&gt;: echo命令用于在终端设备上输出字符串或变量提取后的值，语法格式为：“echo  [字符串] [$变量]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;date&lt;/code&gt;: date命令用于显示或设置系统的时间与日期，语法格式为：“ date [+指定的格式]”。还可以使用date设置本地时间，例:date -s &amp;ldquo;20210822 8:30:00&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;timedatectl&lt;/code&gt;: timedatectl命令用于设置系统的时间，英文全称为：“time date control”，语法格式为：“ timedatectl [参数]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;reboot&lt;/code&gt;: reboot命令用于重启系统，输入后回车执行即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;5．&lt;code&gt;poweroff&lt;/code&gt;: poweroff命令用于关闭系统，输入后回车执行即可。&lt;/p&gt;
+&lt;p&gt;6．&lt;code&gt;wget&lt;/code&gt;: wget命令用于在终端命令行里下载网络文件，英文全称为：“web get”，语法格式为：“wget [参数] 网址”。&lt;/p&gt;
+&lt;p&gt;7．&lt;code&gt;ps&lt;/code&gt;: ps命令用于查看系统中的进程状态，英文全称为：“processes”，语法格式为：“ps [参数]”。&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;```pstree``: pstree命令用于以树状图的形式展示进程之间的关系，英文全称为：“process tree”，输入后回车执行即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt;: top命令用于动态地监视进程活动及系统负载等信息，输入后回车执行即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;nice&lt;/code&gt;: nice命令用于调整进程的优先级，语法格式为：“nice 优先级数字 服务名称”，数字越低（取值范围是-20到19）、优先级越高。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pidof&lt;/code&gt;: pidof命令用于查询某个指定服务进程的PID号码值，语法格式为：“pidof [参数] 服务名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;kill&lt;/code&gt;: kill命令用于终止某个指定PID值的服务进程，语法格式为：“kill [参数] 进程的PID”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;killall&lt;/code&gt;: killall命令用于终止某个指定名称的服务所对应的全部进程，语法格式为：“killall [参数] 服务名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;系统状态检测命令&#34;&gt;系统状态检测命令&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ifconfig&lt;/code&gt;: ifconfig命令用于获取网卡配置与网络状态等信息，英文全称为：“interface config”，语法格式为：“ifconfig [参数] [网络设备]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;uname&lt;/code&gt;: uname命令用于查看系统内核版本与系统架构等信息，英文全称为：“Unix name”，语法格式为：“uname [-a]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;uptime&lt;/code&gt;: uptime命令用于查看系统的负载信息，输入后回车执行即可。它可以显示当前系统时间、系统已运行时间、启用终端数量以及平均负载值等信息。平均负载值指的是系统在最近1分钟、5分钟、15分钟内的压力情况（下面加粗的信息部分），负载值越低越好。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;free&lt;/code&gt;: free命令用于显示当前系统中内存的使用量信息，语法格式为：“free [-h]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;who&lt;/code&gt;: who命令用于查看当前登入主机的用户终端信息，输入后回车执行即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;last&lt;/code&gt;: last命令用于调取主机的被访记录，输入后回车执行即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ping&lt;/code&gt;: ping命令用于测试主机之间的网络连通性，语法格式为：“ping [参数] 主机地址”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tracepath&lt;/code&gt;: tracepath命令用于显示数据包达到目的主机途中所经过的路由信息，语法格式为：“tracepath [参数] 域名”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;netstat&lt;/code&gt;: netstat命令用于显示如网络连接、路由表、接口状态等的网络相关信息，英文全称为：“network status”，语法格式为：“netstat [参数]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;history&lt;/code&gt;: history命令用于显示执行过的命令历史，语法格式为：“history [-c]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sosreport&lt;/code&gt;: sosreport命令用于收集系统配置及架构信息并输出诊断文档，输入后回车执行即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;查找定位文件命令&#34;&gt;查找定位文件命令&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pwd&lt;/code&gt;: pwd命令用于显示用户当前所处的工作目录，英文全称为：“print working directory”，输入后回车执行即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cd&lt;/code&gt;: cd命令用于切换当前的工作路径，英文全称为：“change directory”，语法格式为：“cd [参数] [目录]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ls&lt;/code&gt;: ls命令用于显示目录中的文件信息，英文全称为：“list”，语法格式为：“ls [参数] [文件名称]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tree&lt;/code&gt;: tree命令用于以树状图的形式列出目录内容及结构，输入后回车执行即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;find&lt;/code&gt;: find命令用于按照指定条件来查找文件所对应的位置，语法格式为：“find [查找范围] 寻找条件”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;locate&lt;/code&gt;: locate命令用于按照名称快速搜索文件所对应的位置，语法格式为：“locate 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;whereis&lt;/code&gt;: whereis命令用于按照名称快速搜索二进制程序（命令）、源代码以及帮助手册文件所对应的位置，语法格式为：“whereis 命令名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;which&lt;/code&gt;: which命令用于按照指定名称快速搜索二进制程序（命令）所对应的位置，语法格式为：“which 命令名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;文本文件编辑命令&#34;&gt;文本文件编辑命令&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cat&lt;/code&gt;: cat命令用于查看纯文本文件（内容较少的），英文全称为：“concatenate”，语法格式为：“cat [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;more&lt;/code&gt;: more命令用于查看纯文本文件（内容较多的），语法格式为：“more [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;head&lt;/code&gt;: head命令用于查看纯文本文件的前N行，语法格式为：“head [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tail&lt;/code&gt;: tail命令用于查看纯文本文件的后N行或持续刷新文件的最新内容，语法格式为：“tail [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tr&lt;/code&gt;: tr命令用于替换文本内容中的字符，英文全称为：“translate”，语法格式为：“tr [原始字符] [目标字符]”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;wc&lt;/code&gt;: wc命令用于统计指定文本文件的行数、字数或字节数，英文全称为：“word counts”，语法格式为：“wc [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;stat&lt;/code&gt;: stat命令用于查看文件的具体存储细节和时间等信息，英文全称为：“status”，语法格式为：“stat 文件名称”。在Linux系统中文件包含三种时间状态，分别是Access Time（最后一次内容被访问的时间，简称Atime），Modify Time（最后一次内容被修改的时间，简称Mtime）以及Change Time（文件属性最后一次被修改的时间，简称Ctime）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;: grep命令用于按行提取文本内容，语法格式为：“grep [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cut&lt;/code&gt;: cut命令用于按列提取文本内容，语法格式为：“cut [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;diff&lt;/code&gt;: diff命令用于比较多个文件之间内容的差异，英文全称为：“different”，语法格式为：“diff [参数] 文件名称A 文件名称B”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;uniq&lt;/code&gt;: uniq命令用于去除文本中连续的重复行，英文全称为：“unique”，语法格式为：“uniq [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sort&lt;/code&gt;: sort命令用于对文本内容进行再排序，语法格式为：“sort [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;文件目录管理命令&#34;&gt;文件目录管理命令&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;touch&lt;/code&gt;: touch命令用于创建空白文件或设置文件的时间，语法格式为：“touch [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;mkdir&lt;/code&gt;: mkdir命令用于创建空白的目录，英文全称为：“make directory”，语法格式为：“mkdir [参数] 目录名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cp&lt;/code&gt;: cp命令用于复制文件或目录，英文全称为：“copy”，语法格式为：“cp [参数] 源文件名称 目标文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;mv&lt;/code&gt;: mv命令用于剪切或重命名文件，英文全称为：“move”，语法格式为：“mv [参数] 源文件名称 目标文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;rm&lt;/code&gt;: rm命令用于删除文件或目录，英文全称为：“remove”，语法格式为：“rm [参数] 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;dd&lt;/code&gt;: dd命令用于按照指定大小的数据块个数来复制文件或转换文件，语法格式为：“dd if=参数值 of=参数值 count=参数值 bs=参数值”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;file&lt;/code&gt;: file命令用于查看文件的类型，语法格式为：“file 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tar&lt;/code&gt;: tar命令用于对文件进行打包压缩或解压，语法格式为：“tar 参数 文件名称”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/font&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第二十天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-21/</link>
+        <pubDate>Sat, 21 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 21 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-21/</guid>
+        <description>记：持续行动的第十九天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十九天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-20/</link>
+        <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 20 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-20/</guid>
+        <description>记：持续行动的第十八天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十八天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-19/</link>
+        <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Thu, 19 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-19/</guid>
+        <description>记：持续行动的第十七天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十七天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-18/</link>
+        <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 18 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-18/</guid>
+        <description>记：持续行动的第十六天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十六天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-17/</link>
+        <pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 17 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-17/</guid>
+        <description>记：持续行动的第十五天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十五天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-16/</link>
+        <pubDate>Mon, 16 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 16 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-16/</guid>
+        <description>记：持续行动的第十四天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十四天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-15/</link>
+        <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 15 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-15/</guid>
+        <description>记：持续行动的第十三天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十三天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-14/</link>
+        <pubDate>Sat, 14 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 14 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-14/</guid>
+        <description>记：持续行动的第十二天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十二天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-13/</link>
+        <pubDate>Fri, 13 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 13 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-13/</guid>
+        <description>记：持续行动的第十一天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十一天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>我的祖母离开了</title>
+        <link>https://www.zhugeqing.top/write/2021-8-12/</link>
+        <pubDate>Thu, 12 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Thu, 12 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-12/</guid>
+        <description>悲痛 从我记事起就一直是祖母带着我，虽然在前几天就得到祖母可能要离开人世了的消息，但我并没有赶回家去看祖母，这是暑假，我离开了家，去了广州。再我离开之前我依然记得祖母精神虽然不是很好，但也绝不是快要离开人世的状态，而随后又听到其他家人发的信息，说祖母也不想在拖累家人，就不吃饭就算喝水也不愿意。奶奶一个生育了七个儿女，我家是最小的，而祖母也一直在我家住，从出生到如今离开。今天虽然我听了祖母已经离开的消</description>
+        <content:encoded>&lt;h2 id=&#34;悲痛&#34;&gt;悲痛&lt;/h2&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;从我记事起就一直是祖母带着我，虽然在前几天就得到祖母可能要离开人世了的消息，但我并没有赶回家去看祖母，这是暑假，我离开了家，去了广州。再我离开之前我依然记得祖母精神虽然不是很好，但也绝不是快要离开人世的状态，而随后又听到其他家人发的信息，说祖母也不想在拖累家人，就不吃饭就算喝水也不愿意。奶奶一个生育了七个儿女，我家是最小的，而祖母也一直在我家住，从出生到如今离开。今天虽然我听了祖母已经离开的消息，但没有非常悲伤，因为前几天我听到祖母快不行得到消息时，已经哭了一晚上，那是我真正体会到心痛的感觉，比我以前为自己哭还要痛。而家里人也已经通知我赶紧回家参加祖母的葬礼，但我并没有回应。我不会回去参加的，尽管我会顶着一个不孝的名号。但我知道，祖母确实永远离开了我，我甚至都没能和祖母留下一个合照，让我更心痛的是，我似乎从小到大都没有对祖母说过一句谢谢，而我如今只能不断的流泪，写下这篇文章来证明，果然，人总是在失去的时候的时候才懂得珍惜，写到这里，我的脸庞已经是有种麻木的感觉，也无法阻止眼泪的留下&amp;hellip;&amp;hellip;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=MediumTurquoise&gt;我这辈子从来没有在梦里哭过，而得到祖母身体快不行的消息时的那一天，我一个人在床上哭，我也知道了什么叫做“无声地痛哭”，也不知道过来多久才睡着，当我醒来的时候，眼角依然湿润，我感觉做了一个很长的梦。我梦见我已经回到家，祖母也离世了，我将梦中的悲痛带到了现实，我却在心里疯狂暗示：这不是真的！,我知道我还有时间回去看祖母，但已经晚了，我亏欠祖母的这十多年是无法用几天来弥补的。想起来小时候：我小时候有很长一段时间都是和祖母还有姐姐呆在一起，我依然记得许多想笑又想哭的事情，我记得那还是我小学，应该不会超过4年级，我家离小学有大约一公里左右的距离，而当我才走出家门100米不远就看到几只公鸡在马路边拦路，我尝试走过去的时候，它们就竖起鸡毛，好像要揍我的感觉，因为要快迟到了，我感觉回家告诉奶奶，我奶奶从家门出来帮我把它们赶走，然后嘱咐我路上小心，那时候奶奶就像我唯一的保护伞。现在想起来，我是真傻，怎么会想着长大，长大不仅有各种各样的烦恼。亲人也在慢慢老去，现在想起来，小时候有奶奶陪伴的日子是多么的幸福，开心，当我的父亲因为病情没有去外打工回到家中后，有时会经常打我，因为我玩游戏的缘故，我经常被打得离家出走，除了我奶奶，没有人叫我回家，不管我每次跑到离家100米，200米的地方躲着，不管是白天还夜晚，奶奶都会呼喊我的名字，叫我回家，但现在我已经再也听不到那呼喊我回家的那个熟悉的声音了，脑海里记忆的声音也会被时间慢慢抹去，但我尽力记住和奶奶在一起的画面，那是我人生的一部分，也是我永远不想忘记的一部分，童年的事情太多了，我也无力在继续写下去，我会尽快走出悲伤，因为眼泪和鼻涕刺激让我不敢再继续写下去&amp;hellip;&lt;/font&gt;&lt;/p&gt;
+&lt;font color=MediumTurquoise&gt;
+1.以后少触碰网络游戏（奶奶前面日子还会叫我去吃饭，而我为了享受网络游戏的强及时反馈，每次都是对奶奶说：你别说了，我又不是小孩子了，我饿了会自己吃饭，可能我这些话会让在家本来没有什么事干的奶奶感觉是个累赘）
+2.早睡早起（我寒暑家在家老是喜欢熬夜，奶奶每次半夜1，2点都要来叫我赶紧去睡觉，是我为了自己熬夜带来的快感而忽视了奶奶的关心）
+3.努力赚钱（奶奶最后也是因为摔了一跤，把腿摔断了，而奶奶养育的七个儿女也没有做出送医院的打算，最后奶奶觉得自己确实老了，走不动了，才会不吃不喝，离开人世，世界上果然只有一种病——“穷”）
+&lt;/font&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第十天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-11/</link>
+        <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 11 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-11/</guid>
+        <description>记：持续行动的第九天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第九天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-10/</link>
+        <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 10 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-10/</guid>
+        <description>记：持续行动的第八天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第八天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
+        <link>https://www.zhugeqing.top/write/2021-8-9/</link>
+        <pubDate>Mon, 09 Aug 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 09 Aug 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-8-9/</guid>
+        <description>记：持续行动的第七天！</description>
+        <content:encoded>&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第七天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>无</title>
         <link>https://www.zhugeqing.top/write/2021-8-7/</link>
         <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
         
@@ -47,7 +690,7 @@
       </item>
       
       <item>
-        <title>Golang字符串</title>
+        <title>无</title>
         <link>https://www.zhugeqing.top/write/2021-8-8/</link>
         <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
         
@@ -74,7 +717,7 @@
       </item>
       
       <item>
-        <title>Golang字符串</title>
+        <title>无</title>
         <link>https://www.zhugeqing.top/write/2021-8-6/</link>
         <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
         
