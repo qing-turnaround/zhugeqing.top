@@ -6,18 +6,77 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>笔记 on 诸葛青的编程之旅</title>
+    <title>笔记——心得 on 诸葛青的编程之旅</title>
     <link>https://www.zhugeqing.top/about/</link>
-    <description>Recent content in 笔记 on 诸葛青的编程之旅</description>
+    <description>Recent content in 笔记——心得 on 诸葛青的编程之旅</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Oct 2021 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/about/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>faster学习法（快速学习法）</title>
+        <link>https://www.zhugeqing.top/about/faster/</link>
+        <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 15 Oct 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/about/faster/</guid>
+        <description>1. forget(忘记) 忘记以前所掌握的东西 ，让大脑像一个空荡荡的容器，像一个小孩子一样可以快速学习，用一种“初学者心态”来读一本书，或者是学习其他知识，当觉得自己对即将要学习的知识有所了解时，会妨碍我们吸收新的信息`` 忘记不紧张或者不重要的事情，学习的过程中必须专注，才能全身心地投入，高效地进行学习。如果在学习中，思想已经飘到了其他事情上，这件事情可能比较重要，但是并不紧急，这种情况不可避免，不要</description>
+        <content:encoded>&lt;h2 id=&#34;1-forget忘记&#34;&gt;1. forget(忘记)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt; 忘记以前所掌握的东西&lt;/code&gt; ，&lt;font color=SkyBlue&gt;让大脑像一个空荡荡的容器，像一个小孩子一样可以快速学习，用一种“初学者心态”来读一本书，或者是学习其他知识，当觉得自己对即将要学习的知识有所了解时，会妨碍我们吸收新的信息``&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;忘记不紧张或者不重要的事情&lt;/code&gt;，&lt;font color=SkyBlue&gt;学习的过程中必须专注，才能全身心地投入，高效地进行学习。如果在学习中，思想已经飘到了其他事情上，这件事情可能比较重要，但是并不紧急，这种情况不可避免，不要挣扎不去想这件事情，越是克制，越是难以抵抗。相反，可以打开备忘录，或者打开一个笔记本，写下这些事情，等学习完成之后再做处理&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;忘掉自己的极限&lt;/code&gt;，&lt;font color=SkyBlue&gt;生命没有极限，除非你自己设置，如果你不敢挑战极限，就永远无法突破自我。你的能力绝不是一个定值，在学习的世界里，一切皆有可能&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;2-act行动&#34;&gt;2. act(行动)&lt;/h2&gt;
+&lt;p&gt;&lt;font color=SkyBlue&gt;抛弃被动式学习，学习态度越是积极主动，学习速度就越快，学到的知识的质量就越高，学到的内容就越多。&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-statue状态&#34;&gt;3. statue(状态)&lt;/h2&gt;
+&lt;font color=SkyBlue&gt;
+所有学习过程都依赖于个人的状态。当你把情感与信息结合在一起时，你对这个信息的印象会更深刻，改变你学习时的姿势或者呼吸方式。想象你精力充沛，对于即将开始的学习感到兴奋，按照这个情绪选择你的坐姿或站姿。在即将开始的学习中，你会有所收获，而且会应用新知识，你一定会对此感到兴奋。切记，所有学习过程都依赖于你的状态。请主动选择快乐、入迷和好奇的学习状态吧！
+&lt;/font&gt;
+&lt;h2 id=&#34;4-teach教授&#34;&gt;4. teach(教授)&lt;/h2&gt;
+&lt;font color=SkyBlue&gt;
+如果你想大幅缩短学习曲线，就把你的学习目标定位为学习之后能把学习内容教授给别人。思考一下：如果知道你需要就学习内容做一场演讲，那么你学习的目标肯定是充分掌握所学内容，这样才能更好地向其他人解释。你的注意力会更加集中，你的笔记会更加详细，你甚至还会提出更好的问题。当你授课的时候，实际上你经历了两次学习，第一次是你自己学习，第二次是通过给别人讲课学习。
+&lt;/font&gt;
+&lt;h2 id=&#34;5-enter输入&#34;&gt;5. enter(输入)&lt;/h2&gt;
+&lt;font color=SkyBlue&gt;
+改善个人表现最简单、最强大的方法是什么？答案是善用你的日程表。我们会在日程表上写下或者输入重要的事情：参加工作会议、出席家长会、牙医就诊时间、带宠物去看兽医等。大家的日程表上到底缺了什么？答案是缺少给自己的成长和发展安排时间。如果你的日程表上没有这样的安排，那么你很难实现个人的成长和发展。如果你“忘记”锻炼身体和大脑，一天的时间转瞬就会溜走。
+&lt;/font&gt;
+&lt;h2 id=&#34;6-review复习&#34;&gt;6. Review（复习）&lt;/h2&gt;
+&lt;p&gt;&lt;font color=SkyBlue&gt;要想减少遗忘曲线对你的影响，最好的方法之一就是每隔一段时间积极地回忆此前学过的内容。在多个分散的时段进行复习，你可以让信息更好地留存在大脑之中。每隔一段时间就复习一下学过的内容可以强化大脑对它的记忆。&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>git笔记</title>
@@ -111,6 +170,24 @@
 </content:encoded>
         <dc:creator>诸葛青的编程之旅</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
+        <title></title>
+        <link>https://www.zhugeqing.top/about/brain-upgrade/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        
+        <guid>https://www.zhugeqing.top/about/brain-upgrade/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        
         
         
         
