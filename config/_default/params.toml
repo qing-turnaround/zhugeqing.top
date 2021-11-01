@@ -14,7 +14,7 @@ notAllowedTypesInHome = ["touge","interview","databases","contact", "about","arc
 # 不允许出现在主页侧边栏的目录名
 notAllowedTypesInHomeSidebar = ["exercise","compare","touge","about","gallery","archive","recommend_sites","intelligence","devil_footprints","write","novel"]
 # 不允许被日志记录的目录名（以后删除日志）
-notAllowedTypesInArchive = ["touge","gallery","archive","write"]
+notAllowedTypesInArchive = ["touge","gallery","archive","write","exercise","about"]
 
 notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
 # 主页大小
