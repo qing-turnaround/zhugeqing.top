@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/index.xml" rel="self" type="application/rss+xml" />
@@ -42,6 +42,125 @@
       
       <item>
         <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2021-11.3/</link>
+        <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 03 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-11.3/</guid>
+        <description>算法 242. 有效的字母异位词——第一遍 56. 合并区间——第一遍 493. 翻转对——第一遍 315. 计算右侧小于当前元素的个数——第一遍 912. 排序数组——第二遍 ## 囚徒健身 思念 思念祖母的第83天 记：持续行动的九十二天！</description>
+        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/valid-anagram/&#34;&gt;242. 有效的字母异位词&lt;/a&gt;——第一遍&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/merge-intervals/&#34;&gt;56. 合并区间&lt;/a&gt;——第一遍&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/reverse-pairs/&#34;&gt;493. 翻转对&lt;/a&gt;——第一遍&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/&#34;&gt;315. 计算右侧小于当前元素的个数&lt;/a&gt;——第一遍&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/sort-an-array/&#34;&gt;912. 排序数组&lt;/a&gt;——第二遍&lt;br /&gt;
+##　囚徒健身&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;思念祖母的第83天&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的九十二天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2021-11-2/</link>
+        <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 02 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-11-2/</guid>
+        <description>算法 面试题 16.25. LRU 缓存——第一遍 237. 删除链表中的节点——第二遍 146. LRU 缓存机制——第一遍 ## 囚徒健身 思念 思念祖母的第82天 记：持续行动的九十一天！</description>
+        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/lru-cache-lcci/&#34;&gt;面试题 16.25. LRU 缓存&lt;/a&gt;——第一遍&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/delete-node-in-a-linked-list/&#34;&gt;237. 删除链表中的节点&lt;/a&gt;——第二遍&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/lru-cache/&#34;&gt;146. LRU 缓存机制&lt;/a&gt;——第一遍&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;##　囚徒健身&lt;/p&gt;
+&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;思念祖母的第82天&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的九十一天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2021-11-1/</link>
+        <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 01 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-11-1/</guid>
+        <description>算法 52. N皇后 II——第三遍 51. N 皇后——第三遍 338. 比特位计数——第三遍 ## 囚徒健身 小故事 一天，一位国王在观看魔术大师表演。表演吸引了很多群众驻足围观，国王也在聚精会神地观看表演。表演结束时，观众们爆发出热烈的喝彩之声。国王说：“这个人天赋异禀，这是上天赐予的才华。” 但是有位睿智的大臣对国王说：“殿下，天才是后天锻造而成的，并不是与生俱来的，魔术师的技艺是他严格自律和刻苦练习的结果。天才靠的是坚定决心、严</description>
+        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/n-queens-ii/&#34;&gt;52. N皇后 II&lt;/a&gt;——第三遍&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/n-queens/&#34;&gt;51. N 皇后&lt;/a&gt;——第三遍&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/counting-bits/&#34;&gt;338. 比特位计数&lt;/a&gt;——第三遍&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;##　囚徒健身&lt;/p&gt;
+&lt;h2 id=&#34;小故事&#34;&gt;小故事&lt;/h2&gt;
+&lt;p&gt;&lt;font color=SkyBlue&gt;一天，一位国王在观看魔术大师表演。表演吸引了很多群众驻足围观，国王也在聚精会神地观看表演。表演结束时，观众们爆发出热烈的喝彩之声。国王说：“这个人天赋异禀，这是上天赐予的才华。”&lt;br /&gt;
+但是有位睿智的大臣对国王说：“殿下，天才是后天锻造而成的，并不是与生俱来的，魔术师的技艺是他严格自律和刻苦练习的结果。天才靠的是坚定决心、严守纪律、长时间的学习和训练。”&lt;br /&gt;
+大臣的话显然让国王有些心烦意乱，也破坏了他对魔术师精湛技艺的兴趣，“你不仅目光短浅，而且言辞歹毒。你胆敢批评一位真正的天才。如我所说，人要么天生有才，要么天生无才，我敢肯定，你没有”。&lt;br /&gt;
+国王对侍卫说：“来人，把他扔进最深的地牢！”国王还补充道：“为了让你不寂寞，我会让两个你的同类陪伴你，我会让两只小猪和你做狱友。”&lt;br /&gt;
+从入狱的第一天起，这位聪明的大臣就开始练习两只手各抓一只小猪，跑上牢房的台阶，跑到监狱门口。他每日、每周、每月从不间断练习，小猪也逐渐长成健壮的成年猪。通过每日的练习，这位聪明的大臣的体力和力量有了大幅度地提升。&lt;br /&gt;
+忽然有一天，国王想起了那位聪明的大臣，他想知道锒铛入狱是否让那位大臣变得谦卑，他召来了那位大臣。&lt;br /&gt;
+那位大臣出现在国王面前时，国王看到的是一个体格强健的男子，两只手各抓着一只猪。国王惊呼道：“这人天赋异禀。这是上天赐予的才华。”&lt;br /&gt;
+聪明的大臣回答道：“陛下，天才是后天培养的，不是与生俱来的。我的技能是自律和实践的结果。天才靠的是坚定决心、严守纪律、长时间的学习和训练。”&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;思念祖母的第81天&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的九十天！&lt;/font&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
         <link>https://www.zhugeqing.top/write/2021-10.31/</link>
         <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
         
@@ -65,51 +184,6 @@
 &lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;思念祖母的第80天&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的八十九天！&lt;/font&gt;&lt;/p&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>持续行动</title>
-        <link>https://www.zhugeqing.top/write/2021-11-1/</link>
-        <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Sun, 31 Oct 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/write/2021-11-1/</guid>
-        <description>算法 52. N皇后 II——第三遍 51. N 皇后——第三遍 338. 比特位计数——第三遍 ## 囚徒健身 小故事 一天，一位国王在观看魔术大师表演。表演吸引了很多群众驻足围观，国王也在聚精会神地观看表演。表演结束时，观众们爆发出热烈的喝彩之声。国王说：“这个人天赋异禀，这是上天赐予的才华。” 但是有位睿智的大臣对国王说：“殿下，天才是后天锻造而成的，并不是与生俱来的，魔术师的技艺是他严格自律和刻苦练习的结果。天才靠的是坚定决心、严</description>
-        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/n-queens-ii/&#34;&gt;52. N皇后 II&lt;/a&gt;——第三遍&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/n-queens/&#34;&gt;51. N 皇后&lt;/a&gt;——第三遍&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/counting-bits/&#34;&gt;338. 比特位计数&lt;/a&gt;——第三遍&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;##　囚徒健身&lt;/p&gt;
-&lt;h2 id=&#34;小故事&#34;&gt;小故事&lt;/h2&gt;
-&lt;p&gt;&lt;font color=SkyBlue&gt;一天，一位国王在观看魔术大师表演。表演吸引了很多群众驻足围观，国王也在聚精会神地观看表演。表演结束时，观众们爆发出热烈的喝彩之声。国王说：“这个人天赋异禀，这是上天赐予的才华。”&lt;br /&gt;
-但是有位睿智的大臣对国王说：“殿下，天才是后天锻造而成的，并不是与生俱来的，魔术师的技艺是他严格自律和刻苦练习的结果。天才靠的是坚定决心、严守纪律、长时间的学习和训练。”&lt;br /&gt;
-大臣的话显然让国王有些心烦意乱，也破坏了他对魔术师精湛技艺的兴趣，“你不仅目光短浅，而且言辞歹毒。你胆敢批评一位真正的天才。如我所说，人要么天生有才，要么天生无才，我敢肯定，你没有”。&lt;br /&gt;
-国王对侍卫说：“来人，把他扔进最深的地牢！”国王还补充道：“为了让你不寂寞，我会让两个你的同类陪伴你，我会让两只小猪和你做狱友。”&lt;br /&gt;
-从入狱的第一天起，这位聪明的大臣就开始练习两只手各抓一只小猪，跑上牢房的台阶，跑到监狱门口。他每日、每周、每月从不间断练习，小猪也逐渐长成健壮的成年猪。通过每日的练习，这位聪明的大臣的体力和力量有了大幅度地提升。&lt;br /&gt;
-忽然有一天，国王想起了那位聪明的大臣，他想知道锒铛入狱是否让那位大臣变得谦卑，他召来了那位大臣。&lt;br /&gt;
-那位大臣出现在国王面前时，国王看到的是一个体格强健的男子，两只手各抓着一只猪。国王惊呼道：“这人天赋异禀。这是上天赐予的才华。”&lt;br /&gt;
-聪明的大臣回答道：“陛下，天才是后天培养的，不是与生俱来的。我的技能是自律和实践的结果。天才靠的是坚定决心、严守纪律、长时间的学习和训练。”&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;思念祖母的第81天&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的九十天！&lt;/font&gt;&lt;/p&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
@@ -6492,78 +6566,6 @@
 （9-3）*（18-3）=90
 
 规律很多，仅供参考，自我挖掘！
-&lt;/code&gt;&lt;/pre&gt;</content:encoded>
-        <dc:creator>诸葛青的编程之旅</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>智力题2.3</title>
-        <link>https://www.zhugeqing.top/intelligence/niuke_part2/%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88_3/</link>
-        <pubDate>Sat, 27 Mar 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Sat, 27 Mar 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/intelligence/niuke_part2/%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E6%98%AF%E4%BB%80%E4%B9%88_3/</guid>
-        <description>题目：2 ，3 ，10 ，15 ，26 ，35 ，( )。括号中的数字是是什么？ A. 40 B. 45 C. 50 D. 55 1^2+1=2 2^2-1=3 3^2+1=10 4^2-1=15 5^2+1+26 6^2-1=35 奇数项平方加一，偶数项平方减一</description>
-        <content:encoded>&lt;h2 id=&#34;题目2-3-10-15-26-35--括号中的数字是是什么&#34;&gt;题目：2 ，3 ，10 ，15 ，26 ，35 ，( )。括号中的数字是是什么？&lt;/h2&gt;
-&lt;p&gt;A. 40&lt;/p&gt;
-&lt;p&gt;B. 45&lt;/p&gt;
-&lt;p&gt;C. 50&lt;/p&gt;
-&lt;p&gt;D. 55&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1^2+1=2 
-
-2^2-1=3 
-
-3^2+1=10 
-
-4^2-1=15 
-
-5^2+1+26 
-
-6^2-1=35 
-
-奇数项平方加一，偶数项平方减一
-&lt;/code&gt;&lt;/pre&gt;</content:encoded>
-        <dc:creator>诸葛青的编程之旅</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>智力题1.3</title>
-        <link>https://www.zhugeqing.top/intelligence/niuke_part1/%E6%97%B6%E9%92%88%E4%B8%8E%E5%88%86%E9%92%88%E9%87%8D%E5%90%88/</link>
-        <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Sat, 20 Mar 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/intelligence/niuke_part1/%E6%97%B6%E9%92%88%E4%B8%8E%E5%88%86%E9%92%88%E9%87%8D%E5%90%88/</guid>
-        <description>题目：一台指针式钟表的时针和分针指向的重合的时间间隔是？ 答案： 由于分针总是比时针走的快，所以问题就转换成时针在一圈的范围内追击分针的问题： 分针走的角速度是360°/60分 = 6°/分 时针走的角速度是360°/720分 = 0.5°/分 下一次追到比上一次追到，分针比时针多走过的角度是360°， 那么在一圈的角度内 360°/(6°/分-0.5°/分) = 720/11 分钟， 经过这么多时间 分针和时间重合一次， 所以引申到一昼夜</description>
-        <content:encoded>&lt;p&gt;题目：一台指针式钟表的时针和分针指向的重合的时间间隔是？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;答案：
-
-由于分针总是比时针走的快，所以问题就转换成时针在一圈的范围内追击分针的问题：
-
-分针走的角速度是360°/60分 = 6°/分
-
-时针走的角速度是360°/720分 = 0.5°/分
-
-下一次追到比上一次追到，分针比时针多走过的角度是360°，
-
-那么在一圈的角度内 360°/(6°/分-0.5°/分) = 720/11 分钟，
-
-经过这么多时间  分针和时间重合一次，
-
-所以引申到一昼夜时间内分针 时针相遇多少次：24*60/(720/11) = 22 次
-
-
 &lt;/code&gt;&lt;/pre&gt;</content:encoded>
         <dc:creator>诸葛青的编程之旅</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
