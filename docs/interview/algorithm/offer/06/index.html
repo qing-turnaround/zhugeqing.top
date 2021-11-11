@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="如果说数学是皇冠上的一颗明珠，那么算法就是这颗明珠上的光芒，算法让这颗明珠更加熠熠生辉，为科技进步和社会发展照亮了前进的路">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item active">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item active"
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1879,7 +1885,7 @@
 <p><font color=GreenYellow size=3 >解题思路：1.构建数组，存储到数组中，然后倒置数组2.递归法</font></p>
 <p>第一种方法：<br />
 
-<div id="6edea2b534f8ef16" class="codetab">
+<div id="c44d09f137279e7e" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -1892,7 +1898,7 @@
 <div id="4b4bc2451a51e531" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1920,7 +1926,7 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="nf">reversePrint</span><span class="p">(</span><span class="k">struct</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">returnSize</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="nf">reversePrint</span><span class="p">(</span><span class="k">struct</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">returnSize</span><span class="p">){</span>
   <span class="c1">//时间复杂度o(n)，空间复杂度o(n)
 </span><span class="c1"></span>  <span class="c1">//先确定数组长度，再倒序存储
 </span><span class="c1"></span>  <span class="k">struct</span> <span class="n">ListNode</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
@@ -1955,7 +1961,7 @@
 <div id="e00c123d5fa46bfc" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1975,21 +1981,21 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">reversePrint</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">reversePrint</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
   <span class="c1">//时间复杂度o(n)，空间复杂度o(n)
 </span><span class="c1"></span>  <span class="c1">//先用数组存起来，然后逆转数组
 </span><span class="c1"></span>  <span class="k">if</span> <span class="nx">head</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  	<span class="k">return</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
   <span class="p">}</span>
   <span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
   <span class="k">for</span> <span class="nx">head</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-      <span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">Val</span><span class="p">)</span>
-      <span class="nx">head</span> <span class="p">=</span> <span class="nx">head</span><span class="p">.</span><span class="nx">Next</span>
+  	<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">Val</span><span class="p">)</span>
+  	<span class="nx">head</span> <span class="p">=</span> <span class="nx">head</span><span class="p">.</span><span class="nx">Next</span>
   <span class="p">}</span>
   <span class="c1">//倒置数组
 </span><span class="c1"></span>  <span class="nx">len_s</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
   <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">len_s</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-      <span class="nx">res</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">res</span><span class="p">[</span><span class="nx">len_s</span><span class="o">-</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">res</span><span class="p">[</span><span class="nx">len_s</span><span class="o">-</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nx">res</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+  	<span class="nx">res</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">res</span><span class="p">[</span><span class="nx">len_s</span><span class="o">-</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">res</span><span class="p">[</span><span class="nx">len_s</span><span class="o">-</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="nx">res</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="nx">res</span>
 <span class="p">}</span>
@@ -2003,7 +2009,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"6edea2b534f8ef16\"");
+  var containerId = JSON.parse("\"c44d09f137279e7e\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2039,7 +2045,7 @@
 </script></p>
 <p>第二种方法<br />
 
-<div id="caea30a3ed2070ac" class="codetab">
+<div id="8c47a3b6b0f1cb88" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -2052,7 +2058,7 @@
 <div id="671d1fa24165ced4" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2064,7 +2070,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="nf">reversePrint</span><span class="p">(</span><span class="k">struct</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">returnSize</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="nf">reversePrint</span><span class="p">(</span><span class="k">struct</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">returnSize</span><span class="p">){</span>
   <span class="c1">//递归，直到最后一个节点的下一个节点为空时，存储值并返回上一个栈
 </span><span class="c1"></span>  <span class="k">if</span><span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
       <span class="o">*</span><span class="n">returnSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -2083,7 +2089,7 @@
 <div id="57788bf8f426ff9d" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2099,15 +2105,15 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">reversePrint</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">reversePrint</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">dfs</span> <span class="kd">func</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span>
   <span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
   <span class="nx">dfs</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">head</span> <span class="o">*</span><span class="nx">ListNode</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="nx">head</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-          <span class="k">return</span>
-      <span class="p">}</span>
-      <span class="nf">dfs</span><span class="p">(</span><span class="nx">head</span><span class="p">.</span><span class="nx">Next</span><span class="p">)</span>
-      <span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">Val</span><span class="p">)</span>
+  	<span class="k">if</span> <span class="nx">head</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+  		<span class="k">return</span>
+  	<span class="p">}</span>
+  	<span class="nf">dfs</span><span class="p">(</span><span class="nx">head</span><span class="p">.</span><span class="nx">Next</span><span class="p">)</span>
+  	<span class="nx">res</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">Val</span><span class="p">)</span>
 
   <span class="p">}</span>
   <span class="nf">dfs</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span>
@@ -2123,7 +2129,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"caea30a3ed2070ac\"");
+  var containerId = JSON.parse("\"8c47a3b6b0f1cb88\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;

@@ -5,7 +5,7 @@ image: "images/recommend_site/xingyouji.jpg"
 title: "数组"
 author: 诸葛青
 authorEmoji: 🤖
-pinned: true
+pinned: false
 tags:
 - 数据结构
 series:

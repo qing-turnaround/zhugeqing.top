@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="战略上藐视技术，战术上重视技术——闪客">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1898,7 +1904,7 @@
 </ul>
 <p>代码实现如下（大顶堆）：<br />
 
-<div id="8c8c20364101ed2e" class="codetab">
+<div id="da4c3546d49916ea" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -1912,7 +1918,7 @@
 <div id="573e7131b0ab82a1" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1931,7 +1937,7 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">type</span> <span class="nx">MaxHeap</span> <span class="kd">struct</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">type</span> <span class="nx">MaxHeap</span> <span class="kd">struct</span> <span class="p">{</span>
   <span class="c1">// 使用数组创建完全二叉树的结构，然后使用二叉树构建一个「堆」
 </span><span class="c1"></span>  <span class="nx">maxHeap</span> <span class="p">[]</span><span class="kt">int</span>
   <span class="c1">// heapSize用于数组的大小，因为数组在创建的时候至少需要指明数组的元素个数
@@ -1943,9 +1949,9 @@
 <span class="c1">//大顶堆初始化函数
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">MaxHeapInit</span><span class="p">(</span><span class="nx">size</span> <span class="kt">int</span><span class="p">)</span><span class="nx">MaxHeap</span><span class="p">{</span>
   <span class="k">return</span> <span class="nx">MaxHeap</span><span class="p">{</span>
-      <span class="nx">maxHeap</span><span class="p">:</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">size</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
-      <span class="nx">heapSize</span><span class="p">:</span> <span class="nx">size</span><span class="p">,</span>
-      <span class="nx">realSize</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  	<span class="nx">maxHeap</span><span class="p">:</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">size</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+  	<span class="nx">heapSize</span><span class="p">:</span> <span class="nx">size</span><span class="p">,</span>
+  	<span class="nx">realSize</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -1957,7 +1963,7 @@
 <div id="d36889d262968091" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1976,7 +1982,7 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="k">struct</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="k">struct</span>
 <span class="p">{</span>
   <span class="c1">//堆的数组
 </span><span class="c1"></span>  <span class="kt">int</span> <span class="o">*</span><span class="n">maxHeap</span><span class="p">;</span>
@@ -2003,7 +2009,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"8c8c20364101ed2e\"");
+  var containerId = JSON.parse("\"da4c3546d49916ea\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2047,7 +2053,7 @@
 </ul>
 <p>代码实现如下（大顶堆）：</p>
 
-<div id="c898b1a31f39f187" class="codetab">
+<div id="a235620a8425ba32" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2061,7 +2067,7 @@
 <div id="9eab40b5609af441" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2086,12 +2092,12 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//添加元素函数
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//添加元素函数
 </span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">Maxheap</span> <span class="o">*</span><span class="nx">MaxHeap</span><span class="p">)</span><span class="nf">insert</span><span class="p">(</span><span class="nx">element</span> <span class="kt">int</span><span class="p">){</span>
   <span class="c1">//如果当前元素个数已经和堆想等，那就输出错误信息
 </span><span class="c1"></span>  <span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">+</span><span class="mi">1</span> <span class="p">&gt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">heapSize</span><span class="p">{</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Add too many elements!&#34;</span><span class="p">)</span>
-      <span class="k">return</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Add too many elements!&#34;</span><span class="p">)</span>
+  	<span class="k">return</span>
   <span class="p">}</span>
   <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">++</span>
   <span class="c1">//新增加元素的下标
@@ -2102,11 +2108,11 @@
 
   <span class="c1">//如果大于父节点就不断向上交换
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="p">&gt;</span> <span class="mi">1</span><span class="p">{</span> <span class="c1">//因为下标1没有父节点，所有index不能等于或者小于1
-</span><span class="c1"></span>      <span class="c1">//进行交换
-</span><span class="c1"></span>      <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">],</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">],</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-      <span class="nx">index</span> <span class="p">=</span> <span class="nx">parent</span>
-      <span class="nx">parent</span> <span class="p">=</span> <span class="nx">index</span> <span class="o">/</span> <span class="mi">2</span>
-      <span class="c1">//继续比较
+</span><span class="c1"></span>  	<span class="c1">//进行交换
+</span><span class="c1"></span>  	<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">],</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">],</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  	<span class="nx">index</span> <span class="p">=</span> <span class="nx">parent</span>
+  	<span class="nx">parent</span> <span class="p">=</span> <span class="nx">index</span> <span class="o">/</span> <span class="mi">2</span>
+  	<span class="c1">//继续比较
 </span><span class="c1"></span>  <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -2118,7 +2124,7 @@
 <div id="fd2c1546239c51e3" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2148,7 +2154,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//添加元素函数
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="c1">//添加元素函数
 </span><span class="c1"></span><span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="n">MaxHeap</span> <span class="o">*</span><span class="n">mh</span><span class="p">,</span> <span class="kt">int</span> <span class="n">element</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">//如果当前元素个数已经满了，那就输出错误信息
@@ -2186,7 +2192,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"c898b1a31f39f187\"");
+  var containerId = JSON.parse("\"a235620a8425ba32\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2229,7 +2235,7 @@
 </ul>
 <p>代码实现如下：（大顶堆）<br />
 
-<div id="a29c1d0b93240614" class="codetab">
+<div id="ee313d4e690b8810" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2243,7 +2249,7 @@
 <div id="f2d5ee52e2c06f73" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2290,46 +2296,46 @@
 </span><span class="lnt">45
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//删除堆顶元素函数
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//删除堆顶元素函数
 </span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">Maxheap</span> <span class="o">*</span><span class="nx">MaxHeap</span><span class="p">)</span><span class="nb">delete</span><span class="p">()</span><span class="kt">int</span><span class="p">{</span>
   <span class="c1">// 如果当前「堆」的元素个数为0， 则返回「Don&#39;t have any element」
 </span><span class="c1"></span>  <span class="nx">removeElement</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
   <span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="p">&lt;</span> <span class="mi">1</span><span class="p">{</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Don&#39;t have any element!&#34;</span><span class="p">)</span>
-      <span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MaxInt64</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Don&#39;t have any element!&#34;</span><span class="p">)</span>
+  	<span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MaxInt64</span>
   <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
-      <span class="c1">//当前堆中有元素，Maxheap.realSize &gt;= 1
-</span><span class="c1"></span>      <span class="c1">// 将「堆」中的最后一个元素赋值给堆顶元素
-</span><span class="c1"></span>      <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span>
-      <span class="c1">//去除最后一个元素
-</span><span class="c1"></span>      <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
-      <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">--</span>
-      <span class="nx">index</span> <span class="o">:=</span> <span class="mi">1</span>
-      <span class="c1">// 不断向下调整堆
-</span><span class="c1"></span>      <span class="c1">// 当删除的元素不是孩子节点时
-</span><span class="c1"></span>      <span class="k">for</span> <span class="nx">index</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">&lt;=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">/</span><span class="mi">2</span> <span class="p">{</span>
-          <span class="c1">// 被删除节点的左孩子节点
-</span><span class="c1"></span>          <span class="nx">left</span> <span class="o">:=</span> <span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-          <span class="c1">// 被删除节点的右孩子节点
-</span><span class="c1"></span>          <span class="nx">right</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-          <span class="c1">// 当删除节点的元素小于 左孩子节点或者右孩子节点，代表该元素的值小，此时需要将该元素与左、右孩子节点中最大的值进行交换
-</span><span class="c1"></span>          <span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">||</span>  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
-              <span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
-                  <span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span>
-                  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-                  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
-                  <span class="nx">index</span> <span class="p">=</span> <span class="nx">left</span>
-              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                  <span class="c1">// maxHeap[left] &lt;= maxHeap[right]
-</span><span class="c1"></span>                  <span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span>
-                  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-                  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
-                  <span class="nx">index</span> <span class="p">=</span> <span class="nx">right</span>
-              <span class="p">}</span>
-          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-              <span class="k">break</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
+  	<span class="c1">//当前堆中有元素，Maxheap.realSize &gt;= 1
+</span><span class="c1"></span>  	<span class="c1">// 将「堆」中的最后一个元素赋值给堆顶元素
+</span><span class="c1"></span>  	<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span>
+  	<span class="c1">//去除最后一个元素
+</span><span class="c1"></span>  	<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
+  	<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">--</span>
+  	<span class="nx">index</span> <span class="o">:=</span> <span class="mi">1</span>
+  	<span class="c1">// 不断向下调整堆
+</span><span class="c1"></span>  	<span class="c1">// 当删除的元素不是孩子节点时
+</span><span class="c1"></span>  	<span class="k">for</span> <span class="nx">index</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">&lt;=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">/</span><span class="mi">2</span> <span class="p">{</span>
+  		<span class="c1">// 被删除节点的左孩子节点
+</span><span class="c1"></span>  		<span class="nx">left</span> <span class="o">:=</span> <span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+  		<span class="c1">// 被删除节点的右孩子节点
+</span><span class="c1"></span>  		<span class="nx">right</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  		<span class="c1">// 当删除节点的元素小于 左孩子节点或者右孩子节点，代表该元素的值小，此时需要将该元素与左、右孩子节点中最大的值进行交换
+</span><span class="c1"></span>  		<span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">||</span>  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
+  			<span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
+  				<span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span>
+  				<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  				<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
+  				<span class="nx">index</span> <span class="p">=</span> <span class="nx">left</span>
+  			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  				<span class="c1">// maxHeap[left] &lt;= maxHeap[right]
+</span><span class="c1"></span>  				<span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span>
+  				<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  				<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
+  				<span class="nx">index</span> <span class="p">=</span> <span class="nx">right</span>
+  			<span class="p">}</span>
+  		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  			<span class="k">break</span>
+  		<span class="p">}</span>
+  	<span class="p">}</span>
 
   <span class="p">}</span>
 
@@ -2344,7 +2350,7 @@
 <div id="d195d34d9429da64" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2398,7 +2404,7 @@
 </span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//堆元素删除函数
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="c1">//堆元素删除函数
 </span><span class="c1"></span><span class="kt">int</span> <span class="nf">delete</span> <span class="p">(</span><span class="n">MaxHeap</span> <span class="o">*</span><span class="n">mh</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">// 如果当前「堆」的元素个数为0， 则返回「Don&#39;t have any element」
@@ -2460,7 +2466,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"a29c1d0b93240614\"");
+  var containerId = JSON.parse("\"ee313d4e690b8810\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2498,7 +2504,7 @@
 <p>直接返回堆顶元素就行</p>
 <p>代码如下：（大顶堆）<br />
 
-<div id="187f4a360fc87f34" class="codetab">
+<div id="29be8967f7045099" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2512,13 +2518,13 @@
 <div id="154d569ca06a24ab" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//获取堆顶元素函数
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//获取堆顶元素函数
 </span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">Maxheap</span> <span class="nx">MaxHeap</span><span class="p">)</span><span class="nf">peek</span><span class="p">()</span><span class="kt">int</span><span class="p">{</span>
   <span class="k">return</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="p">}</span>
@@ -2531,7 +2537,7 @@
 <div id="a6e6aef6aea48037" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2539,7 +2545,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//获取堆顶元素函数
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="c1">//获取堆顶元素函数
 </span><span class="c1"></span><span class="kt">int</span> <span class="nf">peek</span><span class="p">(</span><span class="n">MaxHeap</span> <span class="n">mh</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">return</span> <span class="n">mh</span><span class="p">.</span><span class="n">maxHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
@@ -2555,7 +2561,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"187f4a360fc87f34\"");
+  var containerId = JSON.parse("\"29be8967f7045099\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2599,7 +2605,7 @@
 </ul>
 <p>总体代码如下（包含大顶堆和小顶堆）：</p>
 
-<div id="d5479c0b28e80273" class="codetab">
+<div id="4b306c38a7c25e6a" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">go</button>
@@ -2617,7 +2623,7 @@
 <div id="acfff1899d136363" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -2759,7 +2765,7 @@
 </span><span class="lnt">140
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
   <span class="s">&#34;fmt&#34;</span>
@@ -2780,8 +2786,8 @@
 </span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">Maxheap</span> <span class="o">*</span><span class="nx">MaxHeap</span><span class="p">)</span><span class="nf">insert</span><span class="p">(</span><span class="nx">element</span> <span class="kt">int</span><span class="p">){</span>
   <span class="c1">//如果当前元素个数已经和堆想等，那就输出错误信息
 </span><span class="c1"></span>  <span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">+</span><span class="mi">1</span> <span class="p">&gt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">heapSize</span><span class="p">{</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Add too many elements!&#34;</span><span class="p">)</span>
-      <span class="k">return</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Add too many elements!&#34;</span><span class="p">)</span>
+  	<span class="k">return</span>
   <span class="p">}</span>
   <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">++</span>
   <span class="c1">//新增加元素的下标
@@ -2792,11 +2798,11 @@
 
   <span class="c1">//如果大于父节点就不断向上交换
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="p">&gt;</span> <span class="mi">1</span><span class="p">{</span> <span class="c1">//因为下标1没有父节点，所有index不能等于或者小于1
-</span><span class="c1"></span>      <span class="c1">//进行交换
-</span><span class="c1"></span>      <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">],</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">],</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-      <span class="nx">index</span> <span class="p">=</span> <span class="nx">parent</span>
-      <span class="nx">parent</span> <span class="p">=</span> <span class="nx">index</span> <span class="o">/</span> <span class="mi">2</span>
-      <span class="c1">//继续比较
+</span><span class="c1"></span>  	<span class="c1">//进行交换
+</span><span class="c1"></span>  	<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">],</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">],</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  	<span class="nx">index</span> <span class="p">=</span> <span class="nx">parent</span>
+  	<span class="nx">parent</span> <span class="p">=</span> <span class="nx">index</span> <span class="o">/</span> <span class="mi">2</span>
+  	<span class="c1">//继续比较
 </span><span class="c1"></span>  <span class="p">}</span>
 <span class="p">}</span>
 
@@ -2810,41 +2816,41 @@
   <span class="c1">// 如果当前「堆」的元素个数为0， 则返回「Don&#39;t have any element」
 </span><span class="c1"></span>  <span class="nx">removeElement</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
   <span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="p">&lt;</span> <span class="mi">1</span><span class="p">{</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Don&#39;t have any element!&#34;</span><span class="p">)</span>
-      <span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MaxInt64</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Don&#39;t have any element!&#34;</span><span class="p">)</span>
+  	<span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MaxInt64</span>
   <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
-      <span class="c1">//当前堆中有元素，Maxheap.realSize &gt;= 1
-</span><span class="c1"></span>      <span class="c1">// 将「堆」中的最后一个元素赋值给堆顶元素
-</span><span class="c1"></span>      <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span>
-      <span class="c1">//去除最后一个元素
-</span><span class="c1"></span>      <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
-      <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">--</span>
-      <span class="nx">index</span> <span class="o">:=</span> <span class="mi">1</span>
-      <span class="c1">// 不断向下调整堆
-</span><span class="c1"></span>      <span class="c1">// 当删除的元素不是孩子节点时
-</span><span class="c1"></span>      <span class="k">for</span> <span class="nx">index</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">&lt;=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">/</span><span class="mi">2</span> <span class="p">{</span>
-          <span class="c1">// 被删除节点的左孩子节点
-</span><span class="c1"></span>          <span class="nx">left</span> <span class="o">:=</span> <span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-          <span class="c1">// 被删除节点的右孩子节点
-</span><span class="c1"></span>          <span class="nx">right</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-          <span class="c1">// 当删除节点的元素小于 左孩子节点或者右孩子节点，代表该元素的值小，此时需要将该元素与左、右孩子节点中最大的值进行交换
-</span><span class="c1"></span>          <span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">||</span>  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
-              <span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
-                  <span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span>
-                  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-                  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
-                  <span class="nx">index</span> <span class="p">=</span> <span class="nx">left</span>
-              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                  <span class="c1">// maxHeap[left] &lt;= maxHeap[right]
-</span><span class="c1"></span>                  <span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span>
-                  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-                  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
-                  <span class="nx">index</span> <span class="p">=</span> <span class="nx">right</span>
-              <span class="p">}</span>
-          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-              <span class="k">break</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
+  	<span class="c1">//当前堆中有元素，Maxheap.realSize &gt;= 1
+</span><span class="c1"></span>  	<span class="c1">// 将「堆」中的最后一个元素赋值给堆顶元素
+</span><span class="c1"></span>  	<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span>
+  	<span class="c1">//去除最后一个元素
+</span><span class="c1"></span>  	<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
+  	<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">--</span>
+  	<span class="nx">index</span> <span class="o">:=</span> <span class="mi">1</span>
+  	<span class="c1">// 不断向下调整堆
+</span><span class="c1"></span>  	<span class="c1">// 当删除的元素不是孩子节点时
+</span><span class="c1"></span>  	<span class="k">for</span> <span class="nx">index</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">&lt;=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">/</span><span class="mi">2</span> <span class="p">{</span>
+  		<span class="c1">// 被删除节点的左孩子节点
+</span><span class="c1"></span>  		<span class="nx">left</span> <span class="o">:=</span> <span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+  		<span class="c1">// 被删除节点的右孩子节点
+</span><span class="c1"></span>  		<span class="nx">right</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  		<span class="c1">// 当删除节点的元素小于 左孩子节点或者右孩子节点，代表该元素的值小，此时需要将该元素与左、右孩子节点中最大的值进行交换
+</span><span class="c1"></span>  		<span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">||</span>  <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
+  			<span class="k">if</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
+  				<span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span>
+  				<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  				<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
+  				<span class="nx">index</span> <span class="p">=</span> <span class="nx">left</span>
+  			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  				<span class="c1">// maxHeap[left] &lt;= maxHeap[right]
+</span><span class="c1"></span>  				<span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span>
+  				<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  				<span class="nx">Maxheap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
+  				<span class="nx">index</span> <span class="p">=</span> <span class="nx">right</span>
+  			<span class="p">}</span>
+  		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  			<span class="k">break</span>
+  		<span class="p">}</span>
+  	<span class="p">}</span>
 
   <span class="p">}</span>
 
@@ -2860,9 +2866,9 @@
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">MaxHeapInit</span><span class="p">(</span><span class="nx">size</span> <span class="kt">int</span><span class="p">)</span><span class="nx">MaxHeap</span><span class="p">{</span>
 
   <span class="k">return</span> <span class="nx">MaxHeap</span><span class="p">{</span>
-      <span class="nx">maxHeap</span><span class="p">:</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">size</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
-      <span class="nx">heapSize</span><span class="p">:</span> <span class="nx">size</span><span class="p">,</span>
-      <span class="nx">realSize</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  	<span class="nx">maxHeap</span><span class="p">:</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">size</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+  	<span class="nx">heapSize</span><span class="p">:</span> <span class="nx">size</span><span class="p">,</span>
+  	<span class="nx">realSize</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
@@ -2874,7 +2880,7 @@
   <span class="kd">var</span> <span class="nx">MaxHeap</span> <span class="nx">MaxHeap</span> <span class="p">=</span> <span class="nf">MaxHeapInit</span><span class="p">(</span><span class="nx">size</span><span class="p">)</span>
   <span class="c1">//此堆的下标从1开始，有些是从0开始
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">MaxHeap</span><span class="p">.</span><span class="nx">heapSize</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span> <span class="c1">//大顶堆，先把所有元素初始化为最小值
-</span><span class="c1"></span>      <span class="nx">MaxHeap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
+</span><span class="c1"></span>  	<span class="nx">MaxHeap</span><span class="p">.</span><span class="nx">maxHeap</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
   <span class="p">}</span>
   <span class="c1">//当前堆中元素个数为0
 </span><span class="c1"></span>  <span class="nx">MaxHeap</span><span class="p">.</span><span class="nx">realSize</span> <span class="p">=</span> <span class="mi">0</span>
@@ -2908,7 +2914,7 @@
 <div id="457dbec61d10c4a6" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -3050,7 +3056,7 @@
 </span><span class="lnt">140
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
   <span class="s">&#34;fmt&#34;</span>
@@ -3071,8 +3077,8 @@
 </span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">Minheap</span> <span class="o">*</span><span class="nx">MinHeap</span><span class="p">)</span><span class="nf">insert</span><span class="p">(</span><span class="nx">element</span> <span class="kt">int</span><span class="p">){</span>
   <span class="c1">//如果当前元素个数已经和堆想等，那就输出错误信息
 </span><span class="c1"></span>  <span class="k">if</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">+</span><span class="mi">1</span> <span class="p">&gt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">heapSize</span><span class="p">{</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Add too many elements!&#34;</span><span class="p">)</span>
-      <span class="k">return</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Add too many elements!&#34;</span><span class="p">)</span>
+  	<span class="k">return</span>
   <span class="p">}</span>
   <span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">++</span>
   <span class="c1">//新增加元素的下标
@@ -3083,11 +3089,11 @@
 
   <span class="c1">//如果大于父节点就不断向上交换
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="p">&gt;</span> <span class="mi">1</span><span class="p">{</span> <span class="c1">//因为下标1没有父节点，所有index不能等于或者小于1
-</span><span class="c1"></span>      <span class="c1">//进行交换
-</span><span class="c1"></span>      <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">],</span><span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">],</span><span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-      <span class="nx">index</span> <span class="p">=</span> <span class="nx">parent</span>
-      <span class="nx">parent</span> <span class="p">=</span> <span class="nx">index</span> <span class="o">/</span> <span class="mi">2</span>
-      <span class="c1">//继续比较
+</span><span class="c1"></span>  	<span class="c1">//进行交换
+</span><span class="c1"></span>  	<span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">],</span><span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">parent</span><span class="p">],</span><span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  	<span class="nx">index</span> <span class="p">=</span> <span class="nx">parent</span>
+  	<span class="nx">parent</span> <span class="p">=</span> <span class="nx">index</span> <span class="o">/</span> <span class="mi">2</span>
+  	<span class="c1">//继续比较
 </span><span class="c1"></span>  <span class="p">}</span>
 <span class="p">}</span>
 
@@ -3101,41 +3107,41 @@
   <span class="c1">// 如果当前「堆」的元素个数为0， 则返回「Don&#39;t have any element」
 </span><span class="c1"></span>  <span class="nx">removeElement</span> <span class="o">:=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
   <span class="k">if</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="p">&lt;</span> <span class="mi">1</span><span class="p">{</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Don&#39;t have any element!&#34;</span><span class="p">)</span>
-      <span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MaxInt64</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Don&#39;t have any element!&#34;</span><span class="p">)</span>
+  	<span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MaxInt64</span>
   <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
-      <span class="c1">//当前堆中有元素，Minheap.realSize &gt;= 1
-</span><span class="c1"></span>      <span class="c1">// 将「堆」中的最后一个元素赋值给堆顶元素
-</span><span class="c1"></span>      <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span>
-      <span class="c1">//去除最后一个元素
-</span><span class="c1"></span>      <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
-      <span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">--</span>
-      <span class="nx">index</span> <span class="o">:=</span> <span class="mi">1</span>
-      <span class="c1">// 不断向下调整堆
-</span><span class="c1"></span>      <span class="c1">// 当删除的元素不是孩子节点时
-</span><span class="c1"></span>      <span class="k">for</span> <span class="nx">index</span> <span class="p">&lt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">&lt;=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">/</span><span class="mi">2</span> <span class="p">{</span>
-          <span class="c1">// 被删除节点的左孩子节点
-</span><span class="c1"></span>          <span class="nx">left</span> <span class="o">:=</span> <span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
-          <span class="c1">// 被删除节点的右孩子节点
-</span><span class="c1"></span>          <span class="nx">right</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-          <span class="c1">// 当删除节点的元素小于 左孩子节点或者右孩子节点，代表该元素的值小，此时需要将该元素与左、右孩子节点中最大的值进行交换
-</span><span class="c1"></span>          <span class="k">if</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">||</span>  <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
-              <span class="k">if</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
-                  <span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span>
-                  <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-                  <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
-                  <span class="nx">index</span> <span class="p">=</span> <span class="nx">left</span>
-              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                  <span class="c1">// MinHeap[left] &gt;= MinHeap[right]
-</span><span class="c1"></span>                  <span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span>
-                  <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
-                  <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
-                  <span class="nx">index</span> <span class="p">=</span> <span class="nx">right</span>
-              <span class="p">}</span>
-          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-              <span class="k">break</span>
-          <span class="p">}</span>
-      <span class="p">}</span>
+  	<span class="c1">//当前堆中有元素，Minheap.realSize &gt;= 1
+</span><span class="c1"></span>  	<span class="c1">// 将「堆」中的最后一个元素赋值给堆顶元素
+</span><span class="c1"></span>  	<span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span>
+  	<span class="c1">//去除最后一个元素
+</span><span class="c1"></span>  	<span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
+  	<span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">--</span>
+  	<span class="nx">index</span> <span class="o">:=</span> <span class="mi">1</span>
+  	<span class="c1">// 不断向下调整堆
+</span><span class="c1"></span>  	<span class="c1">// 当删除的元素不是孩子节点时
+</span><span class="c1"></span>  	<span class="k">for</span> <span class="nx">index</span> <span class="p">&lt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span> <span class="o">&amp;&amp;</span> <span class="nx">index</span> <span class="o">&lt;=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">realSize</span><span class="o">/</span><span class="mi">2</span> <span class="p">{</span>
+  		<span class="c1">// 被删除节点的左孩子节点
+</span><span class="c1"></span>  		<span class="nx">left</span> <span class="o">:=</span> <span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+  		<span class="c1">// 被删除节点的右孩子节点
+</span><span class="c1"></span>  		<span class="nx">right</span> <span class="o">:=</span> <span class="p">(</span><span class="nx">index</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  		<span class="c1">// 当删除节点的元素小于 左孩子节点或者右孩子节点，代表该元素的值小，此时需要将该元素与左、右孩子节点中最大的值进行交换
+</span><span class="c1"></span>  		<span class="k">if</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="o">||</span>  <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
+  			<span class="k">if</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">{</span>
+  				<span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span>
+  				<span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">left</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  				<span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
+  				<span class="nx">index</span> <span class="p">=</span> <span class="nx">left</span>
+  			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  				<span class="c1">// MinHeap[left] &gt;= MinHeap[right]
+</span><span class="c1"></span>  				<span class="nx">temp</span> <span class="o">:=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span>
+  				<span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">right</span><span class="p">]</span> <span class="p">=</span> <span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+  				<span class="nx">Minheap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="p">=</span> <span class="nx">temp</span>
+  				<span class="nx">index</span> <span class="p">=</span> <span class="nx">right</span>
+  			<span class="p">}</span>
+  		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  			<span class="k">break</span>
+  		<span class="p">}</span>
+  	<span class="p">}</span>
 
   <span class="p">}</span>
 
@@ -3150,9 +3156,9 @@
 <span class="c1">//小顶堆初始化函数
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">MinHeapInit</span><span class="p">(</span><span class="nx">size</span> <span class="kt">int</span><span class="p">)</span><span class="nx">MinHeap</span><span class="p">{</span>
   <span class="k">return</span> <span class="nx">MinHeap</span><span class="p">{</span>
-      <span class="nx">minHeap</span><span class="p">:</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">size</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
-      <span class="nx">heapSize</span><span class="p">:</span> <span class="nx">size</span><span class="p">,</span>
-      <span class="nx">realSize</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  	<span class="nx">minHeap</span><span class="p">:</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">size</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+  	<span class="nx">heapSize</span><span class="p">:</span> <span class="nx">size</span><span class="p">,</span>
+  	<span class="nx">realSize</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -3165,7 +3171,7 @@
   <span class="kd">var</span> <span class="nx">MinHeap</span> <span class="nx">MinHeap</span> <span class="p">=</span> <span class="nf">MinHeapInit</span><span class="p">(</span><span class="nx">size</span><span class="p">)</span>
   <span class="c1">//此堆的下标从1开始，有些是从0开始
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">MinHeap</span><span class="p">.</span><span class="nx">heapSize</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span> <span class="c1">//大顶堆，先把所有元素初始化为最小值
-</span><span class="c1"></span>      <span class="nx">MinHeap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
+</span><span class="c1"></span>  	<span class="nx">MinHeap</span><span class="p">.</span><span class="nx">minHeap</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt64</span>
   <span class="p">}</span>
   <span class="c1">//当前堆中元素个数为0
 </span><span class="c1"></span>  <span class="nx">MinHeap</span><span class="p">.</span><span class="nx">realSize</span> <span class="p">=</span> <span class="mi">0</span>
@@ -3199,7 +3205,7 @@
 <div id="f304f34ffa375732" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -3340,7 +3346,7 @@
 </span><span class="lnt">139
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="c1">// 宏定义最小值
 </span><span class="c1"></span><span class="cp">#define intMIN 0x80000000;
@@ -3488,7 +3494,7 @@
 <div id="9e08bd1e4dce6820" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -3630,7 +3636,7 @@
 </span><span class="lnt">140
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="c1">// 宏定义最大值
 </span><span class="c1"></span><span class="cp">#define intMax 0x1fffffff;
@@ -3780,7 +3786,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"d5479c0b28e80273\"");
+  var containerId = JSON.parse("\"4b306c38a7c25e6a\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;

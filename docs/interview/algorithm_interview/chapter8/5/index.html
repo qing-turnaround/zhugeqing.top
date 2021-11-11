@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="如果说数学是皇冠上的一颗明珠，那么算法就是这颗明珠上的光芒，算法让这颗明珠更加熠熠生辉，为科技进步和社会发展照亮了前进的路">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item active">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item active"
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1881,7 +1887,7 @@
 <p><a href="https://leetcode-cn.com/problems/n-queens/">51. N 皇后</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1953,7 +1959,7 @@
 </span><span class="lnt">70
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//将放置的皇后的坐标转换成字符串数组
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//将放置的皇后的坐标转换成字符串数组
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">generateBoard</span><span class="p">(</span><span class="nx">res</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)[]</span><span class="kt">string</span> <span class="p">{</span>
 	<span class="nx">ans</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">{</span>
@@ -2028,7 +2034,7 @@
 </div><p><a href="https://leetcode-cn.com/problems/n-queens-ii/">52. N皇后 II</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2082,7 +2088,7 @@
 </span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">totalNQueens</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">totalNQueens</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
     <span class="c1">//返回结果
 </span><span class="c1"></span>	<span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span>
 	<span class="c1">//用来记录i列是否已经有皇后占领
@@ -2139,7 +2145,7 @@
 </div><p><a href="https://leetcode-cn.com/problems/sudoku-solver/">37. 解数独</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2218,7 +2224,7 @@
 </span><span class="lnt">77
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">solveSudoku</span><span class="p">(</span><span class="nx">board</span> <span class="p">[][]</span><span class="kt">byte</span><span class="p">)</span>  <span class="p">{</span>    
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">solveSudoku</span><span class="p">(</span><span class="nx">board</span> <span class="p">[][]</span><span class="kt">byte</span><span class="p">)</span>  <span class="p">{</span>    
     <span class="nx">hash</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">{</span><span class="sc">&#39;1&#39;</span><span class="p">,</span><span class="sc">&#39;2&#39;</span><span class="p">,</span><span class="sc">&#39;3&#39;</span><span class="p">,</span><span class="sc">&#39;4&#39;</span><span class="p">,</span><span class="sc">&#39;5&#39;</span><span class="p">,</span><span class="sc">&#39;6&#39;</span><span class="p">,</span><span class="sc">&#39;7&#39;</span><span class="p">,</span><span class="sc">&#39;8&#39;</span><span class="p">,</span><span class="sc">&#39;9&#39;</span><span class="p">}</span>
     <span class="c1">//用来记录i行的数字j是否被占领
 </span><span class="c1"></span>    <span class="nx">row</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">bool</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
@@ -2586,7 +2592,11 @@
     <ul class="related-ul">
         
         <li>
-          <a href="/interview/algorithm_interview/chapter8/3/" class="related__link">第八章第三节——组合</a>
+          <a href="/interview/algorithm_interview/chapter10/1/" class="related__link">第十章第一节</a>
+        </li>
+        
+        <li>
+          <a href="/interview/algorithm_interview/chapter7/1/" class="related__link">第七章第一节</a>
         </li>
         
         <li>
@@ -2594,15 +2604,11 @@
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter6/1/" class="related__link">第六章第一节</a>
+          <a href="/interview/algorithm_interview/chapter4/2/" class="related__link">第四章第二节</a>
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter9/1/" class="related__link">第九章第一节</a>
-        </li>
-        
-        <li>
-          <a href="/interview/algorithm_interview/chapter8/4/" class="related__link">第八章第四节——floodfill</a>
+          <a href="/interview/algorithm_interview/chapter5/1/" class="related__link">第五章第一节</a>
         </li>
         
     </ul>

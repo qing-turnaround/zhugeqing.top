@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="战略上藐视技术，战术上重视技术——闪客">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1886,8 +1892,7 @@
 <p>基数排序最早是用在卡片排序机上的，一张卡片有 80 列，类似一个 80 位的整数。机器通过在卡片不同位置上穿孔表示当前基数的大小。卡片排序机的排序过程就是采用的 LSD 的基数排序。</p>
 <p><code>动图演示</code><br />
 简单起见，我们先只考虑对非负整数排序的情况。</p>
-<figure>
-    <img src="/images/sort_gif/RAD.gif"/> 
+<figure><img src="/images/sort_gif/RAD.gif"/>
 </figure>
 
 <p>基数排序可以分为以下三个步骤：</p>
@@ -1899,7 +1904,7 @@
 <h2 id="找出数组中最大的数字的位数">找出数组中最大的数字的位数</h2>
 <p><code>首先找到数组中的最大值：</code></p>
 
-<div id="4b686bb57b49a186" class="codetab">
+<div id="cc96bbddbd8d7cae" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -1913,7 +1918,7 @@
 <div id="f15a1a61a257ada9" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1927,7 +1932,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">radixSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">radixSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">){</span>
   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">{</span>
       <span class="k">return</span> 
   <span class="p">}</span>
@@ -1948,7 +1953,7 @@
 <div id="d4e67807b1c2ddc8" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1960,7 +1965,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">radixSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">radixSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
   <span class="k">if</span> <span class="o">(</span><span class="n">arr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
   <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">value</span> <span class="o">:</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
@@ -1980,7 +1985,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"4b686bb57b49a186\"");
+  var containerId = JSON.parse("\"cc96bbddbd8d7cae\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2016,7 +2021,7 @@
 </script>
 <p><code>通过遍历一次数组，找到了数组中的最大值 max，然后我们计算这个最大值的位数：</code></p>
 
-<div id="ba6134569d3b4c36" class="codetab">
+<div id="3a4ec4f518e14a8c" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2030,7 +2035,7 @@
 <div id="46b7e1fd9785b9f5" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2038,7 +2043,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang">  <span class="nx">maxDigitLength</span> <span class="p">=</span> <span class="mi">0</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang">  <span class="nx">maxDigitLength</span> <span class="p">=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="nx">max</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">{</span>
       <span class="nx">maxDigitLength</span><span class="o">++</span><span class="c1">//记录最大遍历次数
 </span><span class="c1"></span>      <span class="nx">max</span> <span class="o">/=</span> <span class="mi">10</span>
@@ -2053,14 +2058,14 @@
 <div id="a4a3b8ab90868e3e" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">maxDigitLength</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">maxDigitLength</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
 <span class="k">while</span> <span class="o">(</span><span class="n">max</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
   <span class="n">maxDigitLength</span><span class="o">++;</span>
   <span class="n">max</span> <span class="o">/=</span> <span class="n">10</span><span class="o">;</span>
@@ -2075,7 +2080,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"ba6134569d3b4c36\"");
+  var containerId = JSON.parse("\"3a4ec4f518e14a8c\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2116,7 +2121,7 @@
 <p>获取基数有两种做法：</p>
 <p><code>第一种：</code></p>
 
-<div id="97fe5c79be49bf2f" class="codetab">
+<div id="764625c5c9307c00" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2130,7 +2135,7 @@
 <div id="40b00ab6fbb45c3f" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2142,7 +2147,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="nx">mod</span> <span class="o">:=</span> <span class="mi">10</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="nx">mod</span> <span class="o">:=</span> <span class="mi">10</span>
 <span class="nx">dev</span> <span class="o">:=</span> <span class="mi">1</span>
 <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">maxDigitLength</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
   <span class="k">for</span> <span class="nx">_</span><span class="p">,</span><span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span><span class="p">{</span>
@@ -2161,7 +2166,7 @@
 <div id="80a130cbd5431815" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2173,7 +2178,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">mod</span> <span class="o">=</span> <span class="n">10</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">mod</span> <span class="o">=</span> <span class="n">10</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">dev</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">maxDigitLength</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">value</span> <span class="o">:</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
@@ -2193,7 +2198,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"97fe5c79be49bf2f\"");
+  var containerId = JSON.parse("\"764625c5c9307c00\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2229,7 +2234,7 @@
 </script>
 <p><code>第二种：</code></p>
 
-<div id="02012d2d0b265685" class="codetab">
+<div id="ef2e60bdb006efd5" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2243,7 +2248,7 @@
 <div id="bf8075dae43e2b9e" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2253,7 +2258,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="nx">dev</span> <span class="o">:=</span> <span class="mi">1</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="nx">dev</span> <span class="o">:=</span> <span class="mi">1</span>
 <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">maxDigitLength</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
   <span class="k">for</span> <span class="nx">_</span><span class="p">,</span><span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span><span class="p">{</span>
     <span class="nx">radix</span> <span class="o">:=</span> <span class="nx">v</span> <span class="o">/</span> <span class="nx">dev</span> <span class="o">%</span> <span class="mi">10</span> 
@@ -2270,7 +2275,7 @@
 <div id="fe8585ae6abc7753" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2280,7 +2285,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">dev</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">dev</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">maxDigitLength</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
   <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">value</span> <span class="o">:</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
       <span class="kt">int</span> <span class="n">radix</span> <span class="o">=</span> <span class="n">value</span> <span class="o">/</span> <span class="n">dev</span> <span class="o">%</span> <span class="n">10</span><span class="o">;</span>
@@ -2298,7 +2303,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"02012d2d0b265685\"");
+  var containerId = JSON.parse("\"ef2e60bdb006efd5\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2335,7 +2340,7 @@
 <p>两者的区别是先做除法运算还是先做模运算，<code>推荐使用第二种写法，因为它可以节省一个变量</code></p>
 <h2 id="对基数进行排序">对基数进行排序</h2>
 
-<div id="550c6c09198ed424" class="codetab">
+<div id="fa9ed3231486f962" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2349,7 +2354,7 @@
 <div id="176550bf85511aee" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2400,52 +2405,52 @@
 </span><span class="lnt">49
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">radixSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">radixSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">//第一步，先确定基数个数
 </span><span class="c1"></span>  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-      <span class="k">return</span>
+  	<span class="k">return</span>
   <span class="p">}</span>
   <span class="nx">max</span> <span class="o">:=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="nx">v</span> <span class="p">&gt;</span> <span class="nx">max</span> <span class="p">{</span>
-          <span class="nx">max</span> <span class="p">=</span> <span class="nx">v</span>
-      <span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">v</span> <span class="p">&gt;</span> <span class="nx">max</span> <span class="p">{</span>
+  		<span class="nx">max</span> <span class="p">=</span> <span class="nx">v</span>
+  	<span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nx">maxLength</span> <span class="o">:=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="nx">max</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
-      <span class="nx">maxLength</span><span class="o">++</span>
-      <span class="nx">max</span> <span class="o">/=</span> <span class="mi">10</span>
+  	<span class="nx">maxLength</span><span class="o">++</span>
+  	<span class="nx">max</span> <span class="o">/=</span> <span class="mi">10</span>
   <span class="p">}</span>
 
   <span class="c1">//结果暂存
 </span><span class="c1"></span>  <span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">))</span>
   <span class="nx">dev</span> <span class="o">:=</span> <span class="mi">1</span> <span class="c1">//从1开始
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">maxLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-      <span class="c1">//记录各基数个数
-</span><span class="c1"></span>      <span class="nx">count</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span> <span class="p">{</span>
-          <span class="nx">radix</span> <span class="o">:=</span> <span class="nx">v</span> <span class="o">/</span> <span class="nx">dev</span> <span class="o">%</span> <span class="mi">10</span> <span class="c1">//求当前数的基数
-</span><span class="c1"></span>          <span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]</span><span class="o">++</span>        <span class="c1">//记录基数个数
-</span><span class="c1"></span>      <span class="p">}</span>
-      <span class="c1">//counting[i] 更新为数字 i 在最终排序结果中的起始下标位置。
-</span><span class="c1"></span>      <span class="c1">//这个位置等于前面比自己小的数字的总数
-</span><span class="c1"></span>      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-          <span class="nx">count</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">count</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-      <span class="p">}</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
-          <span class="nx">radix</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">/</span> <span class="nx">dev</span> <span class="o">%</span> <span class="mi">10</span>
-          <span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]</span><span class="o">--</span>
-          <span class="nx">res</span><span class="p">[</span><span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-      <span class="p">}</span>
+  	<span class="c1">//记录各基数个数
+</span><span class="c1"></span>  	<span class="nx">count</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+  	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span> <span class="p">{</span>
+  		<span class="nx">radix</span> <span class="o">:=</span> <span class="nx">v</span> <span class="o">/</span> <span class="nx">dev</span> <span class="o">%</span> <span class="mi">10</span> <span class="c1">//求当前数的基数
+</span><span class="c1"></span>  		<span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]</span><span class="o">++</span>        <span class="c1">//记录基数个数
+</span><span class="c1"></span>  	<span class="p">}</span>
+  	<span class="c1">//counting[i] 更新为数字 i 在最终排序结果中的起始下标位置。
+</span><span class="c1"></span>  	<span class="c1">//这个位置等于前面比自己小的数字的总数
+</span><span class="c1"></span>  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+  	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+  		<span class="nx">count</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">count</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  	<span class="p">}</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+  	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
+  		<span class="nx">radix</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">/</span> <span class="nx">dev</span> <span class="o">%</span> <span class="mi">10</span>
+  		<span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]</span><span class="o">--</span>
+  		<span class="nx">res</span><span class="p">[</span><span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+  	<span class="p">}</span>
 
-      <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">res</span> <span class="p">{</span>
-          <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">v</span>
-      <span class="p">}</span>
-      <span class="nx">dev</span> <span class="o">*=</span> <span class="mi">10</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
+  	<span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">res</span> <span class="p">{</span>
+  		<span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">v</span>
+  	<span class="p">}</span>
+  	<span class="nx">dev</span> <span class="o">*=</span> <span class="mi">10</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
@@ -2458,7 +2463,7 @@
 <div id="fd200a6143d5d41d" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2502,7 +2507,7 @@
 </span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RadixSort</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RadixSort</span> <span class="o">{</span>
 
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">radixSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
       <span class="k">if</span> <span class="o">(</span><span class="n">arr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
@@ -2554,7 +2559,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"550c6c09198ed424\"");
+  var containerId = JSON.parse("\"fa9ed3231486f962\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2597,7 +2602,7 @@
 <p>但这种方案有一个缺点：加法运算<code>可能导致数字越界</code>，所以必须单独处理数字越界的情况。</p>
 <p>事实上，<code>有一种更好的方案解决负数的基数排序</code>。那就是在对基数进行计数排序时，<code>申请长度为 19 的计数数组</code>，用来存储 [-9, 9] 这个区间内的所有整数。在把每一位基数计算出来后，加上 9，就能<code>对应上 counting 数组的下标</code>了。也就是说，counting 数组的 <code>下标 [0, 18] 对应基数 [−9,9]</code>。</p>
 
-<div id="483aa95d94a7f557" class="codetab">
+<div id="896e9a2b2f66492b" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2611,7 +2616,7 @@
 <div id="963a645902fefb3b" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2665,55 +2670,55 @@
 </span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">radixSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">radixSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">//第一步，先确定基数个数
 </span><span class="c1"></span>  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-      <span class="k">return</span>
+  	<span class="k">return</span>
   <span class="p">}</span>
   <span class="nx">max</span> <span class="o">:=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="nx">v</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
-          <span class="nx">v</span> <span class="p">=</span> <span class="o">-</span><span class="nx">v</span>
-      <span class="p">}</span>
-      <span class="k">if</span> <span class="nx">v</span> <span class="p">&gt;</span> <span class="nx">max</span> <span class="p">{</span>
-          <span class="nx">max</span> <span class="p">=</span> <span class="nx">v</span>
-      <span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">v</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
+  		<span class="nx">v</span> <span class="p">=</span> <span class="o">-</span><span class="nx">v</span>
+  	<span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">v</span> <span class="p">&gt;</span> <span class="nx">max</span> <span class="p">{</span>
+  		<span class="nx">max</span> <span class="p">=</span> <span class="nx">v</span>
+  	<span class="p">}</span>
   <span class="p">}</span>
 
   <span class="nx">maxLength</span> <span class="o">:=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="nx">max</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
-      <span class="nx">maxLength</span><span class="o">++</span>
-      <span class="nx">max</span> <span class="o">/=</span> <span class="mi">10</span>
+  	<span class="nx">maxLength</span><span class="o">++</span>
+  	<span class="nx">max</span> <span class="o">/=</span> <span class="mi">10</span>
   <span class="p">}</span>
 
   <span class="c1">//结果暂存
 </span><span class="c1"></span>  <span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">))</span>
   <span class="nx">dev</span> <span class="o">:=</span> <span class="mi">1</span> <span class="c1">//从1开始
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">maxLength</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-      <span class="c1">//记录各基数个数
-</span><span class="c1"></span>      <span class="nx">count</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span> <span class="p">{</span>
-          <span class="nx">radix</span> <span class="o">:=</span> <span class="nx">v</span><span class="o">/</span><span class="nx">dev</span><span class="o">%</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">9</span> <span class="c1">//求当前数的基数
-</span><span class="c1"></span>          <span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]</span><span class="o">++</span>        <span class="c1">//记录基数个数
-</span><span class="c1"></span>      <span class="p">}</span>
-      <span class="c1">//counting[i] 更新为数字 i 在最终排序结果中的起始下标位置。
-</span><span class="c1"></span>      <span class="c1">//这个位置等于前面比自己小的数字的总数
-</span><span class="c1"></span>      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-          <span class="nx">count</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">count</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-      <span class="p">}</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
-      <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
-          <span class="nx">radix</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">/</span><span class="nx">dev</span><span class="o">%</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">9</span>
-          <span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]</span><span class="o">--</span>
-          <span class="nx">res</span><span class="p">[</span><span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-      <span class="p">}</span>
+  	<span class="c1">//记录各基数个数
+</span><span class="c1"></span>  	<span class="nx">count</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+  	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">arr</span> <span class="p">{</span>
+  		<span class="nx">radix</span> <span class="o">:=</span> <span class="nx">v</span><span class="o">/</span><span class="nx">dev</span><span class="o">%</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">9</span> <span class="c1">//求当前数的基数
+</span><span class="c1"></span>  		<span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]</span><span class="o">++</span>        <span class="c1">//记录基数个数
+</span><span class="c1"></span>  	<span class="p">}</span>
+  	<span class="c1">//counting[i] 更新为数字 i 在最终排序结果中的起始下标位置。
+</span><span class="c1"></span>  	<span class="c1">//这个位置等于前面比自己小的数字的总数
+</span><span class="c1"></span>  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+  	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+  		<span class="nx">count</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">count</span><span class="p">[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  	<span class="p">}</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+  	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span> <span class="p">{</span>
+  		<span class="nx">radix</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">/</span><span class="nx">dev</span><span class="o">%</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">9</span>
+  		<span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]</span><span class="o">--</span>
+  		<span class="nx">res</span><span class="p">[</span><span class="nx">count</span><span class="p">[</span><span class="nx">radix</span><span class="p">]]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+  	<span class="p">}</span>
 
-      <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">res</span> <span class="p">{</span>
-          <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">v</span>
-      <span class="p">}</span>
-      <span class="nx">dev</span> <span class="o">*=</span> <span class="mi">10</span>
-      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
+  	<span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">res</span> <span class="p">{</span>
+  		<span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">v</span>
+  	<span class="p">}</span>
+  	<span class="nx">dev</span> <span class="o">*=</span> <span class="mi">10</span>
+  	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
@@ -2726,7 +2731,7 @@
 <div id="98d9f3af718b943d" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2772,7 +2777,7 @@
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RadixSort</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">RadixSort</span> <span class="o">{</span>
 
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">radixSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
       <span class="k">if</span> <span class="o">(</span><span class="n">arr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
@@ -2826,7 +2831,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"483aa95d94a7f557\"");
+  var containerId = JSON.parse("\"896e9a2b2f66492b\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;

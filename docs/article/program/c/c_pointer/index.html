@@ -1348,7 +1348,7 @@
     <meta property="twitter:description" content="都2020年了，还搞不懂c语言指针是什么？">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1549,11 +1549,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1728,10 +1732,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1864,11 +1870,11 @@
 <p>先来看看一个特殊的指针，姑且称它为指针，因为它依赖于环境: NULL，是一个神奇的东西。先附上定义，在编译器中会有两种NULL(每种环境都有唯一确定的NULL):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define NULL 0
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define NULL 0
 </span><span class="cp">#define NULL ((void*)0)
 </span></code></pre></td></tr></table>
 </div>
@@ -1876,12 +1882,12 @@
 <p>当它们都作为指针的值时并不会报错或者警告，即编译器或者说C标准认为这是合法的:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">temp_int_1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//无警告
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">temp_int_1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//无警告
 </span><span class="c1"></span><span class="kt">int</span><span class="o">*</span> <span class="n">temp_int_2</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="mi">0</span><span class="p">;</span> <span class="c1">//无警告
 </span><span class="c1"></span><span class="kt">int</span><span class="o">*</span> <span class="n">temp_int_3</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">//出现警告
 </span></code></pre></td></tr></table>
@@ -1895,7 +1901,7 @@
 对于一个函数，我们进行参数传递，参数有两种形式: 形参与实参</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1903,7 +1909,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">function</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">function</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="cm">/*...*/</span>
 <span class="p">}</span>
@@ -1915,7 +1921,7 @@
 <p>对于形参和实参而言两个关系紧密，可以这么理解总是实参将自己的一份拷贝传递给形参，这样形参便能安全的使用实参的值，但也带给我们一些麻烦，最经典的交换两数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1924,7 +1930,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">swap_v1</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">val_1</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">val_2</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">swap_v1</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">val_1</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">val_2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="n">val_1</span><span class="p">;</span>
     <span class="o">*</span><span class="n">val_1</span> <span class="o">=</span> <span class="o">*</span><span class="n">val_2</span><span class="p">;</span>
@@ -1936,11 +1942,11 @@
 </div><p>这就是所谓的按址传递，实际上只是将外部指针(实参)的值做一个拷贝，传递给形参val_1与val_2，实际上我们使用:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define SWAP_V2(a, b) (a += b, b = a - b, a -= b)
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define SWAP_V2(a, b) (a += b, b = a - b, a -= b)
 </span><span class="cp">#define SWAP_V3(x, y) {x ^= y; y ^= x; x ^= y}
 </span></code></pre></td></tr></table>
 </div>
@@ -1948,7 +1954,7 @@
 <p>但是，动动脑筋想一想，这种写法真的没有瑕疵吗？如果输入的两个参数本就指向同一块内存，会发生什么？</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1958,7 +1964,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="p">...</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="p">...</span>
 <span class="kt">int</span> <span class="n">test_1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">test_2</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 <span class="n">SWAP_V2</span><span class="p">(</span><span class="n">test_1</span><span class="p">,</span> <span class="n">test_2</span><span class="p">);</span>                    
 <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Now the test_1 is %d, test_2 is %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">test_1</span><span class="p">,</span> <span class="n">test_2</span><span class="p">);</span>
@@ -1971,18 +1977,18 @@
 </div><p>会输出什么？:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="err">$</span><span class="o">:</span> <span class="n">Now</span> <span class="n">the</span> <span class="n">test_1</span> <span class="n">is</span> <span class="mi">100</span><span class="p">,</span> <span class="n">test_2</span> <span class="n">is</span> <span class="mi">10</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="err">$</span><span class="o">:</span> <span class="n">Now</span> <span class="n">the</span> <span class="n">test_1</span> <span class="n">is</span> <span class="mi">100</span><span class="p">,</span> <span class="n">test_2</span> <span class="n">is</span> <span class="mi">10</span>
 <span class="err">$</span><span class="o">:</span> <span class="n">Now</span> <span class="n">the</span> <span class="n">test_1</span> <span class="n">is</span> <span class="mi">0</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>对，输出了0，为什么？稍微动动脑筋就能相通，那么对于后面的SWAP_V3亦是如此，所以在斟酌之下，解决方案应该尽可能短小精悍:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2001,7 +2007,7 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">swap_final</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">val_1</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">val_2</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">swap_final</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">val_1</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">val_2</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">val_1</span> <span class="o">==</span> <span class="n">val_2</span><span class="p">)</span>
         <span class="k">return</span><span class="p">;</span>
@@ -2025,7 +2031,7 @@
 <p>与上面的情况类似，偶尔的不经意就会造成严重的后果:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2038,7 +2044,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">combine_1</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">dest</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">add</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">combine_1</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">dest</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">add</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="o">*</span><span class="n">dest</span> <span class="o">+=</span> <span class="o">*</span><span class="n">add</span><span class="p">;</span>
     <span class="o">*</span><span class="n">dest</span> <span class="o">+=</span> <span class="o">*</span><span class="n">add</span><span class="p">;</span>
@@ -2054,7 +2060,7 @@
 </div><p>上述两个函数的功能一样吗？恩看起来是一样的</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2062,7 +2068,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">test_3</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">test_4</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">test_3</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">test_4</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 <span class="n">combine_1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">test_3</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">test_4</span><span class="p">);</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&#34;After combine_1, test_3 = %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">test_3</span><span class="p">);</span>
 <span class="p">...</span><span class="cm">/*恢复原值*/</span>
@@ -2073,13 +2079,13 @@
 </div><p>输出</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="err">$</span><span class="o">:</span> <span class="n">After</span> <span class="n">combine_1</span><span class="p">,</span> <span class="n">test_3</span> <span class="o">=</span> <span class="mi">210</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="err">$</span><span class="o">:</span> <span class="n">After</span> <span class="n">combine_1</span><span class="p">,</span> <span class="n">test_3</span> <span class="o">=</span> <span class="mi">210</span>
 
 <span class="err">$</span><span class="o">:</span> <span class="n">After</span> <span class="n">combine_2</span><span class="p">,</span> <span class="n">test_3</span> <span class="o">=</span> <span class="mi">210</span>
 
@@ -2088,7 +2094,7 @@
 </div><p>如果传入两个同一对象呢？</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2096,7 +2102,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="p">...</span> <span class="cm">/*恢复test_3原值*/</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="p">...</span> <span class="cm">/*恢复test_3原值*/</span>
 <span class="n">combine_1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">test_3</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">test_3</span><span class="p">);</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&#34;After second times combine_1, test_3 = %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">test_3</span><span class="p">);</span>
 <span class="p">...</span>
@@ -2107,12 +2113,12 @@
 </div><p>输出</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="err">$</span><span class="o">:</span> <span class="n">After</span> <span class="n">second</span> <span class="n">times</span> <span class="n">combine_1</span><span class="p">,</span> <span class="n">test_3</span> <span class="o">=</span> <span class="mi">40</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="err">$</span><span class="o">:</span> <span class="n">After</span> <span class="n">second</span> <span class="n">times</span> <span class="n">combine_1</span><span class="p">,</span> <span class="n">test_3</span> <span class="o">=</span> <span class="mi">40</span>
 
 <span class="err">$</span><span class="o">:</span> <span class="n">After</span> <span class="n">second</span> <span class="n">times</span> <span class="n">combine_2</span><span class="p">,</span> <span class="n">test_3</span> <span class="o">=</span> <span class="mi">30</span>
 </code></pre></td></tr></table>
@@ -2130,18 +2136,18 @@
 要时刻记住，数组与指针是不同的东西。但是为什么下面代码是正确的？</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
 <span class="kt">int</span><span class="o">*</span> <span class="n">parr</span>  <span class="o">=</span> <span class="n">arr</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>我们还是那句话，结合上下文，编译器推出 arr处于赋值操作符的右侧，默默的将他转换为对应类型的指针，而我们在使用arr时也总是将其当成是指向该数组内存块首位的指针。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2153,7 +2159,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//int function2(const int test_arr[10]
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="c1">//int function2(const int test_arr[10]
 </span><span class="c1">//int function2(const int test_arr[]) 考虑这三种写法是否一样
 </span><span class="c1"></span><span class="kt">int</span> <span class="nf">function2</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">test_arr</span><span class="p">)</span>
 <span class="p">{</span>
@@ -2167,19 +2173,19 @@
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="err">输出</span><span class="o">:</span> <span class="n">size_out</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span> <span class="n">size_in</span> <span class="o">=</span> <span class="mi">8</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="err">输出</span><span class="o">:</span> <span class="n">size_out</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span> <span class="n">size_in</span> <span class="o">=</span> <span class="mi">8</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>这就是为什么数组与指针不同的原因所在，在外部即定义数组的代码块中，编译器通过上下文发觉此处arr是一个数组，而arr代表的是一个指向10个int类型的数组的指针，只所谓最开始的代码是正确的，只是因为这种用法比较多，就成了标准的一部分。就像世上本没有路，走的多了就成了路。”正确”的该怎么写</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>此时p的类型就是一个指向含有10个元素的数组的指针,此时(*p)[0]产生的效果是arr[0]，也就是parr[0]，但是(*p)呢？这里不记录，结果是会溢出，为什么？</p>
@@ -2188,13 +2194,13 @@
 这样我们就能只传递一个参数而保留所有信息。但这么做的也有限制:对于不同大小，或者不同存储类型的数组而言，它们的类型也有所不同</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c">  <span class="kt">int</span> <span class="n">arr_2</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c">  <span class="kt">int</span> <span class="n">arr_2</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
   <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p_2</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr_2</span><span class="p">;</span>
   <span class="kt">float</span> <span class="n">arr_3</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
   <span class="kt">float</span> <span class="p">(</span><span class="o">*</span><span class="n">p_3</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr_3</span><span class="p">;</span>
@@ -2205,21 +2211,21 @@
 <p>就多维数组在这里解释一下。所谓多维数组就是将若干个降一维的数组组合在一起，降一维的数组又由若干个更降一维的数组组合在一起，直到最低的一维数组，举个例子:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">dou_arr</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">3</span><span class="p">];</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">dou_arr</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">3</span><span class="p">];</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>就这个二维数组而言，将5个每个为3个int类型的数组组合在一起，要想指向这个数组该怎么做？</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c">  <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>        <span class="o">=</span> <span class="o">&amp;</span><span class="n">dou_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c">  <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>        <span class="o">=</span> <span class="o">&amp;</span><span class="n">dou_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
   <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">dou_p</span><span class="p">)[</span><span class="mi">5</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">dou_arr</span><span class="p">;</span>
   <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">what_p</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span>   <span class="o">=</span> <span class="n">dou_arr</span><span class="p">;</span>
 </code></pre></td></tr></table>
@@ -2229,12 +2235,12 @@
 <p>对于某种形式下的操作，我们总是自然的将相似的行为结合在一起考虑。考虑如下代码:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">arr_3</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">arr_3</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
 <span class="kt">int</span><span class="o">*</span> <span class="n">p_4</span>      <span class="o">=</span> <span class="n">arr_3</span><span class="p">;</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d == %d == %d ?</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">arr_3</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">*</span><span class="p">(</span><span class="n">p_4</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span> <span class="o">*</span><span class="p">(</span><span class="n">arr_3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">));</span>
 </code></pre></td></tr></table>
@@ -2261,7 +2267,7 @@
 你一直以为你操作的是真实物理内存，实际上并不是，你操作的只是操作系统为你分配的资格虚拟地址，但这并不意味着我们可以无限使用内存，那内存卖那么贵干嘛，实际上存储数据的还是物理内存，只不过在操作系统这个中介的介入情况下，不同程序窗口(可以是相同程序)可以共享使用同一块内存区域，一旦某个傻大个程序的使用让物理内存不足了，我们就会把某些没用到的数据写到你的硬盘上去，之后再使用时，从硬盘读回。这个特性会导致什么呢？假设你在Windows上使用了多窗口，打开了两个相同的程序:</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2276,7 +2282,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="p">...</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="p">...</span>
 <span class="kt">int</span>  <span class="n">stay_here</span><span class="p">;</span>
 <span class="kt">char</span> <span class="n">tran_to_int</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Address: %p</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">stay_here</span><span class="p">);</span>
@@ -2299,14 +2305,14 @@
 事实上，函数名出现在赋值符号右边就代表着函数的地址</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">intfunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">){</span><span class="cm">/*...*/</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">intfunction</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">){</span><span class="cm">/*...*/</span>
 <span class="p">}</span>
 <span class="p">...</span>
 <span class="kt">int</span><span class="p">(</span><span class="o">*</span><span class="n">p_fun</span><span class="p">)(</span><span class="kt">int</span><span class="p">)</span><span class="o">=</span><span class="n">function</span><span class="p">;</span>
@@ -2316,28 +2322,28 @@
 </div><p>上述代码即声明并初始化了函数指针，p_fun的类型是指向一个返回值是int类型，参数是int类型的函数的指针</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">p_fun</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">p_fun</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
 <span class="p">(</span><span class="o">*</span><span class="n">p_fun</span><span class="p">)(</span><span class="mi">11</span><span class="p">);</span>
 <span class="n">function</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>上述三个代码的意义也相同，同样我们也能使用函数指针数组这个概念</p>
-<pre><code>int(*p_func_arr[])(int)={func1, func2,};
+<pre tabindex="0"><code>int(*p_func_arr[])(int)={func1, func2,};
 </code></pre><p>其中func1,func2都是返回值为int参数为int的函数，接着我们能像数组索引一样使用这个函数了。</p>
 <p>Tips: 我们总是忽略函数声明，这并不是什么好事。</p>
 <p>在C语言中，因为编译器并不会对有没有函数声明过分深究，甚至还会放纵，当然这并不包含内联函数(inline)，因为它本身就只在本文件可用。<br />
 比如，当我们在某个地方调用了一个函数，但是并没有声明它：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">CallWithoutDeclare</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="c1">//参数100为 int 型
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">CallWithoutDeclare</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="c1">//参数100为 int 型
 </span></code></pre></td></tr></table>
 </div>
 </div><p>那么，C编译器就会推测，这个使用了int型参数的函数，一定是有一个int型的参数列表，一旦函数定义中的参数列表与之不符合，将会导致参数信息传递错误(编译器永远坚信自己是对的！)，我们知道C语言是强类型语言，一旦类型不正确，会导致许多意想不到的结果(往往是Bug)发生。</p>
@@ -2346,10 +2352,10 @@ C语言中malloc的那些事儿<br />
 我们常常见到这种写法:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">pointer</span> <span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">pointer</span> <span class="o">=</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>这有什么奇怪的吗？看下面这个例子:</p>
@@ -2362,7 +2368,7 @@ realloc函数是最为人诟病的一个函数，因为它的职能过于宽广�
 指针与结构体</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2375,7 +2381,7 @@ realloc函数是最为人诟病的一个函数，因为它的职能过于宽广�
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">typedefstruct</span> <span class="n">tag</span><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">typedefstruct</span> <span class="n">tag</span><span class="p">{</span>
 <span class="kt">int</span>  <span class="n">value</span><span class="p">;</span>
 <span class="kt">long</span> <span class="n">vari_store</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
 <span class="p">}</span><span class="n">vari_struct</span><span class="p">;</span>
@@ -2391,11 +2397,11 @@ realloc函数是最为人诟病的一个函数，因为它的职能过于宽广�
 </div><p>似乎都是这么用的，但总有那么一些人想出了一些奇怪的用法</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">what_spa_want</span> <span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">what_spa_want</span> <span class="o">=</span><span class="mi">10</span><span class="p">;</span>
 <span class="n">vari_struct</span><span class="o">*</span> <span class="n">vari_p_3</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">vari_struct</span><span class="p">)</span><span class="o">+</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="o">*</span><span class="n">what_spa_want</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
@@ -2409,13 +2415,13 @@ realloc函数是最为人诟病的一个函数，因为它的职能过于宽广�
 在调用 malloc 时，该函数或使用 brk() 或使用 mmap() 向操作系统申请一片内存，在使用时分配给需要的地方，与之对应的是 free，与我们硬盘删除东西一样，实际上:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">value</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="n">value</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">);</span>
 <span class="p">...</span>
 <span class="n">free</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>

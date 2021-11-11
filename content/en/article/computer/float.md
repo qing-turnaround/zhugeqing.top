@@ -5,7 +5,7 @@ image: "/images/xingyouji.jpg"
 title: "你真的了解浮点数吗？"
 author: 诸葛青
 authorEmoji: 🎅
-pinned: true
+pinned: false
 tags:
 - 计算机
 series:

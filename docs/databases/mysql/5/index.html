@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="从零蛋开始学习 MySQL">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1846,7 +1852,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 13, 2020 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;1&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1872,102 +1878,102 @@
 <hr />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> <span class="k">FROM</span> <span class="err">表名</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="列的别名">列的别名</h3>
 <p>为结果集中的列重新定义一个别名，命令格式如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> <span class="p">[</span><span class="k">AS</span><span class="p">]</span> <span class="err">列的别名</span> <span class="k">FROM</span> <span class="err">表名</span><span class="p">;(</span><span class="n">AS可有可无</span><span class="err">，别名只是在本次查询的到的结果集中展示，而不会改变真实表中的列名</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="w"> </span><span class="p">[</span><span class="k">AS</span><span class="p">]</span><span class="w"> </span><span class="err">列的别名</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;(</span><span class="n">AS可有可无</span><span class="err">，别名只是在本次查询的到的结果集中展示，而不会改变真实表中的列名</span><span class="p">)</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="查询多个列">查询多个列</h2>
 <hr />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span><span class="mi">1</span><span class="p">,</span> <span class="err">列名</span><span class="mi">2</span><span class="p">,</span> <span class="p">...</span> <span class="err">列名</span><span class="n">n</span> <span class="k">FROM</span> <span class="err">表名</span><span class="p">;(</span><span class="err">也可以加上别名</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">列名</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">列名</span><span class="n">n</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;(</span><span class="err">也可以加上别名</span><span class="p">)</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="查询所有列">查询所有列</h2>
 <hr />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">表名</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="查询结果去重">查询结果去重</h2>
 <hr />
 <p>去除单列的重复结果</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="err">列名</span> <span class="k">FROM</span> <span class="err">表名</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="err">列名</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>去除多列的重复结果</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="err">列名</span><span class="mi">1</span><span class="p">,</span> <span class="err">列名</span><span class="mi">2</span><span class="p">,</span> <span class="p">...</span> <span class="err">列名</span><span class="n">n</span>  <span class="k">FROM</span> <span class="err">表名</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">列名</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="err">列名</span><span class="n">n</span><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="限制查询结果条数">限制查询结果条数</h2>
 <hr />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">LIMIT</span> <span class="err">开始行</span><span class="p">,</span> <span class="err">限制条数</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="err">开始行</span><span class="p">,</span><span class="w"> </span><span class="err">限制条数</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>开始行指的是从第几行数据开始查询，限制条数是结果集中最多包含多少条记录。（计算机从零开始计数，第0条、第1条、第2条、第3条、第4条、第5条。如果指定的开始行大于结果中的行数，那查询结果就什么都没有。）</p>
 <h3 id="使用默认的开始行">使用默认的开始行</h3>
 <p>LIMIT后边也可以只有一个参数，那这个参数就代表着限制行数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">LIMIT</span> <span class="err">限制条数</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="err">限制条数</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="对查询结果排序">对查询结果排序</h2>
 <hr />
 <h3 id="按照单个列的值进行排序">按照单个列的值进行排序</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="err">列名</span> <span class="k">ASC</span><span class="o">|</span><span class="k">DESC</span><span class="err">（</span><span class="k">ASC</span><span class="err">（</span><span class="n">ascending</span><span class="err">）和</span><span class="n">DESC</span><span class="err">（</span><span class="nf">descending</span><span class="p">(</span><span class="err">）只能选一个，如果不加则默认</span><span class="n">ASC</span><span class="err">，前者是升序，后者是降序）</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">列名</span><span class="w"> </span><span class="k">ASC</span><span class="o">|</span><span class="k">DESC</span><span class="err">（</span><span class="k">ASC</span><span class="err">（</span><span class="n">ascending</span><span class="err">）和</span><span class="n">DESC</span><span class="err">（</span><span class="nf">descending</span><span class="p">(</span><span class="err">）只能选一个，如果不加则默认</span><span class="n">ASC</span><span class="err">，前者是升序，后者是降序）</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="按照多个列的值进行排序">按照多个列的值进行排序</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="err">列名</span> <span class="k">FROM</span> <span class="err">表名</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="err">列</span><span class="mi">1</span> <span class="k">ASC</span><span class="o">|</span><span class="k">DESC</span><span class="p">,</span> <span class="err">列</span><span class="mi">2</span> <span class="k">ASC</span><span class="o">|</span><span class="k">DESC</span> <span class="p">...</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="err">列名</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">列</span><span class="mi">1</span><span class="w"> </span><span class="k">ASC</span><span class="o">|</span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="err">列</span><span class="mi">2</span><span class="w"> </span><span class="k">ASC</span><span class="o">|</span><span class="k">DESC</span><span class="w"> </span><span class="p">...</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div>
     </article>
@@ -2258,11 +2264,11 @@
     <ul class="related-ul">
         
         <li>
-          <a href="/databases/mysql/7/" class="related__link">表达式和函数</a>
+          <a href="/databases/mysql/6/" class="related__link">带搜索条件的查询</a>
         </li>
         
         <li>
-          <a href="/databases/mysql/6/" class="related__link">带搜索条件的查询</a>
+          <a href="/databases/mysql/7/" class="related__link">表达式和函数</a>
         </li>
         
         <li>

@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="了解什么是动态规划">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1887,8 +1893,7 @@
 <p><font color=GreenYellow size=3 >小宇：行，你说吧，这回我肯定说不知道。</font></p>
 <p>闪客：一个楼梯有 10 级台阶，你从下往上走，每跨一步只能向上迈 1 级或者 2 级台阶，请问一共有多少种走法？</p>
 <p><font color=GreenYellow size=3 >小宇：额，这我真不知道了，我想想哈。</font></p>
-<figure>
-    <img src="/images/article/dp1.gif"/> 
+<figure><img src="/images/article/dp1.gif"/>
 </figure>
 
 <p><font color=CadetBlue size=3 >  </font><br />
@@ -1897,8 +1902,7 @@
 <p><font color=GreenYellow size=3 >小宇：啊！原来是有关联的呀。</font></p>
 <p>闪客：对呀，我本来想说假如我告诉你 1+&hellip;+99 是多少，你是不是就直接能算出 1+&hellip;+100 的值了。</p>
 <p><font color=GreenYellow size=3 >小宇：哦你这么一提示我有点感觉了！要想走到第 10 级台阶，要么是先走到第 9 级，然后再迈一步 1 级台阶上去，要么是先走到第 8 级，然后一次迈 2 级台阶上去。</font></p>
-<figure>
-    <img src="/images/article/dp2.gif"/> 
+<figure><img src="/images/article/dp2.gif"/>
 </figure>
 
 <p>闪客：太棒了！你找到感觉了！接着往下说。</p>
@@ -1912,8 +1916,7 @@
 <p>闪客：没错，那你想想看 F(2) 和 F(1) 怎么计算？</p>
 <p><font color=GreenYellow size=3 >小宇：简单，还是刚刚都逻辑被，想知道 F(2)，只需要知道 F(1) 和 F(0)，诶不对 F(0) 是什么鬼？还有 F(1) 的计算需要知道 F(0) 和 F(-1)，不行呀，这解释不通了。</font></p>
 <p>闪客：哈哈，别急，在这道题里，如果只迈到 1 级台阶，那一共就一种走法；如果只迈到 2 级台阶，就只有两种走法。可以直接很直观地得出，没必要推导。</p>
-<figure>
-    <img src="/images/article/dp3.png"/> 
+<figure><img src="/images/article/dp3.png"/>
 </figure>
 
 <p>小宇：哦哦我懂了，这道题里由于每一个递推项都需要前两项的支持，所以必须有最开头的两项作为已知，就是你说的 F(1) = 1 和 F(2) = 2。</font></p>
@@ -1928,7 +1931,7 @@
 <p>闪客：先别说这些废话了，那接下来你看看能不能写出程序，计算出 F(10) 的结果，这才是难点。</p>
 <p><font color=GreenYellow size=3 >小宇：编程的话这似乎是个递归问题，简单！</font></p>
 <p>
-<div id="b059bc293d889ef1" class="codetab">
+<div id="d8fc5767ad4e26de" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -1941,7 +1944,7 @@
 <div id="025a8804afa86fb2" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1952,7 +1955,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">getWays</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">getWays</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
@@ -1970,7 +1973,7 @@
 <div id="0e6da721d89d43d9" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1981,7 +1984,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">getways</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span><span class="kt">int</span><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">getways</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span><span class="kt">int</span><span class="p">{</span>
   <span class="k">if</span> <span class="nx">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
       <span class="k">return</span> <span class="mi">1</span>
   <span class="p">}</span>
@@ -2000,7 +2003,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"b059bc293d889ef1\"");
+  var containerId = JSON.parse("\"d8fc5767ad4e26de\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2036,8 +2039,7 @@
 </script><br />
 闪客：嗯不错，这样很简洁，但复杂度太高了，是 O(2^n)，具体你可以之后想想为什么。现在你看看能不能将复杂度降低。</p>
 <p><font color=CadetBlue size=3 >小宇：我想想看，计算 F(10) 时需要计算  F(9) 和 F(8)，而在递归计算 F(9) 时要计算 F(8) 和 F(7)，这样 F(8) 在这里重复计算了，浪费了时间。</font></p>
-<figure>
-    <img src="/images/article/dp3.gif"/> 
+<figure><img src="/images/article/dp3.gif"/>
 </figure>
 
 <p><font color=CadetBlue size=3 >   </font></p>
@@ -2111,7 +2113,7 @@
 <p>当然你也可以把之前的值都保留，但这样就增加了空间复杂度，看你的需求了。</p>
 <p><font color=GreenYellow size=3 >小宇：好的，那这样代码也很好写，就这样。</font></p>
 
-<div id="54d85b8113d2ff7d" class="codetab">
+<div id="9c07575b1fd9a686" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -2124,7 +2126,7 @@
 <div id="3f79caf28ab8c729" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2143,7 +2145,7 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">getWays2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">getWays2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
@@ -2169,7 +2171,7 @@
 <div id="ea2be76deeeb72ae" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2188,7 +2190,7 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">getWays2</span><span class="p">(</span><span class="kt">int</span> <span class="nx">n</span><span class="p">)</span><span class="kt">int</span><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">getWays2</span><span class="p">(</span><span class="kt">int</span> <span class="nx">n</span><span class="p">)</span><span class="kt">int</span><span class="p">{</span>
   <span class="k">if</span> <span class="nx">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
       <span class="k">return</span> <span class="mi">1</span>
   <span class="p">}</span>
@@ -2215,7 +2217,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"54d85b8113d2ff7d\"");
+  var containerId = JSON.parse("\"9c07575b1fd9a686\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2260,8 +2262,7 @@
 <center><font color=red size=4>有一个背包，可以装载重量为 5kg 的物品。</font></center>
 <center><font color=red size=4>有 4 个物品，他们的重量和价值如下。</font></center>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/dp1.jpg"/> 
+<figure><img src="/images/article/dp1.jpg"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -2276,8 +2277,7 @@
 <p>闪客：没错，这个复杂度很高的算法你已经说的很明白了，那接下来你想想看用动态规划思想，能不能解决这个问题。</p>
 <p><font color=GreenYellow size=3 >小宇：好的，你之前说过，动态规划的三要素是<font color=CadetBlue size=3 >最优子结构</font>、<font color=CadetBlue size=3 >状态转移方程</font>和<font color=CadetBlue size=3 >边界</font></font></p>
 <p>闪客：没错，之前的变量很少所以比较简单，现在变量多了，定义就变得难了起来，我们先来几个定义方便描述。我们将 4 个物品的重量和价值分别表示为：w1，w2，w3，w4，v1，v2，v3，v4。</p>
-<figure>
-    <img src="/images/article/dp43.jpg"/> 
+<figure><img src="/images/article/dp43.jpg"/>
 </figure>
 
 <p><font color=CadetBlue size=3 >  </font></p>
@@ -2301,8 +2301,7 @@
 <p><font color=GreenYellow size=3 >小宇：所以最终，如果选择将物品 4 放入背包，这种情况下，最大价值就等于二者之和。</font></p>
 <center><font color=Turquoise size=4>F(1, 3) + 6</font></center>
 <p><font color=CadetBlue size=3 >   </font></p>
-<figure>
-    <img src="/images/article/gai.gif"/> 
+<figure><img src="/images/article/gai.gif"/>
 </figure>
 
 <p><font color=Turquoise size=4></font></p>
@@ -2310,8 +2309,7 @@
 <p><font color=GreenYellow size=3 >小宇：第二种可能：如果选择不装这个物品 4，那更简单了，就直接等于用一个载重为 5 的背包装前 3 件物品的价值。</font></p>
 <center><font color=Turquoise size=4>F(5, 3)</font></center>
 <p><font color=Turquoise size=4></font></p>
-<figure>
-    <img src="/images/article/dp333.gif"/> 
+<figure><img src="/images/article/dp333.gif"/>
 </figure>
 
 <p><font color=Turquoise size=4></font></p>
@@ -2319,8 +2317,7 @@
 <p><font color=GreenYellow size=3 >小宇：哈哈，很简单，就等于这两种情况当中的最大值呗。</font></p>
 <center><font color=Turquoise size=4>F(5,4) = max { F(1, 3) + 6，F(5, 3) }</font></center>
 <p>闪客：太好了，现在状态转移方程出来了，此时我们画个表格。</p>
-<figure>
-    <img src="/images/article/dp222.jpg"/> 
+<figure><img src="/images/article/dp222.jpg"/>
 </figure>
 
 <p>我们的目标就是要计算右下角那个值，即背包载重 W = 5 时，选择前 4 件物品放入背包的最大价值 F(5,4)</p>
@@ -2328,15 +2325,13 @@
 <center><font color=Turquoise size=4>F(5,4) = max { F(1,3) + 6, F(5,3) }</font></center>
 <p><font color=GreenYellow size=3 >  </font></p>
 <p><font color=GreenYellow size=3 >那也就是说只要知道 F(1,3) 和 F(5,3) 的值就可以了对吧？</font></p>
-<figure>
-    <img src="/images/article/dp342.jpg"/> 
+<figure><img src="/images/article/dp342.jpg"/>
 </figure>
 
 <p>闪客：没错，那你再看看 F(1,3) 怎么计算？</p>
 <p><font color=GreenYellow size=3 >小宇：好的，F(1,3) 此时背包重量为 1，如果选择放第三件物品的话，诶？好像不行，第三件物品根本放不下呀！</font></p>
 <p>闪客：是的，所以这种情况就没必要讨论放第三件物品的情况了，因为根本放不下，因此 F(1,3) 直接就等于 F(1,2)，所以只需要知道 F(1,2) 即可。</p>
-<figure>
-    <img src="/images/article/dp34.jpg"/> 
+<figure><img src="/images/article/dp34.jpg"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -2345,20 +2340,17 @@
 <p><font color=GreenYellow size=3 >小宇：显然嘛，现在只有一件物品可以选了，那能放下当然就放咯，所以最大价值就是第一件物品的价值 3，即 F(1,1) = 3</font></p>
 <p>闪客：没错，这样我们就找到了一个边界值，小宇你想想看还有哪些边界值可以直接得出？你写在表格里吧。</p>
 <p><font color=GreenYellow size=3 >小宇：好的，首先第一列表示背包重量为 0 时的情况，那显然什么都装不了，就全都是 0 了。</font></p>
-<figure>
-    <img src="/images/article/dp4.jpg"/> 
+<figure><img src="/images/article/dp4.jpg"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>然后第一行也比较好算，背包重量 &gt;= 1 时可以放下第一件物品，所以最大价值都等于 3</p>
-<figure>
-    <img src="/images/article/dp8.jpg"/> 
+<figure><img src="/images/article/dp8.jpg"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>闪客：很好，接下来，就依次把表格的所有项都填出来，自然就可以算出 F(5,4) 啦。</p>
-<figure>
-    <img src="/images/article/dp7.gif"/> 
+<figure><img src="/images/article/dp7.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 ></font></p>
@@ -2676,11 +2668,11 @@
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter1/2/" class="related__link">第一章第二节</a>
+          <a href="/interview/algorithm_interview/chapter2/2/" class="related__link">第二章第二节</a>
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter2/2/" class="related__link">第二章第二节</a>
+          <a href="/interview/algorithm_interview/chapter1/2/" class="related__link">第一章第二节</a>
         </li>
         
         <li>

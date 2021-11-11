@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="战略上藐视技术，战术上重视技术——闪客">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1883,8 +1889,7 @@
 <li><font color=GreenYellow size=3 >第三遍（1间隔排序，等于直接插入排序）</font>：按照间隔 1分割子数组，分成一组，也就是整个数组。对其进行插入排序，经过前两遍排序，数组已经基本有序了，所以这一步只需经过少量交换即可完成排序。排序后数组变成 <font color=Turquoise size=4>[50, 60, 61, 70, 80, 83, 84, 87, 88, 99]</font>，整个排序完成。</li>
 </ul>
 <p><font color=GreenYellow size=3 >先来看看希尔排序的动图吧！</font></p>
-<figure>
-    <img src="/images/sort_gif/SHE.gif"/> 
+<figure><img src="/images/sort_gif/SHE.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -1904,7 +1909,7 @@
 </ul>
 <p><font color=CadetBlue size=3 >增量序列的选择会极大地影响希尔排序的效率</font>，我们采用的增量序列为 D_m = N/2, D_k = D_{k+1} / 2,这个序列正是当年希尔发表此算法的论文时选用的序列，所以也被称之为<font color=CadetBlue size=3 >希尔增量序列</font></p>
 
-<div id="3d319c5eac986c42" class="codetab">
+<div id="9f1071fdbe5a7596" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -1918,7 +1923,7 @@
 <div id="2cb3564018496b4f" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1938,22 +1943,22 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">shellSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">){</span>
-      <span class="c1">//生成间隔序列，在希尔排序中我们称之为增量序列
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">shellSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">){</span>
+  	<span class="c1">//生成间隔序列，在希尔排序中我们称之为增量序列
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">gap</span><span class="o">:=</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="nx">gap</span><span class="p">&gt;</span><span class="mi">0</span><span class="p">;</span><span class="nx">gap</span><span class="o">/=</span><span class="mi">2</span><span class="p">{</span> 
-      <span class="c1">//将一个数组转换成gap个数组（每一个数组各个元素之间的距离相差gap）
-</span><span class="c1"></span>      <span class="k">for</span> <span class="nx">groupStartIndex</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">groupStartIndex</span><span class="p">&lt;</span><span class="nx">gap</span><span class="p">;</span><span class="nx">groupStartIndex</span><span class="o">++</span><span class="p">{</span>	
-      <span class="c1">//插入排序(i:=groupStartIndex+gap就相当于插入排序的i:=1)
-</span><span class="c1"></span>          <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">groupStartIndex</span><span class="o">+</span><span class="nx">gap</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="nx">i</span><span class="o">+=</span><span class="nx">gap</span><span class="p">{</span>
-              <span class="nx">currentNumber</span><span class="o">:=</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> 
-              <span class="nx">j</span><span class="o">:=</span><span class="nx">i</span><span class="o">-</span><span class="nx">gap</span>
-              <span class="k">for</span> <span class="nx">j</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">currentNumber</span> <span class="p">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]{</span>
-                  <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span>
-                  <span class="nx">j</span> <span class="o">-=</span> <span class="nx">gap</span> 
-              <span class="p">}</span> 
-              <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">currentNumber</span>
-          <span class="p">}</span>	
-      <span class="p">}</span>
+  	<span class="c1">//将一个数组转换成gap个数组（每一个数组各个元素之间的距离相差gap）
+</span><span class="c1"></span>  	<span class="k">for</span> <span class="nx">groupStartIndex</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">groupStartIndex</span><span class="p">&lt;</span><span class="nx">gap</span><span class="p">;</span><span class="nx">groupStartIndex</span><span class="o">++</span><span class="p">{</span>	
+  	<span class="c1">//插入排序(i:=groupStartIndex+gap就相当于插入排序的i:=1)
+</span><span class="c1"></span>  		<span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">groupStartIndex</span><span class="o">+</span><span class="nx">gap</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="nx">i</span><span class="o">+=</span><span class="nx">gap</span><span class="p">{</span>
+  			<span class="nx">currentNumber</span><span class="o">:=</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> 
+  			<span class="nx">j</span><span class="o">:=</span><span class="nx">i</span><span class="o">-</span><span class="nx">gap</span>
+  			<span class="k">for</span> <span class="nx">j</span> <span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">currentNumber</span> <span class="p">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]{</span>
+  				<span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span>
+  				<span class="nx">j</span> <span class="o">-=</span> <span class="nx">gap</span> 
+  			<span class="p">}</span> 
+  			<span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">currentNumber</span>
+  		<span class="p">}</span>	
+  	<span class="p">}</span>
   <span class="p">}</span> 
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -1965,7 +1970,7 @@
 <div id="837040cf3b3ad787" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1988,7 +1993,7 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shellSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shellSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// 间隔序列，在希尔排序中我们称之为增量序列
 </span><span class="c1"></span>  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">gap</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span> <span class="n">gap</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">;</span> <span class="n">gap</span> <span class="o">/=</span> <span class="n">2</span><span class="o">)</span> <span class="o">{</span>
       <span class="c1">// 分组
@@ -2019,7 +2024,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"3d319c5eac986c42\"");
+  var containerId = JSON.parse("\"9f1071fdbe5a7596\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2055,7 +2060,7 @@
 </script>
 <p>这段代码可以优化一下。我们现在的处理方式是：<font color=CadetBlue size=3 >处理完一组间隔序列后，再回来处理下一组间隔序列</font>，这非常符合人类思维。但对于计算机来说，<font color=CadetBlue size=3 >它更喜欢从第 gap 个元素开始，按照顺序将每个元素依次向前插入自己所在的组这种方式。</font>虽然这个过程看起来是在不同的间隔序列中不断跳跃，但站在计算机的角度，它是在访问一段连续数组。</p>
 
-<div id="55228ab2717acfc6" class="codetab">
+<div id="f680c6db40481e9c" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2069,7 +2074,7 @@
 <div id="8348a1d328022694" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2086,18 +2091,18 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">shellSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">shellSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">){</span>
   <span class="c1">//创建 间隔序列（增量序列）
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">gap</span><span class="o">:=</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="nx">gap</span><span class="p">&gt;</span><span class="mi">0</span><span class="p">;</span><span class="nx">gap</span><span class="o">/=</span><span class="mi">2</span><span class="p">{</span>
-      <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">gap</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
-          <span class="nx">currentNumber</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="c1">//记录当前需要插入的数
-</span><span class="c1"></span>          <span class="nx">j</span> <span class="o">:=</span> <span class="nx">i</span><span class="o">-</span><span class="nx">gap</span><span class="c1">//记录当前下标的前一个下标
-</span><span class="c1"></span>          <span class="k">for</span> <span class="nx">j</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">currentNumber</span><span class="p">{</span>
-              <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="c1">//后移元素
-</span><span class="c1"></span>              <span class="nx">j</span> <span class="o">-=</span> <span class="nx">gap</span> <span class="c1">//更新下标
-</span><span class="c1"></span>          <span class="p">}</span>
-          <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">currentNumber</span>
-      <span class="p">}</span>
+  	<span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">gap</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+  		<span class="nx">currentNumber</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="c1">//记录当前需要插入的数
+</span><span class="c1"></span>  		<span class="nx">j</span> <span class="o">:=</span> <span class="nx">i</span><span class="o">-</span><span class="nx">gap</span><span class="c1">//记录当前下标的前一个下标
+</span><span class="c1"></span>  		<span class="k">for</span> <span class="nx">j</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">currentNumber</span><span class="p">{</span>
+  			<span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="c1">//后移元素
+</span><span class="c1"></span>  			<span class="nx">j</span> <span class="o">-=</span> <span class="nx">gap</span> <span class="c1">//更新下标
+</span><span class="c1"></span>  		<span class="p">}</span>
+  		<span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">currentNumber</span>
+  	<span class="p">}</span>
 
   <span class="p">}</span>
 <span class="p">}</span>
@@ -2110,7 +2115,7 @@
 <div id="ebfaa5f0c565db8d" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2131,7 +2136,7 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shellSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shellSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// 间隔序列，在希尔排序中我们称之为增量序列
 </span><span class="c1"></span>  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">gap</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span> <span class="n">gap</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">;</span> <span class="n">gap</span> <span class="o">/=</span> <span class="n">2</span><span class="o">)</span> <span class="o">{</span>
       <span class="c1">// 从 gap 开始，按照顺序将每个元素依次向前插入自己所在的组
@@ -2160,7 +2165,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"55228ab2717acfc6\"");
+  var containerId = JSON.parse("\"f680c6db40481e9c\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2197,8 +2202,7 @@
 <p>经过优化之后，这段代码看起来就和插入排序非常相似了，<font color=CadetBlue size=3 >区别仅在于希尔排序最外层嵌套了一个缩小增量的 for 循环；并且插入时不再是相邻数字挪动，而是以增量为步长挪动</font>。</p>
 <h2 id="增量序列">增量序列</h2>
 <p><font color=CadetBlue size=3 >增量序列的选择会极大地影响希尔排序的效率。增量序列如果选得不好，希尔排序的效率可能比插入排序效率还要低，</font>举个例子：</p>
-<figure>
-    <img src="/images/sort_gif/shell.png"/> 
+<figure><img src="/images/sort_gif/shell.png"/>
 </figure>
 
 <p><font color=LightSeaGreen size=3 >   </font></p>
@@ -2218,7 +2222,7 @@
 </ul>
 <p>使用 Knuth 序列进行希尔排序的代码如下：</p>
 
-<div id="db6f142b4472f6ce" class="codetab">
+<div id="ebda174a0fa88671" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">golang</button>
@@ -2232,7 +2236,7 @@
 <div id="f974a68454df4399" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2255,24 +2259,24 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">shellSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">shellSort</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">){</span>
   <span class="c1">// 找到当前数组需要用到的 Knuth 序列中的最大值
 </span><span class="c1"></span>  <span class="nx">maxKnuthNumber</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
   <span class="k">for</span> <span class="nx">maxKnuthNumber</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span> <span class="p">{</span>
-        <span class="nx">maxKnuthNumber</span> <span class="p">=</span> <span class="nx">maxKnuthNumber</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+  	  <span class="nx">maxKnuthNumber</span> <span class="p">=</span> <span class="nx">maxKnuthNumber</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
   <span class="p">}</span>
   <span class="c1">//创建 间隔序列（增量序列）
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">gap</span><span class="o">:=</span><span class="nx">maxKnuthNumber</span><span class="p">;</span><span class="nx">gap</span><span class="p">&gt;</span><span class="mi">0</span><span class="p">;</span><span class="nx">gap</span> <span class="p">=</span> <span class="p">(</span><span class="nx">gap</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">{</span>
-      <span class="c1">// 从 gap 开始，按照顺序将每个元素依次向前插入自己所在的组
-</span><span class="c1"></span>      <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">gap</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
-          <span class="nx">currentNumber</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-          <span class="nx">j</span> <span class="o">:=</span> <span class="nx">i</span> <span class="o">-</span> <span class="nx">gap</span> <span class="c1">//记录当前元素下标的上一个下标
-</span><span class="c1"></span>          <span class="k">for</span> <span class="nx">j</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">currentNumber</span><span class="p">{</span>
-              <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="c1">//后移元素
-</span><span class="c1"></span>              <span class="nx">j</span> <span class="o">-=</span> <span class="nx">gap</span> <span class="c1">//更新下标
-</span><span class="c1"></span>          <span class="p">}</span>
+  	<span class="c1">// 从 gap 开始，按照顺序将每个元素依次向前插入自己所在的组
+</span><span class="c1"></span>  	<span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="nx">gap</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+  		<span class="nx">currentNumber</span> <span class="o">:=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+  		<span class="nx">j</span> <span class="o">:=</span> <span class="nx">i</span> <span class="o">-</span> <span class="nx">gap</span> <span class="c1">//记录当前元素下标的上一个下标
+</span><span class="c1"></span>  		<span class="k">for</span> <span class="nx">j</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">currentNumber</span><span class="p">{</span>
+  			<span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="c1">//后移元素
+</span><span class="c1"></span>  			<span class="nx">j</span> <span class="o">-=</span> <span class="nx">gap</span> <span class="c1">//更新下标
+</span><span class="c1"></span>  		<span class="p">}</span>
           <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="o">+</span><span class="nx">gap</span><span class="p">]</span> <span class="p">=</span> <span class="nx">currentNumber</span>
-      <span class="p">}</span>
+  	<span class="p">}</span>
   <span class="p">}</span>
 
 <span class="p">}</span>
@@ -2285,7 +2289,7 @@
 <div id="2c87ca20e7e50c5d" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2311,7 +2315,7 @@
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shellSortByKnuth</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shellSortByKnuth</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// 找到当前数组需要用到的 Knuth 序列中的最大值
 </span><span class="c1"></span>  <span class="kt">int</span> <span class="n">maxKnuthNumber</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
   <span class="k">while</span> <span class="o">(</span><span class="n">maxKnuthNumber</span> <span class="o">&lt;=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="n">3</span><span class="o">)</span> <span class="o">{</span>
@@ -2345,7 +2349,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"db6f142b4472f6ce\"");
+  var containerId = JSON.parse("\"ebda174a0fa88671\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;

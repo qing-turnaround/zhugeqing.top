@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="如果说数学是皇冠上的一颗明珠，那么算法就是这颗明珠上的光芒，算法让这颗明珠更加熠熠生辉，为科技进步和社会发展照亮了前进的路">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item active">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item active"
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1873,8 +1879,7 @@
 <p>给定一个 m x n 二维字符网格 board 和一个字符串单词 word 。如果 word 存在于网格中，返回 true ；否则，返回 false 。</p>
 <p>单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。</p>
 <p>例如，在下面的 3×4 的矩阵中包含单词 &ldquo;ABCCED&rdquo;（单词中的字母已标出）。</p>
-<figure>
-    <img src="/images/leetcode_offer/word2.jpg"/> 
+<figure><img src="/images/leetcode_offer/word2.jpg"/>
 </figure>
 
 <p>示例 1：</p>
@@ -1894,7 +1899,7 @@
 <p><font color=GreenYellow size=3 >解题思路：dfs（深度优先搜索），首先逐个遍历矩阵，找到起点（不过所有数都得进入search函数），然后进入search函数，递归true终止条件：当递归遍历word的下标k等于word长度时，则终止递归，递归false终止条件：超出矩阵边界；搜索过程</font></p>
 <p><font color=GreenYellow size=3 >   </font></p>
 
-<div id="a12d40f1e642a5c8" class="codetab">
+<div id="19acff9892e41956" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -1907,7 +1912,7 @@
 <div id="45c4f7510ef1ddaa" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1950,7 +1955,7 @@
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">char</span><span class="o">**</span> <span class="n">board</span><span class="p">,</span> <span class="kt">int</span> <span class="n">boardSize</span><span class="p">,</span><span class="kt">int</span><span class="o">*</span> <span class="n">boardColSize</span><span class="p">,</span><span class="kt">char</span><span class="o">*</span> <span class="n">word</span><span class="p">,</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">char</span><span class="o">**</span> <span class="n">board</span><span class="p">,</span> <span class="kt">int</span> <span class="n">boardSize</span><span class="p">,</span><span class="kt">int</span><span class="o">*</span> <span class="n">boardColSize</span><span class="p">,</span><span class="kt">char</span><span class="o">*</span> <span class="n">word</span><span class="p">,</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="n">strlen</span><span class="p">(</span><span class="n">word</span><span class="p">)){</span>
         <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
@@ -2000,7 +2005,7 @@
 <div id="c4340aea62e205c2" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2048,7 +2053,7 @@
 </span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">exist</span><span class="p">(</span><span class="nx">board</span> <span class="p">[][]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">word</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">exist</span><span class="p">(</span><span class="nx">board</span> <span class="p">[][]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">word</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
  <span class="nx">m</span><span class="p">,</span><span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">board</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="nx">board</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">m</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span><span class="c1">//行范围
 </span><span class="c1"></span>     <span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span><span class="c1">//列范围
@@ -2104,7 +2109,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"a12d40f1e642a5c8\"");
+  var containerId = JSON.parse("\"19acff9892e41956\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;

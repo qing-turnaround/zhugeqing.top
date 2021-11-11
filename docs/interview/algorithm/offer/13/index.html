@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="如果说数学是皇冠上的一颗明珠，那么算法就是这颗明珠上的光芒，算法让这颗明珠更加熠熠生辉，为科技进步和社会发展照亮了前进的路">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item active">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item active"
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1889,7 +1895,7 @@
 <p>2.额外空间flag来判断是否遍历过该方格</p>
 <p>3.继续向下向右dfs（深度优先搜索）</font></p>
 
-<div id="fdf46ef6fa1c71c9" class="codetab">
+<div id="f35c387cb0820143" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -1902,7 +1908,7 @@
 <div id="97bcd80a89f3b2d8" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1947,7 +1953,7 @@
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">digitSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">digitSum</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
@@ -1999,7 +2005,7 @@
 <div id="42e84eb79a119671" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2052,53 +2058,53 @@
 </span><span class="lnt">51
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">var</span> <span class="nx">flag</span> <span class="p">[][]</span><span class="kt">int</span> <span class="c1">//全局变量数组，记录机器人是否曾访问过此方格
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">var</span> <span class="nx">flag</span> <span class="p">[][]</span><span class="kt">int</span> <span class="c1">//全局变量数组，记录机器人是否曾访问过此方格
 </span><span class="c1"></span>
 <span class="kd">func</span> <span class="nf">movingCount</span><span class="p">(</span><span class="nx">m</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">n</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">k</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
   <span class="c1">//也不能进入行坐标和列坐标的数位之和大于k的格子
 </span><span class="c1"></span>  <span class="c1">//递归深度搜索
 </span><span class="c1"></span>  <span class="k">if</span> <span class="nx">k</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="c1">//机器人不移动，只访问一个方格
-</span><span class="c1"></span>      <span class="k">return</span> <span class="mi">1</span>
+</span><span class="c1"></span>  	<span class="k">return</span> <span class="mi">1</span>
   <span class="p">}</span>
 
   <span class="kd">var</span> <span class="nx">getDigGitSum</span> <span class="kd">func</span><span class="p">(</span><span class="nx">i</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="c1">//用来计算行列坐标的数位之和
 </span><span class="c1"></span>
   <span class="nx">getDigGitSum</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">i</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span> <span class="c1">//求各位数之和的函数
-</span><span class="c1"></span>      <span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span> <span class="c1">//返回结果
-</span><span class="c1"></span>      <span class="k">for</span> <span class="nx">i</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">j</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-          <span class="nx">res</span> <span class="o">+=</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="c1">//求个位数值
-</span><span class="c1"></span>          <span class="nx">res</span> <span class="o">+=</span> <span class="nx">j</span> <span class="o">%</span> <span class="mi">10</span> 
-          <span class="nx">i</span> <span class="o">/=</span> <span class="mi">10</span> <span class="c1">//整除
-</span><span class="c1"></span>          <span class="nx">j</span> <span class="o">/=</span> <span class="mi">10</span>
-      <span class="p">}</span>
+</span><span class="c1"></span>  	<span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span> <span class="c1">//返回结果
+</span><span class="c1"></span>  	<span class="k">for</span> <span class="nx">i</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">j</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+  		<span class="nx">res</span> <span class="o">+=</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="c1">//求个位数值
+</span><span class="c1"></span>  		<span class="nx">res</span> <span class="o">+=</span> <span class="nx">j</span> <span class="o">%</span> <span class="mi">10</span> 
+  		<span class="nx">i</span> <span class="o">/=</span> <span class="mi">10</span> <span class="c1">//整除
+</span><span class="c1"></span>  		<span class="nx">j</span> <span class="o">/=</span> <span class="mi">10</span>
+  	<span class="p">}</span>
 
-      <span class="k">return</span> <span class="nx">res</span>
+  	<span class="k">return</span> <span class="nx">res</span>
   <span class="p">}</span>
 
   <span class="kd">var</span> <span class="nx">dfs</span> <span class="kd">func</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="c1">//用深度优先搜索
 </span><span class="c1"></span>
   <span class="nx">dfs</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
 
-      <span class="c1">//一个flag数组
+  	<span class="c1">//一个flag数组
 </span><span class="c1"></span>
-      <span class="c1">//递归终止条件
+  	<span class="c1">//递归终止条件
 </span><span class="c1"></span>      <span class="c1">//1.行标超出边界，列标超出边界
 </span><span class="c1"></span>      <span class="c1">//2.行坐标和列坐标的数位之和大于k的格子
 </span><span class="c1"></span>      <span class="c1">//3.方格已经被遍历过  
-</span><span class="c1"></span>      <span class="k">if</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="nx">m</span> <span class="o">||</span> <span class="nx">j</span> <span class="o">&gt;=</span> <span class="nx">n</span> <span class="o">||</span> <span class="nf">getDigGitSum</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">&gt;</span> <span class="nx">k</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="mi">0</span>
-      <span class="p">}</span>
-      <span class="k">if</span> <span class="nx">flag</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span> <span class="c1">//判断该方格是否被遍历过
-</span><span class="c1"></span>          <span class="k">return</span> <span class="mi">0</span> 
-      <span class="p">}</span>
+</span><span class="c1"></span>  	<span class="k">if</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="nx">m</span> <span class="o">||</span> <span class="nx">j</span> <span class="o">&gt;=</span> <span class="nx">n</span> <span class="o">||</span> <span class="nf">getDigGitSum</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">&gt;</span> <span class="nx">k</span> <span class="p">{</span>
+  		<span class="k">return</span> <span class="mi">0</span>
+  	<span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">flag</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span> <span class="c1">//判断该方格是否被遍历过
+</span><span class="c1"></span>  		<span class="k">return</span> <span class="mi">0</span> 
+  	<span class="p">}</span>
   
-      <span class="nx">flag</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="mi">1</span> <span class="c1">//设置遍历位
-</span><span class="c1"></span>      <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="o">+</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//深度优先搜索（向右递归向下递归）
+  	<span class="nx">flag</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="mi">1</span> <span class="c1">//设置遍历位
+</span><span class="c1"></span>  	<span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="o">+</span> <span class="nf">dfs</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//深度优先搜索（向右递归向下递归）
 </span><span class="c1"></span>  <span class="p">}</span>
 
   <span class="nx">flag</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="c1">//初始化flag数组
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">flag</span> <span class="p">{</span>
-      <span class="nx">flag</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span><span class="c1">//初始化各一维数组
+  	<span class="nx">flag</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span><span class="c1">//初始化各一维数组
 </span><span class="c1"></span>  <span class="p">}</span>
   <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">dfs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="nf">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//
 </span><span class="c1"></span>
@@ -2113,7 +2119,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"fdf46ef6fa1c71c9\"");
+  var containerId = JSON.parse("\"f35c387cb0820143\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;

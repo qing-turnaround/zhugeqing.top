@@ -5,7 +5,7 @@ image: "images/recommend_site/xingyouji.jpg"
 title: "基数排序"
 author: 诸葛青
 authorEmoji: 🤖
-pinned: true
+pinned: false
 tags:
 - 排序算法
 series:

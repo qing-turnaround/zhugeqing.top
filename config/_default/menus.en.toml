@@ -23,20 +23,25 @@
   weight = 8
 
 [[main]]
-  identifier = "面试"
-  name = "面试"
+  identifier = "算法"
+  name = "算法"
   url = "interview"
   weight = 9
 
 [[main]]
-  parent = "面试"
+  parent = "算法"
   name = "剑指offer"
   url = "interview/algorithm"
 
 [[main]]
-  parent = "面试"
+  parent = "算法"
   name = "算法实战"
   url = "interview/algorithm_interview"
+
+[[main]]
+  parent = "算法"
+  name = "优质题目"
+  url = "quality_questions"
 
 [[main]]
   identifier = "数据结构与排序算法"

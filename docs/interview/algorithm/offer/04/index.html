@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="如果说数学是皇冠上的一颗明珠，那么算法就是这颗明珠上的光芒，算法让这颗明珠更加熠熠生辉，为科技进步和社会发展照亮了前进的路">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item active">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item active"
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1887,7 +1893,7 @@
 <p>0 &lt;= m &lt;= 1000</p>
 <p><font color=GreenYellow size=3 >解题思路：从左下角开始找，利用递增关系，大于往右边找，小于往上找，超出返回false。</font></p>
 
-<div id="310c70690e2451d0" class="codetab">
+<div id="5782663b05eba8e8" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -1900,7 +1906,7 @@
 <div id="f796fc0af889701d" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1923,7 +1929,7 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">findNumberIn2DArray</span><span class="p">(</span><span class="kt">int</span><span class="o">**</span> <span class="n">matrix</span><span class="p">,</span> <span class="kt">int</span> <span class="n">matrixSize</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">matrixColSize</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">bool</span> <span class="nf">findNumberIn2DArray</span><span class="p">(</span><span class="kt">int</span><span class="o">**</span> <span class="n">matrix</span><span class="p">,</span> <span class="kt">int</span> <span class="n">matrixSize</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">matrixColSize</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">){</span>
   <span class="c1">//时间复杂度o(m+n)，空间复杂度o(1)
 </span><span class="c1"></span>  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span>  <span class="n">matrixSize</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="c1">//行标
 </span><span class="c1"></span>  <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//列标
@@ -1953,7 +1959,7 @@
 <div id="f6a356fa94d3b898" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1974,21 +1980,21 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">findNumberIn2DArray</span><span class="p">(</span><span class="nx">matrix</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">target</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">findNumberIn2DArray</span><span class="p">(</span><span class="nx">matrix</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">target</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
   <span class="c1">//时间复杂度o(m+n)，空间复杂度o(1)
 </span><span class="c1"></span>  <span class="nx">xindex</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">matrix</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
   <span class="nx">yindex</span> <span class="o">:=</span> <span class="mi">0</span>
 
   <span class="k">for</span> <span class="nx">xindex</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">yindex</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="nx">target</span> <span class="o">==</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">xindex</span><span class="p">][</span><span class="nx">yindex</span><span class="p">]</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="kc">true</span>
-      <span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">target</span> <span class="o">==</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">xindex</span><span class="p">][</span><span class="nx">yindex</span><span class="p">]</span> <span class="p">{</span>
+  		<span class="k">return</span> <span class="kc">true</span>
+  	<span class="p">}</span>
 
-      <span class="k">if</span> <span class="nx">target</span> <span class="p">&gt;</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">xindex</span><span class="p">][</span><span class="nx">yindex</span><span class="p">]</span> <span class="p">{</span>
-          <span class="nx">yindex</span><span class="o">++</span>
-      <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="nx">target</span> <span class="p">&lt;</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">xindex</span><span class="p">][</span><span class="nx">yindex</span><span class="p">]</span> <span class="p">{</span>
-          <span class="nx">xindex</span><span class="o">--</span>
-      <span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">target</span> <span class="p">&gt;</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">xindex</span><span class="p">][</span><span class="nx">yindex</span><span class="p">]</span> <span class="p">{</span>
+  		<span class="nx">yindex</span><span class="o">++</span>
+  	<span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="nx">target</span> <span class="p">&lt;</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">xindex</span><span class="p">][</span><span class="nx">yindex</span><span class="p">]</span> <span class="p">{</span>
+  		<span class="nx">xindex</span><span class="o">--</span>
+  	<span class="p">}</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="kc">false</span>
@@ -2003,7 +2009,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"310c70690e2451d0\"");
+  var containerId = JSON.parse("\"5782663b05eba8e8\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;

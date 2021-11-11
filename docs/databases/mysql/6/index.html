@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="从零蛋开始学习 MySQL">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1846,7 +1852,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 13, 2020 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;7&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;17&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1873,7 +1879,7 @@
 <p>我们需要把搜索条件放在<font color=CadetBlue size=3 >WHERE子句</font>中，比如我们想查询<font color=CadetBlue size=3 >student_info</font>表中<font color=CadetBlue size=3 >名字是范剑</font>的学生的一些信息，可以这么写：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1884,20 +1890,19 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;范剑&#39;</span><span class="p">;</span>
-<span class="o">+----------+--------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>   <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>           <span class="o">|</span>
-<span class="o">+----------+--------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="mi">20180105</span> <span class="o">|</span> <span class="err">范剑</span>   <span class="o">|</span> <span class="mi">181048199308156368</span> <span class="o">|</span> <span class="err">飞行器设计</span>      <span class="o">|</span>
-<span class="o">+----------+--------+--------------------+-----------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;范剑&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+--------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+--------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180105</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范剑</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">181048199308156368</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">飞行器设计</span><span class="w">      </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+--------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>设计<font color=CadetBlue size=3 >MySQL</font>的大叔还提供了很多别的比较操作符</p>
-<figure>
-    <img src="/images/mysql/1/12.jpg"/> 
+<figure><img src="/images/mysql/1/12.jpg"/>
 </figure>
 
 <p><font color=CadetBlue size=3 >   </font></p>
@@ -1906,7 +1911,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1919,25 +1924,25 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">20180103</span><span class="p">;</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>           <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">史珍香</span>    <span class="o">|</span> <span class="mi">141992199701078600</span> <span class="o">|</span> <span class="err">软件工程</span>        <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180105</span> <span class="o">|</span> <span class="err">范剑</span>      <span class="o">|</span> <span class="mi">181048199308156368</span> <span class="o">|</span> <span class="err">飞行器设计</span>      <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180106</span> <span class="o">|</span> <span class="err">朱逸群</span>    <span class="o">|</span> <span class="mi">197995199501078445</span> <span class="o">|</span> <span class="err">电子信息</span>        <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="mi">3</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20180103</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">史珍香</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">141992199701078600</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180105</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范剑</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">181048199308156368</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">飞行器设计</span><span class="w">      </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180106</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">朱逸群</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">197995199501078445</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">电子信息</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">3</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>查询<font color=CadetBlue size=3 >专业不是计算机科学与工程</font>的一些学生信息可以这么写：</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1951,26 +1956,26 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">major</span> <span class="o">!=</span> <span class="s1">&#39;计算机科学与工程&#39;</span><span class="p">;</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>           <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">范统</span>      <span class="o">|</span> <span class="mi">17156319980116959</span><span class="n">X</span> <span class="o">|</span> <span class="err">软件工程</span>        <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">史珍香</span>    <span class="o">|</span> <span class="mi">141992199701078600</span> <span class="o">|</span> <span class="err">软件工程</span>        <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180105</span> <span class="o">|</span> <span class="err">范剑</span>      <span class="o">|</span> <span class="mi">181048199308156368</span> <span class="o">|</span> <span class="err">飞行器设计</span>      <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180106</span> <span class="o">|</span> <span class="err">朱逸群</span>    <span class="o">|</span> <span class="mi">197995199501078445</span> <span class="o">|</span> <span class="err">电子信息</span>        <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="mi">4</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;计算机科学与工程&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范统</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">17156319980116959</span><span class="n">X</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">史珍香</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">141992199701078600</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180105</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范剑</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">181048199308156368</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">飞行器设计</span><span class="w">      </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180106</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">朱逸群</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">197995199501078445</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">电子信息</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">4</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>查询<font color=CadetBlue size=3 >学号在20180102~20180104间的学生信息</font>，可以这么写：</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1983,25 +1988,25 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">number</span> <span class="k">BETWEEN</span> <span class="mi">20180102</span> <span class="k">AND</span> <span class="mi">20180104</span><span class="p">;</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>                    <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">杜琦燕</span>    <span class="o">|</span> <span class="mi">151008199801178529</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">范统</span>      <span class="o">|</span> <span class="mi">17156319980116959</span><span class="n">X</span> <span class="o">|</span> <span class="err">软件工程</span>                 <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">史珍香</span>    <span class="o">|</span> <span class="mi">141992199701078600</span> <span class="o">|</span> <span class="err">软件工程</span>                 <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="mi">3</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">20180104</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">                    </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜琦燕</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">151008199801178529</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范统</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">17156319980116959</span><span class="n">X</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">史珍香</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">141992199701078600</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">3</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>查询<font color=CadetBlue size=3 >学号不在20180102~20180104这个区间内</font>的所有学生信息，可以这么写：</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2014,23 +2019,22 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">number</span> <span class="k">NOT</span> <span class="k">BETWEEN</span> <span class="mi">20180102</span> <span class="k">AND</span> <span class="mi">20180104</span><span class="p">;</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>                    <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">杜子腾</span>    <span class="o">|</span> <span class="mi">158177199901044792</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180105</span> <span class="o">|</span> <span class="err">范剑</span>      <span class="o">|</span> <span class="mi">181048199308156368</span> <span class="o">|</span> <span class="err">飞行器设计</span>               <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180106</span> <span class="o">|</span> <span class="err">朱逸群</span>    <span class="o">|</span> <span class="mi">197995199501078445</span> <span class="o">|</span> <span class="err">电子信息</span>                 <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="mi">3</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">20180104</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">                    </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜子腾</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">158177199901044792</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180105</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范剑</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">181048199308156368</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">飞行器设计</span><span class="w">               </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180106</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">朱逸群</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">197995199501078445</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">电子信息</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">3</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="匹配列表中的元素">匹配列表中的元素</h2>
 <p>有时候搜索条件中指定的匹配值并不是单个值，而是一个列表，只要匹配到列表中的某一项就算匹配成功，这种情况可以使用<font color=CadetBlue size=3 >IN操作符</font>：</p>
-<figure>
-    <img src="/images/mysql/1/13.jpg"/> 
+<figure><img src="/images/mysql/1/13.jpg"/>
 </figure>
 
 <p><font color=MediumVioletRed size=3 >   </font></p>
@@ -2039,7 +2043,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2052,25 +2056,25 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">major</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;软件工程&#39;</span><span class="p">,</span> <span class="s1">&#39;飞行器设计&#39;</span><span class="p">);</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>           <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">范统</span>      <span class="o">|</span> <span class="mi">17156319980116959</span><span class="n">X</span> <span class="o">|</span> <span class="err">软件工程</span>        <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">史珍香</span>    <span class="o">|</span> <span class="mi">141992199701078600</span> <span class="o">|</span> <span class="err">软件工程</span>        <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180105</span> <span class="o">|</span> <span class="err">范剑</span>      <span class="o">|</span> <span class="mi">181048199308156368</span> <span class="o">|</span> <span class="err">飞行器设计</span>      <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+-----------------+</span>
-<span class="mi">3</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;软件工程&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;飞行器设计&#39;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范统</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">17156319980116959</span><span class="n">X</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">史珍香</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">141992199701078600</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180105</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范剑</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">181048199308156368</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">飞行器设计</span><span class="w">      </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">3</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>如果想<font color=CadetBlue size=3 >查询不是这两个专业</font>的学生的信息，可以这么写：</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2083,18 +2087,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">major</span> <span class="k">NOT</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;软件工程&#39;</span><span class="p">,</span> <span class="s1">&#39;飞行器设计&#39;</span><span class="p">);</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>                    <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">杜子腾</span>    <span class="o">|</span> <span class="mi">158177199901044792</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">杜琦燕</span>    <span class="o">|</span> <span class="mi">151008199801178529</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180106</span> <span class="o">|</span> <span class="err">朱逸群</span>    <span class="o">|</span> <span class="mi">197995199501078445</span> <span class="o">|</span> <span class="err">电子信息</span>                 <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="mi">3</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;软件工程&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;飞行器设计&#39;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">                    </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜子腾</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">158177199901044792</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜琦燕</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">151008199801178529</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180106</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">朱逸群</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">197995199501078445</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">电子信息</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">3</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="匹配null值">匹配NULL值</h2>
 <hr />
@@ -2104,24 +2108,24 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IS</span> <span class="no">NULL</span><span class="p">;</span>
-<span class="n">Empty</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="no">NULL</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">Empty</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>由于所有记录的name列都不是NULL值，所以最后的结果集是空的，我们看一下<font color=CadetBlue size=3 >查询name列不是NULL值</font>的方式：</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2137,21 +2141,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="no">NULL</span><span class="p">;</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>                    <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">杜子腾</span>    <span class="o">|</span> <span class="mi">158177199901044792</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">杜琦燕</span>    <span class="o">|</span> <span class="mi">151008199801178529</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">范统</span>      <span class="o">|</span> <span class="mi">17156319980116959</span><span class="n">X</span> <span class="o">|</span> <span class="err">软件工程</span>                 <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">史珍香</span>    <span class="o">|</span> <span class="mi">141992199701078600</span> <span class="o">|</span> <span class="err">软件工程</span>                 <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180105</span> <span class="o">|</span> <span class="err">范剑</span>      <span class="o">|</span> <span class="mi">181048199308156368</span> <span class="o">|</span> <span class="err">飞行器设计</span>               <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180106</span> <span class="o">|</span> <span class="err">朱逸群</span>    <span class="o">|</span> <span class="mi">197995199501078445</span> <span class="o">|</span> <span class="err">电子信息</span>                 <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="mi">6</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">                    </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜子腾</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">158177199901044792</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜琦燕</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">151008199801178529</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范统</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">17156319980116959</span><span class="n">X</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">史珍香</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">141992199701078600</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180105</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范剑</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">181048199308156368</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">飞行器设计</span><span class="w">               </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180106</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">朱逸群</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">197995199501078445</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">电子信息</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">6</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p><font color=GreenYellow size=3 >再次强调一遍，不能直接使用普通的操作符来与NULL值进行比较，必须使用IS NULL或者IS NOT NULL！</font></p>
 <h2 id="多个搜索条件的查询">多个搜索条件的查询</h2>
@@ -2160,7 +2164,7 @@
 <p>在给定多个搜索条件的时候，我们有时需要某条记录只在符合所有搜索条件的时候才将其加入结果集，这种情况我们可以使用<font color=GreenYellow size=3 >AND操作符</font>来连接多个搜索条件。比如我们想从<font color=GreenYellow size=3 >student_score</font>表中找出<font color=GreenYellow size=3 >科目为&rsquo;母猪的产后护理'</font>并且<font color=GreenYellow size=3 >成绩大于75分</font>的记录，可以这么写：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2172,24 +2176,24 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student_score</span> <span class="k">WHERE</span> <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;母猪的产后护理&#39;</span> <span class="k">AND</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">75</span><span class="p">;</span>
-<span class="o">+----------+-----------------------+-------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">subject</span>               <span class="o">|</span> <span class="n">score</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------+-------+</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>        <span class="o">|</span>    <span class="mi">78</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>        <span class="o">|</span>   <span class="mi">100</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------+-------+</span>
-<span class="mi">2</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;母猪的产后护理&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">75</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">subject</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">        </span><span class="o">|</span><span class="w">    </span><span class="mi">78</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">        </span><span class="o">|</span><span class="w">   </span><span class="mi">100</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="mi">2</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p><font color=GreenYellow size=3 >  </font><br />
 <font color=GreenYellow size=3 >OR操作符</font></p>
 <p>在给定多个搜索条件的时候，我们有时需要某条记录在符合某一个搜索条件的时候就将其加入结果集中，这种情况我们可以使用<font color=GreenYellow size=3 >OR操作符</font>来连接多个搜索条件。比如我们想从<font color=GreenYellow size=3 >student_score</font>表中找出成绩<font color=GreenYellow size=3 >大于95分</font>或者<font color=GreenYellow size=3 >小于55分</font>的记录，可以这么写：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2202,18 +2206,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student_score</span> <span class="k">WHERE</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">95</span> <span class="k">OR</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">55</span><span class="p">;</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">subject</span>                     <span class="o">|</span> <span class="n">score</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>   <span class="mi">100</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>    <span class="mi">98</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>    <span class="mi">46</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="mi">3</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">95</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">55</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">subject</span><span class="w">                     </span><span class="o">|</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">   </span><span class="mi">100</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">    </span><span class="mi">98</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">    </span><span class="mi">46</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="mi">3</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p><font color=GreenYellow size=3 >  </font><br />
 <font color=GreenYellow size=3 >更复杂的搜索条件的组合</font></p>
@@ -2222,7 +2226,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2235,18 +2239,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student_score</span> <span class="k">WHERE</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">95</span> <span class="k">OR</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">55</span> <span class="k">AND</span> <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;论萨达姆的战争准备&#39;</span><span class="p">;</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">subject</span>                     <span class="o">|</span> <span class="n">score</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>   <span class="mi">100</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>    <span class="mi">98</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>    <span class="mi">46</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="mi">3</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">95</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;论萨达姆的战争准备&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">subject</span><span class="w">                     </span><span class="o">|</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">   </span><span class="mi">100</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">    </span><span class="mi">98</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">    </span><span class="mi">46</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="mi">3</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>为什么结果中<font color=CadetBlue size=3 >仍然会有&rsquo;母猪的产后护理&rsquo;课程的记录</font>呢？因为：<font color=CadetBlue size=3 >AND操作符的优先级高于OR操作符</font>，也就是说在判断某条记录是否符合条件时会先检测AND操作符两边的搜索条件。所以</p>
 <p>可以被看作下边这两个条件中任一条件成立则整个式子成立：</p>
@@ -2261,7 +2265,7 @@
 <p>在一个查询中有多个搜索条件时<font color=CadetBlue size=3 >最好使用小括号()来显式的指定各个搜索条件的检测顺序</font>比如上边的例子可以写成下边这样：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2273,23 +2277,22 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">student_score</span> <span class="k">WHERE</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="mi">95</span> <span class="k">OR</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">55</span><span class="p">)</span> <span class="k">AND</span> <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;论萨达姆的战争准备&#39;</span><span class="p">;</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">subject</span>                     <span class="o">|</span> <span class="n">score</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>    <span class="mi">98</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>    <span class="mi">46</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="mi">2</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">95</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">55</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;论萨达姆的战争准备&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">subject</span><span class="w">                     </span><span class="o">|</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">    </span><span class="mi">98</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">    </span><span class="mi">46</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="mi">2</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="通配符">通配符</h2>
 <hr />
 <p>有时候我们并不能精确的描述我们要查询的哪些结果，比方说我们只是想看看姓<font color=VioletRed size=3 >&lsquo;杜&rsquo;</font>的学生信息，而不能精确的描述出这些姓<font color=VioletRed size=3 >&lsquo;杜&rsquo;</font>的同学的完整姓名，我们称这种查询为<font color=VioletRed size=3 >模糊查询</font>。<font color=VioletRed size=3 >MySQL</font>中使用下边这两个操作符来支持<font color=VioletRed size=3 >模糊查询</font>：</p>
-<figure>
-    <img src="/images/mysql/1/15.jpg"/> 
+<figure><img src="/images/mysql/1/15.jpg"/>
 </figure>
 
 <p><font color=CadetBlue size=3 >   </font></p>
@@ -2300,7 +2303,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2312,22 +2315,22 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">&#39;杜%&#39;</span><span class="p">;</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>                    <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">杜子腾</span>    <span class="o">|</span> <span class="mi">158177199901044792</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">杜琦燕</span>    <span class="o">|</span> <span class="mi">151008199801178529</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="mi">2</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;杜%&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">                    </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜子腾</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">158177199901044792</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜琦燕</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">151008199801178529</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">2</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>或者我们只知道<font color=VioletRed size=3 >学生名字</font>里边包含了一个<font color=VioletRed size=3 >&lsquo;香&rsquo;</font>字，那我们可以这么查：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2338,16 +2341,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">&#39;%香%&#39;</span><span class="p">;</span>
-<span class="o">+----------+-----------+--------------------+--------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>        <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------+</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">史珍香</span>    <span class="o">|</span> <span class="mi">141992199701078600</span> <span class="o">|</span> <span class="err">软件工程</span>     <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%香%&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">史珍香</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">141992199701078600</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">     </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li><font color=VioletRed size=3 ><em>：代表任意一个字符。</font><br />
@@ -2356,7 +2359,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2368,17 +2371,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">LIKE</span> <span class="s1">&#39;范_&#39;</span><span class="p">;</span>
-<span class="o">+----------+--------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>   <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>           <span class="o">|</span>
-<span class="o">+----------+--------+--------------------+-----------------+</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">范统</span>   <span class="o">|</span> <span class="mi">17156319980116959</span><span class="n">X</span> <span class="o">|</span> <span class="err">软件工程</span>        <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180105</span> <span class="o">|</span> <span class="err">范剑</span>   <span class="o">|</span> <span class="mi">181048199308156368</span> <span class="o">|</span> <span class="err">飞行器设计</span>      <span class="o">|</span>
-<span class="o">+----------+--------+--------------------+-----------------+</span>
-<span class="mi">2</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;范_&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+--------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+--------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范统</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">17156319980116959</span><span class="n">X</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">        </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180105</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范剑</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">181048199308156368</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">飞行器设计</span><span class="w">      </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+--------+--------------------+-----------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">2</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><div class="alert alert-info" role="alert" data-dir="ltr">小贴士： LIKE或者NOT LIKE操作符只用于字符串匹配。另外，通配符不能代表NULL，如果需要匹配NULL的话，需要使用IS NULL或者IS NOT NULL。</div>
 <h2 id="转义通配符">转义通配符</h2>
@@ -2679,11 +2682,11 @@
         </li>
         
         <li>
-          <a href="/databases/mysql/8/" class="related__link">分组查询</a>
+          <a href="/databases/mysql/9/" class="related__link">子查询</a>
         </li>
         
         <li>
-          <a href="/databases/mysql/9/" class="related__link">子查询</a>
+          <a href="/databases/mysql/8/" class="related__link">分组查询</a>
         </li>
         
     </ul>

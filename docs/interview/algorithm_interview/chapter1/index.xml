@@ -83,7 +83,7 @@
 &lt;li&gt;是否是使用链表存储的？&lt;/li&gt;
 &lt;li&gt;数据的大小是否可以装载在内存里&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/font&gt;
+&lt;p&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;“正确”的回答一个算法问题&lt;/li&gt;
 &lt;/ol&gt;

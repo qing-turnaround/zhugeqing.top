@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="从零蛋开始学习 MySQL">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1846,7 +1852,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 13, 2020 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;10&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;11&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1874,51 +1880,51 @@
 <p>查看某个表里已经存储了哪些数据，可以用下边这个语句：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="err">表名</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="简单插入语句">简单插入语句</h3>
 <p><font color=VioletRed size=3 >MySQL</font>插入数据的时候是以<font color=VioletRed size=3 >行</font>为单位的，语法格式如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="err">表名</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="p">,</span> <span class="err">列</span><span class="mi">2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="err">的值，列</span><span class="mi">2</span><span class="err">的值</span><span class="p">,</span> <span class="p">...);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">列</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="err">的值，列</span><span class="mi">2</span><span class="err">的值</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>为<font color=VioletRed size=3 >first_table</font>表插入第一行数据:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">first_table</span><span class="p">(</span><span class="n">first_column</span><span class="p">,</span> <span class="n">second_column</span><span class="p">)</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;aaa&#39;</span><span class="p">);</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="n">row</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">first_table</span><span class="p">(</span><span class="n">first_column</span><span class="p">,</span><span class="w"> </span><span class="n">second_column</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;aaa&#39;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="nf">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="批量插入">批量插入</h3>
 <p><font color=VioletRed size=3 >MySQL</font>为我们提供了批量插入记录的语句：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="err">表名</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="p">,</span><span class="err">列</span><span class="mi">2</span><span class="p">,</span> <span class="p">...)</span> <span class="nf">VAULES</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="err">的值，列</span><span class="mi">2</span><span class="err">的值</span><span class="p">,</span> <span class="p">...),</span> <span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="err">的值，列</span><span class="mi">2</span><span class="err">的值</span><span class="p">,</span> <span class="p">...),</span> <span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="err">的值，列</span><span class="mi">2</span><span class="err">的值</span><span class="p">,</span> <span class="p">...),</span> <span class="p">...;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">表名</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="p">,</span><span class="err">列</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="nf">VAULES</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="err">的值，列</span><span class="mi">2</span><span class="err">的值</span><span class="p">,</span><span class="w"> </span><span class="p">...),</span><span class="w"> </span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="err">的值，列</span><span class="mi">2</span><span class="err">的值</span><span class="p">,</span><span class="w"> </span><span class="p">...),</span><span class="w"> </span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="err">的值，列</span><span class="mi">2</span><span class="err">的值</span><span class="p">,</span><span class="w"> </span><span class="p">...),</span><span class="w"> </span><span class="p">...;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>例子如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1938,40 +1944,40 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">first_table</span><span class="p">(</span><span class="n">first_column</span><span class="p">,</span> <span class="n">second_column</span><span class="p">)</span> <span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;ddd&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;eee&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;fff&#39;</span><span class="p">);</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">3</span> <span class="n">rows</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-<span class="n">Records</span><span class="p">:</span> <span class="mi">3</span>  <span class="n">Duplicates</span><span class="p">:</span> <span class="mi">0</span>  <span class="n">Warnings</span><span class="p">:</span> <span class="mi">0</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">first_table</span><span class="p">;</span>
-<span class="o">+--------------+---------------+</span>
-<span class="o">|</span> <span class="n">first_column</span> <span class="o">|</span> <span class="n">second_column</span> <span class="o">|</span>
-<span class="o">+--------------+---------------+</span>
-<span class="o">|</span>            <span class="mi">1</span> <span class="o">|</span> <span class="n">aaa</span>           <span class="o">|</span>
-<span class="o">|</span>            <span class="mi">2</span> <span class="o">|</span> <span class="no">NULL</span>          <span class="o">|</span>
-<span class="o">|</span>         <span class="no">NULL</span> <span class="o">|</span> <span class="n">ccc</span>           <span class="o">|</span>
-<span class="o">|</span>            <span class="mi">4</span> <span class="o">|</span> <span class="n">ddd</span>           <span class="o">|</span>
-<span class="o">|</span>            <span class="mi">5</span> <span class="o">|</span> <span class="n">eee</span>           <span class="o">|</span>
-<span class="o">|</span>            <span class="mi">6</span> <span class="o">|</span> <span class="n">fff</span>           <span class="o">|</span>
-<span class="o">+--------------+---------------+</span>
-<span class="mi">6</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">first_table</span><span class="p">(</span><span class="n">first_column</span><span class="p">,</span><span class="w"> </span><span class="n">second_column</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ddd&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;eee&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;fff&#39;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="nf">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="n">Records</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="n">Duplicates</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">Warnings</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">first_table</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+--------------+---------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">first_column</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">second_column</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+--------------+---------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">            </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">aaa</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">            </span><span class="mi">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="no">NULL</span><span class="w">          </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">         </span><span class="no">NULL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ccc</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">            </span><span class="mi">4</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ddd</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">            </span><span class="mi">5</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">eee</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">            </span><span class="mi">6</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">fff</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+--------------+---------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">6</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="列的属性">列的属性</h2>
 <p>列的默认值为<font color=VioletRed size=3 >NULL</font>，<font color=VioletRed size=3 >NULL</font>的含义是这个列的值还没有被设置。如果我们不想让默认值为NULL，而是设置成某个有意义的值，可以在定义列的时候给该列增加一个<font color=VioletRed size=3 >DEFAULT</font>属性，就像这样：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">列名</span> <span class="err">列的类型</span> <span class="k">DEFAULT</span> <span class="err">默认值</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">列名</span><span class="w"> </span><span class="err">列的类型</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="err">默认值</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>比如我们把<font color=VioletRed size=3 >first_table</font>的<font color=VioletRed size=3 >second_column</font>列的默认值指定为<font color=VioletRed size=3 >&lsquo;abc&rsquo;</font>，创建一下这个表：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1980,29 +1986,29 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">first_table</span> <span class="p">(</span>
-    <span class="o">-&gt;</span>     <span class="n">first_column</span> <span class="kt">INT</span><span class="p">,</span>
-    <span class="o">-&gt;</span>     <span class="n">second_column</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">&#39;abc&#39;</span>
-    <span class="o">-&gt;</span> <span class="p">);</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">02</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">first_table</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="o">-&gt;</span><span class="w">     </span><span class="n">first_column</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="o">-&gt;</span><span class="w">     </span><span class="n">second_column</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w">
+</span><span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="nf">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">02</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="not-null属性">NOT NULL属性</h3>
 <p>有时候我们需要要求表中的某些列中必须有值，不能存放<font color=VioletRed size=3 >NULL</font>，那么可以用这样的语法来定义这个列：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">列名</span> <span class="err">列的类型</span> <span class="k">NOT</span> <span class="no">NULL</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">列名</span><span class="w"> </span><span class="err">列的类型</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>比如我们把first_table表的first_column列定义一个NOT NULL属性。当然，我们在重新定义表之前需要把原来的表删掉：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2014,28 +2020,28 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">first_table</span><span class="p">;</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">first_table</span> <span class="p">(</span>
-    <span class="o">-&gt;</span>     <span class="n">first_column</span> <span class="kt">INT</span> <span class="k">NOT</span> <span class="no">NULL</span><span class="p">,</span>
-    <span class="o">-&gt;</span>     <span class="n">second_column</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">&#39;abc&#39;</span>
-    <span class="o">-&gt;</span> <span class="p">);</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">02</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">first_table</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="nf">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">first_table</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="o">-&gt;</span><span class="w">     </span><span class="n">first_column</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="o">-&gt;</span><span class="w">     </span><span class="n">second_column</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w">
+</span><span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="nf">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">02</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>一旦对某个列定义了<font color=VioletRed size=3 >NOT NULL</font>属性，那这个列的默认值就不为<font color=VioletRed size=3 >NULL</font>了。上边<font color=VioletRed size=3 >first_column</font>并没有指定默认值，意味着我们在使用<font color=VioletRed size=3 >INSERT</font>插入行时必须显式的指定这个列的值，而不能省略它，也不能插入NULL值，比如这样就会报错的：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">first_table</span><span class="p">(</span><span class="n">second_column</span><span class="p">)</span> <span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">);</span>
-<span class="n">ERROR</span> <span class="mi">1364</span> <span class="p">(</span><span class="n">HY000</span><span class="p">):</span> <span class="n">Field</span> <span class="s1">&#39;first_column&#39;</span> <span class="n">doesn</span><span class="s1">&#39;t have a default value
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">first_table</span><span class="p">(</span><span class="n">second_column</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="n">ERROR</span><span class="w"> </span><span class="mi">1364</span><span class="w"> </span><span class="p">(</span><span class="n">HY000</span><span class="p">):</span><span class="w"> </span><span class="n">Field</span><span class="w"> </span><span class="s1">&#39;first_column&#39;</span><span class="w"> </span><span class="n">doesn</span><span class="s1">&#39;t have a default value
 </span><span class="s1">mysql&gt;
 </span></code></pre></td></tr></table>
 </div>
@@ -2046,7 +2052,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2057,32 +2063,32 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">student_info</span> <span class="p">(</span>
-    <span class="n">number</span> <span class="kt">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-    <span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">sex</span> <span class="kt">ENUM</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">),</span>
-    <span class="n">id_number</span> <span class="kt">CHAR</span><span class="p">(</span><span class="mi">18</span><span class="p">),</span>
-    <span class="n">department</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-    <span class="n">major</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-    <span class="n">enrollment_time</span> <span class="kt">DATE</span>
-<span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">student_info</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">sex</span><span class="w"> </span><span class="kt">ENUM</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">id_number</span><span class="w"> </span><span class="kt">CHAR</span><span class="p">(</span><span class="mi">18</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">department</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">major</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">enrollment_time</span><span class="w"> </span><span class="kt">DATE</span><span class="w">
+</span><span class="w"></span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>2.我们也可以把主键的声明单独提取出来，用这样的形式声明：</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span> <span class="err">列名</span><span class="mi">2</span><span class="p">,</span> <span class="p">...)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">列名</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>比如student_info的学号列声明为主键也可以这么写：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2094,22 +2100,22 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">student_info</span> <span class="p">(</span>
-    <span class="n">number</span> <span class="kt">INT</span><span class="p">,</span>
-    <span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">sex</span> <span class="kt">ENUM</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">),</span>
-    <span class="n">id_number</span> <span class="kt">CHAR</span><span class="p">(</span><span class="mi">18</span><span class="p">),</span>
-    <span class="n">department</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-    <span class="n">major</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-    <span class="n">enrollment_time</span> <span class="kt">DATE</span><span class="p">,</span>
-    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">student_info</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">sex</span><span class="w"> </span><span class="kt">ENUM</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">id_number</span><span class="w"> </span><span class="kt">CHAR</span><span class="p">(</span><span class="mi">18</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">department</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">major</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">enrollment_time</span><span class="w"> </span><span class="kt">DATE</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>值得注意的是，对于<font color=VioletRed size=3 >多个列</font>的组合作为<font color=VioletRed size=3 >主键</font>的情况，必须使用这种单独声明的形式，比如<font color=VioletRed size=3 >student_score</font>表里的<font color=VioletRed size=3 >学号,科目</font>的列组合作为主键，可以这么写：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2117,26 +2123,26 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">student_score</span> <span class="p">(</span>
-    <span class="n">number</span> <span class="kt">INT</span><span class="p">,</span>
-    <span class="n">subject</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-    <span class="n">score</span> <span class="kt">TINYINT</span><span class="p">,</span>
-    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">subject</span><span class="p">)</span>
-<span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">student_score</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">subject</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">score</span><span class="w"> </span><span class="kt">TINYINT</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>另外，<font color=VioletRed size=3 >主键列默认是有NOT NULL属性</font>，也就是必填的，如果填入NULL值会报错(先删除原来的student_info表，使用刚才所说的两种方式之一重新创建表之后仔执行下边的语句)：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">student_info</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">VALUES</span><span class="p">(</span><span class="no">NULL</span><span class="p">);</span>
-<span class="n">ERROR</span> <span class="mi">1048</span> <span class="p">(</span><span class="mi">23000</span><span class="p">):</span> <span class="k">Column</span> <span class="s1">&#39;number&#39;</span> <span class="n">cannot</span> <span class="n">be</span> <span class="no">null</span>
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">student_info</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="no">NULL</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="n">ERROR</span><span class="w"> </span><span class="mi">1048</span><span class="w"> </span><span class="p">(</span><span class="mi">23000</span><span class="p">):</span><span class="w"> </span><span class="k">Column</span><span class="w"> </span><span class="s1">&#39;number&#39;</span><span class="w"> </span><span class="n">cannot</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="no">null</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="unique属性">UNIQUE属性</h3>
 <p>对于不是主键的其他候选键，如果也想让<font color=VioletRed size=3 >MySQL</font>在我们向表中插入新记录的时候帮助我们校验一下某个列或者列组合的值是否重复，那么我们可以把这个列或列组合添加一个<font color=VioletRed size=3 >UNIQUE</font>属性，表明该列或者列组合的值是<font color=VioletRed size=3 >不允许重复的</font>。与我们在建表语句中声明主键的方式类似，为某个列声明<font color=VioletRed size=3 >UNIQUE</font>属性的方式也有两种：</p>
@@ -2145,7 +2151,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2156,36 +2162,36 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">student_info</span> <span class="p">(</span>
-    <span class="n">number</span> <span class="kt">INT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
-    <span class="n">name</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">sex</span> <span class="kt">ENUM</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span> <span class="s1">&#39;女&#39;</span><span class="p">),</span>
-    <span class="n">id_number</span> <span class="kt">CHAR</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="k">UNIQUE</span><span class="p">,</span>
-    <span class="n">department</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-    <span class="n">major</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-    <span class="n">enrollment_time</span> <span class="kt">DATE</span>
-<span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">student_info</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">sex</span><span class="w"> </span><span class="kt">ENUM</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">id_number</span><span class="w"> </span><span class="kt">CHAR</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">department</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">major</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">enrollment_time</span><span class="w"> </span><span class="kt">DATE</span><span class="w">
+</span><span class="w"></span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>2.我们也可以把<font color=VioletRed size=3 >UNIQUE</font>属性的声明单独提取出来，用这样的形式声明：</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">UNIQUE</span> <span class="p">[</span><span class="err">约束名称</span><span class="p">]</span> <span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span> <span class="err">列名</span><span class="mi">2</span><span class="p">,</span> <span class="p">...)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">UNIQUE</span><span class="w"> </span><span class="p">[</span><span class="err">约束名称</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">列名</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>或者</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="p">[</span><span class="err">约束名称</span><span class="p">]</span> <span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span> <span class="err">列名</span><span class="mi">2</span><span class="p">,</span> <span class="p">...)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">UNIQUE</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">[</span><span class="err">约束名称</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="err">列名</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">列名</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p><font color=VioletRed size=3 >约束名称</font>是被<font color=VioletRed size=3 >中括号[]</font>扩起来的，意味着我们写不写都可以，如果不写的话MySQL自己会帮我们起名。</p>
 <p>如果表中为某个列或者列组合定义了<font color=VioletRed size=3 >UNIQUE</font>属性的话，MySQL会对我们插入的记录做<font color=VioletRed size=3 >校验</font>，如果新插入记录在该列或者列组合的值已经在表中存在了，那就会报错！</p>
@@ -2197,16 +2203,16 @@
 <p>插入到学生成绩表<font color=VioletRed size=3 >student_score</font>中的<font color=VioletRed size=3 >number</font>(学号)列中的值必须能在学生基本信息表<font color=VioletRed size=3 >student_info</font>中的<font color=VioletRed size=3 >number</font>列中找到，否则如果一个学号只在成绩表里出现，而在基本信息表里找不到相应的记录的话，就相当于插入了不知道是哪个学生的成绩，这显然是荒谬的。为了防止这样荒谬的情况出现，MySQL给我们提供了<font color=VioletRed size=3 >外键约束机制</font>。定义外键的语法是这样的：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CONSTRAINT</span> <span class="p">[</span><span class="err">外键名称</span><span class="p">]</span> <span class="k">FOREIGN</span> <span class="k">KEY</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="p">,</span> <span class="err">列</span><span class="mi">2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">REFERENCES</span> <span class="err">父表名</span><span class="p">(</span><span class="err">父列</span><span class="mi">1</span><span class="p">,</span> <span class="err">父列</span><span class="mi">2</span><span class="p">,</span> <span class="p">...);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="err">外键名称</span><span class="p">]</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="err">列</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">列</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="err">父表名</span><span class="p">(</span><span class="err">父列</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">父列</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>如果A表中的某个列或者某些列依赖与B表中的某个列或者某些列，那么就称A表为<font color=VioletRed size=3 >子表</font>，B表为<font color=VioletRed size=3 >父表</font>。子表和父表可以<font color=VioletRed size=3 >使用外键</font>来关联起来，上边例子中<font color=VioletRed size=3 >student_score</font>表的<font color=VioletRed size=3 >number</font>列依赖于<font color=VioletRed size=3 >student_info</font>的<font color=VioletRed size=3 >number</font>列，所以<font color=VioletRed size=3 >student_info</font>就是一个父表，<font color=VioletRed size=3 >student_score</font>就是子表。我们可以在<font color=VioletRed size=3 >student_score</font>的建表语句中来定义一个外键：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2215,25 +2221,25 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">student_score</span> <span class="p">(</span>
-    <span class="n">number</span> <span class="kt">INT</span><span class="p">,</span>
-    <span class="n">subject</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
-    <span class="n">score</span> <span class="kt">TINYINT</span><span class="p">,</span>
-    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">subject</span><span class="p">),</span>
-    <span class="k">CONSTRAINT</span> <span class="k">FOREIGN</span> <span class="k">KEY</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="nf">student_info</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-<span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">student_score</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="n">number</span><span class="w"> </span><span class="kt">INT</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">subject</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="n">score</span><span class="w"> </span><span class="kt">TINYINT</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="p">),</span><span class="w">
+</span><span class="w">    </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="nf">student_info</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="p">);</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>这样，在对<font color=VioletRed size=3 >student_score</font>表<font color=VioletRed size=3 >插入数据</font>的时候，<font color=VioletRed size=3 >MySQL</font>都会为我们检查一下插入的学号是否能在<font color=VioletRed size=3 >student_info</font>表中找到，如果找不到则会<font color=VioletRed size=3 >报错</font>。</p>
 <h3 id="auto_increment属性">AUTO_INCREMENT属性</h3>
 <p><font color=VioletRed size=3 >AUTO_INCREMENT</font>翻译成中文可以理解为<font color=VioletRed size=3 >自动增长</font>，简称自增</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">列名</span> <span class="err">列的类型</span> <span class="kp">AUTO_INCREMENT</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">列名</span><span class="w"> </span><span class="err">列的类型</span><span class="w"> </span><span class="kp">AUTO_INCREMENT</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>当我们把某个列设置了<font color=VioletRed size=3 >AUTO_INCREMENT</font>属性之后，如果我们在插入新记录的时候<font color=VioletRed size=3 >不指定该列的值</font>，或者将该列的值显式地指定为<font color=VioletRed size=3 >NULL或者0</font>，那么新插入的记录在该列上的值就是当前该列的<font color=VioletRed size=3 >最大值加1</font>后的值。</p>
 <p>在为列定义<font color=VioletRed size=3 >AUTO_INCREMENT</font>属性的时候需要注意这几点：</p>
@@ -2253,19 +2259,19 @@
 <p>可以在每一个列末尾添加<font color=VioletRed size=3 >COMMENT</font>语句来为列来添加注释</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">first_table</span> <span class="p">(</span>
-    <span class="n">id</span> <span class="kt">int</span> <span class="k">UNSIGNED</span> <span class="kp">AUTO_INCREMENT</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">COMMENT</span> <span class="s1">&#39;自增主键&#39;</span><span class="p">,</span>
-    <span class="n">first_column</span> <span class="kt">INT</span> <span class="n">COMMENT</span> <span class="s1">&#39;第一列&#39;</span><span class="p">,</span>
-    <span class="n">second_column</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">&#39;abc&#39;</span> <span class="n">COMMENT</span> <span class="s1">&#39;第二列&#39;</span>
-<span class="p">)</span> <span class="n">COMMENT</span> <span class="s1">&#39;第一个表&#39;</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">first_table</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">UNSIGNED</span><span class="w"> </span><span class="kp">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">COMMENT</span><span class="w"> </span><span class="s1">&#39;自增主键&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">first_column</span><span class="w"> </span><span class="kt">INT</span><span class="w"> </span><span class="n">COMMENT</span><span class="w"> </span><span class="s1">&#39;第一列&#39;</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">second_column</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="n">COMMENT</span><span class="w"> </span><span class="s1">&#39;第二列&#39;</span><span class="w">
+</span><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">COMMENT</span><span class="w"> </span><span class="s1">&#39;第一个表&#39;</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="zerofill属性">ZEROFILL属性</h3>
 <p>为列添加<font color=VioletRed size=3 >ZEROFILL</font>属性的在查询会自动在数值前面<font color=VioletRed size=3 >自动补0</font></p>
@@ -2299,7 +2305,7 @@
 <p>来看一遍student_info表的结构:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2316,22 +2322,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">DESC</span> <span class="n">student_info</span><span class="p">;</span>
-<span class="o">+-----------------+-------------------+------+-----+---------+-------+</span>
-<span class="o">|</span> <span class="n">Field</span>           <span class="o">|</span> <span class="n">Type</span>              <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span> <span class="n">Extra</span> <span class="o">|</span>
-<span class="o">+-----------------+-------------------+------+-----+---------+-------+</span>
-<span class="o">|</span> <span class="n">number</span>          <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>           <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">PRI</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>       <span class="o">|</span>
-<span class="o">|</span> <span class="n">name</span>            <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>        <span class="o">|</span> <span class="n">YES</span>  <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>       <span class="o">|</span>
-<span class="o">|</span> <span class="n">sex</span>             <span class="o">|</span> <span class="kt">enum</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;女&#39;</span><span class="p">)</span>   <span class="o">|</span> <span class="n">YES</span>  <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>       <span class="o">|</span>
-<span class="o">|</span> <span class="n">id_number</span>       <span class="o">|</span> <span class="kt">char</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>          <span class="o">|</span> <span class="n">YES</span>  <span class="o">|</span> <span class="n">UNI</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>       <span class="o">|</span>
-<span class="o">|</span> <span class="n">department</span>      <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>       <span class="o">|</span> <span class="n">YES</span>  <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>       <span class="o">|</span>
-<span class="o">|</span> <span class="n">major</span>           <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>       <span class="o">|</span> <span class="n">YES</span>  <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>       <span class="o">|</span>
-<span class="o">|</span> <span class="n">enrollment_time</span> <span class="o">|</span> <span class="kt">date</span>              <span class="o">|</span> <span class="n">YES</span>  <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>       <span class="o">|</span>
-<span class="o">+-----------------+-------------------+------+-----+---------+-------+</span>
-<span class="mi">7</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="n">student_info</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+-----------------+-------------------+------+-----+---------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">Field</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="n">Type</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="no">Null</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Key</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Default</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Extra</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+-----------------+-------------------+------+-----+---------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="n">NO</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">PRI</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="no">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="no">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">sex</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="kt">enum</span><span class="p">(</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;女&#39;</span><span class="p">)</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="no">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">UNI</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="no">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">department</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="no">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">           </span><span class="o">|</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="no">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">enrollment_time</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">date</span><span class="w">              </span><span class="o">|</span><span class="w"> </span><span class="n">YES</span><span class="w">  </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="no">NULL</span><span class="w">    </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+-----------------+-------------------+------+-----+---------+-------+</span><span class="w">
+</span><span class="w"></span><span class="mi">7</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -2657,11 +2663,11 @@
         </li>
         
         <li>
-          <a href="/databases/mysql/8/" class="related__link">分组查询</a>
+          <a href="/databases/mysql/9/" class="related__link">子查询</a>
         </li>
         
         <li>
-          <a href="/databases/mysql/9/" class="related__link">子查询</a>
+          <a href="/databases/mysql/8/" class="related__link">分组查询</a>
         </li>
         
     </ul>

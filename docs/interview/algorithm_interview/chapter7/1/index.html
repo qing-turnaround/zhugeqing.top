@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="如果说数学是皇冠上的一颗明珠，那么算法就是这颗明珠上的光芒，算法让这颗明珠更加熠熠生辉，为科技进步和社会发展照亮了前进的路">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item active">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item active"
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1881,7 +1887,7 @@
 <p><a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">104. 二叉树的最大深度</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1900,7 +1906,7 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span> <span class="kt">int</span><span class="p">)</span><span class="kt">int</span><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">j</span> <span class="kt">int</span><span class="p">)</span><span class="kt">int</span><span class="p">{</span>
     <span class="k">if</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="nx">j</span><span class="p">{</span>
         <span class="k">return</span> <span class="nx">i</span>
     <span class="p">}</span><span class="k">else</span><span class="p">{</span>
@@ -1923,7 +1929,7 @@
 <h4 id="递归写法">递归写法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1962,7 +1968,7 @@
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="cm">/**
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="cm">/**
 </span><span class="cm"> * Definition for a binary tree node.
 </span><span class="cm"> * type TreeNode struct {
 </span><span class="cm"> *     Val int
@@ -2004,7 +2010,7 @@
 </div><h4 id="队列写法">队列写法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2054,7 +2060,7 @@
 </span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="cm">/**
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="cm">/**
 </span><span class="cm"> * Definition for a binary tree node.
 </span><span class="cm"> * type TreeNode struct {
 </span><span class="cm"> *     Val int
@@ -2108,7 +2114,7 @@
 <h4 id="递归写法-1">递归写法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2126,7 +2132,7 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isSameTree</span><span class="p">(</span><span class="nx">p</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">,</span> <span class="nx">q</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isSameTree</span><span class="p">(</span><span class="nx">p</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">,</span> <span class="nx">q</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nx">p</span> <span class="o">==</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">q</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
         <span class="k">return</span> <span class="kc">true</span>
     <span class="p">}</span>
@@ -2147,7 +2153,7 @@
 </div><h4 id="迭代写法">迭代写法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2187,7 +2193,7 @@
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isSameTree</span><span class="p">(</span><span class="nx">p</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">,</span> <span class="nx">q</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isSameTree</span><span class="p">(</span><span class="nx">p</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">,</span> <span class="nx">q</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="c1">//迭代写法
 </span><span class="c1"></span>    <span class="c1">//构建队列
 </span><span class="c1"></span>    <span class="nx">queue</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="o">*</span><span class="nx">TreeNode</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
@@ -2231,7 +2237,7 @@
 <h4 id="递归写法-2">递归写法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2261,7 +2267,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">compare</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">q</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span><span class="kt">bool</span><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">compare</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">q</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span><span class="kt">bool</span><span class="p">{</span>
     <span class="k">if</span> <span class="nx">p</span> <span class="o">==</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">q</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
         <span class="k">return</span> <span class="kc">true</span> 
     <span class="p">}</span>
@@ -2294,7 +2300,7 @@
 </div><h4 id="迭代写法-1">迭代写法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2332,7 +2338,7 @@
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isSymmetric</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">isSymmetric</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="c1">//构建队列来进行层序遍历，不断遍历将左右节点存入队列中
 </span><span class="c1"></span>    <span class="nx">queue</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="o">*</span><span class="nx">TreeNode</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="c1">//根节点入队，比较两边的镜像
@@ -2373,7 +2379,7 @@
 </div><p><a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/">222. 完全二叉树的节点个数</a>　</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2382,7 +2388,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">countNodes</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">countNodes</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="p">}</span>
@@ -2394,7 +2400,7 @@
 </div><p><a href="https://leetcode-cn.com/problems/balanced-binary-tree/">110. 平衡二叉树</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2438,7 +2444,7 @@
 </span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang">
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang">
 <span class="kd">func</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
     <span class="c1">//因为-1是不平衡的信号，使用要查看是否大于0
 </span><span class="c1"></span>    <span class="k">return</span> <span class="nf">height</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
@@ -2485,7 +2491,7 @@
 </div><p><a href="https://leetcode-cn.com/problems/sum-of-left-leaves/">404. 左叶子之和</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2514,7 +2520,7 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">sumOfLeftLeaves</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">sumOfLeftLeaves</span><span class="p">(</span><span class="nx">root</span> <span class="o">*</span><span class="nx">TreeNode</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nx">root</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">{</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="p">}</span>
@@ -2836,7 +2842,7 @@
     <ul class="related-ul">
         
         <li>
-          <a href="/interview/algorithm_interview/chapter8/2/" class="related__link">第八章第二节——排列</a>
+          <a href="/interview/algorithm_interview/chapter7/2/" class="related__link">第七章第二节</a>
         </li>
         
         <li>
@@ -2844,15 +2850,15 @@
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter8/4/" class="related__link">第八章第四节——floodfill</a>
-        </li>
-        
-        <li>
-          <a href="/interview/algorithm_interview/chapter9/1/" class="related__link">第九章第一节</a>
+          <a href="/interview/algorithm_interview/chapter8/5/" class="related__link">第八章第五节——AI算法的基础是回溯算法</a>
         </li>
         
         <li>
           <a href="/interview/algorithm_interview/chapter6/1/" class="related__link">第六章第一节</a>
+        </li>
+        
+        <li>
+          <a href="/interview/algorithm_interview/chapter5/1/" class="related__link">第五章第一节</a>
         </li>
         
     </ul>

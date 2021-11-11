@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="如果说数学是皇冠上的一颗明珠，那么算法就是这颗明珠上的光芒，算法让这颗明珠更加熠熠生辉，为科技进步和社会发展照亮了前进的路">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item active">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item active"
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1893,7 +1899,7 @@
 <p>2.队尾入队，直接将入队栈栈顶（top_in）加1，并插入数值。</p>
 <p>3.队头出队：首先判断是否两个栈均为空，若为空，则返回-1，然后有两种情况，入队栈为空 or 出队栈为空，若只是入队栈为空，则无需理会，直接删除出队栈的一个栈顶元素，top_out减一;若是出队栈为空，则需要将入队栈的元素移至出队栈，然后再进行出队栈出队，top_out减一。</font></p>
 
-<div id="6df9c9c6d7ed2fbf" class="codetab">
+<div id="1ae1ef8d62768e8f" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -1906,7 +1912,7 @@
 <div id="5074a097aa186792" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1956,7 +1962,7 @@
 </span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
 <span class="kt">int</span> <span class="n">out_stack</span><span class="p">[</span><span class="mi">500</span><span class="p">];</span><span class="c1">//出队栈（进行出队操作-队列头部）
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">top_out</span><span class="p">;</span><span class="c1">//出队栈栈顶
 </span><span class="c1"></span><span class="kt">int</span> <span class="n">in_stack</span><span class="p">[</span><span class="mi">500</span><span class="p">];</span><span class="c1">//入队栈（进行入队操作-队列尾部）
@@ -2013,7 +2019,7 @@
 <div id="2aba45bef45f113e" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2050,7 +2056,7 @@
 </span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//剑指 Offer 09. 用两个栈实现队列
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="c1">//剑指 Offer 09. 用两个栈实现队列
 </span><span class="c1"></span><span class="kd">type</span> <span class="nx">CQueue</span> <span class="kd">struct</span> <span class="p">{</span>
   <span class="nx">IntStack</span> <span class="p">[]</span><span class="kt">int</span> <span class="c1">//入队栈
 </span><span class="c1"></span>  <span class="nx">OutStack</span> <span class="p">[]</span><span class="kt">int</span> <span class="c1">//出队栈
@@ -2068,16 +2074,16 @@
 
 <span class="kd">func</span> <span class="p">(</span><span class="nx">this</span> <span class="o">*</span><span class="nx">CQueue</span><span class="p">)</span> <span class="nf">DeleteHead</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">OutStack</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span> <span class="c1">//判断出队栈是否有数据，如果没有就把入队栈的数据移到出队上来
-</span><span class="c1"></span>      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">//如果入队栈也没有数，那就返回-1
-</span><span class="c1"></span>      <span class="p">}</span>
-      <span class="c1">//如果有,那就把入队栈的数据全部转移到出队栈（而且是转移所有数据）
-</span><span class="c1"></span>      <span class="k">for</span> <span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-          <span class="nx">value</span> <span class="o">:=</span> <span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>         <span class="c1">//找到出队栈的栈顶
-</span><span class="c1"></span>          <span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span> <span class="p">=</span> <span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">//移除一个栈顶元素
-</span><span class="c1"></span>          <span class="nx">this</span><span class="p">.</span><span class="nx">OutStack</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">OutStack</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>         <span class="c1">//将元素添加到出队栈里面
+</span><span class="c1"></span>  	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+  		<span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="c1">//如果入队栈也没有数，那就返回-1
+</span><span class="c1"></span>  	<span class="p">}</span>
+  	<span class="c1">//如果有,那就把入队栈的数据全部转移到出队栈（而且是转移所有数据）
+</span><span class="c1"></span>  	<span class="k">for</span> <span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+  		<span class="nx">value</span> <span class="o">:=</span> <span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>         <span class="c1">//找到出队栈的栈顶
+</span><span class="c1"></span>  		<span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span> <span class="p">=</span> <span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">IntStack</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">//移除一个栈顶元素
+</span><span class="c1"></span>  		<span class="nx">this</span><span class="p">.</span><span class="nx">OutStack</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">OutStack</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>         <span class="c1">//将元素添加到出队栈里面
 </span><span class="c1"></span>
-      <span class="p">}</span>
+  	<span class="p">}</span>
   <span class="p">}</span>
   <span class="c1">//如果出队栈当中有数据则出栈
 </span><span class="c1"></span>  <span class="nx">res</span> <span class="o">:=</span> <span class="nx">this</span><span class="p">.</span><span class="nx">OutStack</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nx">OutStack</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>           <span class="c1">//选中出队栈最后一个元素
@@ -2095,7 +2101,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"6df9c9c6d7ed2fbf\"");
+  var containerId = JSON.parse("\"1ae1ef8d62768e8f\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;

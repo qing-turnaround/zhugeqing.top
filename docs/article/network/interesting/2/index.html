@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="了解tcp">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1871,22 +1877,19 @@
         <p style="color:#00FFFF";>此文章取自于微信公众号“低并发编程”</p>
 <center><font color=Turquoise size=5>你是一台电脑，你的名字叫 A</font></center>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/323.png"/> 
+<figure><img src="/images/article/323.png"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>经过<a href="/article/network/interesting/1">《如果让你来设计网络》</a>这篇文章中的一番折腾，只要你知道另一位伙伴 B 的 IP 地址，且你们之间的网络是通的，无论多远，你都可以将一个数据包发送给你的伙伴 B</p>
-<figure>
-    <img src="/images/article/54.png"/> 
+<figure><img src="/images/article/54.png"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>这就是<font color=GreenYellow  size=3 >物理层</font>、<font color=GreenYellow  size=3 >数据链路层</font>、<font color=GreenYellow  size=3 >网络层</font>这三层所做的事情。</p>
 <p>站在第四层的你，就可以不要脸地利用下三层所做的铺垫，随心所欲地发送数据，而不必担心找不到对方了。</p>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/98.gif"/> 
+<figure><img src="/images/article/98.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -1895,20 +1898,17 @@
 <center><font color=red size=5>问题来了</font></center>
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>前三层协议只能把数据包从一个主机搬到另外一台主机，但是，到了目的地以后，数据包具体交给哪个<font color=LightSeaGreen size=3 >程序（进程）</font>呢？</p>
-<figure>
-    <img src="/images/article/432.png"/> 
+<figure><img src="/images/article/432.png"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>所以，你需要把通信的进程区分开来，于是就给每个进程分配一个数字编号，你给它起了一个响亮的名字：<font color=GreenYellow  size=3 >端口号</font>。</p>
-<figure>
-    <img src="/images/article/34.jpg"/> 
+<figure><img src="/images/article/34.jpg"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>然后你在要发送的数据包上，增加了传输层的头部，<font color=GreenYellow size=3 >源端口号</font>与<font color=GreenYellow size=3 >目标端口号</font>。</p>
-<figure>
-    <img src="/images/article/213.png"/> 
+<figure><img src="/images/article/213.png"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -1916,8 +1916,7 @@
 <p>你没有意识到，你不知不觉实现了 <font color=GreenYellow  size=3 >UDP 协议！</font></p>
 <p><font color=LightSeaGreen size=3 >（当然 UDP 协议中不光有源端口和目标端口，还有数据包长度和校验值，我们暂且略过）</font></p>
 <p>就这样，你用 UDP 协议无忧无虑地同 B 进行着通信，一直没发生什么问题。</p>
-<figure>
-    <img src="/images/article/23.gif"/> 
+<figure><img src="/images/article/23.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -1927,8 +1926,7 @@
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>由于网络的不可靠，数据包可能在半路丢失，而 A 和 B 却无法察觉。</p>
 <p><font color=GreenYellow size=3 ></font></p>
-<figure>
-    <img src="/images/article/324.gif"/> 
+<figure><img src="/images/article/324.gif"/>
 </figure>
 
 <p><font color=CadetBlue size=3>  </font></p>
@@ -1942,8 +1940,7 @@
   答案：重传
 </div></p>
 <p>于是你设计了如下方案，A 每发一个包，都必须收到来自 B 的<font color=GreenYellow size=3 >确认（ACK）</font>，再发下一个，否则在一定时间内没有收到确认，就<font color=GreenYellow  size=3 >重传</font>这个包。</p>
-<figure>
-    <img src="/images/article/65.gif"/> 
+<figure><img src="/images/article/65.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -1957,20 +1954,17 @@
 <p><font color=CadetBlue size=3 >   </font></p>
 <p>但是网路是复杂的、不可靠的。</p>
 <p>有的时候 A 发出去的数据包，分别走了不同的路由到达 B，可能无法保证和发送数据包时一样的顺序。</p>
-<figure>
-    <img src="/images/article/3421.gif"/> 
+<figure><img src="/images/article/3421.gif"/>
 </figure>
 
 <p>在流水线中有多个数据包和ACK包在<font color=GreenYellow size=3 >乱序流动</font>，他们之间对应关系就乱掉了。</p>
 <p>难道还回到停止等待协议？A 每收到一个包的确认（ACK）再发下一个包，那就根本不存在顺序问题。应该有更好的办法！</p>
 <p>A 在发送的数据包中增加一个<font color=GreenYellow size=3 >序号（seq）</font>，同时 B 要在 ACK 包上增加一个<font color=GreenYellow size=3 >确认号（ack）</font>，这样不但解决了停止等待协议的效率问题，也通过这样标序号的方式解决了顺序问题。</p>
-<figure>
-    <img src="/images/article/33465.gif"/> 
+<figure><img src="/images/article/33465.gif"/>
 </figure>
 
 <p>而 B 这个确认号意味深长：比如 B 发了一个确认号为 ack = 3，它不仅仅表示 A 发送的序号为 2 的包收到了，还表示 2 之前的数据包都收到了。这种方式叫<font color=GreenYellow size=3 >累计确认</font>或<font color=GreenYellow size=3 >累计应答</font>。</p>
-<figure>
-    <img src="/images/article/33466.gif"/> 
+<figure><img src="/images/article/33466.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 ></font></p>
@@ -1981,8 +1975,7 @@
 <center><font color=RED size=6>流量问题</font></center>
 <p><font color=GreenYellow size=3 ></font></p>
 <p>有的时候，A 发送数据包的速度太快，而 B 的接收能力不够，但 B 却没有告知 A 这个情况。</p>
-<figure>
-    <img src="/images/article/4554.gif"/> 
+<figure><img src="/images/article/4554.gif"/>
 </figure>
 
 <p>怎么解决呢？</p>
@@ -1990,43 +1983,37 @@
 <p>B 怎么告诉 A 呢？B 跟 A 说&quot;我很强&quot;这三个字么？那肯定不行，得有一个严谨的规范。</p>
 <p>于是 B 决定，每次发送数据包给 A 时，顺带传过来一个值，叫<font color=GreenYellow size=3 >窗口大小（win)</font>，这个值就表示 B 的<font color=GreenYellow size=3 >接收能力</font>。同理，每次 A 给 B 发包时也带上自己的窗口大小，表示 A 的<font color=GreenYellow size=3 >接收能力</font>。</p>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/432.gif"/> 
+<figure><img src="/images/article/432.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >    </font></p>
 <p>B 告诉了 A 自己的窗口大小值，A 怎么利用它去做 A 这边发包的流量控制呢？</p>
 <p>很简单，假如 B 给 A 传过来的窗口大小 win = 5，那 A 根据这个值，把自己要发送的数据分成这么几类。</p>
-<figure>
-    <img src="/images/article/45.png"/> 
+<figure><img src="/images/article/45.png"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>图片过于清晰，就不再文字解释了。</p>
 <p>当 A 不断发送数据包时，<font color=GreenYellow size=3 >已发送的最后一个序号</font>就往右移动，直到碰到了窗口的上边界，此时 A 就无法继续发包，达到了流量控制。</p>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/60532.gif"/> 
+<figure><img src="/images/article/60532.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>但是当 A 不断发包的同时，A 也会收到来自 B 的确认包，此时整个窗口会往右移动，因此上边界也往右移动，A 就能发更多的数据包了。</p>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/60616.gif"/> 
+<figure><img src="/images/article/60616.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>以上都是在窗口大小不变的情况下，而 B 在发给 A 的 ACK 包中，每一个都可以<font color=GreenYellow size=3 >重新设置</font>一个新的窗口大小，如果 A 收到了一个新的窗口大小值，A 会随之调整。<br />
 如果 A 收到了比原窗口值更大的窗口大小，比如 win = 6，则 A 会直接将窗口上边界向右移动 1 个单位。</p>
-<figure>
-    <img src="/images/article/60837.gif"/> 
+<figure><img src="/images/article/60837.gif"/>
 </figure>
 
 <p>如果 A 收到了比原窗口值小的窗口大小，比如 win = 4，则 A 暂时不会改变窗口大小，更不会将窗口上边界向左移动，而是等着 ACK 的到来，不断将左边界向右移动，直到窗口大小值收缩到新大小为止。</p>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/160916.gif"/> 
+<figure><img src="/images/article/160916.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -2034,8 +2021,7 @@
 <center><font color=RED size=6>拥塞问题</font></center>
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>但有的时候，不是 B 的接受能力不够，而是网络不太好，造成了<font color=GreenYellow size=3 >网络拥塞</font>。</p>
-<figure>
-    <img src="/images/article/161151.gif"/> 
+<figure><img src="/images/article/161151.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 ></font></p>
@@ -2043,8 +2029,7 @@
 <p>拥塞控制的解决办法依然是通过设置一定的窗口大小，只不过，流量控制的窗口大小是 B 直接告诉 A 的，而拥塞控制的窗口大小按理说就应该是网络环境主动告诉 A。</p>
 <p>但网络环境怎么可能主动告诉 A 呢？只能 A 单方面通过<font color=GreenYellow size=3 >试探</font>，不断感知网络环境的好坏，进而确定自己的拥塞窗口的大小。</p>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/61340.gif"/> 
+<figure><img src="/images/article/61340.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -2056,8 +2041,7 @@
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>有的时候，B 主机的相应进程还没有准备好或是挂掉了，A 就开始发送数据包，导致了浪费。</p>
 <p><font color=GreenYellow size=3 >   </font></p>
-<figure>
-    <img src="/images/article/162051.gif"/> 
+<figure><img src="/images/article/162051.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -2068,8 +2052,7 @@
 <p><font color=VioletRed size=3 >* B：我知道了(ACK)，我也准备好了(SYN)</font></p>
 <p><font color=VioletRed size=3 >* A：我知道了(ACK)</font></p>
 <p><font color=GreenYellow size=3 ></font></p>
-<figure>
-    <img src="/images/article/162208.gif"/> 
+<figure><img src="/images/article/162208.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 ></font></p>
@@ -2085,16 +2068,14 @@
 <p><font color=LightSteelBlue size=3 >   给 B 一段时间把自己的事情处理完&hellip;</font></p>
 <p><font color=VioletRed size=3 >* B：再见，我要关闭了(FIN)</font></p>
 <p><font color=VioletRed size=3 >* A：我知道了(ACK)</font></p>
-<figure>
-    <img src="/images/article/162425.gif"/> 
+<figure><img src="/images/article/162425.gif"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
 <center><font color=Turquoise size=6>总结</font></center>
 <p><font color=GreenYellow size=3 >   </font></p>
 <p>以上讲述的，就是 TCP 协议的核心思想，上面过程中需要传输的信息，就体现在 TCP 协议的头部，这里放上最常见的 TCP 协议头解读的图。</p>
-<figure>
-    <img src="/images/article/162552.jpg"/> 
+<figure><img src="/images/article/162552.jpg"/>
 </figure>
 
 <p><font color=GreenYellow size=3 ></font></p>
@@ -2110,8 +2091,7 @@
 <p>也就是说，如果要发送的数据很大，在 TCP 层是需要按照 MSS 来切割成一个个的<font color=GreenYellow size=3 >TCP 报文段</font> 的。</p>
 <p>切割的时候我才不管你原来的数据表示什么意思，需要在哪里断句啥的，我就把它当成一串毫无意义的字节，在我想要切割的地方咔嚓就来一刀，标上序号，只要接收方再根据这个序号拼成最终想要的完整数据就行了。</p>
 <p>在我 TCP 传输这里，我就把它当做一个个的<font color=GreenYellow size=3 >字节</font>，也就是基于字节流的含义了。</p>
-<figure>
-    <img src="/images/article/162818.jpg"/> 
+<figure><img src="/images/article/162818.jpg"/>
 </figure>
 
 <p><font color=GreenYellow size=3 >   </font></p>
@@ -2119,7 +2099,7 @@
 <div class="alert alert-info" role="alert" data-dir="ltr"><p style="color:#00FFFF";>第一题：A 给 B 发送 "aaa" ，然后 B 给 A 回复一个简单的字符串 "success"，并将此过程抓包。</div>
 <div class="alert alert-info" role="alert" data-dir="ltr"><p style="color:#00FFFF";>第二题：A 给 B 发送 "aaaaaa ... a" 超过最大报文段大小，然后 B 给 A 回复一个简单的字符串 "success"，并将此过程抓包。</div>
 <p>下面是我抓的包（第二题）</p>
-<pre><code>三次握手阶段
+<pre tabindex="0"><code>三次握手阶段
 A -&gt; B	[SYN] Seq=0 Win=64240 Len=0
                         MSS=1460 WS=256
 B - &gt;A	[SYN, ACK] Seq=0 Ack=1 Win=29200 Len=0

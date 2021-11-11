@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="一文解析KMP算法">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1879,7 +1885,7 @@
 <p>对应<a href="https://leetcode-cn.com/problems/implement-strstr/">力扣28. 实现 strStr()</a></p>
 <h3 id="代码实现如下">代码实现如下</h3>
 
-<div id="344249a99061d610" class="codetab">
+<div id="21a1473cb1c69f53" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -1892,7 +1898,7 @@
 <div id="e64d4b147b8597f9" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1912,7 +1918,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">strStr</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">haystack</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">needle</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">strStr</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">haystack</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">needle</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//暴力法
 </span><span class="c1"></span>    <span class="c1">//haystack为主串，needle为模式串
 </span><span class="c1"></span>    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">haystack</span><span class="p">),</span> <span class="n">m</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">needle</span><span class="p">);</span>
@@ -1939,7 +1945,7 @@
 <div id="c666006a61f65665" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1959,7 +1965,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">strStr</span><span class="p">(</span><span class="nx">haystack</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">needle</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">strStr</span><span class="p">(</span><span class="nx">haystack</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">needle</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
   <span class="c1">//暴力法
 </span><span class="c1"></span>  <span class="c1">//haystack为主串，needle为模式串
 </span><span class="c1"></span>  <span class="nx">j</span><span class="o">:=</span><span class="mi">0</span> <span class="c1">//遍历模式串的下标
@@ -1987,7 +1993,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"344249a99061d610\"");
+  var containerId = JSON.parse("\"21a1473cb1c69f53\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2040,7 +2046,7 @@
 <p><img src="/images/article/2.gif" alt="" /></p>
 <h3 id="代码实现如下-1">代码实现如下</h3>
 
-<div id="f0d2cd28e2bb5830" class="codetab">
+<div id="2ef5793b5d1f93ab" class="codetab">
   <div class="codetab__links">
     
       <button class="codetab__link" aria-label="Tab link">c</button>
@@ -2053,7 +2059,7 @@
 <div id="ab7b86f19db53a9e" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2101,7 +2107,7 @@
 </span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="nf">getNext</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">needle</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span><span class="o">*</span> <span class="nf">getNext</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">needle</span><span class="p">){</span>
     <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">needle</span><span class="p">);</span>
     <span class="kt">int</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">*</span><span class="n">n</span><span class="p">);</span> <span class="c1">//为next数组分配空间
 </span><span class="c1"></span>    <span class="kt">int</span> <span class="n">maxMatch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//最大匹配长度
@@ -2156,7 +2162,7 @@
 <div id="61f7155c9fe794e4" class="codetab__content">
   <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2204,47 +2210,47 @@
 </span><span class="lnt">46
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">getNext</span><span class="p">(</span><span class="nx">needle</span> <span class="kt">string</span><span class="p">)[]</span><span class="kt">int</span><span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">getNext</span><span class="p">(</span><span class="nx">needle</span> <span class="kt">string</span><span class="p">)[]</span><span class="kt">int</span><span class="p">{</span>
   <span class="nx">next</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="nx">needle</span><span class="p">))</span> <span class="c1">//长度为len(needle)
 </span><span class="c1"></span>  <span class="c1">//根据前后缀来求Next数组
 </span><span class="c1"></span>  <span class="nx">maxMatch</span> <span class="o">:=</span> <span class="mi">0</span> <span class="c1">//最长匹配长度
 </span><span class="c1"></span>  <span class="c1">//i从1开始，因为0下标的next值一定为0
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">1</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="nx">needle</span><span class="p">);</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>
-      <span class="k">for</span> <span class="nx">maxMatch</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">maxMatch</span><span class="p">]{</span><span class="c1">//当前不匹配，只能用前面的next值，直到匹配，或者maxMatch=0
-</span><span class="c1"></span>          <span class="nx">maxMatch</span> <span class="p">=</span> <span class="nx">next</span><span class="p">[</span><span class="nx">maxMatch</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">//回溯求最长匹配长度
-</span><span class="c1"></span>      <span class="p">}</span>
+  	<span class="k">for</span> <span class="nx">maxMatch</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">maxMatch</span><span class="p">]{</span><span class="c1">//当前不匹配，只能用前面的next值，直到匹配，或者maxMatch=0
+</span><span class="c1"></span>  		<span class="nx">maxMatch</span> <span class="p">=</span> <span class="nx">next</span><span class="p">[</span><span class="nx">maxMatch</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">//回溯求最长匹配长度
+</span><span class="c1"></span>  	<span class="p">}</span>
 
-      <span class="k">if</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">maxMatch</span><span class="p">]{</span><span class="c1">//匹配也只会在原来的基础上+1
-</span><span class="c1"></span>          <span class="nx">maxMatch</span><span class="o">++</span>
-      <span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">maxMatch</span><span class="p">]{</span><span class="c1">//匹配也只会在原来的基础上+1
+</span><span class="c1"></span>  		<span class="nx">maxMatch</span><span class="o">++</span>
+  	<span class="p">}</span>
 
-      <span class="nx">next</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">maxMatch</span><span class="c1">//赋next值，
+  	<span class="nx">next</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">maxMatch</span><span class="c1">//赋next值，
 </span><span class="c1"></span>  <span class="p">}</span>
   <span class="k">return</span> <span class="nx">next</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">strStr</span><span class="p">(</span><span class="nx">haystack</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">needle</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
   <span class="k">if</span> <span class="nx">needle</span> <span class="o">==</span> <span class="s">&#34;&#34;</span><span class="p">{</span>
-      <span class="k">return</span> <span class="mi">0</span>
+  	<span class="k">return</span> <span class="mi">0</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">haystack</span><span class="p">)</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">needle</span><span class="p">){</span>
-      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+  	<span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
   <span class="p">}</span>
   <span class="c1">//第一步先求next数组
 </span><span class="c1"></span>  <span class="nx">next</span> <span class="o">:=</span> <span class="nf">getNext</span><span class="p">(</span><span class="nx">needle</span><span class="p">)</span>
   <span class="c1">//第二步开始匹配
 </span><span class="c1"></span>  <span class="k">for</span> <span class="nx">i</span><span class="p">,</span><span class="nx">j</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="nx">haystack</span><span class="p">);</span><span class="nx">i</span><span class="o">++</span><span class="p">{</span>   <span class="c1">//
-</span><span class="c1"></span>      <span class="k">for</span> <span class="nx">j</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">haystack</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">j</span><span class="p">]{</span>
-          <span class="nx">j</span> <span class="p">=</span> <span class="nx">next</span><span class="p">[</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-      <span class="p">}</span>
-      <span class="k">if</span> <span class="nx">haystack</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">j</span><span class="p">]{</span>
-          <span class="nx">j</span><span class="o">++</span>
-      <span class="p">}</span>
+</span><span class="c1"></span>  	<span class="k">for</span> <span class="nx">j</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">haystack</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">j</span><span class="p">]{</span>
+  		<span class="nx">j</span> <span class="p">=</span> <span class="nx">next</span><span class="p">[</span><span class="nx">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  	<span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">haystack</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="nx">needle</span><span class="p">[</span><span class="nx">j</span><span class="p">]{</span>
+  		<span class="nx">j</span><span class="o">++</span>
+  	<span class="p">}</span>
 
-      <span class="k">if</span> <span class="nx">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nx">needle</span><span class="p">){</span><span class="c1">//全部匹配完，返回
-</span><span class="c1"></span>          <span class="k">return</span> <span class="nx">i</span><span class="o">-</span><span class="nx">j</span><span class="o">+</span><span class="mi">1</span>
-      <span class="p">}</span>
+  	<span class="k">if</span> <span class="nx">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nx">needle</span><span class="p">){</span><span class="c1">//全部匹配完，返回
+</span><span class="c1"></span>  		<span class="k">return</span> <span class="nx">i</span><span class="o">-</span><span class="nx">j</span><span class="o">+</span><span class="mi">1</span>
+  	<span class="p">}</span>
   <span class="p">}</span>
 
 
@@ -2260,7 +2266,7 @@
 <script>
   'use strict';
 
-  var containerId = JSON.parse("\"f0d2cd28e2bb5830\"");
+  var containerId = JSON.parse("\"2ef5793b5d1f93ab\"");
   var containerElem = document.getElementById(containerId);
   var codetabLinks = null;
   var codetabContents = null;
@@ -2589,11 +2595,11 @@
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter2/1/" class="related__link">第二章第一节</a>
+          <a href="/interview/algorithm_interview/chapter1/1/" class="related__link">第一章第一节</a>
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter1/1/" class="related__link">第一章第一节</a>
+          <a href="/interview/algorithm_interview/chapter2/1/" class="related__link">第二章第一节</a>
         </li>
         
         <li>

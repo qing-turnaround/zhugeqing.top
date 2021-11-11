@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="从零蛋开始学习 MySQL">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1846,7 +1852,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 13, 2020 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;1&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1886,23 +1892,23 @@ service mysqld stop(linux)
 <hr />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql">    <span class="k">create</span> <span class="k">database</span> <span class="n">zhugeqing</span><span class="p">;</span>
-    <span class="k">create</span> <span class="k">database</span> <span class="k">if</span> <span class="k">not</span> <span class="k">exists</span> <span class="n">zhugeqing</span><span class="p">;(</span><span class="err">如果并不清楚数据库是否存在，可以使用这条语句来创建数据库</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">zhugeqing</span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">zhugeqing</span><span class="p">;(</span><span class="err">如果并不清楚数据库是否存在，可以使用这条语句来创建数据库</span><span class="p">)</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="5查看所有数据库">5.查看所有数据库</h2>
 <hr />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql">    <span class="k">show</span> <span class="k">databases</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="w">    </span><span class="k">show</span><span class="w"> </span><span class="k">databases</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>information_schema：主要存储了系统中的一些数据库对象信息，比如用户表信息、列信息、权限信息、字符集信息、分区信息等。<br />
 cluster：存储了系统的集群信息。<br />
@@ -1912,23 +1918,23 @@ test：系统自动创建的测试数据库，任何用户都可以使用。</p>
 <hr />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql">    <span class="k">drop</span> <span class="k">database</span> <span class="n">zhugeqing</span><span class="p">;</span>
-    <span class="k">drop</span> <span class="k">database</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">zhugeqing</span><span class="p">;(</span><span class="err">如果某个数据库并不存在，我们仍旧调用</span><span class="n">DROP</span> <span class="n">DATABASE语句去删除它</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="w">    </span><span class="k">drop</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">zhugeqing</span><span class="p">;</span><span class="w">
+</span><span class="w">    </span><span class="k">drop</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">zhugeqing</span><span class="p">;(</span><span class="err">如果某个数据库并不存在，我们仍旧调用</span><span class="n">DROP</span><span class="w"> </span><span class="n">DATABASE语句去删除它</span><span class="p">)</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="7切换当前数据库比如数据库的名字叫zhugeqing">7.切换当前数据库（比如数据库的名字叫zhugeqing）</h2>
 <hr />
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql">    <span class="k">use</span> <span class="n">zhugeqing</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">zhugeqing</span><span class="p">;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>其实我们在新启动客户端连接服务器时就可以指定连接建立成功后客户端的当前数据库，<br />
 只要把数据库名称写在启动客户端的命令mysql -h 主机名 -u 用户名 -p密码后边就好，如下：</p>

@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="从零蛋开始学习 MySQL">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1846,7 +1852,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 13, 2020 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;10&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;13&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1887,25 +1893,21 @@
 </ul>
 <h3 id="操作符">操作符</h3>
 <p>1.<code>算术操作符</code><br />
-<figure>
-    <img src="/images/mysql/1/16.jpg"/> 
+<figure><img src="/images/mysql/1/16.jpg"/>
 </figure>
 </p>
 <p>在使用<code>MySQL</code>中的<code>算术操作符</code>时需要注意，<code>DIV</code>和<code>/</code>都表示除法操作符，但是<code>DIV</code>只会<code>取商的整数部分</code>，<code>/</code>会<code>保留商的小数部分</code>。比如表达式 2 DIV 3的结果是0，而2 / 3的结果是0.6667。</p>
 <p>2.<code>比较操作符</code><br />
-<figure>
-    <img src="/images/mysql/1/17.jpg"/> 
+<figure><img src="/images/mysql/1/17.jpg"/>
 </figure>
 </p>
-<figure>
-    <img src="/images/mysql/1/18.jpg"/> 
+<figure><img src="/images/mysql/1/18.jpg"/>
 </figure>
 
 <p>由<code>比较操作符</code>连接而成的<code>表达式</code>也称为<code>布尔表达式</code>，表示<code>真</code>或`者<code>假</code>，也可以称为TRUE或者FALSE。比如1 &gt; 3就代表<code>FALSE</code>，3 != 2就代表<code>TRUE</code>。</p>
 <p>3.<code>逻辑操作符</code></p>
 <p>逻辑操作符是用来将多个<code>布尔表达式</code>连接起来，我们需要了解这几个<code>逻辑操作符</code>：</p>
-<figure>
-    <img src="/images/mysql/1/19.jpg"/> 
+<figure><img src="/images/mysql/1/19.jpg"/>
 </figure>
 
 <h3 id="表达式的使用">表达式的使用</h3>
@@ -1914,7 +1916,7 @@
 <p>我们前边都是将列名放在查询列表中的(<code>*</code>号代表<code>所有的列名</code>～)。列名只是表达式中超级简单的一种，我们可以将任意一个表达式作为查询列表的一部分来处理，比方说我们可以在查询<code>student_score</code>表时把<code>score</code>字段的数据都加<code>100</code>，就像这样：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1932,28 +1934,28 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span>  <span class="n">number</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">100</span> <span class="k">FROM</span> <span class="n">student_score</span><span class="p">;</span>
-<span class="o">+----------+-----------------------------+-------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">subject</span>                     <span class="o">|</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">100</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------------+</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>         <span class="mi">178</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>         <span class="mi">188</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>         <span class="mi">200</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>         <span class="mi">198</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>         <span class="mi">159</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>         <span class="mi">161</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>         <span class="mi">155</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>         <span class="mi">146</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------------+</span>
-<span class="mi">8</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w">  </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">subject</span><span class="w">                     </span><span class="o">|</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">         </span><span class="mi">178</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">         </span><span class="mi">188</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">         </span><span class="mi">200</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">         </span><span class="mi">198</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">         </span><span class="mi">159</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">         </span><span class="mi">161</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">         </span><span class="mi">155</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">         </span><span class="mi">146</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">8</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>其中的<code>number</code>、<code>subject</code>、<code>score + 100</code>都是表达式，结果集中的列的名称也将默认使用这些表达式的名称，所以如果你觉得原名称不好，我们可以使用别名：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1971,29 +1973,29 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span>  <span class="n">number</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">score</span> <span class="o">+</span> <span class="mi">100</span> <span class="k">AS</span> <span class="n">score</span> <span class="k">FROM</span> <span class="n">student_score</span><span class="p">;</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">subject</span>                     <span class="o">|</span> <span class="n">score</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>   <span class="mi">178</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>   <span class="mi">188</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>   <span class="mi">200</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>   <span class="mi">198</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>   <span class="mi">159</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>   <span class="mi">161</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">母猪的产后护理</span>              <span class="o">|</span>   <span class="mi">155</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">论萨达姆的战争准备</span>          <span class="o">|</span>   <span class="mi">146</span> <span class="o">|</span>
-<span class="o">+----------+-----------------------------+-------+</span>
-<span class="mi">8</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w">  </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">subject</span><span class="w">                     </span><span class="o">|</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">   </span><span class="mi">178</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">   </span><span class="mi">188</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">   </span><span class="mi">200</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">   </span><span class="mi">198</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">   </span><span class="mi">159</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">   </span><span class="mi">161</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">母猪的产后护理</span><span class="w">              </span><span class="o">|</span><span class="w">   </span><span class="mi">155</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">论萨达姆的战争准备</span><span class="w">          </span><span class="o">|</span><span class="w">   </span><span class="mi">146</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------------------------+-------+</span><span class="w">
+</span><span class="w"></span><span class="mi">8</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>这样<code>score + 100</code>列就可以按照别名<code>score</code>来展示了！</p>
 <p>需要注意的是，放在查询列表的表达式也可以不涉及列名，就像这样：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2009,26 +2011,26 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="mi">1</span> <span class="k">FROM</span> <span class="n">student_info</span><span class="p">;</span>
-<span class="o">+---+</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">+---+</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">+---+</span>
-<span class="mi">6</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+---+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+---+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+---+</span><span class="w">
+</span><span class="w"></span><span class="mi">6</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>因为<code>student_info</code>中有<code>6条记录</code>，所以结果集中也就展示了<code>6条结果</code>，不过我们的<code>查询列表</code>处只有一个<code>常数1</code>，所以所有的结果的值<code>也都是常数1</code>。这种查询列表中不涉及列名的情况下，我们甚至可以省略掉FROM子句后边的表名，就像这样：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2039,23 +2041,23 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="mi">1</span><span class="p">;</span>
-<span class="o">+---+</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">+---+</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">|</span>
-<span class="o">+---+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+---+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+---+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+---+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>可是这么写有什么现实用处么？好像有的，可以做个<code>计算器[偷笑]～(比如select 52*10 from first;)</code></p>
 <p>2.<code>作为搜索条件</code></p>
 <p>我们在介绍搜索条件的时候介绍的都是带有列名的表达式，<code>搜索条件</code>也可以<code>不带列名</code>，比如这样：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2071,21 +2073,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">number</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">id_number</span><span class="p">,</span> <span class="n">major</span> <span class="k">FROM</span> <span class="n">student_info</span> <span class="k">WHERE</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="n">number</span>   <span class="o">|</span> <span class="n">name</span>      <span class="o">|</span> <span class="n">id_number</span>          <span class="o">|</span> <span class="n">major</span>                    <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="o">|</span> <span class="mi">20180101</span> <span class="o">|</span> <span class="err">杜子腾</span>    <span class="o">|</span> <span class="mi">158177199901044792</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180102</span> <span class="o">|</span> <span class="err">杜琦燕</span>    <span class="o">|</span> <span class="mi">151008199801178529</span> <span class="o">|</span> <span class="err">计算机科学与工程</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180103</span> <span class="o">|</span> <span class="err">范统</span>      <span class="o">|</span> <span class="mi">17156319980116959</span><span class="n">X</span> <span class="o">|</span> <span class="err">软件工程</span>                 <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180104</span> <span class="o">|</span> <span class="err">史珍香</span>    <span class="o">|</span> <span class="mi">141992199701078600</span> <span class="o">|</span> <span class="err">软件工程</span>                 <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180105</span> <span class="o">|</span> <span class="err">范剑</span>      <span class="o">|</span> <span class="mi">181048199308156368</span> <span class="o">|</span> <span class="err">飞行器设计</span>               <span class="o">|</span>
-<span class="o">|</span> <span class="mi">20180106</span> <span class="o">|</span> <span class="err">朱逸群</span>    <span class="o">|</span> <span class="mi">197995199501078445</span> <span class="o">|</span> <span class="err">电子信息</span>                 <span class="o">|</span>
-<span class="o">+----------+-----------+--------------------+--------------------------+</span>
-<span class="mi">6</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">id_number</span><span class="p">,</span><span class="w"> </span><span class="n">major</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">number</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="n">id_number</span><span class="w">          </span><span class="o">|</span><span class="w"> </span><span class="n">major</span><span class="w">                    </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180101</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜子腾</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">158177199901044792</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180102</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">杜琦燕</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">151008199801178529</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">计算机科学与工程</span><span class="w">         </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180103</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范统</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">17156319980116959</span><span class="n">X</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180104</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">史珍香</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">141992199701078600</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">软件工程</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180105</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">范剑</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="mi">181048199308156368</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">飞行器设计</span><span class="w">               </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">20180106</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">朱逸群</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">197995199501078445</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="err">电子信息</span><span class="w">                 </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+-----------+--------------------+--------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">6</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>由于我们的搜索条件是<code>2 &gt; 1</code>，这个条件对于表中的每一条记录都成立，所以最后的<code>查询结果</code>就是<code>全部的记录</code>。不过这么写有点儿傻哈，没有一毛钱卵用，没一点实际意义～ 所以<code>通常情况下</code>搜索条件中都会<code>包含列名</code>的。</p>
 <h2 id="函数">函数</h2>
@@ -2105,14 +2107,13 @@
 <p>如果我们想使用这些函数，可以在函数名后加一个小括号<code>()</code>就好，表示调用一下这个函数，简称<code>函数调用</code>。比方说NOW()就代表调用<code>NOW</code>函数来获取当前日期和时间。针对某些包含参数的函数，我们也可以在小括号<code>()</code>里将参数填入，比方说<code>UPPER('abc')</code>表示将字符串<code>'abc'</code>转换为大写格式。</p>
 <p>下边来介绍一些常用的<code>MySQL</code>内置函数：</p>
 <h2 id="文本处理函数">文本处理函数</h2>
-<figure>
-    <img src="/images/mysql/1/20.jpg"/> 
+<figure><img src="/images/mysql/1/20.jpg"/>
 </figure>
 
 <p>我们以<code>SUBSTRING</code>函数为例试一下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2123,21 +2124,21 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">SUBSTRING</span><span class="p">(</span><span class="s1">&#39;abc123&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-<span class="o">+---------------------------+</span>
-<span class="o">|</span> <span class="nf">SUBSTRING</span><span class="p">(</span><span class="s1">&#39;abc123&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+---------------------------+</span>
-<span class="o">|</span> <span class="n">bc1</span>                       <span class="o">|</span>
-<span class="o">+---------------------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">SUBSTRING</span><span class="p">(</span><span class="s1">&#39;abc123&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="o">+---------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">SUBSTRING</span><span class="p">(</span><span class="s1">&#39;abc123&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+---------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">bc1</span><span class="w">                       </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+---------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p><code>函数调用</code>也算是一种<code>表达式</code>的<code>操作数</code>，它可以和其他操作数用操作符连接起来组成一个表达式来作为查询列表的一部分或者放到搜索条件中。我们来以<code>CONCAT</code>函数为例来看一下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2155,27 +2156,26 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;学号为&#39;</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="s1">&#39;的学生在《&#39;</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="s1">&#39;》课程的成绩是：&#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> <span class="k">AS</span> <span class="err">成绩描述</span> <span class="k">FROM</span> <span class="n">student_score</span><span class="p">;</span>
-<span class="o">+---------------------------------------------------------------------------------------+</span>
-<span class="o">|</span> <span class="err">成绩描述</span>                                                                              <span class="o">|</span>
-<span class="o">+---------------------------------------------------------------------------------------+</span>
-<span class="o">|</span> <span class="err">学号为</span><span class="mi">20180101</span><span class="err">的学生在《母猪的产后护理》课程的成绩是：</span><span class="mi">78</span>                              <span class="o">|</span>
-<span class="o">|</span> <span class="err">学号为</span><span class="mi">20180101</span><span class="err">的学生在《论萨达姆的战争准备》课程的成绩是：</span><span class="mi">88</span>                          <span class="o">|</span>
-<span class="o">|</span> <span class="err">学号为</span><span class="mi">20180102</span><span class="err">的学生在《母猪的产后护理》课程的成绩是：</span><span class="mi">100</span>                             <span class="o">|</span>
-<span class="o">|</span> <span class="err">学号为</span><span class="mi">20180102</span><span class="err">的学生在《论萨达姆的战争准备》课程的成绩是：</span><span class="mi">98</span>                          <span class="o">|</span>
-<span class="o">|</span> <span class="err">学号为</span><span class="mi">20180103</span><span class="err">的学生在《母猪的产后护理》课程的成绩是：</span><span class="mi">59</span>                              <span class="o">|</span>
-<span class="o">|</span> <span class="err">学号为</span><span class="mi">20180103</span><span class="err">的学生在《论萨达姆的战争准备》课程的成绩是：</span><span class="mi">61</span>                          <span class="o">|</span>
-<span class="o">|</span> <span class="err">学号为</span><span class="mi">20180104</span><span class="err">的学生在《母猪的产后护理》课程的成绩是：</span><span class="mi">55</span>                              <span class="o">|</span>
-<span class="o">|</span> <span class="err">学号为</span><span class="mi">20180104</span><span class="err">的学生在《论萨达姆的战争准备》课程的成绩是：</span><span class="mi">46</span>                          <span class="o">|</span>
-<span class="o">+---------------------------------------------------------------------------------------+</span>
-<span class="mi">8</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;学号为&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;的学生在《&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">subject</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;》课程的成绩是：&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">成绩描述</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+---------------------------------------------------------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">成绩描述</span><span class="w">                                                                              </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+---------------------------------------------------------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">学号为</span><span class="mi">20180101</span><span class="err">的学生在《母猪的产后护理》课程的成绩是：</span><span class="mi">78</span><span class="w">                              </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">学号为</span><span class="mi">20180101</span><span class="err">的学生在《论萨达姆的战争准备》课程的成绩是：</span><span class="mi">88</span><span class="w">                          </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">学号为</span><span class="mi">20180102</span><span class="err">的学生在《母猪的产后护理》课程的成绩是：</span><span class="mi">100</span><span class="w">                             </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">学号为</span><span class="mi">20180102</span><span class="err">的学生在《论萨达姆的战争准备》课程的成绩是：</span><span class="mi">98</span><span class="w">                          </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">学号为</span><span class="mi">20180103</span><span class="err">的学生在《母猪的产后护理》课程的成绩是：</span><span class="mi">59</span><span class="w">                              </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">学号为</span><span class="mi">20180103</span><span class="err">的学生在《论萨达姆的战争准备》课程的成绩是：</span><span class="mi">61</span><span class="w">                          </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">学号为</span><span class="mi">20180104</span><span class="err">的学生在《母猪的产后护理》课程的成绩是：</span><span class="mi">55</span><span class="w">                              </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">学号为</span><span class="mi">20180104</span><span class="err">的学生在《论萨达姆的战争准备》课程的成绩是：</span><span class="mi">46</span><span class="w">                          </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+---------------------------------------------------------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">8</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="日期和时间处理函数">日期和时间处理函数</h2>
-<figure>
-    <img src="/images/mysql/1/21.jpg"/> 
+<figure><img src="/images/mysql/1/21.jpg"/>
 </figure>
 
 <p><font color=red size=4>   </font><br />
@@ -2229,7 +2229,7 @@
 <p>例：让<code>1949-10-1 00:00:00</code>这个时间值增加100年，可以这么写：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2241,17 +2241,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">DATE_ADD</span><span class="p">(</span><span class="s1">&#39;1949-10-1 00:00:00&#39;</span><span class="p">,</span> <span class="k">INTERVAL</span> <span class="mi">100</span> <span class="kt">YEAR</span><span class="p">);</span>
-<span class="o">+----------------------------------------------------+</span>
-<span class="o">|</span> <span class="nf">DATE_ADD</span><span class="p">(</span><span class="s1">&#39;1949-10-1 00:00:00&#39;</span><span class="p">,</span> <span class="k">INTERVAL</span> <span class="mi">100</span> <span class="kt">YEAR</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+----------------------------------------------------+</span>
-<span class="o">|</span> <span class="mi">2049</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>                                <span class="o">|</span>
-<span class="o">+----------------------------------------------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">DATE_ADD</span><span class="p">(</span><span class="s1">&#39;1949-10-1 00:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">INTERVAL</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="kt">YEAR</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="o">+----------------------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">DATE_ADD</span><span class="p">(</span><span class="s1">&#39;1949-10-1 00:00:00&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">INTERVAL</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="kt">YEAR</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------------------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">2049</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="w">                                </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------------------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><div class="alert alert-info" role="alert" data-dir="ltr">*在使用<code>DATE_FORMAT</code>函数时需要注意，我们可以通过一些所谓的格式符来自定义日期和时间的显示格式，下边是MySQL中常用的一些日期和时间的格式符以及它们对应的含义：</div>
  <table>
@@ -2327,7 +2327,7 @@
 <p><code>例子如下：</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2338,20 +2338,19 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="nf">date_format</span><span class="p">(</span><span class="nf">now</span><span class="p">(),</span><span class="s2">&#34;%Y-%m-%d %H:%i:%s&#34;</span><span class="p">);</span>
-<span class="o">+----------------------------------------+</span>
-<span class="o">|</span> <span class="nf">date_format</span><span class="p">(</span><span class="nf">now</span><span class="p">(),</span><span class="s2">&#34;%Y-%m-%d %H:%i:%s&#34;</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+----------------------------------------+</span>
-<span class="o">|</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">22</span> <span class="mi">13</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mi">20</span>                    <span class="o">|</span>
-<span class="o">+----------------------------------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="nf">date_format</span><span class="p">(</span><span class="nf">now</span><span class="p">(),</span><span class="s2">&#34;%Y-%m-%d %H:%i:%s&#34;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="o">+----------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">date_format</span><span class="p">(</span><span class="nf">now</span><span class="p">(),</span><span class="s2">&#34;%Y-%m-%d %H:%i:%s&#34;</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">2020</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">22</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mi">20</span><span class="w">                    </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------------------------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="数值处理函数">数值处理函数</h2>
-<figure>
-    <img src="/images/mysql/1/22.jpg"/> 
+<figure><img src="/images/mysql/1/22.jpg"/>
 </figure>
 
 <h2 id="聚集函数">聚集函数</h2>
@@ -2404,7 +2403,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2415,22 +2414,22 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">student_info</span><span class="p">;</span>
-<span class="o">+----------+</span>
-<span class="o">|</span> <span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+----------+</span>
-<span class="o">|</span>        <span class="mi">6</span> <span class="o">|</span>
-<span class="o">+----------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">        </span><span class="mi">6</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+----------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><p>###　MAX函数</p>
 <p><code>MAX</code>函数是用来查询某列中数据的<code>最大值</code>，以<code>student_score</code>表中的<code>score</code>列为例来看一下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2441,22 +2440,22 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">MAX</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">student_score</span><span class="p">;</span>
-<span class="o">+------------+</span>
-<span class="o">|</span> <span class="nf">MAX</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="o">|</span>        <span class="mi">100</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">MAX</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">MAX</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">        </span><span class="mi">100</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="min函数">MIN函数</h3>
 <p><code>MIN</code>函数是用来查询某列中数据的最小值，以<code>student_score</code>表中的<code>score</code>列为例来看一下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2467,22 +2466,22 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">MIN</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">student_score</span><span class="p">;</span>
-<span class="o">+------------+</span>
-<span class="o">|</span> <span class="nf">MIN</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="o">|</span>         <span class="mi">46</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">MIN</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">MIN</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">         </span><span class="mi">46</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="sum函数">SUM函数</h3>
 <p><code>SUM</code>函数是用来计算某列数据的和，还是以<code>student_score</code>表中的<code>score</code>列为例来看一下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2493,22 +2492,22 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">SUM</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">student_score</span><span class="p">;</span>
-<span class="o">+------------+</span>
-<span class="o">|</span> <span class="nf">SUM</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="o">|</span>        <span class="mi">585</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">SUM</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">SUM</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">        </span><span class="mi">585</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="avg函数">AVG函数</h3>
 <p><code>AVG</code>函数是用来计算某列数据的平均数，还是以<code>student_score</code>表中的<code>score</code>列为例来看一下:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2519,21 +2518,21 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">student_score</span><span class="p">;</span>
-<span class="o">+------------+</span>
-<span class="o">|</span> <span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="o">|</span>    <span class="mi">73</span><span class="p">.</span><span class="mi">1250</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">    </span><span class="mi">73</span><span class="p">.</span><span class="mi">1250</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="给定搜索条件下聚集函数的使用">给定搜索条件下聚集函数的使用</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2544,22 +2543,22 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">student_score</span> <span class="k">WHERE</span> <span class="n">subject</span> <span class="o">=</span> <span class="s1">&#39;母猪的产后护理&#39;</span><span class="p">;</span>
-<span class="o">+------------+</span>
-<span class="o">|</span> <span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="o">|</span>    <span class="mi">73</span><span class="p">.</span><span class="mi">0000</span> <span class="o">|</span>
-<span class="o">+------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;母猪的产后护理&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">    </span><span class="mi">73</span><span class="p">.</span><span class="mi">0000</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="聚集函数中distinct的使用">聚集函数中DISTINCT的使用</h3>
 <p>默认情况下，聚集函数将计算指定列的所有非NULL数据，如果我们指定的列中有重复数据的话，可以选择使用<code>DISTINCT</code>来过滤掉这些重复数据。比方说我们想查看一下<code>student_info</code>表中存储了多少个专业的学生信息，就可以这么写：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2570,22 +2569,22 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">major</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">student_info</span><span class="p">;</span>
-<span class="o">+-----------------------+</span>
-<span class="o">|</span> <span class="nf">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">major</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+-----------------------+</span>
-<span class="o">|</span>                     <span class="mi">4</span> <span class="o">|</span>
-<span class="o">+-----------------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">major</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_info</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+-----------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">major</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+-----------------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">                     </span><span class="mi">4</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+-----------------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="组合聚集函数">组合聚集函数</h3>
 <p>聚集函数也可以集中在一个查询中使用，比如这样：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2596,16 +2595,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="err">成绩记录总数</span><span class="p">,</span> <span class="nf">MAX</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">AS</span> <span class="err">最高成绩</span><span class="p">,</span> <span class="nf">MIN</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">AS</span> <span class="err">最低成绩</span><span class="p">,</span> <span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">AS</span> <span class="err">平均成绩</span> <span class="k">FROM</span> <span class="n">student_score</span><span class="p">;</span>
-<span class="o">+--------------------+--------------+--------------+--------------+</span>
-<span class="o">|</span> <span class="err">成绩记录总数</span>       <span class="o">|</span> <span class="err">最高成绩</span>     <span class="o">|</span> <span class="err">最低成绩</span>     <span class="o">|</span> <span class="err">平均成绩</span>     <span class="o">|</span>
-<span class="o">+--------------------+--------------+--------------+--------------+</span>
-<span class="o">|</span>                  <span class="mi">8</span> <span class="o">|</span>          <span class="mi">100</span> <span class="o">|</span>           <span class="mi">46</span> <span class="o">|</span>      <span class="mi">73</span><span class="p">.</span><span class="mi">1250</span> <span class="o">|</span>
-<span class="o">+--------------------+--------------+--------------+--------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">成绩记录总数</span><span class="p">,</span><span class="w"> </span><span class="nf">MAX</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">最高成绩</span><span class="p">,</span><span class="w"> </span><span class="nf">MIN</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">最低成绩</span><span class="p">,</span><span class="w"> </span><span class="nf">AVG</span><span class="p">(</span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="err">平均成绩</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">student_score</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+--------------------+--------------+--------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="err">成绩记录总数</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="err">最高成绩</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="err">最低成绩</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="err">平均成绩</span><span class="w">     </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+--------------------+--------------+--------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">                  </span><span class="mi">8</span><span class="w"> </span><span class="o">|</span><span class="w">          </span><span class="mi">100</span><span class="w"> </span><span class="o">|</span><span class="w">           </span><span class="mi">46</span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="mi">73</span><span class="p">.</span><span class="mi">1250</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+--------------------+--------------+--------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="隐式类型转换">隐式类型转换</h2>
 <hr />
@@ -2614,7 +2613,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2625,23 +2624,23 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="s1">&#39;2&#39;</span><span class="p">;</span>
-<span class="o">+-------+---------+-----------+</span>
-<span class="o">|</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">|</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">|</span> <span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="s1">&#39;2&#39;</span> <span class="o">|</span>
-<span class="o">+-------+---------+-----------+</span>
-<span class="o">|</span>     <span class="mi">3</span> <span class="o">|</span>       <span class="mi">3</span> <span class="o">|</span>         <span class="mi">3</span> <span class="o">|</span>
-<span class="o">+-------+---------+-----------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="o">+-------+---------+-----------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+-------+---------+-----------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w">     </span><span class="mi">3</span><span class="w"> </span><span class="o">|</span><span class="w">       </span><span class="mi">3</span><span class="w"> </span><span class="o">|</span><span class="w">         </span><span class="mi">3</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+-------+---------+-----------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>2.将函数参数转换为该函数期望的类型。</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -2652,23 +2651,23 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">),</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-<span class="o">+------------------+----------------+--------------+</span>
-<span class="o">|</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">|</span>
-<span class="o">+------------------+----------------+--------------+</span>
-<span class="o">|</span> <span class="mi">12</span>               <span class="o">|</span> <span class="mi">12</span>             <span class="o">|</span> <span class="mi">12</span>           <span class="o">|</span>
-<span class="o">+------------------+----------------+--------------+</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">),</span><span class="w"> </span><span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nf">CONCAT</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="o">+------------------+----------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nf">CONCAT</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------------+----------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="mi">12</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="mi">12</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="mi">12</span><span class="w">           </span><span class="o">|</span><span class="w">
+</span><span class="w"></span><span class="o">+------------------+----------------+--------------+</span><span class="w">
+</span><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>3.存储数据时，把某个值转换为某个列需要的类型。</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2680,17 +2679,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="nf">t</span> <span class="p">(</span>
-    <span class="n">i1</span> <span class="kt">TINYINT</span><span class="p">,</span>
-    <span class="n">i2</span> <span class="kt">TINYINT</span><span class="p">,</span>
-    <span class="n">s</span> <span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="nf">t</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="n">row</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="nf">t</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span><span class="w">    </span><span class="n">i1</span><span class="w"> </span><span class="kt">TINYINT</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">i2</span><span class="w"> </span><span class="kt">TINYINT</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w">
+</span><span class="w"></span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">i1</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;100&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="nf">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w">
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="类型转换的注意事项">类型转换的注意事项</h3>
 <ul>
@@ -2995,11 +2994,11 @@
         </li>
         
         <li>
-          <a href="/databases/mysql/9/" class="related__link">子查询</a>
+          <a href="/databases/mysql/8/" class="related__link">分组查询</a>
         </li>
         
         <li>
-          <a href="/databases/mysql/8/" class="related__link">分组查询</a>
+          <a href="/databases/mysql/9/" class="related__link">子查询</a>
         </li>
         
     </ul>

@@ -1351,7 +1351,7 @@
     <meta property="twitter:description" content="从零蛋开始学习 MySQL">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1557,11 +1557,15 @@
       
         <li class="navbarm__menu--item ">
           <a href="/interview">
-            面试
+            算法
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
           </a>
         </li>
 
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/quality_questions">优质题目</a>
+          </li>
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/algorithm">剑指offer</a>
@@ -1736,10 +1740,12 @@
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
     <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      面试
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
+      
+      <a href="/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
       
@@ -1917,8 +1923,7 @@
 </table>
 <h2 id="浮点数类型">浮点数类型</h2>
 <p>关于浮点数如何在计算机中存储，请先阅读<a href="/en/article/computer/float/">《你真的了解浮点数吗？》</a></p>
-<figure>
-    <img src="/images/mysql/1/1.jpg"/> 
+<figure><img src="/images/mysql/1/1.jpg"/>
 </figure>
 
 <h2 id="设置最大位数和小数位数">设置最大位数和小数位数</h2>
@@ -1934,16 +1939,14 @@ DOUBLE(M, D)</font></p>
 </ul>
 <p>这个好理解，小数点后有几个十进制数字，<font color=VioletRed size=3 >D</font>的值就是什么。</p>
 <p>举个例子看一下，设置了<font color=VioletRed size=3 >M</font>和<font color=VioletRed size=3 >D</font>的单精度浮点数的取值范围的变化：</p>
-<figure>
-    <img src="/images/mysql/1/2.jpg"/> 
+<figure><img src="/images/mysql/1/2.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 ></font></p>
 <p>可以看到，在D相同的情况下，M越大，该类型的取值范围越大；在M相同的情况下，D越大，该类型的取值范围越小。当然，M和D的取值也不是无限大的，<font color=VioletRed size=3 >M</font>的取值范围是<font color=VioletRed size=3 >1~255</font>，<font color=VioletRed size=3 >D</font>的取值范围是<font color=VioletRed size=3 >0~30</font>，<font color=VioletRed size=3 >而且D的值必须不大于M</font>。M和D都是可选的，如果我们省略了它们，那它们的值按照机器支持的最大值来存储。</p>
 <h2 id="定点数类型">定点数类型</h2>
 <p>正因为用浮点数表示小数可能会有不精确的情况，在一些情况下我们必须保证小数是精确的，所以设计MySQL的大叔们提出一种称之为定点数的数据类型，它也是存储小数的一种方式：</p>
-<figure>
-    <img src="/images/mysql/1/3.jpg"/> 
+<figure><img src="/images/mysql/1/3.jpg"/>
 </figure>
 
 <p>对于给定<font color=VioletRed size=3 >M、D</font>值的<font color=VioletRed size=3 >DECIMAL(M, D)</font>类型，比如<font color=VioletRed size=3 >DEMCIMAL(16, 4)</font>来说：</p>
@@ -1951,14 +1954,12 @@ DOUBLE(M, D)</font></p>
 <ul>
 <li>首先确定小数点左边的整数最多需要存储的十进制位数是12位，小数点右边的整数需要存储的十进制位数是4位，如图所示：</li>
 </ul>
-<figure>
-    <img src="/images/mysql/1/1.webp"/> 
+<figure><img src="/images/mysql/1/1.webp"/>
 </figure>
 
 <p><font color=VioletRed size=3 >  </font></p>
 <p>从小数点位置出发，每个整数每隔9个十进制位划分为1组，效果就是这样：</p>
-<figure>
-    <img src="/images/mysql/1/4.jpg"/> 
+<figure><img src="/images/mysql/1/4.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 >   </font></p>
@@ -1966,8 +1967,7 @@ DOUBLE(M, D)</font></p>
 <ul>
 <li>针对每个组中的十进制数字，将其转换为二进制数字进行存储，根据组中包含的十进制数字位数不同，所需的存储空间大小也不同，具体见下表：</li>
 </ul>
-<figure>
-    <img src="/images/mysql/1/5.jpg"/> 
+<figure><img src="/images/mysql/1/5.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 >   </font></p>
@@ -1986,8 +1986,7 @@ DECIMAL(n) = DECIMAL(n, 0)</p>
 <div class="alert alert-info" role="alert" data-dir="ltr">小贴士： 在使用的存储空间大小相同的情况下，无符号整数可以表示的正整数范围比有符号整数能表示的正整数范围大一倍。不过受浮点数和定点数具体的存储格式影响，无符号浮点数和定点数并不能提升正数的表示范围。</div>
 <h2 id="日期和时间类型">日期和时间类型</h2>
 <p>我们有很多场景需要表示时间或日期，比如学生基本信息中的入学时间就需要用日期的格式保存。MySQL为我们提供了多种关于时间和日期的类型，各种类型能表示的范围如下：</p>
-<figure>
-    <img src="/images/mysql/1/6.jpg"/> 
+<figure><img src="/images/mysql/1/6.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 >   </font></p>
@@ -1997,14 +1996,12 @@ DECIMAL(n) = DECIMAL(n, 0)</p>
 <p>其中的小数秒位数可以在0、1、2、3、4、5、6中选择</p>
 </div>
 <p>比如<font color=VioletRed size=3 >DATETIME(0)</font>表示精确到秒，<font color=VioletRed size=3 >DATETIME(3)</font>表示精确到毫秒，<font color=VioletRed size=3 >DATETIME(5)</font>表示精确到10微秒。如果你在选择<font color=VioletRed size=3 >TIME、DATETIME、TIMESTAMP</font>这几种类型的时候添加了对小数秒的支持，那么所需的存储空间需要相应的扩大，保留不同的小数秒位数，那么增加的存储空间大小也不同，如下表：</p>
-<figure>
-    <img src="/images/mysql/1/7.jpg"/> 
+<figure><img src="/images/mysql/1/7.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 >   </font></p>
 <p>也就是说如果你选择使用<font color=VioletRed size=3 >DATETIME(1)</font>，那么需要的存储空间就是在<font color=VioletRed size=3 >DATETIME</font>的空间上再加上小数秒需要的空间，就是<font color=VioletRed size=3 >8 + 1 = 9</font>个字节，类似的，<font color=VioletRed size=3 >DATETIME(3)</font>就需要<font color=VioletRed size=3 >8 + 2 = 10</font>个字节。所以，MySQL5.6.4这个版本之后的各个类型需要的存储空间和取值范围就如下：</p>
-<figure>
-    <img src="/images/mysql/1/8.jpg"/> 
+<figure><img src="/images/mysql/1/8.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 >   </font></p>
@@ -2047,8 +2044,7 @@ DECIMAL(n) = DECIMAL(n, 0)</p>
 <div class="alert alert-info" role="alert" data-dir="ltr">小贴士： 正宗的utf8字符集是使用1~4个字节来编码一个字符的，不过MySQL中对utf8字符集做了阉割，编码一个字符最多使用3个字节。如果我们之后有存储使用4个字节来编码的字符的情景，可以使用一种称之为utf8mb4的字符集，它才是正宗的utf8字符集。</div>
 <h2 id="mysql的字符串类型">MySQL的字符串类型</h2>
 <p>现在我们可以看一下MySQL中提供的各种字符串类型（注：其中<font color=VioletRed size=3 >M</font>代表该数据类型最多能存储的字符数量，<font color=VioletRed size=3 >L</font>代表我们实际向该类型的属性中存储的字符串在特定字符集下所占的字节数，<font color=VioletRed size=3 >W</font>代表在该特定字符集下，编码一个字符最多需要的字节数）</p>
-<figure>
-    <img src="/images/mysql/1/9.jpg"/> 
+<figure><img src="/images/mysql/1/9.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 >   </font></p>
@@ -2058,8 +2054,7 @@ DECIMAL(n) = DECIMAL(n, 0)</p>
 <hr />
 <h2 id="bit类型">BIT类型</h2>
 <p>有时候我们有存储单个或者多个比特位的需求，此时就可以用到下边这种类型：</p>
-<figure>
-    <img src="/images/mysql/1/11.jpg"/> 
+<figure><img src="/images/mysql/1/11.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 >   </font></p>
@@ -2079,8 +2074,7 @@ DECIMAL(n) = DECIMAL(n, 0)</p>
 <h2 id="binarym与varbinarym">BINARY(M)与VARBINARY(M)</h2>
 <p><font color=VioletRed size=3 >BINARY(M)和VARBINARY(M)</font>对应于我们前边提到的<font color=VioletRed size=3 >CHAR(M)和VARCHAR(M)</font>，都是前者是固定长度的类型，后者是可变长度的类型，只不过BINARY(M)和VARBINARY(M)是用来存放字节的，其中的<font color=VioletRed size=3 >M</font>代表该类型最多能存放的<font color=VioletRed size=3 >字节数量</font>，而CHAR(M)和VARCHAR(M)是用来存储字符的，其中的M代表该类型最多能存放的<font color=VioletRed size=3 >字符数量</font>。</p>
 <h2 id="其他的二进制类型">其他的二进制类型</h2>
-<figure>
-    <img src="/images/mysql/1/10.jpg"/> 
+<figure><img src="/images/mysql/1/10.jpg"/>
 </figure>
 
 <p><font color=VioletRed size=3 >   </font></p>
