@@ -16,7 +16,7 @@ notAllowedTypesInHomeSidebar = ["exercise","compare","touge","about","gallery","
 # 不允许被日志记录的目录名（以后删除日志）
 notAllowedTypesInArchive = ["touge","gallery","archive","write","exercise","about"]
 
-notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
+notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery","write"]
 # 主页大小
 viewportSize = "normal" # widest, wider, wide, normal, narrow
 # 翻页效果
