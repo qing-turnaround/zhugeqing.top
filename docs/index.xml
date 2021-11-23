@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sun, 14 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/index.xml" rel="self" type="application/rss+xml" />
@@ -44,11 +44,11 @@
       
       <item>
         <title>最长上升子序列</title>
-        <link>https://www.zhugeqing.top/quality_questions/longest-increasing-subsequence/</link>
+        <link>https://www.zhugeqing.top/interview/quality_questions/longest-increasing-subsequence/</link>
         <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
         
         <atom:modified>Wed, 10 Nov 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/quality_questions/longest-increasing-subsequence/</guid>
+        <guid>https://www.zhugeqing.top/interview/quality_questions/longest-increasing-subsequence/</guid>
         <description>题目 给定一个长度为 N 的数列，求数值严格单调递增的子序列的长度最长是多少。 输入格式 第一行包含整数 N。 第二行包含 N 个整数，表示完整序列。 输出格式 输出一个整数，表示最大长度。 数据范围 1≤N≤1000， −109≤数列中的数≤109 输入样例： 7 3 1 2 1 8 5 6 输出样例： 4 解法 动态规划 思路：定义dp[i]为考虑数组前i个元素，以nums[i]结尾的最长上升子序列，从小到大计算dp[i]的值。 状态转移方程为：dp</description>
         <content:encoded>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
 &lt;font color=SkyBlue&gt;
@@ -169,7 +169,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;二分--动态规划&#34;&gt;二分 + 动态规划&lt;/h3&gt;
 &lt;p&gt;&lt;font color=SkyBlue&gt;单纯的动态规划做法，计算每一个i的dp值需要从0遍历到i-1，这样太耗费时间，所以可以考虑维护一个数组dp，dp中的元素是严格递增的，每当遍历一个数组中元素v时，如果v比dp末尾元素还大，那就直接插入尾部，否则将dp数组中第一个大于v的元素改成v（除非有和v相同大小的元素，那么就不用改变），在遍历的同时需要维护一个res，记录dp数组的长度（不是真实长度，而是维护的虚拟长度），最终返回res&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;时间复杂度 O(NlogN) ： 遍历 numsnums 列表需 O(N)O(N)，在每个 nums[i]nums[i] 二分法需 O(logN)。&lt;/code&gt;&lt;br /&gt;
+&lt;p&gt;&lt;code&gt;时间复杂度 O(NlogN) ： 遍历 nums 列表需 O(N)，在每个 nums[i] 二分法需 O(logN)。&lt;/code&gt;&lt;br /&gt;
 &lt;code&gt;空间复杂度 O(N)：dp数组需要O(n)的空间&lt;/code&gt;&lt;/p&gt;
 &lt;img src=&#34;https://www.zhugeqing.top/images/algorithm_interview/LIS.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

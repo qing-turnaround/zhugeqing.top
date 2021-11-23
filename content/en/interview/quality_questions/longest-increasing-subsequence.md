@@ -104,7 +104,7 @@ func max(a, b int) int {
 
 <font color=SkyBlue>单纯的动态规划做法，计算每一个i的dp值需要从0遍历到i-1，这样太耗费时间，所以可以考虑维护一个数组dp，dp中的元素是严格递增的，每当遍历一个数组中元素v时，如果v比dp末尾元素还大，那就直接插入尾部，否则将dp数组中第一个大于v的元素改成v（除非有和v相同大小的元素，那么就不用改变），在遍历的同时需要维护一个res，记录dp数组的长度（不是真实长度，而是维护的虚拟长度），最终返回res</font>
 
-``时间复杂度 O(NlogN) ： 遍历 numsnums 列表需 O(N)O(N)，在每个 nums[i]nums[i] 二分法需 O(logN)。``
+``时间复杂度 O(NlogN) ： 遍历 nums 列表需 O(N)，在每个 nums[i] 二分法需 O(logN)。``
 ``空间复杂度 O(N)：dp数组需要O(n)的空间``
 
 <img src="/images/algorithm_interview/LIS.png" width="70%" height="70%">
@@ -153,3 +153,5 @@ func lengthOfLIS(nums []int) int {
 	return res
 }
 ```
+
+

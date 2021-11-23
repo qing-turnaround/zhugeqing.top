@@ -41,7 +41,7 @@
 [[main]]
   parent = "算法"
   name = "优质题目"
-  url = "quality_questions"
+  url = "interview/quality_questions"
 
 [[main]]
   identifier = "数据结构与排序算法"
