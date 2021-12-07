@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Go语言 on 诸葛青的编程之旅</title>
+    <link>https://www.zhugeqing.top/article/problems/go/</link>
+    <description>Recent content in Go语言 on 诸葛青的编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
+    <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/article/problems/go/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Go语言Gc</title>
+        <link>https://www.zhugeqing.top/article/problems/go/gc/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/article/problems/go/gc/</guid>
+        <description>三色标记原理 第一步 第二步 第三步 第四步</description>
+        <content:encoded>&lt;h2 id=&#34;三色标记原理&#34;&gt;三色标记原理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;第一步&lt;/code&gt;&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/article/problems/go/GC1.png&#34; width=&#34;70%&#34; height=&#34;60%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;第二步&lt;/code&gt;&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/article/problems/go/GC2.png&#34; width=&#34;70%&#34; height=&#34;60%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;第三步&lt;/code&gt;&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/article/problems/go/GC3.png&#34; width=&#34;70%&#34; height=&#34;60%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;第四步&lt;/code&gt;&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/article/problems/go/GC4.png&#34; width=&#34;70%&#34; height=&#34;60%&#34;&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>GO题目</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

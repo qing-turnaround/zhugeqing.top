@@ -1410,7 +1410,7 @@
     
 </head>
 
-<body id="root" class="theme__dark">
+<body id="root" class="theme__hacker">
     <script>
         var localTheme = localStorage.getItem('theme');
         if (localTheme) {
@@ -1449,15 +1449,15 @@
       
         
         <a href="#" class="dropdown-item select-theme__item is-active">
+          hacker
+        </a>
+        
+        <a href="#" class="dropdown-item select-theme__item ">
           dark
         </a>
         
         <a href="#" class="dropdown-item select-theme__item ">
           light
-        </a>
-        
-        <a href="#" class="dropdown-item select-theme__item ">
-          hacker
         </a>
         
         <a href="#" class="dropdown-item select-theme__item ">
@@ -1674,15 +1674,15 @@
       
         
         <a href="#" class="dropdown-item select-theme__item is-active">
+          hacker
+        </a>
+        
+        <a href="#" class="dropdown-item select-theme__item ">
           dark
         </a>
         
         <a href="#" class="dropdown-item select-theme__item ">
           light
-        </a>
-        
-        <a href="#" class="dropdown-item select-theme__item ">
-          hacker
         </a>
         
         <a href="#" class="dropdown-item select-theme__item ">
@@ -1821,7 +1821,7 @@
   
   <li >
     
-      <a href="https://www.zhugeqing.top/interview/" class="capitalize">为了面试</a>
+      <a href="https://www.zhugeqing.top/interview/" class="capitalize">算法之路</a>
     
   </li>
   
@@ -2702,15 +2702,7 @@
     <ul class="related-ul">
         
         <li>
-          <a href="/interview/algorithm_interview/chapter8/4/" class="related__link">第八章第四节——floodfill</a>
-        </li>
-        
-        <li>
-          <a href="/interview/algorithm_interview/chapter10/1/" class="related__link">第十章第一节</a>
-        </li>
-        
-        <li>
-          <a href="/interview/algorithm_interview/chapter4/1/" class="related__link">第四章第一节</a>
+          <a href="/interview/algorithm_interview/chapter7/2/" class="related__link">第七章第二节</a>
         </li>
         
         <li>
@@ -2718,7 +2710,15 @@
         </li>
         
         <li>
-          <a href="/interview/algorithm_interview/chapter7/2/" class="related__link">第七章第二节</a>
+          <a href="/interview/algorithm_interview/chapter7/1/" class="related__link">第七章第一节</a>
+        </li>
+        
+        <li>
+          <a href="/interview/algorithm_interview/chapter8/2/" class="related__link">第八章第二节——排列</a>
+        </li>
+        
+        <li>
+          <a href="/interview/algorithm_interview/chapter6/1/" class="related__link">第六章第一节</a>
         </li>
         
     </ul>
@@ -3475,7 +3475,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (lib && lib.includes('mermaid')) {
       
-      var themeVariant = localStorage.getItem('theme') || JSON.parse("\"dark\"");
+      var themeVariant = localStorage.getItem('theme') || JSON.parse("\"hacker\"");
 
       if (themeVariant === "dark" || themeVariant === "hacker") {
         mermaid.initialize({ theme: 'dark' });
