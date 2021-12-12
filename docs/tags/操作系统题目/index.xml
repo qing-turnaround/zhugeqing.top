@@ -21,11 +21,11 @@
       
       <item>
         <title>进程和线程</title>
-        <link>https://www.zhugeqing.top/article/problems/os/process_thread/</link>
+        <link>https://www.zhugeqing.top/problems/os/process_thread/</link>
         <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
         
         <atom:modified>Wed, 24 Nov 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/article/problems/os/process_thread/</guid>
+        <guid>https://www.zhugeqing.top/problems/os/process_thread/</guid>
         <description>1. 进程与线程有什么区别 了解进程与线程——&amp;gt;进程与线程的一个简单解释 答： 调度：进程是资源管理的基本单位，线程是程序执行的基本单位 拥有资源：进程是拥有资源的一个独立单位，线程不拥有资源，只拥有一点在运行中必不可少的资源（如程序计数器,一组寄存器和栈），和同属于本进程的线程共享本进程的资源（cpu，I/O，内存等） 切换：进程上下文切换比线程上下文切换要快得多。（因为进程切换需要保存进程当前的整个环</description>
         <content:encoded>&lt;h2 id=&#34;1-进程与线程有什么区别&#34;&gt;1. 进程与线程有什么区别&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;了解进程与线程&lt;/code&gt;——&amp;gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html&#34;&gt;进程与线程的一个简单解释&lt;/a&gt;&lt;/p&gt;

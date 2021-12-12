@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>golang基础篇 – 请跟我一起踏上编程之旅</title>
+    <title>Go，Go，Go！ – 诸葛青的编程之旅</title>
     
 
 
@@ -309,7 +309,7 @@
     
     var tocFolding = JSON.parse("true");
     
-    var tocLevels = JSON.parse("[\"h2\",\"h3\",\"h4\"]");
+    var tocLevels = JSON.parse("[\"h2\",\"h1\",\"h3\",\"h4\",\"h5\"]");
     
     if (tocLevels) {
       tocLevels = tocLevels.toString();
@@ -651,9 +651,9 @@
 
   
     
-    var baseurl = JSON.parse("\"https://2110833194.github.io\"");
+    var baseurl = JSON.parse("\"https://www.zhugeqing.top\"");
     
-    var permalink = JSON.parse("\"https://2110833194.github.io/golang/\"");
+    var permalink = JSON.parse("\"https://www.zhugeqing.top/golang/\"");
     
     var langprefix = JSON.parse("\"\"");
     var searchResults = null;
@@ -1323,34 +1323,37 @@
 
 
     
-<link rel="alternate" type="application/rss&#43;xml" title="RSS" href="https://2110833194.github.io/golang/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" title="RSS" href="https://www.zhugeqing.top/golang/index.xml">
 
-<meta name="description" content="" />
-
-
-<meta name="created" content="2021-04-16T14:08:48&#43;0000">
-<meta name="modified" content="2021-04-16T14:08:48&#43;0000">
-<meta property="article:published_time" content="2021-04-16T14:08:48&#43;0000">
-
-<meta name="author" content="诸葛青的编程之旅">
+<meta name="description" content="成长的路口" />
 
 
-<meta property="og:site_name" content="请跟我一起踏上编程之旅">
-<meta property="og:title" content="golang基础篇">
-<meta property="og:url" content="https://2110833194.github.io/golang/">
+<meta name="keywords" content="">
+
+<meta name="created" content="2021-10-09T00:00:00&#43;0000">
+<meta name="modified" content="2021-10-09T00:00:00&#43;0000">
+<meta property="article:published_time" content="2021-10-09T00:00:00&#43;0000">
+
+<meta name="author" content="诸葛青">
+<meta property="article:author" content="https://www.zhugeqing.top/golang/@诸葛青">
+
+
+<meta property="og:site_name" content="诸葛青的编程之旅">
+<meta property="og:title" content="Go，Go，Go！">
+<meta property="og:url" content="https://www.zhugeqing.top/golang/">
 <meta property="og:type" content="website">
-<meta property="og:description" content="">
+<meta property="og:description" content="成长的路口">
 
   
-    <meta property="og:image" content="https://2110833194.github.io/favicon/maidan3g.ico">
-    <meta property="og:image:url" content="https://2110833194.github.io/favicon/maidan3g.ico">
+    <meta property="og:image" content="https://www.zhugeqing.top/images/Go.jpg">
+    <meta property="og:image:url" content="https://www.zhugeqing.top/images/Go.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:app:name:iphone" content="请跟我一起踏上编程之旅">
-    <meta property="twitter:title" content="golang基础篇">
-    <meta property="twitter:description" content="">
+    <meta name="twitter:app:name:iphone" content="诸葛青的编程之旅">
+    <meta property="twitter:title" content="Go，Go，Go！">
+    <meta property="twitter:description" content="成长的路口">
   
 
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.89.2" />
 <meta name="msapplication-TileColor" content="#fff">
 
 <meta name="theme-color" content="#fff">
@@ -1359,7 +1362,7 @@
 
 <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
 
-<link rel="canonical" href="https://2110833194.github.io/golang/">
+<link rel="canonical" href="https://www.zhugeqing.top/golang/">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -1373,16 +1376,22 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "url" : "https://2110833194.github.io/golang/",
-    "name": "golang基础篇",
+    "url" : "https://www.zhugeqing.top/golang/",
+    "name": "Go，Go，Go！",
+    "description": "成长的路口",
+    "image" : "https://www.zhugeqing.top/images/Go.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "诸葛青"
+    },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://2110833194.github.io"
+      "@id": "https://www.zhugeqing.top"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "请跟我一起踏上编程之旅",
-      "url": "https://2110833194.github.io"
+      "name": "诸葛青的编程之旅",
+      "url": "https://www.zhugeqing.top"
     }
   }
 </script>
@@ -1400,7 +1409,7 @@
     
 </head>
 
-<body id="root" class="theme__dark">
+<body id="root" class="theme__hacker">
     <script>
         var localTheme = localStorage.getItem('theme');
         if (localTheme) {
@@ -1439,15 +1448,15 @@
       
         
         <a href="#" class="dropdown-item select-theme__item is-active">
+          hacker
+        </a>
+        
+        <a href="#" class="dropdown-item select-theme__item ">
           dark
         </a>
         
         <a href="#" class="dropdown-item select-theme__item ">
           light
-        </a>
-        
-        <a href="#" class="dropdown-item select-theme__item ">
-          hacker
         </a>
         
         <a href="#" class="dropdown-item select-theme__item ">
@@ -1522,33 +1531,7 @@
 
       
         <li class="navbarm__menu--item ">
-          <a href="/gallery">
-            Gallery
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
-          </a>
-        </li>
-
-        
-          <li class="navbarm__menu--item navbarm__menu--subitem">
-            <a href="/gallery/cartoon">Cartoon</a>
-          </li>
-        
-          <li class="navbarm__menu--item navbarm__menu--subitem">
-            <a href="/gallery/photo">Photo</a>
-          </li>
-        
-
-      
-      
-    
-      
-      
-      
-      
-
-      
-        <li class="navbarm__menu--item active">
-          <a href="/golang">进击的golang</a>
+          <a href="/intelligence">智力题</a>
         </li>
       
       
@@ -1560,7 +1543,75 @@
 
       
         <li class="navbarm__menu--item ">
-          <a href="/intelligence">智力题</a>
+          <a href="/databases">数据库</a>
+        </li>
+      
+      
+    
+      
+      
+      
+      
+
+      
+        <li class="navbarm__menu--item ">
+          <a href="/interview">
+            算法
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
+          </a>
+        </li>
+
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/interview/quality_questions">优质题目</a>
+          </li>
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/interview/algorithm">剑指offer</a>
+          </li>
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/interview/algorithm_interview">算法实战</a>
+          </li>
+        
+
+      
+      
+    
+      
+      
+      
+      
+
+      
+        <li class="navbarm__menu--item ">
+          <a href="/data_structure_and_sort">
+            必知必会
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
+          </a>
+        </li>
+
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/data_structure_and_sort/sort">排序算法</a>
+          </li>
+        
+          <li class="navbarm__menu--item navbarm__menu--subitem">
+            <a href="/data_structure_and_sort/datastructure">数据结构</a>
+          </li>
+        
+
+      
+      
+    
+      
+      
+      
+      
+
+      
+        <li class="navbarm__menu--item ">
+          <a href="/recommend_site">推荐网站</a>
         </li>
       
       
@@ -1601,6 +1652,16 @@
 </div>
   <div class="navbar__menu">
   
+    <div class="theme">
+  <div class="dropdown">
+    <button class="dropdown-trigger navbar__slide-down navbar-search" aria-label="Search Button" data-ani="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+    </button>
+    <div class="dropdown-content">
+    </div>
+  </div>
+</div>
+  
   
   
 <div class="theme" data-ani="true">
@@ -1612,15 +1673,15 @@
       
         
         <a href="#" class="dropdown-item select-theme__item is-active">
+          hacker
+        </a>
+        
+        <a href="#" class="dropdown-item select-theme__item ">
           dark
         </a>
         
         <a href="#" class="dropdown-item select-theme__item ">
           light
-        </a>
-        
-        <a href="#" class="dropdown-item select-theme__item ">
-          hacker
         </a>
         
         <a href="#" class="dropdown-item select-theme__item ">
@@ -1659,17 +1720,35 @@
   
   
   
+  <a href="/intelligence" class="navbar__menu-item navbar__slide-down " dir="ltr" data-ani="true">智力题</a>
+  
+  
+  
+  
+  
+  
+  
+  <a href="/databases" class="navbar__menu-item navbar__slide-down " dir="ltr" data-ani="true">数据库</a>
+  
+  
+  
+  
+  
+  
+  
   <div class="navbar__dropdown navbar__slide-down" data-ani="true">
-    <a href="/gallery" class="navbar__menu-item "
+    <a href="/interview" class="navbar__menu-item "
       dir="ltr">
-      Gallery
+      算法
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
     </a>
     <div class="navbar__dropdown--content">
       
-      <a href="/gallery/cartoon" class="navbar__dropdown--item" dir="ltr">Cartoon</a>
+      <a href="/interview/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
-      <a href="/gallery/photo" class="navbar__dropdown--item" dir="ltr">Photo</a>
+      <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
+      
+      <a href="/interview/algorithm_interview" class="navbar__dropdown--item" dir="ltr">算法实战</a>
       
     </div>
   </div>
@@ -1680,7 +1759,20 @@
   
   
   
-  <a href="/golang" class="navbar__menu-item navbar__slide-down active" dir="ltr" data-ani="true">进击的golang</a>
+  <div class="navbar__dropdown navbar__slide-down" data-ani="true">
+    <a href="/data_structure_and_sort" class="navbar__menu-item "
+      dir="ltr">
+      必知必会
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z"/></svg>
+    </a>
+    <div class="navbar__dropdown--content">
+      
+      <a href="/data_structure_and_sort/sort" class="navbar__dropdown--item" dir="ltr">排序算法</a>
+      
+      <a href="/data_structure_and_sort/datastructure" class="navbar__dropdown--item" dir="ltr">数据结构</a>
+      
+    </div>
+  </div>
   
   
   
@@ -1688,7 +1780,7 @@
   
   
   
-  <a href="/intelligence" class="navbar__menu-item navbar__slide-down " dir="ltr" data-ani="true">智力题</a>
+  <a href="/recommend_site" class="navbar__menu-item navbar__slide-down " dir="ltr" data-ani="true">推荐网站</a>
   
   
   
@@ -1715,14 +1807,14 @@
   
   <li >
     
-      <a href="https://2110833194.github.io/" class="capitalize">请跟我一起踏上编程之旅</a>
+      <a href="https://www.zhugeqing.top/" class="capitalize">诸葛青的编程之旅</a>
     
   </li>
   
   
   <li  class="is-active" >
     
-      <span>golang基础篇</span>
+      <span>Go，Go，Go！</span>
     
   </li>
   
@@ -1730,7 +1822,7 @@
   
 </nav>
         <header class="list__header">
-            <h5 class="list__header--title capitalize h5">golang基础篇</h5>
+            <h5 class="list__header--title capitalize h5">Go，Go，Go！</h5>
         </header>
 
         <div class="list__header--desc single__contents p2">
@@ -1745,21 +1837,29 @@
   <div class="summary-classic__flex-box" >
 
     
+    <div class="summary-classic__image-container summary-classic__image-wrapper" data-position="right" data-hwm="">
+      <a href="https://www.zhugeqing.top/golang/redis-go/">
+        <img data-src="/images/Go.jpg" alt="Go语言对Redis进行操作" src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3Cpath fill='%23aaa' d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.35 3.02-1.56-1.88c-.2-.25-.58-.24-.78.01l-1.74 2.23c-.26.33-.02.81.39.81h8.98c.41 0 .65-.47.4-.8l-2.55-3.39c-.19-.26-.59-.26-.79 0z'/%3E%3C/svg%3E" class="lazyload summary-classic__image" data-ani="true" data-hwm="" style=""/>
+      </a>
+    </div>
+    
 
     <div class="summary-classic__content">
       <header>
-        <h5 class="title h5"><a href='https://2110833194.github.io/golang/article/'>第一章：入门简介</a> </h5>
+        <h5 class="title h5"><a href='https://www.zhugeqing.top/golang/redis-go/'>Go语言对Redis进行操作</a> </h5>
         <h6 class="subtitle caption">
-          <time title="Written At" dir="ltr">📅&nbsp;Apr 16, 2021 </time>
+          <time title="Written At" dir="ltr">📅&nbsp;Oct 9, 2021 </time>
           
-          <span title="Reading Time" dir="ltr"> &middot; ☕&nbsp;0&nbsp;min read </span>
+          <span title="Reading Time" dir="ltr"> &middot; ☕&nbsp;2&nbsp;min read </span>
+          
+          &middot; <span title="WRITTEN BY" dir="ltr">😃&nbsp;诸葛青</span>
           
         </h6>
       </header>
       <div>
         <div class="summary-classic__text p2">
           
-            了解golang
+            现在的我不过是无数个“可能的我”中的一个样本
           
         </div>
       </div>
@@ -1821,7 +1921,7 @@
     
         
         <li class="sidebar-recent">
-            <a href="/golang/article/" class="sidebar-recent__title p1">第一章：入门简介</a>
+            <a href="/golang/redis-go/" class="sidebar-recent__title p1">Go语言对Redis进行操作</a>
         </li>
         
         <hr class="hr-fade sidebar-hr" />
@@ -1829,7 +1929,360 @@
 </ul>
 <div class="taxo-root">
 
+<div class="taxo">
+    <section>
+        <span class="title p2">
+            <a href="/tags/" class="taxo__title">
+                Tags
+            </a>
+        </span>
+        
+        
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/docker/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        docker
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/go/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Go
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/go%E9%A2%98%E7%9B%AE/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        GO题目
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/mysql/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        mysql
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        9
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/sql/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Sql
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        排序算法
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        10
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%A2%98%E7%9B%AE/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        操作系统题目
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        数据结构
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        2
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        海量数据
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/%E7%AE%97%E6%B3%95/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        算法
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        106
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/%E7%BD%91%E7%BB%9C/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        网络
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        2
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="is-tags taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        计算机
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+    </section>
+</div>
 
+
+
+<div class="taxo">
+    <section>
+        <span class="title p2">
+            <a href="/series/" class="taxo__title">
+                Series
+            </a>
+        </span>
+        
+        
+        
+        
+        
+            <span class="tag">
+                <a href="/series/docker/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Docker
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/go/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Go
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/mysql%E7%B3%BB%E5%88%97/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        mysql系列
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/problems/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        problems
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/programming-language-comparison/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        Programming language comparison
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        排序算法系列
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        数据库系列
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%B3%BB%E5%88%97/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        数据结构系列
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/%E7%AC%94%E8%AE%B0/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        笔记
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        算法系列
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        4
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/%E7%BC%96%E7%A8%8B%E7%B3%BB%E5%88%97/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        编程系列
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/%E7%BD%91%E7%BB%9C%E7%B3%BB%E5%88%97/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        网络系列
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+        
+            <span class="tag">
+                <a href="/series/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E5%88%97/" class="is-series taxo__link" data-dir="ltr">
+                    <span class="taxo__text">
+                        计算机系列
+                    </span>
+                    <span class="taxo__num" dir="auto">
+                        1
+                    </span>
+                </a>
+            </span>
+        
+        
+    </section>
+</div>
 
 
 </div>
@@ -1999,7 +2452,7 @@
                 
             <p class="caption">
                 
-                    ©2021, “不可能”这三个字，你说的太多了！
+                    <a href="https://beian.miit.gov.cn/">备案号：湘ICP备2021009076号</a>  <img src="beian.png" alt="" /><a href="http://www.beian.gov.cn/">湘公网安备 43132202001066号</a>
                 
             </p>
         

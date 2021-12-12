@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Docker on 诸葛青的编程之旅</title>
+    <link>https://www.zhugeqing.top/series/docker/</link>
+    <description>Recent content in Docker on 诸葛青的编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
+    <lastBuildDate>Thu, 09 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/series/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Docker</title>
+        <link>https://www.zhugeqing.top/docker/</link>
+        <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Thu, 09 Dec 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+              <category>Docker</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Docker快速上手</title>
+        <link>https://www.zhugeqing.top/docker/1/</link>
+        <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Thu, 09 Dec 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/1/</guid>
+        <description>在Linux中安装Docker 以root用户权限键入以下命令即可完成安装（适用于任何版本的Linux系统） curl -fsSL get.docker.com -o get-docker.sh 来获取安装的脚本文件 sh get-docker.sh 执行已经下载好的脚本文件 systemctl start docker centos启动docker systemctl enable docker centos设置docker自启动 基本使用 docker version来查看docker版本，判断是否安装成功 docker info 来查看更加详细的docker环境信息 docker 来查看docker命令的用法 docker container ls 列出当前正在运行的容器</description>
+        <content:encoded>&lt;h2 id=&#34;在linux中安装docker&#34;&gt;在Linux中安装Docker&lt;/h2&gt;
+&lt;p&gt;以root用户权限键入以下命令即可完成安装（适用于任何版本的Linux系统）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;curl -fsSL get.docker.com -o get-docker.sh&lt;/code&gt; 来获取安装的脚本文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sh get-docker.sh&lt;/code&gt; 执行已经下载好的脚本文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;systemctl start docker&lt;/code&gt; centos启动docker&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;systemctl enable docker&lt;/code&gt; centos设置docker自启动&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;基本使用&#34;&gt;基本使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;docker version&lt;/code&gt;来查看docker版本，判断是否安装成功&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker info&lt;/code&gt; 来查看更加详细的docker环境信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker&lt;/code&gt; 来查看docker命令的用法&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker container ls&lt;/code&gt; 列出当前正在运行的容器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker ps 和 docker container ps也有一样的效果&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker container ps -a&lt;/code&gt; 列出所有状态的容器（不只是正在运行的容器）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker container run -d nginx&lt;/code&gt; 运行nginx这个镜像并且以后台方式运行（不加-d就是以前台方式运行）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果没有这个镜像会自动拉取&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker container stop 214&lt;/code&gt; 停止container id为214或者是id前缀为214的container&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker stop 214也有一样的效果（涉及到以前版本的docker保留的命令格式）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker container ls -q&lt;/code&gt; 列出当前正在运行的容器的ID&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker container stop $(docker container ls -q)&lt;/code&gt; 批处理，停止所有当前正在运行的容器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;docker container rm $(docker container ls -aq)&lt;/code&gt; 删除所有容器(如果要删除运行状态的还需要加上-f强制删除的参数，如&lt;br /&gt;
+&lt;code&gt;docker container rm $(docker container ls -aq) -f&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker image ls&lt;/code&gt; 列出本机已安装的docker镜像&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker image rm nginx&lt;/code&gt; 删除nginx这个镜像&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker conainer --help&lt;/code&gt; 查看更多与容器有关的命令&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker image --help&lt;/code&gt; 查看更多与镜像有关的命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;容器的attached-和-detached模式&#34;&gt;容器的attached 和 detached模式&lt;/h2&gt;
+&lt;p&gt;在启动一个容器加上-d参数就可以以daemon守护进程的方式运行也就是detached模式，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;从detached模式切换到attached模式&lt;br /&gt;
+&lt;code&gt;docker attach zhugeqing&lt;/code&gt; 切换到容器ID或者ID前缀为zhugeqing的容器的attached模式，当按下ctrl+c时会退出，当然，同样会停止容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在detached模式查看attached模式的信息&lt;br /&gt;
+&lt;code&gt;docker container logs zhugeqing&lt;/code&gt; 查看容器ID或者ID前缀为zhugeqing的容器的日志（加入-f可以动态跟踪log）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;连接容器的shell&#34;&gt;连接容器的shell&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;docker container run -it ubuntu sh&lt;/code&gt; 创建一个ubuntu容器并进入交互式模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;键入exit退出shell并停止容器&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker container exec -it c_ID sh&lt;/code&gt;在一个已经运行的容器（ID为c_ID    ）里执行一个额外的command，此时输入exit退出命令行并不会停止容器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;容器即是进程&#34;&gt;容器即是进程&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;ps -ef | grep nginx&lt;/code&gt; 查看与nginx有关的进程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Linux&#34; data-lang=&#34;Linux&#34;&gt;root         807       1  0 Dec03 ?        00:00:00 nginx: master process /www/server/nginx/sbin/nginx -c /www/server/nginx/conf/nginx.conf
+www       355327     807  0 Dec07 ?        00:00:12 nginx: worker process
+www       355328     807  0 Dec07 ?        00:00:01 nginx: cache manager process
+root      867209  867191  0 22:58 ?        00:00:00 nginx: master process nginx -g daemon off;
+101       867260  867209  0 22:58 ?        00:00:00 nginx: worker process
+root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;font color=VioletRed&gt; &lt;/font&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;pstree -halps 867260&lt;/code&gt; 查看这个nginx进程的进程树&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Linux&#34; data-lang=&#34;Linux&#34;&gt;systemd,1 --switched-root --system --deserialize 18
+  └─containerd-shim,867191 -namespace moby -id 9c0ce97e9ca1f99ed4bd6b2c11f6ca472786c69fba512bacf7097fce18e75fb8 -address /run/containerd/containerd.sock
+      └─nginx,867209
+          └─nginx,867260
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;font color=VioletRed&gt; &lt;/font&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;再使用&lt;code&gt;docker ps&lt;/code&gt;来查看nginx所对应的container ID，就会发现与上面进程树的那个最长的进程名里面的字段一样，所以运行了一个容器就是运行了一个进程，但是这个进程&lt;code&gt; 或者是使用&lt;/code&gt;docker top ID`来查看容器的进程，一样是存在于Linux系统中的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;docker-run背后的故事&#34;&gt;docker run背后的故事&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;docker container run -d --publish 80:80 --name webServer nginx&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;-d表示daemon守护进程，&amp;ndash;publish 80:80表示将容器内的端口80暴露给容器外的端口80端口，前面的是容器外端口（也就是主机端口），后面的是容器内端口， &amp;ndash;name webServer表示为nginx这个容器起一个别名（不加这个参数，docker会自动起一个其他的名字）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;在本地查找是否有nginx这个image镜像，如果没有发现&lt;/li&gt;
+&lt;li&gt;去远程的image registry查找nginx镜像（默认的registry是Docker Hub)&lt;/li&gt;
+&lt;li&gt;下载最新版本的nginx镜像 （nginx:latest 默认)&lt;/li&gt;
+&lt;li&gt;基于nginx镜像来创建一个新的容器，并且准备运行&lt;/li&gt;
+&lt;li&gt;docker engine分配给这个容器一个虚拟IP地址&lt;/li&gt;
+&lt;li&gt;在宿主机上打开80端口并把容器的80端口转发到宿主机上&lt;/li&gt;
+&lt;li&gt;启动容器，运行指定的命令（一个默认shell脚本去启动nginx）&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>背题 on 诸葛青的编程之旅</title>
+    <link>https://www.zhugeqing.top/problems/</link>
+    <description>Recent content in 背题 on 诸葛青的编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
+    <lastBuildDate>Thu, 11 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/problems/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Go语言</title>
+        <link>https://www.zhugeqing.top/problems/go/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/go/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Mysql</title>
+        <link>https://www.zhugeqing.top/problems/mysql/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/mysql/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>操作系统</title>
+        <link>https://www.zhugeqing.top/problems/os/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/os/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>海量数据</title>
+        <link>https://www.zhugeqing.top/problems/massive-data/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/massive-data/</guid>
+        <description>有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数 分析：首先采用hash表用于统计，key为整数的值，value为整数出现的次数，而key为int32，占4字节，value也应为int32（最坏情况20亿个数都相同，只用int32正好cover，而又不浪费空间），占4字节，所以对于hash表一条记录需要8字节，最坏情况20亿个数都不相同，需要20亿条记录，大约就需要16GB的内存</description>
+        <content:encoded>&lt;h3 id=&#34;有一个包含20亿个全是32位整数的大文件在其中找到出现次数最多的数&#34;&gt;有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数&lt;/h3&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  &lt;p&gt;分析：首先采用hash表用于统计，key为整数的值，value为整数出现的次数，而key为int32，占4字节，value也应为int32（最坏情况20亿个数都相同，只用int32正好cover，而又不浪费空间），占4字节，所以对于hash表一条记录需要8字节，最坏情况20亿个数都不相同，需要20亿条记录，大约就需要16GB的内存（简单估计大小，实际并没有16GB），而显然2GB内存空间无法加载一个16GB的hash表。&lt;/p&gt;
+&lt;p&gt;解决方法：把包含20亿个整数的大文件用hash函数拆分成16个小文件，根据hash函数的性质可知，相同的数是不会被分配到不同的文件的，只要hash函数足够好，每一个小文件的hash表的所占空间就会小于2GB。拆分之后，对于每一个小文件，都用hash表来统计每一种数出现的次数，就可以得出16个小文件各自出现次数最多的数，再将这16个数进行比较，即可得出出现次数最多的数&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;进阶版&lt;/code&gt;——&amp;gt;&lt;a href=&#34;https://www.cnblogs.com/ExMan/p/10984358.html&#34;&gt;点击此处&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>海量数据</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

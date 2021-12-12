@@ -21,11 +21,11 @@
       
       <item>
         <title>海量数据</title>
-        <link>https://www.zhugeqing.top/article/problems/massive-data/</link>
+        <link>https://www.zhugeqing.top/problems/massive-data/</link>
         <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
         
         <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/article/problems/massive-data/</guid>
+        <guid>https://www.zhugeqing.top/problems/massive-data/</guid>
         <description>有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数 分析：首先采用hash表用于统计，key为整数的值，value为整数出现的次数，而key为int32，占4字节，value也应为int32（最坏情况20亿个数都相同，只用int32正好cover，而又不浪费空间），占4字节，所以对于hash表一条记录需要8字节，最坏情况20亿个数都不相同，需要20亿条记录，大约就需要16GB的内存</description>
         <content:encoded>&lt;h3 id=&#34;有一个包含20亿个全是32位整数的大文件在其中找到出现次数最多的数&#34;&gt;有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数&lt;/h3&gt;
 &lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;

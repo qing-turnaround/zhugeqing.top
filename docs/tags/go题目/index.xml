@@ -21,11 +21,11 @@
       
       <item>
         <title>Go语言Gc</title>
-        <link>https://www.zhugeqing.top/article/problems/go/gc/</link>
+        <link>https://www.zhugeqing.top/problems/go/gc/</link>
         <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
         
         <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/article/problems/go/gc/</guid>
+        <guid>https://www.zhugeqing.top/problems/go/gc/</guid>
         <description>三色标记原理 第一步 第二步 第三步 第四步</description>
         <content:encoded>&lt;h2 id=&#34;三色标记原理&#34;&gt;三色标记原理&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;第一步&lt;/code&gt;&lt;br /&gt;

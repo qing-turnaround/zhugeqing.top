@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Thu, 11 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/series/problems/index.xml" rel="self" type="application/rss+xml" />
@@ -20,12 +20,360 @@
 
       
       <item>
+        <title>Sql题目</title>
+        <link>https://www.zhugeqing.top/problems/mysql/sql/</link>
+        <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 24 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/mysql/sql/</guid>
+        <description>第二高的薪水 第二高的薪水 题目地址:入口 题目：编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。 1 2 3 4 5 6 7 +----+--------+|Id|Salary|+----+--------+|1|100||2|200||3|300|+----+--------+ 例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。 1 2 3 4 5 +---------------------+|SecondHighestSalary|+---------------------+|200|+---------------------+ 解法： 使用distinct来过滤相同的salary，使用order by进行排序，再加上DESC使其递减，用limit n表示返回前n条数据，offset n表示跳过n条语句，（</description>
+        <content:encoded>&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#%E7%AC%AC%E4%BA%8C%E9%AB%98%E7%9A%84%E8%96%AA%E6%B0%B4&#34;&gt;第二高的薪水&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;第二高的薪水&#34;&gt;第二高的薪水&lt;/h2&gt;
+&lt;p&gt;题目地址:&lt;a href=&#34;https://leetcode-cn.com/problems/second-highest-salary/&#34;&gt;入口&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;题目：编写一个 SQL 查询，获取 Employee 表中第二高的薪水（Salary） 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Mysql&#34; data-lang=&#34;Mysql&#34;&gt;&lt;span class=&#34;o&#34;&gt;+----+--------+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Salary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+----+--------+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+----+--------+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Mysql&#34; data-lang=&#34;Mysql&#34;&gt;&lt;span class=&#34;o&#34;&gt;+---------------------+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SecondHighestSalary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+---------------------+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;                 &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+---------------------+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;解法：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;使用distinct来过滤相同的salary，使用order by进行排序，再加上DESC使其递减，用limit n表示返回前n条数据，offset n表示跳过n条语句，（limit 1 offset 1表示跳过前一条数据，再返回前一条数据），由于还需要返回null的情况，所以将其作为临时表&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Mysql&#34; data-lang=&#34;Mysql&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;DISTINCT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Salary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Employee&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ORDER&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;BY&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Salary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;DESC&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;LIMIT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;OFFSET&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;AS&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SecondHighestSalary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;ifnull函数来判断表达式返回值是否为null，若为null，则返回括号后面的值，否则返回表达式的结果&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Mysql&#34; data-lang=&#34;Mysql&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ifnull&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;distinct&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;salary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Employee&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ORDER&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;BY&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;salary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;DESC&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;limit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;no&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;as&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SecondHighestSalary&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Sql</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>进程和线程</title>
+        <link>https://www.zhugeqing.top/problems/os/process_thread/</link>
+        <pubDate>Wed, 24 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 24 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/os/process_thread/</guid>
+        <description>1. 进程与线程有什么区别 了解进程与线程——&amp;gt;进程与线程的一个简单解释 答： 调度：进程是资源管理的基本单位，线程是程序执行的基本单位 拥有资源：进程是拥有资源的一个独立单位，线程不拥有资源，只拥有一点在运行中必不可少的资源（如程序计数器,一组寄存器和栈），和同属于本进程的线程共享本进程的资源（cpu，I/O，内存等） 切换：进程上下文切换比线程上下文切换要快得多。（因为进程切换需要保存进程当前的整个环</description>
+        <content:encoded>&lt;h2 id=&#34;1-进程与线程有什么区别&#34;&gt;1. 进程与线程有什么区别&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;了解进程与线程&lt;/code&gt;——&amp;gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html&#34;&gt;进程与线程的一个简单解释&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;答&#34;&gt;答：&lt;/h4&gt;
+&lt;font color=SkyBlue&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;调度：进程是资源管理的基本单位，线程是程序执行的基本单位&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拥有资源：进程是拥有资源的一个独立单位，线程不拥有资源，只拥有一点在运行中必不可少的资源（如程序计数器,一组寄存器和栈），和同属于本进程的线程共享本进程的资源（cpu，I/O，内存等）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换：进程上下文切换比线程上下文切换要快得多。（因为进程切换需要保存进程当前的整个环境的保存和被调度运行的新进程环境的设置，而线程切换只需要保存和设置少量的寄存器）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;系统开销：创建或撤销进程时，系统都要为之分配和回收系统资源，如内存空间，I/O设备等，操作系统所付出的开销显著大于在创建或撤销线程的开销，所以进程的切换开销也远大于线程切换的开销&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通信：线程之间的通信更方便，同一进程下的线程共享全局变量等数据，而进程之间的通信需要以进程间通信(IPC)的方式进行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;线程依赖于进程而存在，一个进程至少有一个线程&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多线程程序只要有一个线程崩溃，整个程序就崩溃了，但多进程程序中一个进程崩溃并不会对其它进程造成影响，因为进程有自己的独立地址空间，因此多进程更加健壮&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/font&gt;
+&lt;h3 id=&#34;同一进程中的线程可以共享哪些数据&#34;&gt;同一进程中的线程可以共享哪些数据？&lt;/h3&gt;
+&lt;details&gt;
+&lt;summary&gt;展开答案&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;进程代码段&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;进程的公有数据（全局变量、静态变量...）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;进程打开的文件描述符&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;进程的当前目录&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;信号处理器/信号处理函数：对收到的信号的处理方式&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;进程ID与进程组ID&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+&lt;h5 id=&#34;线程独占哪些资源&#34;&gt;线程独占哪些资源？&lt;/h5&gt;
+&lt;details&gt;
+&lt;summary&gt;展开&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;线程ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;一组寄存器的值&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;线程自身的栈（堆是共享的）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;错误返回码：线程可能会产生不同的错误返回码，一个线程的错误返回码不应该被其它线程修改&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;信号掩码/信号屏蔽字(Signal mask)：表示是否屏蔽/阻塞相应的信号（SIGKILL,SIGSTOP除外）&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>操作系统题目</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Go语言</title>
+        <link>https://www.zhugeqing.top/problems/go/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/go/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Go语言Gc</title>
+        <link>https://www.zhugeqing.top/problems/go/gc/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/go/gc/</guid>
+        <description>三色标记原理 第一步 第二步 第三步 第四步</description>
+        <content:encoded>&lt;h2 id=&#34;三色标记原理&#34;&gt;三色标记原理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;第一步&lt;/code&gt;&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/article/problems/go/GC1.png&#34; width=&#34;70%&#34; height=&#34;60%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;第二步&lt;/code&gt;&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/article/problems/go/GC2.png&#34; width=&#34;70%&#34; height=&#34;60%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;第三步&lt;/code&gt;&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/article/problems/go/GC3.png&#34; width=&#34;70%&#34; height=&#34;60%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;第四步&lt;/code&gt;&lt;br /&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/article/problems/go/GC4.png&#34; width=&#34;70%&#34; height=&#34;60%&#34;&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>GO题目</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Mysql</title>
+        <link>https://www.zhugeqing.top/problems/mysql/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/mysql/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>操作系统</title>
+        <link>https://www.zhugeqing.top/problems/os/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/os/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>海量数据</title>
+        <link>https://www.zhugeqing.top/problems/massive-data/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/massive-data/</guid>
+        <description>有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数 分析：首先采用hash表用于统计，key为整数的值，value为整数出现的次数，而key为int32，占4字节，value也应为int32（最坏情况20亿个数都相同，只用int32正好cover，而又不浪费空间），占4字节，所以对于hash表一条记录需要8字节，最坏情况20亿个数都不相同，需要20亿条记录，大约就需要16GB的内存</description>
+        <content:encoded>&lt;h3 id=&#34;有一个包含20亿个全是32位整数的大文件在其中找到出现次数最多的数&#34;&gt;有一个包含20亿个全是32位整数的大文件，在其中找到出现次数最多的数&lt;/h3&gt;
+&lt;div class=&#34;notices success&#34; data-title=&#34;Success&#34;&gt;
+  &lt;p&gt;分析：首先采用hash表用于统计，key为整数的值，value为整数出现的次数，而key为int32，占4字节，value也应为int32（最坏情况20亿个数都相同，只用int32正好cover，而又不浪费空间），占4字节，所以对于hash表一条记录需要8字节，最坏情况20亿个数都不相同，需要20亿条记录，大约就需要16GB的内存（简单估计大小，实际并没有16GB），而显然2GB内存空间无法加载一个16GB的hash表。&lt;/p&gt;
+&lt;p&gt;解决方法：把包含20亿个整数的大文件用hash函数拆分成16个小文件，根据hash函数的性质可知，相同的数是不会被分配到不同的文件的，只要hash函数足够好，每一个小文件的hash表的所占空间就会小于2GB。拆分之后，对于每一个小文件，都用hash表来统计每一种数出现的次数，就可以得出16个小文件各自出现次数最多的数，再将这16个数进行比较，即可得出出现次数最多的数&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;进阶版&lt;/code&gt;——&amp;gt;&lt;a href=&#34;https://www.cnblogs.com/ExMan/p/10984358.html&#34;&gt;点击此处&lt;/a&gt;&lt;/p&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>海量数据</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>背题</title>
-        <link>https://www.zhugeqing.top/article/problems/</link>
+        <link>https://www.zhugeqing.top/problems/</link>
         <pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate>
         
         <atom:modified>Thu, 11 Nov 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/article/problems/</guid>
+        <guid>https://www.zhugeqing.top/problems/</guid>
         <description></description>
         <content:encoded></content:encoded>
         <dc:creator>诸葛青</dc:creator>
