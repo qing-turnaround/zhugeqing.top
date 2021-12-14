@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Redis on 诸葛青的编程之旅</title>
+    <link>https://www.zhugeqing.top/redis/</link>
+    <description>Recent content in Redis on 诸葛青的编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
+    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>Redis Cluster初识</title>
+        <link>https://www.zhugeqing.top/redis/cluster/</link>
+        <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 09 Oct 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/redis/cluster/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/redis.jfif" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Redis</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

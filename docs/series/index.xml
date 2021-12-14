@@ -92,6 +92,24 @@
       </item>
       
       <item>
+        <title>Redis</title>
+        <link>https://www.zhugeqing.top/series/redis/</link>
+        <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
+        
+        
+        <guid>https://www.zhugeqing.top/series/redis/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青的编程之旅</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
+      
+      <item>
         <title>Programming language comparison</title>
         <link>https://www.zhugeqing.top/series/programming-language-comparison/</link>
         <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
@@ -152,24 +170,6 @@
         
         
         <guid>https://www.zhugeqing.top/series/%E7%BD%91%E7%BB%9C%E7%B3%BB%E5%88%97/</guid>
-        <description></description>
-        <content:encoded></content:encoded>
-        <dc:creator>诸葛青的编程之旅</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>mysql系列</title>
-        <link>https://www.zhugeqing.top/series/mysql%E7%B3%BB%E5%88%97/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        
-        <guid>https://www.zhugeqing.top/series/mysql%E7%B3%BB%E5%88%97/</guid>
         <description></description>
         <content:encoded></content:encoded>
         <dc:creator>诸葛青的编程之旅</dc:creator>

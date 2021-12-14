@@ -12,7 +12,7 @@ themeOptions = ["hacker", "dark", "light", "solarized", "kimbie"] # 选择不同
 # 不允许出现在主页的目录名
 notAllowedTypesInHome = ["math","compare","exercise","touge","interview","databases","contact", "about","archive", "presentation", "resume","intelligence","devil_footprints","write","novel","article/problems",]
 # 不允许出现在主页侧边栏的目录名
-notAllowedTypesInHomeSidebar = ["databases","math","exercise","compare","touge","about","gallery","archive","recommend_sites","intelligence","devil_footprints","write","novel"]
+notAllowedTypesInHomeSidebar = ["recommend_site","data_structure_and_sort","databases","math","exercise","compare","touge","about","gallery","archive","recommend_sites","intelligence","devil_footprints","write","novel"]
 # 不允许被日志记录的目录名（以后删除日志）
 notAllowedTypesInArchive = ["touge","gallery","archive","write","exercise","about"]
 
@@ -71,7 +71,7 @@ typeIcon = "🎯"
 # whoami
 myname = "诸葛青的编程之旅" # 网站名
 # email = "2110833194.qq" 
-whoami = "📚诸葛🤓青🌐" # 我是谁？
+whoami = "😋诸葛🤪青😇" # 我是谁？
 bioImageUrl = "" #图片，头像链接 
 useGravatar = false # 我们使用此选项的最高优先级
 location = "地球，中国" # “位置”

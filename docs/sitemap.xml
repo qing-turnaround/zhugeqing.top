@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.zhugeqing.top/</loc>
+    <lastmod>2021-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/write/2021-12-13/</loc>
+    <lastmod>2021-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/write/2021-12-12/</loc>
+    <lastmod>2021-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/tags/go/</loc>
+    <lastmod>2021-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/golang/mysql-go/</loc>
+    <lastmod>2021-12-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/tags/</loc>
     <lastmod>2021-12-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/write/2021-12-11/</loc>
@@ -24,9 +39,6 @@
     <lastmod>2021-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/series/</loc>
-    <lastmod>2021-12-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/tags/</loc>
     <lastmod>2021-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/write/2021-12-9/</loc>
@@ -155,6 +167,9 @@
     <loc>https://www.zhugeqing.top/write/2021-11-12/</loc>
     <lastmod>2021-11-12T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.zhugeqing.top/golang/http/</loc>
+    <lastmod>2021-11-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.zhugeqing.top/write/2021-11-11/</loc>
     <lastmod>2021-11-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -281,9 +296,6 @@
     <loc>https://www.zhugeqing.top/write/2021-10-10/</loc>
     <lastmod>2021-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.zhugeqing.top/tags/go/</loc>
-    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.zhugeqing.top/series/go/</loc>
     <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -291,6 +303,18 @@
     <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/golang/</loc>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/tags/redis/</loc>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/series/redis/</loc>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/redis/</loc>
+    <lastmod>2021-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/redis/cluster/</loc>
     <lastmod>2021-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/write/2021-10-9/</loc>
@@ -584,21 +608,6 @@
     <loc>https://www.zhugeqing.top/article/computer/</loc>
     <lastmod>2021-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.zhugeqing.top/tags/mysql/</loc>
-    <lastmod>2020-12-14T12:00:06+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/</loc>
-    <lastmod>2020-12-14T12:00:06+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/</loc>
-    <lastmod>2020-12-14T12:00:06+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/1/</loc>
-    <lastmod>2020-12-14T12:00:06+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/2/</loc>
-    <lastmod>2020-12-13T12:00:59+09:00</lastmod>
-  </url><url>
     <loc>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/</loc>
     <lastmod>2020-12-13T12:00:59+09:00</lastmod>
   </url><url>
@@ -615,9 +624,6 @@
     <lastmod>2020-12-13T12:00:58+09:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/interview/algorithm_interview/chapter2/2/</loc>
-    <lastmod>2020-12-13T12:00:58+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/3/</loc>
     <lastmod>2020-12-13T12:00:58+09:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/3/</loc>
@@ -661,18 +667,6 @@
   </url><url>
     <loc>https://www.zhugeqing.top/interview/algorithm_interview/chapter11/</loc>
     <lastmod>2020-12-13T12:00:50+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/4/</loc>
-    <lastmod>2020-12-13T12:00:06+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/5/</loc>
-    <lastmod>2020-12-13T12:00:05+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/6/</loc>
-    <lastmod>2020-12-13T12:00:04+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/7/</loc>
-    <lastmod>2020-12-13T12:00:04+09:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/about/git/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
@@ -1001,12 +995,6 @@
     <loc>https://www.zhugeqing.top/interview/algorithm_interview/chapter9/5/</loc>
     <lastmod>2020-12-12T12:00:52+09:00</lastmod>
   </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/8/</loc>
-    <lastmod>2020-12-12T12:00:04+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/databases/mysql/9/</loc>
-    <lastmod>2020-12-12T12:00:04+09:00</lastmod>
-  </url><url>
     <loc>https://www.zhugeqing.top/data_structure_and_sort/sort/bub/</loc>
     <lastmod>2020-10-16T12:00:13+09:00</lastmod>
   </url><url>
@@ -1040,19 +1028,7 @@
     <loc>https://www.zhugeqing.top/data_structure_and_sort/sort/conclusion2/</loc>
     <lastmod>2020-10-16T12:00:07+09:00</lastmod>
   </url><url>
-    <loc>https://www.zhugeqing.top/devil_footprints/</loc>
-    <lastmod>2020-10-16T12:00:05+09:00</lastmod>
-  </url><url>
     <loc>https://www.zhugeqing.top/data_structure_and_sort/sort/rad/</loc>
-    <lastmod>2020-10-16T12:00:05+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/devil_footprints/%E6%98%9F%E6%B8%B8%E8%AE%B0/2/</loc>
-    <lastmod>2020-10-16T12:00:05+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/devil_footprints/%E6%98%9F%E6%B8%B8%E8%AE%B0/</loc>
-    <lastmod>2020-10-16T12:00:05+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/devil_footprints/%E6%98%9F%E6%B8%B8%E8%AE%B0/1/</loc>
     <lastmod>2020-10-16T12:00:05+09:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/article/program/c/c_pointer/</loc>
@@ -1093,11 +1069,11 @@
   </url><url>
     <loc>https://www.zhugeqing.top/categories/</loc>
   </url><url>
-    <loc>https://www.zhugeqing.top/series/mysql%E7%B3%BB%E5%88%97/</loc>
-  </url><url>
     <loc>https://www.zhugeqing.top/series/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/</loc>
   </url><url>
     <loc>https://www.zhugeqing.top/recommend_site/</loc>
+  </url><url>
+    <loc>https://www.zhugeqing.top/databases/</loc>
   </url><url>
     <loc>https://www.zhugeqing.top/series/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97/</loc>
   </url><url>
