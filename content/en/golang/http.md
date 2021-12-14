@@ -1,6 +1,6 @@
 ---
 date: 2021-11-11
-description: "现在的我不过是无数个“可能的我”中的一个样本"
+description: "net/http包的学习"
 image: "/images/Go.jpg"
 title: "Go语言http详解"
 author: Go web 编程
