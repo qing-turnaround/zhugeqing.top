@@ -1,11 +1,17 @@
 ---
-omit_header_text: true
-type: page
-title: "推荐网站"
-titleWrap: wrap
+date: 2020-03-02
 description: "下面的网站将会为你提供优秀的学习资源"
-featured_image: '/images/tuijian.gif'
+image: "/images/xingyouji.jpg"
+title: "推荐网站"
+author: 诸葛青
+authorEmoji: 😃
+pinned: false
+tags:
+- tips
+series:
+- 
 ---
+
 {{< figure  title="国内网站" >}}
 
 1.一个几乎全能编程的网站(适合小白和容易忘记基础的大佬 )

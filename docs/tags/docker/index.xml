@@ -12,12 +12,453 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Thu, 09 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Dec 2021 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>Dockerfile</title>
+        <link>https://www.zhugeqing.top/docker/3/</link>
+        <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 13 Dec 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/3/</guid>
+        <description>Dockerfile镜像的选择原则（from） 官方镜像优于非官方的镜像，如果没有官方镜像，则尽量选择Dockerfile开源的 固定版本tag而不是每次都使用latest 尽量选择体积小的镜像 Dockerfile Run命令 RUN 主要用于在Image里执行指令，比如安装软件，下载文件等。 Run普通写法 1 2 3 4 5 6 7 FROMubuntu:21.04RUN apt-get updateRUN apt-get install -y wgetRUN wget https://github.com/ipinfo/cli/releases/download/ipinfo-2.0.1/ipinfo_2.0.1_linux_amd64.tar.gzRUN tar zxf ipinfo_2.0.1_linux_amd64.tar.gzRUN mv ipinfo_2.0.1_linux_amd64 /usr/bin/ipinfoRUN rm -rf ipinfo_2.0.1_linux_amd64.tar.gz 通过docker image build -f dockerfile-run-1 -t ubuntu_run:1.0 .来构建镜像 -f指定Dockerfile文件名，</description>
+        <content:encoded>&lt;h2 id=&#34;dockerfile镜像的选择原则from&#34;&gt;Dockerfile镜像的选择原则（from）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;官方镜像优于非官方的镜像，如果没有官方镜像，则尽量选择Dockerfile开源的&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;固定版本tag而不是每次都使用latest&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;尽量选择体积小的镜像&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;dockerfile-run命令&#34;&gt;Dockerfile Run命令&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;RUN 主要用于在Image里执行指令，比如安装软件，下载文件等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;run普通写法&#34;&gt;Run普通写法&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; ubuntu:21.04&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; apt-get update&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; apt-get install -y wget&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; wget https://github.com/ipinfo/cli/releases/download/ipinfo-2.0.1/ipinfo_2.0.1_linux_amd64.tar.gz&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; tar zxf ipinfo_2.0.1_linux_amd64.tar.gz&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; mv ipinfo_2.0.1_linux_amd64 /usr/bin/ipinfo&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; rm -rf ipinfo_2.0.1_linux_amd64.tar.gz&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通过&lt;code&gt;docker image build -f dockerfile-run-1 -t ubuntu_run:1.0 .&lt;/code&gt;来构建镜像&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;-f&lt;/code&gt;指定Dockerfile文件名，&lt;code&gt;-t&lt;/code&gt;指定image tag，&lt;code&gt;.&lt;/code&gt;表示Dockerfile文件在当前目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;通过&lt;code&gt;docker image history ubuntu_run:1.0&lt;/code&gt;来查看分层情况&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Linux&#34; data-lang=&#34;Linux&#34;&gt;IMAGE          CREATED          CREATED BY                                      SIZE      COMMENT
+52b1dbec7f17   42 minutes ago   /bin/sh -c rm -rf ipinfo_2.0.1_linux_amd64.t…   0B        
+70577d1a6d9f   42 minutes ago   /bin/sh -c mv ipinfo_2.0.1_linux_amd64 /usr/…   9.36MB    
+5755b7f81c88   42 minutes ago   /bin/sh -c tar zxf ipinfo_2.0.1_linux_amd64.…   9.36MB    
+3d1a66450a25   42 minutes ago   /bin/sh -c wget https://github.com/ipinfo/cl…   4.85MB    
+241a8d847076   45 minutes ago   /bin/sh -c apt-get install -y wget              3.73MB    
+95ae86536030   45 minutes ago   /bin/sh -c apt-get update                       35.1MB    
+d662230a2592   13 days ago      /bin/sh -c #(nop)  CMD [&amp;quot;bash&amp;quot;]                 0B        
+&amp;lt;missing&amp;gt;      13 days ago      /bin/sh -c #(nop) ADD file:b94883edb5db8add8…   80MB
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;每一行的RUN命令都会产生一层image layer, 导致镜像的臃肿。&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;run改进写法&#34;&gt;Run改进写法&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; ubuntu:21.04&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    apt-get install -y wget &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    wget https://github.com/ipinfo/cli/releases/download/ipinfo-2.0.1/ipinfo_2.0.1_linux_amd64.tar.gz &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    tar zxf ipinfo_2.0.1_linux_amd64.tar.gz &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    mv ipinfo_2.0.1_linux_amd64 /usr/bin/ipinfo &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    rm -rf ipinfo_2.0.1_linux_amd64.tar.gz&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通过&lt;code&gt;docker image build -f dockerfile-run-2 -t ubuntu_run:1.1 .&lt;/code&gt;来构建镜像&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;-f&lt;/code&gt;指定Dockerfile文件名，&lt;code&gt;-t&lt;/code&gt;指定image tag，&lt;code&gt;.&lt;/code&gt;表示Dockerfile文件在当前目录&lt;br /&gt;
+通过&lt;code&gt;docker image history ubuntu_run:1.1&lt;/code&gt;来查看分层情况&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Linux&#34; data-lang=&#34;Linux&#34;&gt;204507675bd9   37 seconds ago   /bin/sh -c apt-get update &amp;amp;&amp;amp;     apt-get ins…   48.2MB    
+d662230a2592   13 days ago      /bin/sh -c #(nop)  CMD [&amp;quot;bash&amp;quot;]                 0B        
+&amp;lt;missing&amp;gt;      13 days ago      /bin/sh -c #(nop) ADD file:b94883edb5db8add8…   80MB     
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;文件复制和目录操作-addcopyworkdir&#34;&gt;文件复制和目录操作 (ADD,COPY,WORKDIR)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用&lt;code&gt;copy&lt;/code&gt;和&lt;code&gt;add&lt;/code&gt;都可以往镜像里面复制镜像，而&lt;code&gt;add&lt;/code&gt;相比于&lt;code&gt;copy&lt;/code&gt;，使用&lt;code&gt;add&lt;/code&gt;往镜像里面复制压缩文件时，&lt;code&gt;add&lt;/code&gt;会自动解压缩文件&lt;br /&gt;
+&lt;code&gt;workdir&lt;/code&gt; 相当于是&lt;code&gt;cd&lt;/code&gt;(change directory)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;add&#34;&gt;ADD&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; python:3.9.5-alpine3.13&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; hello.py /app/hello.py&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;copy&#34;&gt;COPY&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; python:3.9.5-alpine3.13&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; hello.tar.gz /app/  &lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;workdir&#34;&gt;WORKDIR&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; python:3.9.5-alpine3.13&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;workdir&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /zhugeqing&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; hello.tar.gz .&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;构建参数和环境变量-arg-和-env&#34;&gt;构建参数和环境变量 (ARG 和 ENV)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ARG（argument）&lt;code&gt;和&lt;/code&gt;ENV （environment）`都可以用来设置一个“变量”。 设置好变量VERSION之后可以用语法${VERSION}来使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;arg&#34;&gt;ARG&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; ubuntu:21.04&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ENV&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;.0.1&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    apt-get install -y wget &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    wget https://github.com/ipinfo/cli/releases/download/ipinfo-&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64.tar.gz &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    tar zxf ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64.tar.gz &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    mv ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64 /usr/bin/ipinfo &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    rm -rf ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64.tar.gz&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;env&#34;&gt;ENV&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; ubuntu:21.04&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ARG&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;.0.1&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    apt-get install -y wget &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    wget https://github.com/ipinfo/cli/releases/download/ipinfo-&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64.tar.gz &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    tar zxf ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64.tar.gz &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    mv ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64 /usr/bin/ipinfo &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    rm -rf ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64.tar.gz&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;不同处&#34;&gt;不同处&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;作用范围不同，&lt;code&gt;env&lt;/code&gt;设置的变量会在image中保持，而&lt;code&gt;arg&lt;/code&gt;设置的变量只能在构建的时候用到。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;arg&lt;/code&gt;设置的变量 可以在镜像&lt;code&gt;build&lt;/code&gt;的时候动态修改, 通过 &lt;code&gt;--build-arg&lt;/code&gt;进行修改（例：&lt;code&gt;docker image build -f Dockerfile-arg -t ipinfo-arg-2.0.0 --build-arg VERSION=2.0.0 .&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;使用场景区分：如果在容器运行的时候也需要使用到设置的变量，那么倾向于使用&lt;code&gt;env&lt;/code&gt;，如果只会在build镜像的时候使用到设置的变量，那么倾向于使用&lt;code&gt;arg&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/docker/docker_environment_build_args.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
+&lt;h2 id=&#34;容器启动命令&#34;&gt;容器启动命令&lt;/h2&gt;
+&lt;h3 id=&#34;cmd&#34;&gt;CMD&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CMD可以用来设置容器启动时默认会执行的命令。&lt;br /&gt;
+用法：&lt;code&gt;CMD &amp;lt;shell 命令&amp;gt; &lt;/code&gt;,&lt;code&gt;CMD [&amp;quot;&amp;lt;可执行文件或命令&amp;gt;&amp;quot;,&amp;quot;&amp;lt;param1&amp;gt;&amp;quot;,&amp;quot;&amp;lt;param2&amp;gt;&amp;quot;,...]&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;容器启动时默认执行的命令&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;如果docker container run启动容器时指定了其它命令，则CMD命令会被忽略&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;如果定义了多个CMD，只有最后一个会被执行&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;entrypoint&#34;&gt;ENTRYPOINT&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;CMD 设置的命令，可以在docker container run 时传入其它命令，覆盖掉 CMD 的命令，但是 ENTRYPOINT 所设置的命令是一定会被执行的。&lt;/li&gt;
+&lt;li&gt;ENTRYPOINT 和 CMD 可以联合使用，ENTRYPOINT 设置执行的命令，CMD传递参数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;shell-格式和-exec-格式&#34;&gt;Shell 格式和 Exec 格式&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果是执行shell脚本，Exec的写法应该是&lt;code&gt;CMD [&amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;echo hello $NAME&amp;quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;shell&#34;&gt;shell&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;CMD echo &amp;quot;hello docker&amp;quot;&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;ENTRYPOINT echo &amp;quot;hello docker&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;exec&#34;&gt;Exec&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;ENTRYPOINT [&amp;quot;echo&amp;quot;, &amp;quot;hello docker&amp;quot;]&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;CMD [&amp;quot;echo&amp;quot;, &amp;quot;hello docker&amp;quot;]&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dockerfile技巧&#34;&gt;Dockerfile技巧&lt;/h2&gt;
+&lt;h3 id=&#34;合理使用缓存&#34;&gt;合理使用缓存&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker构建镜像的时候会使用到缓存，但当dockerfile有一层没有使用缓存的时候，之后的命令即使没有改变也不会再使用缓存。&lt;br /&gt;
+&lt;code&gt;将无需不会进行改变的命令放在最前面，有可能会改动的命令放在最后面&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;合理使用dockerignore文件&#34;&gt;合理使用.dockerignore文件&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在.dockerignore文件加入不用发送到Server的目录名或者时文件名，可以在发送build context时，将这些目录或者文件进行忽略&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;docker-build-context&#34;&gt;Docker build context&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在&lt;code&gt;构建docker镜像&lt;/code&gt;的时候，需要把所需要的文件由Client发给Server，这些文件实际上就是&lt;code&gt;build context&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;一般构建&#34;&gt;一般构建&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;[root@zhugeqing ~]# docker image build -f dockerfile -t cache ./docker
+Sending build context to Docker daemon   41.6kB
+Step 1/6 : FROM ubuntu:21.04
+ ---&amp;gt; d662230a2592
+Step 2/6 : FROM python:3.9.5-alpine3.13
+ ---&amp;gt; 46a196bf50ae
+Step 3/6 : workdir /root
+ ---&amp;gt; Using cache
+ ---&amp;gt; 6f9c40c0c5be
+Step 4/6 : RUN pip install flask
+ ---&amp;gt; Using cache
+ ---&amp;gt; 73e539437d7e
+Step 5/6 : ADD hello.py /root
+ ---&amp;gt; Using cache
+ ---&amp;gt; 1950e2f31676
+Step 6/6 : CMD [&amp;quot;python3&amp;quot;,&amp;quot;hello.py&amp;quot;]
+ ---&amp;gt; Using cache
+ ---&amp;gt; 3906ec34f79f
+Successfully built 3906ec34f79f
+Successfully tagged cache:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;dockerignore文件&#34;&gt;.dockerignore文件&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;.dockerignore文件需放在build context指定目录下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-.dockerignore&#34; data-lang=&#34;.dockerignore&#34;&gt;image-golang
+out
+project1
+project2
+project4
+dockerfile-run-1
+dockerfile-run-2
+hello.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;进行构建&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@zhugeqing ~]# docker image build -f dockerfile -t cache ./docker
+Sending build context to Docker daemon  7.808kB
+Step 1/6 : FROM ubuntu:21.04
+ ---&amp;gt; d662230a2592
+Step 2/6 : FROM python:3.9.5-alpine3.13
+ ---&amp;gt; 46a196bf50ae
+Step 3/6 : workdir /root
+ ---&amp;gt; Using cache
+ ---&amp;gt; 6f9c40c0c5be
+Step 4/6 : RUN pip install flask
+ ---&amp;gt; Using cache
+ ---&amp;gt; 73e539437d7e
+Step 5/6 : ADD hello.py /root
+ ---&amp;gt; Using cache
+ ---&amp;gt; 1950e2f31676
+Step 6/6 : CMD [&amp;quot;python3&amp;quot;,&amp;quot;hello.py&amp;quot;]
+ ---&amp;gt; Using cache
+ ---&amp;gt; 3906ec34f79f
+Successfully built 3906ec34f79f
+Successfully tagged cache:latest
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Docker镜像</title>
+        <link>https://www.zhugeqing.top/docker/2/</link>
+        <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 10 Dec 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/2/</guid>
+        <description>获取image 获取image的主要方式 从registry上拉取(pull) 使用DockerFile构建(build) 从离线文件中导入(load) 从进行修改后容器中提交到一个新的镜像(commit) 第一种方式（pull） 比较常用的registry有Dock hub 和 Quay 拉取nginx镜像——docker pull nginx（docker hub） 默认是拉取最新版本，若要拉取其他版本，则用命令docker pull nginx:</description>
+        <content:encoded>&lt;h2 id=&#34;获取image&#34;&gt;获取image&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;获取image的主要方式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;从registry上拉取(&lt;code&gt;pull&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;使用DockerFile构建(&lt;code&gt;build&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;从离线文件中导入(&lt;code&gt;load&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;从进行修改后容器中提交到一个新的镜像(&lt;code&gt;commit&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;https://www.zhugeqing.top/images/docker/docker-stages.png&#34; width=&#34;70%&#34; height=&#34;50%&#34;&gt;
+&lt;h3 id=&#34;第一种方式pull&#34;&gt;第一种方式（pull）&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比较常用的registry有&lt;a href=&#34;https://hub.docker.com/&#34;&gt;Dock hub&lt;/a&gt; 和 &lt;a href=&#34;https://quay.io/&#34;&gt;Quay&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;拉取nginx镜像——&lt;code&gt;docker pull nginx&lt;/code&gt;（docker hub）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;默认是拉取最新版本，若要拉取其他版本，则用命令&lt;code&gt;docker pull nginx:1.21.4&lt;/code&gt;（&lt;code&gt;1.21.4&lt;/code&gt;为版本号，前面加&lt;code&gt;:&lt;/code&gt;）&lt;br /&gt;
+若是其他&lt;code&gt;registry&lt;/code&gt;，比如&lt;a href=&#34;https://quay.io/&#34;&gt;Quay&lt;/a&gt; ，可以进入官网查看相关&lt;code&gt;拉取路径和版本号&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;notices info&#34; data-title=&#34;Info&#34;&gt;
+  可以使用&lt;code&gt;docker image inspect nginx&lt;/code&gt;查看image的详细信息（如完整ID号，tag，适用架构、系统等）
+&lt;/div&gt;
+&lt;h3 id=&#34;第二种方式build&#34;&gt;第二种方式（build）&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Dockerfile是用于构建docker镜像的文件&lt;br /&gt;
+Dockerfile里包含了构建镜像所需的“指令”&lt;br /&gt;
+Dockerfile有其特定的语法规则&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;编写DockerFile&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; ubuntu:21.04&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; apt-get update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;DEBIAN_FRONTEND&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;noninteractive apt-get install --no-install-recommends -y python3.9 python3-pip python3.9-dev&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ADD&lt;/span&gt; hello.py /&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CMD&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;python3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/hello.py&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;编写任意Python文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;你好,诸葛青！&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;通过build构建镜像&lt;br /&gt;
+&lt;code&gt;docker image build -t hello:1.0 .&lt;/code&gt;（&lt;code&gt;-t表示tag&lt;/code&gt;，&lt;code&gt;hello:1.0为镜像名加版本号&lt;/code&gt;，&lt;code&gt;.表示build context（构建镜像需要发送到镜像里面的目录，这里的.表示dockerfile所在目录）,若加-f参数，则可以dockerfile可以单独指定路径&lt;/code&gt;）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第三种方式load&#34;&gt;第三种方式（load）&lt;/h3&gt;
+&lt;p&gt;将镜像文件导出：&lt;code&gt;docker image save nginx:1.21.4 -o nginx_1.12.4_image&lt;/code&gt;（选项-o表示输出）&lt;br /&gt;
+将镜像文件导入：&lt;code&gt;docker image load -i nginx_1.12.4_image&lt;/code&gt;（选项-i表示输入）&lt;/p&gt;
+&lt;h3 id=&#34;第四种方式commit&#34;&gt;第四种方式（commit）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;使用&lt;code&gt;docker container run --publish 214:80 -it nginx:1.21.4 sh&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;notices info&#34; data-title=&#34;Info&#34;&gt;
+  &lt;code&gt;--publish 214:80&lt;/code&gt;表示将docker内的80端口映射为主机的214端口，&lt;code&gt;-it&lt;/code&gt;表示以交互式的方式运行，&lt;code&gt;sh&lt;/code&gt;表示打开shell
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cd /usr/share/nginx/html&lt;/code&gt; ，&lt;code&gt;echo &amp;quot;&amp;lt;h&amp;gt; 你好 诸葛青！&amp;lt;/h&amp;gt;&amp;quot; &amp;gt; index.html&lt;/code&gt;，&lt;code&gt;exit&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;notices info&#34; data-title=&#34;Info&#34;&gt;
+  第一条命令是转到nginx的index.html的存储路径下，第二条命令是修改默认的index.html，第三条命令是退出容器的shell
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用&lt;code&gt;docker container commit f12 zhugeqing/nginx&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;notices info&#34; data-title=&#34;Info&#34;&gt;
+  &lt;code&gt;f12&lt;/code&gt;为开启容器的ID，&lt;code&gt;zhugeqing/nginx&lt;/code&gt;为打包之后的镜像名
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;docker container commit c5 zhugeqing/nginx&lt;/code&gt;将正在ID前缀为c5的容器打包成名字为&amp;quot;zhugeqing/nginx&amp;quot;的镜像&lt;/p&gt;
+&lt;h2 id=&#34;删除image&#34;&gt;删除image&lt;/h2&gt;
+&lt;p&gt;删除&lt;code&gt;image&lt;/code&gt;使用&lt;code&gt;docker image rm 2f1&lt;/code&gt;。（2f1为镜像的ID号前缀，或者是image名字:tag的形式）&lt;br /&gt;
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34; data-dir=&#34;ltr&#34;&gt;删除的前提是该镜像没有被使用，如果用该镜像运行了一个&lt;code&gt;container&lt;/code&gt;，就算是停止了运行，也一样不能删除，因为停止的&lt;code&gt;container&lt;/code&gt;可能会在之后运行，所以不能直接删除&lt;code&gt;image&lt;/code&gt;，需要先使用&lt;code&gt;imgae container stop d61&lt;/code&gt;停止容器运行再用&lt;code&gt;imgae container rm d61&lt;/code&gt;删除容器再来删除镜像（d61为容器的ID号前缀），如果有多个容器关联了该镜像，那么需要把这些容器都删除才能删除被使用的镜像。&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id=&#34;分享image&#34;&gt;分享image&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;通过&lt;code&gt;docker login&lt;/code&gt;来登录Docker hub账号。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过&lt;code&gt;docker image tag hello zhugeqing/hello:1.0&lt;/code&gt;来将需要分享的镜像修改成&lt;code&gt;账户名/image名:tag&lt;/code&gt;的形式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过&lt;code&gt;docker image push zhugeqing/hello:1.0&lt;/code&gt;将镜像push到个人Repositories。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;scratch镜像&#34;&gt;Scratch镜像&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scratch是一个空的Docker镜像&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>Docker</title>
@@ -99,6 +540,9 @@
 &lt;li&gt;&lt;code&gt;docker image rm nginx&lt;/code&gt; 删除nginx这个镜像&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;docker conainer --help&lt;/code&gt; 查看更多与容器有关的命令&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;docker image --help&lt;/code&gt; 查看更多与镜像有关的命令&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker system prune -f&lt;/code&gt; 删除所有已经停止运行的容器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker image prune -a&lt;/code&gt; 删除所有没有被使用的镜像&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker container run --rm nginx&lt;/code&gt; 当容器退出时，会自动删除容器&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;容器的attached-和-detached模式&#34;&gt;容器的attached 和 detached模式&lt;/h2&gt;
 &lt;p&gt;在启动一个容器加上-d参数就可以以daemon守护进程的方式运行也就是detached模式，&lt;/p&gt;
@@ -120,7 +564,7 @@
 &lt;p&gt;键入exit退出shell并停止容器&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;code&gt;docker container exec -it c_ID sh&lt;/code&gt;在一个已经运行的容器（ID为c_ID    ）里执行一个额外的command，此时输入exit退出命令行并不会停止容器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker container exec -it c_ID sh&lt;/code&gt;在一个已经运行的容器（ID为c_ID）里执行一个额外的command，此时输入exit退出命令行并不会停止容器&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;容器即是进程&#34;&gt;容器即是进程&lt;/h2&gt;
 &lt;ol&gt;
@@ -142,12 +586,12 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
           └─nginx,867260
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;font color=VioletRed&gt; &lt;/font&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;再使用&lt;code&gt;docker ps&lt;/code&gt;来查看nginx所对应的container ID，就会发现与上面进程树的那个最长的进程名里面的字段一样，所以运行了一个容器就是运行了一个进程，但是这个进程&lt;code&gt; 或者是使用&lt;/code&gt;docker top ID`来查看容器的进程，一样是存在于Linux系统中的&lt;/p&gt;
+&lt;p&gt;再使用&lt;code&gt;docker ps&lt;/code&gt;来查看nginx所对应的container ID，就会发现与上面进程树的那个最长的进程名里面的字段一样，所以运行了一个容器就是运行了一个进程，或者是使用 &lt;code&gt;docker top ID&lt;/code&gt;来查看容器的进程，一样是存在于Linux系统中的。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;docker-run背后的故事&#34;&gt;docker run背后的故事&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;docker container run -d --publish 80:80 --name webServer nginx&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;docker container run -d -p 80:80 --name webServer nginx&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;-d表示daemon守护进程，&amp;ndash;publish 80:80表示将容器内的端口80暴露给容器外的端口80端口，前面的是容器外端口（也就是主机端口），后面的是容器内端口， &amp;ndash;name webServer表示为nginx这个容器起一个别名（不加这个参数，docker会自动起一个其他的名字）&lt;/p&gt;
+&lt;p&gt;-d表示daemon守护进程，-p 80:80表示将容器内的端口80暴露给容器外的端口80端口，前面的是容器外端口（也就是主机端口），后面的是容器内端口， &amp;ndash;name webServer表示为nginx这个容器起一个别名（不加这个参数，docker会自动起一个其他的名字）&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;在本地查找是否有nginx这个image镜像，如果没有发现&lt;/li&gt;

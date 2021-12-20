@@ -20,7 +20,7 @@ series:
 > Response是http请求的响应，是服务器需要反馈给客户端的信息，可以访问[源码地址](https://go.dev/src/net/http/response.go)（源码35行）来查看Response结构体的详细定义
 
 3. Conn
-> Conn是http的请求连接（用户的每次请求连接），可以访问[源码地址](https://go.dev/src/net/http/server.go)（源码248行）来查看Response结构体的详细定义    
+> Conn是http的请求连接（用户的每次请求连接），可以访问[源码地址](https://go.dev/src/net/http/server.go)（源码248行）来查看Conn结构体的详细定义    
 
 4. Handler
 > Handler是接收请求后逻辑处理和生成返回信息的逻辑，可以访问[源码地址](https://go.dev/src/net/http/server.go)（源码86行）来查看Handler接口
@@ -186,9 +186,7 @@ type muxEntry struct {
 
 ## 总结
 
-* 首先调用`h
-
-ttp.Handle`和`http.HandleFunc`
+* 首先调用`http.Handle`和`http.HandleFunc`
 > 按顺序做了几件事
 >1.调用了`DefaultServeMux的Handle`
 >2.调用了`DefaultServeMux的HandleFunc`

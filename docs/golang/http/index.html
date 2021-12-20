@@ -1544,7 +1544,7 @@
 
       
         <li class="navbarm__menu--item ">
-          <a href="/databases">数据库</a>
+          <a href="/problems">解题</a>
         </li>
       
       
@@ -1612,7 +1612,7 @@
 
       
         <li class="navbarm__menu--item ">
-          <a href="/recommend_site">推荐网站</a>
+          <a href="/tips">小知识</a>
         </li>
       
       
@@ -1729,7 +1729,7 @@
   
   
   
-  <a href="/databases" class="navbar__menu-item navbar__slide-down " dir="ltr" data-ani="true">数据库</a>
+  <a href="/problems" class="navbar__menu-item navbar__slide-down " dir="ltr" data-ani="true">解题</a>
   
   
   
@@ -1781,7 +1781,7 @@
   
   
   
-  <a href="/recommend_site" class="navbar__menu-item navbar__slide-down " dir="ltr" data-ani="true">推荐网站</a>
+  <a href="/tips" class="navbar__menu-item navbar__slide-down " dir="ltr" data-ani="true">小知识</a>
   
   
   
@@ -1882,7 +1882,7 @@
 <li>Conn</li>
 </ol>
 <blockquote>
-<p>Conn是http的请求连接（用户的每次请求连接），可以访问<a href="https://go.dev/src/net/http/server.go">源码地址</a>（源码248行）来查看Response结构体的详细定义</p>
+<p>Conn是http的请求连接（用户的每次请求连接），可以访问<a href="https://go.dev/src/net/http/server.go">源码地址</a>（源码248行）来查看Conn结构体的详细定义</p>
 </blockquote>
 <ol start="4">
 <li>Handler</li>
@@ -2170,9 +2170,8 @@ Go在等待客户端请求的源码如下：</p>
 </div><p>在ServeMux中的成员m就是关于不同的路由路径所对应的处理函数的映射，如果找不到对于的路径映射，那么就是默认返回<code>404</code>，但是如果配置了<code>/</code>的处理函数，那么对于没有对应路由路径的会调用<code>/</code>的处理函数</p>
 <h2 id="总结">总结</h2>
 <ul>
-<li>首先调用`h</li>
+<li>首先调用<code>http.Handle</code>和<code>http.HandleFunc</code></li>
 </ul>
-<p>ttp.Handle<code>和</code>http.HandleFunc`</p>
 <blockquote>
 <p>按顺序做了几件事<br />
 1.调用了<code>DefaultServeMux的Handle</code><br />
@@ -2506,8 +2505,8 @@ C 如果没有路由满足，调用<code>NotFoundHandler</code>的<code>ServeHTT
     
     <div class="grow"></div>
     
-      <a href="https://www.zhugeqing.top/golang/mysql-go/" class="pagination-single__right">      
-        <div class="pagination-single__right-title">Go语言对Mysql进行操作</div>
+      <a href="https://www.zhugeqing.top/golang/template/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">Go语言template库</div>
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
         </div>

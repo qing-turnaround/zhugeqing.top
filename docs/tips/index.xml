@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>tips on 诸葛青的编程之旅</title>
+    <link>https://www.zhugeqing.top/tips/</link>
+    <description>Recent content in tips on 诸葛青的编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
+    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>RESTful</title>
+        <link>https://www.zhugeqing.top/tips/restful/</link>
+        <pubDate>Fri, 12 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 12 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/tips/restful/</guid>
+        <description>REST REST为Representational State Transfer的缩写，中文翻译为表现层状态转换，本质是一种架构的原则，如果一个架构符合REST原则，就称它为RESTful架构。 严格来说，REST是设计风格而不是标准 Representation（表现层） 资源（html，xml，txt，json，png，jpg...）是信息实体，可以拥有多种表现的形式，而资源所呈现的形式，就叫做资源的表现层（Repr</description>
+        <content:encoded>&lt;h2 id=&#34;rest&#34;&gt;REST&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;REST&lt;/code&gt;为&lt;code&gt;Representational State Transfer&lt;/code&gt;的缩写，中文翻译为&lt;code&gt;表现层状态转换&lt;/code&gt;，本质是一种架构的原则，如果一个架构符合&lt;code&gt;REST&lt;/code&gt;原则，就称它为&lt;code&gt;RESTful&lt;/code&gt;架构。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;严格来说，&lt;code&gt;REST&lt;/code&gt;是&lt;code&gt;设计风格&lt;/code&gt;而不是&lt;code&gt;标准&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;representation表现层&#34;&gt;Representation（表现层）&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;资源（html，xml，txt，json，png，jpg...）&lt;/code&gt;是信息实体，可以拥有多种表现的形式，而&lt;code&gt;资源所呈现的形式&lt;/code&gt;，就叫做资源的&lt;code&gt;表现层（Representation）&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;state-transfer状态转换&#34;&gt;State Transfer（状态转换）&lt;/h2&gt;
+&lt;p&gt;在&lt;code&gt;客户端和服务器的通信的过程中&lt;/code&gt;，客户端通过使用&lt;code&gt;HTTP协议&lt;/code&gt;的&lt;code&gt;操作（Get，Put，Post，Delete）&lt;/code&gt;来改变服务端资源。&lt;code&gt;让服务器端发生&amp;quot;状态转化&amp;quot;（State Transfer）&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;restful-api&#34;&gt;RESTful API&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;直观简短的资源地址：URI，比如：http://example.com/resources。&lt;/li&gt;
+&lt;li&gt;传输的资源：Web服务接受与返回的互联网媒体类型，比如：JSON，XML，YAML等。&lt;/li&gt;
+&lt;li&gt;对资源的操作：Web服务在该资源上所支持的一系列请求方法（比如：POST，GET，PUT或DELETE）。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>tips</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>推荐网站</title>
+        <link>https://www.zhugeqing.top/tips/site/</link>
+        <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 02 Mar 2020 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/tips/site/</guid>
+        <description>国内网站 1.一个几乎全能编程的网站(适合小白和容易忘记基础的大佬 ) 菜鸟教程 (https://www.runoob.com/) 2.垂直的互联网IT技能免费学习网站。以独家视频教程、 在线编程工具、学习计划、问答社区为核心特色。在这里， 你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。 慕课网 (https://www.imooc.com/) 3.全国最大中文IT社区&amp;mdash;国内的程序员入门级网站，内容很多很杂，包括论坛、资源下载、博客、各种资讯等等 CSDN</description>
+        <content:encoded>&lt;figure&gt;&lt;img src=&#34;&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;国内网站&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;1.一个几乎全能编程的网站(适合小白和容易忘记基础的大佬 )&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.runoob.com/&#34;&gt;菜鸟教程&lt;/a&gt;	(&lt;a href=&#34;https://www.runoob.com/&#34;&gt;https://www.runoob.com/&lt;/a&gt;)&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/%e8%8f%9c%e9%b8%9f%e6%95%99%e7%a8%8b.jpg&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;2.垂直的互联网IT技能免费学习网站。以独家视频教程、&lt;br /&gt;
+在线编程工具、学习计划、问答社区为核心特色。在这里，&lt;br /&gt;
+你可以找到最好的互联网技术牛人，也可以通过免费的在线公开视频课程学习国内领先的互联网IT技术。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.imooc.com/&#34;&gt;慕课网&lt;/a&gt; (&lt;a href=&#34;https://www.imooc.com/&#34;&gt;https://www.imooc.com/&lt;/a&gt;)&lt;br /&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/%e6%98%9f%e7%a9%ba.JPEG&#34;/&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;3.全国最大中文IT社区&amp;mdash;国内的程序员入门级网站，内容很多很杂，包括论坛、资源下载、博客、各种资讯等等&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.csdn.net/&#34;&gt;CSDN&lt;/a&gt; (&lt;a href=&#34;https://www.csdn.net/&#34;&gt;https://www.csdn.net/&lt;/a&gt;)&lt;br /&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/csdn.jpg&#34;/&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;4.国内最好的开源社区&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.oschina.net/&#34;&gt;开源中国社区&lt;/a&gt; (&lt;a href=&#34;https://www.oschina.net/&#34;&gt;https://www.oschina.net/&lt;/a&gt;)&lt;br /&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/%e5%bc%80%e6%ba%90%e4%b8%ad%e5%9b%bd.png&#34;/&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;当然国内好的自学编程的网站还有很多，网站只是一条比较好的学习路径，关键看个人，学习基础知识的话以上我“强烈”建议菜鸟教程&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;国外网站&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;br /&gt;
+考虑到国内网络环境的问题，以下推荐网站可能需要读者自行解决网络问题，翻墙，买服务器等方法等等&amp;hellip;&lt;/p&gt;
+&lt;p&gt;1.Codecademy&amp;mdash;是最受欢迎的免费编程学习网站之一。事实上，已经有超过2400万人通过这家公司的教育模式学会了编程。&lt;br /&gt;
+Codecademy开设的课程有HTML&amp;amp;CSS，JavaScript，jQuery的，PHP，Python和Ruby等等&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.codecademy.com/&#34;&gt;Codecademy&lt;/a&gt; (&lt;a href=&#34;http://www.codecademy.com/&#34;&gt;http://www.codecademy.com/&lt;/a&gt;)&lt;br /&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/codecademy.jpg&#34;/&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;2.edX&amp;mdash;是另一个领先的在线学习平台，重点是它不是以营利为目的，而是开源的。&lt;br /&gt;
+由美国哈佛大学和麻省理工学院于2012年联合创办的，所以你将会在这里学习到先进的技术和理论&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.edx.org/&#34;&gt;edX&lt;/a&gt;(&lt;a href=&#34;https://www.edx.org/&#34;&gt;https://www.edx.org/&lt;/a&gt;)&lt;br /&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/edx.jpg&#34;/&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;3.MIT Open Courseware&amp;mdash;如果你已经学过基础知识，并向更深入的层次探索，比如探究背后的编码理论等，麻省理工学院提供了包括如计算机科学导论,&lt;br /&gt;
+Java编程介绍和C语言编程等免费课件的网站&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://ocw.mit.edu/&#34;&gt;MIT Open Courseware&lt;/a&gt;(&lt;a href=&#34;https://ocw.mit.edu/&#34;&gt;https://ocw.mit.edu/&lt;/a&gt;)&lt;br /&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/MIT%20Open%20Courseware.jpg&#34;/&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;4.Github&amp;mdash;作为开源代码库以及版本控制系统，Github拥有140多万开发者用户,是这个星球上最流行的开源托管服务&lt;/p&gt;
+&lt;p&gt;[Github]&amp;mdash;(&lt;a href=&#34;https://github.com/)(https://github.com/&#34;&gt;https://github.com/)(https://github.com/&lt;/a&gt;)&lt;br /&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/github.jpg&#34;/&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;文章到此为止，最后给上大家几点自学编程的建议&lt;/p&gt;
+&lt;p&gt;1.你为什么学编程？&lt;/p&gt;
+&lt;p&gt;（发自内心的问自己，直到找到一个令你自己满意的答案）&lt;/p&gt;
+&lt;p&gt;2.学好英语&lt;/p&gt;
+&lt;p&gt;（本人英语不好，但是学好英语是非常有必要的，一个英语好的人和一个英语差的人学起编程来，无论是体验还是难度都截然不同，&lt;br /&gt;
+。“学编程前先学好英语”这话非常实在）&lt;/p&gt;
+&lt;p&gt;3.学会看说明文档&lt;/p&gt;
+&lt;p&gt;(你要的答案往往就安静地躺在说明文档里面。)&lt;/p&gt;
+&lt;p&gt;4.求人与求己&lt;/p&gt;
+&lt;p&gt;（是要自力更生，还是要求助于人？&lt;br /&gt;
+是要脚踏实地，还是要抄捷径？记住”我想学习和探究“， 不要依赖复制粘贴）&lt;/p&gt;
+&lt;p&gt;5.何为好代码&lt;/p&gt;
+&lt;p&gt;（高可读性， 简洁高效，容易维护，可重复利用，放哪都能快速适用，没有或者少bugs）&lt;/p&gt;
+&lt;p&gt;6.切忌急于求成&lt;/p&gt;
+&lt;p&gt;（一定要相信自己，并且坚持下去，出现很难解决的问题，先查后问，还是解决不了，心中暗念“next”，等以后有能力了再来解决）&lt;/p&gt;
+&lt;p&gt;7.潮流&lt;/p&gt;
+&lt;p&gt;(打好基础，理解透彻，即使面对汹涌的更新潮流也能淡然自若)&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/recommend_site/maidang.ico&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;最后送上我最喜欢的一句话&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&#34;&#34;/&gt;&lt;figcaption&gt;
+            &lt;h4&gt;相信奇迹的人本身和奇迹一样了不起&lt;/h4&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>tips</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

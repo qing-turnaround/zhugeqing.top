@@ -15,12 +15,10 @@
   url = "intelligence"
  weight = 7
 
-
 [[main]]
-  identifier = "数据库"
-  name = "数据库"
-  url = "databases"
-  weight = 8
+  name = "解题"
+  url = "problems"
+ weight = 8
 
 [[main]]
   identifier = "算法"
@@ -60,8 +58,8 @@
   url = "data_structure_and_sort/sort"
 
 [[main]]
-  name = "推荐网站"
-  url = "recommend_site"
+  name = "小知识"
+  url = "tips"
  weight = 12
 
 
