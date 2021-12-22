@@ -21,6 +21,74 @@
       
       <item>
         <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2021-12-21/</link>
+        <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 21 Dec 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2021-12-21/</guid>
+        <description>算法 无须强调的习惯 124. 二叉树中的最大路径和——第二遍 修改潜意识 开始阶段 记： 骂自己的第21天 看书不能停！ 改变坏习惯的第5天 继续坚持，转移注意力 思念祖母的第127天 泪流思念 持续正念第23天 一定坚持 持续行动的136天！ 为了自我</description>
+        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;无须强调的习惯&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/&#34;&gt;124. 二叉树中的最大路径和&lt;/a&gt;——第二遍&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;修改潜意识&#34;&gt;修改潜意识&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;开始阶段&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;记&#34;&gt;记：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;骂自己的第21天&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;看书不能停！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;改变坏习惯的第5天&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;继续坚持，转移注意力&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;code&gt;思念祖母的第127天&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;泪流思念&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;code&gt;持续正念第23天&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一定坚持&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;code&gt;持续行动的136天！&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为了自我&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/about/%e7%a7%af%e8%b7%ac%e6%ad%a5%e4%bb%a5%e8%87%b3%e5%8d%83%e9%87%8c.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
         <link>https://www.zhugeqing.top/write/2021-12-20/</link>
         <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
         
@@ -3985,50 +4053,6 @@
 &lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;思念祖母的第32天&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的四十二天！&lt;/font&gt;&lt;/p&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>持续行动</title>
-        <link>https://www.zhugeqing.top/write/2021-9-12/</link>
-        <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Sun, 12 Sep 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/write/2021-9-12/</guid>
-        <description>1.Golang 实现ServeHttp方法可以实现http.Handler这个接口，http.Handle(&amp;quot;/haha&amp;quot;, &amp;amp;Handler)可以处理请求，同时需要创建结构体http.Server（假设实例为server），并使用server.ListenAndServe()进行监听 也可以使用http.HandleFunc()进行注册处理，http.HandleFunc实际上是一个类</description>
-        <content:encoded>&lt;h2 id=&#34;1golang&#34;&gt;1.Golang&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;实现ServeHttp方法可以实现http.Handler这个接口，http.Handle(&amp;quot;/haha&amp;quot;, &amp;amp;Handler)可以处理请求，同时需要创建结构体http.Server（假设实例为server），并使用server.ListenAndServe()进行监听&lt;/li&gt;
-&lt;li&gt;也可以使用http.HandleFunc()进行注册处理，http.HandleFunc实际上是一个类型，也实现了ServerHttp方法，相当于也是一个http.Handler&lt;/li&gt;
-&lt;li&gt;尝试制作微信小程序&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;2vscode&#34;&gt;2.vscode&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;选中单词按F2进行批量修改&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;3算法&#34;&gt;3.算法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/trapping-rain-water/&#34;&gt;力扣42. 接雨水&lt;/a&gt;——第二遍&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/divide-two-integers/&#34;&gt;力扣29. 两数相除&lt;/a&gt;——第二遍&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
-&lt;p&gt;今天距离奶奶离开已经一个月了，思念涌上心头，伤心无法停留——&lt;code&gt;思念祖母的第31天&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的四十一天！&lt;/font&gt;&lt;/p&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
