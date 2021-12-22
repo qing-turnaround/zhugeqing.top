@@ -2684,7 +2684,7 @@
         
         <atom:modified>Thu, 01 Jan 1970 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/touge/9/</guid>
-        <description>1 RIPv2 配置 标准 ACL 配置 多区域OSPF协议配置 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route_help.git mv touge_route_help/* myshixun 2 扩展 ACL 配置 OSPF高级配置 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route2_help.git mv touge_route_help/* myshixun 3 动态 NAT 配置 VLAN配置 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route3_help.git mv touge_route_help/* myshixun 4 GNS3组建小型局域网 三层交换实现 VALN 间路由 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route4_help.git mv touge_route_help/* myshixun 5 链路聚合 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route5_help.git cd /touge_route5_help mv .test.sh ../myshixun 6 生成树协议 STP 与 PVST 配置 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route6_help.git mv touge_route_help/* myshixun 7 IP 通信原理 第一关 ABCD B 第二关 A A B 第三关 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route6_help.git mv touge_route_help/* myshixun</description>
+        <description>1 RIPv2 配置 标准 ACL 配置 多区域OSPF协议配置 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route_help.git mv touge_route_help/* myshixun 2 扩展 ACL 配置 OSPF高级配置 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route2_help.git mv touge_route_help/* myshixun 3 动态 NAT 配置 VLAN配置 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route3_help.git mv touge_route_help/* myshixun 4 GNS3组建小型局域网 三层交换实现 VALN 间路由 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route4_help.git mv touge_route_help/* myshixun 5 链路聚合 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route5_help.git cd /touge_route5_help mv .test.sh ../myshixun 6 生成树协议 STP 与 PVST 配置 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route6_help.git mv touge_route_help/* myshixun 7 IP 通信原理 第一关 ABCD B 第二关 A A B 第三关 cd /data/workspace/ git clone https://gitee.com/xing-you-ji/touge_route6_help.git mv touge_route_help6/* myshixun</description>
         <content:encoded>&lt;h2 id=&#34;1&#34;&gt;1&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;RIPv2 配置&lt;/code&gt; &lt;code&gt;标准 ACL 配置&lt;/code&gt; &lt;code&gt;多区域OSPF协议配置&lt;/code&gt;&lt;/li&gt;
@@ -2759,7 +2759,7 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;cd /data/workspace/&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git clone https://gitee.com/xing-you-ji/touge_route6_help.git&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mv touge_route_help/* myshixun&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mv touge_route_help6/* myshixun&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
