@@ -5,7 +5,7 @@ image: "images/recommend_site/xingyouji.jpg"
 title: "O(nlogn)排序算法的小结"
 author: 诸葛青
 authorEmoji: 🤖
-pinned: true
+pinned: false
 tags:
 - 排序算法
 series:

@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Oct 9, 2021 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;4&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -2192,6 +2192,102 @@
 		<span class="k">return</span> <span class="nx">err</span>
 	<span class="p">}</span>
 	<span class="k">return</span> <span class="kc">nil</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="pipeline">Pipeline</h2>
+<p><code>Pipeline</code> 主要是一种网络优化。它本质上意味着客户端缓冲一堆命令并一次性将它们发送到服务器。这些命令不能保证在事务中执行。这样做的好处是节省了每个命令的网络往返时间（<code>RTT</code>）。</p>
+<p><code>Pipeline</code> 示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="kd">func</span> <span class="nf">Pipeline</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">pipe</span> <span class="o">:=</span> <span class="nx">rdb</span><span class="p">.</span><span class="nf">Pipeline</span><span class="p">()</span>
+	<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">pipe</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="s">&#34;诸葛青&#34;</span><span class="p">,</span> <span class="s">&#34;健康开心&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nf">Result</span><span class="p">()</span>
+	<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">pipe</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="s">&#34;诸葛青1&#34;</span><span class="p">,</span> <span class="s">&#34;无限可能&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="nf">Result</span><span class="p">()</span>
+	<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">pipe</span><span class="p">.</span><span class="nf">Incr</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="s">&#34;22&#34;</span><span class="p">).</span><span class="nf">Result</span><span class="p">()</span>
+	<span class="c1">//执行Pipeline里面的所有命令
+</span><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">pipe</span><span class="p">.</span><span class="nf">Exec</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="事务">事务</h2>
+<p>Redis是单线程的，因此单个命令始终是原子的，但是来自不同客户端的两个给定命令可以依次执行，例如在它们之间交替执行。但是，<code>Multi/exec</code>能够确保在<code>multi/exec</code>两个语句之间的命令之间没有其他客户端正在执行命令。</p>
+<p>在这种场景我们需要使用<code>TxPipeline</code>。<code>TxPipeline</code>总体上类似于上面的<code>Pipeline</code>，但是它内部会使用<code>MULTI/EXEC</code>包裹排队的命令。</p>
+<p><code>transaction</code> 示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="kd">func</span> <span class="nf">transaction</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">tx</span> <span class="o">:=</span> <span class="nx">rdb</span><span class="p">.</span><span class="nf">TxPipeline</span><span class="p">()</span>
+	<span class="nx">_</span> <span class="p">=</span> <span class="nx">tx</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="s">&#34;number 1&#34;</span><span class="p">,</span>  <span class="s">&#34;One&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="nx">_</span> <span class="p">=</span> <span class="nx">tx</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="s">&#34;number 2&#34;</span><span class="p">,</span> <span class="s">&#34;two&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="nx">_</span> <span class="p">=</span> <span class="nx">tx</span><span class="p">.</span><span class="nf">Incr</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="s">&#34;22&#34;</span><span class="p">)</span>
+	<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">tx</span><span class="p">.</span><span class="nf">Exec</span><span class="p">(</span><span class="nx">ctx</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="watch">Watch</h2>
+<p>在某些场景下，除了要使用<code>MULTI/EXEC</code>命令外，还需要配合使用<code>WATCH</code>命令。在用户使用<code>WATCH</code>命令监视某个键之后，直到该用户执行<code>EXEC</code>命令的这段时间里，如果有其他用户抢先对被监视的键进行了替换、更新、删除等操作，那么当用户尝试执行<code>EXEC</code>的时候，事务将失败并返回一个错误，用户可以根据这个错误选择重试事务或者放弃事务。</p>
+<p><code>Watch</code>示例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="kd">func</span> <span class="nf">Watch</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// 监视watch_count的值，并在值不变的前提下将其值+1
+</span><span class="c1"></span>	<span class="nx">key</span> <span class="o">:=</span> <span class="s">&#34;watch_count&#34;</span>
+	<span class="nx">err</span> <span class="o">:=</span> <span class="nx">rdb</span><span class="p">.</span><span class="nf">Watch</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="kd">func</span><span class="p">(</span><span class="nx">tx</span> <span class="o">*</span><span class="nx">redis</span><span class="p">.</span><span class="nx">Tx</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+		<span class="nx">n</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">tx</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="nx">key</span><span class="p">).</span><span class="nf">Int</span><span class="p">()</span>
+		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="nx">err</span> <span class="o">!=</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">Nil</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="nx">err</span>
+		<span class="p">}</span>
+		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">tx</span><span class="p">.</span><span class="nf">Pipelined</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="kd">func</span><span class="p">(</span><span class="nx">pipe</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">Pipeliner</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+			<span class="nx">pipe</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="nx">key</span><span class="p">,</span> <span class="nx">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="k">return</span> <span class="kc">nil</span>
+		<span class="p">})</span>
+		<span class="k">return</span> <span class="nx">err</span>
+	<span class="p">},</span> <span class="nx">key</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;error: %v\n&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Exec succeeded&#34;</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -2868,6 +2964,9 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#zset">zset</a></li>
     <li><a href="#sentinel">Sentinel</a></li>
     <li><a href="#cluster">Cluster</a></li>
+    <li><a href="#pipeline">Pipeline</a></li>
+    <li><a href="#事务">事务</a></li>
+    <li><a href="#watch">Watch</a></li>
   </ul>
 </nav>
   </div>

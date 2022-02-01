@@ -33,26 +33,25 @@ var db *sqlx.DB
 func initDB() (err error) {
 	// DSN:Data Source Name
 	//DSN格式为：[username[:password]@][protocol[(address)]]/dbname[?param1=value1&...&paramN=valueN]
-	dsn := "root:root@tcp(127.0.0.1:3306)/zhugeqing"
-	db, err = sqlx.Open("mysql", dsn)
+	dsn := "root:root@tcp(127.0.0.1:3306)/test"
+	//"也可以使用mustConnect，如果连接不成功，直接panic"
+	db, err = sqlx.Connect("mysql", dsn) //封装了open和ping，不需要再执行ping来进行真正的连接
 	if err != nil {
 		return err
 	}
-	// 尝试与数据库建立连接（校验dsn是否正确）
-	err = db.Ping()
-	if err != nil {
-		return err
-	}
-	fmt.Println("Mysql连接成功")
+	fmt.Println("连接mysql成功")
+	db.SetMaxOpenConns(200) //最大连接数（默认）
+	db.SetConnMaxIdleTime(20) //最大空闲连接数（20个数据库连接随时待命）
 	return nil
 }
 
 func main() {
 	err := initDB() // 调用输出化数据库的函数
 	if err != nil {
-		fmt.Printf("init db failed,err:%v\n", err)
-		return
+		panic(err)
 	}
+
+	defer db.Close()
 }
 ```
 
@@ -78,6 +77,8 @@ CREATE TABLE place (
     telcode int
 )ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 ```
+
+3. SetMaxOpenConns
 
 ## Insert操作
 
@@ -164,6 +165,52 @@ func deleteDemo() {
 
 }
 ```
+## NamedExec
+> db.NamedExec方法用来绑定SQL语句与结构体或map中的同名字段，执行增删改操作
+```Go
+func nameExecDemo() {
+	_,err := db.NamedExec("insert into person(username, sex, email)values(:username, :sex, :email)",
+		Person{
+		Username:"HTTP权威指南",
+		Sex: "",
+		Email: "",
+		})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Println("执行成功")
+}
+```
+
+## NamedQuery
+> db.NamedQuery方法用来绑定SQL语句与结构体或map中的同名字段，进行查询操作
+```
+
+```
+
+## 预处理
+> * 1.优化MySQL服务器重复执行SQL的方法，可以提升服务器性能，提前让服务器编译，一次编译多次执行，节省后续编译的成本。
+> * 2.避免SQL注入问题
+
+```Go
+func prepareDemo() {
+	sqlStr := "insert into person(username, sex, email)values(?, ?, ?)"
+	stmt, err := db.Prepare(sqlStr)
+	if err != nil {
+		fmt.Println("error: prepared statement failed: ", err)
+		return 
+	}
+	fmt.Println("prepare succeeded")
+	stmt.Exec("记忆",nil, nil)
+	stmt.Exec("redis设计与实现", nil, nil)
+	stmt.Exec("mysql；innodb存储引擎", nil, nil)
+	return
+}
+```
+
+
 
 ## 事务
 `mysql事务特性`

@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 11, 2021 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;4&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1905,7 +1905,6 @@
 </span><span class="lnt">33
 </span><span class="lnt">34
 </span><span class="lnt">35
-</span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="kn">package</span> <span class="nx">main</span>
@@ -1923,26 +1922,25 @@
 </span><span class="c1"></span><span class="kd">func</span> <span class="nf">initDB</span><span class="p">()</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 	<span class="c1">// DSN:Data Source Name
 </span><span class="c1"></span>	<span class="c1">//DSN格式为：[username[:password]@][protocol[(address)]]/dbname[?param1=value1&amp;...&amp;paramN=valueN]
-</span><span class="c1"></span>	<span class="nx">dsn</span> <span class="o">:=</span> <span class="s">&#34;root:root@tcp(127.0.0.1:3306)/zhugeqing&#34;</span>
-	<span class="nx">db</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">sqlx</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="s">&#34;mysql&#34;</span><span class="p">,</span> <span class="nx">dsn</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span><span class="c1"></span>	<span class="nx">dsn</span> <span class="o">:=</span> <span class="s">&#34;root:root@tcp(127.0.0.1:3306)/test&#34;</span>
+	<span class="c1">//&#34;也可以使用mustConnect，如果连接不成功，直接panic&#34;
+</span><span class="c1"></span>	<span class="nx">db</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">sqlx</span><span class="p">.</span><span class="nf">Connect</span><span class="p">(</span><span class="s">&#34;mysql&#34;</span><span class="p">,</span> <span class="nx">dsn</span><span class="p">)</span> <span class="c1">//封装了open和ping，不需要再执行ping来进行真正的连接
+</span><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
 		<span class="k">return</span> <span class="nx">err</span>
 	<span class="p">}</span>
-	<span class="c1">// 尝试与数据库建立连接（校验dsn是否正确）
-</span><span class="c1"></span>	<span class="nx">err</span> <span class="p">=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Ping</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">err</span>
-	<span class="p">}</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Mysql连接成功&#34;</span><span class="p">)</span>
-	<span class="k">return</span> <span class="kc">nil</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;连接mysql成功&#34;</span><span class="p">)</span>
+	<span class="nx">db</span><span class="p">.</span><span class="nf">SetMaxOpenConns</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="c1">//最大连接数（默认）
+</span><span class="c1"></span>	<span class="nx">db</span><span class="p">.</span><span class="nf">SetConnMaxIdleTime</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="c1">//最大空闲连接数（20个数据库连接随时待命）
+</span><span class="c1"></span>	<span class="k">return</span> <span class="kc">nil</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 	<span class="nx">err</span> <span class="o">:=</span> <span class="nf">initDB</span><span class="p">()</span> <span class="c1">// 调用输出化数据库的函数
 </span><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;init db failed,err:%v\n&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="k">return</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
 	<span class="p">}</span>
+
+	<span class="k">defer</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -1989,7 +1987,10 @@ use test;</p>
 </span><span class="w"></span><span class="p">)</span><span class="kp">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="kp">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">2</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="kp">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
-</div><h2 id="insert操作">Insert操作</h2>
+</div><ol start="3">
+<li>SetMaxOpenConns</li>
+</ol>
+<h2 id="insert操作">Insert操作</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2148,6 +2149,88 @@ use test;</p>
 
 	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;delete succ: &#34;</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span>
 
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="namedexec">NamedExec</h2>
+<blockquote>
+<p>db.NamedExec方法用来绑定SQL语句与结构体或map中的同名字段，执行增删改操作</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="kd">func</span> <span class="nf">nameExecDemo</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">_</span><span class="p">,</span><span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">NamedExec</span><span class="p">(</span><span class="s">&#34;insert into person(username, sex, email)values(:username, :sex, :email)&#34;</span><span class="p">,</span>
+		<span class="nx">Person</span><span class="p">{</span>
+		<span class="nx">Username</span><span class="p">:</span><span class="s">&#34;HTTP权威指南&#34;</span><span class="p">,</span>
+		<span class="nx">Sex</span><span class="p">:</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+		<span class="nx">Email</span><span class="p">:</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+		<span class="p">})</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;执行成功&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="namedquery">NamedQuery</h2>
+<blockquote>
+<p>db.NamedQuery方法用来绑定SQL语句与结构体或map中的同名字段，进行查询操作</p>
+</blockquote>
+<pre tabindex="0"><code>
+</code></pre><h2 id="预处理">预处理</h2>
+<blockquote>
+<ul>
+<li>1.优化MySQL服务器重复执行SQL的方法，可以提升服务器性能，提前让服务器编译，一次编译多次执行，节省后续编译的成本。</li>
+<li>2.避免SQL注入问题</li>
+</ul>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="kd">func</span> <span class="nf">prepareDemo</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">sqlStr</span> <span class="o">:=</span> <span class="s">&#34;insert into person(username, sex, email)values(?, ?, ?)&#34;</span>
+	<span class="nx">stmt</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Prepare</span><span class="p">(</span><span class="nx">sqlStr</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;error: prepared statement failed: &#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+		<span class="k">return</span> 
+	<span class="p">}</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;prepare succeeded&#34;</span><span class="p">)</span>
+	<span class="nx">stmt</span><span class="p">.</span><span class="nf">Exec</span><span class="p">(</span><span class="s">&#34;记忆&#34;</span><span class="p">,</span><span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+	<span class="nx">stmt</span><span class="p">.</span><span class="nf">Exec</span><span class="p">(</span><span class="s">&#34;redis设计与实现&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+	<span class="nx">stmt</span><span class="p">.</span><span class="nf">Exec</span><span class="p">(</span><span class="s">&#34;mysql；innodb存储引擎&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+	<span class="k">return</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -2971,6 +3054,9 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#select操作">Select操作</a></li>
     <li><a href="#update操作">Update操作</a></li>
     <li><a href="#delete操作">Delete操作</a></li>
+    <li><a href="#namedexec">NamedExec</a></li>
+    <li><a href="#namedquery">NamedQuery</a></li>
+    <li><a href="#预处理">预处理</a></li>
     <li><a href="#事务">事务</a></li>
   </ul>
 </nav>
