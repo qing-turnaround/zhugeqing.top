@@ -12,12 +12,109 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Wed, 24 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/series/problems/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>计算机网络题目合集</title>
+        <link>https://www.zhugeqing.top/problems/network/1/</link>
+        <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 01 Jan 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/network/1/</guid>
+        <description>简述OSI七层体系结构？ 简述TCP/IP四层体系结构？ 知道各个层使用的是哪个数据交换设备？ 简述OSI七层体系结构？ 自上而下是： 应用层（数据）：确定进程之间通信的性质以满足用户需要以及提供网络与用户应用 表示层（数据）：主要解决用户信息的语法表示问题，如加密解密 会话层（数据）：提供包括访问验证和会话管理在内的建立和维护应用之间通信的机制，如服务器验证用户登录便是由会话层完成的 传输层（段）：实现网络不同</description>
+        <content:encoded>&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#%E7%AE%80%E8%BF%B0osi%E4%B8%83%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84&#34;&gt;简述OSI七层体系结构？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E7%AE%80%E8%BF%B0tcpip%E5%9B%9B%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84&#34;&gt;简述TCP/IP四层体系结构？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E7%9F%A5%E9%81%93%E5%90%84%E4%B8%AA%E5%B1%82%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%AA%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E8%AE%BE%E5%A4%87&#34;&gt;知道各个层使用的是哪个数据交换设备？&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;简述osi七层体系结构&#34;&gt;简述OSI七层体系结构？&lt;/h3&gt;
+&lt;p&gt;自上而下是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用层（数据）：确定进程之间通信的性质以满足用户需要以及提供网络与用户应用&lt;/li&gt;
+&lt;li&gt;表示层（数据）：主要解决用户信息的语法表示问题，如加密解密&lt;/li&gt;
+&lt;li&gt;会话层（数据）：提供包括访问验证和会话管理在内的建立和维护应用之间通信的机制，如服务器验证用户登录便是由会话层完成的&lt;/li&gt;
+&lt;li&gt;传输层（段）：实现网络不同主机上用户进程之间的数据通信，可靠与不可靠的传输，传输层的错误检测，流量控制等&lt;/li&gt;
+&lt;li&gt;网络层（包）：提供逻辑地址（IP）、选路，数据从源端到目的端的传输&lt;/li&gt;
+&lt;li&gt;数据链路层（帧）：将上层数据封装成帧，用MAC地址访问媒介，错误检测与修正&lt;/li&gt;
+&lt;li&gt;物理层（比特流）：设备之间比特流的传输，物理接口，电气特性等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;简述tcpip四层体系结构&#34;&gt;简述TCP/IP四层体系结构？&lt;/h3&gt;
+&lt;p&gt;自上而下是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用层&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HTTP、TELNET、FTP、SMTP&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;传输层&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TCP、UDP&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;网络层&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;IP、ICMP&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;数据链路层（网络接口层）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PPP、Ethernet&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;知道各个层使用的是哪个数据交换设备&#34;&gt;知道各个层使用的是哪个数据交换设备？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;物理层&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;集线器（Hub）：纯硬件设备，主要用来连接计算机等网络终端。&lt;br /&gt;
+中继器：再生网络信号，从而使得能够在网络上传输更长的距离&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;数据链路层&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;网桥：将两个 LAN 连起来，根据 MAC 地址来转发帧&lt;br /&gt;
+交换机：基本功能与网桥一样，但在分段，传输速率，等其他方面更强大&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;网络层&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;路由器：路由选择、存储转发&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;网络层之上&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;网关：网关在传输层上以实现网络互连，是最复杂的网络互连设备，仅用于两个高层协议不同的网络互连。网关的结构也和路由器类似，不同的是互连层。网关既可以用于广域网互连，也可以用于局域网互连。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>计算机网络题目</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>Sql题目</title>
@@ -356,6 +453,32 @@
           
             
               <category>海量数据</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>计算机网络</title>
+        <link>https://www.zhugeqing.top/problems/network/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 23 Nov 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/problems/network/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
             
           
         

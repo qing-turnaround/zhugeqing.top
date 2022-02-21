@@ -93,6 +93,66 @@
       </item>
       
       <item>
+        <title>微服务</title>
+        <link>https://www.zhugeqing.top/tips/microservice/</link>
+        <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 01 Jan 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/tips/microservice/</guid>
+        <description>从字面上理解微服务 微服务（micro service）,解读微（micro）和服务（service） 微（micro）可以通过亚马逊CEO JeffBezos提出的“The two pizza principle”（两个比萨）的例子来解读。两个比萨就是指单个服务从设计到开发、测试、运维加起来的参与人数不能多到两个比萨还不够吃，也就是说要控制单个服务的规模和成本 服务（service）是可以直接使用的一个或一组功能，用户不需</description>
+        <content:encoded>&lt;h2 id=&#34;从字面上理解微服务&#34;&gt;从字面上理解微服务&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;微服务（&lt;code&gt;micro service&lt;/code&gt;）,解读微（&lt;code&gt;micro&lt;/code&gt;）和服务（&lt;code&gt;service&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;微（micro）可以通过亚马逊CEO JeffBezos提出的“The two pizza principle”（两个比萨）的例子来解读。两个比萨就是指单个服务从设计到开发、测试、运维加起来的参与人数不能多到两个比萨还不够吃，也就是说要控制单个服务的规模和成本&lt;/li&gt;
+&lt;li&gt;服务（service）是可以直接使用的一个或一组功能，用户不需要关心具体的实现，只需关心输入和输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;严谨定义微服务&#34;&gt;严谨定义微服务&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;微服务是一种细粒度的分布式解决方案，这些细粒度的服务独立性强并且会协同工&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;微服务的优缺点&#34;&gt;微服务的优缺点&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;微服务架构是一种具体的设计实现或者设计方案，而微服务是通过这种实现或方案最终完成的服务&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;优点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开发效率高：将一个单体应用拆分成多个微服务，可以使得每个微服务功能单一，便于理解与高效开发&lt;/li&gt;
+&lt;li&gt;新增需求响应快：因为将服务进行充分拆分，每个新的服务开发都非常高效，响应新的需求也很快，适合于敏捷开发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;缺点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;部署难度提升：微服务是天然分布式的，也是因为必须采用分布式，所以部署和调度管理的难度就增加了&lt;/li&gt;
+&lt;li&gt;运维难度提升：微服务的服务接口数量接口比较多，如果整个服务出现问题，要找到出了问题的微服务将会有难度&lt;/li&gt;
+&lt;li&gt;接口修改成本高：众多微服务彼此调用，当一个微服务的接口进行修改调整时，依赖该接口的其他的接口也需要进行检查或者修改，所以接口修改成本将有所提升&lt;/li&gt;
+&lt;li&gt;部分代码重复：每一个微服务的测试，部署，开发都是独立的，运行环境也是独立的，所以有一些重复性的功能需要重复开发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>tips</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>推荐网站</title>
         <link>https://www.zhugeqing.top/tips/site/</link>
         <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
