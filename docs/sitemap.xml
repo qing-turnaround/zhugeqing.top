@@ -11,6 +11,12 @@
     <loc>https://www.zhugeqing.top/write/2022-2-3/</loc>
     <lastmod>2022-02-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.zhugeqing.top/tags/go/</loc>
+    <lastmod>2022-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/golang/grpc/</loc>
+    <lastmod>2022-02-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.zhugeqing.top/series/linux/</loc>
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -20,6 +26,9 @@
     <loc>https://www.zhugeqing.top/series/</loc>
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.zhugeqing.top/tags/</loc>
+    <lastmod>2022-02-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.zhugeqing.top/write/2022-2-1/</loc>
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -27,9 +36,6 @@
     <lastmod>2022-01-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/series/problems/</loc>
-    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/tags/</loc>
     <lastmod>2022-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%A2%98%E7%9B%AE/</loc>
@@ -49,9 +55,6 @@
   </url><url>
     <loc>https://www.zhugeqing.top/write/2021-12-19/</loc>
     <lastmod>2021-12-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/tags/go/</loc>
-    <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/golang/gin/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
@@ -678,7 +681,7 @@
     <lastmod>2021-03-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/tips/microservice/</loc>
-    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/interview/algorithm_interview/chapter1/</loc>
     <lastmod>2020-12-13T12:00:59+09:00</lastmod>

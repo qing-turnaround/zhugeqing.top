@@ -65,9 +65,9 @@
       <item>
         <title>微服务</title>
         <link>https://www.zhugeqing.top/tips/microservice/</link>
-        <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
         
-        <atom:modified>Fri, 01 Jan 2021 00:00:00 +0000</atom:modified>
+        <atom:modified>Mon, 01 Feb 2021 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/tips/microservice/</guid>
         <description>从字面上理解微服务 微服务（micro service）,解读微（micro）和服务（service） 微（micro）可以通过亚马逊CEO JeffBezos提出的“The two pizza principle”（两个比萨）的例子来解读。两个比萨就是指单个服务从设计到开发、测试、运维加起来的参与人数不能多到两个比萨还不够吃，也就是说要控制单个服务的规模和成本 服务（service）是可以直接使用的一个或一组功能，用户不需</description>
         <content:encoded>&lt;h2 id=&#34;从字面上理解微服务&#34;&gt;从字面上理解微服务&lt;/h2&gt;
