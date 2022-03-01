@@ -1323,7 +1323,7 @@
 
 
     
-<meta name="description" content="grpc" />
+<meta name="description" content="初探Go微服务" />
 
 
 <meta name="keywords" content="Go">
@@ -1340,7 +1340,7 @@
 <meta property="og:title" content="go-micro基础">
 <meta property="og:url" content="https://www.zhugeqing.top/golang/grpc/">
 <meta property="og:type" content="article">
-<meta property="og:description" content="grpc">
+<meta property="og:description" content="初探Go微服务">
 
   
     <meta property="og:image" content="https://www.zhugeqing.top/images/Go.jpg">
@@ -1348,7 +1348,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:app:name:iphone" content="诸葛青的编程之旅">
     <meta property="twitter:title" content="go-micro基础">
-    <meta property="twitter:description" content="grpc">
+    <meta property="twitter:description" content="初探Go微服务">
   
 
 <meta name="generator" content="Hugo 0.89.2" />
@@ -1378,7 +1378,7 @@
     "datePublished": "2022-02-01T00:00:00Z",
     "dateModified": "2022-02-01T00:00:00Z",
     "url" : "https://www.zhugeqing.top/golang/grpc/",
-    "description": "grpc",
+    "description": "初探Go微服务",
     "keywords": ["Go"],
     "image" : "https://www.zhugeqing.top/images/Go.jpg",
     "author": {
@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Feb 1, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;1&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1886,9 +1886,20 @@
 <li>
 <p>安装<a href="https://github.com/golang/protobuf">protobuf文件库</a></p>
 </li>
-<li>
-<p>编写好.proto文件</p>
-</li>
+</ol>
+<blockquote>
+<p>go get -u github.com/golang/protobuf/proto<br />
+go get -u github.com/golang/protobuf/protoc-gen-go<br />
+go get github.com/micro/micro/v2/cmd/protoc-gen-micro</p>
+</blockquote>
+<ol start="3">
+<li>安装<code>micro工具</code></li>
+</ol>
+<blockquote>
+<p>go get -v github.com/micro/micro/v2</p>
+</blockquote>
+<ol start="3">
+<li>编写好.proto文件</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1915,9 +1926,9 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-proto" data-lang="proto"><span class="n">syntax</span> <span class="o">=</span> <span class="s">&#34;proto3&#34;</span><span class="p">;</span> <span class="c1">// 指定版本（proto2, proto3）
 </span><span class="c1"></span><span class="err">
-</span><span class="err"></span><span class="kn">package</span> <span class="nn">main</span><span class="p">;</span> <span class="c1">// 包名
+</span><span class="err"></span><span class="kn">package</span> <span class="nn">main</span><span class="p">;</span> <span class="c1">// proto 包名
 </span><span class="c1"></span><span class="err">
-</span><span class="err"></span><span class="k">option</span> <span class="n">go_package</span><span class="o">=</span><span class="s">&#34;./test;test&#34;</span><span class="p">;</span> <span class="c1">// .表示go文件存放地址， main表示生成go文件所属包名
+</span><span class="err"></span><span class="k">option</span> <span class="n">go_package</span><span class="o">=</span><span class="s">&#34;./test;test&#34;</span><span class="p">;</span> <span class="c1">// ./test表示go文件存放地址， test表示生成go文件所属包名
 </span><span class="c1"></span><span class="err">
 </span><span class="err"></span><span class="kd">service</span> <span class="n">Product</span> <span class="p">{</span> <span class="c1">// 定义的服务
 </span><span class="c1"></span>  <span class="k">rpc</span> <span class="n">AddProduct</span><span class="p">(</span><span class="n">ProductInfo</span><span class="p">)</span> <span class="k">returns</span> <span class="p">(</span><span class="n">ResponseProduct</span><span class="p">)</span> <span class="p">{}</span><span class="err">
@@ -1935,7 +1946,27 @@
 </span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
-<li>执行 <code>protoc --go_out=.  *.proto</code></li>
+<li>执行 <code>protoc -I. --go_out=./ --micro_out=./ *.proto</code>来生成<code>.pb.go</code>和<code>.pb.micro.go</code></li>
+</ol>
+<ul>
+<li><a href="https://juejin.cn/post/6949927882126966820#heading-8">protoc的具体使用</a></li>
+</ul>
+<h2 id="避雷">避雷！</h2>
+<p><code>在安装micro工具包时(go get -v github.com/micro/micro/v2) 尽量选择使用go 1.14版本，在使用go 1.17版本时，会有报错信息</code></p>
+<pre tabindex="0"><code>PS D:gozhugeqing&gt; micro help
+panic: qtls.ConnectionState not compatible with tls.ConnectionState
+
+goroutine 1 [running]:
+github.com/lucas-clemente/quic-go/internal/handshake.init.1()
+        D:/Code/CodeTools/GoPath/pkg/mod/github.com/lucas-clemente/quic-go@v0.14.1/internal/handshake/unsafe.go:17 +0x139 
+</code></pre><ul>
+<li>解决：</li>
+</ul>
+<ol>
+<li>替换Go sdk版本，切换为1.14，将GoPath目录下的bin/go.exe替换成go 1.14 sdk/bin/go.exe。</li>
+<li>删除GoPath/pkg/github.com/micro/ 相关文件（此步骤只是为了以防万一，不执行应该也行）</li>
+<li>重新执行<code>go get -v github.com/micro/micro/v2</code></li>
+<li>命令行下执行<code>micro help</code>来测试可用性</li>
 </ol>
 
     </article>
@@ -2646,6 +2677,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#protobuf生成go代码">protobuf生成Go代码</a></li>
       </ul>
     </li>
+    <li><a href="#避雷">避雷！</a></li>
   </ul>
 </nav>
   </div>

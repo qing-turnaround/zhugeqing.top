@@ -387,7 +387,7 @@
         
         <atom:modified>Tue, 01 Feb 2022 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/golang/grpc/</guid>
-        <description>protobuf protobuf（Google Protocol Buffer）是Google旗下的一种平台无关、语言无关、可扩展的序列化结构数据格式，很适合作为数据存储和不同语言之间相互通信的数据交换格式 优点： 序列化以后体积比JSON和XML格式小，便于网络传输。 支持跨平台、跨语言。 序列化和反序列化速度快，高于JSON的处理速度 protobuf生成Go代码 安装protoc 并加入环境变量 安装protobuf文件库 编写好.prot</description>
+        <description>protobuf protobuf（Google Protocol Buffer）是Google旗下的一种平台无关、语言无关、可扩展的序列化结构数据格式，很适合作为数据存储和不同语言之间相互通信的数据交换格式 优点： 序列化以后体积比JSON和XML格式小，便于网络传输。 支持跨平台、跨语言。 序列化和反序列化速度快，高于JSON的处理速度 protobuf生成Go代码 安装protoc 并加入环境变量 安装protobuf文件库 go get -u github.com/golang/protobuf/proto go get -u github.com/golang/protobuf/protoc-gen-go</description>
         <content:encoded>&lt;h2 id=&#34;protobuf&#34;&gt;protobuf&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;protobuf（Google Protocol Buffer）是Google旗下的一种平台无关、语言无关、可扩展的序列化结构数据格式，很适合作为数据存储和不同语言之间相互通信的数据交换格式&lt;/p&gt;
@@ -409,9 +409,20 @@
 &lt;li&gt;
 &lt;p&gt;安装&lt;a href=&#34;https://github.com/golang/protobuf&#34;&gt;protobuf文件库&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;编写好.proto文件&lt;/p&gt;
-&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;go get -u github.com/golang/protobuf/proto&lt;br /&gt;
+go get -u github.com/golang/protobuf/protoc-gen-go&lt;br /&gt;
+go get github.com/micro/micro/v2/cmd/protoc-gen-micro&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;安装&lt;code&gt;micro工具&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;go get -v github.com/micro/micro/v2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;编写好.proto文件&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -438,9 +449,9 @@
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-proto&#34; data-lang=&#34;proto&#34;&gt;&lt;span class=&#34;n&#34;&gt;syntax&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;proto3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 指定版本（proto2, proto3）
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 包名
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// proto 包名
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;option&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;go_package&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;./test;test&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// .表示go文件存放地址， main表示生成go文件所属包名
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;option&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;go_package&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;./test;test&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// ./test表示go文件存放地址， test表示生成go文件所属包名
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;service&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Product&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 定义的服务
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;rpc&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;AddProduct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ProductInfo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;returns&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ResponseProduct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
@@ -458,7 +469,27 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;执行 &lt;code&gt;protoc --go_out=.  *.proto&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;执行 &lt;code&gt;protoc -I. --go_out=./ --micro_out=./ *.proto&lt;/code&gt;来生成&lt;code&gt;.pb.go&lt;/code&gt;和&lt;code&gt;.pb.micro.go&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://juejin.cn/post/6949927882126966820#heading-8&#34;&gt;protoc的具体使用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;避雷&#34;&gt;避雷！&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;在安装micro工具包时(go get -v github.com/micro/micro/v2) 尽量选择使用go 1.14版本，在使用go 1.17版本时，会有报错信息&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:gozhugeqing&amp;gt; micro help
+panic: qtls.ConnectionState not compatible with tls.ConnectionState
+
+goroutine 1 [running]:
+github.com/lucas-clemente/quic-go/internal/handshake.init.1()
+        D:/Code/CodeTools/GoPath/pkg/mod/github.com/lucas-clemente/quic-go@v0.14.1/internal/handshake/unsafe.go:17 +0x139 
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;解决：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;替换Go sdk版本，切换为1.14，将GoPath目录下的bin/go.exe替换成go 1.14 sdk/bin/go.exe。&lt;/li&gt;
+&lt;li&gt;删除GoPath/pkg/github.com/micro/ 相关文件（此步骤只是为了以防万一，不执行应该也行）&lt;/li&gt;
+&lt;li&gt;重新执行&lt;code&gt;go get -v github.com/micro/micro/v2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;命令行下执行&lt;code&gt;micro help&lt;/code&gt;来测试可用性&lt;/li&gt;
 &lt;/ol&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
