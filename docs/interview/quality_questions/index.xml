@@ -20,6 +20,43 @@
 
       
       <item>
+        <title>最长回文子串</title>
+        <link>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</link>
+        <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 05 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</guid>
+        <description>题目 给你一个字符串 s，找到 s 中最长的回文子串。 力扣地址 解法 中心枚举</description>
+        <content:encoded>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
+&lt;font color=SkyBlue&gt;
+给你一个字符串 s，找到 s 中最长的回文子串。
+&lt;p&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/longest-palindromic-substring/&#34;&gt;力扣地址&lt;/a&gt;&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解法&#34;&gt;解法&lt;/h2&gt;
+&lt;h3 id=&#34;中心枚举&#34;&gt;中心枚举&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>设计一个有getMin功能的栈</title>
         <link>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E5%B0%8F%E6%A0%88/</link>
         <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>

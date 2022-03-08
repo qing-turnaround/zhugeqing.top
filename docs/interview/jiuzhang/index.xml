@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>九章算法 on 诸葛青的编程之旅</title>
+    <link>https://www.zhugeqing.top/interview/jiuzhang/</link>
+    <description>Recent content in 九章算法 on 诸葛青的编程之旅</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
+    
+        <atom:link href="https://www.zhugeqing.top/interview/jiuzhang/index.xml" rel="self" type="application/rss+xml" />
+    
+
+      
+      <item>
+        <title>面试的一些技巧</title>
+        <link>https://www.zhugeqing.top/interview/jiuzhang/1/</link>
+        <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 04 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/jiuzhang/1/</guid>
+        <description>沟通技巧 做一个题之前，需要沟通清楚，得到面试官的肯定，再开始写代码，写完以后再进行解释 不要闷头写 不要一边解释一边写 可以要提示 但是需要先努力想一想 心平气和交流 会就会，不会就不会，不要遮遮掩掩，坦诚最重要 做过的题就说做过，不要故意说没做过 Coding 能力 使用含义清晰的变量名+简单易懂的处理逻辑 &amp;raquo; 用注释去解释让人看不懂的代码 评价体系 是否能很快想出一个 Solution 是否能根据点出的问题后优化自己的Solution 代码风格 可读性</description>
+        <content:encoded>&lt;h2 id=&#34;沟通技巧&#34;&gt;沟通技巧&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;做一个题之前，需要沟通清楚，得到面试官的肯定，再开始写代码，写完以后再进行解释&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不要闷头写&lt;/li&gt;
+&lt;li&gt;不要一边解释一边写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可以要提示&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;但是需要先努力想一想&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;心平气和交流&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;会就会，不会就不会，不要遮遮掩掩，坦诚最重要&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;做过的题就说做过，不要故意说没做过&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;coding-能力&#34;&gt;Coding 能力&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用含义清晰的变量名+简单易懂的处理逻辑 &amp;raquo; 用注释去解释让人看不懂的代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;评价体系&#34;&gt;评价体系&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;是否能很快想出一个 Solution&lt;/li&gt;
+&lt;li&gt;是否能根据点出的问题后优化自己的Solution&lt;/li&gt;
+&lt;li&gt;代码风格
+&lt;ul&gt;
+&lt;li&gt;可读性&lt;/li&gt;
+&lt;li&gt;变量名，函数名，命名&lt;/li&gt;
+&lt;li&gt;空格和空行的正确使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>算法</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Fri, 25 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Mar 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/index.xml" rel="self" type="application/rss+xml" />
@@ -41,6 +41,742 @@
         
       
 
+      
+      <item>
+        <title>最长回文子串</title>
+        <link>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</link>
+        <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 05 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/</guid>
+        <description>题目 给你一个字符串 s，找到 s 中最长的回文子串。 力扣地址 解法 中心枚举</description>
+        <content:encoded>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
+&lt;font color=SkyBlue&gt;
+给你一个字符串 s，找到 s 中最长的回文子串。
+&lt;p&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/longest-palindromic-substring/&#34;&gt;力扣地址&lt;/a&gt;&lt;br /&gt;
+&lt;/font&gt;&lt;/p&gt;
+&lt;h2 id=&#34;解法&#34;&gt;解法&lt;/h2&gt;
+&lt;h3 id=&#34;中心枚举&#34;&gt;中心枚举&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>面试的一些技巧</title>
+        <link>https://www.zhugeqing.top/interview/jiuzhang/1/</link>
+        <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 04 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/interview/jiuzhang/1/</guid>
+        <description>沟通技巧 做一个题之前，需要沟通清楚，得到面试官的肯定，再开始写代码，写完以后再进行解释 不要闷头写 不要一边解释一边写 可以要提示 但是需要先努力想一想 心平气和交流 会就会，不会就不会，不要遮遮掩掩，坦诚最重要 做过的题就说做过，不要故意说没做过 Coding 能力 使用含义清晰的变量名+简单易懂的处理逻辑 &amp;raquo; 用注释去解释让人看不懂的代码 评价体系 是否能很快想出一个 Solution 是否能根据点出的问题后优化自己的Solution 代码风格 可读性</description>
+        <content:encoded>&lt;h2 id=&#34;沟通技巧&#34;&gt;沟通技巧&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;做一个题之前，需要沟通清楚，得到面试官的肯定，再开始写代码，写完以后再进行解释&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不要闷头写&lt;/li&gt;
+&lt;li&gt;不要一边解释一边写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可以要提示&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;但是需要先努力想一想&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;心平气和交流&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;会就会，不会就不会，不要遮遮掩掩，坦诚最重要&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;做过的题就说做过，不要故意说没做过&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;coding-能力&#34;&gt;Coding 能力&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用含义清晰的变量名+简单易懂的处理逻辑 &amp;raquo; 用注释去解释让人看不懂的代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;评价体系&#34;&gt;评价体系&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;是否能很快想出一个 Solution&lt;/li&gt;
+&lt;li&gt;是否能根据点出的问题后优化自己的Solution&lt;/li&gt;
+&lt;li&gt;代码风格
+&lt;ul&gt;
+&lt;li&gt;可读性&lt;/li&gt;
+&lt;li&gt;变量名，函数名，命名&lt;/li&gt;
+&lt;li&gt;空格和空行的正确使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>算法</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Go 微服务网关</title>
+        <link>https://www.zhugeqing.top/golang/go-micro-gateway/</link>
+        <pubDate>Thu, 03 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Thu, 03 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/go-micro-gateway/</guid>
+        <description>网络代理 网络代理：用户通过代理发送请求消息；请求通过网络代理转发到目标服务器；目标服务器的响应通过网络代理回传给用户 网络代理与网络转发的区别： 网络代理：用户不直接连接服务器，由网络代理去连接，获取数据后返回给用户。 网络转发：是路由器对报文的转发操作，中间可能对数据包修改 正向代理 一种客户端的代理技术，帮助客户端访问无法访问的服务资源，可以隐藏用户真实IP。比如：浏览器web代理，VPN等 正向代理示例</description>
+        <content:encoded>&lt;h2 id=&#34;网络代理&#34;&gt;网络代理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;网络代理&lt;/code&gt;：&lt;code&gt;用户通过代理发送请求消息&lt;/code&gt;；&lt;code&gt;请求通过网络代理转发到目标服务器&lt;/code&gt;；&lt;code&gt;目标服务器的响应通过网络代理回传给用户&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;网络代理&lt;/code&gt;与&lt;code&gt;网络转发&lt;/code&gt;的区别：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;网络代理&lt;/code&gt;：用户不直接连接服务器，由网络代理去连接，获取数据后返回给用户。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;网络转发&lt;/code&gt;：是路由器对报文的转发操作，中间可能对数据包修改&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;正向代理&#34;&gt;正向代理&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一种&lt;code&gt;客户端&lt;/code&gt;的代理技术，帮助客户端访问无法访问的服务资源，可以隐藏用户真实IP。比如：浏览器web代理，VPN等&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;正向代理示例：（直接运行，同时需要打开电脑的代理设置，并设置与程序同步的Host:Port）&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;代理接受客户端请求，复制原请求对象，并根据数据配置新请求各种参数&lt;/li&gt;
+&lt;li&gt;把新请求发送到真实服务端，并接受到服务端的返回&lt;/li&gt;
+&lt;li&gt;代理服务器对响应做一些处理，然后返回给客户端&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;io&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;strings&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Pxy&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Pxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;ServeHTTP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rw&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ResponseWriter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;c1&#34;&gt;// 打印请求的对应字段
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Received request %v %v %v\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Method&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Host&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RemoteAddr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;transport&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;DefaultTransport&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 定义一个数据连接池
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;// step 1，浅拷贝
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;outReq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;new&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;outReq&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;clientIP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;net&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;SplitHostPort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;outReq&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RemoteAddr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;clientIP is&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;clientIP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ok&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;outReq&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;X-Forwarded-For&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ok&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;clientIP&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;strings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Join&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;, &amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;clientIP&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;outReq&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;X-Forwarded-For&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;clientIP&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+	&lt;span class=&#34;c1&#34;&gt;// step 2, 请求下游
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;transport&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;RoundTrip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;outReq&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;rw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteHeader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusBadGateway&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+	&lt;span class=&#34;c1&#34;&gt;// step3, 将下游的请求内容返回给上游
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Header&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;rw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;rw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteHeader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 正常响应
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;io&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Copy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Listening on :8080&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Handle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Pxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{})&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;0.0.0.0:8080&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;反向代理&#34;&gt;反向代理&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一种&lt;code&gt;服务端&lt;/code&gt;的代理技术，帮助服务器做&lt;code&gt;负载均衡&lt;/code&gt;、&lt;code&gt;缓存&lt;/code&gt;、&lt;code&gt;安全校验&lt;/code&gt;等，可以隐藏服务器真实IP，比如：Nginx Proxy_pass等&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;反向代理示例：（运行两个程序，一个服务端程序，一个反向代理程序）&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;代理接受客户端请求，更改请求结构体信息&lt;/li&gt;
+&lt;li&gt;通过一定的负载均衡算法获取下游服务地址&lt;/li&gt;
+&lt;li&gt;把请求发送到下游服务器，并返回响应&lt;br /&gt;
+&lt;code&gt;服务器代码&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;io&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;os&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;os/signal&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;syscall&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;time&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;RealServer&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;Addr&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RealServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;HelloHandler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ResponseWriter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;uPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Sprintf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;http://%s%s\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;io&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;uPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RealServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;ErrorHandler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ResponseWriter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;uPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;error handler&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteHeader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusInternalServerError&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;io&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;uPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RealServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Starting http server at&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;mux&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;NewServeMux&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;mux&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;HandleFunc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;HelloHandler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;mux&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;HandleFunc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/base/error&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ErrorHandler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Server&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;Addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;         &lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;WriteTimeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Second&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;Handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;mux&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Fatal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;rs1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RealServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;127.0.0.1:8081&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;rs2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RealServer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;127.0.0.1:8082&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;rs1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;rs2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+	&lt;span class=&#34;c1&#34;&gt;// 监听关闭信号
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;quit&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;chan&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Signal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;signal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Notify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;quit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;syscall&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;SIGINT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;syscall&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;SIGTERM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;quit&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;反向代理代码&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;bufio&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/url&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;proxy_addr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;http://127.0.0.1:8081&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;port&lt;/span&gt;       &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;8083&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ResponseWriter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;c1&#34;&gt;// step 1：解析代理地址，并更改请求体的协议和主机
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;proxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;proxy_addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Scheme&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;proxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Scheme&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 更改请求协议
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Host&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;proxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Host&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;// 更改请求地址
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+	&lt;span class=&#34;c1&#34;&gt;// step 2：请求下游
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;transport&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;DefaultTransport&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;transport&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;RoundTrip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+	&lt;span class=&#34;c1&#34;&gt;// step 3：把响应返回给上游
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;vv&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Header&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;vv&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Add&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;defer&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 让Body不再占用内存资源
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;bufio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;NewReader&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;HandleFunc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;server starting on port&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;:&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Fatal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;测试 命令行输入&lt;code&gt;curl http://127.0.0.1:8083&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;请求反向代理（127.0.0.1:8083），通过反向代理将请求发送给真正的服务器（127.0.0.1:8081）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;reverseproxy&#34;&gt;ReverseProxy&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;支持更改内容&lt;/li&gt;
+&lt;li&gt;错误信息回调&lt;/li&gt;
+&lt;li&gt;支持自定义负载均衡&lt;/li&gt;
+&lt;li&gt;url重写功能&lt;/li&gt;
+&lt;li&gt;连接池功能&lt;/li&gt;
+&lt;li&gt;支持webSocker服务&lt;/li&gt;
+&lt;li&gt;支持https代理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;用ReverseProxy简单实现一个http代理&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http/httputil&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/url&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;addr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;127.0.0.1:8083&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 代理地址
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// 用ReverseProxy来简单实现一个代理
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;rs1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;http://127.0.0.1:8081/base/&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 真实服务器地址
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;url1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rs1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;proxy&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;httputil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;NewSingleHostReverseProxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;url1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;proxyServer Listening on &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;c1&#34;&gt;// 开启代理监听
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;proxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Fatal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;修改ReverseProxy来实现可以修改返回内容的代理&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;64
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;65
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;66
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;67
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;68
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;69
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;70
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;71
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;72
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;73
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;74
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;75
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;76
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;77
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;78
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;79
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;bytes&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;io/ioutil&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;log&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http/httputil&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/url&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;strings&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;addr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;127.0.0.1:8083&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 代理地址
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;NewSingleHostReverseProxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;target&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;httputil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ReverseProxy&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;targetQuery&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RawQuery&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;director&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Scheme&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Scheme&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Host&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Host&lt;/span&gt;
+		&lt;span class=&#34;c1&#34;&gt;// 将请求路径附加到目标路径下
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Path&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;singleJoiningSlash&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;targetQuery&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RawQuery&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RawQuery&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;targetQuery&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RawQuery&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RawQuery&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;targetQuery&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;amp;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;RawQuery&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ok&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;User-Agent&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ok&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;c1&#34;&gt;// explicitly disable User-Agent so it&amp;#39;s not set to default value
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;nx&#34;&gt;req&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;User-Agent&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;modifyFunc&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Response&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusCode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;StatusOK&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;c1&#34;&gt;// 读取body
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;nx&#34;&gt;oldPayload&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ioutil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ReadAll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+			&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+				&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;
+			&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;newPayload&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;byte&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;你好&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;oldPayload&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+			&lt;span class=&#34;c1&#34;&gt;// 产生新body，修改body，并改变contentLength
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ioutil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;NopCloser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;bytes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;NewBuffer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;newPayload&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ContentLength&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;newPayload&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Header&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Content-Length&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Sprintf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ContentLength&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;httputil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ReverseProxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;Director&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;       &lt;span class=&#34;nx&#34;&gt;director&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;ModifyResponse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;modifyFunc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;singleJoiningSlash&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;aslash&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;strings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;HasSuffix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;bslash&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;strings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;HasPrefix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;switch&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;aslash&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;bslash&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:]&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;aslash&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;bslash&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;// 用ReverseProxy来简单实现一个代理
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;rs1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;http://127.0.0.1:8081/base/&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 真实服务器地址
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;url1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Parse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rs1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;proxy&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;NewSingleHostReverseProxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;url1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;proxyServer Listening on &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;c1&#34;&gt;// 开启代理监听
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ListenAndServe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;proxy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Fatal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;code&gt;实现X-Forwarded-For，X-Real-IP&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;X-Forwarded-For：记录最后直连实际服务器之前，整个代理过程；可能会被伪造&lt;br /&gt;
+X-Real-IP：请求实际服务器的IP（Client_IP）；不会被伪造&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>Go map</title>
@@ -569,82 +1305,14 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.1()
       </item>
       
       <item>
-        <title>计算机网络题目合集</title>
+        <title>TCP、UDP协议分别属于什么层</title>
         <link>https://www.zhugeqing.top/problems/network/1/</link>
         <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
         
         <atom:modified>Sat, 01 Jan 2022 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/problems/network/1/</guid>
-        <description>简述OSI七层体系结构？ 简述TCP/IP四层体系结构？ 知道各个层使用的是哪个数据交换设备？ 简述OSI七层体系结构？ 自上而下是： 应用层（数据）：确定进程之间通信的性质以满足用户需要以及提供网络与用户应用 表示层（数据）：主要解决用户信息的语法表示问题，如加密解密 会话层（数据）：提供包括访问验证和会话管理在内的建立和维护应用之间通信的机制，如服务器验证用户登录便是由会话层完成的 传输层（段）：实现网络不同</description>
-        <content:encoded>&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#%E7%AE%80%E8%BF%B0osi%E4%B8%83%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84&#34;&gt;简述OSI七层体系结构？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E7%AE%80%E8%BF%B0tcpip%E5%9B%9B%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84&#34;&gt;简述TCP/IP四层体系结构？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E7%9F%A5%E9%81%93%E5%90%84%E4%B8%AA%E5%B1%82%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%93%AA%E4%B8%AA%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E8%AE%BE%E5%A4%87&#34;&gt;知道各个层使用的是哪个数据交换设备？&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;简述osi七层体系结构&#34;&gt;简述OSI七层体系结构？&lt;/h3&gt;
-&lt;p&gt;自上而下是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;应用层（数据）：确定进程之间通信的性质以满足用户需要以及提供网络与用户应用&lt;/li&gt;
-&lt;li&gt;表示层（数据）：主要解决用户信息的语法表示问题，如加密解密&lt;/li&gt;
-&lt;li&gt;会话层（数据）：提供包括访问验证和会话管理在内的建立和维护应用之间通信的机制，如服务器验证用户登录便是由会话层完成的&lt;/li&gt;
-&lt;li&gt;传输层（段）：实现网络不同主机上用户进程之间的数据通信，可靠与不可靠的传输，传输层的错误检测，流量控制等&lt;/li&gt;
-&lt;li&gt;网络层（包）：提供逻辑地址（IP）、选路，数据从源端到目的端的传输&lt;/li&gt;
-&lt;li&gt;数据链路层（帧）：将上层数据封装成帧，用MAC地址访问媒介，错误检测与修正&lt;/li&gt;
-&lt;li&gt;物理层（比特流）：设备之间比特流的传输，物理接口，电气特性等&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;简述tcpip四层体系结构&#34;&gt;简述TCP/IP四层体系结构？&lt;/h3&gt;
-&lt;p&gt;自上而下是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;应用层&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;HTTP、TELNET、FTP、SMTP&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;传输层&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;TCP、UDP&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;网络层&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;IP、ICMP&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;数据链路层（网络接口层）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;PPP、Ethernet&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;知道各个层使用的是哪个数据交换设备&#34;&gt;知道各个层使用的是哪个数据交换设备？&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;物理层&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;集线器（Hub）：纯硬件设备，主要用来连接计算机等网络终端。&lt;br /&gt;
-中继器：再生网络信号，从而使得能够在网络上传输更长的距离&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;数据链路层&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;网桥：将两个 LAN 连起来，根据 MAC 地址来转发帧&lt;br /&gt;
-交换机：基本功能与网桥一样，但在分段，传输速率，等其他方面更强大&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;网络层&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;路由器：路由选择、存储转发&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;网络层之上&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;网关：网关在传输层上以实现网络互连，是最复杂的网络互连设备，仅用于两个高层协议不同的网络互连。网关的结构也和路由器类似，不同的是互连层。网关既可以用于广域网互连，也可以用于局域网互连。&lt;/p&gt;
-&lt;/blockquote&gt;
+        <description></description>
+        <content:encoded>&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
@@ -653,7 +1321,7 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.1()
         
           
             
-              <category>计算机网络题目</category>
+              <category>网络题目</category>
             
           
         
@@ -4856,488 +5524,6 @@ str1=&amp;ldquo;abc&amp;rdquo;，str2=&amp;ldquo;abc&amp;rdquo;，ic=5，dc=3，
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>升降机般的大腿</title>
-        <link>https://www.zhugeqing.top/exercise/%E6%B7%B1%E8%B9%B2/</link>
-        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Mon, 11 Oct 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/exercise/%E6%B7%B1%E8%B9%B2/</guid>
-        <description>第一式 肩倒立深蹲 动作： 平躺，双膝弯曲，双手下压。双脚蹬离地面，直到举到空中。在将双腿举起的过程中，顺势把双手撑在下背部，注意上臂要紧贴地面。你现在摆出的姿势是肩倒立——靠双肩、上背部以及上臂支撑身体。要记住，始终用这几个部位支撑身体，不要让颈部受到压力。身体要锁定伸直，髋部不要弯曲。这是该动作的起始姿势（图21）。上半身要尽可能伸直，弯曲髋部与膝关节，直到膝盖轻触前额，这是该动作的结束姿势（图22</description>
-        <content:encoded>&lt;h2 id=&#34;第一式肩倒立深蹲&#34;&gt;第一式　肩倒立深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=SkyBlue&gt;平躺，双膝弯曲，双手下压。双脚蹬离地面，直到举到空中。在将双腿举起的过程中，顺势把双手撑在下背部，注意上臂要紧贴地面。你现在摆出的姿势是肩倒立——靠双肩、上背部以及上臂支撑身体。要记住，始终用这几个部位支撑身体，不要让颈部受到压力。身体要锁定伸直，髋部不要弯曲。这是该动作的起始姿势（图21）。上半身要尽可能伸直，弯曲髋部与膝关节，直到膝盖轻触前额，这是该动作的结束姿势（图22）。然后伸直双腿，直到身体回到起始姿势，如此重复&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_21.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图21　把双手撑在下背部，注意上臂要紧贴地面&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_22.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图22　上半身要尽可能伸直，弯曲髋部与膝关节，直到膝盖轻触前额&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-对任何开始练习深蹲的人来说，肩倒立深蹲都是完美的起点。由于做该动作时身体处于倒立姿势，所以膝盖和下背部无需承受身体的重量，这就使得该动作成为一个理想的恢复性训练动作——可以帮助那些背部和膝盖有伤的健身者，或是刚做完手术正处于恢复期的健身者重新开始腿部训练。从力量角度来说，做肩倒立其实对健身者上身的要求更高。但是这一动作能让紧绷的关节放松，增加关节的活动幅度，从而能让初学者为练就完美的深蹲打下基础。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，10次&lt;br /&gt;
-中级标准：2组，各25次&lt;br /&gt;
-升级标准：3组，各50次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;第一次尝试该动作时，不是人人都能做到膝盖轻触前额。你可以在每次锻炼时试着加大动作幅度，这样你的关节很快就会得到放松。另外，有啤酒肚的人几乎无法完成这个动作，因为他的大肚子会碍事。对这类人来说，坚持空腹练习会好一些——直到他们减掉肚子上的赘肉&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第二式折刀深蹲&#34;&gt;第二式　折刀深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-站在一个稳固的物体前，此物体的高度大约与你的膝盖等高，至少也要达到胫骨上部，小咖啡桌、椅子、床铺都是不错的选择。双腿分开，与肩同宽或略宽。双腿伸直，弯腰俯身，直到双手与面前的物体接触。身体前倾，使一部分体重落在双手上。这是该动作的起始姿势（图23）。上半身尽量与地面平行，弯曲膝关节和髋部，直到大腿后侧紧贴小腿，无法蹲得更低为止。这是该动作的最低点（图24）。下蹲过程中你还需要弯曲双臂，在下降到最低点后腿部与手臂要同时发力，将身体推回到起始姿势。在整个动作过程中，脚跟始终不能抬离地面。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_3.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图23　身体前倾，使一部分体重落在双手上。&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_4.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图24　弯曲膝关节和髋部，直到大腿后侧紧贴小腿，无法蹲得更低为止。&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-做折刀深蹲时上半身前倾，并不直接位于双腿上方，因此两条手臂会承担一部分体重。该动作的难度大约只有标准深蹲（第五式）的一半，但这是能帮助下身肌肉与肌腱为之后的动作做准备的最佳动作。只要正确练习，这个动作就能让初级健身者拥有足够的平衡能力和跟腱的柔韧性，来征服标准深蹲中的最低点。&lt;br /&gt;
-训练目标&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，10次&lt;br /&gt;
-中级标准：2组，各20次&lt;br /&gt;
-升级标准：3组，各40次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;下降到最低点时该动作的难度最大，因为此时下肢需要承担身体的大部分重量。如果你觉得动作有难度，那就逐步加大动作幅度来慢慢适应。还有一种方法就是让双臂分担更多的身体重量，这样能够帮助你从最低点站起来。等腿部更强壮之后，你就可以试着减少双臂的用力，更多地依赖双腿。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第三式支撑深蹲&#34;&gt;第三式　支撑深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-直立，双脚分开，与肩同宽或略宽。手臂向斜下方伸出，双手放在比自己的大腿略高的稳固物体上，书桌、高脚凳或椅背都可以。这是该动作的起始姿势（图25）。弯曲髋部与膝关节，身体慢慢下降，背部尽可能保持挺直，直到大腿后侧紧贴小腿，无法蹲得更低为止，这是该动作的最低点（图26）。暂停一会，然后主要靠腿部发力站起来。为了分担双腿的一部分压力，尤其是在最低点时，你要通过向下按压面前的物体，来借用手臂的一部分力量。手臂要尽量伸直，在整个动作过程中都不要让脚跟抬离地面&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_25.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图25　手臂向斜下方伸出，双手放在比自己的大腿略高的稳固物体上。&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_26.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图26　弯曲髋部与膝关节，身体慢慢下降，背部尽可能保持挺直。&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;支撑深蹲是半深蹲之前的最后一式。它是折刀深蹲（双腿承受大部分身体重量）与半深蹲（双腿承受全部身体重量）之间理想的过渡动作。支撑深蹲能够进一步加强下肢的柔韧性和力量，锻炼膝盖的肌腱、韧带及软组织。它能让你的深蹲动作更标准，锻炼你仅仅使用肌肉力量而非惯性从最低点推起身体的能力。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，10次&lt;br /&gt;
-中级标准：2组，各15次&lt;br /&gt;
-升级标准：3组，各30次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;要想对该练习所需的腿部力量进行微调，方法非常简单。要使该练习对下身来说更容易，只要更多地使用上身的力量即可。随着你在动作最低点时感觉越来越轻松，你可以逐渐减少在起身过程中臂力的使用。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第四式半深蹲&#34;&gt;第四式　半深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-站立，双脚分开，与肩同宽或略宽。脚尖不要指向正前方，而要略微向外。双手放在髋部、胸部、肩部都可以——以舒适为前提。这是该动作的起始姿势（图27）。弯曲髋部和膝盖，直到膝关节弯曲成90°——换句话说就是大腿与地面平行。这是该动作的最低点（图28）。刚开始你可以借助一面镜子或是找朋友帮忙，直到能够自如地控制动作幅度。不要求快，也不要借助惯性起身，而要完全在肌肉控制下做整个动作。在最低点（半空中）坚持1秒钟，然后再回到起始姿势。在整个动作过程中，背部始终要挺直，双脚脚跟始终不能抬离地面。膝盖与脚尖应该始终朝向同一方向，深蹲时膝盖绝不要向内转，脚尖指向外有助于你做到这一点。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_27.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图27　脚尖不要指向正前方，而要略微向外&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_28.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图28　弯曲髋部和膝盖，直到膝关节弯曲成90°&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;在深蹲系列中，半深蹲是双腿在没有任何辅助的情况下承受全部体重的第一式。因此，它应该受到重视。该动作教你在无辅助的情况下保持平衡和身体姿势，这些对于后面的深蹲练习都是必要的。此外，该动作也能够让你了解如何让膝盖与双脚摆出对你来说最适合的姿势。这个动作对大腿而言难度并不大，因此下面给出的训练目标量比正常的量要大。攻克了这个动作之后，你会发现自己髋部和大腿内侧的肌肉变得更强了。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;初级标准：1组，8次&lt;br /&gt;
-中级标准：2组，各35次&lt;br /&gt;
-升级标准：2组，各50次&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;如果做不了半深蹲，那就先做四分之一深蹲，每当你感到有余力时，就可以适当加大动作幅度。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第五式标准深蹲&#34;&gt;第五式　标准深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;直立，双脚分开，与肩同宽或略宽（取决于个人偏好）。双脚略微向外转，双臂随意摆放，只要舒服即可。这是该动作的起始姿势（图29）。髋部与膝关节弯曲，背部始终挺直。当大腿达到几乎与地面平行时，把你的身体重心向后转移，就像要坐下一样。有控制地继续放低身体，直到大腿后侧紧贴小腿。这是该动作的最低点（图30）。暂停一会，然后仅靠腿部发力将自己推回到起始姿势。起身过程和下蹲过程应该是完全相反的。脚跟始终不要抬离地面，膝盖也不能向内转。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_29.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图29　直立，双脚分开，与肩同宽或略宽（取决于个人偏好）&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_30.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图30　有控制地继续放低身体，直到大腿后侧紧贴小腿&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;标准深蹲是经典的自身体重练习动作。数千年来该动作始终流行于世，是有一定原因的。标准深蹲能够强化膝关节，并增强大腿肌肉、臀部肌肉、脊椎肌肉和髋部肌肉的力量和运动能力。另外，这个动作也能使小腿、胫骨前肌、脚踝，甚至包括脚掌得到相应的锻炼。标准深蹲有助于让双腿保持年轻活力。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，5次&lt;br /&gt;
-中级标准：2组，各10次&lt;br /&gt;
-升级标准：2组，各30次&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;如果你已经达到了半深蹲的升级标准，那么做标准深蹲就不会有太大问题。由于杠杆原理，当动作到达最低点时难度最大，对个子较高的人来说尤其如此。如果你达不到初级标准的目标，那就继续去做半深蹲。如果你感到自己变强了，那就增加几厘米的动作幅度。不要心急，一定不要借助惯性起身、让脚跟离地或是摇晃前倾。要纯粹使用肌肉力量，否则就别练了！&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第六式窄距深蹲&#34;&gt;第六式　窄距深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;直立，双脚脚跟相碰，脚尖微微向外，双臂前伸。这是该动作的起始姿势（图31）。弯曲膝盖和髋部，直到大腿后侧紧贴小腿，无法蹲得更低为止。此时，你的胸部应该紧贴大腿（图32）。注意，脚跟始终不要抬离地面。为避免后倾，你得收缩胫骨肌肉使身体微微前倾。保持这一姿势，然后仅靠腿部发力将自己推回到起始姿势。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_31.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图31　直立，双脚脚跟相碰，脚尖微微向外，双臂前伸&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_32.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图32　为避免后倾，你得收缩胫骨肌肉使身体微微前倾&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=SkyBlue&gt;窄距深蹲具有标准深蹲的所有益处，但是对股四头肌的影响更大。经常练习该动作真的能强化你的膝盖、胫骨和臀部肌肉，让你的臀部更紧实，效果比任何一种器械训练都好。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，5次&lt;br /&gt;
-中级标准：2组，各10次&lt;br /&gt;
-升级标准：2组，各20次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-很多训练者练习前几式时进展神速，但到了窄距深蹲就会碰到问题——在动作最低点或接近最低点时，身体有可能失去平衡而后倾。这些问题在腿骨长、个头高的训练者身上尤为突出。之所以会出现这些问题，是因为训练者胫骨前侧的肌肉缺乏力量以及平衡能力不强。如果练习前几式时你的进度太快，那就回到标准深蹲，在练习过程中逐渐缩小双脚之间的距离——每次缩小几厘米。双臂前伸能够让重心前移。此外，你也可以手拿重物——如哑铃、书或矿泉水瓶等——练习该动作，不过最好还是空手能完成。有些训练者由于身体结构的原因，做该动作真的很困难，如果你就是这样，那么可以让双脚脚跟保持一掌的距离。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第七式偏重深蹲&#34;&gt;第七式　偏重深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-直立，一只脚踩在地上，另一只脚的脚跟放在位于自己前方、距身体约一步远的篮球上。双脚分开，与肩同宽或略宽，双臂在胸前伸直。这是该动作的起始姿势（图33）。弯曲膝盖和髋部，直到踩在地上的那条腿的大腿后侧紧贴小腿后侧。这是该动作的最低点（图34）。刚开始练习时，到达最低点后可能出现身体后倾的情况，所以要确保身后有足够的干净空间，这一点对所有全幅深蹲都适用。暂停一下，然后双腿发力把自己推回到起始姿势。在动作过程中，脚跟始终不要抬离地面，身体不要向前摇晃，尽管你可能不自觉地想这样做。切记，要有控制地完成整个动作。&lt;/font&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_33.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图33　直立，一只脚踩在地上，另一只脚的脚跟放在位于自己前方、距身体约一步远的篮球上。&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_34.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图34　弯曲膝盖和髋部，直到踩在地上的那条腿的大腿后侧紧贴小腿后侧。&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-偏重深蹲是到挑战单腿深蹲的第一步。到现在为止，深蹲系列中各式的动作都是对称的——都能够均衡地锻炼双腿。练习该动作时，放在篮球上的那条腿位置相对较高，而且又必须控制篮球，所以无法完全发力。踩在地上的那条腿需要承担大部分工作，要有足够的力量在另一条腿的辅助下把身体从最低点推起。这个动作还可以很好地改善你的平衡能力与协调能力。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;/p&gt;
-&lt;font color=SkyBlue&gt;
-初级标准：1组，5次（每侧）
-中级标准：2组，各10次（每侧）
-升级标准：2组，各20次（每侧）
-&lt;/font&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;与前几式相比，该动作需要更多的技巧和更大的力量。如果把脚架在篮球上难以保持平衡，那你可以选用稳固的物体（如三块垒起的砖头）代替篮球。如果这样还是有问题，你可以选择降低物体的高度（如一块砖）。随着你的信心与平衡能力的增强，可以逐渐增加物体的高度。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第八式单腿半深蹲&#34;&gt;第八式　单腿半深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;直立，只靠一条腿站立，另一条腿向前抬起，伸直或略微弯曲，抬起的脚大约处在另一条腿大腿的高度上，双手向胸前伸出。这是该动作的起始姿势（图35）。弯曲髋部和支撑腿的膝盖，直到膝关节几乎弯曲成90°，即大腿几乎与地面平行。在此过程中，抬起的那条腿应该始终在空中。这是该动作的最低点（图36）。暂停一会，然后单腿发力把自己推回到起始姿势。在动作过程中，背部始终要保持平直，而且支撑腿的脚跟始终不能抬离地面。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_35.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图35　抬起的脚大约处在另一条腿大腿的高度上&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_36.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图36　在动作过程中，背部始终要保持平直，而且支撑腿的脚跟始终不能抬离地面&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;该练习是深蹲系列中第一个完全的单腿动作。攻克这个动作很重要，因为这可以让健身者的平衡能力得到极大的提升，从而为标准单腿深蹲打下基础。通过这个动作，健身者能够逐步掌握非支撑腿长时间离地的技巧。这可不容易，因为这需要非常强壮的髋部屈肌，可大多数人的髋部屈肌都很弱。由于只有一条腿支撑身体，所以这个动作可以更好地增强我们的腿部力量。不过由于该动作的运动幅度只有正常的一半，所以在练习该动作时，应该辅以一个全幅动作——窄距深蹲或偏重深蹲都可以。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;初级标准：1组，5次（每侧）&lt;br /&gt;
-中级标准：2组，各10次（每侧）&lt;br /&gt;
-升级标准：2组，各20次（每侧）&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;达到偏重深蹲升级标准的健身者，做该动作应该不成问题。如果你发现这个动作对你来说还是个挑战的话，那就先使用更小的动作幅度，随着体能的发展再逐步增加下蹲的深度即可&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第九式单腿辅助深蹲&#34;&gt;第九式　单腿辅助深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;把篮球放在要练的那条腿的外侧。直立，一只脚平放在地面上，另一只脚在你前方抬起——同单腿半深蹲（第八式）的起始姿势。抬起那条腿的同侧手臂向前伸出，另一只手臂自然垂于体侧（图37）。然后弯曲髋部和支撑腿的膝盖，直到大腿后侧紧贴小腿，无法继续下蹲为止。此时，你的手应该稳稳地放在篮球上，这是该动作的最低点（图38）。起身时主要依靠腿部力量，但你也要用手按压篮球，以便在反向动作的最初阶段借力。注意，在动作过程中，支撑腿的脚跟始终不能抬离地面&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_37.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图37　直立，一只脚平放在地面上，另一只脚在你前方抬起&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_38.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图38　用手按压篮球，以便在反向动作的最初阶段借力&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;任何一种深蹲动作的最低点都是最难的，单腿深蹲尤其如此。该动作通过允许你做反向动作时在至关重要的最初几厘米中用手辅助、借力，安全地解决了在最低位置时的问题。通过练习该动作，你膝关节处的韧带与肌腱将变强，之后你就可以信心十足地开始挑战最终式——单腿深蹲。另外，该动作还会迫使髋部屈肌更加用力，以保持抬起的那条腿比做单腿半深蹲时抬得更高，而这可能需要你花点儿时间才能适应。在这重要的一式上投入点时间。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;初级标准：1组，5次（每侧）&lt;br /&gt;
-中级标准：2组，各10次（每侧）&lt;br /&gt;
-升级标准：2组，各20次（每侧）&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;如果你还达不到该练习的初级标准，那就试着使用比篮球高的物体，椅子或矮咖啡桌都是不错的选择。相比于使用篮球，这些物体可以在更大的运动范围内为你的手臂提供支撑。一旦你借助更高物体能完成该动作，就可以换用矮一些的物体，就这样循序渐进地练习，直到你准备好再次尝试用篮球做该动作。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;最终式-单腿深蹲&#34;&gt;最终式 单腿深蹲&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;直立，抬起一条腿，直到脚大约与髋部等高，腿要尽量伸直，双臂在胸前前伸。如果你在之前几式上已经花了大量时间，那么这些对你来说不会太难。这是该动作的起始姿势（图39）。然后弯曲髋部与支撑腿的膝盖。你应该有控制地放低身体，不要一下蹲到底。缓慢地下蹲，直到支撑腿的大腿后侧紧贴小腿，无法继续下蹲为止。此时，你的腹部应该与支撑腿的大腿紧贴在一起。这是该动作的最低点（图40）。在紧张状态下，暂停一下（数一个数），然后单腿发力把自己推回到起始姿势。注意，千万不要借助惯性起身。在动作过程中，背部始终挺直，抬起的腿始终离地，而支撑腿则应稳稳地踩在地上。到达动作最高点时暂停一下，然后再下蹲。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_39.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图39　抬起一条腿，直到脚大约与髋部等高，腿要尽量伸直。&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_40.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图40　缓慢地下蹲，直到支撑腿的大腿后侧紧贴小腿，无法继续下蹲为止。&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-单腿深蹲是深蹲动作之王，也是锻炼下身力量的终极练习。它可以锻炼脊椎、髋部、大腿、小腿和双脚，还能增强我们的耐力和运动能力。久而久之，皮包骨的双腿将变成强有力的支柱——有钢索般的股四头肌、硬如岩石的臀大肌、壮硕有形的小腿。掌握这个动作，你的双腿就绝不会衰老。而且，它还会保护你免受髋部病痛与膝关节损伤的折磨。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;初级标准：1组，5次（每侧）&lt;br /&gt;
-中级标准：2组，各10次（每侧）&lt;br /&gt;
-精英标准：2组，各50次（每侧）&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-如果你达不到单腿深蹲的初级标准，那就回到第九式（单腿辅助深蹲），并使用比篮球略小的物体，如三块摞起的砖。逐渐使用越来越小的物体，直到根本无需支撑。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_sum2.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_sum3.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>铠甲般的胸肌与钢铁般的肱三头肌</title>
-        <link>https://www.zhugeqing.top/exercise/%E4%BF%AF%E5%8D%A7%E6%92%91/</link>
-        <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Mon, 11 Oct 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/exercise/%E4%BF%AF%E5%8D%A7%E6%92%91/</guid>
-        <description>第一式 墙壁俯卧撑 动作： 面对墙壁站立，双脚并拢，双臂伸直，与肩同宽，双手平放在墙上，手掌与胸等高。这是该动作的起始姿势（图1）。弯曲肘部，直到前额轻触墙面。这是该动作的结束姿势（图2）。然后将自己推回到起始姿势，如此重复。 图一 图2 解析: 俯卧撑动作共有十式，墙壁俯卧撑只是第一式。既然是第一式，也就最容易的，毫无疑问普通人都能做。墙壁俯卧撑也是第一个有治疗效果的练习。刚受伤、做过手术或身体正处于恢复期的</description>
-        <content:encoded>&lt;h2 id=&#34;第一式-墙壁俯卧撑&#34;&gt;第一式 墙壁俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;  &lt;font color=SkyBlue&gt;面对墙壁站立，双脚并拢，双臂伸直，与肩同宽，双手平放在墙上，手掌与胸等高。这是该动作的起始姿势（图1）。弯曲肘部，直到前额轻触墙面。这是该动作的结束姿势（图2）。然后将自己推回到起始姿势，如此重复。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_1.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图一&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_2.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图2&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析:&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;俯卧撑动作共有十式，墙壁俯卧撑只是第一式。既然是第一式，也就最容易的，毫无疑问普通人都能做。墙壁俯卧撑也是第一个有治疗效果的练习。刚受伤、做过手术或身体正处于恢复期的人若想加快恢复速度、尽快拥有强健的体魄，可以选择这个动作。肘、腕、肩（尤其是柔弱的肩袖）极易出现慢性或急性损伤，这项练习能够轻柔地刺激这些部位，并改善血液循环。不熟悉徒手体操的初学者应该以较轻柔的动作开始训练，然后逐步提高自己的运动技巧，循序渐进地增强自己的运动能力。我建议就从这个练习动作开始。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，10次&lt;br /&gt;
-中级标准：2组，各25次&lt;br /&gt;
-升级标准：3组，各50次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;只要身体没有残疾、没有严重的伤病或疾病，一般人应该都能完成这个动作。如果你刚好处于伤病或手术的恢复期，那么这个动作就是很好的“测试”，能让你了解自己的身体在恢复期的弱点。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第二式-上斜俯卧撑&#34;&gt;第二式 上斜俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt; &lt;font color=SkyBlue&gt;做这个动作需要借助一个稳固的物体，高度大约是你身高的一半（大概到臀部位置）。桌子、高一些的椅子、工作台、厨房操作台、矮墙、结实的栅栏都是不错的选择。大多数监狱牢房里的洗漱台高度就正好，不过你得保证它足够结实。双脚并拢，身体成一条直线，然后前倾上身，双臂伸直，双手抓住所选物体，与肩同宽。这是该动作的起始姿势（图3）。弯曲肘部，放低身体，直到胸部轻触物体顶部。如果你选择的物体高度合适，那么此时你的身体与地面的夹角约为45°（图4）。暂停一会，然后将自己推回到起始姿势，如此重复。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_3.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图3　双脚并拢，身体成一条直线，然后前倾上身，双臂伸直，双手抓住所选物体，与肩同宽&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_4.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图4　弯曲肘部，放低身体，直到胸部轻触物体顶部&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-这个动作的难度比第一式（墙壁俯卧撑）高，因为你将自己推回到起始姿势时，身体与地面的夹角更小，这意味着你的上肢肌肉要承受更大的重量。上斜俯卧撑比标准俯卧撑（第五式）容易，对大多数人来说，这个动作对肌肉的要求并不太高，而且它能帮助初学者平稳进步，对康复期的健身者也非常有帮助。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，10次&lt;br /&gt;
-中级标准：2组，各20次&lt;br /&gt;
-升级标准：3组，各40次&lt;/p&gt;
-&lt;/font&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;达动作的最低点时，你的身体与地面的夹角约为45°。初学者如果达不到这么高的水平，那就降低难度（加大倾斜角度，也就是让身体更接近直立）——只要选择高度高于你身体中间点的物体即可。然后，再逐渐减小角度，直到可以轻而易举地完成倾斜45°的上斜俯卧撑。如果你还想尝试更小的角度，可以利用台阶做此动作——随着能力的提高，你可以逐渐降低支撑物的高度。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第三式-膝盖俯卧撑&#34;&gt;第三式 膝盖俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作&lt;/code&gt;:&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-双脚并拢，双膝着地。双臂伸直，与肩同宽。双手在胸部的正下方，两个手掌平放在地面上。脚踝搭在一起，大腿与上身及头部成一条直线，不要撅屁股或者塌腰。这是该动作的起始姿势（图5）。然后以膝盖为支点，弯曲肘部，直到胸部与地面仅一拳之隔（图6）。暂停一下，然后将自己推回到起始姿势，如此重复。&lt;br /&gt;
-&lt;/font&gt;&lt;br /&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_5.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;&lt;/p&gt;
-&lt;center&gt;图5　双脚并拢，双膝着地。双臂伸直，两个手掌平放在地面上&lt;/center&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_6.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图6　以膝盖为支点，弯曲肘部，直到胸部与地面仅一拳之隔。&lt;/center&gt;
-&lt;font color=MediumTurquoise&gt;&lt;/font&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;膝盖俯卧撑是俯卧撑系列的第三式，是初学者要掌握的重要动作。它是在地面上做的俯卧撑中最容易的一个，起着承前启后的作用——此前的俯卧撑都是站立完成的，后面的俯卧撑全是地面动作，而且难度更高。女士们经常会做膝盖俯卧撑，因为她们的上肢力量相对较弱，不易完成标准俯卧撑，不过这个动作对男士也大有好处。对那些超重或身材走形的人来说，膝盖俯卧撑是不错的起点。因为采用这样的姿势推起上半身相对容易，所以在开始做更难的俯卧撑之前，膝盖俯卧撑是绝佳的热身练习&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，10次&lt;br /&gt;
-中级标准：2组，各15次&lt;br /&gt;
-升级标准：3组，各30次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-如果你不能完成标准的膝盖俯卧撑，可以减小动作幅度——不要降低到离地面一拳的距离，而是把动作幅度缩短到你能舒服地完成的程度，同时增加次数（约20次）。你要不断练习（保持高反复次数），逐渐增加动作深度，直至可以完成标准的膝盖俯卧撑&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第四式半俯卧撑&#34;&gt;第四式　半俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-跪在地板上，双手撑地，双腿向后蹬直。双手与肩同宽，并处于上胸部的正下方。双腿双脚并拢，锁紧身体，使上身、髋部和双腿成一条直线。先伸直手臂，然后降低身体到大约一半臂长的高度，或者直到肘部弯成直角。控制下降高度的绝佳方式就是使用篮球或橄榄球——将球放在髋部下方。这是该动作的起始姿势（图7）。接下来，弯曲肘部，直到髋部与球轻轻接触（图8）。对大多数人&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_7.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图7　控制下降高度的绝佳方式就是使用篮球或橄榄球——将球放在髋部下方&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_8.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图8　弯曲肘部，直到髋部与球轻轻接触&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;半俯卧撑非常重要，要熟练掌握。很多人做俯卧撑的方法都不正确——撅屁股或者塌腰，这是因为他们的腰部肌肉和脊椎肌肉不发达。这个动作可以锻炼你的腰部肌肉和脊椎肌肉，从而能够锁定髋部，使身体成一条直线。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，8次&lt;br /&gt;
-中级标准：2组，各12次&lt;br /&gt;
-升级标准：2组，各25次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-如果你做不了半俯卧撑，可以减小动作幅度。如果你选用的是篮球，那就将其放在膝盖下，而不是髋部下方。伸直手臂，然后慢慢降低身体，直到膝盖与球接触，这相当于四分之一俯卧撑。如果你能做10次以上四分之一俯卧撑，那就可以把篮球向上移一点儿，就这样逐步移动篮球，直到其位于髋部下方为止。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第五式标准俯卧撑&#34;&gt;第五式　标准俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;跪在地板上，双手撑地，双腿向后蹬直。双腿双脚并拢，双手与肩同宽，并处于上胸部的正下方。双臂伸直，臀部与脊椎成一条直线。这是该动作的起始姿势（图9）。接着，弯曲肘部，直至胸部与地面仅一拳之隔。监狱里进行俯卧撑比赛时，计数者会握拳，让小拇指一侧紧贴地面，这样只需数参赛者胸部接触自己大拇指的次数即可。若你是单独锻炼，又想控制动作幅度，并想让身体与地面保持正确距离，可以在胸部正下方放一个棒球或网球（图10）。你在做动作的过程中，待胸部碰到球后暂停一下，然后回到起始姿势。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_9.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图9　在胸部正下方放一个棒球或网球&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_10.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图10　胸部碰到球后暂停一下，然后回到起始姿势&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;这就是“经典”俯卧撑。大多数人在体育课上学到的就是这个动作。说到俯卧撑，大多数人脑海中浮现的也是这个动作。标准俯卧撑是极好的上身练习动作，可以锻炼我们的手臂、胸部和上肢带肌，而且效果明显。然而无论如何，标准俯卧撑的难度并不是最高的，它在十式中只排第五。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;初级标准：1组，5次&lt;br /&gt;
-中级标准：2组，各10次&lt;br /&gt;
-升级标准：2组，各20次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-你可能感到费解，很多看上去很健硕的家伙都不能正确地完成标准俯卧撑。如果你也一样，那还是找个篮球做半俯卧撑吧！如果你已能很好地完成第四式——当球放在髋部下面时，你能重复此动作25次，那么每次训练时你可以把球向前移动几厘米，在次数保持不变的情况下继续练习。当你的下颚能碰到球时，你再尝试做标准俯卧撑&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第六式窄距俯卧撑&#34;&gt;第六式　窄距俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;窄距俯卧撑的起始姿势与标准俯卧撑基本相同（见第五式），只不过需要双手相触——无需重叠，也不需要让双手的拇指与食指构成一个“钻石”，只要两个食指指尖相触就可以了。从手臂伸直的起始姿势开始（图11），慢慢放低身体，直到胸部轻触手背（图12）。暂停一下，然后将自己推回到起始姿势。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_11.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图11　两个食指指尖相触就可以了&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_12.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图12　慢慢放低身体，直到胸部轻触手背&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;窄距俯卧撑很古老，它在俯卧撑十式中至关重要，但人们通常更喜欢弹震式俯卧撑或下斜俯卧撑这些花哨的动作，而忽略窄距俯卧撑。这简直是悲剧，因为窄距俯卧撑在攻克单臂俯卧撑之旅中必不可少。大多数人做单臂俯卧撑都会感到吃力，他们会发现很难在身体降到最低点之后再把自己推起来。这是因为此时肘部的弯曲程度最大，而肘部的弯曲角度超过直角时胳膊就很难使上力气。做窄距俯卧撑时，由于双手的特殊位置，当你的身体降到最低点时，肘部的弯曲度比做标准俯卧撑时的更大。这个动作可以锻炼三头肌，并且强化你的肘部与腕部的肌腱。因此，能舒服地做窄距俯卧撑的人在终于要挑战单臂俯卧撑的时候，会更从容一些。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，5次&lt;br /&gt;
-中级标准：2组，各10次&lt;br /&gt;
-升级标准：2组，各20次&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-如果你做不了双手相触的窄距俯卧撑（如上所述），可以继续做标准俯卧撑，在次数不变的前提下，让双手逐渐靠近，每次靠近几厘米。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第七式偏重俯卧撑&#34;&gt;第七式　偏重俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-双脚并拢，双腿、髋部、上身成一条直线。双臂伸直，双手撑地，并处于上胸部的正下方。一只手稳固地支撑身体，另一只手撑在篮球上，这是该动作的起始姿势（图13）。找到平衡之后，尽力将身体的重量均匀地分摊在两只手上。这样做虽然不容易，但一定要坚持。接下来，弯曲肘部，慢慢降低身体，直到胸部轻触撑在篮球上的那只手（图14）。暂停一下，然后将自己推回到起始姿势。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_13.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图13　一只手稳固地支撑身体，另一只手撑在篮球上&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_14.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图14　弯曲肘部，慢慢降低身体，直到胸部轻触撑在篮球上的那只手&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;这是第一个高级俯卧撑动作，它能够帮助健身者适应由双手俯卧撑向单臂俯卧撑的过渡。你也可以选用一个固定的物体（如砖块），而不用篮球，不过篮球是最好的选择。控制篮球的同时可以锻炼你的肩袖，这有助于你完成难度更高的动作。你还可以选用足球，但篮球还是首选，因为篮球表面粗糙更容易抓握。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=SkyBlue&gt;初级标准：1组，5次（每侧）&lt;br /&gt;
-中级标准：2组，各10次（每侧）&lt;br /&gt;
-升级标准：2组，各20次（每侧）&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;能正确地完成窄距俯卧撑的人都可以信心十足地尝试这个动作。如果刚开始你觉得有些困难，那是因为你的协调性不好，而不是力量不足。你可以用固定的物体，而不用会滚来滚去的篮球。砖块是个不错的选择，等你可以在一块砖上重复此动作20次之后，你就可以尝试将两块砖摞起来做这个动作。在你可以在三块垒起的砖上重复此动作20次之后，你就可以尝试用篮球练习了&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第八式单臂半俯卧撑&#34;&gt;第八式　单臂半俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-摆出半俯卧撑最高点时的姿势，即将篮球放在髋部下方（见第四式）。将一只手撑在胸部下方的地面上，手臂伸直，另一只手背在身后。这是该动作的起始姿势（图15）。接着弯曲肘部，直到髋部轻触篮球。这是该动作的最低点（图16）。暂停一下，然后将自己推回到起始姿势。如果你的肱三头肌不够发达，那做该动作时上身很容易发生扭曲。坚持住，整个身体保持一条直线，做所有俯卧撑都应如此。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_15.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图15　将一只手撑在胸部下方的地面上，手臂伸直，另一只手背在身后&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_16.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图16　弯曲肘部，直到髋部轻触篮球&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-单臂半俯卧撑是俯卧撑系列的第八式。通过这个练习，训练者可以逐步从双侧练习转为单侧练习。该动作可以提高你的平衡能力，而这对做单臂俯卧撑极其重要。因为只靠单臂发力，所以这个动作也会让手部、腕部和肩部关节为之后的动作做好准备。单臂半俯卧撑在这个系列中不可或缺，你必须掌握。不过由于肘关节只是部分弯曲，所以对一次完整的俯卧撑训练来说，只做这样的练习是不够的。你需要再做一些肘部弯曲角度小于90°的练习来补充，比如在之后加上窄距俯卧撑或偏重俯卧撑。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，5次（每侧）&lt;br /&gt;
-中级标准：2组，各10次（每侧）&lt;br /&gt;
-升级标准：2组，各20次（每侧）&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;如果做不了单臂半俯卧撑，你可以把篮球放在膝下，做四分之一单臂俯卧撑。练习一段时间之后，就一点点向前移动篮球，加大动作幅度。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第九式杠杆俯卧撑&#34;&gt;第九式　杠杆俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;摆出做俯卧撑的姿势，身体成一条直线，一只手撑在胸部正下方的地面上，另一只手放在身体外侧的篮球上，靠双脚和撑在地上的那只手支撑身体。双臂伸直，放在球上的手要尽量向远处伸。这是该动作的起始姿势（图17）。要有控制地慢慢放低身体，直到胸部与地面只有一拳之隔。如果你是独自锻炼，可以像做标准俯卧撑那样，借助棒球或网球控制动作幅度。放低身体时手会顺势把篮球推到远离身体的位置（图18）。身体降至最低点时，暂停一下，然后将自己推回到起始姿势。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_17.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图17　一只手撑在胸部正下方的地面上，另一只手放在身体外侧的篮球上&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_18.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图18　要有控制地慢慢放低身体，直到胸部与地板只有一拳之隔&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;标准杠杆俯卧撑的难度与单臂俯卧撑相差无几，这也正是杠杆俯卧撑在俯卧撑十式中排在第九的原因。你会发现，撑在篮球上的那只手臂几乎帮不上什么忙，这就迫使支撑身体的手臂必须使出全力。如果你还没强大到足以在做单臂俯卧撑时把自己撑起，那你可以先练习杠杆俯卧撑。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;&lt;br /&gt;
-初级标准：1组，5次（每侧）&lt;br /&gt;
-中级标准：2组，各10次（每侧）&lt;br /&gt;
-升级标准：2组，各20次（每侧）&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;由于杠杆原理，撑在篮球上的那只手臂如果完全伸直的话就很难用力。你可以让这只手臂的肘部稍稍弯曲，从而让篮球离你的身体近一点儿，这样做杠杆俯卧撑会容易一些。不过不要太过，要是你把篮球放在身体正下方，那这个动作就变成了第七式——偏重俯卧撑。随着你越来越强壮，你可以逐渐让球远离身体，直到可以将手臂伸直做标准的杠杆俯卧撑&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;最终式-单臂俯卧撑&#34;&gt;最终式 单臂俯卧撑&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;动作：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;跪在地板上，一只手撑在你前方的地面上。双腿向后蹬直，用脚趾支撑身体。脊柱与髋部成一条直线，支撑身体的手臂在胸部下方伸直——不要在身体侧面或是靠前的位置。稳定之后，把不起支撑作用的那只手背在身后。这是该动作的起始姿势（图19）。弯曲肘部，有控制地放低身体，直到下巴与地面大约有一拳之隔（图20）。在动作的最低点暂停一下，然后将自己推回到起始姿势。&lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_19.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图19　脊柱与髋部成一条直线，支撑身体的手臂在胸部下方伸直。&lt;/center&gt;
-&lt;p&gt;&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;br /&gt;
-&lt;font color=GreenYellow&gt;  &lt;/font&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_20.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;center&gt;图20　弯曲肘部，有控制地放低身体，直到下巴与地面大约有一拳之隔。&lt;/center&gt;
-&lt;p&gt;&lt;code&gt;解析：&lt;/code&gt;&lt;br /&gt;
-&lt;font color=SkyBlue&gt;姿势正确的单臂俯卧撑是检验胸部与肘部力量的黄金标准，而且能够让人一见难忘。许多健身者都声称自己能做单臂俯卧撑，但你千万不要被他们蒙骗。当你让他们动真格的时候，你就会发现，他们所谓的单臂俯卧撑就是个笑话：双腿朝两边分开，上身丑陋地扭曲——这是为了更容易做动作，然后他们会用摇摇摆摆、虚弱无力的胳膊猛地将自己推起，而且他们只能完成少数几次反复。毫无疑问，真正能做单臂俯卧撑的人可谓是危险的稀有动物，你要对自己有点儿信心，相信自己也能跻身其间。&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;训练目标：&lt;/code&gt;&lt;/p&gt;
-&lt;font color=SkyBlue&gt;
-初级标准：1组，5次（每侧）
-中级标准：2组，各10次（每侧）
-精英标准：1组，100次（每侧）
-&lt;/font&gt;
-&lt;p&gt;&lt;code&gt;稳扎稳打：&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=SkyBlue&gt;如果你已经攻克了杠杆俯卧撑，那么单臂俯卧撑对你而言就不是特别恐怖了。但是，如果你还不能标准地完成5次单臂俯卧撑，那么你还是回到第九式，确保自己可以标准地完成20次杠杆俯卧撑。如果你能做到这一点，但做单臂俯卧撑还是有问题，那么请你继续练习杠杆俯卧撑，直到你可以完成30次反复，然后再挑战单臂俯卧撑。&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_sum0.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/exercise/1_sum1.png&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
