@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sat, 05 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Mar 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/index.xml" rel="self" type="application/rss+xml" />
@@ -41,6 +41,122 @@
         
       
 
+      
+      <item>
+        <title>Docker的存储</title>
+        <link>https://www.zhugeqing.top/docker/4/</link>
+        <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 07 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/4/</guid>
+        <description>Data volume 当容器被删除了，则数据也没有了 Docker主要提供了两种方式做数据的持久化 Data Volume, 由Docker管理，(/var/lib/docker/volumes), 持久化数据的最好方式 Bind Mount，由用户指定存储的数据具体mount在系统什么位置 volume 通过在DockerFile中加入VOLUME [ &amp;quot;/app&amp;quot; ]，可以使得容器中的/app目录中的数据被记录到docker volume中 也可以在执行docker run时加上-v</description>
+        <content:encoded>&lt;h2 id=&#34;data-volume&#34;&gt;Data volume&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当容器被删除了，则数据也没有了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;Docker主要提供了两种方式做数据的持久化&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Data Volume&lt;/code&gt;, 由Docker管理，(/var/lib/docker/volumes), 持久化数据的最好方式&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Bind Mount&lt;/code&gt;，由用户指定存储的数据具体mount在系统什么位置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;volume&#34;&gt;volume&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;通过在DockerFile中加入&lt;code&gt;VOLUME [ &amp;quot;/app&amp;quot; ]&lt;/code&gt;，可以使得容器中的/app目录中的数据被记录到&lt;code&gt;docker volume&lt;/code&gt;中&lt;/li&gt;
+&lt;li&gt;也可以在执行&lt;code&gt;docker run&lt;/code&gt;时加上&lt;code&gt;-v zhugeqing:/app&lt;/code&gt;来创建&lt;code&gt;docker volume&lt;/code&gt;（其中&lt;code&gt;zhugeqing&lt;/code&gt;为volume名字，&lt;code&gt;/app&lt;/code&gt;为映射到&lt;code&gt;docker volume&lt;/code&gt;的容器内目录名）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker volume ls&lt;/code&gt;可以来查看所有的&lt;code&gt;volume&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker volume inspect VOLUMENAME&lt;/code&gt;可以查看该&lt;code&gt;volume&lt;/code&gt;的详细信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker volume prune&lt;/code&gt;可以清理不使用&lt;code&gt;volume&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;volume练习mysql&#34;&gt;volume练习MySql&lt;/h3&gt;
+&lt;h5 id=&#34;准备镜像&#34;&gt;准备镜像&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;docker pull mysql:5.7&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;创建容器&#34;&gt;创建容器&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/_/mysql?tab=description&amp;amp;page=1&amp;amp;ordering=last_updated&#34;&gt;mysql镜像的详细信息&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;执行 &lt;code&gt;docker container run --name mysql5.7 -e MYSQL_ROOT_PASSWORD=123456 -d -v mysql-data:/var/lib/mysql mysql:5.7&lt;/code&gt;来创建容器&lt;/li&gt;
+&lt;li&gt;执行&lt;code&gt;docker volume ls&lt;/code&gt;可以来查看所有的&lt;code&gt;volume&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;执行&lt;code&gt;docker volume inspect mysql-data&lt;/code&gt;来查看该容器所生成的&lt;code&gt;volume&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;验证&#34;&gt;验证&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;执行&lt;code&gt;docker container exec -it mysql5.7 mysql -u root -p&lt;/code&gt;并输入密码。在数据库中创建一个名字为&lt;code&gt;zhugeqing&lt;/code&gt;的数据库&lt;/li&gt;
+&lt;li&gt;执行&lt;code&gt;ls /var/lib/docker/volumes/mysql-data/_data&lt;/code&gt;来查看生成&lt;code&gt;volume&lt;/code&gt;对应的目录，发现确实也生成了一个&lt;code&gt;zhugeqing&lt;/code&gt;的目录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;容器mysql开启远程连接&#34;&gt;容器Mysql开启远程连接&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;进入到容器中的Mysql命令行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GRANT ALL PRIVILEGES ON *.* TO root@&amp;quot;%&amp;quot; IDENTIFIED BY &amp;quot;rw&amp;quot;;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;flush privileges;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;开放容器Mysql 系统主机所对应端口的防火墙&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;bind-mount&#34;&gt;Bind Mount&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;提出一个问题：如果本地机器没有安装go环境，该如何使用docker来生成可执行文件到本机上？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;选择一个目录（比如/root），编写需要编译的go文件 /root/main.go&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;吃掉那只青蛙！&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;拉取go镜像——&lt;code&gt;docker pull golang&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用go镜像运行一个容器——&lt;code&gt;docker run -it -v $(pwd):/root golang&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换到容器内的/root/目录——&lt;code&gt;cd /root&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行&lt;code&gt;go build main.go&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;退出容器，发现本机的当前目录已经生成了一个可执行文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;总结：使用这种方式可以让&lt;code&gt;本机的当前目前&lt;/code&gt;与&lt;code&gt;容器中的指定目录&lt;/code&gt;进行共享操作&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>最长回文子串</title>
@@ -2388,7 +2504,70 @@ Step 6/6 : CMD [&amp;quot;python3&amp;quot;,&amp;quot;hello.py&amp;quot;]
  ---&amp;gt; 3906ec34f79f
 Successfully built 3906ec34f79f
 Successfully tagged cache:latest
-&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;尽量使用非root用户&#34;&gt;尽量使用非root用户&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;假如我们当前登录服务器的用户是一个普通用户，，它本身不具有sudo的权限，所以就有很多文件无法进行读写操作，比如/root目录它是无法查看的。&lt;/li&gt;
+&lt;li&gt;但是如果这个用户可以使用docker，那么就可以将/root目录映射到docker container中查看，从而越权。&lt;/li&gt;
+&lt;li&gt;所以在构建镜像时，尽量指定非root用户执行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-DockerFile&#34; data-lang=&#34;DockerFile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; python:3.9.5-slim&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; pip install flask &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    groupadd -r flask &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; useradd -r -g flask flask &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    mkdir /src &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    chown -R flask:flask /src&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;USER&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; flask&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; app.py /src/app.py&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WORKDIR&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /src&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ENV&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;FLASK_APP&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;app.py&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;EXPOSE&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 5000&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CMD&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;flask&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;run&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;-h&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;通过groupadd和useradd创建一个flask的组和用户&lt;br /&gt;
+通过USER指定后面的命令要以flask这个用户的身份运行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;学习更多dockerfile知识&#34;&gt;学习更多DockerFile知识&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/docker-library/official-images&#34;&gt;Docker-library&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以进入官方的github仓库，然后进入library，找到某些image，然后找到文本文件中的git地址，点开地址，可以查看官方是如何编写DockerFile镜像的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/docker-library/official-images&#34;&gt;DockerFile&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;官方DokcerFile文档&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
