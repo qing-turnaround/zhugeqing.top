@@ -1044,6 +1044,14 @@ go get github.com/micro/micro/v2/cmd/protoc-gen-micro&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://juejin.cn/post/6949927882126966820#heading-8&#34;&gt;protoc的具体使用&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;使用docker-container&#34;&gt;使用docker container&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;拉取docker 镜像&lt;code&gt;docker pull zhugeqing/protoc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运行一个container&lt;code&gt;docker run --rm -v $(pwd):$(pwd) -w $(pwd) zhugeqing/protoc --go_out=./ --micro_out=./  -I ./ *.proto&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ndash;rm表示当容器退出时自动删除容器；-v来指定bind mount；-w来指定工作目录，&amp;ndash;go_out和&amp;ndash;micro_out来指定生成go文件的路径；-I指定寻找proto文件的路径。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;避雷&#34;&gt;避雷！&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;在安装micro工具包时(go get -v github.com/micro/micro/v2) 尽量选择使用go 1.14版本，在使用go 1.17版本时，会有报错信息&lt;/code&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:gozhugeqing&amp;gt; micro help
