@@ -58,6 +58,11 @@ message ResponseProduct {
 
 * [protoc的具体使用](https://juejin.cn/post/6949927882126966820#heading-8)
 
+### 使用docker container
+* 拉取docker 镜像`docker pull zhugeqing/protoc`
+* 运行一个container`docker run --rm -v $(pwd):$(pwd) -w $(pwd) zhugeqing/protoc --go_out=./ --micro_out=./  -I ./ *.proto`
+> --rm表示当容器退出时自动删除容器；-v来指定bind mount；-w来指定工作目录，--go_out和--micro_out来指定生成go文件的路径；-I指定寻找proto文件的路径。
+
 
 
 ## 避雷！
