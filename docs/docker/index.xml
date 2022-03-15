@@ -50,21 +50,20 @@
 &lt;h4 id=&#34;创建容器&#34;&gt;创建容器&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://hub.docker.com/_/mysql?tab=description&amp;amp;page=1&amp;amp;ordering=last_updated&#34;&gt;mysql镜像的详细信息&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;执行 &lt;code&gt;docker container run --name mysql5.7 -e MYSQL_ROOT_PASSWORD=123456 -d -v mysql-data:/var/lib/mysql mysql:5.7&lt;/code&gt;来创建容器&lt;/li&gt;
-&lt;li&gt;执行&lt;code&gt;docker volume ls&lt;/code&gt;可以来查看所有的&lt;code&gt;volume&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;执行&lt;code&gt;docker volume inspect mysql-data&lt;/code&gt;来查看该容器所生成的&lt;code&gt;volume&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行 &lt;code&gt;docker container run --name mysql5.7 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -d -v mysql-data:/var/lib/mysql mysql:5.7&lt;/code&gt;来创建容器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行&lt;code&gt;docker volume ls&lt;/code&gt;可以来查看所有的&lt;code&gt;volume&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行&lt;code&gt;docker volume inspect mysql-data&lt;/code&gt;来查看该容器所生成的&lt;code&gt;volume&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;验证&#34;&gt;验证&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;执行&lt;code&gt;docker container exec -it mysql5.7 mysql -u root -p&lt;/code&gt;并输入密码。在数据库中创建一个名字为&lt;code&gt;zhugeqing&lt;/code&gt;的数据库&lt;/li&gt;
 &lt;li&gt;执行&lt;code&gt;ls /var/lib/docker/volumes/mysql-data/_data&lt;/code&gt;来查看生成&lt;code&gt;volume&lt;/code&gt;对应的目录，发现确实也生成了一个&lt;code&gt;zhugeqing&lt;/code&gt;的目录&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;容器mysql开启远程连接&#34;&gt;容器Mysql开启远程连接&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;进入到容器中的Mysql命令行&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;GRANT ALL PRIVILEGES ON *.* TO root@&amp;quot;%&amp;quot; IDENTIFIED BY &amp;quot;rw&amp;quot;;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;flush privileges;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;开放容器Mysql 系统主机所对应端口的防火墙&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;bind-mount&#34;&gt;Bind Mount&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -754,6 +753,88 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
 &lt;li&gt;启动容器，运行指定的命令（一个默认shell脚本去启动nginx）&lt;/li&gt;
 &lt;/ol&gt;
 </content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>解决使用docker出现的问题！</title>
+        <link>https://www.zhugeqing.top/docker/tips/</link>
+        <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 06 Dec 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/tips/</guid>
+        <description>使用mysql image的一些问题 无法远程访问到mysql容器 保证运行映射的mysql容器内端口为3306，主机端口可以任意选择，并保证该端口防火墙是关闭的 操作mysql添加一些中文值会显示问号 配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim 可以得知mysql内部容器包含apt命令，配置国内镜像源并安装一些自己需要的命令 配置国内镜</description>
+        <content:encoded>&lt;h2 id=&#34;使用mysql-image的一些问题&#34;&gt;使用mysql image的一些问题&lt;/h2&gt;
+&lt;h3 id=&#34;无法远程访问到mysql容器&#34;&gt;无法远程访问到mysql容器&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;保证运行映射的mysql容器内端口为3306，主机端口可以任意选择，并保证该端口防火墙是关闭的&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;操作mysql添加一些中文值会显示问号&#34;&gt;操作mysql添加一些中文值会显示问号&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;可以得知mysql内部容器包含apt命令，配置国内镜像源并安装一些自己需要的命令&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;配置国内镜像源并更新镜像源&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;mv /etc/apt/sources.list /etc/apt/sources.list.bak&lt;/li&gt;
+&lt;li&gt;echo &amp;ldquo;deb &lt;a href=&#34;http://mirrors.163.com/debian/&#34;&gt;http://mirrors.163.com/debian/&lt;/a&gt; jessie main non-free contrib&amp;rdquo; &amp;gt;/etc/apt/sources.list&lt;/li&gt;
+&lt;li&gt;echo &amp;ldquo;deb &lt;a href=&#34;http://mirrors.163.com/debian/&#34;&gt;http://mirrors.163.com/debian/&lt;/a&gt; jessie-proposed-updates main non-free contrib&amp;rdquo; &amp;raquo;/etc/apt/sources.list&lt;/li&gt;
+&lt;li&gt;echo &amp;ldquo;deb-src &lt;a href=&#34;http://mirrors.163.com/debian/&#34;&gt;http://mirrors.163.com/debian/&lt;/a&gt; jessie main non-free contrib&amp;rdquo; &amp;raquo;/etc/apt/sources.list&lt;/li&gt;
+&lt;li&gt;echo &amp;ldquo;deb-src &lt;a href=&#34;http://mirrors.163.com/debian/&#34;&gt;http://mirrors.163.com/debian/&lt;/a&gt; jessie-proposed-updates main non-free contrib&amp;rdquo; &amp;raquo;/etc/apt/sources.list&lt;/li&gt;
+&lt;li&gt;apt-get update&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;code&gt;安装vim&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;apt-get install -y vim&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;编辑配置文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;cd /etc/mysql/mysql.conf.d &amp;amp;&amp;amp; vim mysqld.cnf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-Conf&#34; data-lang=&#34;Conf&#34;&gt;# 粘贴下列文件
+[mysqld]
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+#log-error      = /var/log/mysql/error.log
+# By default we only accept connections from localhost
+#bind-address   = 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+character_set_server=utf8
+init_connect=&#39;SET NAMES utf8&#39;
+max_allowed_packet = 20M
+
+[mysql]
+default-character-set = utf8
+
+[mysql.server]
+default-character-set = utf8
+
+[mysqld_safe]
+default-character-set = utf8
+
+[client]
+default-character-set = utf8
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         

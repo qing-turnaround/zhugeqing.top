@@ -1,0 +1,60 @@
+---
+date: 2021-12-06
+description: "使用Docker的一些问题"
+image: "images/docker.svg"
+title: "解决使用docker出现的问题！"
+author: 诸葛青
+authorEmoji: 😃
+pinned: false
+tags:
+- docker
+series:
+- 
+---
+
+## 使用mysql image的一些问题
+
+### 无法远程访问到mysql容器
+`保证运行映射的mysql容器内端口为3306，主机端口可以任意选择，并保证该端口防火墙是关闭的`
+
+### 操作mysql添加一些中文值会显示问号
+1. `配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim`
+2. `可以得知mysql内部容器包含apt命令，配置国内镜像源并安装一些自己需要的命令`
+3. `配置国内镜像源并更新镜像源`
+* mv /etc/apt/sources.list /etc/apt/sources.list.bak
+* echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib" >/etc/apt/sources.list
+* echo "deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list
+* echo "deb-src http://mirrors.163.com/debian/ jessie main non-free contrib" >>/etc/apt/sources.list
+* echo "deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list
+* apt-get update 
+4. `安装vim`
+* apt-get install -y vim
+5. 编辑配置文件
+* cd /etc/mysql/mysql.conf.d && vim mysqld.cnf
+```Conf
+# 粘贴下列文件
+[mysqld]
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+#log-error      = /var/log/mysql/error.log
+# By default we only accept connections from localhost
+#bind-address   = 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+character_set_server=utf8
+init_connect='SET NAMES utf8'
+max_allowed_packet = 20M
+
+[mysql]
+default-character-set = utf8
+
+[mysql.server]
+default-character-set = utf8
+
+[mysqld_safe]
+default-character-set = utf8
+
+[client]
+default-character-set = utf8
+```

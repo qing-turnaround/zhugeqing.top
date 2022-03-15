@@ -1564,10 +1564,6 @@
 
         
           <li class="navbarm__menu--item navbarm__menu--subitem">
-            <a href="/interview/jiuzhang">九章算法</a>
-          </li>
-        
-          <li class="navbarm__menu--item navbarm__menu--subitem">
             <a href="/interview/quality_questions">优质题目</a>
           </li>
         
@@ -1749,8 +1745,6 @@
     </a>
     <div class="navbar__dropdown--content">
       
-      <a href="/interview/jiuzhang" class="navbar__dropdown--item" dir="ltr">九章算法</a>
-      
       <a href="/interview/quality_questions" class="navbar__dropdown--item" dir="ltr">优质题目</a>
       
       <a href="/interview/algorithm" class="navbar__dropdown--item" dir="ltr">剑指offer</a>
@@ -1894,21 +1888,20 @@
 <h4 id="创建容器">创建容器</h4>
 <p><a href="https://hub.docker.com/_/mysql?tab=description&amp;page=1&amp;ordering=last_updated">mysql镜像的详细信息</a></p>
 <ul>
-<li>执行 <code>docker container run --name mysql5.7 -e MYSQL_ROOT_PASSWORD=123456 -d -v mysql-data:/var/lib/mysql mysql:5.7</code>来创建容器</li>
-<li>执行<code>docker volume ls</code>可以来查看所有的<code>volume</code></li>
-<li>执行<code>docker volume inspect mysql-data</code>来查看该容器所生成的<code>volume</code></li>
+<li>
+<p>执行 <code>docker container run --name mysql5.7 -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -d -v mysql-data:/var/lib/mysql mysql:5.7</code>来创建容器</p>
+</li>
+<li>
+<p>执行<code>docker volume ls</code>可以来查看所有的<code>volume</code></p>
+</li>
+<li>
+<p>执行<code>docker volume inspect mysql-data</code>来查看该容器所生成的<code>volume</code></p>
+</li>
 </ul>
 <h4 id="验证">验证</h4>
 <ul>
 <li>执行<code>docker container exec -it mysql5.7 mysql -u root -p</code>并输入密码。在数据库中创建一个名字为<code>zhugeqing</code>的数据库</li>
 <li>执行<code>ls /var/lib/docker/volumes/mysql-data/_data</code>来查看生成<code>volume</code>对应的目录，发现确实也生成了一个<code>zhugeqing</code>的目录</li>
-</ul>
-<h4 id="容器mysql开启远程连接">容器Mysql开启远程连接</h4>
-<ul>
-<li>进入到容器中的Mysql命令行</li>
-<li><code>GRANT ALL PRIVILEGES ON *.* TO root@&quot;%&quot; IDENTIFIED BY &quot;rw&quot;;</code></li>
-<li><code>flush privileges;</code></li>
-<li><code>开放容器Mysql 系统主机所对应端口的防火墙</code></li>
 </ul>
 <h2 id="bind-mount">Bind Mount</h2>
 <blockquote>
@@ -2257,6 +2250,10 @@
         
         <li>
           <a href="/docker/1/" class="related__link">Docker快速上手</a>
+        </li>
+        
+        <li>
+          <a href="/docker/tips/" class="related__link">解决使用docker出现的问题！</a>
         </li>
         
     </ul>
@@ -2656,7 +2653,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <li></li>
             <li><a href="#创建容器">创建容器</a></li>
             <li><a href="#验证">验证</a></li>
-            <li><a href="#容器mysql开启远程连接">容器Mysql开启远程连接</a></li>
           </ul>
         </li>
       </ul>
