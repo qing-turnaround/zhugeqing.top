@@ -12,12 +12,184 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Mon, 07 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Mar 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/series/docker/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>Docker compose</title>
+        <link>https://www.zhugeqing.top/docker/6/</link>
+        <pubDate>Thu, 17 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Thu, 17 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/6/</guid>
+        <description>docker-compose的安装 curl -L &amp;quot;https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose chmod 744 /usr/local/bin/docker-compose 赋予命令执行权限 docker-compose --version 测试是否安装成功 compose 文件的结构 docker compose文件的语法说明 https://docs.docker.com/compose/compose-file/</description>
+        <content:encoded>&lt;h2 id=&#34;docker-compose的安装&#34;&gt;docker-compose的安装&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;curl -L &amp;quot;https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chmod 744 /usr/local/bin/docker-compose&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;赋予命令执行权限&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker-compose --version&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;测试是否安装成功&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;compose-文件的结构&#34;&gt;compose 文件的结构&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker compose文件的语法说明 &lt;a href=&#34;https://docs.docker.com/compose/compose-file/&#34;&gt;https://docs.docker.com/compose/compose-file/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Docker network</title>
+        <link>https://www.zhugeqing.top/docker/5/</link>
+        <pubDate>Thu, 17 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Thu, 17 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/5/</guid>
+        <description>docker network基础 docker 网络分为bridge，host，none三种 [root@zhugeqing ~]# docker network ls NETWORK ID NAME DRIVER SCOPE 23bfb9b413e1 bridge bridge local da3b8a887179 host host local 8124818e6997 none null local 默认情况下，创建的container会连接到bridge上 [root@zhugeqing ~]# docker container run -d --rm --name linux1 ubuntu:21.04 /bin/sh -c &amp;quot;while true; do sleep 3600; done&amp;quot; fb99caa72e20a4d0a86aa83840fe328e5dca179fc9dd0d59b9ecc4d2a9255e47 [root@zhugeqing ~]# docker container run -d --rm --name linux2 ubuntu:21.04 /bin/sh -c &amp;quot;while true; do sleep 3600; done&amp;quot; 07eab1fef9bb88386ffacd7a0a040c40a2d854daec50e5c818115d3a51bfaf3e [root@zhugeqing ~]# docker network inspect bridge &amp;quot;Containers&amp;quot;: { &amp;quot;fb99caa72e20a4d0a86aa83840fe328e5dca179fc9dd0d59b9ecc4d2a9255e47&amp;quot;: { &amp;quot;Name&amp;quot;: &amp;quot;linux1&amp;quot;, &amp;quot;EndpointID&amp;quot;: &amp;quot;4ab7071e9308743a20f22ed450dde0b1acc84803019e0963149b2a1b852efb60&amp;quot;, &amp;quot;MacAddress&amp;quot;: &amp;quot;02:42:ac:11:00:06&amp;quot;, &amp;quot;IPv4Address&amp;quot;: &amp;quot;172.17.0.6/16&amp;quot;, &amp;quot;IPv6Address&amp;quot;: &amp;quot;&amp;quot; } &amp;quot;07eab1fef9bb88386ffacd7a0a040c40a2d854daec50e5c818115d3a51bfaf3e&amp;quot;: { &amp;quot;Name&amp;quot;: &amp;quot;linux2&amp;quot;, &amp;quot;EndpointID&amp;quot;: &amp;quot;e86202bc76dd0d226f8f188434b6289c96b2dd648d950b0fcc7ecb2e73c78a3d&amp;quot;, &amp;quot;MacAddress&amp;quot;: &amp;quot;02:42:ac:11:00:07&amp;quot;, &amp;quot;IPv4Address&amp;quot;: &amp;quot;172.17.0.7/16&amp;quot;, &amp;quot;IPv6Address&amp;quot;: &amp;quot;&amp;quot; }, 使用docker network create来创建自定义bridge docker network driver类型为host和n</description>
+        <content:encoded>&lt;h2 id=&#34;docker-network基础&#34;&gt;docker network基础&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;docker 网络分为&lt;code&gt;bridge&lt;/code&gt;，&lt;code&gt;host&lt;/code&gt;，&lt;code&gt;none&lt;/code&gt;三种&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@zhugeqing ~]# docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+23bfb9b413e1   bridge    bridge    local
+da3b8a887179   host      host      local
+8124818e6997   none      null      local
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;默认情况下，创建的container会连接到bridge上&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[root@zhugeqing ~]# docker container run -d --rm --name linux1 ubuntu:21.04  /bin/sh -c &amp;quot;while true; do sleep 3600; done&amp;quot;
+fb99caa72e20a4d0a86aa83840fe328e5dca179fc9dd0d59b9ecc4d2a9255e47
+
+[root@zhugeqing ~]# docker container run -d --rm --name linux2 ubuntu:21.04  /bin/sh -c &amp;quot;while true; do sleep 3600; done&amp;quot;
+07eab1fef9bb88386ffacd7a0a040c40a2d854daec50e5c818115d3a51bfaf3e
+
+[root@zhugeqing ~]# docker network inspect bridge 
+
+    &amp;quot;Containers&amp;quot;: {
+        &amp;quot;fb99caa72e20a4d0a86aa83840fe328e5dca179fc9dd0d59b9ecc4d2a9255e47&amp;quot;: {
+            &amp;quot;Name&amp;quot;: &amp;quot;linux1&amp;quot;,
+            &amp;quot;EndpointID&amp;quot;: &amp;quot;4ab7071e9308743a20f22ed450dde0b1acc84803019e0963149b2a1b852efb60&amp;quot;,
+            &amp;quot;MacAddress&amp;quot;: &amp;quot;02:42:ac:11:00:06&amp;quot;,
+            &amp;quot;IPv4Address&amp;quot;: &amp;quot;172.17.0.6/16&amp;quot;,
+            &amp;quot;IPv6Address&amp;quot;: &amp;quot;&amp;quot;
+        }
+        &amp;quot;07eab1fef9bb88386ffacd7a0a040c40a2d854daec50e5c818115d3a51bfaf3e&amp;quot;: {
+            &amp;quot;Name&amp;quot;: &amp;quot;linux2&amp;quot;,
+            &amp;quot;EndpointID&amp;quot;: &amp;quot;e86202bc76dd0d226f8f188434b6289c96b2dd648d950b0fcc7ecb2e73c78a3d&amp;quot;,
+            &amp;quot;MacAddress&amp;quot;: &amp;quot;02:42:ac:11:00:07&amp;quot;,
+            &amp;quot;IPv4Address&amp;quot;: &amp;quot;172.17.0.7/16&amp;quot;,
+            &amp;quot;IPv6Address&amp;quot;: &amp;quot;&amp;quot;
+        },
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;使用&lt;code&gt;docker network create&lt;/code&gt;来创建自定义&lt;code&gt;bridge&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;docker network driver类型为&lt;code&gt;host&lt;/code&gt;和&lt;code&gt;null&lt;/code&gt;的网络有且只有一个（无法再进行创建）&lt;/li&gt;
+&lt;li&gt;当一个容器连接到&lt;code&gt;host&lt;/code&gt;网络上的时候，可以与本机共享网络配置，且只能在创建容器的时候通过&lt;code&gt;--network&lt;/code&gt;参数来指定；之后无法通过&lt;code&gt;docker network disconnet&lt;/code&gt;和&lt;code&gt;docker network connect&lt;/code&gt;来控制这个容器的网络配置&lt;/li&gt;
+&lt;li&gt;当一个容器连接到&lt;code&gt;none&lt;/code&gt;网络上的时候，将会只拥有一个本地环回地址，且只能在创建容器的时候通过&lt;code&gt;--network&lt;/code&gt;参数来指定；之后无法通过&lt;code&gt;docker network disconnet&lt;/code&gt;和&lt;code&gt;docker network connect&lt;/code&gt;来控制这个容器的网络配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以之后在容器内部配置网络&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker network create&lt;/code&gt;常用参数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;-d 指定创建docker网络的 driver（实际上，只能指定bridge，而默认也是bridge）&lt;br /&gt;
+&amp;ndash;gateway 指定网络的网关地址&lt;br /&gt;
+&amp;ndash;subnet 指定网络的网络地址&lt;br /&gt;
+使用docker network create &amp;ndash;help 查看更多参数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;docker-network相关命令&#34;&gt;docker network相关命令&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;docker network create -d bridge micro&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;-d&lt;/code&gt;指定网络driver，这里是&lt;code&gt;bridge&lt;/code&gt;，&lt;code&gt;micro&lt;/code&gt;，创建的bridge的名字&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker network ls&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;列出所有的docker网络&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker network inspect micro&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查看docker 网络 &lt;code&gt;micro&lt;/code&gt;的详情&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker network connect micro linux1&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使容器&lt;code&gt;linux1&lt;/code&gt;连接到&lt;code&gt;micro&lt;/code&gt;这个docker网络上&lt;br /&gt;
+可以使得同一个容器连接到多个docker 网络&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker network disconnect micro linux1&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使容器&lt;code&gt;linux1&lt;/code&gt;取消连接到&lt;code&gt;micro&lt;/code&gt;这个docker网络上&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker container run -d --rm --name linux1 --network micro ubuntu:21.04  /bin/sh -c &amp;quot;while true; do sleep 3600; done&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在docker创建容器时通过使用参数&lt;code&gt;--network&lt;/code&gt;指定容器所连接的docker网络&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker network rm micro&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;删除&lt;code&gt;micro&lt;/code&gt;这一个docker network&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>Docker的存储</title>
