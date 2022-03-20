@@ -1990,7 +1990,7 @@ d662230a2592   13 days ago      /bin/sh -c #(nop)  CMD [&quot;bash&quot;]       
 <blockquote>
 <p>ARG（argument）<code>和</code>ENV （environment）`都可以用来设置一个“变量”。 设置好变量VERSION之后可以用语法${VERSION}来使用。</p>
 </blockquote>
-<h3 id="arg">ARG</h3>
+<h3 id="env">ENV</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2013,7 +2013,7 @@ d662230a2592   13 days ago      /bin/sh -c #(nop)  CMD [&quot;bash&quot;]       
 </span><span class="se"></span>    rm -rf ipinfo_<span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span>_linux_amd64.tar.gz<span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="env">ENV</h3>
+</div><h3 id="arg">ARG</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2916,8 +2916,8 @@ document.addEventListener('DOMContentLoaded', function () {
     </li>
     <li><a href="#构建参数和环境变量-arg-和-env">构建参数和环境变量 (ARG 和 ENV)</a>
       <ul>
-        <li><a href="#arg">ARG</a></li>
         <li><a href="#env">ENV</a></li>
+        <li><a href="#arg">ARG</a></li>
         <li><a href="#不同处">不同处</a></li>
       </ul>
     </li>

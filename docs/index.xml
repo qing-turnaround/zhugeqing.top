@@ -2724,7 +2724,7 @@ d662230a2592   13 days ago      /bin/sh -c #(nop)  CMD [&amp;quot;bash&amp;quot;
 &lt;blockquote&gt;
 &lt;p&gt;ARG（argument）&lt;code&gt;和&lt;/code&gt;ENV （environment）`都可以用来设置一个“变量”。 设置好变量VERSION之后可以用语法${VERSION}来使用。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;arg&#34;&gt;ARG&lt;/h3&gt;
+&lt;h3 id=&#34;env&#34;&gt;ENV&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -2747,7 +2747,7 @@ d662230a2592   13 days ago      /bin/sh -c #(nop)  CMD [&amp;quot;bash&amp;quot;
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    rm -rf ipinfo_&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;_linux_amd64.tar.gz&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;env&#34;&gt;ENV&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;arg&#34;&gt;ARG&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
