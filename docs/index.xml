@@ -1714,6 +1714,31 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.1()
 &lt;li&gt;重新执行&lt;code&gt;go get -v github.com/micro/micro/v2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;命令行下执行&lt;code&gt;micro help&lt;/code&gt;来测试可用性&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;修改micro源码构建我们想要的程序&#34;&gt;修改micro源码，构建我们想要的程序&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;下载micro源码包（这里使用micro v2）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/micro/micro/releases/tag/v2.9.3&#34;&gt;https://github.com/micro/micro/releases/tag/v2.9.3&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;修改源码包/internal/template/ 下面的模版文件，编写自己需要实代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注释：alias代表生成目录的尾名（例如github.com/xing-you-ji/user中的user）&lt;br /&gt;
+{{.Dir}}表示github.com/xing-you-ji/user&lt;br /&gt;
+{{title .Alias}} 表示大写 User&lt;br /&gt;
+{dehyphen .Alias}} 表示小写 user&lt;br /&gt;
+{{.Alias}}也表示user，不过在import时使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;go build -o micro main.go&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过修改go env的GOOS，CGO_ENABLED构建不同平台的micro源程序（编译平台为windows）&lt;br /&gt;
+mac：CGO_ENABLED=0 GOOS=darwin3&lt;br /&gt;
+linux：CGO_ENABLED=0 SET GOOS=linux&lt;/p&gt;
+&lt;/blockquote&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>

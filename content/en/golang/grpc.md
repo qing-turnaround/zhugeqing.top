@@ -83,3 +83,16 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.1()
 3. 重新执行`go get -v github.com/micro/micro/v2`
 4. 命令行下执行`micro help`来测试可用性
 
+## 修改micro源码，构建我们想要的程序
+* 下载micro源码包（这里使用micro v2）
+> https://github.com/micro/micro/releases/tag/v2.9.3
+* 修改源码包/internal/template/ 下面的模版文件，编写自己需要实代码
+> 注释：alias代表生成目录的尾名（例如github.com/xing-you-ji/user中的user）
+>	{{.Dir}}表示github.com/xing-you-ji/user
+>	{{title .Alias}} 表示大写 User
+>	{dehyphen .Alias}} 表示小写 user
+> {{.Alias}}也表示user，不过在import时使用
+* go build -o micro main.go
+> 通过修改go env的GOOS，CGO_ENABLED构建不同平台的micro源程序（编译平台为windows）
+> mac：CGO_ENABLED=0 GOOS=darwin3
+> linux：CGO_ENABLED=0 SET GOOS=linux

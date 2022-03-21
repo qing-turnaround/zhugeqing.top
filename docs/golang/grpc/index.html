@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Feb 1, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1976,6 +1976,31 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.1()
 <li>重新执行<code>go get -v github.com/micro/micro/v2</code></li>
 <li>命令行下执行<code>micro help</code>来测试可用性</li>
 </ol>
+<h2 id="修改micro源码构建我们想要的程序">修改micro源码，构建我们想要的程序</h2>
+<ul>
+<li>下载micro源码包（这里使用micro v2）</li>
+</ul>
+<blockquote>
+<p><a href="https://github.com/micro/micro/releases/tag/v2.9.3">https://github.com/micro/micro/releases/tag/v2.9.3</a></p>
+</blockquote>
+<ul>
+<li>修改源码包/internal/template/ 下面的模版文件，编写自己需要实代码</li>
+</ul>
+<blockquote>
+<p>注释：alias代表生成目录的尾名（例如github.com/xing-you-ji/user中的user）<br />
+{{.Dir}}表示github.com/xing-you-ji/user<br />
+{{title .Alias}} 表示大写 User<br />
+{dehyphen .Alias}} 表示小写 user<br />
+{{.Alias}}也表示user，不过在import时使用</p>
+</blockquote>
+<ul>
+<li>go build -o micro main.go</li>
+</ul>
+<blockquote>
+<p>通过修改go env的GOOS，CGO_ENABLED构建不同平台的micro源程序（编译平台为windows）<br />
+mac：CGO_ENABLED=0 GOOS=darwin3<br />
+linux：CGO_ENABLED=0 SET GOOS=linux</p>
+</blockquote>
 
     </article>
     
@@ -2687,6 +2712,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </ul>
     </li>
     <li><a href="#避雷">避雷！</a></li>
+    <li><a href="#修改micro源码构建我们想要的程序">修改micro源码，构建我们想要的程序</a></li>
   </ul>
 </nav>
   </div>
