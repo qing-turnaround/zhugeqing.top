@@ -20,6 +20,171 @@
 
       
       <item>
+        <title>Linux系统操作</title>
+        <link>https://www.zhugeqing.top/linux/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/</link>
+        <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 27 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/linux/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/</guid>
+        <description>Linux常见目录 / 系统根目录 /root root用户家目录 /bin 命令目录 /sbin 管理命令目录 /etc 配置文件目录 /home/username 普通用户目录 /usr/bin /usr/sbin 系统预装的其他命令 Linux基本命令 帮助命令 man man 是 manual(手册)的缩写 man 命令分为9章，同时执行man man来查看，比如man 7 man（主要是为了区分一些重名，比如命令与配置文件重名） 通过执行LANG=zh_CN.UTF8，可以切换为中文（locale查看是否有对应的中文字体） help shell</description>
+        <content:encoded>&lt;h2 id=&#34;linux常见目录&#34;&gt;Linux常见目录&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/&lt;/code&gt; 系统根目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/root&lt;/code&gt; root用户家目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/bin&lt;/code&gt;  命令目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/sbin&lt;/code&gt; 管理命令目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/etc&lt;/code&gt; 配置文件目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/home/username&lt;/code&gt; 普通用户目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/usr/bin&lt;/code&gt; &lt;code&gt;/usr/sbin&lt;/code&gt; 系统预装的其他命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux基本命令&#34;&gt;Linux基本命令&lt;/h2&gt;
+&lt;h3 id=&#34;帮助命令&#34;&gt;帮助命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;man&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;man&lt;/code&gt; 是 &lt;code&gt;manual(手册)&lt;/code&gt;的缩写&lt;br /&gt;
+&lt;code&gt;man&lt;/code&gt; 命令分为&lt;code&gt;9章&lt;/code&gt;，同时执行&lt;code&gt;man man&lt;/code&gt;来查看，比如&lt;code&gt;man 7 man&lt;/code&gt;（主要是为了区分一些重名，比如命令与配置文件重名）&lt;br /&gt;
+通过执行&lt;code&gt;LANG=zh_CN.UTF8&lt;/code&gt;，可以切换为中文（&lt;code&gt;locale&lt;/code&gt;查看是否有对应的中文字体）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;help&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;shell（命令解释器）自带的命令为内部命令，其他是外部命令&lt;br /&gt;
+内部命令： &lt;code&gt;help cd&lt;/code&gt;&lt;br /&gt;
+外部命令：&lt;code&gt;ls --help&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;info&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;info 帮助比help更详细，作为help的补充&lt;br /&gt;
+比如&lt;code&gt;info ls&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;文件相关命令一切皆文件&#34;&gt;文件相关命令（一切皆文件）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pwd&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;显示当前目录名称&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cd&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;意为&lt;code&gt;change directory&lt;/code&gt;，更改当前的操作目录&lt;br /&gt;
+&lt;code&gt;cd -&lt;/code&gt;回到上一次的目录&lt;br /&gt;
+&lt;code&gt;cd ..&lt;/code&gt; 回到上一级目录&lt;br /&gt;
+&lt;code&gt;cd ./root&lt;/code&gt; 去当前目录下的root目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ls&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查看当前目录的文件&lt;br /&gt;
+-l 长格式显示文件（等价于&lt;code&gt;ll&lt;/code&gt;）&lt;br /&gt;
+-a 显示隐藏文件&lt;br /&gt;
+-r 逆序显示&lt;br /&gt;
+-t 按照时间顺序显示&lt;br /&gt;
+-R 递归显示当前目录下所有文件&lt;br /&gt;
+可以使用&lt;code&gt;ls -lartR&lt;/code&gt; 和&lt;code&gt;ls -l -a -r -R -t&lt;/code&gt;两种组合方式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mkdir&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建目录&lt;br /&gt;
+&lt;code&gt;mkdir a b c&lt;/code&gt;创建 a, b, c多个目录&lt;br /&gt;
+&lt;code&gt;mkdir -p /a/b/c&lt;/code&gt;创建多级目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rmdir&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;删除目录（要求目录为空才能删除，除非加上忽略为空的参数）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rm&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;删除目录或文件&lt;br /&gt;
+-r 递归删除&lt;br /&gt;
+-f 强制删除，不做任何提示&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cp&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;复制目录或文件&lt;br /&gt;
+&lt;code&gt;cp ./a /root/a&lt;/code&gt;，前者为原有文件，后者为目标文件&lt;br /&gt;
+-p 保持原始文件的所有者，组，许可，和时间表属性&lt;br /&gt;
+-r 递归复制目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mv&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;移动目录或文件&lt;br /&gt;
+&lt;code&gt;mv ./a /root/b&lt;/code&gt;，移动并改名为b，前者为原文件，后者为目标文件&lt;br /&gt;
+&lt;code&gt;mv ./a* /root/&lt;/code&gt; 使用通配符，将能匹配a的文件进行移动&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cat&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查看文件文本内容显示到终端&lt;br /&gt;
+&lt;code&gt;cat &amp;gt; /root/a.txt &amp;lt;&amp;lt; EOF&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;cat 的多用&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;EOF&lt;/code&gt;&lt;br /&gt;
+将&lt;code&gt;cat的多用&lt;/code&gt;添加到a.txt文件中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;head&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查看文件开头&lt;br /&gt;
+-size size表示一个数字&lt;br /&gt;
+&lt;code&gt;head -100 hello.txt&lt;/code&gt;查看开头100行的内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tail&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查看文件结尾&lt;br /&gt;
+-size size表示一个数字&lt;br /&gt;
+&lt;code&gt;tail -100 hello.txt&lt;/code&gt;查看末尾100行的内容&lt;br /&gt;
+&lt;code&gt;-f&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;wc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;统计文件文本信息&lt;br /&gt;
+&lt;code&gt;wc a.txt&lt;/code&gt;，如果显示内容为&lt;code&gt;10 5 453 a.txt&lt;/code&gt;，第一个数表示文件的总行数，第二个数表示文件不为空的行数，第三个数表示文件中字符的数量&lt;br /&gt;
+&lt;code&gt;wc -l a.txt&lt;/code&gt; 显示文件总行数&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+              <category>Linux</category>
+            
+          
+        
+      </item>
+      
+      <item>
         <title>Linux设置定时任务</title>
         <link>https://www.zhugeqing.top/linux/croud/</link>
         <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
@@ -64,13 +229,13 @@
         
           
             
-          
-        
-        
-        
-          
-            
               <category>Linux</category>
+            
+          
+        
+        
+        
+          
             
           
         

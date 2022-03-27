@@ -1868,6 +1868,8 @@
       <h2 id="使用mysql-image的一些问题">使用mysql image的一些问题</h2>
 <h3 id="无法远程访问到mysql容器">无法远程访问到mysql容器</h3>
 <p><code>保证运行映射的mysql容器内端口为3306，主机端口可以任意选择，并保证该端口防火墙是关闭的</code></p>
+<h3 id="删除容器恢复数据库内容">删除容器恢复数据库内容</h3>
+<p><code>当使用了docker volume时，删除mysql容器，再次运行时无须加入 密码参数，只要volum还是同一个，数据就依然存在</code></p>
 <h3 id="操作mysql添加一些中文值会显示问号">操作mysql添加一些中文值会显示问号</h3>
 <ol>
 <li><code>配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim</code></li>
@@ -2588,6 +2590,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#使用mysql-image的一些问题">使用mysql image的一些问题</a>
       <ul>
         <li><a href="#无法远程访问到mysql容器">无法远程访问到mysql容器</a></li>
+        <li><a href="#删除容器恢复数据库内容">删除容器恢复数据库内容</a></li>
         <li><a href="#操作mysql添加一些中文值会显示问号">操作mysql添加一些中文值会显示问号</a></li>
       </ul>
     </li>

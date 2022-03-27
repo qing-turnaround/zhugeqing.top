@@ -67,6 +67,7 @@ message ResponseProduct {
 
 ## 避雷！
 
+### 无法安装micro v2
 `在安装micro工具包时(go get -v github.com/micro/micro/v2) 尽量选择使用go 1.14版本，在使用go 1.17版本时，会有报错信息`
 ```
 PS D:gozhugeqing> micro help
@@ -82,6 +83,20 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.1()
 2. 删除GoPath/pkg/github.com/micro/ 相关文件（此步骤只是为了以防万一，不执行应该也行）
 3. 重新执行`go get -v github.com/micro/micro/v2`
 4. 命令行下执行`micro help`来测试可用性
+
+### micro:v2 api  无法使用consul
+> 解决方法就是重新编译micro
+* 打开micro源码目录创建`plugins.go`
+```Go
+package main
+
+import (
+	_"github.com/micro/go-plugins/registry/consul/v2"
+)
+```
+* 重新编译：`go build -o micro main.go plugins.go`（如果是windows，记得改后缀为.exe）
+* 用新构建`micro`来执行命令
+
 
 ## 修改micro源码，构建我们想要的程序
 * 下载micro源码包（这里使用micro v2）

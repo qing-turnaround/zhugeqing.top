@@ -7,9 +7,9 @@ author: 诸葛青
 authorEmoji: 🎅
 pinned: false
 tags:
-- 
-series:
 - Linux
+series:
+- 
 ---
 
 ## 使用crontab指令在centos8中设置定时执行脚本

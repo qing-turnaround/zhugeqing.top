@@ -951,10 +951,12 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
         
         <atom:modified>Mon, 06 Dec 2021 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/docker/tips/</guid>
-        <description>使用mysql image的一些问题 无法远程访问到mysql容器 保证运行映射的mysql容器内端口为3306，主机端口可以任意选择，并保证该端口防火墙是关闭的 操作mysql添加一些中文值会显示问号 配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim 可以得知mysql内部容器包含apt命令，配置国内镜像源并安装一些自己需要的命令 配置国内镜</description>
+        <description>使用mysql image的一些问题 无法远程访问到mysql容器 保证运行映射的mysql容器内端口为3306，主机端口可以任意选择，并保证该端口防火墙是关闭的 删除容器恢复数据库内容 当使用了docker volume时，删除mysql容器，再次运行时无须加入 密码参数，只要volum还是同一个，数据就依然存在 操作mysql添加一些中文值会显示问号 配置mysql容器中的配置文件，像配置主机mysql一样，但</description>
         <content:encoded>&lt;h2 id=&#34;使用mysql-image的一些问题&#34;&gt;使用mysql image的一些问题&lt;/h2&gt;
 &lt;h3 id=&#34;无法远程访问到mysql容器&#34;&gt;无法远程访问到mysql容器&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;保证运行映射的mysql容器内端口为3306，主机端口可以任意选择，并保证该端口防火墙是关闭的&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;删除容器恢复数据库内容&#34;&gt;删除容器恢复数据库内容&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;当使用了docker volume时，删除mysql容器，再次运行时无须加入 密码参数，只要volum还是同一个，数据就依然存在&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;操作mysql添加一些中文值会显示问号&#34;&gt;操作mysql添加一些中文值会显示问号&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim&lt;/code&gt;&lt;/li&gt;

@@ -1314,6 +1314,7 @@ go get github.com/micro/micro/v2/cmd/protoc-gen-micro&lt;/p&gt;
 &lt;p&gt;&amp;ndash;rm表示当容器退出时自动删除容器；-v来指定bind mount；-w来指定工作目录，&amp;ndash;go_out和&amp;ndash;micro_out来指定生成go文件的路径；-I指定寻找proto文件的路径。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;避雷&#34;&gt;避雷！&lt;/h2&gt;
+&lt;h3 id=&#34;无法安装micro-v2&#34;&gt;无法安装micro v2&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;在安装micro工具包时(go get -v github.com/micro/micro/v2) 尽量选择使用go 1.14版本，在使用go 1.17版本时，会有报错信息&lt;/code&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PS D:gozhugeqing&amp;gt; micro help
 panic: qtls.ConnectionState not compatible with tls.ConnectionState
@@ -1330,6 +1331,33 @@ github.com/lucas-clemente/quic-go/internal/handshake.init.1()
 &lt;li&gt;重新执行&lt;code&gt;go get -v github.com/micro/micro/v2&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;命令行下执行&lt;code&gt;micro help&lt;/code&gt;来测试可用性&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;microv2-api--无法使用consul&#34;&gt;micro:v2 api  无法使用consul&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;解决方法就是重新编译micro&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;打开micro源码目录创建&lt;code&gt;plugins.go&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/micro/go-plugins/registry/consul/v2&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;重新编译：&lt;code&gt;go build -o micro main.go plugins.go&lt;/code&gt;（如果是windows，记得改后缀为.exe）&lt;/li&gt;
+&lt;li&gt;用新构建&lt;code&gt;micro&lt;/code&gt;来执行命令&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;修改micro源码构建我们想要的程序&#34;&gt;修改micro源码，构建我们想要的程序&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;下载micro源码包（这里使用micro v2）&lt;/li&gt;
