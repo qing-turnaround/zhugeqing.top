@@ -25,9 +25,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - 前往编程的魔鬼脚印
+      - 人生没有什么不可放下
     subtitle:
-      - 相信奇迹的人本身和奇迹一样了不起
+      - 从前种种，譬如昨日死；今日种种，譬如今日生
     titleColor: 
     titleShadow: true
     titleFontSize: 44

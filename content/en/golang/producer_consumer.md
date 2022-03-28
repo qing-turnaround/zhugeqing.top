@@ -13,7 +13,7 @@ series:
 ---
 
 ## 无缓冲的生产者消费者模型
-```Go
+```Go:main.go
 package main
 
 import "fmt"
@@ -43,7 +43,7 @@ func main() {
 ```
 
 ## 有缓冲的生产者消费者模型
-```Go
+```Go:main.go
 package main
 
 import "fmt"
@@ -75,7 +75,7 @@ func main() {
 
 
 ## 多消费者多生产者模型
-```Go
+```Go:main.go
 package main
 
 import (

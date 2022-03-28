@@ -1,0 +1,141 @@
+
+<font color=red></font>
+<font color=black></font>
+<font color=VioletRed></font>
+
+
+<font color=MediumTurquoise></font>
+
+<font color=Fuchsia></font>
+<font color=LightSlateBlue></font>
+<font color=GreenYellow></font>
+	 黑色
+<p style="color:#000000";></p>
+    蓝色
+ <p style="color:#00FFFF";></p>
+    黄色
+<p style="color:#FFFF00";></p>
+    红色
+<p style="color:#FF0000";></p>
+青色
+<p style="color:#0099CC";></p>
+
+	<font face="黑体" color=green size=5>我是黑体，绿色，尺寸为5</font> 
+
+
+# 引用
+>>>
+
+### 多代码
+{{< codes golang python>}}
+{{< code >}}
+
+```golang
+
+```
+
+{{< /code >}}
+  
+{{< code >}}
+
+```python
+
+``` 
+{{< /code >}}
+{{< /codes >}}
+
+
+
+<center></center>
+
+## 图片处理
+<img src="/images/exercise/1_1.png" width="50%" height="50%">
+
+
+## 文字处理
+<font color=SkyBlue></font>
+
+
+## exercise
+<img src="/images/exercise/1_3.png" width="50%" height="50%">
+<center></center>
+
+<font color=GreenYellow>  </font>
+<font color=GreenYellow>  </font>
+<font color=GreenYellow>  </font>
+
+<img src="/images/exercise/1_4.png" width="50%" height="50%">
+
+<center></center>
+
+
+```javascript [group1-JavaScript]
+console.log('你好力扣')
+```
+```python [group1-Python]
+print('你好力扣')
+```
+```ruby [group1-Ruby]
+puts '你好力扣'
+```
+
+{{< notice success "This is a success type of notice" >}} # success, info, warning, error
+success text
+{{< /notice >}}
+
+### 同一进程中的线程可以共享哪些数据？
+{{< expand "同一进程中的线程可以共享哪些数据？" >}}Some Markdown Contents{{< /expand >}}
+
+
+
+表情符号一：😐 😐 😐 😐 😐 😐 😐 😐
+
+表情符号二：😗 😗 😗 😗 😗 😗 😗 😗
+
+表情符号三：😡 😡 😡 😡 😡 😡 😡 😡
+
+表情符号四：😒 😒 😒 😒 😒 😒 😒 😒
+
+表情符号五：😦 😦 😦 😦 😦 😦 😦 😦
+
+表情符号六：😃 😃 😃 😃 😃 😃 😃 😃
+
+表情符号七：😕 😕 😕 😕 😕 😕 😕 😕
+😀 😃 😄 😁 😆 😅 😂 🤣 🥲 ☺️ 😊 😇
+ 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 
+ 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 
+ 😒 😞 😔 😟 😕 🙁 ☹️ 😣 😖 😫 😩 🥺
+  😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 
+  😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 
+  😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢
+   🤮 🤧 😷 🤒 🤕 🤑 🤠
+
+
+
+```>:s22adg.sh
+agasgas
+```
+
+```$:sadg.sh
+agasgas
+agasgas
+agasgas
+agasgas
+agasgas
+```
+
+```:/etc/profile.java
+System.out.println();
+```
+
+
+{{< alert theme="warning" dir="ltr" >}} # warning, success, info, danger
+**this** is a text
+{{< /alert >}}
+
+
+## 好看的格子
+
+{{< boxmd >}}
+Some markdown contents
+{{< /boxmd >}}

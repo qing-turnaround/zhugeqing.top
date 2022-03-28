@@ -1,7 +1,7 @@
 ---
 date: 2020-12-12
-description: "免费的比花钱的好得多"
-image: "images/recommend_site/xingyouji.jpg"
+description: "能免费就不花钱！"
+image: "images/linux.jpg"
 title: "Linux"
 author: 诸葛青
 authorEmoji: 🎅

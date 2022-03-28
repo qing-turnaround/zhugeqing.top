@@ -20,6 +20,34 @@
 
       
       <item>
+        <title>Linux服务管理</title>
+        <link>https://www.zhugeqing.top/linux/%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/</link>
+        <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 27 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/linux/%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/linux.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+              <category>Linux</category>
+            
+          
+        
+      </item>
+      
+      <item>
         <title>Linux系统操作</title>
         <link>https://www.zhugeqing.top/linux/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
@@ -137,7 +165,7 @@
 &lt;code&gt;cat &amp;gt; /root/a.txt &amp;lt;&amp;lt; EOF&lt;/code&gt;&lt;br /&gt;
 &lt;code&gt;cat 的多用&lt;/code&gt;&lt;br /&gt;
 &lt;code&gt;EOF&lt;/code&gt;&lt;br /&gt;
-将&lt;code&gt;cat的多用&lt;/code&gt;添加到a.txt文件中&lt;/p&gt;
+&lt;code&gt;cat的多用&lt;/code&gt;将内容覆盖到a.txt文件中&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;head&lt;/code&gt;&lt;/li&gt;
@@ -154,7 +182,7 @@
 &lt;p&gt;查看文件结尾&lt;br /&gt;
 -size size表示一个数字&lt;br /&gt;
 &lt;code&gt;tail -100 hello.txt&lt;/code&gt;查看末尾100行的内容&lt;br /&gt;
-&lt;code&gt;-f&lt;/code&gt;&lt;/p&gt;
+&lt;code&gt;-f&lt;/code&gt; 实时查看&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;wc&lt;/code&gt;&lt;/li&gt;
@@ -164,9 +192,62 @@
 &lt;code&gt;wc a.txt&lt;/code&gt;，如果显示内容为&lt;code&gt;10 5 453 a.txt&lt;/code&gt;，第一个数表示文件的总行数，第二个数表示文件不为空的行数，第三个数表示文件中字符的数量&lt;br /&gt;
 &lt;code&gt;wc -l a.txt&lt;/code&gt; 显示文件总行数&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tar&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;打包命令&lt;br /&gt;
+&lt;code&gt;-c&lt;/code&gt; 打包&lt;br /&gt;
+&lt;code&gt;-x&lt;/code&gt; 解包&lt;br /&gt;
+&lt;code&gt;-f&lt;/code&gt; 指定文件名&lt;br /&gt;
+&lt;code&gt;-v&lt;/code&gt; 显示详细信息&lt;br /&gt;
+&lt;code&gt;-z&lt;/code&gt; 以zip形式压缩（压缩速度比gzip快）&lt;br /&gt;
+&lt;code&gt;-j&lt;/code&gt; 比bz2形式压缩（压缩比例更高）&lt;br /&gt;
+&lt;code&gt;tar -zcvf hello.tar.gz hello&lt;/code&gt;将hello文件或者目录进行打包压缩，并显示详细信息&lt;br /&gt;
+&lt;code&gt;tar -zxvf hello.tar.gz -C /root/&lt;/code&gt; 进行解包，并放入/root/目录下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vim&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;编辑文本文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最开始进入的就是正常模式&lt;br /&gt;
+正常模式下使用&lt;code&gt;k&lt;/code&gt;，&lt;code&gt;j&lt;/code&gt;，&lt;code&gt;h&lt;/code&gt;，&lt;code&gt;l&lt;/code&gt;来进行&lt;code&gt;上下左右&lt;/code&gt;移动光标（字符终端需要使用这种，不然使用键盘自带的键会有乱码）&lt;br /&gt;
+在光标所在行按下&lt;code&gt;yy&lt;/code&gt;能复制整行，再按下&lt;code&gt;p&lt;/code&gt;就能再下一行进行粘贴&lt;br /&gt;
+按下需要复制行的行数，并按下&lt;code&gt;yy&lt;/code&gt;，能够复制多行，比如&lt;code&gt;3yy&lt;/code&gt;，复制当前行以及之后的两行&lt;br /&gt;
+按下&lt;code&gt;y$&lt;/code&gt;可以复制光标之后的字符（只是当前行）&lt;br /&gt;
+按下&lt;code&gt;dd&lt;/code&gt;可以剪切一整行&lt;br /&gt;
+按下&lt;code&gt;d$&lt;/code&gt;剪切光标这一行之后的字符（包含光标字符）&lt;br /&gt;
+按下&lt;code&gt;u&lt;/code&gt;可以撤销一次操作&lt;br /&gt;
+按下&lt;code&gt;ctrl+r&lt;/code&gt;可以重做撤销的操作&lt;br /&gt;
+按下&lt;code&gt;x&lt;/code&gt;可以删除光标字符&lt;br /&gt;
+按下&lt;code&gt;r&lt;/code&gt; 再输入一个字符可以替换光标字符&lt;br /&gt;
+按下指定行的行数，再按下&lt;code&gt;shift+g&lt;/code&gt;可以移动到自定行&lt;br /&gt;
+按下&lt;code&gt;^&lt;/code&gt;前往光标当前行的行首&lt;br /&gt;
+按下&lt;code&gt;$&lt;/code&gt;前往光标当前行的行尾&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;按下&lt;code&gt;i&lt;/code&gt;, &lt;code&gt;I&lt;/code&gt;, &lt;code&gt;a&lt;/code&gt;, &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;o&lt;/code&gt;, &lt;code&gt;O&lt;/code&gt;均可进入插入模式&lt;br /&gt;
+&lt;code&gt;i&lt;/code&gt;在光标当前位置进入插入模式；&lt;code&gt;I&lt;/code&gt;在光标的这一行的行首进入插入模式&lt;br /&gt;
+&lt;code&gt;a&lt;/code&gt;在光标的下一个位置进入插入模式；&lt;code&gt;A&lt;/code&gt;在光标的这一行的行尾进入插入模式&lt;br /&gt;
+&lt;code&gt;o&lt;/code&gt;在光标当前行后面插入一行并移到这一行的行首，&lt;code&gt;O&lt;/code&gt;在光标当前行前面插入一行并移到这一行的行首&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;按下&lt;code&gt;esc&lt;/code&gt;再写入&lt;code&gt;:&lt;/code&gt;，进入命令模式&lt;br /&gt;
+&lt;code&gt;w /root/a.txt&lt;/code&gt;将当前编辑的内容保存到/root/a.txt&lt;br /&gt;
+按下&lt;code&gt;q&lt;/code&gt;表示直接退出，（&lt;code&gt;q!&lt;/code&gt;为强制退出）&lt;br /&gt;
+按下&lt;code&gt;w&lt;/code&gt;表示保存&lt;br /&gt;
+按下&lt;code&gt;!&lt;/code&gt;在后面接linux中的命令也是回车执行（比如&lt;code&gt;!ls -lh&lt;/code&gt;）&lt;br /&gt;
+按下&lt;code&gt;esc&lt;/code&gt;再写入&lt;code&gt;/&lt;/code&gt;，后面接需要查找的文本内容，可以进行查找操作；执行之后按&lt;code&gt;n&lt;/code&gt;来查找下一个匹配的文本内容，&lt;code&gt;shift+n&lt;/code&gt;匹配上一个；&lt;br /&gt;
+在正常模式按下&lt;code&gt;:s/old/new&lt;/code&gt;可以将&lt;code&gt;old&lt;/code&gt;替换为&lt;code&gt;new&lt;/code&gt;（只针对光标当前行，且只替换一个），按下&lt;code&gt;:s/old/new/g&lt;/code&gt;可以在光标当前行进行全部替换；按下&lt;code&gt;:%s/old/new&lt;/code&gt;可以进行全文件每一行单次的替换，&lt;code&gt;:%s/old/new/g&lt;/code&gt;进行全文件全部替换&lt;br /&gt;
+输入&lt;code&gt;:set nu&lt;/code&gt;可以显示行号，&lt;code&gt;:set nonu&lt;/code&gt;显示行号&lt;br /&gt;
+&lt;code&gt;编辑文件/etc/vimrc，并在末尾添加set nu&lt;/code&gt;可以使得每次使用vim编辑文件都能显示行号。&lt;/p&gt;
+&lt;/blockquote&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://www.zhugeqing.topimages/linux.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         
@@ -223,7 +304,7 @@
 &lt;/blockquote&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        <media:content url="https://www.zhugeqing.topimages/linux.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
         
         

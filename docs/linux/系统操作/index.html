@@ -1343,8 +1343,8 @@
 <meta property="og:description" content="Linux基本系统操作">
 
   
-    <meta property="og:image" content="https://www.zhugeqing.top/images/recommend_site/xingyouji.jpg">
-    <meta property="og:image:url" content="https://www.zhugeqing.top/images/recommend_site/xingyouji.jpg">
+    <meta property="og:image" content="https://www.zhugeqing.top/images/linux.jpg">
+    <meta property="og:image:url" content="https://www.zhugeqing.top/images/linux.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:app:name:iphone" content="诸葛青的编程之旅">
     <meta property="twitter:title" content="Linux系统操作">
@@ -1380,7 +1380,7 @@
     "url" : "https://www.zhugeqing.top/linux/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/",
     "description": "Linux基本系统操作",
     "keywords": [""],
-    "image" : "https://www.zhugeqing.top/images/recommend_site/xingyouji.jpg",
+    "image" : "https://www.zhugeqing.top/images/linux.jpg",
     "author": {
       "@type": "Person",
       "name": "诸葛青"
@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 27, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;4&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1973,7 +1973,7 @@
 <code>cat &gt; /root/a.txt &lt;&lt; EOF</code><br />
 <code>cat 的多用</code><br />
 <code>EOF</code><br />
-将<code>cat的多用</code>添加到a.txt文件中</p>
+<code>cat的多用</code>将内容覆盖到a.txt文件中</p>
 </blockquote>
 <ul>
 <li><code>head</code></li>
@@ -1990,7 +1990,7 @@
 <p>查看文件结尾<br />
 -size size表示一个数字<br />
 <code>tail -100 hello.txt</code>查看末尾100行的内容<br />
-<code>-f</code></p>
+<code>-f</code> 实时查看</p>
 </blockquote>
 <ul>
 <li><code>wc</code></li>
@@ -1999,6 +1999,59 @@
 <p>统计文件文本信息<br />
 <code>wc a.txt</code>，如果显示内容为<code>10 5 453 a.txt</code>，第一个数表示文件的总行数，第二个数表示文件不为空的行数，第三个数表示文件中字符的数量<br />
 <code>wc -l a.txt</code> 显示文件总行数</p>
+</blockquote>
+<ul>
+<li><code>tar</code></li>
+</ul>
+<blockquote>
+<p>打包命令<br />
+<code>-c</code> 打包<br />
+<code>-x</code> 解包<br />
+<code>-f</code> 指定文件名<br />
+<code>-v</code> 显示详细信息<br />
+<code>-z</code> 以zip形式压缩（压缩速度比gzip快）<br />
+<code>-j</code> 比bz2形式压缩（压缩比例更高）<br />
+<code>tar -zcvf hello.tar.gz hello</code>将hello文件或者目录进行打包压缩，并显示详细信息<br />
+<code>tar -zxvf hello.tar.gz -C /root/</code> 进行解包，并放入/root/目录下</p>
+</blockquote>
+<ul>
+<li><code>vim</code></li>
+</ul>
+<blockquote>
+<p>编辑文本文件</p>
+</blockquote>
+<blockquote>
+<p>最开始进入的就是正常模式<br />
+正常模式下使用<code>k</code>，<code>j</code>，<code>h</code>，<code>l</code>来进行<code>上下左右</code>移动光标（字符终端需要使用这种，不然使用键盘自带的键会有乱码）<br />
+在光标所在行按下<code>yy</code>能复制整行，再按下<code>p</code>就能再下一行进行粘贴<br />
+按下需要复制行的行数，并按下<code>yy</code>，能够复制多行，比如<code>3yy</code>，复制当前行以及之后的两行<br />
+按下<code>y$</code>可以复制光标之后的字符（只是当前行）<br />
+按下<code>dd</code>可以剪切一整行<br />
+按下<code>d$</code>剪切光标这一行之后的字符（包含光标字符）<br />
+按下<code>u</code>可以撤销一次操作<br />
+按下<code>ctrl+r</code>可以重做撤销的操作<br />
+按下<code>x</code>可以删除光标字符<br />
+按下<code>r</code> 再输入一个字符可以替换光标字符<br />
+按下指定行的行数，再按下<code>shift+g</code>可以移动到自定行<br />
+按下<code>^</code>前往光标当前行的行首<br />
+按下<code>$</code>前往光标当前行的行尾</p>
+</blockquote>
+<blockquote>
+<p>按下<code>i</code>, <code>I</code>, <code>a</code>, <code>A</code>, <code>o</code>, <code>O</code>均可进入插入模式<br />
+<code>i</code>在光标当前位置进入插入模式；<code>I</code>在光标的这一行的行首进入插入模式<br />
+<code>a</code>在光标的下一个位置进入插入模式；<code>A</code>在光标的这一行的行尾进入插入模式<br />
+<code>o</code>在光标当前行后面插入一行并移到这一行的行首，<code>O</code>在光标当前行前面插入一行并移到这一行的行首</p>
+</blockquote>
+<blockquote>
+<p>按下<code>esc</code>再写入<code>:</code>，进入命令模式<br />
+<code>w /root/a.txt</code>将当前编辑的内容保存到/root/a.txt<br />
+按下<code>q</code>表示直接退出，（<code>q!</code>为强制退出）<br />
+按下<code>w</code>表示保存<br />
+按下<code>!</code>在后面接linux中的命令也是回车执行（比如<code>!ls -lh</code>）<br />
+按下<code>esc</code>再写入<code>/</code>，后面接需要查找的文本内容，可以进行查找操作；执行之后按<code>n</code>来查找下一个匹配的文本内容，<code>shift+n</code>匹配上一个；<br />
+在正常模式按下<code>:s/old/new</code>可以将<code>old</code>替换为<code>new</code>（只针对光标当前行，且只替换一个），按下<code>:s/old/new/g</code>可以在光标当前行进行全部替换；按下<code>:%s/old/new</code>可以进行全文件每一行单次的替换，<code>:%s/old/new/g</code>进行全文件全部替换<br />
+输入<code>:set nu</code>可以显示行号，<code>:set nonu</code>显示行号<br />
+<code>编辑文件/etc/vimrc，并在末尾添加set nu</code>可以使得每次使用vim编辑文件都能显示行号。</p>
 </blockquote>
 
     </article>
@@ -2289,6 +2342,10 @@
     <ul class="related-ul">
         
         <li>
+          <a href="/linux/%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/" class="related__link">Linux服务管理</a>
+        </li>
+        
+        <li>
           <a href="/kubernetes/1/" class="related__link">k8s的安装</a>
         </li>
         
@@ -2297,15 +2354,11 @@
         </li>
         
         <li>
-          <a href="/write/2022-2-2/" class="related__link">持续行动</a>
-        </li>
-        
-        <li>
           <a href="/write/2022-2-3/" class="related__link">持续行动</a>
         </li>
         
         <li>
-          <a href="/write/2022-2-1/" class="related__link">持续行动</a>
+          <a href="/write/2022-2-2/" class="related__link">持续行动</a>
         </li>
         
     </ul>
@@ -2323,6 +2376,13 @@
       </a>
     
     <div class="grow"></div>
+    
+      <a href="https://www.zhugeqing.top/linux/%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">Linux服务管理</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
     
   
 </nav>

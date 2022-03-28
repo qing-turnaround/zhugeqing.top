@@ -1795,83 +1795,57 @@
 </header>
 <main class="main about">
   <article class="single__contents single__contents--about" data-dir="ltr" data-ani="true">
-    <h2 id="1创建仓库命令">1.创建仓库命令</h2>
-<p>1.创建版本库(初始化仓库) &mdash;&mdash; git init</p>
-<p>2.拷贝一份远程仓库，也就是下载一个项目  &mdash;&mdash; git clone</p>
-<h2 id="2提交与修改">2.提交与修改</h2>
-<p>1.添加文件到暂存区 &mdash;&mdash; git add</p>
-<p>2.查看仓库当前的状态，显示有变更的文件 &mdash;&mdash; git status</p>
-<p>3.比较文件的不同，即暂存区和工作区的区别 &mdash;&mdash; git diff</p>
-<p>4.提交暂存区到本地仓库 &mdash;&mdash; git commit</p>
-<p>7.回退版本 &mdash;&mdash; git reset</p>
-<p>8.删除工作区的文件 &mdash;&mdash; git rm</p>
-<p>9.移动或者重命名工作区的文件 &mdash;&mdash; git mv</p>
-<h3 id="21提交日志">2.1提交日志</h3>
-<p>1.查看历史提交记录 &mdash;&mdash; git log</p>
-<p>2.以列表形式查看指定文件的历史修改记录 &mdash;&mdash; git blame <file></p>
-<h3 id="22远程操作">2.2远程操作</h3>
-<p>1.远程仓库操作 &mdash;&mdash; git remote</p>
-<p>2.从远程获取代码库 &mdash;&mdash; git fetch</p>
-<p>3.下载远程代码并合并 &mdash;&mdash; git pull</p>
-<p>4.上传远程代码并合并 &mdash;&mdash; git push</p>
-<h2 id="3git-分支管理">3.git 分支管理</h2>
-<p>1.列出分支 &mdash;&mdash; git branch(无参数时)</p>
-<p>2.创建新分支 &mdash;&mdash; git branch branchname(branchname为想要创建的分支名)</p>
-<p>3.切换到分支 &mdash;&mdash; git checkout branchname(branchname为想要切换到的分支名)</p>
-<p>4.创建新分支并切换到该分支下 &mdash;&mdash; git checkout -b branchname(branchname为想要创建的分支名)</p>
-<p>5.删除分支 &mdash;&mdash; git branch -d branchname(branchname为想要删除的分支名)</p>
-<p>6.合并分支 &mdash;&mdash; git merge /git rebase</p>
-<h5 id="rebase优缺点">rebase优缺点</h5>
-<h5 id="优点">优点：</h5>
-<h5 id="rebase-使你的提交树变得很干净-所有的提交都在一条线上">Rebase 使你的提交树变得很干净, 所有的提交都在一条线上</h5>
-<h5 id="缺点">缺点：</h5>
-<h5 id="rebase-修改了提交树的历史">Rebase 修改了提交树的历史</h5>
-<h5 id="merge优缺点">merge优缺点</h5>
-<h5 id="优点-1">优点:</h5>
-<h5 id="merge可以保留提交历史">merge可以保留提交历史</h5>
-<h5 id="缺点-1">缺点：</h5>
-<h5 id="merge使你的提交树变得复杂提交由多条线相连">merge使你的提交树变得复杂，提交由多条线相连</h5>
-<p>7.解决冲突 &mdash;&mdash; 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</p>
-<h2 id="4git-查看提交历史">4.git 查看提交历史</h2>
-<p>1.查看历史提交记录 &mdash;&mdash; git log</p>
-<p>2.以列表形式查看指定文件的历史修改记录 &mdash;&mdash; git blame <file></p>
-<h2 id="5git-标签">5.git 标签</h2>
-<p>1.查看所有标签 &mdash;&mdash; git tag</p>
-<p>2.为当前分支创建标签 &mdash;&mdash; git tag -a v1.0(不带&quot;-a&quot;也行,但建议带上)</p>
-<p>3.创建带有说明的标签 &mdash;&mdash; git tag -a v0.1 -m &ldquo;runoob.com标签&rdquo;（用-a指定标签名，-m指定说明文字：）</p>
-<p>4.查看标签说明文字 &mdash;&mdash; git show v0.1</p>
-<h5 id="注意标签总是和某个commit挂钩如果这个commit既出现在master分支又出现在dev分支那么在这两个分支上都可以看到这个标签">(注意：标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。)</h5>
-<h2 id="6git-修改本地和查看本地属性">6.Git 修改本地和查看本地属性</h2>
-<h3 id="1git-config---local---list查看本地设置">1.git config &ndash;local &ndash;list(查看本地设置)</h3>
-<h3 id="2git-config---global-usernameemail修改本地属性加不加--global区别在于是否是修改全局变量">2.git config &ndash;global user.name/email(修改本地属性,加不加&ndash;global区别在于是否是修改全局变量)</h3>
-<h2 id="7git-远程仓库github">7.git 远程仓库(Github)</h2>
-<h3 id="1添加远程库--------git-remote-add-origin-urlorigin-为给远程库取的一个别名">1添加远程库 &mdash;&mdash; git remote add origin [url](origin 为给远程库取的一个别名)</h3>
-<h6 id="由于你的本地-git-仓库和-github-仓库之间的传输是通过ssh加密的所以我们需要配置验证信息">由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过SSH加密的，所以我们需要配置验证信息：</h6>
-<h6 id="使用以下命令生成-ssh-keyssh-keygen--t-rsa--c-youremailexamplecom">使用以下命令生成 SSH Key：ssh-keygen -t rsa -C &ldquo;<a href="mailto:youremail@example.com">youremail@example.com</a>&rdquo;</h6>
-<h6 id="后面的-your_emailyouremailcom-改为你在-github-上注册的邮箱之后会要求确认路径和输入密码我们这使用默认的一路回车就行成功的话会在--下生成-ssh-文件夹进去打开-id_rsapub复制里面的-key回到-github-上进入-account--settings账户配置左边选择-ssh-and-gpg-keys然后点击-new-ssh-key-按钮title-设置标题可以随便填粘贴在你电脑上生成的-key">后面的 <a href="mailto:your_email@youremail.com">your_email@youremail.com</a> 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在 ~/ 下生成 .ssh 文件夹，进去，打开 id_rsa.pub，复制里面的 key。回到 github 上，进入 Account =&gt; Settings（账户配置）。左边选择 SSH and GPG keys，然后点击 New SSH key 按钮,title 设置标题，可以随便填，粘贴在你电脑上生成的 key</h6>
-<h3 id="2查看当前的远程库--------git-remote--v">2查看当前的远程库 &mdash;&mdash; git remote -v</h3>
-<h3 id="3拉取远程仓库">3拉取远程仓库</h3>
-<p>1.从远程仓库下载新分支与数据 &mdash;&mdash; git fetch</p>
-<p>2从远端仓库提取数据并尝试合并到当前分支 &mdash;&mdash; git merge</p>
-<h3 id="4推送到远程仓库--------git-push-origin-branchbranch为远程仓库的分支名">4推送到远程仓库 &mdash;&mdash; git push origin branch(branch为远程仓库的分支名)</h3>
-<h3 id="5删除远程仓库--------git-remote-rm-origin">5删除远程仓库 &mdash;&mdash; git remote rm origin</h3>
-<h2 id="8git-服务器搭建">8.git 服务器搭建</h2>
-<h3 id="1安装-git-------sudo-apt-get-install-gitubuntu下的下载windows可上网查询">1.安装 git &mdash;&mdash;sudo apt-get install git(ubuntu下的下载,windows可上网查询)</h3>
-<h5 id="接下来我们-创建一个用户用来运行git服务的用户">接下来我们 创建一个用户用来运行git服务的用户</h5>
-<h6 id="-sudo-adduser-zhugeqing">$ sudo adduser zhugeqing</h6>
-<h3 id="2创建证书登录">2.创建证书登录</h3>
-<h6 id="虽然是私有的git服务器但是也不能允许主机随意向git服务器推送代码因此必须将需要使用git服务器即需要登录到git服务器的主机的公钥即id_rsapub文件导入git服务器的homegitsshauthorized_keys文件里一行一个">虽然是私有的Git服务器，但是也不能允许主机随意向Git服务器推送代码。因此，必须将需要使用Git服务器，即需要登录到Git服务器的主机的公钥（即id_rsa.pub文件）导入Git服务器的/home/git/.ssh/authorized_keys文件里，一行一个</h6>
-<p>###3.初始化Git仓库</p>
-<h5 id="如果我们使用tmpxingyoujigit做为远程仓库则需要在tmp目录下执行">如果我们使用/tmp/xingyouji.git做为远程仓库，则需要在/tmp目录下执行：</h5>
-<h6 id="sudo-git-init---bare-xingyoujigit">sudo git init &ndash;bare xingyouji.git</h6>
-<h3 id="4克隆仓库">4.克隆仓库</h3>
-<h5 id="git-clone-git192168454homegitrepoxingyoujigit">git clone <a href="mailto:git@192.168.45.4">git@192.168.45.4</a>:/home/gitrepo/xingyouji.git</h5>
-<h6 id="192168454-为-git-所在服务器-ip-你需要将其修改为你自己的-git-服务-ip这样我们的-git-服务器安装就完成">192.168.45.4 为 Git 所在服务器 ip ，你需要将其修改为你自己的 Git 服务 ip，这样我们的 Git 服务器安装就完成。</h6>
-<h2 id="9git-gitee码云httpsgiteecom">9.<a href="https://gitee.com/">Git Gitee（码云)</a></h2>
-<h6 id="大家都知道国内访问-github-速度比较慢很影响我们的使用如果你希望体验到-git-飞一般的速度可以使用国内的-git-托管服务giteegiteecom">大家都知道国内访问 Github 速度比较慢，很影响我们的使用。如果你希望体验到 Git 飞一般的速度，可以使用国内的 Git 托管服务——Gitee（gitee.com），</h6>
-<h6 id="gitee-提供免费的-git-仓库还集成了代码质量检测项目演示等功能对于团队协作开发gitee-还提供了项目管理代码托管文档管理的服务5-人以下小团队免费--">Gitee 提供免费的 Git 仓库，还集成了代码质量检测、项目演示等功能。对于团队协作开发，Gitee 还提供了项目管理、代码托管、文档管理的服务，5 人以下小团队免费  。</h6>
-<p>1.我们先在 Gitee 上注册账号并登录后，然后上传自己的 SSH 公钥</p>
-<p>2.其他操作根据需求操作，与上述操作无大区别</p>
+    <h2 id="git-配置">git 配置</h2>
+<ul>
+<li><code>git config --global user.name &quot;xing-you-ji&quot;</code></li>
+<li><code>git config --global user.email &quot;2110833194@qq.com&quot;</code></li>
+</ul>
+<blockquote>
+<p>配置用户名和邮箱，不加&ndash;global参数就相当于只对当前目录仓库有效<br />
+&ndash;system表示对系统登录的所有用户有效</p>
+</blockquote>
+<ul>
+<li><code>git config --global --list </code></li>
+</ul>
+<blockquote>
+<p>查看git当前用户仓库配置，不加&ndash;global参数就相当于显示当前目录仓库<br />
+同样还可以用&ndash;system</p>
+</blockquote>
+<h2 id="git-仓库初始化">git 仓库初始化</h2>
+<ul>
+<li>已经有项目代码，在项目目录执行<code>git init</code></li>
+<li>还未开始创建仓库，执行<code>git init project_name</code></li>
+<li><code>git config --global user.name &quot;xing-you-ji&quot;</code></li>
+<li><code>git config --global user.email &quot;2110833194@qq.com&quot;</code></li>
+<li>新加入文件，使用<code>git add .</code></li>
+</ul>
+<blockquote>
+<p>将最新修改从工作区加入暂存区</p>
+</blockquote>
+<ul>
+<li><code>git commit -m &quot;init&quot;</code></li>
+</ul>
+<blockquote>
+<p>将暂存区的内容加入版本历史中</p>
+</blockquote>
+<ul>
+<li><code>git status</code></li>
+</ul>
+<blockquote>
+<p>查看<code>工作区</code>与<code>暂存区</code>状态</p>
+</blockquote>
+<ul>
+<li><code>git add .</code></li>
+</ul>
+<blockquote>
+<p>将当前目录及子孙目录里的变动都加到暂存区</p>
+</blockquote>
+<ul>
+<li><code>git add -A</code></li>
+</ul>
+<blockquote>
+<p>将当前仓库所有变动加入暂存区</p>
+</blockquote>
 <figure><img src="/images/about/git.jpg"/>
 </figure>
 

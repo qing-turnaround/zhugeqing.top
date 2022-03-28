@@ -1,7 +1,7 @@
 ---
 date: 2022-02-01
 description: "我们总会忘记一些繁琐的事情"
-image: "images/recommend_site/xingyouji.jpg"
+image: "images/linux.jpg"
 title: "Linux设置定时任务"
 author: 诸葛青
 authorEmoji: 🎅
