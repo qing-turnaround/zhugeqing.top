@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Apr 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/index.xml" rel="self" type="application/rss+xml" />
@@ -49,8 +49,141 @@
         
         <atom:modified>Sun, 27 Mar 2022 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/linux/%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/</guid>
-        <description></description>
-        <content:encoded></content:encoded>
+        <description>网络管理 ifconfig 查看网络接口命令 网络接口名字包含（eno1 板载网卡，ens33 PCI-E网卡，enp0s33无法获取物理信息的PCI-E网卡，如果都不匹配就是eth0） 通过在/etc/default/grub的 GRUB_CMDLINE_LINUX行修改biosdevname=0 net.ifnames=0（没有对应参数就加上），然后执行rub2-mkconfig -o /boot/grub2/grub.cfg，</description>
+        <content:encoded>&lt;h2 id=&#34;网络管理&#34;&gt;网络管理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ifconfig&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;查看网络接口命令&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网络接口名字包含（eno1 板载网卡，ens33 PCI-E网卡，enp0s33无法获取物理信息的PCI-E网卡，如果都不匹配就是eth0）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过在/etc/default/grub的 &lt;code&gt;GRUB_CMDLINE_LINUX&lt;/code&gt;行修改&lt;code&gt;biosdevname=0 net.ifnames=0&lt;/code&gt;（没有对应参数就加上），然后执行&lt;code&gt;rub2-mkconfig -o /boot/grub2/grub.cfg&lt;/code&gt;，重启，即可将网卡名字修改为&lt;code&gt;eth0&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;enss33&lt;/code&gt;：&lt;code&gt;biosdevname=0 net.ifnames=1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;em1&lt;/code&gt;：&lt;code&gt;biosdevname=1 net.ifnames=0&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;eth0&lt;/code&gt;：&lt;code&gt;biosdevname=0 net.ifnames=0&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ifconfig docker0 172.17.0.3 netmask 255.255.0.0&lt;/code&gt; 修改&lt;code&gt;docker0网络接口和子网掩码&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ifconfig docker0 up&lt;/code&gt; 关闭&lt;code&gt;docker0&lt;/code&gt;网络接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ifconfig docker0 down&lt;/code&gt; 开启&lt;code&gt;docker0&lt;/code&gt;网络接口&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;route&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;查看网关&lt;/li&gt;
+&lt;li&gt;route -n 加上-n参数，不解析主机名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;route add -host 10.0.0.1 gw 10.244.0.0&lt;/code&gt; 添加访问&lt;code&gt;10.0.0.1&lt;/code&gt;的网关为&lt;code&gt;10.244.0.0&lt;/code&gt;的路由规则&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;route del 10.0.0.1 gw 10.244.0.0&lt;/code&gt;删除该条路由规则&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;route add -net 192.168.0.0 netmask 255.255.255.0 gw 10.244.0.1&lt;/code&gt; 添加网段192.168.0.0的路由规则&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ping&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;检测与目标主机是否畅通&lt;/li&gt;
+&lt;li&gt;参数-w，设置等待时间&lt;/li&gt;
+&lt;li&gt;例：&lt;code&gt;ping -w 2 zhugeqing.top&lt;/code&gt;（等待2s，如果没有响应就超时退出）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;traceroute&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;跟踪路由&lt;/li&gt;
+&lt;li&gt;例：&lt;code&gt;traceroute -w 1 www.zhugeqing.top&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;nslookup&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;查看域名解析&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;telnet&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;测试目标主机的某个端口是否可达&lt;/li&gt;
+&lt;li&gt;例:&lt;code&gt;telnet www.zhugeqing.top 80&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tcpdump&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;捕获数据包&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;-i&lt;/code&gt; 指定对应的网络接口&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;-n&lt;/code&gt; 不要将IP地址解析成域名形式显示&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;port&lt;/code&gt; 指定端口&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;host&lt;/code&gt; 指定主机&lt;/li&gt;
+&lt;li&gt;例:&lt;code&gt;tcpdump -i any -n port 80 and host 192.0.0.1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;netstat&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;查看端口网络连接状态&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;-n&lt;/code&gt; 不要将IP地址解析成域名形式显示&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;-u&lt;/code&gt; 显示udp协议相关&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;-t&lt;/code&gt; 显示tcp协议相关&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;-p&lt;/code&gt; 显示对应的进程&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;-l&lt;/code&gt; 显示LISTEN状态&lt;/li&gt;
+&lt;li&gt;参数&lt;code&gt;-e&lt;/code&gt; 显示ESTABLISHED状态&lt;/li&gt;
+&lt;li&gt;例子：&lt;code&gt;netstat -ntpl&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ss&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;操作和效果类似&lt;code&gt;netstat&lt;/code&gt;，但是更加详细&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;网络配置文件&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;进入&lt;code&gt;/etc/sysconfig/network-scripts/&lt;/code&gt;，修改&lt;code&gt;ifcfg-eth0&lt;/code&gt;可以对网络配置进行修改&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BOOTPROTO&lt;/code&gt;修改为&lt;code&gt;none&lt;/code&gt;将会使用手动配置的ip，而不是使用dhcp&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IPADDR&lt;/code&gt;设置IP地址&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NETMASK&lt;/code&gt;设置子网掩码&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gateway&lt;/code&gt;设置网关&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DNS1&lt;/code&gt; 设置域名服务器（&lt;code&gt;也可以DNS2，DNS3&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;systemctl restart network&lt;/code&gt;重启网络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;hostnamectl&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;修改主机名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hostnamectl set-name zhugeqing.top&lt;/code&gt;（需要再将&lt;code&gt;127.0.0.1 zhugeqing.top&lt;/code&gt;写入/etc/hosts）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/linux.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
         

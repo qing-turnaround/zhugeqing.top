@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 27, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;0&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1863,7 +1863,140 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      
+      <h2 id="网络管理">网络管理</h2>
+<ul>
+<li>
+<p><code>ifconfig</code><br />
+<div class="box"><ul>
+<li>
+<p>查看网络接口命令</p>
+</li>
+<li>
+<p>网络接口名字包含（eno1 板载网卡，ens33 PCI-E网卡，enp0s33无法获取物理信息的PCI-E网卡，如果都不匹配就是eth0）</p>
+</li>
+<li>
+<p>通过在/etc/default/grub的 <code>GRUB_CMDLINE_LINUX</code>行修改<code>biosdevname=0 net.ifnames=0</code>（没有对应参数就加上），然后执行<code>rub2-mkconfig -o /boot/grub2/grub.cfg</code>，重启，即可将网卡名字修改为<code>eth0</code></p>
+</li>
+<li>
+<p><code>enss33</code>：<code>biosdevname=0 net.ifnames=1</code></p>
+</li>
+<li>
+<p><code>em1</code>：<code>biosdevname=1 net.ifnames=0</code></p>
+</li>
+<li>
+<p><code>eth0</code>：<code>biosdevname=0 net.ifnames=0</code></p>
+</li>
+<li>
+<p><code>ifconfig docker0 172.17.0.3 netmask 255.255.0.0</code> 修改<code>docker0网络接口和子网掩码</code></p>
+</li>
+<li>
+<p><code>ifconfig docker0 up</code> 关闭<code>docker0</code>网络接口</p>
+</li>
+<li>
+<p><code>ifconfig docker0 down</code> 开启<code>docker0</code>网络接口</p>
+</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>route</code><br />
+<div class="box"><ul>
+<li>查看网关</li>
+<li>route -n 加上-n参数，不解析主机名</li>
+<li><code>route add -host 10.0.0.1 gw 10.244.0.0</code> 添加访问<code>10.0.0.1</code>的网关为<code>10.244.0.0</code>的路由规则</li>
+<li><code>route del 10.0.0.1 gw 10.244.0.0</code>删除该条路由规则</li>
+<li><code>route add -net 192.168.0.0 netmask 255.255.255.0 gw 10.244.0.1</code> 添加网段192.168.0.0的路由规则</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>ping</code><br />
+<div class="box"><ul>
+<li>检测与目标主机是否畅通</li>
+<li>参数-w，设置等待时间</li>
+<li>例：<code>ping -w 2 zhugeqing.top</code>（等待2s，如果没有响应就超时退出）</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>traceroute</code><br />
+<div class="box"><ul>
+<li>跟踪路由</li>
+<li>例：<code>traceroute -w 1 www.zhugeqing.top</code></li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>nslookup</code><br />
+<div class="box"><ul>
+<li>查看域名解析</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>telnet</code><br />
+<div class="box"><ul>
+<li>测试目标主机的某个端口是否可达</li>
+<li>例:<code>telnet www.zhugeqing.top 80</code></li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>tcpdump</code><br />
+<div class="box"><ul>
+<li>捕获数据包</li>
+<li>参数<code>-i</code> 指定对应的网络接口</li>
+<li>参数<code>-n</code> 不要将IP地址解析成域名形式显示</li>
+<li>参数<code>port</code> 指定端口</li>
+<li>参数<code>host</code> 指定主机</li>
+<li>例:<code>tcpdump -i any -n port 80 and host 192.0.0.1</code></li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>netstat</code><br />
+<div class="box"><ul>
+<li>查看端口网络连接状态</li>
+<li>参数<code>-n</code> 不要将IP地址解析成域名形式显示</li>
+<li>参数<code>-u</code> 显示udp协议相关</li>
+<li>参数<code>-t</code> 显示tcp协议相关</li>
+<li>参数<code>-p</code> 显示对应的进程</li>
+<li>参数<code>-l</code> 显示LISTEN状态</li>
+<li>参数<code>-e</code> 显示ESTABLISHED状态</li>
+<li>例子：<code>netstat -ntpl</code></li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>ss</code><br />
+<div class="box"><ul>
+<li>操作和效果类似<code>netstat</code>，但是更加详细</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>网络配置文件</code><br />
+<div class="box"><ul>
+<li>进入<code>/etc/sysconfig/network-scripts/</code>，修改<code>ifcfg-eth0</code>可以对网络配置进行修改</li>
+<li><code>BOOTPROTO</code>修改为<code>none</code>将会使用手动配置的ip，而不是使用dhcp</li>
+<li><code>IPADDR</code>设置IP地址</li>
+<li><code>NETMASK</code>设置子网掩码</li>
+<li><code>gateway</code>设置网关</li>
+<li><code>DNS1</code> 设置域名服务器（<code>也可以DNS2，DNS3</code>）</li>
+<li>使用<code>systemctl restart network</code>重启网络</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>hostnamectl</code><br />
+<div class="box"><ul>
+<li>修改主机名</li>
+<li><code>hostnamectl set-name zhugeqing.top</code>（需要再将<code>127.0.0.1 zhugeqing.top</code>写入/etc/hosts）</li>
+</ul>
+</div></p>
+</li>
+</ul>
+
     </article>
     
     
@@ -2558,7 +2691,11 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
   <div class="toc " data-dir="ltr" data-folding="true" data-ani="true">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#网络管理">网络管理</a></li>
+  </ul>
+</nav>
   </div>
 </section>
 

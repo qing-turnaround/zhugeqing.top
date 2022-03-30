@@ -1826,7 +1826,7 @@
 <li><code>git commit -m &quot;init&quot;</code></li>
 </ul>
 <blockquote>
-<p>将暂存区的内容加入版本历史中</p>
+<p>将暂存区的内容加入版本历史中（<code>git commit -am &quot;init&quot;</code>加入暂存区并进行提交）</p>
 </blockquote>
 <ul>
 <li><code>git status</code></li>
@@ -1845,6 +1845,37 @@
 </ul>
 <blockquote>
 <p>将当前仓库所有变动加入暂存区</p>
+</blockquote>
+<ul>
+<li><code>git mv a.txt b.txt</code></li>
+</ul>
+<blockquote>
+<p>将仓库的a.txt文件修改成b.txt（并将修改加入暂存区）</p>
+</blockquote>
+<ul>
+<li><code>git rm a.txt</code></li>
+</ul>
+<blockquote>
+<p>将仓库的a.txt文件进行删除（并将修改加入暂存区）</p>
+</blockquote>
+<ul>
+<li><code>git log</code></li>
+</ul>
+<blockquote>
+<p>查看版本提交历史<br />
+<code>git log master</code> 查看指定分支提交历史<br />
+参数<code>--oneline</code>简洁地查看提交历史<br />
+参数<code>--all</code>查看所有分支的提交历史<br />
+参数<code>--graph</code>带图形的查看<br />
+参数<code>-n2</code>查看最近2次提交历史（数字可修改）</p>
+</blockquote>
+<ul>
+<li><code>gitk</code></li>
+</ul>
+<blockquote>
+<p>图形化界面工具（查看有中文乱码，需在gitconfig中加入）<br />
+<div class="box">[gui]<br />
+encoding = utf-8</div></p>
 </blockquote>
 <figure><img src="/images/about/git.jpg"/>
 </figure>

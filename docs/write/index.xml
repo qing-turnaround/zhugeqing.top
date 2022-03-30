@@ -21,6 +21,421 @@
       
       <item>
         <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2022-04-29/</link>
+        <pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 29 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2022-04-29/</guid>
+        <description>mysql mysql事务ACID mysql事务并发带来的后果 mysql事务隔离级别 mysql 悲观锁与乐观锁 常见的封锁类型 InnoDB是表级锁还是行级锁 mvcc linux vim正常模式 vim命令模式 ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss, 操作系统 什么是死锁 死锁发生的必要条件 如何预防死锁 git git log, &amp;ndash;graph,-all,-n2,master git commit -am &amp;ldquo;哈哈&amp;rdquo;</description>
+        <content:encoded>&lt;h2 id=&#34;mysql&#34;&gt;mysql&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务ACID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务并发带来的后果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务隔离级别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql 悲观锁与乐观锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见的封锁类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;InnoDB是表级锁还是行级锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mvcc&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux&#34;&gt;linux&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;vim正常模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vim命令模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss,&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;死锁发生的必要条件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如何预防死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;git&#34;&gt;git&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;git log, &amp;ndash;graph,-all,-n2,master&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;git commit -am &amp;ldquo;哈哈&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/about/%e7%a7%af%e8%b7%ac%e6%ad%a5%e4%bb%a5%e8%87%b3%e5%8d%83%e9%87%8c.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2022-04-05/</link>
+        <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 05 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2022-04-05/</guid>
+        <description>mysql mysql事务ACID mysql事务并发带来的后果 mysql事务隔离级别 mysql 悲观锁与乐观锁 常见的封锁类型 InnoDB是表级锁还是行级锁 mvcc linux vim正常模式 vim命令模式 ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss, 操作系统 什么是死锁 死锁发生的必要条件 如何预防死锁 git git log, &amp;ndash;graph,-all,-n2,master git commit -am &amp;ldquo;哈哈&amp;rdquo;</description>
+        <content:encoded>&lt;h2 id=&#34;mysql&#34;&gt;mysql&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务ACID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务并发带来的后果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务隔离级别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql 悲观锁与乐观锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见的封锁类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;InnoDB是表级锁还是行级锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mvcc&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux&#34;&gt;linux&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;vim正常模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vim命令模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss,&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;死锁发生的必要条件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如何预防死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;git&#34;&gt;git&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;git log, &amp;ndash;graph,-all,-n2,master&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;git commit -am &amp;ldquo;哈哈&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/about/%e7%a7%af%e8%b7%ac%e6%ad%a5%e4%bb%a5%e8%87%b3%e5%8d%83%e9%87%8c.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2022-04-01/</link>
+        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 01 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2022-04-01/</guid>
+        <description>mysql mysql事务ACID mysql事务并发带来的后果 mysql事务隔离级别 mysql 悲观锁与乐观锁 常见的封锁类型 InnoDB是表级锁还是行级锁 mvcc linux vim正常模式 vim命令模式 ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss, 操作系统 什么是死锁 死锁发生的必要条件 如何预防死锁 git git log, &amp;ndash;graph,-all,-n2,master git commit -am &amp;ldquo;哈哈&amp;rdquo;</description>
+        <content:encoded>&lt;h2 id=&#34;mysql&#34;&gt;mysql&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务ACID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务并发带来的后果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务隔离级别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql 悲观锁与乐观锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见的封锁类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;InnoDB是表级锁还是行级锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mvcc&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux&#34;&gt;linux&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;vim正常模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vim命令模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss,&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;死锁发生的必要条件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如何预防死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;git&#34;&gt;git&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;git log, &amp;ndash;graph,-all,-n2,master&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;git commit -am &amp;ldquo;哈哈&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/about/%e7%a7%af%e8%b7%ac%e6%ad%a5%e4%bb%a5%e8%87%b3%e5%8d%83%e9%87%8c.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2022-03-30/</link>
+        <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 30 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2022-03-30/</guid>
+        <description>mysql mysql事务ACID mysql事务并发带来的后果 mysql事务隔离级别 mysql 悲观锁与乐观锁 常见的封锁类型 InnoDB是表级锁还是行级锁 mvcc linux vim正常模式 vim命令模式 ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss, 操作系统 什么是死锁 死锁发生的必要条件 如何预防死锁 git git log, &amp;ndash;graph,-all,-n2,master git commit -am &amp;ldquo;哈哈&amp;rdquo;</description>
+        <content:encoded>&lt;h2 id=&#34;mysql&#34;&gt;mysql&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务ACID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务并发带来的后果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务隔离级别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql 悲观锁与乐观锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见的封锁类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;InnoDB是表级锁还是行级锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mvcc&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux&#34;&gt;linux&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;vim正常模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vim命令模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss,&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;死锁发生的必要条件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如何预防死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;git&#34;&gt;git&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;git log, &amp;ndash;graph,-all,-n2,master&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;git commit -am &amp;ldquo;哈哈&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/about/%e7%a7%af%e8%b7%ac%e6%ad%a5%e4%bb%a5%e8%87%b3%e5%8d%83%e9%87%8c.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
+        <link>https://www.zhugeqing.top/write/2022-03-29/</link>
+        <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 29 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/write/2022-03-29/</guid>
+        <description>mysql mysql事务ACID mysql事务并发带来的后果 mysql事务隔离级别 mysql 悲观锁与乐观锁 常见的封锁类型 InnoDB是表级锁还是行级锁 mvcc linux vim正常模式 vim命令模式 ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss, 操作系统 什么是死锁 死锁发生的必要条件 如何预防死锁 git git log, &amp;ndash;graph,-all,-n2,master git commit -am &amp;ldquo;哈哈&amp;rdquo;</description>
+        <content:encoded>&lt;h2 id=&#34;mysql&#34;&gt;mysql&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务ACID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务并发带来的后果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql事务隔离级别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mysql 悲观锁与乐观锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常见的封锁类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;InnoDB是表级锁还是行级锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;mvcc&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux&#34;&gt;linux&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;vim正常模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;vim命令模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ifconfig,ping,traceroute,route,telnet,nslookup,tcpdump,netstat,ss,&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;操作系统&#34;&gt;操作系统&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;什么是死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;死锁发生的必要条件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如何预防死锁&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;git&#34;&gt;git&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;git log, &amp;ndash;graph,-all,-n2,master&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;git commit -am &amp;ldquo;哈哈&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/about/%e7%a7%af%e8%b7%ac%e6%ad%a5%e4%bb%a5%e8%87%b3%e5%8d%83%e9%87%8c.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>持续行动</title>
         <link>https://www.zhugeqing.top/write/2022-2-2/</link>
         <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
         
@@ -3871,193 +4286,6 @@
 &lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;思念祖母的第42天&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第五十一天！&lt;/font&gt;&lt;/p&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>持续行动</title>
-        <link>https://www.zhugeqing.top/write/2021-9-22/</link>
-        <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Wed, 22 Sep 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/write/2021-9-22/</guid>
-        <description>算法 94. 二叉树的中序遍历 144. 二叉树的前序遍历 589. N 叉树的前序遍历 105. 从前序与中序遍历序列构造二叉树 236. 二叉树的最近公共祖先 104. 二叉树的最大深度 98. 验证二叉搜索树 22. 括号生成 菲记单词 思念 思念祖母的第41天 记：持续行动的第五十天！</description>
-        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/binary-tree-inorder-traversal/&#34;&gt;94. 二叉树的中序遍历&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/binary-tree-preorder-traversal/&#34;&gt;144. 二叉树的前序遍历&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/&#34;&gt;589. N 叉树的前序遍历&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/&#34;&gt;105. 从前序与中序遍历序列构造二叉树&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/&#34;&gt;236. 二叉树的最近公共祖先&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/&#34;&gt;104. 二叉树的最大深度&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/validate-binary-search-tree/&#34;&gt;98. 验证二叉搜索树&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/generate-parentheses/&#34;&gt;22. 括号生成&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;菲记单词&#34;&gt;菲记单词&lt;/h2&gt;
-&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;思念祖母的第41天&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第五十天！&lt;/font&gt;&lt;/p&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>持续行动</title>
-        <link>https://www.zhugeqing.top/write/2021-9-21/</link>
-        <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Tue, 21 Sep 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/write/2021-9-21/</guid>
-        <description>算法 50. Pow(x, n) 78. 子集 菲记单词 思念 思念祖母的第40天 记：持续行动的第四十九天！</description>
-        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/powx-n/&#34;&gt;50. Pow(x, n)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/subsets/&#34;&gt;78. 子集&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;菲记单词&#34;&gt;菲记单词&lt;/h2&gt;
-&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;思念祖母的第40天&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第四十九天！&lt;/font&gt;&lt;/p&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>持续行动</title>
-        <link>https://www.zhugeqing.top/write/2021-9-20/</link>
-        <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Mon, 20 Sep 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/write/2021-9-20/</guid>
-        <description>算法 73. 矩阵置零 47. 全排列 II 46. 全排列 77. 组合 思念 思念祖母的第39天 记：持续行动的第四十八天！</description>
-        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/set-matrix-zeroes/&#34;&gt;73. 矩阵置零&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/permutations-ii/&#34;&gt;47. 全排列 II&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/permutations/&#34;&gt;46. 全排列&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/combinations/&#34;&gt;77. 组合&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;思念祖母的第39天&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第四十八天！&lt;/font&gt;&lt;/p&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>持续行动</title>
-        <link>https://www.zhugeqing.top/write/2021-9-19/</link>
-        <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Sun, 19 Sep 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/write/2021-9-19/</guid>
-        <description>算法 49. 字母异位词分组 242. 有效的字母异位词 105. 从前序与中序遍历序列构造二叉树 236. 二叉树的最近公共祖先 104. 二叉树的最大深度 98. 验证二叉搜索树 22. 括号生成## 菲记单词 思念 思念祖母的第38天 记：持续行动的第四十七天！</description>
-        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/group-anagrams/&#34;&gt;49. 字母异位词分组&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/valid-anagram/&#34;&gt;242. 有效的字母异位词&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/&#34;&gt;105. 从前序与中序遍历序列构造二叉树&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/&#34;&gt;236. 二叉树的最近公共祖先&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/&#34;&gt;104. 二叉树的最大深度&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/validate-binary-search-tree/&#34;&gt;98. 验证二叉搜索树&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/generate-parentheses/&#34;&gt;22. 括号生成&lt;/a&gt;## 菲记单词&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;思念祖母的第38天&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第四十七天！&lt;/font&gt;&lt;/p&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>持续行动</title>
-        <link>https://www.zhugeqing.top/write/2021-9-18/</link>
-        <pubDate>Sat, 18 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Sat, 18 Sep 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/write/2021-9-18/</guid>
-        <description>算法 94. 二叉树的中序遍历 144. 二叉树的前序遍历 589. N 叉树的前序遍历 429. N 叉树的层序遍历 590. N 叉树的后序遍历 菲记单词 思念 思念祖母的第37天 记：持续行动的第四十六天！</description>
-        <content:encoded>&lt;h2 id=&#34;算法&#34;&gt;算法&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://leetcode-cn.com/problems/binary-tree-inorder-traversal/&#34;&gt;94. 二叉树的中序遍历&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://leetcode-cn.com/problems/binary-tree-preorder-traversal/&#34;&gt;144. 二叉树的前序遍历&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/&#34;&gt;589. N 叉树的前序遍历&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/&#34;&gt;429. N 叉树的层序遍历&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/&#34;&gt;590. N 叉树的后序遍历&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;菲记单词&#34;&gt;菲记单词&lt;/h2&gt;
-&lt;h2 id=&#34;思念&#34;&gt;思念&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;思念祖母的第37天&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font color=VioletRed&gt;记：持续行动的第四十六天！&lt;/font&gt;&lt;/p&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
