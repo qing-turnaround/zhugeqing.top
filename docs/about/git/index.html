@@ -1826,7 +1826,7 @@
 <li><code>git commit -m &quot;init&quot;</code></li>
 </ul>
 <blockquote>
-<p>将暂存区的内容加入版本历史中（<code>git commit -am &quot;init&quot;</code>加入暂存区并进行提交）</p>
+<p>将暂存区的内容加入版本历史中（<code>git commit -am &quot;init&quot;</code> 可以将已经进行过<code>追踪（track）</code>的文件直接提交到版本历史）</p>
 </blockquote>
 <ul>
 <li><code>git status</code></li>
@@ -1877,6 +1877,19 @@
 <div class="box">[gui]<br />
 encoding = utf-8</div></p>
 </blockquote>
+<h2 id="git-探秘">git 探秘</h2>
+<ul>
+<li><code>.git</code>文件夹用于帮助<code>git</code>工具来管理仓库，进入<code>.git/objects</code>可以查看对应的<code>git类型</code></li>
+<li><code>git分为commit, tree, blob三种类型</code>，每一个<code>commit</code>对应一个或者多个<code>tree</code>，一个tree可以对应其他<code>tree（可以看作是文件夹）</code>和<code>blob（相当于是一个文件）</code></li>
+<li><code>.git/config</code>文件可以用于配置当前仓库的信息，比如远程仓库，user，email</li>
+<li><code>.git/logs</code>下可以查看各分支commit的哈希值，</li>
+<li><code>.git/HEAD</code>记录当前指向的分支</li>
+</ul>
+<h2 id="git-特殊知识">git 特殊知识</h2>
+<ul>
+<li>如果使用<code>git checkout</code> 切换到某一个commit上而不生成分支，这种<code>分离HEAD指针</code>的情况，如果只会再切换到其他分支上，那么将可能丢失在这个commit上后产生的修改（<code>需要自行记住提交的hash值，再切换回来</code>），（<code>HEAD要尽量与分支绑定在一起进行操作</code>）</li>
+<li>使用<code>git cat-file -t</code>可以查看<code>git 产生的hash值的类型</code>，使用<code>git cat-file -p</code>可以查看<code>类型具体的内容</code>，</li>
+</ul>
 <figure><img src="/images/about/git.jpg"/>
 </figure>
 

@@ -12,12 +12,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>Linux Shell脚本</title>
+        <link>https://www.zhugeqing.top/linux/shell%E8%84%9A%E6%9C%AC/</link>
+        <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 30 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/linux/shell%E8%84%9A%E6%9C%AC/</guid>
+        <description>基本操作 一般在shell脚本的第一行写上#!/bin/bash，如果运行命令是bash a.sh，则这一行会被当成注释，而如果就是./a.sh来执行，则会解释为使用bash来执行。（以#!开头） shell脚本使用#开头来进行注释 shell脚本的执行方式 bash 1.sh ./1.sh source 1.sh . 1.sh 区别1：使用./1.sh这种方式执行，需要对文件赋予执行权限，其他不用。 区别2：使用bash 1.sh，./1.sh方式执行，会产生一个子</description>
+        <content:encoded>&lt;h2 id=&#34;基本操作&#34;&gt;基本操作&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;一般在shell脚本的第一行写上&lt;code&gt;#!/bin/bash&lt;/code&gt;，如果运行命令是&lt;code&gt;bash a.sh&lt;/code&gt;，则这一行会被当成注释，而如果就是&lt;code&gt;./a.sh&lt;/code&gt;来执行，则会解释为使用&lt;code&gt;bash&lt;/code&gt;来执行。（以&lt;code&gt;#!&lt;/code&gt;开头）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;shell脚本使用&lt;code&gt;#&lt;/code&gt;开头来进行注释&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;shell脚本的执行方式&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bash 1.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./1.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;source 1.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;. 1.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;区别1：使用&lt;code&gt;./1.sh&lt;/code&gt;这种方式执行，需要对文件赋予执行权限，其他不用。&lt;/li&gt;
+&lt;li&gt;区别2：使用&lt;code&gt;bash 1.sh&lt;/code&gt;，&lt;code&gt;./1.sh&lt;/code&gt;方式执行，会产生一个子进程来执行，比如sh脚本中是&lt;code&gt;cd /temp&lt;/code&gt;，而在当前目录执行，执行完成之后，也不会进入&lt;code&gt;/temp&lt;/code&gt;。而其他两种可以&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/linux.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Linux</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>Linux服务管理</title>
@@ -168,13 +217,13 @@
         
           
             
-          
-        
-        
-        
-          
-            
               <category>Linux</category>
+            
+          
+        
+        
+        
+          
             
           
         
@@ -236,7 +285,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;意为&lt;code&gt;change directory&lt;/code&gt;，更改当前的操作目录&lt;br /&gt;
 &lt;code&gt;cd -&lt;/code&gt;回到上一次的目录&lt;br /&gt;
-&lt;code&gt;cd ..&lt;/code&gt; 回到上一级目录&lt;br /&gt;
+&lt;code&gt;cd ..&lt;/code&gt; 回到上一级目录（通过&lt;code&gt;ls -al&lt;/code&gt;可以查看到&lt;code&gt;..&lt;/code&gt;和&lt;code&gt;.&lt;/code&gt;这两个隐藏目录）&lt;br /&gt;
 &lt;code&gt;cd ./root&lt;/code&gt; 去当前目录下的root目录&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
@@ -386,13 +435,13 @@
         
           
             
-          
-        
-        
-        
-          
-            
               <category>Linux</category>
+            
+          
+        
+        
+        
+          
             
           
         

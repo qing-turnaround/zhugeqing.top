@@ -117,7 +117,7 @@
 &lt;li&gt;&lt;code&gt;git commit -m &amp;quot;init&amp;quot;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;将暂存区的内容加入版本历史中（&lt;code&gt;git commit -am &amp;quot;init&amp;quot;&lt;/code&gt;加入暂存区并进行提交）&lt;/p&gt;
+&lt;p&gt;将暂存区的内容加入版本历史中（&lt;code&gt;git commit -am &amp;quot;init&amp;quot;&lt;/code&gt; 可以将已经进行过&lt;code&gt;追踪（track）&lt;/code&gt;的文件直接提交到版本历史）&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/li&gt;
@@ -168,6 +168,19 @@
 &lt;div class=&#34;box&#34;&gt;[gui]&lt;br /&gt;
 encoding = utf-8&lt;/div&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h2 id=&#34;git-探秘&#34;&gt;git 探秘&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.git&lt;/code&gt;文件夹用于帮助&lt;code&gt;git&lt;/code&gt;工具来管理仓库，进入&lt;code&gt;.git/objects&lt;/code&gt;可以查看对应的&lt;code&gt;git类型&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git分为commit, tree, blob三种类型&lt;/code&gt;，每一个&lt;code&gt;commit&lt;/code&gt;对应一个或者多个&lt;code&gt;tree&lt;/code&gt;，一个tree可以对应其他&lt;code&gt;tree（可以看作是文件夹）&lt;/code&gt;和&lt;code&gt;blob（相当于是一个文件）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.git/config&lt;/code&gt;文件可以用于配置当前仓库的信息，比如远程仓库，user，email&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.git/logs&lt;/code&gt;下可以查看各分支commit的哈希值，&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.git/HEAD&lt;/code&gt;记录当前指向的分支&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;git-特殊知识&#34;&gt;git 特殊知识&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如果使用&lt;code&gt;git checkout&lt;/code&gt; 切换到某一个commit上而不生成分支，这种&lt;code&gt;分离HEAD指针&lt;/code&gt;的情况，如果只会再切换到其他分支上，那么将可能丢失在这个commit上后产生的修改（&lt;code&gt;需要自行记住提交的hash值，再切换回来&lt;/code&gt;），（&lt;code&gt;HEAD要尽量与分支绑定在一起进行操作&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;git cat-file -t&lt;/code&gt;可以查看&lt;code&gt;git 产生的hash值的类型&lt;/code&gt;，使用&lt;code&gt;git cat-file -p&lt;/code&gt;可以查看&lt;code&gt;类型具体的内容&lt;/code&gt;，&lt;/li&gt;
+&lt;/ul&gt;
 &lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/about/git.jpg&#34;/&gt;
 &lt;/figure&gt;
 
