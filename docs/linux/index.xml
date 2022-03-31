@@ -47,7 +47,49 @@
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;|&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;管道是进程通信的方式之一，能将前一个命令的执行结果传递给后面的命令&lt;/li&gt;
+&lt;li&gt;例：&lt;code&gt;ls | grep 1*&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;输入重定向&lt;/li&gt;
+&lt;li&gt;例： &lt;code&gt;read zhugeqing &amp;lt; zhugeqing.txt&lt;/code&gt;（将zhugeqing.txt的内容作为$zhugeqing的内容）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; , &lt;code&gt;&amp;amp;&amp;gt;&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;输出重定向&lt;/li&gt;
+&lt;li&gt;例：&lt;code&gt;echo &amp;quot;zhugeqing&amp;quot; &amp;gt; zhugeqing.txt&lt;/code&gt;（将内容zhugeqing写入并覆盖zhugeqing.txt里面的内容）&lt;/li&gt;
+&lt;li&gt;例：&lt;code&gt;echo &amp;quot;zhugeqing&amp;quot; &amp;gt;&amp;gt; zhugeqing.txt&lt;/code&gt;（将内容zhugeqing追加到zhugeqing.txt里面）&lt;/li&gt;
+&lt;li&gt;例：&lt;code&gt;ld &amp;amp;&amp;gt; error.log&lt;/code&gt; （将执行产生的错误写入到文件中;&lt;code&gt;错误重定向&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;输入和输出重定向组合使用&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;cat &amp;gt; /root/a.txt &amp;laquo;EOF&lt;br /&gt;
+zhugeqing&lt;br /&gt;
+EOF&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;*&lt;code&gt; 变量赋值&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;变量名只能包含字母，数字，下划线；变量名不能以数字开头&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;变量名=变量值&lt;/code&gt;；例：&lt;code&gt;a=12345&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;使用let为变量赋值&lt;/code&gt;；例：&lt;code&gt;let a=12345&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;将命令赋给变量&lt;/code&gt;；例：&lt;code&gt;l=ls&lt;/code&gt;（可以临时将一些比较长的命令赋给一个变量再用于使用）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;将命令结果赋给变量&lt;/code&gt;；例：&lt;code&gt;ls_res=$(ls)&lt;/code&gt;（或者使用&lt;code&gt;`&lt;/code&gt; &lt;code&gt;`&lt;/code&gt;来代替&lt;code&gt;$()&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;变量值&lt;/code&gt;有空格等特殊符号需要包含在&lt;code&gt;&amp;quot; &amp;quot;&lt;/code&gt;活&lt;code&gt;&#39; &#39;&lt;/code&gt;中；例：&lt;code&gt;string=&amp;quot;123 33&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/linux.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
@@ -236,7 +278,7 @@
         
         <atom:modified>Sun, 27 Mar 2022 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/linux/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/</guid>
-        <description>Linux常见目录 / 系统根目录 /root root用户家目录 /bin 命令目录 /sbin 管理命令目录 /etc 配置文件目录 /home/username 普通用户目录 /usr/bin /usr/sbin 系统预装的其他命令 Linux基本命令 帮助命令 man man 是 manual(手册)的缩写 man 命令分为9章，同时执行man man来查看，比如man 7 man（主要是为了区分一些重名，比如命令与配置文件重名） 通过执行LANG=zh_CN.UTF8，可以切换为中文（locale查看是否有对应的中文字体） help shell</description>
+        <description>Linux常见目录 / 系统根目录 /root root用户家目录 /bin 命令目录 /sbin 管理命令目录 /etc 配置文件目录 /home/username 普通用户目录 /usr/bin /usr/sbin 系统预装的其他命令 Linux基本命令 帮助命令 man man 是 manual(手册)的缩写 man 命令分为9章，同时执行man man来查看，比如man 7 man（主要是为了区分一些重名，比如命令与配置文件重名） 通过执行LANG=zh_CN.UTF8，可以切换为中文（locale查看当前使用语言） help shell（命令解</description>
         <content:encoded>&lt;h2 id=&#34;linux常见目录&#34;&gt;Linux常见目录&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;/&lt;/code&gt; 系统根目录&lt;/li&gt;
@@ -255,7 +297,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;man&lt;/code&gt; 是 &lt;code&gt;manual(手册)&lt;/code&gt;的缩写&lt;br /&gt;
 &lt;code&gt;man&lt;/code&gt; 命令分为&lt;code&gt;9章&lt;/code&gt;，同时执行&lt;code&gt;man man&lt;/code&gt;来查看，比如&lt;code&gt;man 7 man&lt;/code&gt;（主要是为了区分一些重名，比如命令与配置文件重名）&lt;br /&gt;
-通过执行&lt;code&gt;LANG=zh_CN.UTF8&lt;/code&gt;，可以切换为中文（&lt;code&gt;locale&lt;/code&gt;查看是否有对应的中文字体）&lt;/p&gt;
+通过执行&lt;code&gt;LANG=zh_CN.UTF8&lt;/code&gt;，可以切换为中文（&lt;code&gt;locale&lt;/code&gt;查看当前使用语言）&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;help&lt;/code&gt;&lt;/li&gt;
@@ -344,10 +386,7 @@
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;查看文件文本内容显示到终端&lt;br /&gt;
-&lt;code&gt;cat &amp;gt; /root/a.txt &amp;lt;&amp;lt; EOF&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;cat 的多用&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;EOF&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;cat的多用&lt;/code&gt;将内容覆盖到a.txt文件中&lt;/p&gt;
+&lt;code&gt;cat a.txt&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;head&lt;/code&gt;&lt;/li&gt;

@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 30, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;1&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1885,7 +1885,49 @@
 </ul>
 </div></p>
 </li>
+<li>
+<p><code>|</code><br />
+<div class="box"><ul>
+<li>管道是进程通信的方式之一，能将前一个命令的执行结果传递给后面的命令</li>
+<li>例：<code>ls | grep 1*</code></li>
 </ul>
+</div></p>
+</li>
+<li>
+<p><code>&lt;</code><br />
+<div class="box"><ul>
+<li>输入重定向</li>
+<li>例： <code>read zhugeqing &lt; zhugeqing.txt</code>（将zhugeqing.txt的内容作为$zhugeqing的内容）</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>&gt;</code>, <code>&gt;&gt;</code> , <code>&amp;&gt;</code><br />
+<div class="box"><ul>
+<li>输出重定向</li>
+<li>例：<code>echo &quot;zhugeqing&quot; &gt; zhugeqing.txt</code>（将内容zhugeqing写入并覆盖zhugeqing.txt里面的内容）</li>
+<li>例：<code>echo &quot;zhugeqing&quot; &gt;&gt; zhugeqing.txt</code>（将内容zhugeqing追加到zhugeqing.txt里面）</li>
+<li>例：<code>ld &amp;&gt; error.log</code> （将执行产生的错误写入到文件中;<code>错误重定向</code>）</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>输入和输出重定向组合使用</code><br />
+<div class="box">cat &gt; /root/a.txt &laquo;EOF<br />
+zhugeqing<br />
+EOF</div></p>
+</li>
+</ul>
+<p>*<code> 变量赋值</code><br />
+<div class="box"><ul>
+<li>变量名只能包含字母，数字，下划线；变量名不能以数字开头</li>
+<li><code>变量名=变量值</code>；例：<code>a=12345</code></li>
+<li><code>使用let为变量赋值</code>；例：<code>let a=12345</code></li>
+<li><code>将命令赋给变量</code>；例：<code>l=ls</code>（可以临时将一些比较长的命令赋给一个变量再用于使用）</li>
+<li><code>将命令结果赋给变量</code>；例：<code>ls_res=$(ls)</code>（或者使用<code>`</code> <code>`</code>来代替<code>$()</code>）</li>
+<li><code>变量值</code>有空格等特殊符号需要包含在<code>&quot; &quot;</code>活<code>' '</code>中；例：<code>string=&quot;123 33&quot;</code></li>
+</ul>
+</div></p>
 
     </article>
     
