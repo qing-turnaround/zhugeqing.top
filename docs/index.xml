@@ -43,6 +43,109 @@
 
       
       <item>
+        <title>Go Channel</title>
+        <link>https://www.zhugeqing.top/golang/channel/</link>
+        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 01 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/channel/</guid>
+        <description>Channel 的结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 type hchan struct { qcount uint // chan 当前里面的数据个数 dataqsiz uint // chan 的容量 buf unsafe.Pointer // 数据缓冲区 elemsize uint16 // chan 元素 类型 的大小 closed uint32 // 是否已经关闭 elemtype *_type // chan 元素 的类型 sendx uint // 记录发送者在buf中的序号 recvx uint // 记录接受者在buf中的序号 recvq waitq // 读取的阻塞协程队列 sendq waitq // 写入的阻塞协程队列 lock mutex // 锁，并发保护 } type waitq struct { first *sudog // sudog 为对 goroutine数据结构的封装 last *sudog } Channel的初始化 判断要初始化的 Channel 需分配</description>
+        <content:encoded>&lt;h2 id=&#34;channel-的结构&#34;&gt;Channel 的结构&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go:chan.go&#34; data-lang=&#34;Go:chan.go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hchan&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;qcount&lt;/span&gt;   &lt;span class=&#34;kt&#34;&gt;uint&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;// chan 当前里面的数据个数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;dataqsiz&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;uint&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;// chan 的容量
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;buf&lt;/span&gt;      &lt;span class=&#34;nx&#34;&gt;unsafe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Pointer&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 数据缓冲区
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;elemsize&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;uint16&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// chan 元素 类型 的大小
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;closed&lt;/span&gt;   &lt;span class=&#34;kt&#34;&gt;uint32&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// 是否已经关闭
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;elemtype&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;_type&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// chan 元素 的类型
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;sendx&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;uint&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;// 记录发送者在buf中的序号
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;recvx&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;uint&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;// 记录接受者在buf中的序号
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;recvq&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;waitq&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;// 读取的阻塞协程队列
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;sendq&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;waitq&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;// 写入的阻塞协程队列
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;lock&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mutex&lt;/span&gt;              &lt;span class=&#34;c1&#34;&gt;// 锁，并发保护
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;waitq&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;first&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sudog&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;// sudog 为对 goroutine数据结构的封装 
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;last&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sudog&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;channel的初始化&#34;&gt;Channel的初始化&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;判断要初始化的 Channel 需分配大小是否为 0，如果为0，则只在内存中分配&lt;code&gt;hchan&lt;/code&gt;结构体大小&lt;/li&gt;
+&lt;li&gt;当通道元素中不包含指针时，连续分配 &lt;code&gt;hchan&lt;/code&gt;结构体大小和size * 元素大小（size为channel元素容量）&lt;/li&gt;
+&lt;li&gt;当通道元素包含指针时，需要单独分配内存空间，这样才能正常的进行垃圾回收&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;channel的写入&#34;&gt;Channel的写入&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;先判断当前 通道是否为 nil，如果是nil，则阻塞当前协程&lt;/li&gt;
+&lt;li&gt;然后进行加锁，判断 通道 是否已经关闭，如果是已经关闭，则抛出 panic&lt;/li&gt;
+&lt;li&gt;然后判断是否有正在等待的读取协程，如果有，则从读取协程链表中获取第一个协程，并将数据复制给它，解锁，重新唤醒 goroutine&lt;/li&gt;
+&lt;li&gt;判断 环形buf是否有空余，如果有空余，则将数据写入环形buf，解锁，重新唤醒 goroutine&lt;/li&gt;
+&lt;li&gt;如果没有空余，则将 该 goroutine 放入 写入协程链表的尾部，阻塞协程，等待被再次唤醒，解锁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;channel的读取&#34;&gt;Channel的读取&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;先判断当前 通道是否为nil，如果为nil，则阻塞当前协程&lt;/li&gt;
+&lt;li&gt;然后进行加锁，判断当前通道是否已经关闭且buf为空，如果是，则 解锁，返回 通道数据类型对应的 零值，唤醒协程&lt;/li&gt;
+&lt;li&gt;然后先判断是否有正在等待的写入协程，有如果有，则从写入协程链表中获取第一个协程，并将它写入的数据复制到当前协程里面，解锁，等待调度&lt;/li&gt;
+&lt;li&gt;判断 环形buf是否有空余，如果有，则读取buf的数据，并写入当前读取的协程当中，解锁，唤醒 goroutine&lt;/li&gt;
+&lt;li&gt;如果没有空余，则将当前 goroutine 加入到等待读取协程链表的尾部，阻塞协程，等待被再次唤醒，解锁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;channel的关闭&#34;&gt;Channel的关闭&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;首先判断Channel是否为nil，如果是，则抛出异常&lt;/li&gt;
+&lt;li&gt;上锁，判断通过是否已经 close过，如果是，则解锁，抛出异常&lt;/li&gt;
+&lt;li&gt;如果没有关闭过，则将 &lt;code&gt;hchan&lt;/code&gt;的&lt;code&gt;closed&lt;/code&gt;字段改成1，然后遍历 等待读取协程链表和等待写入协程链表，将它们的 goroutine 收集到一个队列当中， 解锁，然后遍历这个队列，挨个唤醒协程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>并发原语之Mutex</title>
         <link>https://www.zhugeqing.top/golang/mutex/</link>
         <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
