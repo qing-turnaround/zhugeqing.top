@@ -44,6 +44,26 @@ title: "git笔记"
 > 参数`--graph`带图形的查看
 > 参数`-n2`查看最近2次提交历史（数字可修改）
 
+* `git branch`
+> 查看分支 
+> `git branch a` 从当前commit创建一个名叫`a`的分支
+> `git branch -d a` 删除分支a
+> `git branch -v` 查看分之以及对应的commit
+
+* `git checkout`
+> 切换分支
+> `git checkout master` 切换到`master`分支
+> `git checkout -b a` 创建分支a并切换到分支a
+
+* `git commit --amend`
+> 修改最新一次commit 的message（编辑文件类似vim） 
+
+* `git rebase -i 83b81348aa04`
+> 83b81348aa04为想要修改commit message的上一个分支
+> 修改文件的`pick`为`r`，保存退出，再进行修改message，保存退出
+
+
+
 * `gitk` 
 > 图形化界面工具（查看有中文乱码，需在gitconfig中加入）
 {{< boxmd >}}

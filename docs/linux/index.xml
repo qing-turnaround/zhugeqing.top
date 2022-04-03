@@ -79,8 +79,8 @@
 zhugeqing&lt;br /&gt;
 EOF&lt;/div&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;*&lt;code&gt; 变量赋值&lt;/code&gt;&lt;br /&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;变量赋值&lt;/code&gt;&lt;br /&gt;
 &lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
 &lt;li&gt;变量名只能包含字母，数字，下划线；变量名不能以数字开头&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;变量名=变量值&lt;/code&gt;；例：&lt;code&gt;a=12345&lt;/code&gt;&lt;/li&gt;
@@ -90,6 +90,8 @@ EOF&lt;/div&gt;&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;变量值&lt;/code&gt;有空格等特殊符号需要包含在&lt;code&gt;&amp;quot; &amp;quot;&lt;/code&gt;活&lt;code&gt;&#39; &#39;&lt;/code&gt;中；例：&lt;code&gt;string=&amp;quot;123 33&amp;quot;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/linux.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>

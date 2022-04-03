@@ -1870,6 +1870,36 @@
 参数<code>-n2</code>查看最近2次提交历史（数字可修改）</p>
 </blockquote>
 <ul>
+<li><code>git branch</code></li>
+</ul>
+<blockquote>
+<p>查看分支 <br />
+<code>git branch a</code> 从当前commit创建一个名叫<code>a</code>的分支<br />
+<code>git branch -d a</code> 删除分支a<br />
+<code>git branch -v</code> 查看分之以及对应的commit</p>
+</blockquote>
+<ul>
+<li><code>git checkout</code></li>
+</ul>
+<blockquote>
+<p>切换分支<br />
+<code>git checkout master</code> 切换到<code>master</code>分支<br />
+<code>git checkout -b a</code> 创建分支a并切换到分支a</p>
+</blockquote>
+<ul>
+<li><code>git commit --amend</code></li>
+</ul>
+<blockquote>
+<p>修改最新一次commit 的message（编辑文件类似vim）</p>
+</blockquote>
+<ul>
+<li><code>git rebase -i 83b81348aa04</code></li>
+</ul>
+<blockquote>
+<p>83b81348aa04为想要修改commit message的上一个分支<br />
+修改文件的<code>pick</code>为<code>r</code>，保存退出，再进行修改message，保存退出</p>
+</blockquote>
+<ul>
 <li><code>gitk</code></li>
 </ul>
 <blockquote>

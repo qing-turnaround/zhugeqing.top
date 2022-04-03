@@ -29,6 +29,15 @@
     <loc>https://www.zhugeqing.top/write/2022-04-02/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.zhugeqing.top/tags/go/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/tags/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/golang/mutex/</loc>
+    <lastmod>2022-04-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.zhugeqing.top/write/2022-04-01/</loc>
     <lastmod>2022-04-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -45,9 +54,6 @@
     <lastmod>2022-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/series/</loc>
-    <lastmod>2022-03-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/tags/</loc>
     <lastmod>2022-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/write/2022-03-30/</loc>
@@ -82,9 +88,6 @@
   </url><url>
     <loc>https://www.zhugeqing.top/docker/5/</loc>
     <lastmod>2022-03-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/tags/go/</loc>
-    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/golang/producer_consumer/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
@@ -124,6 +127,9 @@
   </url><url>
     <loc>https://www.zhugeqing.top/write/2022-1-7/</loc>
     <lastmod>2022-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/golang/inferdir/</loc>
+    <lastmod>2022-01-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/series/problems/</loc>
     <lastmod>2022-01-01T00:00:00+00:00</lastmod>
