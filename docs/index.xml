@@ -146,6 +146,95 @@
       </item>
       
       <item>
+        <title>Goroutine</title>
+        <link>https://www.zhugeqing.top/golang/goroutine/</link>
+        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 01 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/goroutine/</guid>
+        <description>协程 与 线程 调度方式：协程是用户态的，由Go语言程序的调度器来进行调度，同时，多个协程从属于某一个线程，协程与线程的关系是M : N的，即多个协程对应多个线程，Go语言调度器可以将多个协程调度到一个线程上，但协程也可以切换到其他的线程 上下文切换：协程的上下文切换速度要快于线程，协程的上下文切换无须从用户态与内核态的切换 调度策略：线程的调度策略是抢占式的，即操作系统为了均衡每一个线程所运行的时间，会定时强</description>
+        <content:encoded>&lt;h2 id=&#34;协程-与-线程&#34;&gt;协程 与 线程&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;调度方式：协程是用户态的，由Go语言程序的调度器来进行调度，同时，多个协程从属于某一个线程，协程与线程的关系是M : N的，即多个协程对应多个线程，Go语言调度器可以将多个协程调度到一个线程上，但协程也可以切换到其他的线程&lt;/li&gt;
+&lt;li&gt;上下文切换：协程的上下文切换速度要快于线程，协程的上下文切换无须从用户态与内核态的切换&lt;/li&gt;
+&lt;li&gt;调度策略：线程的调度策略是抢占式的，即操作系统为了均衡每一个线程所运行的时间，会定时强制线程上下文切换。Go语言的协程在一般情况下都是协作式调度，即一个协程在运行完成之后，会主动将执行权限让给其他协程，这样一个协程能更好的在规定的时间完成任务，但当一个协程运行过长时间的话，也会被强制抢占&lt;/li&gt;
+&lt;li&gt;栈的大小：对于线程来说，一般线程的栈的大小为 2KB，而协程的栈的大小为2MB。线程的栈在运行是不能更改，但是协程可以随着运行时的需要而动态增加，32位机器最大可以是250MB，64位则是1GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;gmp模型&#34;&gt;GMP模型&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;G&lt;/code&gt;：Goroutinue，runtime.g结构体表示（Go语言的协程）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;M&lt;/code&gt;：Machine，runtime.m结构体表示（实际的线程）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;P&lt;/code&gt;：Processor，runtime.p结构体表示（Go语言的逻辑处理器）&lt;/li&gt;
+&lt;li&gt;每个&lt;code&gt;P&lt;/code&gt;上都挂载了一个局部队列，局部队列保存待执行的&lt;code&gt;G&lt;/code&gt;，当局部队列满了 无法将&lt;code&gt;G&lt;/code&gt;放入的时候，会将&lt;code&gt;G&lt;/code&gt;放入全局队列中&lt;/li&gt;
+&lt;li&gt;每一个&lt;code&gt;P&lt;/code&gt;都绑定在一个&lt;code&gt;M&lt;/code&gt;上，&lt;code&gt;M&lt;/code&gt;是真正运行&lt;code&gt;P&lt;/code&gt;中&lt;code&gt;G&lt;/code&gt;的实体，&lt;code&gt;M&lt;/code&gt;从绑定的&lt;code&gt;P&lt;/code&gt;的局部队列上获取&lt;code&gt;G&lt;/code&gt;来执行&lt;/li&gt;
+&lt;li&gt;当&lt;code&gt;M&lt;/code&gt;绑定的&lt;code&gt;P&lt;/code&gt;的局部队列为空时，&lt;code&gt;M&lt;/code&gt;会从全局队列获取&lt;code&gt;G&lt;/code&gt;到本地队列来执行，当全局队列也为空时，会从其他&lt;code&gt;P&lt;/code&gt;的本地队列来获取，这种方式也就是&lt;code&gt;work stealing&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;当&lt;code&gt;G&lt;/code&gt;由于系统调用而阻塞时，会导致&lt;code&gt;M&lt;/code&gt;也阻塞，这时&lt;code&gt;P&lt;/code&gt;会跟&lt;code&gt;M&lt;/code&gt;进行解绑（&lt;code&gt;hand off&lt;/code&gt;），然后寻找空闲的&lt;code&gt;M&lt;/code&gt;进行绑定，如果没有，则会创建一个&lt;code&gt;M&lt;/code&gt;来进行绑定&lt;/li&gt;
+&lt;li&gt;当&lt;code&gt;G&lt;/code&gt;由于&lt;code&gt;Channel&lt;/code&gt;和&lt;code&gt;网络I/O&lt;/code&gt;阻塞时，不会阻塞&lt;code&gt;M&lt;/code&gt;，这时&lt;code&gt;M&lt;/code&gt;会寻找可运行的&lt;code&gt;G&lt;/code&gt;，当阻塞的&lt;code&gt;G&lt;/code&gt;恢复时，可以重新进入&lt;code&gt;P&lt;/code&gt;的队列，等待运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Go语言初始化顺序</title>
+        <link>https://www.zhugeqing.top/golang/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%BA%E5%BA%8F/</link>
+        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 01 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%BA%E5%BA%8F/</guid>
+        <description>Go语言包的初始化顺序 从main包开始，先初始化导入的包，导入的包会按照导入的顺序进行初始化。 一个包被多个包导入，也只会初始化一次 一个包中的初始化顺序 同一个包下的 go 文件，会按照文件名的顺序进行初始化 而对于同一个包，会先初始化 const，再初始化 var，最后再是init() (也就是会按照文件的顺序，先初始化各个文件的const，再初始化各个文件的var，最后再初始化init()) main包 总是最后进</description>
+        <content:encoded>&lt;h2 id=&#34;go语言包的初始化顺序&#34;&gt;Go语言包的初始化顺序&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;从&lt;code&gt;main&lt;/code&gt;包开始，先初始化导入的包，导入的包会按照导入的顺序进行初始化。&lt;/li&gt;
+&lt;li&gt;一个包被多个包导入，也只会初始化一次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;一个包中的初始化顺序&#34;&gt;一个包中的初始化顺序&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;同一个包下的 go 文件，会按照文件名的顺序进行初始化&lt;/li&gt;
+&lt;li&gt;而对于同一个包，会先初始化 &lt;code&gt;const&lt;/code&gt;，再初始化 &lt;code&gt;var&lt;/code&gt;，最后再是&lt;code&gt;init()&lt;/code&gt; (&lt;code&gt;也就是会按照文件的顺序，先初始化各个文件的const，再初始化各个文件的var，最后再初始化init()&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;main包 总是最后进行初始化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>并发原语之Mutex</title>
         <link>https://www.zhugeqing.top/golang/mutex/</link>
         <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
@@ -318,6 +407,70 @@ EOF&lt;/div&gt;&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;变量的引用&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;$zhugeqing &lt;code&gt;（zhugeqing为 shell变量）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;${zhugeqing}&lt;/li&gt;
+&lt;li&gt;在shell脚本中，使用shell变量，由于&lt;code&gt;bash 1.sh&lt;/code&gt;和&lt;code&gt;./1.sh&lt;/code&gt;这两种方式会生成子进程，会导致变量无法到子进程使用，所有需要通过&lt;code&gt;export zhugeqing&lt;/code&gt;来导出变量，使得子进程也可以访问&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;unset zhugeqing&lt;/code&gt;来删除变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;环境变量&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$PATH&lt;/code&gt;也就是执行命令的搜索路径，当有命令想在任意路径都能对其进行访问，可以在&lt;code&gt;/etc/profile&lt;/code&gt;文件中加入&lt;code&gt;PATH=$PATH:/root&lt;/code&gt;（比如这个命令就在/root/目录下），需要再&lt;code&gt;source&lt;/code&gt;一下profile文件&lt;/li&gt;
+&lt;li&gt;通过修改变量&lt;code&gt;$PS1&lt;/code&gt;可以改变shell提示终端符，通过修改&lt;code&gt;/root/.bashrc&lt;/code&gt;来到达永久生效的效果，比如设置&lt;code&gt;PS1=&amp;quot;[\e[32;40m\u @\h \t \w$]&amp;quot;&lt;/code&gt;（具体搜索——修改linux shell 变量PS1），也可以将变量加入到&lt;code&gt;/etc/profile&lt;/code&gt;，然后再&lt;code&gt;source&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;预定义变量&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$?&lt;/code&gt;:展示上一条命令的执行结果是否正常，0为正常，1为错误&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$$&lt;/code&gt;:展示当前进程的进程ID&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$0&lt;/code&gt;:展示当前的进程名字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;位置变量&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$0&lt;/code&gt; &lt;code&gt;$1&lt;/code&gt;&amp;hellip; &lt;code&gt;${11}&lt;/code&gt;可以用于读取执行shell脚本所带的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell:1.sh&#34; data-lang=&#34;Shell:1.sh&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;source 1.sh 诸葛青 shell&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell:2.sh&#34; data-lang=&#34;Shell:2.sh&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-我就是shell&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;source 1.sh 诸葛青&lt;/code&gt;（可以解决传入参数不足，默认使用&lt;code&gt;我就是shell&lt;/code&gt;）&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
@@ -479,6 +632,33 @@ EOF&lt;/div&gt;&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;进程管理&#34;&gt;进程管理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;进程查看&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ps&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;单独执行ps只会查看当前终端可以查询到的&lt;br /&gt;
+&lt;code&gt;ps -ef&lt;/code&gt;：以全形式查看当前所有的进程&lt;br /&gt;
+&lt;code&gt;-a&lt;/code&gt;：当前终端所有进程&lt;br /&gt;
+&lt;code&gt;-u&lt;/code&gt;：以用户格式显示&lt;br /&gt;
+&lt;code&gt;-x&lt;/code&gt;：后台进程也显示&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pstree&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以树形结构显示&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;动态查看&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>

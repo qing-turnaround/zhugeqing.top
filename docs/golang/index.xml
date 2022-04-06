@@ -123,6 +123,95 @@
       </item>
       
       <item>
+        <title>Goroutine</title>
+        <link>https://www.zhugeqing.top/golang/goroutine/</link>
+        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 01 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/goroutine/</guid>
+        <description>协程 与 线程 调度方式：协程是用户态的，由Go语言程序的调度器来进行调度，同时，多个协程从属于某一个线程，协程与线程的关系是M : N的，即多个协程对应多个线程，Go语言调度器可以将多个协程调度到一个线程上，但协程也可以切换到其他的线程 上下文切换：协程的上下文切换速度要快于线程，协程的上下文切换无须从用户态与内核态的切换 调度策略：线程的调度策略是抢占式的，即操作系统为了均衡每一个线程所运行的时间，会定时强</description>
+        <content:encoded>&lt;h2 id=&#34;协程-与-线程&#34;&gt;协程 与 线程&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;调度方式：协程是用户态的，由Go语言程序的调度器来进行调度，同时，多个协程从属于某一个线程，协程与线程的关系是M : N的，即多个协程对应多个线程，Go语言调度器可以将多个协程调度到一个线程上，但协程也可以切换到其他的线程&lt;/li&gt;
+&lt;li&gt;上下文切换：协程的上下文切换速度要快于线程，协程的上下文切换无须从用户态与内核态的切换&lt;/li&gt;
+&lt;li&gt;调度策略：线程的调度策略是抢占式的，即操作系统为了均衡每一个线程所运行的时间，会定时强制线程上下文切换。Go语言的协程在一般情况下都是协作式调度，即一个协程在运行完成之后，会主动将执行权限让给其他协程，这样一个协程能更好的在规定的时间完成任务，但当一个协程运行过长时间的话，也会被强制抢占&lt;/li&gt;
+&lt;li&gt;栈的大小：对于线程来说，一般线程的栈的大小为 2KB，而协程的栈的大小为2MB。线程的栈在运行是不能更改，但是协程可以随着运行时的需要而动态增加，32位机器最大可以是250MB，64位则是1GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;gmp模型&#34;&gt;GMP模型&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;G&lt;/code&gt;：Goroutinue，runtime.g结构体表示（Go语言的协程）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;M&lt;/code&gt;：Machine，runtime.m结构体表示（实际的线程）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;P&lt;/code&gt;：Processor，runtime.p结构体表示（Go语言的逻辑处理器）&lt;/li&gt;
+&lt;li&gt;每个&lt;code&gt;P&lt;/code&gt;上都挂载了一个局部队列，局部队列保存待执行的&lt;code&gt;G&lt;/code&gt;，当局部队列满了 无法将&lt;code&gt;G&lt;/code&gt;放入的时候，会将&lt;code&gt;G&lt;/code&gt;放入全局队列中&lt;/li&gt;
+&lt;li&gt;每一个&lt;code&gt;P&lt;/code&gt;都绑定在一个&lt;code&gt;M&lt;/code&gt;上，&lt;code&gt;M&lt;/code&gt;是真正运行&lt;code&gt;P&lt;/code&gt;中&lt;code&gt;G&lt;/code&gt;的实体，&lt;code&gt;M&lt;/code&gt;从绑定的&lt;code&gt;P&lt;/code&gt;的局部队列上获取&lt;code&gt;G&lt;/code&gt;来执行&lt;/li&gt;
+&lt;li&gt;当&lt;code&gt;M&lt;/code&gt;绑定的&lt;code&gt;P&lt;/code&gt;的局部队列为空时，&lt;code&gt;M&lt;/code&gt;会从全局队列获取&lt;code&gt;G&lt;/code&gt;到本地队列来执行，当全局队列也为空时，会从其他&lt;code&gt;P&lt;/code&gt;的本地队列来获取，这种方式也就是&lt;code&gt;work stealing&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;当&lt;code&gt;G&lt;/code&gt;由于系统调用而阻塞时，会导致&lt;code&gt;M&lt;/code&gt;也阻塞，这时&lt;code&gt;P&lt;/code&gt;会跟&lt;code&gt;M&lt;/code&gt;进行解绑（&lt;code&gt;hand off&lt;/code&gt;），然后寻找空闲的&lt;code&gt;M&lt;/code&gt;进行绑定，如果没有，则会创建一个&lt;code&gt;M&lt;/code&gt;来进行绑定&lt;/li&gt;
+&lt;li&gt;当&lt;code&gt;G&lt;/code&gt;由于&lt;code&gt;Channel&lt;/code&gt;和&lt;code&gt;网络I/O&lt;/code&gt;阻塞时，不会阻塞&lt;code&gt;M&lt;/code&gt;，这时&lt;code&gt;M&lt;/code&gt;会寻找可运行的&lt;code&gt;G&lt;/code&gt;，当阻塞的&lt;code&gt;G&lt;/code&gt;恢复时，可以重新进入&lt;code&gt;P&lt;/code&gt;的队列，等待运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Go语言初始化顺序</title>
+        <link>https://www.zhugeqing.top/golang/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%BA%E5%BA%8F/</link>
+        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 01 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%BA%E5%BA%8F/</guid>
+        <description>Go语言包的初始化顺序 从main包开始，先初始化导入的包，导入的包会按照导入的顺序进行初始化。 一个包被多个包导入，也只会初始化一次 一个包中的初始化顺序 同一个包下的 go 文件，会按照文件名的顺序进行初始化 而对于同一个包，会先初始化 const，再初始化 var，最后再是init() (也就是会按照文件的顺序，先初始化各个文件的const，再初始化各个文件的var，最后再初始化init()) main包 总是最后进</description>
+        <content:encoded>&lt;h2 id=&#34;go语言包的初始化顺序&#34;&gt;Go语言包的初始化顺序&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;从&lt;code&gt;main&lt;/code&gt;包开始，先初始化导入的包，导入的包会按照导入的顺序进行初始化。&lt;/li&gt;
+&lt;li&gt;一个包被多个包导入，也只会初始化一次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;一个包中的初始化顺序&#34;&gt;一个包中的初始化顺序&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;同一个包下的 go 文件，会按照文件名的顺序进行初始化&lt;/li&gt;
+&lt;li&gt;而对于同一个包，会先初始化 &lt;code&gt;const&lt;/code&gt;，再初始化 &lt;code&gt;var&lt;/code&gt;，最后再是&lt;code&gt;init()&lt;/code&gt; (&lt;code&gt;也就是会按照文件的顺序，先初始化各个文件的const，再初始化各个文件的var，最后再初始化init()&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;main包 总是最后进行初始化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>并发原语之Mutex</title>
         <link>https://www.zhugeqing.top/golang/mutex/</link>
         <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>

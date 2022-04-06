@@ -64,3 +64,44 @@ EOF
 * `将命令结果赋给变量`；例：`ls_res=$(ls)`（或者使用`` ` `` `` ` ``来代替`$()`） 
 * `变量值`有空格等特殊符号需要包含在`" "`活`' '`中；例：`string="123 33"`
 {{< /boxmd >}}
+
+* `变量的引用`
+{{< boxmd >}}
+* $zhugeqing `（zhugeqing为 shell变量）`
+* ${zhugeqing} 
+* 在shell脚本中，使用shell变量，由于`bash 1.sh`和`./1.sh`这两种方式会生成子进程，会导致变量无法到子进程使用，所有需要通过`export zhugeqing`来导出变量，使得子进程也可以访问
+* 使用`unset zhugeqing`来删除变量
+{{< /boxmd >}}
+
+* `环境变量`
+{{< boxmd >}}
+* `$PATH`也就是执行命令的搜索路径，当有命令想在任意路径都能对其进行访问，可以在`/etc/profile`文件中加入`PATH=$PATH:/root`（比如这个命令就在/root/目录下），需要再`source`一下profile文件
+* 通过修改变量`$PS1`可以改变shell提示终端符，通过修改`/root/.bashrc`来到达永久生效的效果，比如设置`PS1="[\e[32;40m\u @\h \t \w$]"`（具体搜索——修改linux shell 变量PS1），也可以将变量加入到`/etc/profile`，然后再`source`
+{{< /boxmd >}}
+
+* `预定义变量`
+{{< boxmd >}}
+* `$?`:展示上一条命令的执行结果是否正常，0为正常，1为错误
+* `$$`:展示当前进程的进程ID
+* `$0`:展示当前的进程名字
+{{< /boxmd >}}
+
+* `位置变量`
+{{< boxmd >}}
+* `$0` `$1`... `${11}`可以用于读取执行shell脚本所带的值
+```Shell:1.sh
+#!/bin/bash
+
+echo $1
+echo $2
+```
+`source 1.sh 诸葛青 shell`
+
+```Shell:2.sh
+#!/bin/bash
+
+echo $1
+echo ${2-我就是shell}
+```
+`source 1.sh 诸葛青`（可以解决传入参数不足，默认使用`我就是shell`）
+{{< /boxmd >}}

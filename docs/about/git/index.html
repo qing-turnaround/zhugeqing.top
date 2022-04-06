@@ -1876,7 +1876,7 @@
 <p>查看分支 <br />
 <code>git branch a</code> 从当前commit创建一个名叫<code>a</code>的分支<br />
 <code>git branch -d a</code> 删除分支a<br />
-<code>git branch -v</code> 查看分之以及对应的commit</p>
+<code>git branch -v</code> 查看分支以及对应的commit</p>
 </blockquote>
 <ul>
 <li><code>git checkout</code></li>
@@ -1900,6 +1900,31 @@
 修改文件的<code>pick</code>为<code>r</code>，保存退出，再进行修改message，保存退出</p>
 </blockquote>
 <ul>
+<li><code>git reset HEAD</code></li>
+</ul>
+<blockquote>
+<p>从当前提交回退版本<br />
+git reset HEAD^1；1代表上一次，2表示上上次，以此类推（<code>win的cmd可能需要给</code>HEAD^1<code>加双引号</code>）</p>
+</blockquote>
+<ul>
+<li><code>git cherry-pick 83b81348aa04</code></li>
+</ul>
+<blockquote>
+<p>将提交83b81348aa04应用到当前提交</p>
+</blockquote>
+<ul>
+<li><code>git rebase master dev</code></li>
+</ul>
+<blockquote>
+<p>将dev分支合并到maser分支之后，</p>
+</blockquote>
+<ul>
+<li><code>git merge dev</code></li>
+</ul>
+<blockquote>
+<p>将dev分支和当前分支的提交合并成一个</p>
+</blockquote>
+<ul>
 <li><code>gitk</code></li>
 </ul>
 <blockquote>
@@ -1920,9 +1945,6 @@ encoding = utf-8</div></p>
 <li>如果使用<code>git checkout</code> 切换到某一个commit上而不生成分支，这种<code>分离HEAD指针</code>的情况，如果只会再切换到其他分支上，那么将可能丢失在这个commit上后产生的修改（<code>需要自行记住提交的hash值，再切换回来</code>），（<code>HEAD要尽量与分支绑定在一起进行操作</code>）</li>
 <li>使用<code>git cat-file -t</code>可以查看<code>git 产生的hash值的类型</code>，使用<code>git cat-file -p</code>可以查看<code>类型具体的内容</code>，</li>
 </ul>
-<figure><img src="/images/about/git.jpg"/>
-</figure>
-
 
   </article>
 </main>

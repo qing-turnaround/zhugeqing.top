@@ -91,6 +91,70 @@ EOF&lt;/div&gt;&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;变量的引用&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;$zhugeqing &lt;code&gt;（zhugeqing为 shell变量）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;${zhugeqing}&lt;/li&gt;
+&lt;li&gt;在shell脚本中，使用shell变量，由于&lt;code&gt;bash 1.sh&lt;/code&gt;和&lt;code&gt;./1.sh&lt;/code&gt;这两种方式会生成子进程，会导致变量无法到子进程使用，所有需要通过&lt;code&gt;export zhugeqing&lt;/code&gt;来导出变量，使得子进程也可以访问&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;unset zhugeqing&lt;/code&gt;来删除变量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;环境变量&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$PATH&lt;/code&gt;也就是执行命令的搜索路径，当有命令想在任意路径都能对其进行访问，可以在&lt;code&gt;/etc/profile&lt;/code&gt;文件中加入&lt;code&gt;PATH=$PATH:/root&lt;/code&gt;（比如这个命令就在/root/目录下），需要再&lt;code&gt;source&lt;/code&gt;一下profile文件&lt;/li&gt;
+&lt;li&gt;通过修改变量&lt;code&gt;$PS1&lt;/code&gt;可以改变shell提示终端符，通过修改&lt;code&gt;/root/.bashrc&lt;/code&gt;来到达永久生效的效果，比如设置&lt;code&gt;PS1=&amp;quot;[\e[32;40m\u @\h \t \w$]&amp;quot;&lt;/code&gt;（具体搜索——修改linux shell 变量PS1），也可以将变量加入到&lt;code&gt;/etc/profile&lt;/code&gt;，然后再&lt;code&gt;source&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;预定义变量&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$?&lt;/code&gt;:展示上一条命令的执行结果是否正常，0为正常，1为错误&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$$&lt;/code&gt;:展示当前进程的进程ID&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$0&lt;/code&gt;:展示当前的进程名字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;位置变量&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$0&lt;/code&gt; &lt;code&gt;$1&lt;/code&gt;&amp;hellip; &lt;code&gt;${11}&lt;/code&gt;可以用于读取执行shell脚本所带的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell:1.sh&#34; data-lang=&#34;Shell:1.sh&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;source 1.sh 诸葛青 shell&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell:2.sh&#34; data-lang=&#34;Shell:2.sh&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-我就是shell&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;source 1.sh 诸葛青&lt;/code&gt;（可以解决传入参数不足，默认使用&lt;code&gt;我就是shell&lt;/code&gt;）&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
@@ -252,6 +316,33 @@ EOF&lt;/div&gt;&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;进程管理&#34;&gt;进程管理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;进程查看&lt;/code&gt;&lt;br /&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ps&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;单独执行ps只会查看当前终端可以查询到的&lt;br /&gt;
+&lt;code&gt;ps -ef&lt;/code&gt;：以全形式查看当前所有的进程&lt;br /&gt;
+&lt;code&gt;-a&lt;/code&gt;：当前终端所有进程&lt;br /&gt;
+&lt;code&gt;-u&lt;/code&gt;：以用户格式显示&lt;br /&gt;
+&lt;code&gt;-x&lt;/code&gt;：后台进程也显示&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pstree&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以树形结构显示&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;top&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;动态查看&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>

@@ -48,7 +48,7 @@ title: "git笔记"
 > 查看分支 
 > `git branch a` 从当前commit创建一个名叫`a`的分支
 > `git branch -d a` 删除分支a
-> `git branch -v` 查看分之以及对应的commit
+> `git branch -v` 查看分支以及对应的commit
 
 * `git checkout`
 > 切换分支
@@ -62,7 +62,18 @@ title: "git笔记"
 > 83b81348aa04为想要修改commit message的上一个分支
 > 修改文件的`pick`为`r`，保存退出，再进行修改message，保存退出
 
+* `git reset HEAD`
+> 从当前提交回退版本
+> git reset HEAD^1；1代表上一次，2表示上上次，以此类推（`win的cmd可能需要给`HEAD^1`加双引号`）
 
+* `git cherry-pick 83b81348aa04`
+> 将提交83b81348aa04应用到当前提交
+
+* `git rebase master dev`
+> 将dev分支合并到maser分支之后，
+
+* `git merge dev`
+> 将dev分支和当前分支的提交合并成一个
 
 * `gitk` 
 > 图形化界面工具（查看有中文乱码，需在gitconfig中加入）
@@ -85,7 +96,7 @@ title: "git笔记"
 * 如果使用`git checkout` 切换到某一个commit上而不生成分支，这种`分离HEAD指针`的情况，如果只会再切换到其他分支上，那么将可能丢失在这个commit上后产生的修改（`需要自行记住提交的hash值，再切换回来`），（`HEAD要尽量与分支绑定在一起进行操作`）
 * 使用`git cat-file -t`可以查看`git 产生的hash值的类型`，使用`git cat-file -p`可以查看`类型具体的内容`，
 
-{{< figure src="/images/about/git.jpg" >}}
+
 
 
 

@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 30, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1927,6 +1927,70 @@ EOF</div></p>
 <li><code>将命令结果赋给变量</code>；例：<code>ls_res=$(ls)</code>（或者使用<code>`</code> <code>`</code>来代替<code>$()</code>）</li>
 <li><code>变量值</code>有空格等特殊符号需要包含在<code>&quot; &quot;</code>活<code>' '</code>中；例：<code>string=&quot;123 33&quot;</code></li>
 </ul>
+</div></p>
+</li>
+<li>
+<p><code>变量的引用</code><br />
+<div class="box"><ul>
+<li>$zhugeqing <code>（zhugeqing为 shell变量）</code></li>
+<li>${zhugeqing}</li>
+<li>在shell脚本中，使用shell变量，由于<code>bash 1.sh</code>和<code>./1.sh</code>这两种方式会生成子进程，会导致变量无法到子进程使用，所有需要通过<code>export zhugeqing</code>来导出变量，使得子进程也可以访问</li>
+<li>使用<code>unset zhugeqing</code>来删除变量</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>环境变量</code><br />
+<div class="box"><ul>
+<li><code>$PATH</code>也就是执行命令的搜索路径，当有命令想在任意路径都能对其进行访问，可以在<code>/etc/profile</code>文件中加入<code>PATH=$PATH:/root</code>（比如这个命令就在/root/目录下），需要再<code>source</code>一下profile文件</li>
+<li>通过修改变量<code>$PS1</code>可以改变shell提示终端符，通过修改<code>/root/.bashrc</code>来到达永久生效的效果，比如设置<code>PS1=&quot;[\e[32;40m\u @\h \t \w$]&quot;</code>（具体搜索——修改linux shell 变量PS1），也可以将变量加入到<code>/etc/profile</code>，然后再<code>source</code></li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>预定义变量</code><br />
+<div class="box"><ul>
+<li><code>$?</code>:展示上一条命令的执行结果是否正常，0为正常，1为错误</li>
+<li><code>$$</code>:展示当前进程的进程ID</li>
+<li><code>$0</code>:展示当前的进程名字</li>
+</ul>
+</div></p>
+</li>
+<li>
+<p><code>位置变量</code><br />
+<div class="box"><ul>
+<li><code>$0</code> <code>$1</code>&hellip; <code>${11}</code>可以用于读取执行shell脚本所带的值</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:1.sh" data-lang="Shell:1.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nb">echo</span> <span class="nv">$1</span>
+<span class="nb">echo</span> <span class="nv">$2</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>source 1.sh 诸葛青 shell</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:2.sh" data-lang="Shell:2.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nb">echo</span> <span class="nv">$1</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">2</span><span class="p">-我就是shell</span><span class="si">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>source 1.sh 诸葛青</code>（可以解决传入参数不足，默认使用<code>我就是shell</code>）</p>
 </div></p>
 </li>
 </ul>

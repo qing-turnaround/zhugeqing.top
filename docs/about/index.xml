@@ -167,7 +167,7 @@
 &lt;p&gt;查看分支 &lt;br /&gt;
 &lt;code&gt;git branch a&lt;/code&gt; 从当前commit创建一个名叫&lt;code&gt;a&lt;/code&gt;的分支&lt;br /&gt;
 &lt;code&gt;git branch -d a&lt;/code&gt; 删除分支a&lt;br /&gt;
-&lt;code&gt;git branch -v&lt;/code&gt; 查看分之以及对应的commit&lt;/p&gt;
+&lt;code&gt;git branch -v&lt;/code&gt; 查看分支以及对应的commit&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git checkout&lt;/code&gt;&lt;/li&gt;
@@ -191,6 +191,31 @@
 修改文件的&lt;code&gt;pick&lt;/code&gt;为&lt;code&gt;r&lt;/code&gt;，保存退出，再进行修改message，保存退出&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git reset HEAD&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;从当前提交回退版本&lt;br /&gt;
+git reset HEAD^1；1代表上一次，2表示上上次，以此类推（&lt;code&gt;win的cmd可能需要给&lt;/code&gt;HEAD^1&lt;code&gt;加双引号&lt;/code&gt;）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git cherry-pick 83b81348aa04&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将提交83b81348aa04应用到当前提交&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git rebase master dev&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将dev分支合并到maser分支之后，&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git merge dev&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将dev分支和当前分支的提交合并成一个&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;gitk&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
@@ -211,9 +236,6 @@ encoding = utf-8&lt;/div&gt;&lt;/p&gt;
 &lt;li&gt;如果使用&lt;code&gt;git checkout&lt;/code&gt; 切换到某一个commit上而不生成分支，这种&lt;code&gt;分离HEAD指针&lt;/code&gt;的情况，如果只会再切换到其他分支上，那么将可能丢失在这个commit上后产生的修改（&lt;code&gt;需要自行记住提交的hash值，再切换回来&lt;/code&gt;），（&lt;code&gt;HEAD要尽量与分支绑定在一起进行操作&lt;/code&gt;）&lt;/li&gt;
 &lt;li&gt;使用&lt;code&gt;git cat-file -t&lt;/code&gt;可以查看&lt;code&gt;git 产生的hash值的类型&lt;/code&gt;，使用&lt;code&gt;git cat-file -p&lt;/code&gt;可以查看&lt;code&gt;类型具体的内容&lt;/code&gt;，&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure&gt;&lt;img src=&#34;https://www.zhugeqing.top/images/about/git.jpg&#34;/&gt;
-&lt;/figure&gt;
-
 </content:encoded>
         <dc:creator>诸葛青的编程之旅</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
