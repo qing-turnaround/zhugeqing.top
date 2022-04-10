@@ -964,12 +964,12 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
 &lt;li&gt;&lt;code&gt;配置国内镜像源并更新镜像源&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;mv /etc/apt/sources.list /etc/apt/sources.list.bak&lt;/li&gt;
-&lt;li&gt;echo &amp;ldquo;deb &lt;a href=&#34;http://mirrors.163.com/debian/&#34;&gt;http://mirrors.163.com/debian/&lt;/a&gt; jessie main non-free contrib&amp;rdquo; &amp;gt;/etc/apt/sources.list&lt;/li&gt;
-&lt;li&gt;echo &amp;ldquo;deb &lt;a href=&#34;http://mirrors.163.com/debian/&#34;&gt;http://mirrors.163.com/debian/&lt;/a&gt; jessie-proposed-updates main non-free contrib&amp;rdquo; &amp;raquo;/etc/apt/sources.list&lt;/li&gt;
-&lt;li&gt;echo &amp;ldquo;deb-src &lt;a href=&#34;http://mirrors.163.com/debian/&#34;&gt;http://mirrors.163.com/debian/&lt;/a&gt; jessie main non-free contrib&amp;rdquo; &amp;raquo;/etc/apt/sources.list&lt;/li&gt;
-&lt;li&gt;echo &amp;ldquo;deb-src &lt;a href=&#34;http://mirrors.163.com/debian/&#34;&gt;http://mirrors.163.com/debian/&lt;/a&gt; jessie-proposed-updates main non-free contrib&amp;rdquo; &amp;raquo;/etc/apt/sources.list&lt;/li&gt;
-&lt;li&gt;apt-get update&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mv /etc/apt/sources.list /etc/apt/sources.list.bak&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;echo &amp;quot;deb http://mirrors.163.com/debian/ jessie main non-free contrib&amp;quot; &amp;gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;echo &amp;quot;deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&amp;quot; &amp;gt;&amp;gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;echo &amp;quot;deb-src http://mirrors.163.com/debian/ jessie main non-free contrib&amp;quot; &amp;gt;&amp;gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;echo &amp;quot;deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&amp;quot; &amp;gt;&amp;gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;apt-get update &lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;&lt;code&gt;安装vim&lt;/code&gt;&lt;/li&gt;

@@ -24,12 +24,12 @@ series:
 1. `配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim`
 2. `可以得知mysql内部容器包含apt命令，配置国内镜像源并安装一些自己需要的命令`
 3. `配置国内镜像源并更新镜像源`
-* mv /etc/apt/sources.list /etc/apt/sources.list.bak
-* echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib" >/etc/apt/sources.list
-* echo "deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list
-* echo "deb-src http://mirrors.163.com/debian/ jessie main non-free contrib" >>/etc/apt/sources.list
-* echo "deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list
-* apt-get update 
+* `mv /etc/apt/sources.list /etc/apt/sources.list.bak`
+* `echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib" >/etc/apt/sources.list`
+* `echo "deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list`
+* `echo "deb-src http://mirrors.163.com/debian/ jessie main non-free contrib" >>/etc/apt/sources.list`
+* `echo "deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list`
+* `apt-get update `
 4. `安装vim`
 * apt-get install -y vim
 5. 编辑配置文件

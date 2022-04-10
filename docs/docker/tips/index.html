@@ -1877,12 +1877,12 @@
 <li><code>配置国内镜像源并更新镜像源</code></li>
 </ol>
 <ul>
-<li>mv /etc/apt/sources.list /etc/apt/sources.list.bak</li>
-<li>echo &ldquo;deb <a href="http://mirrors.163.com/debian/">http://mirrors.163.com/debian/</a> jessie main non-free contrib&rdquo; &gt;/etc/apt/sources.list</li>
-<li>echo &ldquo;deb <a href="http://mirrors.163.com/debian/">http://mirrors.163.com/debian/</a> jessie-proposed-updates main non-free contrib&rdquo; &raquo;/etc/apt/sources.list</li>
-<li>echo &ldquo;deb-src <a href="http://mirrors.163.com/debian/">http://mirrors.163.com/debian/</a> jessie main non-free contrib&rdquo; &raquo;/etc/apt/sources.list</li>
-<li>echo &ldquo;deb-src <a href="http://mirrors.163.com/debian/">http://mirrors.163.com/debian/</a> jessie-proposed-updates main non-free contrib&rdquo; &raquo;/etc/apt/sources.list</li>
-<li>apt-get update</li>
+<li><code>mv /etc/apt/sources.list /etc/apt/sources.list.bak</code></li>
+<li><code>echo &quot;deb http://mirrors.163.com/debian/ jessie main non-free contrib&quot; &gt;/etc/apt/sources.list</code></li>
+<li><code>echo &quot;deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&quot; &gt;&gt;/etc/apt/sources.list</code></li>
+<li><code>echo &quot;deb-src http://mirrors.163.com/debian/ jessie main non-free contrib&quot; &gt;&gt;/etc/apt/sources.list</code></li>
+<li><code>echo &quot;deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&quot; &gt;&gt;/etc/apt/sources.list</code></li>
+<li><code>apt-get update </code></li>
 </ul>
 <ol start="4">
 <li><code>安装vim</code></li>
