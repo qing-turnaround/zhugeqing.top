@@ -53,6 +53,7 @@ series:
 cat > /root/a.txt <<EOF
 zhugeqing
 EOF
+`>`  用于覆盖，`>>`用于追加
 {{< /boxmd >}}
 
 * `变量赋值`
@@ -105,3 +106,18 @@ echo ${2-我就是shell}
 ```
 `source 1.sh 诸葛青`（可以解决传入参数不足，默认使用`我就是shell`）
 {{< /boxmd >}}
+
+## 进阶姿势
+
+* `read`
+{{< boxmd >}}
+* `-p`：输出提示信息
+* `-t`：等待用户输入时间， 如果到了时间就不让用户继续输入了（单位为秒）
+{{< /boxmd >}}
+```Shell:read.sh
+#!/bin/bash
+
+read -t 5 -p "请输入您的名字：" name # 等待5s用户输入
+name=${name:-诸葛青} # 如果没有输入任何值则赋予变量默认值
+echo "您的名字是$name"
+```

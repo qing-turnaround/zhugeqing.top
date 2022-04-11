@@ -40,7 +40,7 @@ series:
 pid-file        = /var/run/mysqld/mysqld.pid
 socket          = /var/run/mysqld/mysqld.sock
 datadir         = /var/lib/mysql
-#log-error      = /var/log/mysql/error.log
+log-error      = /var/log/mysql/error.log
 # By default we only accept connections from localhost
 #bind-address   = 127.0.0.1
 # Disabling symbolic-links is recommended to prevent assorted security risks
@@ -60,4 +60,9 @@ default-character-set = utf8
 
 [client]
 default-character-set = utf8
+# 节点id
+server-id=1
+# 开启bin log
+log-bin=/var/lib/mysql/mysql-bin
 ```
+
