@@ -17,6 +17,7 @@ series:
 
 * `运行下面shell脚本`
 ```Shell:deploy-master.sh
+#!/bin/bash
 docker pull zhugeqing/mysql:5.6
 
 read -t 5 -p "请输入mysql的端口号：（默认3306）" port # 等待5s用户输入
@@ -69,6 +70,8 @@ docker restart mysql
 
 * `运行下面shell脚本`
 ```Shell:deploy:slave.sh
+#!/bin/bash
+
 docker pull zhugeqing/mysql:5.6
 
 read -t 5 -p "请输入mysql的端口号：（默认3306）" port # 等待5s用户输入

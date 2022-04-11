@@ -1917,9 +1917,11 @@
 </span><span class="lnt">44
 </span><span class="lnt">45
 </span><span class="lnt">46
+</span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Shell:deploy-master.sh" data-lang="Shell:deploy-master.sh">docker pull zhugeqing/mysql:5.6
+<pre tabindex="0" class="chroma"><code class="language-Shell:deploy-master.sh" data-lang="Shell:deploy-master.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>docker pull zhugeqing/mysql:5.6
 
 <span class="nb">read</span> -t <span class="m">5</span> -p <span class="s2">&#34;请输入mysql的端口号：（默认3306）&#34;</span> port <span class="c1"># 等待5s用户输入</span>
 <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">3306</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
@@ -2019,9 +2021,13 @@ docker restart mysql
 </span><span class="lnt">44
 </span><span class="lnt">45
 </span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Shell:deploy:slave.sh" data-lang="Shell:deploy:slave.sh">docker pull zhugeqing/mysql:5.6
+<pre tabindex="0" class="chroma"><code class="language-Shell:deploy:slave.sh" data-lang="Shell:deploy:slave.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+docker pull zhugeqing/mysql:5.6
 
 <span class="nb">read</span> -t <span class="m">5</span> -p <span class="s2">&#34;请输入mysql的端口号：（默认3306）&#34;</span> port <span class="c1"># 等待5s用户输入</span>
 <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">3306</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
