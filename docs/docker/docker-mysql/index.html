@@ -1867,7 +1867,7 @@
       
       <h2 id="主节点配置">主节点配置</h2>
 <ul>
-<li><code>运行下面shell脚本</code></li>
+<li><code>运行下面shell脚本</code>；或者依次执行命令 <code>curl -fsSL www.zhugeqing.top/deploy-master-mysql.sh -o master.sh</code> <code>bash master.sh</code></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1931,7 +1931,7 @@
 <span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql root用户密码为：</span><span class="nv">$password</span><span class="s2">&#34;</span>
 
-docker container run --name mysql -p port:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
+docker container run --name mysql -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
 
 
 <span class="nb">read</span> -t <span class="m">5</span> -p <span class="s2">&#34;请输入主节点的id号（需要与从节点的id号不同）：（默认为1）&#34;</span> id 
@@ -1971,7 +1971,7 @@ docker restart mysql
 </div>
 </div><h2 id="从节点配置">从节点配置</h2>
 <ul>
-<li><code>运行下面shell脚本</code></li>
+<li><code>运行下面shell脚本</code> 或者依次执行命令 <code>curl -fsSL www.zhugeqing.top/deploy-slave-mysql.sh -o slave.sh</code> <code>bash slave.sh</code></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

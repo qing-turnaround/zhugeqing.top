@@ -15,7 +15,7 @@ series:
 
 ## 主节点配置
 
-* `运行下面shell脚本`
+* `运行下面shell脚本`；或者依次执行命令 `curl -fsSL www.zhugeqing.top/deploy-master-mysql.sh -o master.sh` `bash master.sh`
 ```Shell:deploy-master.sh
 #!/bin/bash
 docker pull zhugeqing/mysql:5.6
@@ -28,7 +28,7 @@ read -t 5 -p "请输入mysql的root账号密码：（默认123456）" password #
 password=${password:-123456} # 如果没有输入任何值则赋予变量默认值
 echo "mysql root用户密码为：$password"
 
-docker container run --name mysql -p port:3306 -e MYSQL_ROOT_PASSWORD=123456 -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
+docker container run --name mysql -p $port:3306 -e MYSQL_ROOT_PASSWORD=123456 -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
 
 
 read -t 5 -p "请输入主节点的id号（需要与从节点的id号不同）：（默认为1）" id 
@@ -68,7 +68,7 @@ docker restart mysql
 
 ## 从节点配置
 
-* `运行下面shell脚本`
+* `运行下面shell脚本` 或者依次执行命令 `curl -fsSL www.zhugeqing.top/deploy-slave-mysql.sh -o slave.sh` `bash slave.sh`
 ```Shell:deploy:slave.sh
 #!/bin/bash
 
