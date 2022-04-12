@@ -24,11 +24,14 @@ series:
 1. `配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim`
 2. `可以得知mysql内部容器包含apt命令，配置国内镜像源并安装一些自己需要的命令`
 3. `配置国内镜像源并更新镜像源`
-* `mv /etc/apt/sources.list /etc/apt/sources.list.bak`
-* `echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib" >/etc/apt/sources.list`
-* `echo "deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list`
-* `echo "deb-src http://mirrors.163.com/debian/ jessie main non-free contrib" >>/etc/apt/sources.list`
-* `echo "deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib" >>/etc/apt/sources.list`
+```
+cat >> /etc/apt/sources.list << EOF
+deb http://mirrors.cloud.aliyuncs.com/debian/ jessie main non-free contrib
+deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie main non-free contrib
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
+EOF
+```
 * `apt-get update `
 4. `安装vim`
 * apt-get install -y vim
@@ -65,4 +68,10 @@ server-id=1
 # 开启bin log
 log-bin=/var/lib/mysql/mysql-bin
 ```
+
+
+
+## 使用redis 镜像遇到的问题
+> docker无法启动redis镜像
+* 如果使用配置文件来启动redis，那么配置文件中的daemonize为yes，意思是redis服务在后台运行，与docker中的-d参数冲突了，需要把daemonize的参数值改为no或者是不进行设置。
 

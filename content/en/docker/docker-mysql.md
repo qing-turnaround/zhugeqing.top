@@ -19,23 +19,24 @@ series:
 ```Shell:deploy-master.sh
 #!/bin/bash
 docker pull zhugeqing/mysql:5.6
-
-read -t 5 -p "请输入mysql的端口号：（默认3306）" port # 等待5s用户输入
+read -t 10 -p "请输入mysql的端口号：（默认3306）" port # 等待10s用户输入
 port=${port:-3306} # 如果没有输入任何值则赋予变量默认值
 echo "mysql端口号为：$port"
 
-read -t 5 -p "请输入mysql的root账号密码：（默认123456）" password # 等待5s用户输入
+read -t 10 -p "请输入mysql的root账号密码：（默认123456）" password # 等待10s用户输入
 password=${password:-123456} # 如果没有输入任何值则赋予变量默认值
 echo "mysql root用户密码为：$password"
 
-docker container run --name mysql -p $port:3306 -e MYSQL_ROOT_PASSWORD=123456 -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
+docker container run --name mysql -p $port:3306 -e MYSQL_ROOT_PASSWORD=$password -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
 
 
-read -t 5 -p "请输入主节点的id号（需要与从节点的id号不同）：（默认为1）" id 
+read -t 10 -p "请输入主节点的id号（需要与从节点的id号不同）：（默认为1）" id 
 id=${id:-1} 
 echo "主节点的id号为：$id"
 
-cat >> /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf << EOF
+cat > /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf << EOF
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mysql.conf.d/
 # 主节点配置文件
 [mysqld]
 server-id = $id # id号
@@ -71,25 +72,25 @@ docker restart mysql
 * `运行下面shell脚本` 或者依次执行命令 `curl -fsSL www.zhugeqing.top/deploy-slave-mysql.sh -o slave.sh` `bash slave.sh`
 ```Shell:deploy:slave.sh
 #!/bin/bash
-
 docker pull zhugeqing/mysql:5.6
-
-read -t 5 -p "请输入mysql的端口号：（默认3306）" port # 等待5s用户输入
+read -t 10 -p "请输入mysql的端口号：（默认3306）" port # 等待10s用户输入
 port=${port:-3306} # 如果没有输入任何值则赋予变量默认值
 echo "mysql端口号为：$port"
 
-read -t 5 -p "请输入mysql的root账号密码：（默认123456）" password # 等待5s用户输入
+read -t 10 -p "请输入mysql的root账号密码：（默认123456）" password # 等待10s用户输入
 password=${password:-123456} # 如果没有输入任何值则赋予变量默认值
 echo "mysql root用户密码为：$password"
 
-docker container run --name mysql -p port:3306 -e MYSQL_ROOT_PASSWORD=123456 -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
+docker container run --name mysql -p $port:3306 -e MYSQL_ROOT_PASSWORD=$password -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
 
 
-read -t 5 -p "请输入从节点的id号（需要与从节点的id号不同）：（默认为2）" id 
+read -t 10 -p "请输入从节点的id号（需要与从节点的id号不同）：（默认为2）" id 
 id=${id:-2} 
 echo "从节点的id号为：$id"
 
-cat >> /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf << EOF
+cat > /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf << EOF
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mysql.conf.d/
 # 主节点配置文件
 [mysqld]
 server-id = $id # id号
@@ -126,7 +127,8 @@ docker restart mysql
 > `change master to master_host='主节点ip地址',master_port=主节点端口,master_user='主节点用户',master_password='主节点用户密码',master_log_file='mysql-bin.000001',master_log_pos=0;`
 > 例如：`change master to master_host='127.0.0.1',master_port=3306,master_user='root',master_password='123456',master_log_file='mysql-bin.000001',master_log_pos=0;`
 
+* `清空以前从节点配置信息`：`reset slave;`
 * `启动从节点`：`start slave;`
 
-* `查看从节点状态`：`show slave status`
+* `查看从节点状态`：`show slave status \G`
 

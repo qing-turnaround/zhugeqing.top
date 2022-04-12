@@ -654,7 +654,7 @@ EOF&lt;br /&gt;
 &lt;p&gt;&lt;code&gt;hostnamectl&lt;/code&gt;&lt;br /&gt;
 &lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
 &lt;li&gt;修改主机名&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hostnamectl set-name zhugeqing.top&lt;/code&gt;（需要再将&lt;code&gt;127.0.0.1 zhugeqing.top&lt;/code&gt;写入/etc/hosts）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hostnamectl set-hostname zhugeqing.top&lt;/code&gt;（需要再将&lt;code&gt;127.0.0.1 zhugeqing.top&lt;/code&gt;写入/etc/hosts）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -5234,6 +5234,7 @@ Dockerfile有其特定的语法规则&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;docker system prune -f&lt;/code&gt; 删除所有已经停止运行的容器&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;docker image prune -a&lt;/code&gt; 删除所有没有被使用的镜像&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;docker container run --rm nginx&lt;/code&gt; 当容器退出时，会自动删除容器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker update mysql --restart=always&lt;/code&gt; 设置容器mysql自启动&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;容器的attached-和-detached模式&#34;&gt;容器的attached 和 detached模式&lt;/h2&gt;
 &lt;p&gt;在启动一个容器加上-d参数就可以以daemon守护进程的方式运行也就是detached模式，&lt;/p&gt;
@@ -5320,7 +5321,7 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
         
         <atom:modified>Mon, 06 Dec 2021 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/docker/docker-mysql/</guid>
-        <description>主节点配置 运行下面shell脚本；或者依次执行命令 curl -fsSL www.zhugeqing.top/deploy-master-mysql.sh -o master.sh bash master.sh 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 #!/bin/bash docker pull zhugeqing/mysql:5.6 read -t 5 -p &amp;#34;请输入mysql的端口号：（默认3306）&amp;#34; port # 等待5s用户输入 port=${port:-3306} # 如果没有输入任何值则赋予变量默认值 echo &amp;#34;mysql端口号为：$port&amp;#34; read -t 5 -p &amp;#34;请输入mysql的root账号密码：</description>
+        <description>主节点配置 运行下面shell脚本；或者依次执行命令 curl -fsSL www.zhugeqing.top/deploy-master-mysql.sh -o master.sh bash master.sh 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 #!/bin/bash docker pull zhugeqing/mysql:5.6 read -t 10 -p &amp;#34;请输入mysql的端口号：（默认3306）&amp;#34; port # 等待10s用户输入 port=${port:-3306} # 如果没有输入任何值则赋予变量默认值 echo &amp;#34;mysql端口号为：$port&amp;#34; read -t 10 -p &amp;#34;请输入mysql的root账号密</description>
         <content:encoded>&lt;h2 id=&#34;主节点配置&#34;&gt;主节点配置&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;运行下面shell脚本&lt;/code&gt;；或者依次执行命令 &lt;code&gt;curl -fsSL www.zhugeqing.top/deploy-master-mysql.sh -o master.sh&lt;/code&gt; &lt;code&gt;bash master.sh&lt;/code&gt;&lt;/li&gt;
@@ -5374,27 +5375,29 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell:deploy-master.sh&#34; data-lang=&#34;Shell:deploy-master.sh&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;docker pull zhugeqing/mysql:5.6
-
-&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入mysql的端口号：（默认3306）&amp;#34;&lt;/span&gt; port &lt;span class=&#34;c1&#34;&gt;# 等待5s用户输入&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入mysql的端口号：（默认3306）&amp;#34;&lt;/span&gt; port &lt;span class=&#34;c1&#34;&gt;# 等待10s用户输入&lt;/span&gt;
 &lt;span class=&#34;nv&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;:-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;3306&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 如果没有输入任何值则赋予变量默认值&lt;/span&gt;
 &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;mysql端口号为：&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$port&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 
-&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入mysql的root账号密码：（默认123456）&amp;#34;&lt;/span&gt; password &lt;span class=&#34;c1&#34;&gt;# 等待5s用户输入&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入mysql的root账号密码：（默认123456）&amp;#34;&lt;/span&gt; password &lt;span class=&#34;c1&#34;&gt;# 等待10s用户输入&lt;/span&gt;
 &lt;span class=&#34;nv&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;:-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;123456&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 如果没有输入任何值则赋予变量默认值&lt;/span&gt;
 &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;mysql root用户密码为：&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$password&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 
-docker container run --name mysql -p &lt;span class=&#34;nv&#34;&gt;$port&lt;/span&gt;:3306 -e &lt;span class=&#34;nv&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;123456&lt;/span&gt; -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
+docker container run --name mysql -p &lt;span class=&#34;nv&#34;&gt;$port&lt;/span&gt;:3306 -e &lt;span class=&#34;nv&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$password&lt;/span&gt; -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
 
 
-&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入主节点的id号（需要与从节点的id号不同）：（默认为1）&amp;#34;&lt;/span&gt; id 
+&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入主节点的id号（需要与从节点的id号不同）：（默认为1）&amp;#34;&lt;/span&gt; id 
 &lt;span class=&#34;nv&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;:-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; 
 &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;主节点的id号为：&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$id&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 
-cat &amp;gt;&amp;gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF
+cat &amp;gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;!includedir /etc/mysql/conf.d/
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;!includedir /etc/mysql/mysql.conf.d/
 &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# 主节点配置文件
 &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[mysqld]
 &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;server-id = $id # id号
@@ -5482,25 +5485,25 @@ docker restart mysql
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell:deploy:slave.sh&#34; data-lang=&#34;Shell:deploy:slave.sh&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
-&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
-docker pull zhugeqing/mysql:5.6
-
-&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入mysql的端口号：（默认3306）&amp;#34;&lt;/span&gt; port &lt;span class=&#34;c1&#34;&gt;# 等待5s用户输入&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;docker pull zhugeqing/mysql:5.6
+&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入mysql的端口号：（默认3306）&amp;#34;&lt;/span&gt; port &lt;span class=&#34;c1&#34;&gt;# 等待10s用户输入&lt;/span&gt;
 &lt;span class=&#34;nv&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;:-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;3306&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 如果没有输入任何值则赋予变量默认值&lt;/span&gt;
 &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;mysql端口号为：&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$port&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 
-&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入mysql的root账号密码：（默认123456）&amp;#34;&lt;/span&gt; password &lt;span class=&#34;c1&#34;&gt;# 等待5s用户输入&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入mysql的root账号密码：（默认123456）&amp;#34;&lt;/span&gt; password &lt;span class=&#34;c1&#34;&gt;# 等待10s用户输入&lt;/span&gt;
 &lt;span class=&#34;nv&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;:-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;123456&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 如果没有输入任何值则赋予变量默认值&lt;/span&gt;
 &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;mysql root用户密码为：&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$password&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 
-docker container run --name mysql -p port:3306 -e &lt;span class=&#34;nv&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;123456&lt;/span&gt; -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
+docker container run --name mysql -p &lt;span class=&#34;nv&#34;&gt;$port&lt;/span&gt;:3306 -e &lt;span class=&#34;nv&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$password&lt;/span&gt; -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql:/var/lib/mysql zhugeqing/mysql:5.6
 
 
-&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入从节点的id号（需要与从节点的id号不同）：（默认为2）&amp;#34;&lt;/span&gt; id 
+&lt;span class=&#34;nb&#34;&gt;read&lt;/span&gt; -t &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt; -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;请输入从节点的id号（需要与从节点的id号不同）：（默认为2）&amp;#34;&lt;/span&gt; id 
 &lt;span class=&#34;nv&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;:-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; 
 &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;从节点的id号为：&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$id&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 
-cat &amp;gt;&amp;gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF
+cat &amp;gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;!includedir /etc/mysql/conf.d/
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;!includedir /etc/mysql/mysql.conf.d/
 &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# 主节点配置文件
 &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[mysqld]
 &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;server-id = $id # id号
@@ -5545,13 +5548,44 @@ docker restart mysql
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;
+&lt;p&gt;&lt;code&gt;清空以前从节点配置信息&lt;/code&gt;：&lt;code&gt;reset slave;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;code&gt;启动从节点&lt;/code&gt;：&lt;code&gt;start slave;&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;查看从节点状态&lt;/code&gt;：&lt;code&gt;show slave status&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;查看从节点状态&lt;/code&gt;：&lt;code&gt;show slave status \G&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>docker 部署redis</title>
+        <link>https://www.zhugeqing.top/docker/docker-redis/</link>
+        <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Mon, 06 Dec 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/docker-redis/</guid>
+        <description></description>
+        <content:encoded></content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
@@ -5590,12 +5624,13 @@ docker restart mysql
 &lt;li&gt;&lt;code&gt;可以得知mysql内部容器包含apt命令，配置国内镜像源并安装一些自己需要的命令&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;配置国内镜像源并更新镜像源&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;mv /etc/apt/sources.list /etc/apt/sources.list.bak&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;echo &amp;quot;deb http://mirrors.163.com/debian/ jessie main non-free contrib&amp;quot; &amp;gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;echo &amp;quot;deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&amp;quot; &amp;gt;&amp;gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;echo &amp;quot;deb-src http://mirrors.163.com/debian/ jessie main non-free contrib&amp;quot; &amp;gt;&amp;gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;echo &amp;quot;deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&amp;quot; &amp;gt;&amp;gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;gt;&amp;gt; /etc/apt/sources.list &amp;lt;&amp;lt; EOF
+deb http://mirrors.cloud.aliyuncs.com/debian/ jessie main non-free contrib
+deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie main non-free contrib
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;apt-get update &lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
@@ -5639,7 +5674,14 @@ default-character-set = utf8
 server-id=1
 # 开启bin log
 log-bin=/var/lib/mysql/mysql-bin
-&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;使用redis-镜像遇到的问题&#34;&gt;使用redis 镜像遇到的问题&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker无法启动redis镜像&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;如果使用配置文件来启动redis，那么配置文件中的daemonize为yes，意思是redis服务在后台运行，与docker中的-d参数冲突了，需要把daemonize的参数值改为no或者是不进行设置。&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         

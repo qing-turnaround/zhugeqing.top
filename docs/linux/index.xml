@@ -338,7 +338,7 @@ EOF&lt;br /&gt;
 &lt;p&gt;&lt;code&gt;hostnamectl&lt;/code&gt;&lt;br /&gt;
 &lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
 &lt;li&gt;修改主机名&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hostnamectl set-name zhugeqing.top&lt;/code&gt;（需要再将&lt;code&gt;127.0.0.1 zhugeqing.top&lt;/code&gt;写入/etc/hosts）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hostnamectl set-hostname zhugeqing.top&lt;/code&gt;（需要再将&lt;code&gt;127.0.0.1 zhugeqing.top&lt;/code&gt;写入/etc/hosts）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;/li&gt;

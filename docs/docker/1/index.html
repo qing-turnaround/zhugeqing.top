@@ -1912,6 +1912,7 @@
 <li><code>docker system prune -f</code> 删除所有已经停止运行的容器</li>
 <li><code>docker image prune -a</code> 删除所有没有被使用的镜像</li>
 <li><code>docker container run --rm nginx</code> 当容器退出时，会自动删除容器</li>
+<li><code>docker update mysql --restart=always</code> 设置容器mysql自启动</li>
 </ol>
 <h2 id="容器的attached-和-detached模式">容器的attached 和 detached模式</h2>
 <p>在启动一个容器加上-d参数就可以以daemon守护进程的方式运行也就是detached模式，</p>
@@ -2261,6 +2262,10 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
         
         <li>
           <a href="/docker/docker-mysql/" class="related__link">docker 部署mysql集群</a>
+        </li>
+        
+        <li>
+          <a href="/docker/docker-redis/" class="related__link">docker 部署redis</a>
         </li>
         
         <li>
