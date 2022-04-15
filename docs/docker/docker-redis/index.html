@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 6, 2021 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;0&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;1&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1865,7 +1865,48 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      
+      <h2 id="部署redis">部署redis</h2>
+<ol>
+<li><code>docker image pull zhugeqing/redis</code></li>
+</ol>
+<blockquote>
+<p>拉取镜像</p>
+</blockquote>
+<ol start="2">
+<li>
+<p><code>编写配置文件 /docker/redis/conf/redis.conf</code><br />
+<div class="box"><pre tabindex="0"><code># 端口
+port 6379
+# 日志文件
+logfile &quot;redis.log&quot;
+# rdb文件
+dbfilename &quot;dump-redis.rdb&quot; 
+# 密码
+requirepass 123456 
+</code></pre></div></p>
+</li>
+<li>
+<p><code>docker run -d -p 6379:6379 --restart unless-stopped --name redis -v /docker/redis/conf/:/etc/redis/  -v /docker/redis/data:/data zhugeqing/redis redis-server /etc/redis/redis.conf</code></p>
+</li>
+</ol>
+<blockquote>
+<p>启动容器</p>
+</blockquote>
+<ol start="4">
+<li><code>docker container exec -it redis bash</code></li>
+</ol>
+<blockquote>
+<p>进入到容器内部</p>
+</blockquote>
+<ol start="5">
+<li>
+<p><code>redis-cli</code> 和 <code>auth 123456</code>来验证是否运行争取</p>
+</li>
+<li>
+<p><code>之后只需在本机修改映射的/docker/redis/conf/redis.conf，再进行docker restart redis即可更新redis配置</code></p>
+</li>
+</ol>
+
     </article>
     
     
@@ -2555,7 +2596,11 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
   <div class="toc " data-dir="ltr" data-folding="true" data-ani="true">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#部署redis">部署redis</a></li>
+  </ul>
+</nav>
   </div>
 </section>
 

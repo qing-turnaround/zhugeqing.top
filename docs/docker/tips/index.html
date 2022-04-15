@@ -1874,13 +1874,17 @@
 <ol>
 <li><code>配置mysql容器中的配置文件，像配置主机mysql一样，但前提是安装一些可编辑mysql容器文件的程序，比如vim</code></li>
 <li><code>可以得知mysql内部容器包含apt命令，配置国内镜像源并安装一些自己需要的命令</code></li>
-<li><code>配置国内镜像源并更新镜像源</code></li>
+<li><code>配置国内镜像源并更新镜像源</code>（<code>cat /etc/issue</code> 查看当前系统版本，再从 <a href="https://developer.aliyun.com/mirror/debian?spm=a2c6h.13651102.0.0.3e221b11St2S5O">阿里云</a> 选取对应版本的源）</li>
 </ol>
-<pre tabindex="0"><code>cat &gt;&gt; /etc/apt/sources.list &lt;&lt; EOF
-deb http://mirrors.cloud.aliyuncs.com/debian/ jessie main non-free contrib
-deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
-deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie main non-free contrib
-deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
+<pre tabindex="0"><code>cat &gt; /etc/apt/sources.list &lt;&lt; EOF
+deb http://mirrors.aliyun.com/debian/ bullseye main non-free contrib
+deb-src http://mirrors.aliyun.com/debian/ bullseye main non-free contrib
+deb http://mirrors.aliyun.com/debian-security/ bullseye-security main
+deb-src http://mirrors.aliyun.com/debian-security/ bullseye-security main
+deb http://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
+deb-src http://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib
+deb http://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
+deb-src http://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib
 EOF
 </code></pre><ul>
 <li><code>apt-get update </code></li>
@@ -1933,6 +1937,13 @@ log-bin=/var/lib/mysql/mysql-bin
 <ul>
 <li>如果使用配置文件来启动redis，那么配置文件中的daemonize为yes，意思是redis服务在后台运行，与docker中的-d参数冲突了，需要把daemonize的参数值改为no或者是不进行设置。</li>
 </ul>
+<p>deb <a href="http://deb.debian.org/debian">http://deb.debian.org/debian</a> stretch main<br />
+deb <a href="http://security.debian.org/debian-security">http://security.debian.org/debian-security</a> stretch/updates main<br />
+deb <a href="http://deb.debian.org/debian">http://deb.debian.org/debian</a> stretch-updates main<br />
+deb <a href="http://mirrors.cloud.aliyuncs.com/debian/">http://mirrors.cloud.aliyuncs.com/debian/</a> jessie main non-free contrib<br />
+deb <a href="http://mirrors.cloud.aliyuncs.com/debian/">http://mirrors.cloud.aliyuncs.com/debian/</a> jessie-proposed-updates main non-free contrib<br />
+deb-src <a href="http://mirrors.cloud.aliyuncs.com/debian/">http://mirrors.cloud.aliyuncs.com/debian/</a> jessie main non-free contrib<br />
+deb-src <a href="http://mirrors.cloud.aliyuncs.com/debian/">http://mirrors.cloud.aliyuncs.com/debian/</a> jessie-proposed-updates main non-free contrib</p>
 
     </article>
     
