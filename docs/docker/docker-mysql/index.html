@@ -1922,25 +1922,27 @@
 </span><span class="lnt">49
 </span><span class="lnt">50
 </span><span class="lnt">51
+</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:deploy-master.sh" data-lang="Shell:deploy-master.sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span>docker pull zhugeqing/mysql:5.6
-<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入mysql的端口号：（默认3306）&#34;</span> port <span class="c1"># 等待10s用户输入</span>
+<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入mysql的端口号（默认3306）：&#34;</span> port <span class="c1"># 等待10s用户输入</span>
 <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">3306</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql端口号为：</span><span class="nv">$port</span><span class="s2">&#34;</span>
 
-<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入mysql的root账号密码：（默认123456）&#34;</span> password <span class="c1"># 等待10s用户输入</span>
+<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入mysql的root账号密码（默认123456）：&#34;</span> password <span class="c1"># 等待10s用户输入</span>
 <span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql root用户密码为：</span><span class="nv">$password</span><span class="s2">&#34;</span>
 
-<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">mysql</span><span class="si">}</span>
 <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql容器运行的名字（默认为mysql）：&#34;</span> name 
+<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">mysql</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;mysql 容器运行的名字为：</span><span class="nv">$name</span><span class="s2">&#34;</span>
 
-docker container run --name <span class="nv">$name</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql/<span class="nv">$name</span>:/var/lib/mysql zhugeqing/mysql:5.6
+docker container run --name <span class="si">${</span><span class="nv">name</span><span class="si">}</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql/<span class="nv">$name</span>:/var/lib/mysql zhugeqing/mysql:5.6
 
 
-<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入主节点的id号（需要与从节点的id号不同）：（默认为1）&#34;</span> id 
+<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入主节点的id号（需要与从节点的id号不同，默认为1）：&#34;</span> id 
 <span class="nv">id</span><span class="o">=</span><span class="si">${</span><span class="nv">id</span><span class="k">:-</span><span class="nv">1</span><span class="si">}</span> 
 <span class="nb">echo</span> <span class="s2">&#34;主节点的id号为：</span><span class="nv">$id</span><span class="s2">&#34;</span>
 
@@ -1974,7 +1976,7 @@ cat &gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf <span class="s">&lt;&
 </span><span class="s">default-character-set = utf8
 </span><span class="s">EOF</span>
 
-docker restart mysql
+docker restart <span class="si">${</span><span class="nv">name</span><span class="si">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="从节点配置">从节点配置</h2>
@@ -2034,6 +2036,7 @@ docker restart mysql
 </span><span class="lnt">49
 </span><span class="lnt">50
 </span><span class="lnt">51
+</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:deploy:slave.sh" data-lang="Shell:deploy:slave.sh"><span class="cp">#!/bin/bash
@@ -2046,10 +2049,11 @@ docker restart mysql
 <span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql root用户密码为：</span><span class="nv">$password</span><span class="s2">&#34;</span>
 
-<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">mysql</span><span class="si">}</span>
 <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql容器运行的名字（默认为mysql）：&#34;</span> name 
+<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">mysql</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;mysql 容器运行的名字为：</span><span class="nv">$name</span><span class="s2">&#34;</span>
 
-docker container run --name <span class="nv">$name</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql/<span class="nv">$name</span>:/var/lib/mysql zhugeqing/mysql:5.6
+docker container run --name <span class="si">${</span><span class="nv">name</span><span class="si">}</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql/<span class="nv">$name</span>:/var/lib/mysql zhugeqing/mysql:5.6
 
 
 <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入从节点的id号（需要与从节点的id号不同）（默认为2）：&#34;</span> id 
@@ -2086,12 +2090,15 @@ cat &gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf <span class="s">&lt;&
 </span><span class="s">default-character-set = utf8
 </span><span class="s">EOF</span>
 
-docker restart mysql
+docker restart <span class="si">${</span><span class="nv">name</span><span class="si">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
 <p><code>使用MySQL客户端工具连接MySQL，下面命令均在mysql命令行使用</code></p>
+</li>
+<li>
+<p><code>清空以前从节点配置信息</code>：<code>reset slave;</code></p>
 </li>
 <li>
 <p><code>配置好关于主节点的信息，输入如下命令（对应配置进行修改）</code></p>
@@ -2102,9 +2109,6 @@ docker restart mysql
 例如：<code>change master to master_host='127.0.0.1',master_port=3306,master_user='root',master_password='123456',master_log_file='mysql-bin.000001',master_log_pos=0;</code></p>
 </blockquote>
 <ul>
-<li>
-<p><code>清空以前从节点配置信息</code>：<code>reset slave;</code></p>
-</li>
 <li>
 <p><code>启动从节点</code>：<code>start slave;</code></p>
 </li>
