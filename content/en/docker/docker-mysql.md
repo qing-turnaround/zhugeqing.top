@@ -31,14 +31,26 @@ read -t 20 -p "请输入mysql容器运行的名字（默认为mysql）：" name
 name=${name:-mysql}
 echo "mysql 容器运行的名字为：$name"
 
-docker container run --name ${name} -p $port:3306 -e MYSQL_ROOT_PASSWORD=$password -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql/$name:/var/lib/mysql zhugeqing/mysql:5.6
+# 创建进行映射的文件夹
+mkdir -p /docker/mysql/$name/data
+mkdir -p /docker/mysql/$name/conf
 
+# # 创建volume
+# docker volume create ${name}-data
+# docker volume create ${name}-conf
+
+# 启动容器
+docker container run --name ${name} -p $port:3306 -e MYSQL_ROOT_PASSWORD=$password -d  -v ${name}-conf:/etc/mysql -v ${name}-data:/var/lib/mysql zhugeqing/mysql:5.6
+ 
+# 建立软链接
+ln -s /var/lib/docker/volumes/${name}-data/_data /docker/mysql/${name}/data
+ln -s /var/lib/docker/volumes/${name}-conf/_data /docker/mysql/${name}/conf
 
 read -t 10 -p "请输入主节点的id号（需要与从节点的id号不同，默认为1）：" id 
 id=${id:-1} 
 echo "主节点的id号为：$id"
 
-cat > /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf << EOF
+cat > /docker/mysql/$name/conf/_data/mysql.cnf << EOF
 !includedir /etc/mysql/conf.d/
 !includedir /etc/mysql/mysql.conf.d/
 # 主节点配置文件
@@ -76,6 +88,7 @@ docker restart ${name}
 * `运行下面shell脚本` 或者依次执行命令 `curl -fsSL www.zhugeqing.top/deploy-slave-mysql.sh -o slave.sh` `bash slave.sh`
 ```Shell:deploy:slave.sh
 #!/bin/bash
+
 docker pull zhugeqing/mysql:5.6
 read -t 20 -p "请输入mysql的端口号（默认3306）：" port # 等待10s用户输入
 port=${port:-3306} # 如果没有输入任何值则赋予变量默认值
@@ -89,14 +102,26 @@ read -t 20 -p "请输入mysql容器运行的名字（默认为mysql）：" name
 name=${name:-mysql}
 echo "mysql 容器运行的名字为：$name"
 
-docker container run --name ${name} -p $port:3306 -e MYSQL_ROOT_PASSWORD=$password -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql/$name:/var/lib/mysql zhugeqing/mysql:5.6
+# 创建进行映射的文件夹
+mkdir -p /docker/mysql/$name/data
+mkdir -p /docker/mysql/$name/conf
 
+# # 创建volume
+# docker volume create ${name}-data
+# docker volume create ${name}-conf
+
+
+docker container run --name ${name} -p $port:3306 -e MYSQL_ROOT_PASSWORD=$password -d  -v $name-conf:/etc/mysql -v ${name}-data:/var/lib/mysql zhugeqing/mysql:5.6
+
+# 建立软链接
+ln -s /var/lib/docker/volumes/${name}-data/_data /docker/mysql/${name}/data
+ln -s /var/lib/docker/volumes/${name}-conf/_data /docker/mysql/${name}/conf
 
 read -t 20 -p "请输入从节点的id号（需要与从节点的id号不同）（默认为2）：" id 
 id=${id:-2} 
 echo "从节点的id号为：$id"
 
-cat > /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf << EOF
+cat > /docker/mysql/$name/conf/_data/mysql.cnf << EOF
 !includedir /etc/mysql/conf.d/
 !includedir /etc/mysql/mysql.conf.d/
 # 主节点配置文件
@@ -126,6 +151,9 @@ default-character-set = utf8
 default-character-set = utf8
 EOF
 
+
+
+
 docker restart ${name}
 ```
 
@@ -140,5 +168,5 @@ docker restart ${name}
 
 * `启动从节点`：`start slave;`
 
-* `查看从节点状态`：`show slave status \G`
+* `查看从节点状态`：`show slave status \G;`
 

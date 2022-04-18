@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 6, 2021 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;1&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;5&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1883,6 +1883,11 @@ logfile &quot;redis.log&quot;
 dbfilename &quot;dump-redis.rdb&quot; 
 # 密码
 requirepass 123456 
+
+# 设置redis最大内存
+maxmemory 500MB
+# 设置redis内存淘汰策略
+maxmemory-policy volatile-lru
 </code></pre></div></p>
 </li>
 <li>
@@ -1900,13 +1905,396 @@ requirepass 123456
 </blockquote>
 <ol start="5">
 <li>
-<p><code>redis-cli</code> 和 <code>auth 123456</code>来验证是否运行争取</p>
+<p><code>redis-cli</code> 和 <code>auth 123456</code>来验证是否运行正确</p>
 </li>
 <li>
 <p><code>之后只需在本机修改映射的/docker/redis/conf/redis.conf，再进行docker restart redis即可更新redis配置</code></p>
 </li>
 </ol>
+<h2 id="部署redis主从">部署redis主从</h2>
+<h3 id="主节点脚本">主节点脚本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:master.sh" data-lang="Shell:master.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nb">echo</span> <span class="s2">&#34;正在使用redis master节点脚本！&#34;</span>
 
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：&#34;</span> port 
+<span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis）：&#34;</span> name
+<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点密码（默认为123456）：&#34;</span> password
+<span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主节点密码为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="c1"># 创建需要映射的目录</span>
+mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data
+
+
+<span class="c1"># 编写配置文件</span>
+cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class="s">&lt;&lt; EOF
+</span><span class="s">
+</span><span class="s"># 容器内部端口
+</span><span class="s">port $port
+</span><span class="s"># daemonize yes 
+</span><span class="s">
+</span><span class="s">logfile &#34;redis-$port.log&#34; 
+</span><span class="s">dbfilename &#34;dump-redis-$port.rdb&#34;
+</span><span class="s">
+</span><span class="s"># 访问redis-server密码
+</span><span class="s">requirepass $password
+</span><span class="s">
+</span><span class="s"># 主节点密码（也需要配置，不然当master无法成为新的master节点的slave节点）
+</span><span class="s">masterauth $password
+</span><span class="s">
+</span><span class="s"># 设置redis最大内存
+</span><span class="s">maxmemory 500MB
+</span><span class="s"># 设置redis内存淘汰策略
+</span><span class="s">maxmemory-policy volatile-lru
+</span><span class="s">
+</span><span class="s">EOF</span>
+
+docker run -d -p --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
+
+<span class="c1"># 软链接</span>
+ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="从节点脚本">从节点脚本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:slave.sh" data-lang="Shell:slave.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;正在使用redis slave节点脚本！&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：&#34;</span> port 
+<span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis）：&#34;</span> name
+<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的ip地址（默认为127.0.0.1）：&#34;</span> masterip
+<span class="nv">masterip</span><span class="o">=</span><span class="si">${</span><span class="nv">masterip</span><span class="k">:-</span><span class="nv">127</span><span class="p">.0.0.1</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主节点的ip为</span><span class="si">${</span><span class="nv">masterip</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的端口（默认为6379）：&#34;</span> masterport
+<span class="nv">masterport</span><span class="o">=</span><span class="si">${</span><span class="nv">masterport</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主节点的端口为</span><span class="si">${</span><span class="nv">masterport</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点密码（默认为123456）：&#34;</span> password
+<span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主节点密码为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="c1"># 创建需要映射的目录</span>
+mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data
+
+
+<span class="c1"># 编写配置文件</span>
+cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class="s">&lt;&lt; EOF
+</span><span class="s">
+</span><span class="s"># 容器内部端口
+</span><span class="s">port $port
+</span><span class="s"># daemonize yes 
+</span><span class="s">
+</span><span class="s">logfile &#34;redis-$port.log&#34; 
+</span><span class="s">dbfilename &#34;dump-redis-$port.rdb&#34;
+</span><span class="s">
+</span><span class="s"># 访问redis-server密码
+</span><span class="s">requirepass $password
+</span><span class="s"># 主节点密码
+</span><span class="s">masterauth $password
+</span><span class="s">
+</span><span class="s"># 配置主节点 host
+</span><span class="s">slaveof $masterip $masterport
+</span><span class="s">
+</span><span class="s"># 设置redis最大内存
+</span><span class="s">maxmemory 500MB
+</span><span class="s"># 设置redis内存淘汰策略
+</span><span class="s">maxmemory-policy volatile-lru
+</span><span class="s">EOF</span>
+
+docker run -d -p --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
+
+<span class="c1"># 软链接</span>
+ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="部署redis-sentinel">部署redis-sentinel</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:sentinel.sh" data-lang="Shell:sentinel.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nb">echo</span> <span class="s2">&#34;当前正在使用部署redis-sentinel的脚本!&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为26379，主机默认为26379）：&#34;</span> port
+<span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">26379</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis-sentinel）：&#34;</span> name
+<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="p">-sentinel</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel监控主节点的名字（默认为redis-master）：&#34;</span> mastername
+<span class="nv">mastername</span><span class="o">=</span><span class="si">${</span><span class="nv">mastername</span><span class="k">:-</span><span class="nv">redis</span><span class="p">-master</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主节点的名字为</span><span class="si">${</span><span class="nv">mastername</span><span class="si">}</span><span class="s2">&#34;</span>
+
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的ip地址（默认为127.0.0.1）：&#34;</span> masterip
+<span class="nv">masterip</span><span class="o">=</span><span class="si">${</span><span class="nv">masterip</span><span class="k">:-</span><span class="nv">127</span><span class="p">.0.0.1</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主节点的ip为</span><span class="si">${</span><span class="nv">masterip</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的端口（默认为6379）：&#34;</span> masterport
+<span class="nv">masterport</span><span class="o">=</span><span class="si">${</span><span class="nv">masterport</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主节点的端口为</span><span class="si">${</span><span class="nv">masterport</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主从的密码（默认为123456）：&#34;</span> masterpasswd
+<span class="nv">masterpasswd</span><span class="o">=</span><span class="si">${</span><span class="nv">masterpasswd</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;主从节点的密码为</span><span class="si">${</span><span class="nv">masterpasswd</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel选举最小投票数（默认为1）：&#34;</span> vote
+<span class="nv">vote</span><span class="o">=</span><span class="si">${</span><span class="nv">vote</span><span class="k">:-</span><span class="nv">1</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;最小投票数为</span><span class="si">${</span><span class="nv">vote</span><span class="si">}</span><span class="s2">&#34;</span>
+
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel密码（默认为123456）：&#34;</span> password
+<span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="s2">&#34;sentinel密码为为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
+
+
+
+<span class="c1"># 创建需要映射的目录</span>
+mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data
+
+cat &gt; /docker/redis/<span class="nv">$name</span>/conf/sentinel.conf <span class="s">&lt;&lt; EOF
+</span><span class="s"># 端口
+</span><span class="s">port $port
+</span><span class="s">
+</span><span class="s"># 密码
+</span><span class="s">requirepass $password
+</span><span class="s">
+</span><span class="s">logfile &#34;redis-sentinel-$port.log&#34; 
+</span><span class="s">
+</span><span class="s">sentinel monitor $mastername $masterip $masterport $vote
+</span><span class="s">
+</span><span class="s"># 这个配置项指定了需要多少失效时间，一个master才会被这个sentinel主观地认为是不可用的。 单位是毫秒，默认为30秒      
+</span><span class="s">sentinel down-after-milliseconds $mastername 30000 
+</span><span class="s">
+</span><span class="s">sentinel auth-pass $mastername $masterpasswd
+</span><span class="s">
+</span><span class="s"># 指定了在发生failover主备切换时最多可以有多少个slave同时对新的master进行同步（默认为1）
+</span><span class="s">sentinel parallel-syncs $mastername 1
+</span><span class="s">
+</span><span class="s"># 故障转移时间
+</span><span class="s">sentinel failover-timeout $mastername 180000
+</span><span class="s">EOF</span>
+
+
+docker run -d -p --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/ -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
+
+<span class="c1"># 软链接</span>
+ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="删除上述操作脚本">删除上述操作脚本</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:rm-redis.sh" data-lang="Shell:rm-redis.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入docker容器的名字：&#34;</span> name
+docker rm -f <span class="nv">$name</span>
+docker volume rm <span class="nv">$name</span>-data
+rm -rf /docker/redis/<span class="nv">$name</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
     
@@ -2200,6 +2588,10 @@ requirepass 123456
         
         <li>
           <a href="/docker/tips/" class="related__link">解决使用docker出现的问题！</a>
+        </li>
+        
+        <li>
+          <a href="/docker/limit_memory/" class="related__link">限制容器内存</a>
         </li>
         
     </ul>
@@ -2599,6 +2991,14 @@ document.addEventListener('DOMContentLoaded', function () {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#部署redis">部署redis</a></li>
+    <li><a href="#部署redis主从">部署redis主从</a>
+      <ul>
+        <li><a href="#主节点脚本">主节点脚本</a></li>
+        <li><a href="#从节点脚本">从节点脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#部署redis-sentinel">部署redis-sentinel</a></li>
+    <li><a href="#删除上述操作脚本">删除上述操作脚本</a></li>
   </ul>
 </nav>
   </div>

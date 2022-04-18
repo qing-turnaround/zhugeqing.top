@@ -1923,6 +1923,18 @@
 </span><span class="lnt">50
 </span><span class="lnt">51
 </span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:deploy-master.sh" data-lang="Shell:deploy-master.sh"><span class="cp">#!/bin/bash
@@ -1939,14 +1951,26 @@
 <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">mysql</span><span class="si">}</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql 容器运行的名字为：</span><span class="nv">$name</span><span class="s2">&#34;</span>
 
-docker container run --name <span class="si">${</span><span class="nv">name</span><span class="si">}</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql/<span class="nv">$name</span>:/var/lib/mysql zhugeqing/mysql:5.6
+<span class="c1"># 创建进行映射的文件夹</span>
+mkdir -p /docker/mysql/<span class="nv">$name</span>/data
+mkdir -p /docker/mysql/<span class="nv">$name</span>/conf
 
+<span class="c1"># # 创建volume</span>
+<span class="c1"># docker volume create ${name}-data</span>
+<span class="c1"># docker volume create ${name}-conf</span>
+
+<span class="c1"># 启动容器</span>
+docker container run --name <span class="si">${</span><span class="nv">name</span><span class="si">}</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v <span class="si">${</span><span class="nv">name</span><span class="si">}</span>-conf:/etc/mysql -v <span class="si">${</span><span class="nv">name</span><span class="si">}</span>-data:/var/lib/mysql zhugeqing/mysql:5.6
+ 
+<span class="c1"># 建立软链接</span>
+ln -s /var/lib/docker/volumes/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-data/_data /docker/mysql/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>/data
+ln -s /var/lib/docker/volumes/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-conf/_data /docker/mysql/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>/conf
 
 <span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入主节点的id号（需要与从节点的id号不同，默认为1）：&#34;</span> id 
 <span class="nv">id</span><span class="o">=</span><span class="si">${</span><span class="nv">id</span><span class="k">:-</span><span class="nv">1</span><span class="si">}</span> 
 <span class="nb">echo</span> <span class="s2">&#34;主节点的id号为：</span><span class="nv">$id</span><span class="s2">&#34;</span>
 
-cat &gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf <span class="s">&lt;&lt; EOF
+cat &gt; /docker/mysql/<span class="nv">$name</span>/conf/_data/mysql.cnf <span class="s">&lt;&lt; EOF
 </span><span class="s">!includedir /etc/mysql/conf.d/
 </span><span class="s">!includedir /etc/mysql/mysql.conf.d/
 </span><span class="s"># 主节点配置文件
@@ -2037,10 +2061,27 @@ docker restart <span class="si">${</span><span class="nv">name</span><span class
 </span><span class="lnt">50
 </span><span class="lnt">51
 </span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:deploy:slave.sh" data-lang="Shell:deploy:slave.sh"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>docker pull zhugeqing/mysql:5.6
+</span><span class="cp"></span>
+docker pull zhugeqing/mysql:5.6
 <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql的端口号（默认3306）：&#34;</span> port <span class="c1"># 等待10s用户输入</span>
 <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">3306</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql端口号为：</span><span class="nv">$port</span><span class="s2">&#34;</span>
@@ -2053,14 +2094,26 @@ docker restart <span class="si">${</span><span class="nv">name</span><span class
 <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">mysql</span><span class="si">}</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql 容器运行的名字为：</span><span class="nv">$name</span><span class="s2">&#34;</span>
 
-docker container run --name <span class="si">${</span><span class="nv">name</span><span class="si">}</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v mysql-etc:/etc/mysql -v /var/lib/mysql/<span class="nv">$name</span>:/var/lib/mysql zhugeqing/mysql:5.6
+<span class="c1"># 创建进行映射的文件夹</span>
+mkdir -p /docker/mysql/<span class="nv">$name</span>/data
+mkdir -p /docker/mysql/<span class="nv">$name</span>/conf
 
+<span class="c1"># # 创建volume</span>
+<span class="c1"># docker volume create ${name}-data</span>
+<span class="c1"># docker volume create ${name}-conf</span>
+
+
+docker container run --name <span class="si">${</span><span class="nv">name</span><span class="si">}</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v <span class="nv">$name</span>-conf:/etc/mysql -v <span class="si">${</span><span class="nv">name</span><span class="si">}</span>-data:/var/lib/mysql zhugeqing/mysql:5.6
+
+<span class="c1"># 建立软链接</span>
+ln -s /var/lib/docker/volumes/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-data/_data /docker/mysql/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>/data
+ln -s /var/lib/docker/volumes/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-conf/_data /docker/mysql/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>/conf
 
 <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入从节点的id号（需要与从节点的id号不同）（默认为2）：&#34;</span> id 
 <span class="nv">id</span><span class="o">=</span><span class="si">${</span><span class="nv">id</span><span class="k">:-</span><span class="nv">2</span><span class="si">}</span> 
 <span class="nb">echo</span> <span class="s2">&#34;从节点的id号为：</span><span class="nv">$id</span><span class="s2">&#34;</span>
 
-cat &gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf <span class="s">&lt;&lt; EOF
+cat &gt; /docker/mysql/<span class="nv">$name</span>/conf/_data/mysql.cnf <span class="s">&lt;&lt; EOF
 </span><span class="s">!includedir /etc/mysql/conf.d/
 </span><span class="s">!includedir /etc/mysql/mysql.conf.d/
 </span><span class="s"># 主节点配置文件
@@ -2090,6 +2143,9 @@ cat &gt; /var/lib/docker/volumes/mysql-etc/_data/mysql.cnf <span class="s">&lt;&
 </span><span class="s">default-character-set = utf8
 </span><span class="s">EOF</span>
 
+
+
+
 docker restart <span class="si">${</span><span class="nv">name</span><span class="si">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -2113,7 +2169,7 @@ docker restart <span class="si">${</span><span class="nv">name</span><span class
 <p><code>启动从节点</code>：<code>start slave;</code></p>
 </li>
 <li>
-<p><code>查看从节点状态</code>：<code>show slave status \G</code></p>
+<p><code>查看从节点状态</code>：<code>show slave status \G;</code></p>
 </li>
 </ul>
 
@@ -2410,6 +2466,10 @@ docker restart <span class="si">${</span><span class="nv">name</span><span class
         
         <li>
           <a href="/docker/tips/" class="related__link">解决使用docker出现的问题！</a>
+        </li>
+        
+        <li>
+          <a href="/docker/limit_memory/" class="related__link">限制容器内存</a>
         </li>
         
     </ul>
