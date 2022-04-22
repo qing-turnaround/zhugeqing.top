@@ -1962,6 +1962,21 @@ maxmemory-policy volatile-lru
 </span><span class="lnt">45
 </span><span class="lnt">46
 </span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:master.sh" data-lang="Shell:master.sh"><span class="cp">#!/bin/bash
@@ -2005,6 +2020,21 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class
 </span><span class="s"># 设置redis内存淘汰策略
 </span><span class="s">maxmemory-policy volatile-lru
 </span><span class="s">
+</span><span class="s"># 开启AOF
+</span><span class="s">appendonly yes
+</span><span class="s"># 总是追加到AOF文件
+</span><span class="s">appendfsync always
+</span><span class="s"># 超过100MB就进行重写
+</span><span class="s">auto-aof-rewrite-min-size 100mb
+</span><span class="s"># 超过增长率就进行重写
+</span><span class="s">auto-aof-rewrite-percentage 40
+</span><span class="s"># 开启AOF-RDB 混合持久化
+</span><span class="s">aof-use-rdb-preamble yes
+</span><span class="s">
+</span><span class="s"># 配置慢查询日志（不超过100微秒就不会被记录）
+</span><span class="s">slowlog-log-slower-than 100
+</span><span class="s"># 最多记录100条，先进先出
+</span><span class="s">slowlog-max-len 100
 </span><span class="s">EOF</span>
 
 docker run -d -p --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
@@ -2071,6 +2101,23 @@ ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/r
 </span><span class="lnt">53
 </span><span class="lnt">54
 </span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:slave.sh" data-lang="Shell:slave.sh"><span class="cp">#!/bin/bash
@@ -2122,6 +2169,23 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class
 </span><span class="s">maxmemory 500MB
 </span><span class="s"># 设置redis内存淘汰策略
 </span><span class="s">maxmemory-policy volatile-lru
+</span><span class="s">
+</span><span class="s"># 开启AOF
+</span><span class="s">appendonly yes
+</span><span class="s"># 总是追加到AOF文件
+</span><span class="s">appendfsync always
+</span><span class="s"># 超过100MB就进行重写
+</span><span class="s">auto-aof-rewrite-min-size 100mb
+</span><span class="s"># 超过增长率就进行重写
+</span><span class="s">auto-aof-rewrite-percentage 40
+</span><span class="s"># 开启AOF-RDB 混合持久化
+</span><span class="s">aof-use-rdb-preamble yes
+</span><span class="s">
+</span><span class="s">
+</span><span class="s"># 配置慢查询日志（不超过100微秒就不会被记录）
+</span><span class="s">slowlog-log-slower-than 100
+</span><span class="s"># 最多记录100条，先进先出
+</span><span class="s">slowlog-max-len 100
 </span><span class="s">EOF</span>
 
 docker run -d -p --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf

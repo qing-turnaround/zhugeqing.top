@@ -1951,7 +1951,7 @@ d662230a2592   13 days ago      /bin/sh -c #(nop)  CMD [&quot;bash&quot;]       
 <p>使用<code>copy</code>和<code>add</code>都可以往镜像里面复制镜像，而<code>add</code>相比于<code>copy</code>，使用<code>add</code>往镜像里面复制压缩文件时，<code>add</code>会自动解压缩文件<br />
 <code>workdir</code> 相当于是<code>cd</code>(change directory)</p>
 </blockquote>
-<h3 id="add">ADD</h3>
+<h3 id="copy">COPY</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1962,7 +1962,7 @@ d662230a2592   13 days ago      /bin/sh -c #(nop)  CMD [&quot;bash&quot;]       
 </span><span class="err"></span><span class="k">COPY</span> hello.py /app/hello.py<span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="copy">COPY</h3>
+</div><h3 id="add">ADD</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2917,8 +2917,8 @@ document.addEventListener('DOMContentLoaded', function () {
     </li>
     <li><a href="#文件复制和目录操作-addcopyworkdir">文件复制和目录操作 (ADD,COPY,WORKDIR)</a>
       <ul>
-        <li><a href="#add">ADD</a></li>
         <li><a href="#copy">COPY</a></li>
+        <li><a href="#add">ADD</a></li>
         <li><a href="#workdir">WORKDIR</a></li>
       </ul>
     </li>

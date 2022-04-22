@@ -94,6 +94,21 @@ maxmemory 500MB
 # 设置redis内存淘汰策略
 maxmemory-policy volatile-lru
 
+# 开启AOF
+appendonly yes
+# 总是追加到AOF文件
+appendfsync always
+# 超过100MB就进行重写
+auto-aof-rewrite-min-size 100mb
+# 超过增长率就进行重写
+auto-aof-rewrite-percentage 40
+# 开启AOF-RDB 混合持久化
+aof-use-rdb-preamble yes
+
+# 配置慢查询日志（不超过100微秒就不会被记录）
+slowlog-log-slower-than 100
+# 最多记录100条，先进先出
+slowlog-max-len 100
 EOF
 
 docker run -d -p --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
@@ -154,6 +169,23 @@ slaveof $masterip $masterport
 maxmemory 500MB
 # 设置redis内存淘汰策略
 maxmemory-policy volatile-lru
+
+# 开启AOF
+appendonly yes
+# 总是追加到AOF文件
+appendfsync always
+# 超过100MB就进行重写
+auto-aof-rewrite-min-size 100mb
+# 超过增长率就进行重写
+auto-aof-rewrite-percentage 40
+# 开启AOF-RDB 混合持久化
+aof-use-rdb-preamble yes
+
+
+# 配置慢查询日志（不超过100微秒就不会被记录）
+slowlog-log-slower-than 100
+# 最多记录100条，先进先出
+slowlog-max-len 100
 EOF
 
 docker run -d -p --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
