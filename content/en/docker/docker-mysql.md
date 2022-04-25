@@ -15,15 +15,15 @@ series:
 
 ## 主节点配置
 
-* `运行下面shell脚本`；或者依次执行命令 `curl -fsSL www.zhugeqing.top/deploy-master-mysql.sh -o master.sh` `bash master.sh`
+* `运行下面shell脚本`
 ```Shell:deploy-master.sh
 #!/bin/bash
 docker pull zhugeqing/mysql:5.6
-read -t 10 -p "请输入mysql的端口号（默认3306）：" port # 等待10s用户输入
+read -t 20 -p "请输入mysql的端口号（默认3306）：" port # 等待20s用户输入
 port=${port:-3306} # 如果没有输入任何值则赋予变量默认值
 echo "mysql端口号为：$port"
 
-read -t 10 -p "请输入mysql的root账号密码（默认123456）：" password # 等待10s用户输入
+read -t 20 -p "请输入mysql的root账号密码（默认123456）：" password # 等待20s用户输入
 password=${password:-123456} # 如果没有输入任何值则赋予变量默认值
 echo "mysql root用户密码为：$password"
 
@@ -35,10 +35,6 @@ echo "mysql 容器运行的名字为：$name"
 mkdir -p /docker/mysql/$name/data
 mkdir -p /docker/mysql/$name/conf
 
-# # 创建volume
-# docker volume create ${name}-data
-# docker volume create ${name}-conf
-
 # 启动容器
 docker container run --name ${name} -p $port:3306 -e MYSQL_ROOT_PASSWORD=$password -d  -v ${name}-conf:/etc/mysql -v ${name}-data:/var/lib/mysql zhugeqing/mysql:5.6
  
@@ -46,7 +42,7 @@ docker container run --name ${name} -p $port:3306 -e MYSQL_ROOT_PASSWORD=$passwo
 ln -s /var/lib/docker/volumes/${name}-data/_data /docker/mysql/${name}/data
 ln -s /var/lib/docker/volumes/${name}-conf/_data /docker/mysql/${name}/conf
 
-read -t 10 -p "请输入主节点的id号（需要与从节点的id号不同，默认为1）：" id 
+read -t 20 -p "请输入主节点的id号（需要与从节点的id号不同，默认为1）：" id 
 id=${id:-1} 
 echo "主节点的id号为：$id"
 
@@ -56,11 +52,14 @@ cat > /docker/mysql/$name/conf/_data/mysql.cnf << EOF
 # 主节点配置文件
 [mysqld]
 server-id = $id # id号
+# 二进制日志
 log-bin=/var/lib/mysql/mysql-bin
+# 错误日志
+log-error      = /var/lib/mysql/error.log 
+
 pid-file        = /var/run/mysqld/mysqld.pid
 socket          = /var/run/mysqld/mysqld.sock
 datadir         = /var/lib/mysql
-log-error      = /var/log/mysql/error.log
 
 symbolic-links=0
 character_set_server=utf8
@@ -85,16 +84,16 @@ docker restart ${name}
 
 ## 从节点配置
 
-* `运行下面shell脚本` 或者依次执行命令 `curl -fsSL www.zhugeqing.top/deploy-slave-mysql.sh -o slave.sh` `bash slave.sh`
+* `运行下面shell脚本`
 ```Shell:deploy:slave.sh
 #!/bin/bash
 
 docker pull zhugeqing/mysql:5.6
-read -t 20 -p "请输入mysql的端口号（默认3306）：" port # 等待10s用户输入
+read -t 20 -p "请输入mysql的端口号（默认3306）：" port # 等待20s用户输入
 port=${port:-3306} # 如果没有输入任何值则赋予变量默认值
 echo "mysql端口号为：$port"
 
-read -t 20 -p "请输入mysql的root账号密码（默认123456）：" password # 等待10s用户输入
+read -t 20 -p "请输入mysql的root账号密码（默认123456）：" password # 等待20s用户输入
 password=${password:-123456} # 如果没有输入任何值则赋予变量默认值
 echo "mysql root用户密码为：$password"
 
@@ -105,10 +104,6 @@ echo "mysql 容器运行的名字为：$name"
 # 创建进行映射的文件夹
 mkdir -p /docker/mysql/$name/data
 mkdir -p /docker/mysql/$name/conf
-
-# # 创建volume
-# docker volume create ${name}-data
-# docker volume create ${name}-conf
 
 
 docker container run --name ${name} -p $port:3306 -e MYSQL_ROOT_PASSWORD=$password -d  -v $name-conf:/etc/mysql -v ${name}-data:/var/lib/mysql zhugeqing/mysql:5.6
@@ -126,12 +121,25 @@ cat > /docker/mysql/$name/conf/_data/mysql.cnf << EOF
 !includedir /etc/mysql/mysql.conf.d/
 # 主节点配置文件
 [mysqld]
-server-id = $id # id号
-relay-log=/var/lib/mysql/relay-bin # relay日志
+# id号
+server-id = $id 
+# relay日志
+relay-log=/var/lib/mysql/relay-bin 
+# 错误日志
+log-error      = /var/lib/mysql/error.log 
+log-slow-admin-statements = on
+log-queries-not-using-indexes=on
+# 开启慢查询日志
+slow-query-log = 1
+# 超时时间为0.03 秒
+long-query-time = 0.03
+# 慢查询日志路径
+slow-query-log-file = /var/lib/mysql/slow.log
+
+
 pid-file        = /var/run/mysqld/mysqld.pid
 socket          = /var/run/mysqld/mysqld.sock
 datadir         = /var/lib/mysql
-log-error      = /var/log/mysql/error.log
 
 symbolic-links=0
 character_set_server=utf8

@@ -111,7 +111,7 @@ slowlog-log-slower-than 100
 slowlog-max-len 100
 EOF
 
-docker run -d -p --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
+docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
 
 # 软链接
 ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
@@ -188,7 +188,7 @@ slowlog-log-slower-than 100
 slowlog-max-len 100
 EOF
 
-docker run -d -p --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
+docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
 
 # 软链接
 ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
@@ -263,7 +263,7 @@ sentinel failover-timeout $mastername 180000
 EOF
 
 
-docker run -d -p --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/ -v $name-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
+docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/ -v $name-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
 
 # 软链接
 ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data

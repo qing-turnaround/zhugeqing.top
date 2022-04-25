@@ -2037,7 +2037,7 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class
 </span><span class="s">slowlog-max-len 100
 </span><span class="s">EOF</span>
 
-docker run -d -p --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
+docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
 
 <span class="c1"># 软链接</span>
 ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
@@ -2188,7 +2188,7 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class
 </span><span class="s">slowlog-max-len 100
 </span><span class="s">EOF</span>
 
-docker run -d -p --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
+docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
 
 <span class="c1"># 软链接</span>
 ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
@@ -2335,7 +2335,7 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/sentinel.conf <span cl
 </span><span class="s">EOF</span>
 
 
-docker run -d -p --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/ -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
+docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/ -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
 
 <span class="c1"># 软链接</span>
 ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data

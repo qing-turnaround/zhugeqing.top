@@ -1867,7 +1867,7 @@
       
       <h2 id="主节点配置">主节点配置</h2>
 <ul>
-<li><code>运行下面shell脚本</code>；或者依次执行命令 <code>curl -fsSL www.zhugeqing.top/deploy-master-mysql.sh -o master.sh</code> <code>bash master.sh</code></li>
+<li><code>运行下面shell脚本</code></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1934,16 +1934,15 @@
 </span><span class="lnt">61
 </span><span class="lnt">62
 </span><span class="lnt">63
-</span><span class="lnt">64
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:deploy-master.sh" data-lang="Shell:deploy-master.sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span>docker pull zhugeqing/mysql:5.6
-<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入mysql的端口号（默认3306）：&#34;</span> port <span class="c1"># 等待10s用户输入</span>
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql的端口号（默认3306）：&#34;</span> port <span class="c1"># 等待20s用户输入</span>
 <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">3306</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql端口号为：</span><span class="nv">$port</span><span class="s2">&#34;</span>
 
-<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入mysql的root账号密码（默认123456）：&#34;</span> password <span class="c1"># 等待10s用户输入</span>
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql的root账号密码（默认123456）：&#34;</span> password <span class="c1"># 等待20s用户输入</span>
 <span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql root用户密码为：</span><span class="nv">$password</span><span class="s2">&#34;</span>
 
@@ -1955,10 +1954,6 @@
 mkdir -p /docker/mysql/<span class="nv">$name</span>/data
 mkdir -p /docker/mysql/<span class="nv">$name</span>/conf
 
-<span class="c1"># # 创建volume</span>
-<span class="c1"># docker volume create ${name}-data</span>
-<span class="c1"># docker volume create ${name}-conf</span>
-
 <span class="c1"># 启动容器</span>
 docker container run --name <span class="si">${</span><span class="nv">name</span><span class="si">}</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v <span class="si">${</span><span class="nv">name</span><span class="si">}</span>-conf:/etc/mysql -v <span class="si">${</span><span class="nv">name</span><span class="si">}</span>-data:/var/lib/mysql zhugeqing/mysql:5.6
  
@@ -1966,7 +1961,7 @@ docker container run --name <span class="si">${</span><span class="nv">name</spa
 ln -s /var/lib/docker/volumes/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-data/_data /docker/mysql/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>/data
 ln -s /var/lib/docker/volumes/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>-conf/_data /docker/mysql/<span class="si">${</span><span class="nv">name</span><span class="si">}</span>/conf
 
-<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&#34;请输入主节点的id号（需要与从节点的id号不同，默认为1）：&#34;</span> id 
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的id号（需要与从节点的id号不同，默认为1）：&#34;</span> id 
 <span class="nv">id</span><span class="o">=</span><span class="si">${</span><span class="nv">id</span><span class="k">:-</span><span class="nv">1</span><span class="si">}</span> 
 <span class="nb">echo</span> <span class="s2">&#34;主节点的id号为：</span><span class="nv">$id</span><span class="s2">&#34;</span>
 
@@ -1976,11 +1971,14 @@ cat &gt; /docker/mysql/<span class="nv">$name</span>/conf/_data/mysql.cnf <span 
 </span><span class="s"># 主节点配置文件
 </span><span class="s">[mysqld]
 </span><span class="s">server-id = $id # id号
+</span><span class="s"># 二进制日志
 </span><span class="s">log-bin=/var/lib/mysql/mysql-bin
+</span><span class="s"># 错误日志
+</span><span class="s">log-error      = /var/lib/mysql/error.log 
+</span><span class="s">
 </span><span class="s">pid-file        = /var/run/mysqld/mysqld.pid
 </span><span class="s">socket          = /var/run/mysqld/mysqld.sock
 </span><span class="s">datadir         = /var/lib/mysql
-</span><span class="s">log-error      = /var/log/mysql/error.log
 </span><span class="s">
 </span><span class="s">symbolic-links=0
 </span><span class="s">character_set_server=utf8
@@ -2005,7 +2003,7 @@ docker restart <span class="si">${</span><span class="nv">name</span><span class
 </div>
 </div><h2 id="从节点配置">从节点配置</h2>
 <ul>
-<li><code>运行下面shell脚本</code> 或者依次执行命令 <code>curl -fsSL www.zhugeqing.top/deploy-slave-mysql.sh -o slave.sh</code> <code>bash slave.sh</code></li>
+<li><code>运行下面shell脚本</code></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2077,16 +2075,25 @@ docker restart <span class="si">${</span><span class="nv">name</span><span class
 </span><span class="lnt">66
 </span><span class="lnt">67
 </span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:deploy:slave.sh" data-lang="Shell:deploy:slave.sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span>
 docker pull zhugeqing/mysql:5.6
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql的端口号（默认3306）：&#34;</span> port <span class="c1"># 等待10s用户输入</span>
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql的端口号（默认3306）：&#34;</span> port <span class="c1"># 等待20s用户输入</span>
 <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">3306</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql端口号为：</span><span class="nv">$port</span><span class="s2">&#34;</span>
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql的root账号密码（默认123456）：&#34;</span> password <span class="c1"># 等待10s用户输入</span>
+<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入mysql的root账号密码（默认123456）：&#34;</span> password <span class="c1"># 等待20s用户输入</span>
 <span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;mysql root用户密码为：</span><span class="nv">$password</span><span class="s2">&#34;</span>
 
@@ -2097,10 +2104,6 @@ docker pull zhugeqing/mysql:5.6
 <span class="c1"># 创建进行映射的文件夹</span>
 mkdir -p /docker/mysql/<span class="nv">$name</span>/data
 mkdir -p /docker/mysql/<span class="nv">$name</span>/conf
-
-<span class="c1"># # 创建volume</span>
-<span class="c1"># docker volume create ${name}-data</span>
-<span class="c1"># docker volume create ${name}-conf</span>
 
 
 docker container run --name <span class="si">${</span><span class="nv">name</span><span class="si">}</span> -p <span class="nv">$port</span>:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="nv">$password</span> -d  -v <span class="nv">$name</span>-conf:/etc/mysql -v <span class="si">${</span><span class="nv">name</span><span class="si">}</span>-data:/var/lib/mysql zhugeqing/mysql:5.6
@@ -2118,12 +2121,25 @@ cat &gt; /docker/mysql/<span class="nv">$name</span>/conf/_data/mysql.cnf <span 
 </span><span class="s">!includedir /etc/mysql/mysql.conf.d/
 </span><span class="s"># 主节点配置文件
 </span><span class="s">[mysqld]
-</span><span class="s">server-id = $id # id号
-</span><span class="s">relay-log=/var/lib/mysql/relay-bin # relay日志
+</span><span class="s"># id号
+</span><span class="s">server-id = $id 
+</span><span class="s"># relay日志
+</span><span class="s">relay-log=/var/lib/mysql/relay-bin 
+</span><span class="s"># 错误日志
+</span><span class="s">log-error      = /var/lib/mysql/error.log 
+</span><span class="s">log-slow-admin-statements = on
+</span><span class="s">log-queries-not-using-indexes=on
+</span><span class="s"># 开启慢查询日志
+</span><span class="s">slow-query-log = 1
+</span><span class="s"># 超时时间为0.03 秒
+</span><span class="s">long-query-time = 0.03
+</span><span class="s"># 慢查询日志路径
+</span><span class="s">slow-query-log-file = /var/lib/mysql/slow.log
+</span><span class="s">
+</span><span class="s">
 </span><span class="s">pid-file        = /var/run/mysqld/mysqld.pid
 </span><span class="s">socket          = /var/run/mysqld/mysqld.sock
 </span><span class="s">datadir         = /var/lib/mysql
-</span><span class="s">log-error      = /var/log/mysql/error.log
 </span><span class="s">
 </span><span class="s">symbolic-links=0
 </span><span class="s">character_set_server=utf8
