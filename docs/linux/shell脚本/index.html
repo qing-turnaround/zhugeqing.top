@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 30, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;5&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">🎅&nbsp;诸葛青</span>
   
@@ -1873,8 +1873,8 @@
 <li>
 <p>shell脚本使用<code>#</code>开头来进行注释</p>
 </li>
-<li>
-<p><code>shell脚本的执行方式</code><br />
+</ul>
+<h3 id="shell脚本的执行方式"><code>shell脚本的执行方式</code></h3>
 <div class="box"><ul>
 <li><code>bash 1.sh</code></li>
 <li><code>./1.sh</code></li>
@@ -1883,8 +1883,8 @@
 <li>区别1：使用<code>./1.sh</code>这种方式执行，需要对文件赋予执行权限，其他不用。</li>
 <li>区别2：使用<code>bash 1.sh</code>，<code>./1.sh</code>方式执行，会产生一个子进程来执行，比如sh脚本中是<code>cd /temp</code>，而在当前目录执行，执行完成之后，也不会进入<code>/temp</code>。而其他两种可以</li>
 </ul>
-</div></p>
-</li>
+</div>
+<ul>
 <li>
 <p><code>|</code><br />
 <div class="box"><ul>
@@ -1911,15 +1911,13 @@
 </ul>
 </div></p>
 </li>
-<li>
-<p><code>输入和输出重定向组合使用</code><br />
+</ul>
+<h3 id="输入和输出重定向组合使用"><code>输入和输出重定向组合使用</code></h3>
 <div class="box">cat &gt; /root/a.txt &laquo;EOF<br />
 zhugeqing<br />
 EOF<br />
-<code>&gt;</code>  用于覆盖，<code>&gt;&gt;</code>用于追加</div></p>
-</li>
-<li>
-<p><code>变量赋值</code><br />
+<code>&gt;</code>  用于覆盖，<code>&gt;&gt;</code>用于追加</div>
+<h3 id="变量赋值"><code>变量赋值</code></h3>
 <div class="box"><ul>
 <li>变量名只能包含字母，数字，下划线；变量名不能以数字开头</li>
 <li><code>变量名=变量值</code>；例：<code>a=12345</code></li>
@@ -1928,37 +1926,29 @@ EOF<br />
 <li><code>将命令结果赋给变量</code>；例：<code>ls_res=$(ls)</code>（或者使用<code>`</code> <code>`</code>来代替<code>$()</code>）</li>
 <li><code>变量值</code>有空格等特殊符号需要包含在<code>&quot; &quot;</code>活<code>' '</code>中；例：<code>string=&quot;123 33&quot;</code></li>
 </ul>
-</div></p>
-</li>
-<li>
-<p><code>变量的引用</code><br />
+</div>
+<h3 id="变量的引用"><code>变量的引用</code></h3>
 <div class="box"><ul>
 <li>$zhugeqing <code>（zhugeqing为 shell变量）</code></li>
 <li>${zhugeqing}</li>
 <li>在shell脚本中，使用shell变量，由于<code>bash 1.sh</code>和<code>./1.sh</code>这两种方式会生成子进程，会导致变量无法到子进程使用，所有需要通过<code>export zhugeqing</code>来导出变量，使得子进程也可以访问</li>
 <li>使用<code>unset zhugeqing</code>来删除变量</li>
 </ul>
-</div></p>
-</li>
-<li>
-<p><code>环境变量</code><br />
+</div>
+<h3 id="环境变量"><code>环境变量</code></h3>
 <div class="box"><ul>
 <li><code>$PATH</code>也就是执行命令的搜索路径，当有命令想在任意路径都能对其进行访问，可以在<code>/etc/profile</code>文件中加入<code>PATH=$PATH:/root</code>（比如这个命令就在/root/目录下），需要再<code>source</code>一下profile文件</li>
 <li>通过修改变量<code>$PS1</code>可以改变shell提示终端符，通过修改<code>/root/.bashrc</code>来到达永久生效的效果，比如设置<code>PS1=&quot;[\e[32;40m\u @\h \t \w$]&quot;</code>（具体搜索——修改linux shell 变量PS1），也可以将变量加入到<code>/etc/profile</code>，然后再<code>source</code></li>
 </ul>
-</div></p>
-</li>
-<li>
-<p><code>预定义变量</code><br />
+</div>
+<h3 id="预定义变量"><code>预定义变量</code></h3>
 <div class="box"><ul>
 <li><code>$?</code>:展示上一条命令的执行结果是否正常，0为正常，1为错误</li>
 <li><code>$$</code>:展示当前进程的进程ID</li>
 <li><code>$0</code>:展示当前的进程名字</li>
 </ul>
-</div></p>
-</li>
-<li>
-<p><code>位置变量</code><br />
+</div>
+<h3 id="位置变量"><code>位置变量</code></h3>
 <div class="box"><ul>
 <li><code>$0</code> <code>$1</code>&hellip; <code>${11}</code>可以用于读取执行shell脚本所带的值</li>
 </ul>
@@ -1992,18 +1982,14 @@ EOF<br />
 </code></pre></td></tr></table>
 </div>
 </div><p><code>source 1.sh 诸葛青</code>（可以解决传入参数不足，默认使用<code>我就是shell</code>）</p>
-</div></p>
-</li>
-</ul>
+</div>
 <h2 id="进阶姿势">进阶姿势</h2>
-<ul>
-<li><code>read</code><br />
+<h3 id="read"><code>read</code></h3>
 <div class="box"><ul>
 <li><code>-p</code>：输出提示信息</li>
 <li><code>-t</code>：等待用户输入时间， 如果到了时间就不让用户继续输入了（单位为秒）</li>
 </ul>
-</div></li>
-</ul>
+</div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2018,6 +2004,177 @@ EOF<br />
 <span class="nb">read</span> -t <span class="m">5</span> -p <span class="s2">&#34;请输入您的名字：&#34;</span> name <span class="c1"># 等待5s用户输入</span>
 <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">诸葛青</span><span class="si">}</span> <span class="c1"># 如果没有输入任何值则赋予变量默认值</span>
 <span class="nb">echo</span> <span class="s2">&#34;您的名字是</span><span class="nv">$name</span><span class="s2">&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="基本语法"><code>基本语法</code></h3>
+<div class="box"><ol>
+<li>“$((运算式))”或“$[运算式]”或者 expr m + n //expression 表达式</li>
+<li>注意 expr 运算符间要有空格, 如果希望将 expr 的结果赋给某个变量，使用 temp = `expr 1 + 2`</li>
+<li>expr m - n</li>
+<li>expr *, /, % 乘，除，取余</li>
+</ol>
+</div>
+<h3 id="判断"><code>判断</code></h3>
+<div class="box"><p><code>判断语法</code></p>
+<ol>
+<li>
+<p>单分支<br />
+if [ 判断条件 ]<br />
+then<br />
+代码<br />
+fi</p>
+</li>
+<li>
+<p>多分支<br />
+if [ 判断条件 ]<br />
+then<br />
+代码<br />
+elif [ 判断条件 ]<br />
+then<br />
+代码<br />
+fi</p>
+</li>
+<li>
+<p>case<br />
+case $1 in<br />
+&ldquo;1&rdquo;)<br />
+echo &ldquo;周一&rdquo;<br />
+;;<br />
+&ldquo;2&rdquo;)<br />
+echo &ldquo;周二&rdquo;<br />
+;;<br />
+&ldquo;3&rdquo;)<br />
+echo &ldquo;周三&rdquo;<br />
+;;<br />
+*)<br />
+echo &ldquo;other&rdquo;<br />
+esac</p>
+</li>
+</ol>
+</div>
+<div class="box"><p><code>判断条件</code>：</p>
+<ol>
+<li>字符串比较：<code>=</code></li>
+<li>数字比较：<br />
+小于：<code>-lt</code>（Less than）<br />
+小于等于：<code>-le</code>（Less than equal）<br />
+大于：<code>-gt</code>（Greater than）<br />
+大于等于：<code>-ge</code>（Greater than equal）<br />
+不等于：<code>-ne</code>（not equal）</li>
+<li>按照文件权限进行判断<br />
+有读的权限：<code>-r</code><br />
+有写的权限：<code>-w</code><br />
+有执行的权限：<code>-x</code></li>
+<li>按照文件类型进行判断<br />
+文件存在且是一个常规的文件：<code>-f</code><br />
+文件存在：<code>-e</code><br />
+是一个目录：<code>-d</code></li>
+</ol>
+</div>
+<h3 id="循环"><code>循环</code></h3>
+<ol>
+<li>for循环</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:a.sh" data-lang="Shell:a.sh"><span class="cp">#!/bin/bash 
+</span><span class="cp"></span><span class="c1">#从命令行输入一个数 n，统计从 1+..+ n 的值是多少？ </span>
+<span class="nv">SUM</span><span class="o">=</span><span class="m">0</span>
+<span class="k">for</span> i in <span class="sb">`</span>seq <span class="m">1</span> <span class="nv">$1</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+        <span class="nv">SUM</span><span class="o">=</span><span class="sb">`</span>expr <span class="nv">$SUM</span> + <span class="nv">$i</span><span class="sb">`</span>
+<span class="k">done</span> 
+<span class="nb">echo</span> <span class="nv">$SUM</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:a.sh" data-lang="Shell:a.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="c1">#从命令行输入一个数 n，统计从 1+..+ n 的值是多少？ </span>
+<span class="nv">SUM</span><span class="o">=</span><span class="m">0</span>
+<span class="k">for</span> <span class="o">((</span><span class="nv">i</span> <span class="o">=</span> 1<span class="p">;</span> i &lt;<span class="o">=</span> <span class="nv">$1</span><span class="p">;</span> i++<span class="o">))</span>
+<span class="k">do</span>
+        <span class="nv">SUM</span><span class="o">=</span><span class="sb">`</span>expr <span class="nv">$SUM</span> + <span class="nv">$i</span><span class="sb">`</span>
+<span class="k">done</span> 
+<span class="nb">echo</span> <span class="nv">$SUM</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>while循环</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell:a.sh" data-lang="Shell:a.sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="c1">#从命令行输入一个数 n，统计从 1+..+ n 的值是多少？ </span>
+<span class="nv">SUM</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">i</span><span class="o">=</span><span class="m">0</span>
+<span class="k">while</span> <span class="o">[</span> <span class="nv">$i</span> -le <span class="nv">$1</span> <span class="o">]</span> 
+<span class="k">do</span>
+        <span class="nv">SUM</span><span class="o">=</span><span class="sb">`</span>expr <span class="nv">$SUM</span> + <span class="nv">$i</span><span class="sb">`</span>
+        <span class="nv">i</span><span class="o">=</span><span class="sb">`</span>expr <span class="nv">$i</span> + 1<span class="sb">`</span>
+
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="nv">$SUM</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="函数"><code>函数</code></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="k">function</span> HelloWorld<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">a</span><span class="o">=</span><span class="s2">&#34;Hello World&#34;</span>
+    <span class="nb">echo</span> <span class="nv">$a</span>
+    <span class="nb">echo</span> <span class="nv">$1</span>
+<span class="o">}</span>
+
+HelloWorld <span class="nv">$1</span>
+
+<span class="nv">a</span><span class="o">=</span><span class="s1">$&#39;111&#39;</span>
+<span class="nb">echo</span> <span class="nv">$a</span>
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -2314,6 +2471,10 @@ EOF<br />
         
         <li>
           <a href="/linux/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" class="related__link">Linux系统操作</a>
+        </li>
+        
+        <li>
+          <a href="/linux/tips/" class="related__link">释放Linux cache</a>
         </li>
         
         <li>
@@ -2709,8 +2870,26 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="toc " data-dir="ltr" data-folding="true" data-ani="true">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#基本操作">基本操作</a></li>
-    <li><a href="#进阶姿势">进阶姿势</a></li>
+    <li><a href="#基本操作">基本操作</a>
+      <ul>
+        <li><a href="#shell脚本的执行方式"><code>shell脚本的执行方式</code></a></li>
+        <li><a href="#输入和输出重定向组合使用"><code>输入和输出重定向组合使用</code></a></li>
+        <li><a href="#变量赋值"><code>变量赋值</code></a></li>
+        <li><a href="#变量的引用"><code>变量的引用</code></a></li>
+        <li><a href="#环境变量"><code>环境变量</code></a></li>
+        <li><a href="#预定义变量"><code>预定义变量</code></a></li>
+        <li><a href="#位置变量"><code>位置变量</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#进阶姿势">进阶姿势</a>
+      <ul>
+        <li><a href="#read"><code>read</code></a></li>
+        <li><a href="#基本语法"><code>基本语法</code></a></li>
+        <li><a href="#判断"><code>判断</code></a></li>
+        <li><a href="#循环"><code>循环</code></a></li>
+        <li><a href="#函数"><code>函数</code></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>

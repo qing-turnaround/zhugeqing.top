@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 6, 2021 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;5&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;6&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1977,29 +1977,57 @@ maxmemory-policy volatile-lru
 </span><span class="lnt">60
 </span><span class="lnt">61
 </span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:master.sh" data-lang="Shell:master.sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span>
-<span class="nb">echo</span> <span class="s2">&#34;正在使用redis master节点脚本！&#34;</span>
+<span class="c1"># 入口函数</span>
+<span class="k">function</span> Init<span class="o">()</span> <span class="o">{</span>
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：&#34;</span> port 
-<span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis）：&#34;</span> name
-<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+        GetVar
+        WriteToConf
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点密码（默认为123456）：&#34;</span> password
-<span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主节点密码为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
+        docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
+        <span class="c1"># 软链接</span>
+        ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
+<span class="o">}</span>
 
-<span class="c1"># 创建需要映射的目录</span>
-mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data
+<span class="c1"># 获取变量</span>
+<span class="k">function</span> GetVar<span class="o">()</span> <span class="o">{</span>
+        <span class="nb">echo</span> <span class="s2">&#34;正在使用redis master节点脚本！&#34;</span>
+        <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：&#34;</span> port 
+        <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
+        <span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
+
+        <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis）：&#34;</span> name
+        <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="si">}</span>
+        <span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+
+        <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点密码（默认为123456）：&#34;</span> password
+        <span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
+        <span class="nb">echo</span> <span class="s2">&#34;主节点密码为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
+
+        <span class="c1"># 创建需要映射的目录</span>
+        mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data
+<span class="o">}</span>
 
 
 <span class="c1"># 编写配置文件</span>
+<span class="k">function</span> WriteToConf<span class="o">()</span> <span class="o">{</span>
 cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class="s">&lt;&lt; EOF
 </span><span class="s">
 </span><span class="s"># 容器内部端口
@@ -2036,11 +2064,9 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class
 </span><span class="s"># 最多记录100条，先进先出
 </span><span class="s">slowlog-max-len 100
 </span><span class="s">EOF</span>
+<span class="o">}</span>
 
-docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
-
-<span class="c1"># 软链接</span>
-ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
+Init
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="从节点脚本">从节点脚本</h3>
@@ -2118,36 +2144,62 @@ ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/r
 </span><span class="lnt">70
 </span><span class="lnt">71
 </span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:slave.sh" data-lang="Shell:slave.sh"><span class="cp">#!/bin/bash
-</span><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;正在使用redis slave节点脚本！&#34;</span>
+</span><span class="cp"></span>
+<span class="c1"># 入口函数</span>
+<span class="k">function</span> Init<span class="o">()</span> <span class="o">{</span>
+    GetVar
+    WriteToConf
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：&#34;</span> port 
-<span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
+    docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis）：&#34;</span> name
-<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+    <span class="c1"># 软链接</span>
+    ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的ip地址（默认为127.0.0.1）：&#34;</span> masterip
-<span class="nv">masterip</span><span class="o">=</span><span class="si">${</span><span class="nv">masterip</span><span class="k">:-</span><span class="nv">127</span><span class="p">.0.0.1</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主节点的ip为</span><span class="si">${</span><span class="nv">masterip</span><span class="si">}</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+<span class="c1"># 获取变量</span>
+<span class="k">function</span> GetVar<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">&#34;正在使用redis slave节点脚本！&#34;</span>
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：&#34;</span> port 
+    <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的端口（默认为6379）：&#34;</span> masterport
-<span class="nv">masterport</span><span class="o">=</span><span class="si">${</span><span class="nv">masterport</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主节点的端口为</span><span class="si">${</span><span class="nv">masterport</span><span class="si">}</span><span class="s2">&#34;</span>
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis）：&#34;</span> name
+    <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点密码（默认为123456）：&#34;</span> password
-<span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主节点密码为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的ip地址（默认为127.0.0.1）：&#34;</span> masterip
+    <span class="nv">masterip</span><span class="o">=</span><span class="si">${</span><span class="nv">masterip</span><span class="k">:-</span><span class="nv">127</span><span class="p">.0.0.1</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主节点的ip为</span><span class="si">${</span><span class="nv">masterip</span><span class="si">}</span><span class="s2">&#34;</span>
 
-<span class="c1"># 创建需要映射的目录</span>
-mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的端口（默认为6379）：&#34;</span> masterport
+    <span class="nv">masterport</span><span class="o">=</span><span class="si">${</span><span class="nv">masterport</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主节点的端口为</span><span class="si">${</span><span class="nv">masterport</span><span class="si">}</span><span class="s2">&#34;</span>
 
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点密码（默认为123456）：&#34;</span> password
+    <span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主节点密码为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
+
+    <span class="c1"># 创建需要映射的目录</span>
+    mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data
+<span class="o">}</span>
 
 <span class="c1"># 编写配置文件</span>
+<span class="k">function</span> WriteToConf<span class="o">()</span> <span class="o">{</span>
 cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class="s">&lt;&lt; EOF
 </span><span class="s">
 </span><span class="s"># 容器内部端口
@@ -2187,11 +2239,9 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/redis.conf <span class
 </span><span class="s"># 最多记录100条，先进先出
 </span><span class="s">slowlog-max-len 100
 </span><span class="s">EOF</span>
+<span class="o">}</span>
 
-docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/  -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
-
-<span class="c1"># 软链接</span>
-ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
+Init
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="部署redis-sentinel">部署redis-sentinel</h2>
@@ -2267,49 +2317,69 @@ ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/r
 </span><span class="lnt">68
 </span><span class="lnt">69
 </span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:sentinel.sh" data-lang="Shell:sentinel.sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span>
-<span class="nb">echo</span> <span class="s2">&#34;当前正在使用部署redis-sentinel的脚本!&#34;</span>
+<span class="nv">add</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+<span class="c1"># 入口函数</span>
+<span class="k">function</span> Init<span class="o">()</span> <span class="o">{</span>
+    InitSentinel
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为26379，主机默认为26379）：&#34;</span> port
-<span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">26379</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
+    <span class="c1"># 添加主节点</span>
+    AddMaster
+    <span class="k">while</span> <span class="o">[</span> <span class="nv">$add</span> <span class="o">=</span> <span class="s2">&#34;yes&#34;</span> <span class="o">]</span>
+    <span class="k">do</span> AddMaster
+    <span class="k">done</span> 
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis-sentinel）：&#34;</span> name
-<span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="p">-sentinel</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
+    docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/ -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel监控主节点的名字（默认为redis-master）：&#34;</span> mastername
-<span class="nv">mastername</span><span class="o">=</span><span class="si">${</span><span class="nv">mastername</span><span class="k">:-</span><span class="nv">redis</span><span class="p">-master</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主节点的名字为</span><span class="si">${</span><span class="nv">mastername</span><span class="si">}</span><span class="s2">&#34;</span>
+    <span class="c1"># 软链接</span>
+    ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
+    
+<span class="o">}</span>
 
+<span class="k">function</span> InitSentinel<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">&#34;当前正在使用部署redis-sentinel的脚本!&#34;</span>
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的ip地址（默认为127.0.0.1）：&#34;</span> masterip
-<span class="nv">masterip</span><span class="o">=</span><span class="si">${</span><span class="nv">masterip</span><span class="k">:-</span><span class="nv">127</span><span class="p">.0.0.1</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主节点的ip为</span><span class="si">${</span><span class="nv">masterip</span><span class="si">}</span><span class="s2">&#34;</span>
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器映射到主机的端口（容器内默认为26379，主机默认为26379）：&#34;</span> port
+    <span class="nv">port</span><span class="o">=</span><span class="si">${</span><span class="nv">port</span><span class="k">:-</span><span class="nv">26379</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主机端口为</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">&#34;</span>
 
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的端口（默认为6379）：&#34;</span> masterport
-<span class="nv">masterport</span><span class="o">=</span><span class="si">${</span><span class="nv">masterport</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主节点的端口为</span><span class="si">${</span><span class="nv">masterport</span><span class="si">}</span><span class="s2">&#34;</span>
-
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主从的密码（默认为123456）：&#34;</span> masterpasswd
-<span class="nv">masterpasswd</span><span class="o">=</span><span class="si">${</span><span class="nv">masterpasswd</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;主从节点的密码为</span><span class="si">${</span><span class="nv">masterpasswd</span><span class="si">}</span><span class="s2">&#34;</span>
-
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel选举最小投票数（默认为1）：&#34;</span> vote
-<span class="nv">vote</span><span class="o">=</span><span class="si">${</span><span class="nv">vote</span><span class="k">:-</span><span class="nv">1</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;最小投票数为</span><span class="si">${</span><span class="nv">vote</span><span class="si">}</span><span class="s2">&#34;</span>
-
-<span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel密码（默认为123456）：&#34;</span> password
-<span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
-<span class="nb">echo</span> <span class="s2">&#34;sentinel密码为为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入容器运行时的容器名字（默认为redis-sentinel）：&#34;</span> name
+    <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">name</span><span class="k">:-</span><span class="nv">redis</span><span class="p">-sentinel</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;容器名字为</span><span class="si">${</span><span class="nv">name</span><span class="si">}</span><span class="s2">&#34;</span>
 
 
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel密码（默认为123456）：&#34;</span> password
+    <span class="nv">password</span><span class="o">=</span><span class="si">${</span><span class="nv">password</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;sentinel密码为为</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span>
 
-<span class="c1"># 创建需要映射的目录</span>
-mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data
+    <span class="c1"># 创建需要映射的目录</span>
+    mkdir -p /docker/redis/<span class="nv">$name</span>/conf /docker/redis/<span class="nv">$name</span>/data   
 
 cat &gt; /docker/redis/<span class="nv">$name</span>/conf/sentinel.conf <span class="s">&lt;&lt; EOF
 </span><span class="s"># 端口
@@ -2319,7 +2389,33 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/sentinel.conf <span cl
 </span><span class="s">requirepass $password
 </span><span class="s">
 </span><span class="s">logfile &#34;redis-sentinel-$port.log&#34; 
-</span><span class="s">
+</span><span class="s">EOF</span>
+<span class="o">}</span>
+
+<span class="c1"># 添加主节点</span>
+<span class="k">function</span> AddMaster<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel监控主节点的名字（默认为redis-master）：&#34;</span> mastername
+    <span class="nv">mastername</span><span class="o">=</span><span class="si">${</span><span class="nv">mastername</span><span class="k">:-</span><span class="nv">redis</span><span class="p">-master</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主节点的名字为</span><span class="si">${</span><span class="nv">mastername</span><span class="si">}</span><span class="s2">&#34;</span>
+
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的ip地址（默认为127.0.0.1）：&#34;</span> masterip
+    <span class="nv">masterip</span><span class="o">=</span><span class="si">${</span><span class="nv">masterip</span><span class="k">:-</span><span class="nv">127</span><span class="p">.0.0.1</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主节点的ip为</span><span class="si">${</span><span class="nv">masterip</span><span class="si">}</span><span class="s2">&#34;</span>
+
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主节点的端口（默认为6379）：&#34;</span> masterport
+    <span class="nv">masterport</span><span class="o">=</span><span class="si">${</span><span class="nv">masterport</span><span class="k">:-</span><span class="nv">6379</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主节点的端口为</span><span class="si">${</span><span class="nv">masterport</span><span class="si">}</span><span class="s2">&#34;</span>
+
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入主从的密码（默认为123456）：&#34;</span> masterpasswd
+    <span class="nv">masterpasswd</span><span class="o">=</span><span class="si">${</span><span class="nv">masterpasswd</span><span class="k">:-</span><span class="nv">123456</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;主从节点的密码为</span><span class="si">${</span><span class="nv">masterpasswd</span><span class="si">}</span><span class="s2">&#34;</span>
+
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;请输入sentinel选举最小投票数（默认为1）：&#34;</span> vote
+    <span class="nv">vote</span><span class="o">=</span><span class="si">${</span><span class="nv">vote</span><span class="k">:-</span><span class="nv">1</span><span class="si">}</span>
+    <span class="nb">echo</span> <span class="s2">&#34;最小投票数为</span><span class="si">${</span><span class="nv">vote</span><span class="si">}</span><span class="s2">&#34;</span>
+
+  
+cat &gt;&gt; /docker/redis/<span class="nv">$name</span>/conf/sentinel.conf <span class="s">&lt;&lt; EOF    
 </span><span class="s">sentinel monitor $mastername $masterip $masterport $vote
 </span><span class="s">
 </span><span class="s"># 这个配置项指定了需要多少失效时间，一个master才会被这个sentinel主观地认为是不可用的。 单位是毫秒，默认为30秒      
@@ -2334,11 +2430,11 @@ cat &gt; /docker/redis/<span class="nv">$name</span>/conf/sentinel.conf <span cl
 </span><span class="s">sentinel failover-timeout $mastername 180000
 </span><span class="s">EOF</span>
 
+    <span class="nb">read</span> -t <span class="m">20</span> -p <span class="s2">&#34;是否继续添加主节点：（输入yes或者no）：&#34;</span> add
 
-docker run -d --network host --restart unless-stopped --name <span class="nv">$name</span> -v /docker/redis/<span class="nv">$name</span>/conf:/etc/redis/ -v <span class="nv">$name</span>-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
+<span class="o">}</span>
 
-<span class="c1"># 软链接</span>
-ln -s /var/lib/docker/volumes/<span class="nv">$name</span>-data/_data /docker/redis/<span class="nv">$name</span>/data
+Init
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="删除上述操作脚本">删除上述操作脚本</h2>

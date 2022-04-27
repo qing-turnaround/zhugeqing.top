@@ -55,25 +55,40 @@ maxmemory-policy volatile-lru
 ```Shell:master.sh
 #!/bin/bash
 
-echo "正在使用redis master节点脚本！"
+# 入口函数
+function Init() {
 
-read -t 20 -p "请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：" port 
-port=${port:-6379}
-echo "主机端口为${port}"
 
-read -t 20 -p "请输入容器运行时的容器名字（默认为redis）：" name
-name=${name:-redis}
-echo "容器名字为${name}"
+        GetVar
+        WriteToConf
 
-read -t 20 -p "请输入主节点密码（默认为123456）：" password
-password=${password:-123456}
-echo "主节点密码为${password}"
+        docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
+        # 软链接
+        ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
+}
 
-# 创建需要映射的目录
-mkdir -p /docker/redis/$name/conf /docker/redis/$name/data
+# 获取变量
+function GetVar() {
+        echo "正在使用redis master节点脚本！"
+        read -t 20 -p "请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：" port 
+        port=${port:-6379}
+        echo "主机端口为${port}"
+
+        read -t 20 -p "请输入容器运行时的容器名字（默认为redis）：" name
+        name=${name:-redis}
+        echo "容器名字为${name}"
+
+        read -t 20 -p "请输入主节点密码（默认为123456）：" password
+        password=${password:-123456}
+        echo "主节点密码为${password}"
+
+        # 创建需要映射的目录
+        mkdir -p /docker/redis/$name/conf /docker/redis/$name/data
+}
 
 
 # 编写配置文件
+function WriteToConf() {
 cat > /docker/redis/$name/conf/redis.conf << EOF
 
 # 容器内部端口
@@ -110,44 +125,56 @@ slowlog-log-slower-than 100
 # 最多记录100条，先进先出
 slowlog-max-len 100
 EOF
+}
 
-docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
-
-# 软链接
-ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
+Init
 ```
 
 
 ### 从节点脚本
 ```Shell:slave.sh
 #!/bin/bash
-echo "正在使用redis slave节点脚本！"
 
-read -t 20 -p "请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：" port 
-port=${port:-6379}
-echo "主机端口为${port}"
+# 入口函数
+function Init() {
+    GetVar
+    WriteToConf
 
-read -t 20 -p "请输入容器运行时的容器名字（默认为redis）：" name
-name=${name:-redis}
-echo "容器名字为${name}"
+    docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
 
-read -t 20 -p "请输入主节点的ip地址（默认为127.0.0.1）：" masterip
-masterip=${masterip:-127.0.0.1}
-echo "主节点的ip为${masterip}"
+    # 软链接
+    ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
 
-read -t 20 -p "请输入主节点的端口（默认为6379）：" masterport
-masterport=${masterport:-6379}
-echo "主节点的端口为${masterport}"
+}
+# 获取变量
+function GetVar() {
+    echo "正在使用redis slave节点脚本！"
+    read -t 20 -p "请输入容器映射到主机的端口（容器内默认为6379，主机默认为6379）：" port 
+    port=${port:-6379}
+    echo "主机端口为${port}"
 
-read -t 20 -p "请输入主节点密码（默认为123456）：" password
-password=${password:-123456}
-echo "主节点密码为${password}"
+    read -t 20 -p "请输入容器运行时的容器名字（默认为redis）：" name
+    name=${name:-redis}
+    echo "容器名字为${name}"
 
-# 创建需要映射的目录
-mkdir -p /docker/redis/$name/conf /docker/redis/$name/data
+    read -t 20 -p "请输入主节点的ip地址（默认为127.0.0.1）：" masterip
+    masterip=${masterip:-127.0.0.1}
+    echo "主节点的ip为${masterip}"
 
+    read -t 20 -p "请输入主节点的端口（默认为6379）：" masterport
+    masterport=${masterport:-6379}
+    echo "主节点的端口为${masterport}"
+
+    read -t 20 -p "请输入主节点密码（默认为123456）：" password
+    password=${password:-123456}
+    echo "主节点密码为${password}"
+
+    # 创建需要映射的目录
+    mkdir -p /docker/redis/$name/conf /docker/redis/$name/data
+}
 
 # 编写配置文件
+function WriteToConf() {
 cat > /docker/redis/$name/conf/redis.conf << EOF
 
 # 容器内部端口
@@ -187,11 +214,9 @@ slowlog-log-slower-than 100
 # 最多记录100条，先进先出
 slowlog-max-len 100
 EOF
+}
 
-docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/  -v $name-data:/data zhugeqing/redis redis-server /etc/redis/redis.conf
-
-# 软链接
-ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
+Init
 ```
 
 ## 部署redis-sentinel
@@ -199,45 +224,42 @@ ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
 ```Shell:sentinel.sh
 #!/bin/bash
 
-echo "当前正在使用部署redis-sentinel的脚本!"
+add=""
+# 入口函数
+function Init() {
+    InitSentinel
 
-read -t 20 -p "请输入容器映射到主机的端口（容器内默认为26379，主机默认为26379）：" port
-port=${port:-26379}
-echo "主机端口为${port}"
+    # 添加主节点
+    AddMaster
+    while [ $add = "yes" ]
+    do AddMaster
+    done 
 
-read -t 20 -p "请输入容器运行时的容器名字（默认为redis-sentinel）：" name
-name=${name:-redis-sentinel}
-echo "容器名字为${name}"
+    docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/ -v $name-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
 
-read -t 20 -p "请输入sentinel监控主节点的名字（默认为redis-master）：" mastername
-mastername=${mastername:-redis-master}
-echo "主节点的名字为${mastername}"
+    # 软链接
+    ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
+    
+}
 
+function InitSentinel() {
+    echo "当前正在使用部署redis-sentinel的脚本!"
 
-read -t 20 -p "请输入主节点的ip地址（默认为127.0.0.1）：" masterip
-masterip=${masterip:-127.0.0.1}
-echo "主节点的ip为${masterip}"
+    read -t 20 -p "请输入容器映射到主机的端口（容器内默认为26379，主机默认为26379）：" port
+    port=${port:-26379}
+    echo "主机端口为${port}"
 
-read -t 20 -p "请输入主节点的端口（默认为6379）：" masterport
-masterport=${masterport:-6379}
-echo "主节点的端口为${masterport}"
-
-read -t 20 -p "请输入主从的密码（默认为123456）：" masterpasswd
-masterpasswd=${masterpasswd:-123456}
-echo "主从节点的密码为${masterpasswd}"
-
-read -t 20 -p "请输入sentinel选举最小投票数（默认为1）：" vote
-vote=${vote:-1}
-echo "最小投票数为${vote}"
-
-read -t 20 -p "请输入sentinel密码（默认为123456）：" password
-password=${password:-123456}
-echo "sentinel密码为为${password}"
+    read -t 20 -p "请输入容器运行时的容器名字（默认为redis-sentinel）：" name
+    name=${name:-redis-sentinel}
+    echo "容器名字为${name}"
 
 
+    read -t 20 -p "请输入sentinel密码（默认为123456）：" password
+    password=${password:-123456}
+    echo "sentinel密码为为${password}"
 
-# 创建需要映射的目录
-mkdir -p /docker/redis/$name/conf /docker/redis/$name/data
+    # 创建需要映射的目录
+    mkdir -p /docker/redis/$name/conf /docker/redis/$name/data   
 
 cat > /docker/redis/$name/conf/sentinel.conf << EOF
 # 端口
@@ -247,7 +269,33 @@ port $port
 requirepass $password
 
 logfile "redis-sentinel-$port.log" 
+EOF
+}
 
+# 添加主节点
+function AddMaster() {
+    read -t 20 -p "请输入sentinel监控主节点的名字（默认为redis-master）：" mastername
+    mastername=${mastername:-redis-master}
+    echo "主节点的名字为${mastername}"
+
+    read -t 20 -p "请输入主节点的ip地址（默认为127.0.0.1）：" masterip
+    masterip=${masterip:-127.0.0.1}
+    echo "主节点的ip为${masterip}"
+
+    read -t 20 -p "请输入主节点的端口（默认为6379）：" masterport
+    masterport=${masterport:-6379}
+    echo "主节点的端口为${masterport}"
+
+    read -t 20 -p "请输入主从的密码（默认为123456）：" masterpasswd
+    masterpasswd=${masterpasswd:-123456}
+    echo "主从节点的密码为${masterpasswd}"
+
+    read -t 20 -p "请输入sentinel选举最小投票数（默认为1）：" vote
+    vote=${vote:-1}
+    echo "最小投票数为${vote}"
+
+  
+cat >> /docker/redis/$name/conf/sentinel.conf << EOF    
 sentinel monitor $mastername $masterip $masterport $vote
 
 # 这个配置项指定了需要多少失效时间，一个master才会被这个sentinel主观地认为是不可用的。 单位是毫秒，默认为30秒      
@@ -262,11 +310,11 @@ sentinel parallel-syncs $mastername 1
 sentinel failover-timeout $mastername 180000
 EOF
 
+    read -t 20 -p "是否继续添加主节点：（输入yes或者no）：" add
 
-docker run -d --network host --restart unless-stopped --name $name -v /docker/redis/$name/conf:/etc/redis/ -v $name-data:/data zhugeqing/redis redis-sentinel /etc/redis/sentinel.conf
+}
 
-# 软链接
-ln -s /var/lib/docker/volumes/$name-data/_data /docker/redis/$name/data
+Init
 ```
 
 ## 删除上述操作脚本
