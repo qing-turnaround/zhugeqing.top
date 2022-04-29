@@ -1909,7 +1909,7 @@
 <li><code>docker image rm nginx</code> 删除nginx这个镜像</li>
 <li><code>docker conainer --help</code> 查看更多与容器有关的命令</li>
 <li><code>docker image --help</code> 查看更多与镜像有关的命令</li>
-<li><code>docker system prune -f</code> 删除所有已经停止运行的容器</li>
+<li><code>docker system prune -f</code> 清理磁盘</li>
 <li><code>docker image prune -a</code> 删除所有没有被使用的镜像</li>
 <li><code>docker container run --rm nginx</code> 当容器退出时，会自动删除容器</li>
 <li><code>docker update mysql --restart=always</code> 设置容器mysql自启动</li>
@@ -2272,10 +2272,6 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
           <a href="/docker/tips/" class="related__link">解决使用docker出现的问题！</a>
         </li>
         
-        <li>
-          <a href="/docker/limit_memory/" class="related__link">限制容器内存</a>
-        </li>
-        
     </ul>
     
   </section>
@@ -2292,7 +2288,7 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
     
     <div class="grow"></div>
     
-      <a href="https://www.zhugeqing.top/docker/2/" class="pagination-single__right">      
+      <a href="https://www.zhugeqing.top/docker/docker-image/" class="pagination-single__right">      
         <div class="pagination-single__right-title">Docker镜像</div>
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>

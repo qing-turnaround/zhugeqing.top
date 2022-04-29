@@ -17,6 +17,7 @@ series:
 * `cat /proc/meminfo | grep "MemFree" | awk '{print $2}'`
 
 ### 编写脚本
+> 并赋予权限
 ```Shell:release-Memory.sh
 #! /bin/bash
 #Memory小于 一般情况下的内存 时 释放Cached的内存

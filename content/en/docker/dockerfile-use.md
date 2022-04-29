@@ -194,6 +194,9 @@ Successfully built 3906ec34f79f
 Successfully tagged cache:latest
 ```
 
+## 使用&&
+> 尽量使用 &&来连接命令，这样不用产生新的分层
+
 #### .dockerignore文件
 > .dockerignore文件需放在build context指定目录下
 ```.dockerignore
@@ -262,5 +265,5 @@ CMD ["flask", "run", "-h", "0.0.0.0"]
 ### 学习更多DockerFile知识
 1. [Docker-library](https://github.com/docker-library/official-images)
 > 可以进入官方的github仓库，然后进入library，找到某些image，然后找到文本文件中的git地址，点开地址，可以查看官方是如何编写DockerFile镜像的
-2. [DockerFile](https://github.com/docker-library/official-images)
+2. [DockerFile](https://docs.docker.com/engine/reference/builder/)
 > 官方DokcerFile文档

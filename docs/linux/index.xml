@@ -769,13 +769,16 @@ HelloWorld &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
         
         <atom:modified>Sun, 20 Mar 2022 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/linux/tips/</guid>
-        <description>先查询一下空闲内存 手动清理——echo 3 &amp;gt; /proc/sys/vm/drop_caches cat /proc/meminfo | grep &amp;quot;MemFree&amp;quot; | awk &#39;{print $2}&#39; 编写脚本 1 2 3 4 5 6 7 8 9 #! /bin/bash #Memory小于 一般情况下的内存 时 释放Cached的内存 least=1156184 freemem=$(cat /proc/meminfo | grep &amp;#34;MemFree&amp;#34; | awk &amp;#39;{print $2}&amp;#39;) if [ $freemem -le $least ];then sync # 同步一下 sync echo 3 &amp;gt; /proc/sys/vm/drop_caches # 释放 fi 设置定时任务 输入crontab –e编辑定时任务 输入*/3 * * * * /root/linux_study/release_memory.sh按照vim操作保存 每隔三分钟执行一次 通过crontab</description>
+        <description>先查询一下空闲内存 手动清理——echo 3 &amp;gt; /proc/sys/vm/drop_caches cat /proc/meminfo | grep &amp;quot;MemFree&amp;quot; | awk &#39;{print $2}&#39; 编写脚本 并赋予权限 1 2 3 4 5 6 7 8 9 #! /bin/bash #Memory小于 一般情况下的内存 时 释放Cached的内存 least=1156184 freemem=$(cat /proc/meminfo | grep &amp;#34;MemFree&amp;#34; | awk &amp;#39;{print $2}&amp;#39;) if [ $freemem -le $least ];then sync # 同步一下 sync echo 3 &amp;gt; /proc/sys/vm/drop_caches # 释放 fi 设置定时任务 输入crontab –e编辑定时任务 输入*/3 * * * * /root/linux_study/release_memory.sh按照vim操作保存 每隔三分钟执行一次 通过cr</description>
         <content:encoded>&lt;h3 id=&#34;先查询一下空闲内存&#34;&gt;先查询一下空闲内存&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;手动清理——&lt;code&gt;echo 3 &amp;gt; /proc/sys/vm/drop_caches&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;cat /proc/meminfo | grep &amp;quot;MemFree&amp;quot; | awk &#39;{print $2}&#39;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;编写脚本&#34;&gt;编写脚本&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;并赋予权限&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
