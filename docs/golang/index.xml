@@ -123,6 +123,50 @@
       </item>
       
       <item>
+        <title>Go new与make的区别</title>
+        <link>https://www.zhugeqing.top/golang/allocation_new/</link>
+        <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 01 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/allocation_new/</guid>
+        <description>分配内存 Go 语言有两个分配原语，一个是new，一个是make，它们做不同的事情并适用于不同的类型， new new它是一个分配内存的内置函数，但与其他一些语言中的同名函数不同，它不会初始化内存，它只会将其归零。也就是说， new(T)为 分配零存储 T并返回其地址，即：*T。用术语来讲的话就是：它返回一个指向新分配的类型零值的指针T。 make 有了分配内存的new，为什么还需要有make呢？，答案显而易见，make只适用</description>
+        <content:encoded>&lt;h2 id=&#34;分配内存&#34;&gt;分配内存&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;Go 语言有两个分配原语，一个是&lt;code&gt;new&lt;/code&gt;，一个是&lt;code&gt;make&lt;/code&gt;，它们做不同的事情并适用于不同的类型，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;new&#34;&gt;new&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;new&lt;/code&gt;它是一个分配内存的内置函数，但与其他一些语言中的同名函数不同，它不会初始化内存，它只会将其归零。也就是说， new(T)为 分配零存储 T并返回其地址，即：*T。用术语来讲的话就是：它返回一个指向新分配的类型零值的指针T。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;make&#34;&gt;make&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;有了分配内存的&lt;code&gt;new&lt;/code&gt;，为什么还需要有&lt;code&gt;make&lt;/code&gt;呢？，答案显而易见，make只适用于三种类型：&lt;code&gt;slice&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;chan&lt;/code&gt;；这三种类型与其他类型的区别就是：&lt;code&gt;它们引用的数据结构在使用之前必须被初始化！&lt;/code&gt;，比如&lt;code&gt;slice&lt;/code&gt;：其中就包含&lt;code&gt;cap&lt;/code&gt;，&lt;code&gt;len&lt;/code&gt;，&lt;code&gt;内置数组&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;术语化来说：&lt;code&gt;内置函数make(T, args)的用途不同于new(T)， 它只创建切片、映射和通道，并返回已初始化的（非归零值）T&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>Goroutine</title>
         <link>https://www.zhugeqing.top/golang/goroutine/</link>
         <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
