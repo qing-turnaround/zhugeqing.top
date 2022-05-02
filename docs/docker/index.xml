@@ -26,7 +26,7 @@
         
         <atom:modified>Fri, 18 Mar 2022 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/docker/docker-memory/</guid>
-        <description>内存限制 使用docker stats 可以查看容器的内存使用状态。 以docker 限制 redis使用内存为例： docker run -d -m 500M -- memory-swap -1 -name redis zhugeqing/redis redis-server 上面容器启动命令的 -m参数指定容器的最大使用内存为500M -- memory-swap -1表示容器程序使用内存的受限，而可以使用的 swap 空间使用不受限制(宿主机有多少 swap 容器就可以使用多少)。 docker update --memory 1200M --memory-swap 1400M redis 更新容器 redis的内存限制 -memory 1200M --memory-swap 1400M表示容器能使用的内存为1200M，但swap能使用1400M</description>
+        <description>内存限制 使用docker stats 可以查看容器的内存使用状态。 以docker 限制 redis使用内存为例： docker run -d -m 500M --memory-swap -1 -name redis zhugeqing/redis redis-server 上面容器启动命令的 -m参数指定容器的最大使用内存为500M -- memory-swap -1表示容器程序使用内存的受限，而可以使用的 swap 空间使用不受限制(宿主机有多少 swap 容器就可以使用多少)。 docker update --memory 1200M --memory-swap 1400M redis 更新容器 redis的内存限制 -memory 1200M --memory-swap 1400M表示容器能使用的内存为1200M，但swap能使用1400M-</description>
         <content:encoded>&lt;h2 id=&#34;内存限制&#34;&gt;内存限制&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -35,7 +35,7 @@
 &lt;li&gt;
 &lt;p&gt;以docker 限制 redis使用内存为例：&lt;br /&gt;
 &lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;docker run -d -m 500M -- memory-swap -1 -name redis zhugeqing/redis redis-server&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker run -d -m 500M --memory-swap -1 -name redis zhugeqing/redis redis-server&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;上面容器启动命令的 &lt;code&gt;-m&lt;/code&gt;参数指定容器的最大使用内存为&lt;code&gt;500M&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-- memory-swap -1&lt;/code&gt;表示容器程序使用内存的受限，而可以使用的 swap 空间使用不受限制(宿主机有多少 swap 容器就可以使用多少)。&lt;/li&gt;
 &lt;/ul&gt;

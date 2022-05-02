@@ -1873,7 +1873,7 @@
 <li>
 <p>以docker 限制 redis使用内存为例：<br />
 <div class="box"><ul>
-<li><code>docker run -d -m 500M -- memory-swap -1 -name redis zhugeqing/redis redis-server</code></li>
+<li><code>docker run -d -m 500M --memory-swap -1 -name redis zhugeqing/redis redis-server</code></li>
 <li>上面容器启动命令的 <code>-m</code>参数指定容器的最大使用内存为<code>500M</code></li>
 <li><code>-- memory-swap -1</code>表示容器程序使用内存的受限，而可以使用的 swap 空间使用不受限制(宿主机有多少 swap 容器就可以使用多少)。</li>
 </ul>

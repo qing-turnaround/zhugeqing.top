@@ -17,7 +17,7 @@ series:
 
 * 以docker 限制 redis使用内存为例：
 {{< boxmd >}}
-* `docker run -d -m 500M -- memory-swap -1 -name redis zhugeqing/redis redis-server`
+* `docker run -d -m 500M --memory-swap -1 -name redis zhugeqing/redis redis-server`
 * 上面容器启动命令的 `-m`参数指定容器的最大使用内存为`500M`
 * `-- memory-swap -1`表示容器程序使用内存的受限，而可以使用的 swap 空间使用不受限制(宿主机有多少 swap 容器就可以使用多少)。
 {{< /boxmd >}}
