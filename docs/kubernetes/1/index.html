@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 23, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;4&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;6&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1878,7 +1878,7 @@
 </blockquote>
 <h2 id="在同一个网络的机器">在同一个网络的机器</h2>
 <blockquote>
-<p>把脚本放入对应机器执行即可</p>
+<p>把脚本放入对应机器执行即可（记得修改基本里面的一些参数，比如IP地址）</p>
 </blockquote>
 <h3 id="master节点">Master节点</h3>
 <div class="highlight"><div class="chroma">
@@ -1989,48 +1989,165 @@
 </span><span class="lnt">104
 </span><span class="lnt">105
 </span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell:master.sh" data-lang="Shell:master.sh"><span class="cp">#!/bin/bash
-</span><span class="cp"></span><span class="nb">set</span> -v
-systemctl stop firewalld
-systemctl disable firewalld
-sed -i <span class="s1">&#39;s/enforcing/disabled/&#39;</span> /etc/selinux/config
-sed -ri <span class="s1">&#39;s/.*swap.*/#&amp;/&#39;</span> /etc/fstab
-<span class="c1"># 设置主机名字</span>
-hostnamectl set-hostname master-k8s
+</span><span class="cp"></span><span class="nb">set</span> -e
 
-cat &gt; /etc/sysctl.d/k8s.conf <span class="s">&lt;&lt; EOF 
-</span><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
-</span><span class="s">net.bridge.bridge-nf-call-iptables = 1 
-</span><span class="s">EOF</span>
+<span class="c1"># 安装日志</span>
+<span class="nv">install_log</span><span class="o">=</span>/var/log/install_k8s.log
+<span class="nv">tm</span><span class="o">=</span><span class="k">$(</span>date +<span class="s1">&#39;%Y%m%d %T&#39;</span><span class="k">)</span>
 
+<span class="c1"># 日志颜色</span>
+<span class="nv">COLOR_G</span><span class="o">=</span><span class="s2">&#34;\x1b[0;32m&#34;</span>  <span class="c1"># green</span>
+<span class="nv">RESET</span><span class="o">=</span><span class="s2">&#34;\x1b[0m&#34;</span>
 
-<span class="c1"># master和 node对应的ip地址，如果是云服务器，则改成公网IP</span>
-cat &gt;&gt; /etc/hosts <span class="s">&lt;&lt; EOF 
-</span><span class="s">192.168.0.128 master
-</span><span class="s">192.168.0.133 node1
-</span><span class="s">EOF</span>
+<span class="k">function</span> info<span class="o">(){</span>
+    <span class="nb">echo</span> -e <span class="s2">&#34;</span><span class="si">${</span><span class="nv">COLOR_G</span><span class="si">}</span><span class="s2">[</span><span class="nv">$tm</span><span class="s2">] [Info] </span><span class="si">${</span><span class="nv">1</span><span class="si">}${</span><span class="nv">RESET</span><span class="si">}</span><span class="s2">&#34;</span>
+<span class="o">}</span>
 
-sysctl --system
+<span class="k">function</span> run_cmd<span class="o">(){</span>
+  sh -c <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2"> | </span><span class="k">$(</span>tee -a <span class="s2">&#34;</span><span class="nv">$install_log</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+<span class="o">}</span>
 
-yum install ntpdate -y
-ntpdate time.windows.com
+<span class="k">function</span> run_function<span class="o">(){</span>
+  <span class="nv">$1</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$install_log</span><span class="s2">&#34;</span>
+<span class="o">}</span>
 
-wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
-yum -y install docker-ce-18.06.1.ce-3.el7
-<span class="c1"># 设置开机启动 &amp;&amp; 启动</span>
-systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span> systemctl start docker
+<span class="k">function</span> install_docker<span class="o">(){</span>
+  info <span class="s2">&#34;1.使用脚本自动安装docker...&#34;</span>
+  curl -sSL https://get.daocloud.io/docker <span class="p">|</span> sh
 
-cat &gt; /etc/docker/daemon.json <span class="s">&lt;&lt; EOF 
+  info <span class="s2">&#34;2.启动 Docker CE...&#34;</span>
+  systemctl <span class="nb">enable</span> docker
+  systemctl start docker
+
+  info <span class="s2">&#34;3.添加镜像加速器...&#34;</span>
+  <span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">&#34;/etc/docker/daemon.json&#34;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+    touch /etc/docker/daemon.json
+  <span class="k">fi</span>
+  cat <span class="s">&lt;&lt;EOF &gt; /etc/docker/daemon.json
 </span><span class="s">{
-</span><span class="s">    &#34;registry-mirrors&#34;: [&#34;https://b9pmyelo.mirror.aliyuncs.com&#34;] 
+</span><span class="s">  &#34;registry-mirrors&#34;: [
+</span><span class="s">    &#34;https://5ajk0rns.mirror.aliyuncs.com&#34;
+</span><span class="s">    ]
 </span><span class="s">}
 </span><span class="s">EOF</span>
 
-systemctl restart docker
+  info <span class="s2">&#34;4.重新启动服务...&#34;</span>
+  systemctl daemon-reload
+  systemctl restart docker
 
-cat &gt; /etc/yum.repos.d/kubernetes.repo <span class="s">&lt;&lt; EOF 
+  info <span class="s2">&#34;5.测试 Docker 是否安装正确...&#34;</span>
+  docker run hello-world
+
+  info <span class="s2">&#34;6.检测...&#34;</span>
+  docker info
+<span class="o">}</span>
+
+<span class="k">function</span> install_k8s<span class="o">()</span> <span class="o">{</span>
+    info <span class="s2">&#34;初始化k8s部署环境...&#34;</span>
+    init_env
+
+    info <span class="s2">&#34;添加k8s安装源...&#34;</span>
+    add_aliyun_repo
+
+    info <span class="s2">&#34;安装kubelet kubeadmin kubectl...&#34;</span>
+    install_kubelet_kubeadmin_kubectl
+
+    info <span class="s2">&#34;安装kubernetes master...&#34;</span>
+    yum -y install net-tools
+    <span class="k">if</span> <span class="o">[[</span> ! <span class="s2">&#34;</span><span class="k">$(</span>ps aux <span class="p">|</span> grep <span class="s1">&#39;kubernetes&#39;</span> <span class="p">|</span> grep -v <span class="s1">&#39;grep&#39;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+      kubeadmin_init
+    <span class="k">else</span>
+      info <span class="s2">&#34;kubernetes master已经安装...&#34;</span>
+    <span class="k">fi</span>
+
+    info <span class="s2">&#34;安装网络插件flannel...&#34;</span>
+    install_flannel
+
+    info <span class="s2">&#34;去污点...&#34;</span>
+    kubectl taint nodes --all node-role.kubernetes.io/master-
+<span class="o">}</span>
+
+<span class="c1"># 初始化部署环境</span>
+<span class="k">function</span> init_env<span class="o">()</span> <span class="o">{</span>
+  info <span class="s2">&#34;关闭防火墙&#34;</span>
+  systemctl stop firewalld
+  systemctl disable firewalld
+
+  info <span class="s2">&#34;关闭selinux&#34;</span>
+  sed -i <span class="s1">&#39;s/^SELINUX=enforcing$/SELINUX=disabled/g&#39;</span> /etc/selinux/config
+  <span class="nb">source</span> /etc/selinux/config
+
+  info <span class="s2">&#34;关闭swap（k8s禁止虚拟内存以提高性能）&#34;</span>
+  swapoff -a
+  sed -i <span class="s1">&#39;/swap/s/^\(.*\)$/#\1/g&#39;</span> /etc/fstab
+
+  info <span class="s2">&#34;设置网桥参数&#34;</span>
+  cat <span class="s">&lt;&lt;-EOF &gt; /etc/sysctl.d/k8s.conf
+</span><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
+</span><span class="s">net.bridge.bridge-nf-call-iptables = 1
+</span><span class="s">EOF</span>
+  sysctl --system  <span class="c1">#生效</span>
+  sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+<span class="o">}</span>
+
+<span class="c1"># 添加aliyun安装源</span>
+<span class="k">function</span> add_aliyun_repo<span class="o">()</span> <span class="o">{</span>
+  cat &gt; /etc/yum.repos.d/kubernetes.repo <span class="s">&lt;&lt;- EOF
 </span><span class="s">[kubernetes]
 </span><span class="s">name=Kubernetes
 </span><span class="s">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
@@ -2039,161 +2156,311 @@ cat &gt; /etc/yum.repos.d/kubernetes.repo <span class="s">&lt;&lt; EOF
 </span><span class="s">repo_gpgcheck=0
 </span><span class="s">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 </span><span class="s">EOF</span>
+<span class="o">}</span>
 
-yum install -y kubelet-1.18.0 kubeadm-1.18.0 kubectl-1.18.0
+<span class="k">function</span> install_kubelet_kubeadmin_kubectl<span class="o">()</span> <span class="o">{</span>
+  yum install kubelet-1.19.4 kubeadm-1.19.4 kubectl-1.19.4 -y
+  systemctl <span class="nb">enable</span> kubelet.service
 
-systemctl <span class="nb">enable</span> kubelet <span class="o">&amp;&amp;</span> systemctl start kubelet
+  info <span class="s2">&#34;确认kubelet kubeadmin kubectl是否安装成功&#34;</span>
+  yum list installed <span class="p">|</span> grep kubelet
+  yum list installed <span class="p">|</span> grep kubeadm
+  yum list installed <span class="p">|</span> grep kubectl
+  kubelet --version
+<span class="o">}</span>
 
-
-cat &gt;  /usr/lib/systemd/system/docker.service <span class="s">&lt;&lt; EOF 
-</span><span class="s">[Unit]
-</span><span class="s">Description=Docker Application Container Engine
-</span><span class="s">Documentation=https://docs.docker.com
-</span><span class="s">After=network-online.target firewalld.service
-</span><span class="s">Wants=network-online.target
-</span><span class="s">
-</span><span class="s">[Service]
-</span><span class="s">Type=notify
-</span><span class="s"># the default is not to use systemd for cgroups because the delegate issues still
-</span><span class="s"># exists and systemd currently does not support the cgroup feature set required
-</span><span class="s"># for containers run by docker
-</span><span class="s">ExecStart=/usr/bin/dockerd --exec-opt native.cgroupdriver=systemd
-</span><span class="s">ExecReload=/bin/kill -s HUP $MAINPID
-</span><span class="s"># Having non-zero Limit*s causes performance problems due to accounting overhead
-</span><span class="s"># in the kernel. We recommend using cgroups to do container-local accounting.
-</span><span class="s">LimitNOFILE=infinity
-</span><span class="s">LimitNPROC=infinity
-</span><span class="s">LimitCORE=infinity
-</span><span class="s"># Uncomment TasksMax if your systemd version supports it.
-</span><span class="s"># Only systemd 226 and above support this version.
-</span><span class="s">#TasksMax=infinity
-</span><span class="s">TimeoutStartSec=0
-</span><span class="s"># set delegate yes so that systemd does not reset the cgroups of docker containers
-</span><span class="s">Delegate=yes
-</span><span class="s"># kill only the docker process, not all processes in the cgroup
-</span><span class="s">KillMode=process
-</span><span class="s"># restart the docker process if it exits prematurely
-</span><span class="s">Restart=on-failure
-</span><span class="s">StartLimitBurst=3
-</span><span class="s">StartLimitInterval=60s
-</span><span class="s">
-</span><span class="s">[Install]
-</span><span class="s">WantedBy=multi-user.target
+<span class="k">function</span> kubeadmin_init<span class="o">()</span> <span class="o">{</span>
+  sleep <span class="m">1</span>
+<span class="c1"># 修改</span>
+<span class="nv">ip</span><span class="o">=</span>192.168.0.128
+hostnamectl set-hostname master
+cat &gt;&gt; /etc/hosts <span class="s">&lt;&lt; EOF 
+</span><span class="s">${ip} master
+</span><span class="s">192.168.0.133 node1
 </span><span class="s">EOF</span>
+  kubeadm init --apiserver-advertise-address<span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">ip</span><span class="si">}</span><span class="s2">&#34;</span> --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.19.4 --service-cidr<span class="o">=</span>10.96.0.0/12 --pod-network-cidr<span class="o">=</span>10.244.0.0/16
+  mkdir -p <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.kube
+  cp -i /etc/kubernetes/admin.conf <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.kube/config
+  chown <span class="s2">&#34;</span><span class="k">$(</span>id -u<span class="k">)</span><span class="s2">&#34;</span>:<span class="s2">&#34;</span><span class="k">$(</span>id -g<span class="k">)</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.kube/config
+<span class="o">}</span>
 
-<span class="c1"># 初始化</span>
+<span class="k">function</span> install_flannel<span class="o">()</span> <span class="o">{</span>
+  yum -y install wget
+  wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  kubectl apply -f kube-flannel.yml
+<span class="o">}</span>
 
-kubeadm init <span class="se">\
-</span><span class="se"></span>--apiserver-advertise-address<span class="o">=</span>192.168.0.128  <span class="se">\
-</span><span class="se"></span>--image-repository registry.aliyuncs.com/google_containers <span class="se">\
-</span><span class="se"></span>--kubernetes-version v1.18.0 <span class="se">\
-</span><span class="se"></span>--service-cidr<span class="o">=</span>10.96.0.0/12 <span class="se">\
-</span><span class="se"></span>--pod-network-cidr<span class="o">=</span>10.244.0.0/16
+<span class="c1"># 安装docker</span>
+<span class="nb">read</span> -p <span class="s2">&#34;是否安装docker？默认为：no. Enter [yes/no]：&#34;</span> is_docker
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$is_docker</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+  run_function <span class="s2">&#34;install_docker&#34;</span>
+<span class="k">fi</span>
 
-mkdir -p <span class="nv">$HOME</span>/.kube
-sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
-sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
-
-<span class="nb">echo</span> <span class="s2">&#34;source &lt;(kubectl completion bash)&#34;</span> &gt;&gt; ~/.bashrc
-
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+<span class="c1"># 安装k8s</span>
+<span class="nb">read</span> -p <span class="s2">&#34;是否安装k8s？默认为：no. Enter [yes/no]：&#34;</span> is_k8s
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$is_k8s</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+  run_function <span class="s2">&#34;install_k8s&#34;</span>
+<span class="k">fi</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="work-node">Work Node</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="nb">set</span> -v
-systemctl stop firewalld
-systemctl disable firewalld
-sed -i <span class="s1">&#39;s/enforcing/disabled/&#39;</span> /etc/selinux/config
-sed -ri <span class="s1">&#39;s/.*swap.*/#&amp;/&#39;</span> /etc/fstab
-<span class="c1"># 设置主机名字（修改）</span>
-hostnamectl set-hostname node1
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="nb">set</span> -e
 
-cat &gt; /etc/sysctl.d/k8s.conf <span class="s">&lt;&lt; EOF 
-</span><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
-</span><span class="s">net.bridge.bridge-nf-call-iptables = 1 
-</span><span class="s">EOF</span>
+<span class="c1"># 安装日志</span>
+<span class="nv">install_log</span><span class="o">=</span>/var/log/install_k8s.log
+<span class="nv">tm</span><span class="o">=</span><span class="k">$(</span>date +<span class="s1">&#39;%Y%m%d %T&#39;</span><span class="k">)</span>
 
-<span class="c1"># master和 node对应的ip地址，如果是云服务器，则改成公网IP（修改）</span>
-cat &gt;&gt; /etc/hosts <span class="s">&lt;&lt; EOF 
-</span><span class="s"># 配置映射
-</span><span class="s">192.168.0.128 master 
-</span><span class="s">192.168.0.133 node1
-</span><span class="s">EOF</span>
+<span class="c1"># 日志颜色</span>
+<span class="nv">COLOR_G</span><span class="o">=</span><span class="s2">&#34;\x1b[0;32m&#34;</span>  <span class="c1"># green</span>
+<span class="nv">RESET</span><span class="o">=</span><span class="s2">&#34;\x1b[0m&#34;</span>
 
-sysctl --system
+<span class="k">function</span> info<span class="o">(){</span>
+    <span class="nb">echo</span> -e <span class="s2">&#34;</span><span class="si">${</span><span class="nv">COLOR_G</span><span class="si">}</span><span class="s2">[</span><span class="nv">$tm</span><span class="s2">] [Info] </span><span class="si">${</span><span class="nv">1</span><span class="si">}${</span><span class="nv">RESET</span><span class="si">}</span><span class="s2">&#34;</span>
+<span class="o">}</span>
 
-yum install ntpdate -y
-ntpdate time.windows.com
+<span class="k">function</span> run_cmd<span class="o">(){</span>
+  sh -c <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2"> | </span><span class="k">$(</span>tee -a <span class="s2">&#34;</span><span class="nv">$install_log</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span>
+<span class="o">}</span>
 
-wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
-yum -y install docker-ce-18.06.1.ce-3.el7
-<span class="c1"># 设置开机启动 &amp;&amp; 启动</span>
-systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span> systemctl start docker
+<span class="k">function</span> run_function<span class="o">(){</span>
+  <span class="nv">$1</span> <span class="p">|</span> tee -a <span class="s2">&#34;</span><span class="nv">$install_log</span><span class="s2">&#34;</span>
+<span class="o">}</span>
 
-cat &gt; /etc/docker/daemon.json <span class="s">&lt;&lt; EOF 
+<span class="k">function</span> install_docker<span class="o">(){</span>
+  info <span class="s2">&#34;1.使用脚本自动安装docker...&#34;</span>
+  curl -sSL https://get.daocloud.io/docker <span class="p">|</span> sh
+
+  info <span class="s2">&#34;2.启动 Docker CE...&#34;</span>
+  systemctl <span class="nb">enable</span> docker
+  systemctl start docker
+
+  info <span class="s2">&#34;3.添加镜像加速器...&#34;</span>
+  <span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">&#34;/etc/docker/daemon.json&#34;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+    touch /etc/docker/daemon.json
+  <span class="k">fi</span>
+  cat <span class="s">&lt;&lt;EOF &gt; /etc/docker/daemon.json
 </span><span class="s">{
-</span><span class="s">    &#34;registry-mirrors&#34;: [&#34;https://b9pmyelo.mirror.aliyuncs.com&#34;] 
+</span><span class="s">  &#34;registry-mirrors&#34;: [
+</span><span class="s">    &#34;https://5ajk0rns.mirror.aliyuncs.com&#34;
+</span><span class="s">    ]
 </span><span class="s">}
 </span><span class="s">EOF</span>
 
-systemctl restart docker
+  info <span class="s2">&#34;4.重新启动服务...&#34;</span>
+  systemctl daemon-reload
+  systemctl restart docker
 
-cat &gt; /etc/yum.repos.d/kubernetes.repo <span class="s">&lt;&lt; EOF 
+  info <span class="s2">&#34;5.测试 Docker 是否安装正确...&#34;</span>
+  docker run hello-world
+
+  info <span class="s2">&#34;6.检测...&#34;</span>
+  docker info
+<span class="o">}</span>
+
+<span class="k">function</span> install_k8s<span class="o">()</span> <span class="o">{</span>
+    info <span class="s2">&#34;初始化k8s部署环境...&#34;</span>
+    init_env
+
+    info <span class="s2">&#34;添加k8s安装源...&#34;</span>
+    add_aliyun_repo
+
+    info <span class="s2">&#34;安装kubelet kubeadmin kubectl...&#34;</span>
+    install_kubelet_kubeadmin_kubectl
+
+    info <span class="s2">&#34;安装kubernetes master...&#34;</span>
+    yum -y install net-tools
+    <span class="k">if</span> <span class="o">[[</span> ! <span class="s2">&#34;</span><span class="k">$(</span>ps aux <span class="p">|</span> grep <span class="s1">&#39;kubernetes&#39;</span> <span class="p">|</span> grep -v <span class="s1">&#39;grep&#39;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+      kubeadmin_init
+    <span class="k">else</span>
+      info <span class="s2">&#34;kubernetes master已经安装...&#34;</span>
+    <span class="k">fi</span>
+
+
+    info <span class="s2">&#34;去污点...&#34;</span>
+    kubectl taint nodes --all node-role.kubernetes.io/master-
+<span class="o">}</span>
+
+<span class="c1"># 初始化部署环境</span>
+<span class="k">function</span> init_env<span class="o">()</span> <span class="o">{</span>
+  info <span class="s2">&#34;关闭防火墙&#34;</span>
+  systemctl stop firewalld
+  systemctl disable firewalld
+
+  info <span class="s2">&#34;关闭selinux&#34;</span>
+  sed -i <span class="s1">&#39;s/^SELINUX=enforcing$/SELINUX=disabled/g&#39;</span> /etc/selinux/config
+  <span class="nb">source</span> /etc/selinux/config
+
+  info <span class="s2">&#34;关闭swap（k8s禁止虚拟内存以提高性能）&#34;</span>
+  swapoff -a
+  sed -i <span class="s1">&#39;/swap/s/^\(.*\)$/#\1/g&#39;</span> /etc/fstab
+
+  info <span class="s2">&#34;设置网桥参数&#34;</span>
+  cat <span class="s">&lt;&lt;-EOF &gt; /etc/sysctl.d/k8s.conf
+</span><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
+</span><span class="s">net.bridge.bridge-nf-call-iptables = 1
+</span><span class="s">EOF</span>
+  sysctl --system  <span class="c1">#生效</span>
+  sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+<span class="o">}</span>
+
+<span class="c1"># 添加aliyun安装源</span>
+<span class="k">function</span> add_aliyun_repo<span class="o">()</span> <span class="o">{</span>
+  cat &gt; /etc/yum.repos.d/kubernetes.repo <span class="s">&lt;&lt;- EOF
 </span><span class="s">[kubernetes]
 </span><span class="s">name=Kubernetes
 </span><span class="s">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
@@ -2202,10 +2469,45 @@ cat &gt; /etc/yum.repos.d/kubernetes.repo <span class="s">&lt;&lt; EOF
 </span><span class="s">repo_gpgcheck=0
 </span><span class="s">gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 </span><span class="s">EOF</span>
+<span class="o">}</span>
 
-yum install -y kubelet-1.18.0 kubeadm-1.18.0 kubectl-1.18.0
+<span class="k">function</span> install_kubelet_kubeadmin_kubectl<span class="o">()</span> <span class="o">{</span>
+  yum install kubelet-1.19.4 kubeadm-1.19.4 kubectl-1.19.4 -y
+  systemctl <span class="nb">enable</span> kubelet.service
 
-systemctl <span class="nb">enable</span> kubelet <span class="o">&amp;&amp;</span> systemctl start kubelet
+  info <span class="s2">&#34;确认kubelet kubeadmin kubectl是否安装成功&#34;</span>
+  yum list installed <span class="p">|</span> grep kubelet
+  yum list installed <span class="p">|</span> grep kubeadm
+  yum list installed <span class="p">|</span> grep kubectl
+  kubelet --version
+<span class="o">}</span>
+
+<span class="k">function</span> kubeadmin_init<span class="o">()</span> <span class="o">{</span>
+  sleep <span class="m">1</span>
+<span class="c1"># 修改</span>
+hostnamectl set-hostname node1
+cat &gt;&gt; /etc/hosts <span class="s">&lt;&lt; EOF 
+</span><span class="s">192.168.0.200 master
+</span><span class="s">192.168.0.202 node1
+</span><span class="s">EOF</span>
+  mkdir -p <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.kube
+  cp -i /etc/kubernetes/admin.conf <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.kube/config
+  chown <span class="s2">&#34;</span><span class="k">$(</span>id -u<span class="k">)</span><span class="s2">&#34;</span>:<span class="s2">&#34;</span><span class="k">$(</span>id -g<span class="k">)</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">&#34;</span>/.kube/config
+<span class="o">}</span>
+
+
+<span class="c1"># 安装docker</span>
+<span class="nb">read</span> -p <span class="s2">&#34;是否安装docker？默认为：no. Enter [yes/no]：&#34;</span> is_docker
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$is_docker</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+  run_function <span class="s2">&#34;install_docker&#34;</span>
+<span class="k">fi</span>
+
+<span class="c1"># 安装k8s</span>
+<span class="nb">read</span> -p <span class="s2">&#34;是否安装k8s？默认为：no. Enter [yes/no]：&#34;</span> is_k8s
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$is_k8s</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+  run_function <span class="s2">&#34;install_k8s&#34;</span>
+<span class="k">fi</span>
+
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="不同网络的机器">不同网络的机器</h2>
@@ -2355,42 +2657,7 @@ systemctl <span class="nb">enable</span> kubelet <span class="o">&amp;&amp;</spa
 <li><code>sh k8s.sh</code> 执行脚本</li>
 <li>当再开一个ssh终端连接master云服务器，当执行shell脚本出现<code>[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &quot;/etc/kubernetes/manifests&quot;. This can take up to 4m0s</code>时候，在新开的终终端执行<code>cat etcd.yaml &gt; /etc/kubernetes/manifests/etcd.yaml</code></li>
 </ul>
-<h2 id="k8s完全卸载">k8s完全卸载</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Linux:remove.sh" data-lang="Linux:remove.sh">kubeadm reset -f
-modprobe -r ipip
-lsmod
-rm -rf ~/.kube/
-rm -rf /etc/kubernetes/
-rm -rf /etc/systemd/system/kubelet.service.d
-rm -rf /etc/systemd/system/kubelet.service
-rm -rf /usr/bin/kube*
-rm -rf /etc/cni
-rm -rf /opt/cni
-rm -rf /var/lib/etcd
-rm -rf /var/etcd
-yum clean all
-yum remove kube*
-</code></pre></td></tr></table>
-</div>
-</div>
+
     </article>
     
     
@@ -2683,11 +2950,11 @@ yum remove kube*
         </li>
         
         <li>
-          <a href="/write/2022-2-3/" class="related__link">持续行动</a>
+          <a href="/write/2022-2-2/" class="related__link">持续行动</a>
         </li>
         
         <li>
-          <a href="/write/2022-2-2/" class="related__link">持续行动</a>
+          <a href="/write/2022-2-3/" class="related__link">持续行动</a>
         </li>
         
         <li>
@@ -3093,7 +3360,6 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#master开始执行">master开始执行</a></li>
       </ul>
     </li>
-    <li><a href="#k8s完全卸载">k8s完全卸载</a></li>
   </ul>
 </nav>
   </div>
