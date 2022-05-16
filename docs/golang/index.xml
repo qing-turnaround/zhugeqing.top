@@ -20,6 +20,56 @@
 
       
       <item>
+        <title>Go GC</title>
+        <link>https://www.zhugeqing.top/golang/gc/</link>
+        <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 03 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/gc/</guid>
+        <description>Go语言垃圾回收的过程 触发垃圾回收 标记准备阶段 并发标记阶段 标记结束阶段 垃圾清扫阶段 标记准备阶段 在标记准备阶段，首先需要进行STW STW：Stop The World，停止程序goroutinue的运行</description>
+        <content:encoded>&lt;h2 id=&#34;go语言垃圾回收的过程&#34;&gt;Go语言垃圾回收的过程&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;触发垃圾回收&lt;/li&gt;
+&lt;li&gt;标记准备阶段&lt;/li&gt;
+&lt;li&gt;并发标记阶段&lt;/li&gt;
+&lt;li&gt;标记结束阶段&lt;/li&gt;
+&lt;li&gt;垃圾清扫阶段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;标记准备阶段&#34;&gt;标记准备阶段&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;在标记准备阶段，首先需要进行STW&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;STW：Stop The World，停止程序goroutinue的运行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>Go Channel</title>
         <link>https://www.zhugeqing.top/golang/channel/</link>
         <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
@@ -5024,6 +5074,82 @@ C 如果没有路由满足，调用&lt;code&gt;NotFoundHandler&lt;/code&gt;的&l
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Goland</title>
+        <link>https://www.zhugeqing.top/golang/goland/</link>
+        <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 04 Apr 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/goland/</guid>
+        <description>快速生成一个模板代码 我们平常在goland的go文件中输入一个main，再回车就自动生成了main函数，类似的还有init，forr，这些都是goland实时模板（Live Templates）的功能 一次打开 goland &amp;gt; 设置 &amp;gt; 编辑器 &amp;gt; 实时模板 可以自己创建一个模板组，也可以直接在gol模板组里面增加一个动态模板 比如缩写为max，适用于Go 文件，模板文本如下 1 2 3 4 5 6 func min(a, b $Type$) $Type$ { if a &amp;lt; b { return a } return b } 我们可以</description>
+        <content:encoded>&lt;h2 id=&#34;快速生成一个模板代码&#34;&gt;快速生成一个模板代码&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们平常在goland的go文件中输入一个&lt;code&gt;main&lt;/code&gt;，再回车就自动生成了&lt;code&gt;main&lt;/code&gt;函数，类似的还有&lt;code&gt;init&lt;/code&gt;，&lt;code&gt;forr&lt;/code&gt;，这些都是goland&lt;code&gt;实时模板（Live Templates）&lt;/code&gt;的功能&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;一次打开 goland &amp;gt; 设置 &amp;gt; 编辑器 &amp;gt; 实时模板&lt;/li&gt;
+&lt;li&gt;可以自己创建一个模板组，也可以直接在gol模板组里面增加一个动态模板&lt;/li&gt;
+&lt;li&gt;比如缩写为&lt;code&gt;max&lt;/code&gt;，适用于Go 文件，模板文本如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Type&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Type&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;我们可以将自己经常写的代码加入到模板组中，比如修改&lt;code&gt;err&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;快速生成对应接口方法代码&#34;&gt;快速生成对应接口方法代码&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;按下 生成方法的快捷键（可去设置进行修改），输入需要实现的对应接口（比如:&lt;code&gt;heap.Interface&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;友好的快捷键&#34;&gt;友好的快捷键&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ctrl +&lt;/code&gt;, &lt;code&gt;ctrl -&lt;/code&gt;折叠，展开代码或者注释&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;doubule shift&lt;/code&gt;（按两次shift），使用最强搜索功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;插件&#34;&gt;插件&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tabnine&lt;/code&gt;——友好的AI代码补全&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;One Dark theme&lt;/code&gt;——热爱的暗黑模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
         

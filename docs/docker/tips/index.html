@@ -1944,6 +1944,14 @@ deb <a href="http://mirrors.cloud.aliyuncs.com/debian/">http://mirrors.cloud.ali
 deb <a href="http://mirrors.cloud.aliyuncs.com/debian/">http://mirrors.cloud.aliyuncs.com/debian/</a> jessie-proposed-updates main non-free contrib<br />
 deb-src <a href="http://mirrors.cloud.aliyuncs.com/debian/">http://mirrors.cloud.aliyuncs.com/debian/</a> jessie main non-free contrib<br />
 deb-src <a href="http://mirrors.cloud.aliyuncs.com/debian/">http://mirrors.cloud.aliyuncs.com/debian/</a> jessie-proposed-updates main non-free contrib</p>
+<h2 id="docker启动的centos容器有些命令执行不了">docker启动的centos容器有些命令执行不了</h2>
+<blockquote>
+<p>赋予容器更多权限</p>
+</blockquote>
+<ol>
+<li>启动docker时将/usr/sbin/init启动：<code>docker run --name centos --privileged -d centos /usr/sbin/init</code></li>
+<li>启动参数添加&ndash;privileged参数，用于给予此container更多特权</li>
+</ol>
 
     </article>
     
@@ -2637,6 +2645,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </ul>
     </li>
     <li><a href="#使用redis-镜像遇到的问题">使用redis 镜像遇到的问题</a></li>
+    <li><a href="#docker启动的centos容器有些命令执行不了">docker启动的centos容器有些命令执行不了</a></li>
   </ul>
 </nav>
   </div>

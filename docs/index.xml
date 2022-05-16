@@ -43,6 +43,136 @@
 
       
       <item>
+        <title>Go GC</title>
+        <link>https://www.zhugeqing.top/golang/gc/</link>
+        <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sun, 03 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/gc/</guid>
+        <description>Go语言垃圾回收的过程 触发垃圾回收 标记准备阶段 并发标记阶段 标记结束阶段 垃圾清扫阶段 标记准备阶段 在标记准备阶段，首先需要进行STW STW：Stop The World，停止程序goroutinue的运行</description>
+        <content:encoded>&lt;h2 id=&#34;go语言垃圾回收的过程&#34;&gt;Go语言垃圾回收的过程&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;触发垃圾回收&lt;/li&gt;
+&lt;li&gt;标记准备阶段&lt;/li&gt;
+&lt;li&gt;并发标记阶段&lt;/li&gt;
+&lt;li&gt;标记结束阶段&lt;/li&gt;
+&lt;li&gt;垃圾清扫阶段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;标记准备阶段&#34;&gt;标记准备阶段&lt;/h2&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
+&lt;li&gt;在标记准备阶段，首先需要进行STW&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;STW：Stop The World，停止程序goroutinue的运行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;box&#34;&gt;&lt;/div&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>docker 构建go镜像</title>
+        <link>https://www.zhugeqing.top/docker/docker-go-build/</link>
+        <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 02 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/docker-go-build/</guid>
+        <description>构建最小的go程序镜像 我一般通常会在云服务器上安装Go，然后build源程序，最后通过在busybo中进行运行 来构建go程序镜像 现在删除Go，用Go image来构建吧！ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 FROMzhugeqing/golang:1.17 AS builderWORKDIR/appMAINTAINER诸葛青COPY . .ARG TARGETPLATFORM=&amp;#34;linux/amd64&amp;#34;# 设置代理环境变量ARG GOPROXY=&amp;#34;https://goproxy.cn,direct&amp;#34;# 编译，在image内运行RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main main.goFROMzhugeqing/alpine # 拷贝缓存区构建完成的文件（这样镜像还是非常小</description>
+        <content:encoded>&lt;h2 id=&#34;构建最小的go程序镜像&#34;&gt;构建最小的go程序镜像&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我一般通常会在云服务器上安装Go，然后build源程序，最后通过在busybo中进行运行 来构建go程序镜像&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;现在删除Go，用Go image来构建吧！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; zhugeqing/golang:1.17  AS builder&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WORKDIR&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /app&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;MAINTAINER&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 诸葛青&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; . .&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ARG&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;TARGETPLATFORM&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;linux/amd64&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 设置代理环境变量&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ARG&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GOPROXY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://goproxy.cn,direct&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 编译，在image内运行&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CGO_ENABLED&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GOOS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;linux &lt;span class=&#34;nv&#34;&gt;GOARCH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;amd64 go build -o main main.go&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; zhugeqing/alpine &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 拷贝缓存区构建完成的文件（这样镜像还是非常小的）&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; --from&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;builder /app/main ./main &lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 暴露端口，只是显示而已&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;EXPOSE&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 6666 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 运行 可执行文件&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CMD&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/main&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;缺点就是会产生缓存image，需要执行&lt;code&gt;docker system prune&lt;/code&gt;进行清理&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>Go Channel</title>
         <link>https://www.zhugeqing.top/golang/channel/</link>
         <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
@@ -1129,7 +1259,7 @@ HelloWorld &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
         
         <atom:modified>Wed, 23 Mar 2022 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/kubernetes/1/</guid>
-        <description>Linux版本为centos 7.x，建议全部看完再进行操作 准备工作 有两种安装需求，第一种就是主机都是内网IP能ping通的（比如自己电脑的两个虚拟机）。第二种用公网才能Ping通的（比如两台云服务器），下面会对两者进行区别。 先开启云服务器控制台的的端口TCP入规则 端口：6443,2379,2380,80,2381 依次执行curl -fsSL www.zhugeqing.top/install_k8s.sh -o install.sh chmod 777 install.sh sh install.sh（只有第一种需要操作） master</description>
+        <description>Linux版本为centos 7.x，建议全部看完再进行操作 准备工作 有两种安装需求，第一种就是主机都是内网IP能ping通的（比如自己电脑的两个虚拟机）。第二种用公网才能Ping通的（比如两台云服务器），下面会对两者进行区别。 先开启云服务器控制台的的端口TCP入规则 端口：6443,2379,2380,80,2381 在同一个网络的机器 把脚本放入对应机器执行即可 Master节点 1 2 3 4 5 6 7 8 9 10 11 12 13</description>
         <content:encoded>&lt;div class=&#34;notices info&#34; data-title=&#34;Info&#34;&gt;
   Linux版本为centos 7.x，建议全部看完再进行操作
 &lt;/div&gt;
@@ -1143,17 +1273,346 @@ HelloWorld &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
 &lt;blockquote&gt;
 &lt;p&gt;端口：6443,2379,2380,80,2381&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;依次执行&lt;code&gt;curl -fsSL www.zhugeqing.top/install_k8s.sh -o install.sh&lt;/code&gt; &lt;code&gt;chmod 777 install.sh&lt;/code&gt; &lt;code&gt;sh install.sh&lt;/code&gt;（只有第一种需要操作）&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2 id=&#34;在同一个网络的机器&#34;&gt;在同一个网络的机器&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;master节点ip为本机ip地址&lt;br /&gt;
-对需要安装的点yes，然后就没有了，master节点就安装好了，后面步骤就可以都跳过了&lt;br /&gt;
-其中master IP是指私有IP，对于第二种无法使用这种方式安装&lt;/p&gt;
+&lt;p&gt;把脚本放入对应机器执行即可&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;ol start=&#34;3&#34;&gt;
+&lt;h3 id=&#34;master节点&#34;&gt;Master节点&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;  1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 64
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 65
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 66
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 67
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 68
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 69
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 70
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 71
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 72
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 73
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 74
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 75
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 76
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 77
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 78
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 79
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 80
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 81
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 82
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 83
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 84
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 85
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 86
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 87
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 88
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 89
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 90
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 91
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 92
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 93
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 94
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 95
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 96
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 97
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 98
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 99
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;100
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;101
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;102
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;103
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;104
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;105
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;106
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell:master.sh&#34; data-lang=&#34;Shell:master.sh&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -v
+systemctl stop firewalld
+systemctl disable firewalld
+sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/enforcing/disabled/&amp;#39;&lt;/span&gt; /etc/selinux/config
+sed -ri &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/.*swap.*/#&amp;amp;/&amp;#39;&lt;/span&gt; /etc/fstab
+&lt;span class=&#34;c1&#34;&gt;# 设置主机名字&lt;/span&gt;
+hostnamectl set-hostname master-k8s
+
+cat &amp;gt; /etc/sysctl.d/k8s.conf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-ip6tables = 1
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-iptables = 1 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+
+&lt;span class=&#34;c1&#34;&gt;# master和 node对应的ip地址，如果是云服务器，则改成公网IP&lt;/span&gt;
+cat &amp;gt;&amp;gt; /etc/hosts &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;192.168.0.128 master
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;192.168.0.133 node1
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+sysctl --system
+
+yum install ntpdate -y
+ntpdate time.windows.com
+
+wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
+yum -y install docker-ce-18.06.1.ce-3.el7
+&lt;span class=&#34;c1&#34;&gt;# 设置开机启动 &amp;amp;&amp;amp; 启动&lt;/span&gt;
+systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; docker &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start docker
+
+cat &amp;gt; /etc/docker/daemon.json &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;{
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://b9pmyelo.mirror.aliyuncs.com&amp;#34;] 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;}
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+systemctl restart docker
+
+cat &amp;gt; /etc/yum.repos.d/kubernetes.repo &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[kubernetes]
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;name=Kubernetes
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;enabled=1
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;gpgcheck=0
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;repo_gpgcheck=0
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+yum install -y kubelet-1.18.0 kubeadm-1.18.0 kubectl-1.18.0
+
+systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; kubelet &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start kubelet
+
+
+cat &amp;gt;  /usr/lib/systemd/system/docker.service &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[Unit]
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Description=Docker Application Container Engine
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Documentation=https://docs.docker.com
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;After=network-online.target firewalld.service
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Wants=network-online.target
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[Service]
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Type=notify
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# the default is not to use systemd for cgroups because the delegate issues still
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# exists and systemd currently does not support the cgroup feature set required
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# for containers run by docker
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;ExecStart=/usr/bin/dockerd --exec-opt native.cgroupdriver=systemd
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;ExecReload=/bin/kill -s HUP $MAINPID
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# Having non-zero Limit*s causes performance problems due to accounting overhead
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# in the kernel. We recommend using cgroups to do container-local accounting.
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;LimitNOFILE=infinity
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;LimitNPROC=infinity
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;LimitCORE=infinity
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# Uncomment TasksMax if your systemd version supports it.
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# Only systemd 226 and above support this version.
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;#TasksMax=infinity
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;TimeoutStartSec=0
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# set delegate yes so that systemd does not reset the cgroups of docker containers
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Delegate=yes
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# kill only the docker process, not all processes in the cgroup
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;KillMode=process
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# restart the docker process if it exits prematurely
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Restart=on-failure
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;StartLimitBurst=3
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;StartLimitInterval=60s
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[Install]
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;WantedBy=multi-user.target
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 初始化&lt;/span&gt;
+
+kubeadm init &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--apiserver-advertise-address&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;192.168.0.128  &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--image-repository registry.aliyuncs.com/google_containers &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--kubernetes-version v1.18.0 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--service-cidr&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;10.96.0.0/12 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--pod-network-cidr&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;10.244.0.0/16
+
+mkdir -p &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.kube
+sudo cp -i /etc/kubernetes/admin.conf &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.kube/config
+sudo chown &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;id -u&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;:&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;id -g&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.kube/config
+
+&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;work-node&#34;&gt;Work Node&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -v
+systemctl stop firewalld
+systemctl disable firewalld
+sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/enforcing/disabled/&amp;#39;&lt;/span&gt; /etc/selinux/config
+sed -ri &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/.*swap.*/#&amp;amp;/&amp;#39;&lt;/span&gt; /etc/fstab
+&lt;span class=&#34;c1&#34;&gt;# 设置主机名字（修改）&lt;/span&gt;
+hostnamectl set-hostname node1
+
+cat &amp;gt; /etc/sysctl.d/k8s.conf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-ip6tables = 1
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-iptables = 1 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# master和 node对应的ip地址，如果是云服务器，则改成公网IP（修改）&lt;/span&gt;
+cat &amp;gt;&amp;gt; /etc/hosts &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# 配置映射
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;192.168.0.128 master 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;192.168.0.133 node1
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+sysctl --system
+
+yum install ntpdate -y
+ntpdate time.windows.com
+
+wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
+yum -y install docker-ce-18.06.1.ce-3.el7
+&lt;span class=&#34;c1&#34;&gt;# 设置开机启动 &amp;amp;&amp;amp; 启动&lt;/span&gt;
+systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; docker &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start docker
+
+cat &amp;gt; /etc/docker/daemon.json &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;{
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://b9pmyelo.mirror.aliyuncs.com&amp;#34;] 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;}
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+systemctl restart docker
+
+cat &amp;gt; /etc/yum.repos.d/kubernetes.repo &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[kubernetes]
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;name=Kubernetes
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;enabled=1
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;gpgcheck=0
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;repo_gpgcheck=0
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+
+yum install -y kubelet-1.18.0 kubeadm-1.18.0 kubectl-1.18.0
+
+systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; kubelet &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start kubelet
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;不同网络的机器&#34;&gt;不同网络的机器&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把上面脚本放入对应机器，先不要执行！（work节点可以执行，master节点有额外操作）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;先写好配置文件&#34;&gt;先写好配置文件&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;先编辑好一个要用的etcd需要配置的文件 &lt;code&gt;vim ectd.yaml&lt;/code&gt;（只有第二种需要操作）&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;将下面的&lt;code&gt;公网IP&lt;/code&gt;替换成自己云服务器的公网IP（需要四处）&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1287,241 +1746,13 @@ HelloWorld &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;status&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;{}&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;将以下内容添加到一个Shell脚本中&lt;code&gt;vim k8s.sh&lt;/code&gt;（第二种）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;同样替换公网IP（需要改两处）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;  1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 45
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 46
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 47
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 48
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 49
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 50
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 51
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 52
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 53
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 54
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 55
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 56
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 57
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 58
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 59
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 60
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 61
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 62
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 63
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 64
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 65
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 66
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 67
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 68
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 69
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 70
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 71
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 72
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 73
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 74
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 75
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 76
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 77
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 78
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 79
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 80
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 81
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 82
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 83
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 84
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 85
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 86
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 87
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 88
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 89
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 90
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 91
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 92
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 93
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 94
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 95
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 96
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 97
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 98
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 99
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;100
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;101
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;102
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;103
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;104
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;105
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
-&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -v
-systemctl stop firewalld
-systemctl disable firewalld
-sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/enforcing/disabled/&amp;#39;&lt;/span&gt; /etc/selinux/config
-sed -ri &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/.*swap.*/#&amp;amp;/&amp;#39;&lt;/span&gt; /etc/fstab
-&lt;span class=&#34;c1&#34;&gt;# 设置主机名字&lt;/span&gt;
-hostnamectl set-hostname master-k8s
-
-cat &amp;gt; /etc/sysctl.d/k8s.conf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-ip6tables = 1
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-iptables = 1 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;# master和 node对应的ip地址，如果是云服务器，则改成公网IP&lt;/span&gt;
-cat &amp;gt;&amp;gt; /etc/hosts &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;公网IP master.zhugeqing.top
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# 192.168.2.3 node1.zhugeqing.top
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-sysctl --system
-
-yum install ntpdate -y
-ntpdate time.windows.com
-
-wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
-yum -y install docker-ce-18.06.1.ce-3.el7
-&lt;span class=&#34;c1&#34;&gt;# 设置开机启动 &amp;amp;&amp;amp; 启动&lt;/span&gt;
-systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; docker &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start docker
-
-cat &amp;gt; /etc/docker/daemon.json &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;{
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://b9pmyelo.mirror.aliyuncs.com&amp;#34;] 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;}
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-systemctl restart docker
-
-cat &amp;gt; /etc/yum.repos.d/kubernetes.repo &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[kubernetes]
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;name=Kubernetes
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;enabled=1
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;gpgcheck=0
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;repo_gpgcheck=0
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-yum install -y kubelet-1.18.0 kubeadm-1.18.0 kubectl-1.18.0
-
-systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; kubelet &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start kubelet
-
-
-cat &amp;gt;  /usr/lib/systemd/system/docker.service &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[Unit]
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Description=Docker Application Container Engine
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Documentation=https://docs.docker.com
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;After=network-online.target firewalld.service
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Wants=network-online.target
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[Service]
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Type=notify
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# the default is not to use systemd for cgroups because the delegate issues still
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# exists and systemd currently does not support the cgroup feature set required
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# for containers run by docker
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;ExecStart=/usr/bin/dockerd --exec-opt native.cgroupdriver=systemd
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;ExecReload=/bin/kill -s HUP $MAINPID
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# Having non-zero Limit*s causes performance problems due to accounting overhead
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# in the kernel. We recommend using cgroups to do container-local accounting.
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;LimitNOFILE=infinity
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;LimitNPROC=infinity
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;LimitCORE=infinity
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# Uncomment TasksMax if your systemd version supports it.
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# Only systemd 226 and above support this version.
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;#TasksMax=infinity
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;TimeoutStartSec=0
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# set delegate yes so that systemd does not reset the cgroups of docker containers
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Delegate=yes
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# kill only the docker process, not all processes in the cgroup
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;KillMode=process
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# restart the docker process if it exits prematurely
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Restart=on-failure
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;StartLimitBurst=3
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;StartLimitInterval=60s
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[Install]
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;WantedBy=multi-user.target
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;# 初始化&lt;/span&gt;
-
-kubeadm init &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--apiserver-advertise-address&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;公网IP  &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--image-repository registry.aliyuncs.com/google_containers &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--kubernetes-version v1.18.0 &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--service-cidr&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;10.96.0.0/12 &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--pod-network-cidr&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;10.244.0.0/16
-
-mkdir -p &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.kube
-sudo cp -i /etc/kubernetes/admin.conf &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.kube/config
-sudo chown &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;id -u&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;:&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;id -g&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.kube/config
-
-&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;source &amp;lt;(kubectl completion bash)&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
-
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;开始执行&#34;&gt;开始执行&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;以下均为第二种&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;&lt;h3 id=&#34;master开始执行&#34;&gt;master开始执行&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;chmod 777 k8s.sh&lt;/code&gt; 赋予执行权限&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;chmod 777 master.sh&lt;/code&gt; 赋予执行权限&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sh k8s.sh&lt;/code&gt; 执行脚本&lt;/li&gt;
-&lt;li&gt;当再开一个ssh终端连接云服务器，当执行shell脚本出现&lt;code&gt;[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &amp;quot;/etc/kubernetes/manifests&amp;quot;. This can take up to 4m0s&lt;/code&gt;时候，在新开的终终端执行&lt;code&gt;cat etcd.yaml &amp;gt; /etc/kubernetes/manifests/etcd.yaml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;当再开一个ssh终端连接master云服务器，当执行shell脚本出现&lt;code&gt;[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &amp;quot;/etc/kubernetes/manifests&amp;quot;. This can take up to 4m0s&lt;/code&gt;时候，在新开的终终端执行&lt;code&gt;cat etcd.yaml &amp;gt; /etc/kubernetes/manifests/etcd.yaml&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;最后一条命令卡住就重新单独执行&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;work节点安装&#34;&gt;Work节点安装&lt;/h2&gt;
+&lt;h2 id=&#34;k8s完全卸载&#34;&gt;k8s完全卸载&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1538,94 +1769,22 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -v
-systemctl stop firewalld
-systemctl disable firewalld
-sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/enforcing/disabled/&amp;#39;&lt;/span&gt; /etc/selinux/config
-sed -ri &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/.*swap.*/#&amp;amp;/&amp;#39;&lt;/span&gt; /etc/fstab
-&lt;span class=&#34;c1&#34;&gt;# 设置主机名字&lt;/span&gt;
-hostnamectl set-hostname master-k8s
-
-cat &amp;gt; /etc/sysctl.d/k8s.conf &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-ip6tables = 1
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;net.bridge.bridge-nf-call-iptables = 1 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;# master和 node对应的ip地址，如果是云服务器，则改成公网IP&lt;/span&gt;
-cat &amp;gt;&amp;gt; /etc/hosts &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;公网IP master.zhugeqing.top
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;# 192.168.2.3 node1.zhugeqing.top
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-sysctl --system
-
-yum install ntpdate -y
-ntpdate time.windows.com
-
-wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
-yum -y install docker-ce-18.06.1.ce-3.el7
-&lt;span class=&#34;c1&#34;&gt;# 设置开机启动 &amp;amp;&amp;amp; 启动&lt;/span&gt;
-systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; docker &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start docker
-
-cat &amp;gt; /etc/docker/daemon.json &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;{
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;    &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://b9pmyelo.mirror.aliyuncs.com&amp;#34;] 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;}
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-systemctl restart docker
-
-cat &amp;gt; /etc/yum.repos.d/kubernetes.repo &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt; EOF 
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;[kubernetes]
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;name=Kubernetes
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;enabled=1
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;gpgcheck=0
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;repo_gpgcheck=0
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
-
-yum install -y kubelet-1.18.0 kubeadm-1.18.0 kubectl-1.18.0
-
-systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; kubelet &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl start kubelet
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Linux:remove.sh&#34; data-lang=&#34;Linux:remove.sh&#34;&gt;kubeadm reset -f
+modprobe -r ipip
+lsmod
+rm -rf ~/.kube/
+rm -rf /etc/kubernetes/
+rm -rf /etc/systemd/system/kubelet.service.d
+rm -rf /etc/systemd/system/kubelet.service
+rm -rf /usr/bin/kube*
+rm -rf /etc/cni
+rm -rf /opt/cni
+rm -rf /var/lib/etcd
+rm -rf /var/etcd
+yum clean all
+yum remove kube*
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content:encoded>
@@ -6904,6 +7063,14 @@ deb &lt;a href=&#34;http://mirrors.cloud.aliyuncs.com/debian/&#34;&gt;http://mir
 deb &lt;a href=&#34;http://mirrors.cloud.aliyuncs.com/debian/&#34;&gt;http://mirrors.cloud.aliyuncs.com/debian/&lt;/a&gt; jessie-proposed-updates main non-free contrib&lt;br /&gt;
 deb-src &lt;a href=&#34;http://mirrors.cloud.aliyuncs.com/debian/&#34;&gt;http://mirrors.cloud.aliyuncs.com/debian/&lt;/a&gt; jessie main non-free contrib&lt;br /&gt;
 deb-src &lt;a href=&#34;http://mirrors.cloud.aliyuncs.com/debian/&#34;&gt;http://mirrors.cloud.aliyuncs.com/debian/&lt;/a&gt; jessie-proposed-updates main non-free contrib&lt;/p&gt;
+&lt;h2 id=&#34;docker启动的centos容器有些命令执行不了&#34;&gt;docker启动的centos容器有些命令执行不了&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;赋予容器更多权限&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;启动docker时将/usr/sbin/init启动：&lt;code&gt;docker run --name centos --privileged -d centos /usr/sbin/init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;启动参数添加&amp;ndash;privileged参数，用于给予此container更多特权&lt;/li&gt;
+&lt;/ol&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
@@ -8744,523 +8911,6 @@ C 如果没有路由满足，调用&lt;code&gt;NotFoundHandler&lt;/code&gt;的&l
           
             
               <category>Go</category>
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>最小编辑代价</title>
-        <link>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E5%B0%8F%E7%BC%96%E8%BE%91%E4%BB%A3%E4%BB%B7/</link>
-        <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Wed, 10 Nov 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E5%B0%8F%E7%BC%96%E8%BE%91%E4%BB%A3%E4%BB%B7/</guid>
-        <description>最小编辑代价是编辑距离的变形题目 题目 给定两个字符串str1和str2，再给定三个整数ic、dc和rc，分别代表插入、删除和替换一个字符的代价，返回将str1编辑成str2的最小代价。 【举例】 str1=&amp;ldquo;abc&amp;rdquo;，str2=&amp;ldquo;adc&amp;rdquo;，ic=5，dc=3，rc=2。 从&amp;quot;abc&amp;quot;编辑成&amp;quot;adc&amp;quot;，把&amp;rsquo;b</description>
-        <content:encoded>&lt;p&gt;&lt;code&gt;最小编辑代价&lt;/code&gt;是&lt;a href=&#34;https://leetcode-cn.com/problems/edit-distance/&#34;&gt;编辑距离&lt;/a&gt;的变形题目&lt;/p&gt;
-&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
-&lt;font color=SkyBlue&gt;
-给定两个字符串str1和str2，再给定三个整数ic、dc和rc，分别代表插入、删除和替换一个字符的代价，返回将str1编辑成str2的最小代价。
-&lt;p&gt;【举例】&lt;br /&gt;
-str1=&amp;ldquo;abc&amp;rdquo;，str2=&amp;ldquo;adc&amp;rdquo;，ic=5，dc=3，rc=2。&lt;br /&gt;
-从&amp;quot;abc&amp;quot;编辑成&amp;quot;adc&amp;quot;，把&amp;rsquo;b&amp;rsquo;替换成&amp;rsquo;d&amp;rsquo;是代价最小的，所以返回2。&lt;br /&gt;
-str1=&amp;ldquo;abc&amp;rdquo;，str2=&amp;ldquo;adc&amp;rdquo;，ic=5，dc=3，rc=100。&lt;br /&gt;
-从&amp;quot;abc&amp;quot;编辑成&amp;quot;adc&amp;quot;，先删除&amp;rsquo;b&#39;，然后插入&amp;rsquo;d&amp;rsquo;是代价最小的，所以返回8。&lt;br /&gt;
-str1=&amp;ldquo;abc&amp;rdquo;，str2=&amp;ldquo;abc&amp;rdquo;，ic=5，dc=3，rc=2。&lt;br /&gt;
-不用编辑了，本来就是一样的字符串，所以返回0。&lt;br /&gt;
-&lt;/font&gt;&lt;/p&gt;
-&lt;h2 id=&#34;解法&#34;&gt;解法&lt;/h2&gt;
-&lt;font color=SkyBlue&gt;
-如果str1的长度为M，str2的长度为N，经典动态规划的方法可以达到时间复杂度为O（M×N），额外空间复杂度为O（M×N）。如果结合空间压缩的技巧，可以把额外空间复杂度减至O（min{M，N}）。
-先来介绍经典动态规划的方法。首先生成大小为（M+1）×（N+1）的矩阵dp，dp[i][j]的值代表str1[0..i-1]编辑成str2[0..j-1]的最小代价。举个例子，str1=&#34;ab12cd3&#34;，str2=&#34;abcdf&#34;，ic=5，dc=3，rc=2。dp是一个8×6的矩阵，最终计算结果如下
-&lt;img src=&#34;https://www.zhugeqing.top/images/quality_question/edit-distance-1.jpg&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/quality_question/edit-distance-2.jpg&#34; width=&#34;50%&#34; height=&#34;50%&#34;&gt;
-&lt;p&gt;下面具体说明dp矩阵每个位置的值是如何计算的。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;dp[0][0]=0，表示str1空的子串编辑成str2空的子串的代价为0。&lt;/li&gt;
-&lt;li&gt;矩阵dp第一列即dp[0..M-1][0]。dp[i][0]表示str1[0..i-1]编辑成空串的最小代价，毫无疑问，是把str1[0..i-1]所有的字符删掉的代价，所以dp[i][0]=dc*i。&lt;/li&gt;
-&lt;li&gt;矩阵dp第一行即dp[0][0..N-1]。dp[0][j]表示空串编辑成str2[0..j-1]的最小代价，毫无疑问，是在空串里插入str2[0..j-1]所有字符的代价，所以dp[0][j]=ic*j。&lt;/li&gt;
-&lt;li&gt;其他位置按照从左到右，再从上到下来计算，dp[i][j]的值只可能来自以下四种情况。
-&lt;ul&gt;
-&lt;li&gt;str1[0..i-1]可以先编辑成str1[0..i-2]，也就是删除字符str1[i-1]，然后由str1[0..i-2]编辑成 str2[0..j-1]，dp[i-1][j]表示 str1[0..i-2]编辑成 str2[0..j-1]的最小代价，那么dp[i][j]可能等于dc+dp[i-1][j]。&lt;/li&gt;
-&lt;li&gt;str1[0..i-1]可以先编辑成str2[0..j-2]，然后将str2[0..j-2]插入字符str2[j-1]，编辑成str2[0..j-1]，dp[i][j-1]表示 str1[0..i-1]编辑成 str2[0..j-2]的最小代价，那么 dp[i][j]可能等于dp[i][j-1]+ic。&lt;/li&gt;
-&lt;li&gt;如果str1[i-1]！=str2[j-1]。先把str1[0..i-1]中str1[0..i-2]的部分变成str2[0..j-2]，然后把字符str1[i-1]替换成str2[j-1]，这样str1[0..i-1]就编辑成str2[0..j-1]了。dp[i-1][j-1]表示str1[0..i-2]编辑成str2[0..i-2]的最小代价，那么dp[i][j]可能等于dp[i-1][j-1]+rc。&lt;/li&gt;
-&lt;li&gt;如果 str1[i-1]==str2[j-1]。先把 str1[0..i-1]中 str1[0..i-2]的部分变成 str2[0..j-2]，因为此时字符 str1[i-1]等于 str2[j-1]，所以 str1[0..i-1]已经编辑成 str2[0..j-1]了。dp[i-1][j-1]表示 str1[0..i-2]编辑成 str2[0..i-2]的最小代价，那么 dp[i][j]可能等于dp[i-1][j-1]。&lt;br /&gt;
-5.以上四种可能的值中，选最小值作为dp[i][j]的值。dp最右下角的值就是最终结果。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
-
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;rc&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scanln&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scanln&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d %d %d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;    
-    &lt;span class=&#34;c1&#34;&gt;//选择较长的字符串作为行字符串
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;
-        &lt;span class=&#34;c1&#34;&gt;//原字符串成为短的列字符串，需要进行替换和插入操作，所以需要交换一下ic和dc
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([][]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-                &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-            &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-                &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
-            &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;    
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;压缩状态&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
-
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;rc&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scanln&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scanln&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d %d %d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;
-        &lt;span class=&#34;c1&#34;&gt;//需要交换ic与dc
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;c1&#34;&gt;//压缩状态
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;c1&#34;&gt;//base case（处理空字符串的word1, word2子字符串的编辑记录）
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-   
-    &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//记录dp[i-1][j-1]
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;//状态转移方程
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;str2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-                &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-            &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-                &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pre&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)),&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-            &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; 
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;// func minDistance(str1, str2 string, ic, dc, rc int) int {
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//     //动态规划
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//     //状态定义
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//     //dp[i][j]表示str1[0:i+1]与str2[0:j+1]的编辑距离
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt; 
-&lt;span class=&#34;c1&#34;&gt;// }
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/font&gt;
-</content:encoded>
-        <dc:creator>左程云</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>最长上升子序列</title>
-        <link>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/</link>
-        <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Wed, 10 Nov 2021 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/interview/quality_questions/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/</guid>
-        <description>题目 给定一个长度为 N 的数列，求数值严格单调递增的子序列的长度最长是多少。 输入格式 第一行包含整数 N。 第二行包含 N 个整数，表示完整序列。 输出格式 输出一个整数，表示最大长度。 数据范围 1≤N≤1000， −109≤数列中的数≤109 输入样例： 7 3 1 2 1 8 5 6 输出样例： 4 解法 动态规划 思路：定义dp[i]为考虑数组前i个元素，以nums[i]结尾的最长上升子序列，从小到大计算dp[i]的值。 状态转移方程为：dp</description>
-        <content:encoded>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
-&lt;font color=SkyBlue&gt;
-&lt;p&gt;给定一个长度为 N 的数列，求数值严格单调递增的子序列的长度最长是多少。&lt;/p&gt;
-&lt;p&gt;输入格式&lt;br /&gt;
-第一行包含整数 N。&lt;/p&gt;
-&lt;p&gt;第二行包含 N 个整数，表示完整序列。&lt;/p&gt;
-&lt;p&gt;输出格式&lt;br /&gt;
-输出一个整数，表示最大长度。&lt;br /&gt;
-&lt;/font&gt;&lt;br /&gt;
-&lt;code&gt;数据范围 1≤N≤1000， −109≤数列中的数≤109&lt;/code&gt;&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-ha&#34; data-lang=&#34;ha&#34;&gt;输入样例：
-7
-3 1 2 1 8 5 6
-输出样例：
-4
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;解法&#34;&gt;解法&lt;/h2&gt;
-&lt;h3 id=&#34;动态规划&#34;&gt;动态规划&lt;/h3&gt;
-&lt;font color=SkyBlue&gt;
-思路：定义dp[i]为考虑数组前i个元素，以nums[i]结尾的最长上升子序列，从小到大计算dp[i]的值。
-状态转移方程为：dp[i] = max(dp[j]) + 1，（其中 0 &lt;= j &lt; i且nums[i] &gt; nums[j]）
-当计算dp[i]的值时（初始dp[i]=1），j需要从0遍历到i-1，其中当nums[j] &lt; nums[i]时，dp[i] = max(dp[i]，dp[j]+1)
-然后求出dp数组中的最大值。
-&lt;/font&gt;
-&lt;p&gt;&lt;code&gt;时间复杂度 O(n^2)：遍历nums数组需要O(n)，计算每一个dp[i]需要O(n) &lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;空间复杂度 O(n)：dp数组需要O(n)的空间&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
-
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
-	&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scanln&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scan&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;lengthOfLIS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;lengthOfLIS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;c1&#34;&gt;//初始
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-			&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-				&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-			&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-		&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;二分--动态规划&#34;&gt;二分 + 动态规划&lt;/h3&gt;
-&lt;p&gt;&lt;font color=SkyBlue&gt;单纯的动态规划做法，计算每一个i的dp值需要从0遍历到i-1，这样太耗费时间，所以可以考虑维护一个数组dp，dp中的元素是严格递增的，每当遍历一个数组中元素v时，如果v比dp末尾元素还大，那就直接插入尾部，否则将dp数组中第一个大于v的元素改成v（除非有和v相同大小的元素，那么就不用改变），在遍历的同时需要维护一个res，记录dp数组的长度（不是真实长度，而是维护的虚拟长度），最终返回res&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;时间复杂度 O(NlogN) ： 遍历 nums 列表需 O(N)，在每个 nums[i] 二分法需 O(logN)。&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;空间复杂度 O(N)：dp数组需要O(n)的空间&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&#34;https://www.zhugeqing.top/images/algorithm_interview/LIS.png&#34; width=&#34;70%&#34; height=&#34;70%&#34;&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
-
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scan&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-
-	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Scan&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;lengthOfLIS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
-
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;lengthOfLIS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;c1&#34;&gt;// 二分查找 + 动态规划
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;nums&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-			&lt;span class=&#34;nx&#34;&gt;mid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-			&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-				&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-			&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-				&lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mid&lt;/span&gt;
-			&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-		&lt;span class=&#34;nx&#34;&gt;dp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;v&lt;/span&gt;
-		&lt;span class=&#34;c1&#34;&gt;//如果r依然等于res，说明v要大于dp数组内的所有元素，res++
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-			&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;
-		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-
-	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/recommend_site/xingyouji.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
             
           
         

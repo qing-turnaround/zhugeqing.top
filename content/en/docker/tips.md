@@ -87,3 +87,10 @@ deb http://mirrors.cloud.aliyuncs.com/debian/ jessie main non-free contrib
 deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
 deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie main non-free contrib
 deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
+
+
+## docker启动的centos容器有些命令执行不了
+> 赋予容器更多权限
+
+1. 启动docker时将/usr/sbin/init启动：`docker run --name centos --privileged -d centos /usr/sbin/init`
+2. 启动参数添加--privileged参数，用于给予此container更多特权

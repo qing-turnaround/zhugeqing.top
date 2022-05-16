@@ -20,6 +20,86 @@
 
       
       <item>
+        <title>docker 构建go镜像</title>
+        <link>https://www.zhugeqing.top/docker/docker-go-build/</link>
+        <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Sat, 02 Apr 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/docker-go-build/</guid>
+        <description>构建最小的go程序镜像 我一般通常会在云服务器上安装Go，然后build源程序，最后通过在busybo中进行运行 来构建go程序镜像 现在删除Go，用Go image来构建吧！ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 FROMzhugeqing/golang:1.17 AS builderWORKDIR/appMAINTAINER诸葛青COPY . .ARG TARGETPLATFORM=&amp;#34;linux/amd64&amp;#34;# 设置代理环境变量ARG GOPROXY=&amp;#34;https://goproxy.cn,direct&amp;#34;# 编译，在image内运行RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main main.goFROMzhugeqing/alpine # 拷贝缓存区构建完成的文件（这样镜像还是非常小</description>
+        <content:encoded>&lt;h2 id=&#34;构建最小的go程序镜像&#34;&gt;构建最小的go程序镜像&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我一般通常会在云服务器上安装Go，然后build源程序，最后通过在busybo中进行运行 来构建go程序镜像&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;现在删除Go，用Go image来构建吧！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; zhugeqing/golang:1.17  AS builder&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WORKDIR&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; /app&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;MAINTAINER&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 诸葛青&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; . .&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ARG&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;TARGETPLATFORM&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;linux/amd64&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 设置代理环境变量&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;ARG&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GOPROXY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://goproxy.cn,direct&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 编译，在image内运行&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;RUN&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CGO_ENABLED&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GOOS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;linux &lt;span class=&#34;nv&#34;&gt;GOARCH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;amd64 go build -o main main.go&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; zhugeqing/alpine &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 拷贝缓存区构建完成的文件（这样镜像还是非常小的）&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; --from&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;builder /app/main ./main &lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 暴露端口，只是显示而已&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;EXPOSE&lt;/span&gt;&lt;span class=&#34;s&#34;&gt; 6666 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 运行 可执行文件&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CMD&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/main&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;缺点就是会产生缓存image，需要执行&lt;code&gt;docker system prune&lt;/code&gt;进行清理&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>限制容器内存和管理docker占用磁盘</title>
         <link>https://www.zhugeqing.top/docker/docker-memory/</link>
         <pubDate>Fri, 18 Mar 2022 00:00:00 +0000</pubDate>
@@ -2066,6 +2146,14 @@ deb &lt;a href=&#34;http://mirrors.cloud.aliyuncs.com/debian/&#34;&gt;http://mir
 deb &lt;a href=&#34;http://mirrors.cloud.aliyuncs.com/debian/&#34;&gt;http://mirrors.cloud.aliyuncs.com/debian/&lt;/a&gt; jessie-proposed-updates main non-free contrib&lt;br /&gt;
 deb-src &lt;a href=&#34;http://mirrors.cloud.aliyuncs.com/debian/&#34;&gt;http://mirrors.cloud.aliyuncs.com/debian/&lt;/a&gt; jessie main non-free contrib&lt;br /&gt;
 deb-src &lt;a href=&#34;http://mirrors.cloud.aliyuncs.com/debian/&#34;&gt;http://mirrors.cloud.aliyuncs.com/debian/&lt;/a&gt; jessie-proposed-updates main non-free contrib&lt;/p&gt;
+&lt;h2 id=&#34;docker启动的centos容器有些命令执行不了&#34;&gt;docker启动的centos容器有些命令执行不了&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;赋予容器更多权限&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;启动docker时将/usr/sbin/init启动：&lt;code&gt;docker run --name centos --privileged -d centos /usr/sbin/init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;启动参数添加&amp;ndash;privileged参数，用于给予此container更多特权&lt;/li&gt;
+&lt;/ol&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
