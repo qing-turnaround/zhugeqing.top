@@ -12,12 +12,78 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/series/docker/index.xml" rel="self" type="application/rss+xml" />
     
 
+      
+      <item>
+        <title>docker swam使用</title>
+        <link>https://www.zhugeqing.top/docker/docker-swam/</link>
+        <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Wed, 07 Dec 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/docker-swam/</guid>
+        <description>介绍 弥补docker-compose无法部署在 多台机器的缺点 横向扩展 容器失败退出时如何新建容器确保服务正常运行 尽量确保零宕机时间 管理密码，Key等敏感数据 初步使用 docker info 查看docker engine有没有激活swarm模式，默认是Swarm: inactive（也就是未激活） 激活swam的两种方法：初始化一个swarm集群，自己成为manager 和 加入一个已经存在的swarm集群 docker swarm init 初始化一个swar</description>
+        <content:encoded>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;弥补docker-compose无法部署在 多台机器的缺点&lt;/li&gt;
+&lt;li&gt;横向扩展&lt;/li&gt;
+&lt;li&gt;容器失败退出时如何新建容器确保服务正常运行&lt;/li&gt;
+&lt;li&gt;尽量确保零宕机时间&lt;/li&gt;
+&lt;li&gt;管理密码，Key等敏感数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;初步使用&#34;&gt;初步使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;docker info&lt;/code&gt; 查看docker engine有没有激活swarm模式，默认是&lt;code&gt;Swarm: inactive（也就是未激活）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;激活swam的两种方法：&lt;code&gt;初始化一个swarm集群，自己成为manager&lt;/code&gt; 和 &lt;code&gt;加入一个已经存在的swarm集群&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker swarm init&lt;/code&gt; 初始化一个swarm集群，自己成为manager&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建swarm集群的根证书，manager节点的证书，其它节点加入集群需要的token，创建Raft数据库用于存储证书，配置，密码等数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker swarm join &lt;/code&gt; 加入一个swarm集群&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker node ls&lt;/code&gt; manager 查看当前集群节点&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker service create nginx:latest&lt;/code&gt; 创建一个由nginx:latest镜像构成的 service&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ndash;name web 指定名字为web&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker service ls&lt;/code&gt; 查看service&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker service ps serviceID&lt;/code&gt; 查看service的大致信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker service update serviceID --replicas 3&lt;/code&gt; 修改service 的replicas&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker service scale serviceID=4 也可以修改replicas&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker service rm serviceID&lt;/code&gt; 删除service（同时容器也会被删除）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker swarm join-token worker&lt;/code&gt; 重新查看加入swarm 集群的token&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker service logs serviceID&lt;/code&gt; 查看service日志&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>docker 构建go镜像</title>
@@ -162,13 +228,36 @@
       
       <item>
         <title>Docker compose</title>
-        <link>https://www.zhugeqing.top/docker/6/</link>
+        <link>https://www.zhugeqing.top/docker/docker-compose/</link>
         <pubDate>Thu, 17 Mar 2022 00:00:00 +0000</pubDate>
         
         <atom:modified>Thu, 17 Mar 2022 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/docker/6/</guid>
-        <description>docker-compose的安装 curl -L &amp;quot;https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose chmod 744 /usr/local/bin/docker-compose 赋予命令执行权限 docker-compose --version 测试是否安装成功 compose 文件的结构 docker compose文件的语法说明 https://docs.docker.com/compose/compose-file/</description>
-        <content:encoded>&lt;h2 id=&#34;docker-compose的安装&#34;&gt;docker-compose的安装&lt;/h2&gt;
+        <guid>https://www.zhugeqing.top/docker/docker-compose/</guid>
+        <description>基本使用 docker-compose up 创建并启动docker-compose.yml的容器和其他的资源 加入 -d 可以后台运行，加入&amp;ndash;build 可以运行之前构建镜像 docker-compose stop 停止docker-compose.yml 定义的容器 docker-compose start 启动 docker-compose.yml 定义的容器 docker-compose restart 就是重新启动 docker-compose rm 删除docker-compose.yml 定义的容器 docker-compose down 停止并删除 docker-compose.yml 定义的容器 docker-compose ps 查看 docker-compose.yml 定义的容器的运行情况 docker-compose build 对 docker-compose.yml 指定的 dockerfile 构建镜像 在build 后面可以指定 镜像名字</description>
+        <content:encoded>&lt;h2 id=&#34;基本使用&#34;&gt;基本使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;docker-compose up&lt;/code&gt; 创建并启动docker-compose.yml的容器和其他的资源&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;加入 -d 可以后台运行，加入&amp;ndash;build 可以运行之前构建镜像&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker-compose stop&lt;/code&gt; 停止docker-compose.yml 定义的容器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose start&lt;/code&gt; 启动 docker-compose.yml 定义的容器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker-compose restart 就是重新启动&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker-compose rm&lt;/code&gt; 删除docker-compose.yml 定义的容器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose down&lt;/code&gt; 停止并删除 docker-compose.yml 定义的容器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose ps&lt;/code&gt; 查看 docker-compose.yml 定义的容器的运行情况&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker-compose build&lt;/code&gt; 对 docker-compose.yml 指定的 dockerfile 构建镜像&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在build 后面可以指定 镜像名字&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;docker-compose的安装&#34;&gt;docker-compose的安装&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;curl -L &amp;quot;https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-$(uname -s)-$(uname -m)&amp;quot; -o /usr/local/bin/docker-compose&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;chmod 744 /usr/local/bin/docker-compose&lt;/code&gt;&lt;/li&gt;
@@ -186,8 +275,106 @@
 &lt;blockquote&gt;
 &lt;p&gt;docker compose文件的语法说明 &lt;a href=&#34;https://docs.docker.com/compose/compose-file/&#34;&gt;https://docs.docker.com/compose/compose-file/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
-&lt;/code&gt;&lt;/pre&gt;</content:encoded>
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml:docker-compose.yml&#34; data-lang=&#34;yaml:docker-compose.yml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;3.8&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# version是必须指定的，而且总是位于文件的第一行。 &lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 它定义了Compose文件格式（主要是API）的版本。建议使用最新版本。&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 容器&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;servicename&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 服务名字，这个名字也是内部 bridge网络可以使用的 DNS name&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;build&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选，相当于执行docker build，这个选项填 dockerfile的路径&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 镜像的名字&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;command&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选，如果设置，则会覆盖默认镜像里的 CMD命令&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选，相当于 docker run里的 --env&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选，相当于docker run里的 -v&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;networks&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选，相当于 docker run里的 --network&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选，相当于 docker run里的 -p&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;servicename2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选，相当于 docker volume create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;networks&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# 可选，相当于 docker network create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;例如&#34;&gt;例如&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml:docker-compose.yml&#34; data-lang=&#34;yaml:docker-compose.yml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;3.8&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;flask-demo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;flask-demo:latest&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;REDIS_HOST=redis-server&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;networks&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;demo-network&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;m&#34;&gt;8080&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5000&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;redis-server&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;redis:latest&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;networks&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;     &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;demo-network&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;networks&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;demo-network&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ipam&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;driver&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;config&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;         &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;-subnet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;172.16.200.0/24&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;docker-compose-水平扩展&#34;&gt;docker-compose 水平扩展&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker-compose up -d --scale flask=3&lt;/code&gt; 扩展 servicename为 flask的容器为3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;/blockquote&gt;
+</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         
@@ -963,8 +1150,17 @@ Dockerfile有其特定的语法规则&lt;/p&gt;
         
         <atom:modified>Fri, 10 Dec 2021 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/docker/docker-install/</guid>
-        <description>安装Elasticsearch 创建相关映射目录 mkdir -p /docker/elasticsearch/data chmod 777 -R /docker/elasticsearch 安装es 1 2 3 4 5 6 7 8 #!/bin/bash docker run --name elasticsearch -p 9200:9200 -p 9300:9300 \ -e &amp;#34;discovery.type=single-node&amp;#34; \ -e ES_JAVA_OPTS=&amp;#34;-Xms128m -Xmx256m&amp;#34; \ -v es-conf:/usr/share/elasticsearch/config \ -v es-data:/usr/share/elasticsearch/data \ -v es-plugins:/usr/share/elasticsearch/plugins \ -d elasticsearch:7.10.1 安装kibana docker run -d --name kibana -p 5601:5601 -e &amp;quot;ELASTICSEARCH_HOSTS=http://192.168.200.129:9200&amp;quot; kibana:7.10.1 安装rocketmq 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 #!/bin/bash function rocketmq_mkdir() { mkdir</description>
-        <content:encoded>&lt;h2 id=&#34;安装elasticsearch&#34;&gt;安装Elasticsearch&lt;/h2&gt;
+        <description>安装consul 1 docker run --name consul -d -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8600:8600/udp consul consul agent -dev -client=0.0.0.0 安装Elasticsearch 创建相关映射目录 mkdir -p /docker/elasticsearch/data chmod 777 -R /docker/elasticsearch 安装es 1 2 3 4 5 6 7 8 #!/bin/bash docker run --name elasticsearch -p 9200:9200 -p 9300:9300 \ -e &amp;#34;discovery.type=single-node&amp;#34; \ -e ES_JAVA_OPTS=&amp;#34;-Xms128m -Xmx256m&amp;#34; \ -v es-conf:/usr/share/elasticsearch/config \ -v es-data:/usr/share/elasticsearch/data \ -v es-plugins:/usr/share/elasticsearch/plugins \ -d elasticsearch:7.10.1 安装kibana docker run -d --name kibana -p 5601:5601 -e &amp;quot;ELASTICSEARCH_HOSTS=http://192.168.200.129:9200&amp;quot; kibana:7.10.1 安装rocketmq 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73</description>
+        <content:encoded>&lt;h2 id=&#34;安装consul&#34;&gt;安装consul&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;docker run --name consul -d -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8600:8600/udp consul consul agent -dev -client&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;0.0.0.0 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;安装elasticsearch&#34;&gt;安装Elasticsearch&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;创建相关映射目录&lt;/li&gt;
 &lt;/ol&gt;
@@ -1200,6 +1396,15 @@ cat &amp;gt; /docker/rocketmq/docker-compose.yml &lt;span class=&#34;s&#34;&gt;&
 rocketmq_start
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;安装jaeger&#34;&gt;安装jaeger&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;docker run -d --name jaeger -p 6831:6831/udp -p 16686:16686 jaegertracing/all-in-one
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
@@ -1304,6 +1509,7 @@ rocketmq_start
 &lt;li&gt;&lt;code&gt;docker image prune -a&lt;/code&gt; 删除所有没有被使用的镜像&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;docker container run --rm nginx&lt;/code&gt; 当容器退出时，会自动删除容器&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;docker update mysql --restart=always&lt;/code&gt; 设置容器mysql自启动&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker cp nginx:/etc/nginx /docker/nginx/conf&lt;/code&gt; 拷贝容器中的文件 到 宿主机&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;容器的attached-和-detached模式&#34;&gt;容器的attached 和 detached模式&lt;/h2&gt;
 &lt;p&gt;在启动一个容器加上-d参数就可以以daemon守护进程的方式运行也就是detached模式，&lt;/p&gt;

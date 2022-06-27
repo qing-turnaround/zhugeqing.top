@@ -1913,6 +1913,7 @@
 <li><code>docker image prune -a</code> 删除所有没有被使用的镜像</li>
 <li><code>docker container run --rm nginx</code> 当容器退出时，会自动删除容器</li>
 <li><code>docker update mysql --restart=always</code> 设置容器mysql自启动</li>
+<li><code>docker cp nginx:/etc/nginx /docker/nginx/conf</code> 拷贝容器中的文件 到 宿主机</li>
 </ol>
 <h2 id="容器的attached-和-detached模式">容器的attached 和 detached模式</h2>
 <p>在启动一个容器加上-d参数就可以以daemon守护进程的方式运行也就是detached模式，</p>

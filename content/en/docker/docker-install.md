@@ -12,6 +12,10 @@ series:
 - 
 ---
 
+## 安装consul
+```shell
+docker run --name consul -d -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8600:8600/udp consul consul agent -dev -client=0.0.0.0 
+```
 ## 安装Elasticsearch
 
 1. 创建相关映射目录
@@ -135,3 +139,7 @@ function rocketmq_start() {
 rocketmq_start
 ```
 
+## 安装jaeger
+```Shell
+docker run -d --name jaeger -p 6831:6831/udp -p 16686:16686 jaegertracing/all-in-one
+```
