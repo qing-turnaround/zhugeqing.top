@@ -83,4 +83,13 @@ networks:
 ## docker-compose 水平扩展
 
 * `docker-compose up -d --scale flask=3` 扩展 servicename为 flask的容器为3 
-> 
+
+
+## docker-compose 环境变量设置
+* 可以在docker-compose.yml里面直接定义，也可以将值改成某一个变量，比如：`REDIS_HOST=${host}`，在到docker-compose.yml 同路径中创建一个 `.env`文件，写入`host=redis-server`
+
+* 可以使用 `docker-compose config` 来查看配置
+
+## docker-compose 健康检查
+> 在docker-compose.yml中 每一个servicename中与 image 同级别 添加 healthcheck
+* 不错的例子`https://gist.github.com/phuysmans/4f67a7fa1b0c6809a86f014694ac6c3a`

@@ -2003,8 +2003,22 @@
 <ul>
 <li><code>docker-compose up -d --scale flask=3</code> 扩展 servicename为 flask的容器为3</li>
 </ul>
+<h2 id="docker-compose-环境变量设置">docker-compose 环境变量设置</h2>
+<ul>
+<li>
+<p>可以在docker-compose.yml里面直接定义，也可以将值改成某一个变量，比如：<code>REDIS_HOST=${host}</code>，在到docker-compose.yml 同路径中创建一个 <code>.env</code>文件，写入<code>host=redis-server</code></p>
+</li>
+<li>
+<p>可以使用 <code>docker-compose config</code> 来查看配置</p>
+</li>
+</ul>
+<h2 id="docker-compose-健康检查">docker-compose 健康检查</h2>
 <blockquote>
+<p>在docker-compose.yml中 每一个servicename中与 image 同级别 添加 healthcheck</p>
 </blockquote>
+<ul>
+<li>不错的例子<code>https://gist.github.com/phuysmans/4f67a7fa1b0c6809a86f014694ac6c3a</code></li>
+</ul>
 
     </article>
     
@@ -2717,6 +2731,8 @@ document.addEventListener('DOMContentLoaded', function () {
       </ul>
     </li>
     <li><a href="#docker-compose-水平扩展">docker-compose 水平扩展</a></li>
+    <li><a href="#docker-compose-环境变量设置">docker-compose 环境变量设置</a></li>
+    <li><a href="#docker-compose-健康检查">docker-compose 健康检查</a></li>
   </ul>
 </nav>
   </div>

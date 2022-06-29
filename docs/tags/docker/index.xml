@@ -372,8 +372,22 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;docker-compose up -d --scale flask=3&lt;/code&gt; 扩展 servicename为 flask的容器为3&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;docker-compose-环境变量设置&#34;&gt;docker-compose 环境变量设置&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;可以在docker-compose.yml里面直接定义，也可以将值改成某一个变量，比如：&lt;code&gt;REDIS_HOST=${host}&lt;/code&gt;，在到docker-compose.yml 同路径中创建一个 &lt;code&gt;.env&lt;/code&gt;文件，写入&lt;code&gt;host=redis-server&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;可以使用 &lt;code&gt;docker-compose config&lt;/code&gt; 来查看配置&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;docker-compose-健康检查&#34;&gt;docker-compose 健康检查&lt;/h2&gt;
 &lt;blockquote&gt;
+&lt;p&gt;在docker-compose.yml中 每一个servicename中与 image 同级别 添加 healthcheck&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;不错的例子&lt;code&gt;https://gist.github.com/phuysmans/4f67a7fa1b0c6809a86f014694ac6c3a&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>

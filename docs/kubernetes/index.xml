@@ -20,6 +20,38 @@
 
       
       <item>
+        <title>k8s的一些问题</title>
+        <link>https://www.zhugeqing.top/kubernetes/problems/</link>
+        <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Thu, 24 Mar 2022 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/kubernetes/problems/</guid>
+        <description>忘记master节点init后的join命令怎么办 在master节点上 执行 kubeadm token create --print-join-command，然后将打印出来的对应 命令在 work节点上运行</description>
+        <content:encoded>&lt;h2 id=&#34;忘记master节点init后的join命令怎么办&#34;&gt;忘记master节点init后的join命令怎么办&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在master节点上 执行 &lt;code&gt;kubeadm token create --print-join-command&lt;/code&gt;，然后将打印出来的对应 命令在 work节点上运行&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/kuber.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>k8s</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>k8s的安装</title>
         <link>https://www.zhugeqing.top/kubernetes/1/</link>
         <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
