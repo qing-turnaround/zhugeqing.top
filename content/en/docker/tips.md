@@ -94,3 +94,8 @@ deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main n
 
 1. 启动docker时将/usr/sbin/init启动：`docker run --name centos --privileged -d centos /usr/sbin/init`
 2. 启动参数添加--privileged参数，用于给予此container更多特权
+
+## 导入 和 导出 容器
+* `docker export consul > consul.tar` （导出consul）
+* `docker import consul.tar consul`    （导入consul）
+* `docker run --restart always --name consul -d -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8600:8600/udp consul consul agent -dev -client=0.0.0.0` （运行consul，需要带上原来的参数）

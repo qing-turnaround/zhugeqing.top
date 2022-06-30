@@ -24,6 +24,7 @@ Linux版本为centos 7.x，建议全部看完再进行操作
 
 ## 在同一个网络的机器
 > 把脚本放入对应机器执行即可（记得修改基本里面的一些参数，比如IP地址）
+> 这里用虚拟机 中ip地址做示例，master IP为 192.168.200.128，node1为 192.168.200.129
 ### Master节点
 ```Shell:master.sh
 #!/bin/bash
@@ -63,9 +64,8 @@ function install_docker(){
   fi
   cat <<EOF > /etc/docker/daemon.json
 {
-  "registry-mirrors": [
-    "https://5ajk0rns.mirror.aliyuncs.com"
-    ]
+  "registry-mirrors": ["https://registry.cn-hangzhou.aliyuncs.com"],
+  "exec-opts": ["native.cgroupdriver=systemd"]
 }
 EOF
 
@@ -155,16 +155,18 @@ function install_kubelet_kubeadmin_kubectl() {
 function kubeadmin_init() {
   sleep 1
 # 修改
-ip=192.168.0.128
+ip=192.168.200.128
 hostnamectl set-hostname master
 cat >> /etc/hosts << EOF 
 ${ip} master
-192.168.0.133 node1
+192.168.200.129 node1
 EOF
   kubeadm init --apiserver-advertise-address="${ip}" --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.19.4 --service-cidr=10.96.0.0/12 --pod-network-cidr=10.244.0.0/16
   mkdir -p "$HOME"/.kube
   cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
   chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
+
+
 }
 
 function install_flannel() {
@@ -172,6 +174,8 @@ function install_flannel() {
   wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
   kubectl apply -f kube-flannel.yml
 }
+
+
 
 # 安装docker
 read -p "是否安装docker？默认为：no. Enter [yes/no]：" is_docker
@@ -184,6 +188,7 @@ read -p "是否安装k8s？默认为：no. Enter [yes/no]：" is_k8s
 if [[ "$is_k8s" == 'yes' ]];then
   run_function "install_k8s"
 fi
+
 ```
 
 
@@ -226,9 +231,8 @@ function install_docker(){
   fi
   cat <<EOF > /etc/docker/daemon.json
 {
-  "registry-mirrors": [
-    "https://5ajk0rns.mirror.aliyuncs.com"
-    ]
+  "registry-mirrors": ["https://registry.cn-hangzhou.aliyuncs.com"],
+  "exec-opts": ["native.cgroupdriver=systemd"]
 }
 EOF
 
@@ -261,9 +265,6 @@ function install_k8s() {
       info "kubernetes master已经安装..."
     fi
 
-
-    info "去污点..."
-    kubectl taint nodes --all node-role.kubernetes.io/master-
 }
 
 # 初始化部署环境
@@ -318,9 +319,14 @@ function kubeadmin_init() {
 # 修改
 hostnamectl set-hostname node1
 cat >> /etc/hosts << EOF 
-192.168.0.200 master
-192.168.0.202 node1
+192.168.200.128 master
+192.168.200.129 node1
 EOF
+
+mkdir -p /etc/cni/net.d/
+read -p "请将 master 节点的 admin.conf 拷贝到 node1（20秒后自动跳过，在master上执行 scp /etc/kubernetes/admin.conf root@node1:/etc/kubernetes/）:" -t 20 a
+read -p "请将master节点下面 /etc/cni/net.d/下面的所有文件拷贝到node节点上（20秒后自动跳过，在master上执行scp /etc/cni/net.d/* root@node1:/etc/cni/net.d/）" -t 20 a
+
   mkdir -p "$HOME"/.kube
   cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
   chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
@@ -338,13 +344,11 @@ read -p "是否安装k8s？默认为：no. Enter [yes/no]：" is_k8s
 if [[ "$is_k8s" == 'yes' ]];then
   run_function "install_k8s"
 fi
-
 ```
 
 
 ## 不同网络的机器
-> 把上面脚本放入对应机器，先不要执行！（work节点可以执行，master节点有额外操作）
-
+> 把上面脚本放入对应机器，先不要执行！
 ### 先写好配置文件
 * 先编辑好一个要用的etcd需要配置的文件 `vim ectd.yaml`（只有第二种需要操作）
 > 将下面的`公网IP`替换成自己云服务器的公网IP（需要四处）
