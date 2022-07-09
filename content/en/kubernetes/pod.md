@@ -13,11 +13,14 @@ series:
 ---
 
 ## 快速使用
+* Pod 是可以在 Kubernetes 中创建和管理的、最小的可部署的计算单元。
+* Pod 是一组（一个或多个） 容器； 这些容器共享存储、网络、以及怎样运行这些容器的声明。
+* 如果一个Pod 由多个容器构成，那么这些容器将绑定在同一个环境中，可以理解为这些应用在同一个主机中运行。
 > 创建一个 nginx Pod
 
 ### step 1: 便携nginx.yaml
 ```yaml:nginx.yaml
-apiversion: v1
+apiVersion: v1
 kind: Pod
 metadata:
   name: my-nginx
@@ -42,6 +45,7 @@ spec:
 * `kubectl describe pod my-nginx` （查看pod信息）
 * `kubectl exec -it my-nginx sh` （进入容器内部）
 * `kubectl delete pod my-nginx` （删除Pod）
+* `kubectl delete -f nginx.yaml`（删除Pod）
 
 ## Pod 生命周期
 > 
@@ -189,3 +193,107 @@ spec:
 ```
 
 * 在这个配置文件中，periodSeconds 字段指定了 kubelet 每隔 3 秒执行一次存活探测。 initialDelaySeconds 字段告诉 kubelet 在执行第一次探测前应该等待 3 秒。 kubelet 会向容器内运行的服务（服务在监听 8080 端口）发送一个 HTTP GET 请求来执行探测。 如果服务器上 /healthz 路径下的处理程序返回成功代码，则 kubelet 认为容器是健康存活的。 如果处理程序返回失败代码，则 kubelet 会杀死这个容器并将其重启。
+
+
+## 为容器设置启动时要执行的命令和参数
+> https://kubernetes.io/zh-cn/docs/tasks/inject-data-application/define-command-argument-container/
+
+## 为容器定义相互依赖的环境变量 
+> https://kubernetes.io/zh-cn/docs/tasks/inject-data-application/define-interdependent-environment-variables/
+* 使用的变量需要提前定义，不然无法使用  
+
+## 为容器和 Pods 分配 CPU 资源
+> https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/assign-cpu-resource/
+* 启动容器时一定要主要对cpu资源进行限制
+* Pod 调度是基于`资源请求值`来进行的。 仅在某节点具有足够的 CPU 资源来满足 Pod CPU 请求时，Pod 将会在对应节点上运行，比如当resource-request-cpu超过所有节点时，尽管args-cpus设置的比较低也是无法调度Pod的
+
+
+## 用节点亲和性把 Pods 分配到对应节点上
+> https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/
+
+1. `kubectl get nodes --show-labels`，列出集群中的节点及其标签
+2. `kubectl label node node2 disktype=ssd`选择一个节点（比如这里选择node2节点），给它添加一个标签
+3. 创建yaml文件
+```yaml:affinity.yaml
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+
+  name: nginx
+
+spec:
+
+  affinity:
+
+    nodeAffinity:
+
+      requiredDuringSchedulingIgnoredDuringExecution:
+
+        nodeSelectorTerms:
+
+        - matchExpressions:
+
+          - key: disktype
+
+            operator: In
+
+            values:
+
+            - ssd            
+
+  containers:
+
+  - name: nginx
+
+    image: nginx
+
+    imagePullPolicy: IfNotPresent
+```
+
+4.创建Pod，发现运行在node2上（可以再修改lable 和 yaml文件尝试）
+
+## 将configmap数据注入容器
+
+1. 编写configmap.yaml（定义configmap 和 Pod）
+```yaml:configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-db-config
+data:
+  db-url: localhost
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: busybox
+    command: ["sh","-c","env"]
+    envFrom:
+      - configMapRef:
+          name: my-db-config
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+```
+
+2. `kubectl create -f configmap.yaml` （创建资源）
+
+
+## 使用非 root 用户 运行 Pod
+
+
+### docker 用户权限
+* 对于docker 来说，启动容器，默认是赋予 root 权限，但是这个root用户 权限比较少，比如无法修改hostname，需要赋予更高`特权模式权限`， 在运行时加入参数 `--privileged`
+
+
+### 为 Pod 或容器配置安全上下文
+>  https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/security-context/

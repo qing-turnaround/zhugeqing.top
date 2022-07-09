@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Mar 25, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;5&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1866,6 +1866,11 @@
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
       <h2 id="快速使用">快速使用</h2>
+<ul>
+<li>Pod 是可以在 Kubernetes 中创建和管理的、最小的可部署的计算单元。</li>
+<li>Pod 是一组（一个或多个） 容器； 这些容器共享存储、网络、以及怎样运行这些容器的声明。</li>
+<li>如果一个Pod 由多个容器构成，那么这些容器将绑定在同一个环境中，可以理解为这些应用在同一个主机中运行。</li>
+</ul>
 <blockquote>
 <p>创建一个 nginx Pod</p>
 </blockquote>
@@ -1890,7 +1895,7 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml:nginx.yaml" data-lang="yaml:nginx.yaml"><span class="nt">apiversion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml:nginx.yaml" data-lang="yaml:nginx.yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
 </span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Pod</span><span class="w">
 </span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">my-nginx</span><span class="w">
@@ -1920,6 +1925,7 @@
 <li><code>kubectl describe pod my-nginx</code> （查看pod信息）</li>
 <li><code>kubectl exec -it my-nginx sh</code> （进入容器内部）</li>
 <li><code>kubectl delete pod my-nginx</code> （删除Pod）</li>
+<li><code>kubectl delete -f nginx.yaml</code>（删除Pod）</li>
 </ul>
 <h2 id="pod-生命周期">Pod 生命周期</h2>
 <blockquote>
@@ -2184,6 +2190,183 @@
 </div><ul>
 <li>在这个配置文件中，periodSeconds 字段指定了 kubelet 每隔 3 秒执行一次存活探测。 initialDelaySeconds 字段告诉 kubelet 在执行第一次探测前应该等待 3 秒。 kubelet 会向容器内运行的服务（服务在监听 8080 端口）发送一个 HTTP GET 请求来执行探测。 如果服务器上 /healthz 路径下的处理程序返回成功代码，则 kubelet 认为容器是健康存活的。 如果处理程序返回失败代码，则 kubelet 会杀死这个容器并将其重启。</li>
 </ul>
+<h2 id="为容器设置启动时要执行的命令和参数">为容器设置启动时要执行的命令和参数</h2>
+<blockquote>
+<p><a href="https://kubernetes.io/zh-cn/docs/tasks/inject-data-application/define-command-argument-container/">https://kubernetes.io/zh-cn/docs/tasks/inject-data-application/define-command-argument-container/</a></p>
+</blockquote>
+<h2 id="为容器定义相互依赖的环境变量">为容器定义相互依赖的环境变量</h2>
+<blockquote>
+<p><a href="https://kubernetes.io/zh-cn/docs/tasks/inject-data-application/define-interdependent-environment-variables/">https://kubernetes.io/zh-cn/docs/tasks/inject-data-application/define-interdependent-environment-variables/</a></p>
+</blockquote>
+<ul>
+<li>使用的变量需要提前定义，不然无法使用</li>
+</ul>
+<h2 id="为容器和-pods-分配-cpu-资源">为容器和 Pods 分配 CPU 资源</h2>
+<blockquote>
+<p><a href="https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/assign-cpu-resource/">https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/assign-cpu-resource/</a></p>
+</blockquote>
+<ul>
+<li>启动容器时一定要主要对cpu资源进行限制</li>
+<li>Pod 调度是基于<code>资源请求值</code>来进行的。 仅在某节点具有足够的 CPU 资源来满足 Pod CPU 请求时，Pod 将会在对应节点上运行，比如当resource-request-cpu超过所有节点时，尽管args-cpus设置的比较低也是无法调度Pod的</li>
+</ul>
+<h2 id="用节点亲和性把-pods-分配到对应节点上">用节点亲和性把 Pods 分配到对应节点上</h2>
+<blockquote>
+<p><a href="https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/">https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/</a></p>
+</blockquote>
+<ol>
+<li><code>kubectl get nodes --show-labels</code>，列出集群中的节点及其标签</li>
+<li><code>kubectl label node node2 disktype=ssd</code>选择一个节点（比如这里选择node2节点），给它添加一个标签</li>
+<li>创建yaml文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml:affinity.yaml" data-lang="yaml:affinity.yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Pod</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">affinity</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">nodeAffinity</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span><span class="nt">requiredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="nt">nodeSelectorTerms</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">matchExpressions</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">disktype</span><span class="w">
+</span><span class="w">
+</span><span class="w">            </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">In</span><span class="w">
+</span><span class="w">
+</span><span class="w">            </span><span class="nt">values</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">            </span>- <span class="l">ssd            </span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">IfNotPresent</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>4.创建Pod，发现运行在node2上（可以再修改lable 和 yaml文件尝试）</p>
+<h2 id="将configmap数据注入容器">将configmap数据注入容器</h2>
+<ol>
+<li>编写configmap.yaml（定义configmap 和 Pod）</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml:configmap.yaml" data-lang="yaml:configmap.yaml"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ConfigMap</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">my-db-config</span><span class="w">
+</span><span class="w"></span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">db-url</span><span class="p">:</span><span class="w"> </span><span class="l">localhost</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Pod</span><span class="w">
+</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">myapp</span><span class="w">
+</span><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">myapp</span><span class="w">
+</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">myapp</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">busybox</span><span class="w">
+</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;sh&#34;</span><span class="p">,</span><span class="s2">&#34;-c&#34;</span><span class="p">,</span><span class="s2">&#34;env&#34;</span><span class="p">]</span><span class="w">
+</span><span class="w">    </span><span class="nt">envFrom</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">configMapRef</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">my-db-config</span><span class="w">
+</span><span class="w">    </span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">limits</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;128Mi&#34;</span><span class="w">
+</span><span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;500m&#34;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li><code>kubectl create -f configmap.yaml</code> （创建资源）</li>
+</ol>
+<h2 id="使用非-root-用户-运行-pod">使用非 root 用户 运行 Pod</h2>
+<h3 id="docker-用户权限">docker 用户权限</h3>
+<ul>
+<li>对于docker 来说，启动容器，默认是赋予 root 权限，但是这个root用户 权限比较少，比如无法修改hostname，需要赋予更高<code>特权模式权限</code>， 在运行时加入参数 <code>--privileged</code></li>
+</ul>
+<h3 id="为-pod-或容器配置安全上下文">为 Pod 或容器配置安全上下文</h3>
+<blockquote>
+<p><a href="https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/security-context/">https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/security-context/</a></p>
+</blockquote>
 
     </article>
     
@@ -2473,6 +2656,10 @@
     <ul class="related-ul">
         
         <li>
+          <a href="/kubernetes/service/" class="related__link">k8s Service</a>
+        </li>
+        
+        <li>
           <a href="/kubernetes/plugins-install/" class="related__link">安装k8s 插件</a>
         </li>
         
@@ -2491,14 +2678,21 @@
 <nav class="pagination-single">
   
     
-      <a href="https://www.zhugeqing.top/kubernetes/plugins-install/" class="pagination-single__left">
+      <a href="https://www.zhugeqing.top/kubernetes/service/" class="pagination-single__left">
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
         </div>
-        <div class="pagination-single__left-title">安装k8s 插件</div>      
+        <div class="pagination-single__left-title">k8s Service</div>      
       </a>
     
     <div class="grow"></div>
+    
+      <a href="https://www.zhugeqing.top/kubernetes/controller/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">k8s controller</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
     
   
 </nav>
@@ -2903,6 +3097,17 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#探针机制">探针机制</a></li>
         <li><a href="#探测结果">探测结果</a></li>
         <li><a href="#尝试">尝试</a></li>
+      </ul>
+    </li>
+    <li><a href="#为容器设置启动时要执行的命令和参数">为容器设置启动时要执行的命令和参数</a></li>
+    <li><a href="#为容器定义相互依赖的环境变量">为容器定义相互依赖的环境变量</a></li>
+    <li><a href="#为容器和-pods-分配-cpu-资源">为容器和 Pods 分配 CPU 资源</a></li>
+    <li><a href="#用节点亲和性把-pods-分配到对应节点上">用节点亲和性把 Pods 分配到对应节点上</a></li>
+    <li><a href="#将configmap数据注入容器">将configmap数据注入容器</a></li>
+    <li><a href="#使用非-root-用户-运行-pod">使用非 root 用户 运行 Pod</a>
+      <ul>
+        <li><a href="#docker-用户权限">docker 用户权限</a></li>
+        <li><a href="#为-pod-或容器配置安全上下文">为 Pod 或容器配置安全上下文</a></li>
       </ul>
     </li>
   </ul>

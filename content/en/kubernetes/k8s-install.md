@@ -322,7 +322,7 @@ cat >> /etc/hosts << EOF
 192.168.200.128 master
 192.168.200.129 node1
 EOF
-
+## 修改
 mkdir -p /etc/cni/net.d/
 read -p "请将 master 节点的 admin.conf 拷贝到 node1（20秒后自动跳过，在master上执行 scp /etc/kubernetes/admin.conf root@node1:/etc/kubernetes/）:" -t 20 a
 read -p "请将master节点下面 /etc/cni/net.d/下面的所有文件拷贝到node节点上（20秒后自动跳过，在master上执行scp /etc/cni/net.d/* root@node1:/etc/cni/net.d/）" -t 20 a
