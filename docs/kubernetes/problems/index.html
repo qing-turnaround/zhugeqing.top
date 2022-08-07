@@ -1869,6 +1869,33 @@
 <ul>
 <li>在master节点上 执行 <code>kubeadm token create --print-join-command</code>，然后将打印出来的对应 命令在 work节点上运行</li>
 </ul>
+<h2 id="升级k8s">升级k8s</h2>
+<ol>
+<li>
+<p>用最新的补丁版本号替换 1.24.x-0 中的 x<br />
+<code>yum install -y kubeadm-1.24.x-0 --disableexcludes=kubernetes</code></p>
+</li>
+<li>
+<p>用最新的补丁版本号替换 1.24.x-00 中的 x<br />
+<code>yum install -y kubelet-1.24.x-0 kubectl-1.24.x-0 --disableexcludes=kubernetes</code></p>
+</li>
+<li>
+<p>查看可以安装的版本<br />
+<code>yum list --showduplicates kubeadm --disableexcludes=kubernetes</code><br />
+<code>yum list --showduplicates kubelet --disableexcludes=kubernetes</code><br />
+<code>yum list --showduplicates kubectl --disableexcludes=kubernetes</code></p>
+</li>
+</ol>
+<h2 id="k8s-被限制映射的端口">k8s 被限制映射的端口</h2>
+<ol>
+<li>
+<p><code>vim /etc/kubernetes/manifests/kube-apiserver.yaml</code></p>
+</li>
+<li>
+<p>在 <code>spec.containers.command</code>下添加<br />
+<code>- --service-node-port-range=1-65535</code></p>
+</li>
+</ol>
 
     </article>
     
@@ -2558,6 +2585,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#忘记master节点init后的join命令怎么办">忘记master节点init后的join命令怎么办</a></li>
+    <li><a href="#升级k8s">升级k8s</a></li>
+    <li><a href="#k8s-被限制映射的端口">k8s 被限制映射的端口</a></li>
   </ul>
 </nav>
   </div>

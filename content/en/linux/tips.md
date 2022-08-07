@@ -1,8 +1,8 @@
 ---
 date: 2022-03-20
-description: "释放Linux cache"
+description: "linux 小技巧"
 image: "images/linux.jpg"
-title: "释放Linux cache"
+title: "linux 小技巧"
 author: 诸葛青
 authorEmoji: 🎅
 pinned: false
@@ -11,6 +11,8 @@ tags:
 series:
 - 
 ---
+
+## 释放Linux cache
 
 ### 先查询一下空闲内存
 * 手动清理——`echo 3 > /proc/sys/vm/drop_caches`
@@ -35,3 +37,9 @@ fi
 * 输入`*/3 * * * *  /root/linux_study/release_memory.sh`按照vim操作保存
 > 每隔三分钟执行一次
 * 通过`crontab -l`查看定时任务
+
+## 给命令设置别名
+> 示例 设置 kubectl 别名 为 kc
+
+* `echo "alias kc='kubectl'" >> /etc/bashrc`
+* `source /etc/bashrc`  

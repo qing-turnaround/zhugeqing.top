@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>释放Linux cache – 诸葛青的编程之旅</title>
+    <title>linux 小技巧 – 诸葛青的编程之旅</title>
     
 
 
@@ -1323,7 +1323,7 @@
 
 
     
-<meta name="description" content="释放Linux cache" />
+<meta name="description" content="linux 小技巧" />
 
 
 <meta name="keywords" content="Linux">
@@ -1337,18 +1337,18 @@
 
 
 <meta property="og:site_name" content="诸葛青的编程之旅">
-<meta property="og:title" content="释放Linux cache">
+<meta property="og:title" content="linux 小技巧">
 <meta property="og:url" content="https://www.zhugeqing.top/linux/tips/">
 <meta property="og:type" content="article">
-<meta property="og:description" content="释放Linux cache">
+<meta property="og:description" content="linux 小技巧">
 
   
     <meta property="og:image" content="https://www.zhugeqing.top/images/linux.jpg">
     <meta property="og:image:url" content="https://www.zhugeqing.top/images/linux.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:app:name:iphone" content="诸葛青的编程之旅">
-    <meta property="twitter:title" content="释放Linux cache">
-    <meta property="twitter:description" content="释放Linux cache">
+    <meta property="twitter:title" content="linux 小技巧">
+    <meta property="twitter:description" content="linux 小技巧">
   
 
 <meta name="generator" content="Hugo 0.89.2" />
@@ -1374,11 +1374,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "释放Linux cache",
+    "headline": "linux 小技巧",
     "datePublished": "2022-03-20T00:00:00Z",
     "dateModified": "2022-03-20T00:00:00Z",
     "url" : "https://www.zhugeqing.top/linux/tips/",
-    "description": "释放Linux cache",
+    "description": "linux 小技巧",
     "keywords": ["Linux"],
     "image" : "https://www.zhugeqing.top/images/linux.jpg",
     "author": {
@@ -1824,7 +1824,7 @@
   
   <li  class="is-active" >
     
-      <span>释放Linux cache</span>
+      <span>linux 小技巧</span>
     
   </li>
   
@@ -1836,7 +1836,7 @@
   <div class="single ">
     <div class="single__nojs">This page looks best with JavaScript enabled</div>
     <script>document.querySelector('.single').classList.remove('hide'); document.querySelector('.single__nojs').classList.add('hide');</script>
-    <h2 class="single__title" data-ani="true">释放Linux cache</h2>
+    <h2 class="single__title" data-ani="true">linux 小技巧</h2>
     <h3 class="single__subtitle"></h3>
     <div class="single__meta">
       
@@ -1865,7 +1865,8 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <h3 id="先查询一下空闲内存">先查询一下空闲内存</h3>
+      <h2 id="释放linux-cache">释放Linux cache</h2>
+<h3 id="先查询一下空闲内存">先查询一下空闲内存</h3>
 <ul>
 <li>手动清理——<code>echo 3 &gt; /proc/sys/vm/drop_caches</code></li>
 <li><code>cat /proc/meminfo | grep &quot;MemFree&quot; | awk '{print $2}'</code></li>
@@ -1908,6 +1909,14 @@
 </blockquote>
 <ul>
 <li>通过<code>crontab -l</code>查看定时任务</li>
+</ul>
+<h2 id="给命令设置别名">给命令设置别名</h2>
+<blockquote>
+<p>示例 设置 kubectl 别名 为 kc</p>
+</blockquote>
+<ul>
+<li><code>echo &quot;alias kc='kubectl'&quot; &gt;&gt; /etc/bashrc</code></li>
+<li><code>source /etc/bashrc</code></li>
 </ul>
 
     </article>
@@ -2597,13 +2606,14 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="toc " data-dir="ltr" data-folding="true" data-ani="true">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#释放linux-cache">释放Linux cache</a>
       <ul>
         <li><a href="#先查询一下空闲内存">先查询一下空闲内存</a></li>
         <li><a href="#编写脚本">编写脚本</a></li>
         <li><a href="#设置定时任务">设置定时任务</a></li>
       </ul>
     </li>
+    <li><a href="#给命令设置别名">给命令设置别名</a></li>
   </ul>
 </nav>
   </div>

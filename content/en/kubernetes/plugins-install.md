@@ -25,5 +25,8 @@ series:
 yum -y install bash-completion
 source /usr/share/bash-completion/bash_completion
 source <(kubectl completion bash)
-echo "source <(kubectl completion bash)" >> ~/.bashrc
+# 添加别名
+echo "alias kc='kubectl'" >> ~/.bashrc 
+echo "source <(kubectl completion bash | sed 's/kubectl/kc/g' )" >> ~/.bashrc
+source ~/.bashrc 
 ```

@@ -763,14 +763,15 @@ HelloWorld &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
       </item>
       
       <item>
-        <title>释放Linux cache</title>
+        <title>linux 小技巧</title>
         <link>https://www.zhugeqing.top/linux/tips/</link>
         <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
         
         <atom:modified>Sun, 20 Mar 2022 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/linux/tips/</guid>
-        <description>先查询一下空闲内存 手动清理——echo 3 &amp;gt; /proc/sys/vm/drop_caches cat /proc/meminfo | grep &amp;quot;MemFree&amp;quot; | awk &#39;{print $2}&#39; 编写脚本 并赋予权限 1 2 3 4 5 6 7 8 9 #! /bin/bash #Memory小于 一般情况下的内存 时 释放Cached的内存 least=1156184 freemem=$(cat /proc/meminfo | grep &amp;#34;MemFree&amp;#34; | awk &amp;#39;{print $2}&amp;#39;) if [ $freemem -le $least ];then sync # 同步一下 sync echo 3 &amp;gt; /proc/sys/vm/drop_caches # 释放 fi 设置定时任务 输入crontab –e编辑定时任务 输入*/3 * * * * /root/linux_study/release_memory.sh按照vim操作保存 每隔三分钟执行一次 通过cr</description>
-        <content:encoded>&lt;h3 id=&#34;先查询一下空闲内存&#34;&gt;先查询一下空闲内存&lt;/h3&gt;
+        <description>释放Linux cache 先查询一下空闲内存 手动清理——echo 3 &amp;gt; /proc/sys/vm/drop_caches cat /proc/meminfo | grep &amp;quot;MemFree&amp;quot; | awk &#39;{print $2}&#39; 编写脚本 并赋予权限 1 2 3 4 5 6 7 8 9 #! /bin/bash #Memory小于 一般情况下的内存 时 释放Cached的内存 least=1156184 freemem=$(cat /proc/meminfo | grep &amp;#34;MemFree&amp;#34; | awk &amp;#39;{print $2}&amp;#39;) if [ $freemem -le $least ];then sync # 同步一下 sync echo 3 &amp;gt; /proc/sys/vm/drop_caches # 释放 fi 设置定时任务 输入crontab –e编辑定时任务 输入*/3 * * * * /root/linux_study/release_memory.sh按照vim操作保存 每隔三分钟</description>
+        <content:encoded>&lt;h2 id=&#34;释放linux-cache&#34;&gt;释放Linux cache&lt;/h2&gt;
+&lt;h3 id=&#34;先查询一下空闲内存&#34;&gt;先查询一下空闲内存&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;手动清理——&lt;code&gt;echo 3 &amp;gt; /proc/sys/vm/drop_caches&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;cat /proc/meminfo | grep &amp;quot;MemFree&amp;quot; | awk &#39;{print $2}&#39;&lt;/code&gt;&lt;/li&gt;
@@ -813,6 +814,14 @@ HelloWorld &lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;通过&lt;code&gt;crontab -l&lt;/code&gt;查看定时任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;给命令设置别名&#34;&gt;给命令设置别名&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;示例 设置 kubectl 别名 为 kc&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;echo &amp;quot;alias kc=&#39;kubectl&#39;&amp;quot; &amp;gt;&amp;gt; /etc/bashrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;source /etc/bashrc&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>

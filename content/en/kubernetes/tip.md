@@ -15,4 +15,5 @@ series:
 ## headless Service
 * k8s可以为服务提供负载均衡，但是有时候开发人员希望 能够自己 来控制 负载均衡的策略，Kubernetes提供了Headless Service来实现这种功能，即不为Service设置ClusterIP（入口IP地址），也就是将Service文件中clusterIP设置为 None
 
-## 
+## pv 和 pvc
+* pv 就像是 管理员创建了一些硬盘，而 pvc 就是员工排队过来领硬盘的规范

@@ -20,6 +20,12 @@
     <loc>https://www.zhugeqing.top/tags/</loc>
     <lastmod>2022-12-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.zhugeqing.top/tags/k8s/</loc>
+    <lastmod>2022-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/kubernetes/deploy/</loc>
+    <lastmod>2022-05-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.zhugeqing.top/write/2022-05-01/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -48,6 +54,9 @@
     <lastmod>2022-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/docker/docker-go-build/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.zhugeqing.top/kubernetes/storage/</loc>
     <lastmod>2022-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/write/2022-04-02/</loc>
@@ -85,9 +94,6 @@
   </url><url>
     <loc>https://www.zhugeqing.top/write/2022-03-30/</loc>
     <lastmod>2022-03-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.zhugeqing.top/tags/k8s/</loc>
-    <lastmod>2022-03-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.zhugeqing.top/kubernetes/tip/</loc>
     <lastmod>2022-03-29T00:00:00+00:00</lastmod>

@@ -1869,7 +1869,10 @@
 <ul>
 <li>k8s可以为服务提供负载均衡，但是有时候开发人员希望 能够自己 来控制 负载均衡的策略，Kubernetes提供了Headless Service来实现这种功能，即不为Service设置ClusterIP（入口IP地址），也就是将Service文件中clusterIP设置为 None</li>
 </ul>
-<h2 id="heading"></h2>
+<h2 id="pv-和-pvc">pv 和 pvc</h2>
+<ul>
+<li>pv 就像是 管理员创建了一些硬盘，而 pvc 就是员工排队过来领硬盘的规范</li>
+</ul>
 
     </article>
     
@@ -2193,6 +2196,13 @@
       </a>
     
     <div class="grow"></div>
+    
+      <a href="https://www.zhugeqing.top/kubernetes/storage/" class="pagination-single__right">      
+        <div class="pagination-single__right-title">k8 持久化存储 学习</div>
+        <div class="pagination-single__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
+        </div>
+      </a>
     
   
 </nav>
@@ -2568,7 +2578,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#headless-service">headless Service</a></li>
-    <li><a href="#heading"></a></li>
+    <li><a href="#pv-和-pvc">pv 和 pvc</a></li>
   </ul>
 </nav>
   </div>

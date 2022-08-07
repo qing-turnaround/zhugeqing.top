@@ -1883,13 +1883,19 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sh:bash-completion.sh" data-lang="sh:bash-completion.sh"><span class="cp">#!/bin/bash
 </span><span class="cp"></span>yum -y install bash-completion
 <span class="nb">source</span> /usr/share/bash-completion/bash_completion
 <span class="nb">source</span> &lt;<span class="o">(</span>kubectl completion bash<span class="o">)</span>
-<span class="nb">echo</span> <span class="s2">&#34;source &lt;(kubectl completion bash)&#34;</span> &gt;&gt; ~/.bashrc
+<span class="c1"># 添加别名</span>
+<span class="nb">echo</span> <span class="s2">&#34;alias kc=&#39;kubectl&#39;&#34;</span> &gt;&gt; ~/.bashrc 
+<span class="nb">echo</span> <span class="s2">&#34;source &lt;(kubectl completion bash | sed &#39;s/kubectl/kc/g&#39; )&#34;</span> &gt;&gt; ~/.bashrc
+<span class="nb">source</span> ~/.bashrc 
 </code></pre></td></tr></table>
 </div>
 </div>
