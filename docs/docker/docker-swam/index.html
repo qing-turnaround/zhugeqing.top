@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Dec 7, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;1&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1903,6 +1903,10 @@
 <li><code>docker swarm join-token worker</code> 重新查看加入swarm 集群的token</li>
 <li><code>docker service logs serviceID</code> 查看service日志</li>
 </ol>
+<h2 id="tips">tips</h2>
+<ul>
+<li>基本上各大云服务器厂商都不支持搭建 docker swarm， 我尝试搭建，使用一台阿里云和两台腾讯云搭建docker swarm 集群，后面发现创建的分布式容器 之间无法通过创建的 overlay网络进行连接（ping通），但如果是虚拟机就没有任何问题。</li>
+</ul>
 
     </article>
     
@@ -2602,6 +2606,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
     <li><a href="#介绍">介绍</a></li>
     <li><a href="#初步使用">初步使用</a></li>
+    <li><a href="#tips">tips</a></li>
   </ul>
 </nav>
   </div>

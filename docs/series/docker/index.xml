@@ -65,6 +65,10 @@
 &lt;li&gt;&lt;code&gt;docker swarm join-token worker&lt;/code&gt; 重新查看加入swarm 集群的token&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;docker service logs serviceID&lt;/code&gt; 查看service日志&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;基本上各大云服务器厂商都不支持搭建 docker swarm， 我尝试搭建，使用一台阿里云和两台腾讯云搭建docker swarm 集群，后面发现创建的分布式容器 之间无法通过创建的 overlay网络进行连接（ping通），但如果是虚拟机就没有任何问题。&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
@@ -513,6 +517,11 @@ fb99caa72e20a4d0a86aa83840fe328e5dca179fc9dd0d59b9ecc4d2a9255e47
 &lt;blockquote&gt;
 &lt;p&gt;删除&lt;code&gt;micro&lt;/code&gt;这一个docker network&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h2 id=&#34;swarm-overlay-网络&#34;&gt;swarm overlay 网络&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如果是使用分布式的docker环境，也就是docker swarm，那么swarm将用专门的&lt;code&gt;overlay&lt;/code&gt;网络&lt;/li&gt;
+&lt;li&gt;在已经存在一个swarm集群的前提下，通过&lt;code&gt;docker network create -d overlay --attachable mysql&lt;/code&gt; 可以创建一个mysql集群所需要的分布式系统网络&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>

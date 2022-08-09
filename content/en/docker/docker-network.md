@@ -73,3 +73,7 @@ fb99caa72e20a4d0a86aa83840fe328e5dca179fc9dd0d59b9ecc4d2a9255e47
 > 在docker创建容器时通过使用参数`--network`指定容器所连接的docker网络
 7. `docker network rm micro`
 > 删除`micro`这一个docker network
+
+## swarm overlay 网络
+* 如果是使用分布式的docker环境，也就是docker swarm，那么swarm将用专门的`overlay`网络
+* 在已经存在一个swarm集群的前提下，通过`docker network create -d overlay --attachable mysql` 可以创建一个mysql集群所需要的分布式系统网络

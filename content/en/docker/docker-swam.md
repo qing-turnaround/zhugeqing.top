@@ -35,3 +35,8 @@ series:
 10. `docker service rm serviceID` 删除service（同时容器也会被删除）
 11. `docker swarm join-token worker` 重新查看加入swarm 集群的token
 12. `docker service logs serviceID` 查看service日志 
+
+
+
+## tips
+* 基本上各大云服务器厂商都不支持搭建 docker swarm， 我尝试搭建，使用一台阿里云和两台腾讯云搭建docker swarm 集群，后面发现创建的分布式容器 之间无法通过创建的 overlay网络进行连接（ping通），但如果是虚拟机就没有任何问题。

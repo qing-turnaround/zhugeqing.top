@@ -1962,6 +1962,11 @@ fb99caa72e20a4d0a86aa83840fe328e5dca179fc9dd0d59b9ecc4d2a9255e47
 <blockquote>
 <p>删除<code>micro</code>这一个docker network</p>
 </blockquote>
+<h2 id="swarm-overlay-网络">swarm overlay 网络</h2>
+<ul>
+<li>如果是使用分布式的docker环境，也就是docker swarm，那么swarm将用专门的<code>overlay</code>网络</li>
+<li>在已经存在一个swarm集群的前提下，通过<code>docker network create -d overlay --attachable mysql</code> 可以创建一个mysql集群所需要的分布式系统网络</li>
+</ul>
 
     </article>
     
@@ -2668,6 +2673,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
     <li><a href="#docker-network基础">docker network基础</a></li>
     <li><a href="#docker-network相关命令">docker network相关命令</a></li>
+    <li><a href="#swarm-overlay-网络">swarm overlay 网络</a></li>
   </ul>
 </nav>
   </div>
