@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>docker部署 pxc集群 – 诸葛青的编程之旅</title>
+    <title>docker部署 pxc集群 和 Replication集群 – 诸葛青的编程之旅</title>
     
 
 
@@ -1323,7 +1323,7 @@
 
 
     
-<meta name="description" content="docker swarm 部署mysql-pxc集群&#34;" />
+<meta name="description" content="docker swarm 部署mysql集群&#34;" />
 
 
 <meta name="keywords" content="docker">
@@ -1337,18 +1337,18 @@
 
 
 <meta property="og:site_name" content="诸葛青的编程之旅">
-<meta property="og:title" content="docker部署 pxc集群">
+<meta property="og:title" content="docker部署 pxc集群 和 Replication集群">
 <meta property="og:url" content="https://www.zhugeqing.top/docker/docker-mysql-pxc/">
 <meta property="og:type" content="article">
-<meta property="og:description" content="docker swarm 部署mysql-pxc集群&#34;">
+<meta property="og:description" content="docker swarm 部署mysql集群&#34;">
 
   
     <meta property="og:image" content="https://www.zhugeqing.top/images/docker.svg">
     <meta property="og:image:url" content="https://www.zhugeqing.top/images/docker.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:app:name:iphone" content="诸葛青的编程之旅">
-    <meta property="twitter:title" content="docker部署 pxc集群">
-    <meta property="twitter:description" content="docker swarm 部署mysql-pxc集群&#34;">
+    <meta property="twitter:title" content="docker部署 pxc集群 和 Replication集群">
+    <meta property="twitter:description" content="docker swarm 部署mysql集群&#34;">
   
 
 <meta name="generator" content="Hugo 0.89.2" />
@@ -1374,11 +1374,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "docker部署 pxc集群",
+    "headline": "docker部署 pxc集群 和 Replication集群",
     "datePublished": "2021-12-06T00:00:00Z",
     "dateModified": "2021-12-06T00:00:00Z",
     "url" : "https://www.zhugeqing.top/docker/docker-mysql-pxc/",
-    "description": "docker swarm 部署mysql-pxc集群\"",
+    "description": "docker swarm 部署mysql集群\"",
     "keywords": ["docker"],
     "image" : "https://www.zhugeqing.top/images/docker.svg",
     "author": {
@@ -1824,7 +1824,7 @@
   
   <li  class="is-active" >
     
-      <span>docker部署 pxc集群</span>
+      <span>docker部署 pxc集群 和 Replication集群</span>
     
   </li>
   
@@ -1836,7 +1836,7 @@
   <div class="single ">
     <div class="single__nojs">This page looks best with JavaScript enabled</div>
     <script>document.querySelector('.single').classList.remove('hide'); document.querySelector('.single__nojs').classList.add('hide');</script>
-    <h2 class="single__title" data-ani="true">docker部署 pxc集群</h2>
+    <h2 class="single__title" data-ani="true">docker部署 pxc集群 和 Replication集群</h2>
     <h3 class="single__subtitle"></h3>
     <div class="single__meta">
       
@@ -1964,6 +1964,7 @@
 <blockquote>
 <p>部署两个pxc集群</p>
 </blockquote>
+<h2 id="使用docker搭建-replication集群">使用docker搭建 Replication集群</h2>
 
     </article>
     
@@ -2666,6 +2667,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </ul>
     </li>
     <li><a href="#进行分片">进行分片</a></li>
+    <li><a href="#使用docker搭建-replication集群">使用docker搭建 Replication集群</a></li>
   </ul>
 </nav>
   </div>

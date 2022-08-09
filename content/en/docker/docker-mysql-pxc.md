@@ -1,8 +1,8 @@
 ---
 date: 2021-12-06
-description: docker swarm 部署mysql-pxc集群"
+description: docker swarm 部署mysql集群"
 image: "images/docker.svg"
-title: "docker部署 pxc集群"
+title: "docker部署 pxc集群 和 Replication集群"
 author: 诸葛青
 authorEmoji: 😃
 pinned: false
@@ -61,3 +61,6 @@ zhugeqing/pxc
 
 ## 进行分片
 > 部署两个pxc集群
+
+## 使用docker搭建 Replication集群
+
