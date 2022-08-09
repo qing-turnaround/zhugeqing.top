@@ -2683,7 +2683,11 @@ rm -rf /docker/redis/&lt;span class=&#34;nv&#34;&gt;$name&lt;/span&gt;
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;zhugeqing/pxc
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content:encoded>
+&lt;/div&gt;&lt;h2 id=&#34;进行分片&#34;&gt;进行分片&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;部署两个pxc集群&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
         

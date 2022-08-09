@@ -58,3 +58,6 @@ docker run -d -p 13306:3306 \
 --net=mysql-pxc \
 zhugeqing/pxc
 ```
+
+## 进行分片
+> 部署两个pxc集群
