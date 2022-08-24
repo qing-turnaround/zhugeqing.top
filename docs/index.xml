@@ -12,7 +12,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 May 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/index.xml" rel="self" type="application/rss+xml" />
@@ -41,76 +41,6 @@
         
       
 
-      
-      <item>
-        <title>docker swam使用</title>
-        <link>https://www.zhugeqing.top/docker/docker-swam/</link>
-        <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Wed, 07 Dec 2022 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/docker/docker-swam/</guid>
-        <description>介绍 弥补docker-compose无法部署在 多台机器的缺点 横向扩展 容器失败退出时如何新建容器确保服务正常运行 尽量确保零宕机时间 管理密码，Key等敏感数据 初步使用 docker info 查看docker engine有没有激活swarm模式，默认是Swarm: inactive（也就是未激活） 激活swam的两种方法：初始化一个swarm集群，自己成为manager 和 加入一个已经存在的swarm集群 docker swarm init 初始化一个swar</description>
-        <content:encoded>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;弥补docker-compose无法部署在 多台机器的缺点&lt;/li&gt;
-&lt;li&gt;横向扩展&lt;/li&gt;
-&lt;li&gt;容器失败退出时如何新建容器确保服务正常运行&lt;/li&gt;
-&lt;li&gt;尽量确保零宕机时间&lt;/li&gt;
-&lt;li&gt;管理密码，Key等敏感数据&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;初步使用&#34;&gt;初步使用&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;docker info&lt;/code&gt; 查看docker engine有没有激活swarm模式，默认是&lt;code&gt;Swarm: inactive（也就是未激活）&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;激活swam的两种方法：&lt;code&gt;初始化一个swarm集群，自己成为manager&lt;/code&gt; 和 &lt;code&gt;加入一个已经存在的swarm集群&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker swarm init&lt;/code&gt; 初始化一个swarm集群，自己成为manager&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建swarm集群的根证书，manager节点的证书，其它节点加入集群需要的token，创建Raft数据库用于存储证书，配置，密码等数据&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;&lt;code&gt;docker swarm join &lt;/code&gt; 加入一个swarm集群&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker node ls&lt;/code&gt; manager 查看当前集群节点&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker service create nginx:latest&lt;/code&gt; 创建一个由nginx:latest镜像构成的 service&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ndash;name web 指定名字为web&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;7&#34;&gt;
-&lt;li&gt;&lt;code&gt;docker service ls&lt;/code&gt; 查看service&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker service ps serviceID&lt;/code&gt; 查看service的大致信息&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker service update serviceID --replicas 3&lt;/code&gt; 修改service 的replicas&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;docker service scale serviceID=4 也可以修改replicas&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;10&#34;&gt;
-&lt;li&gt;&lt;code&gt;docker service rm serviceID&lt;/code&gt; 删除service（同时容器也会被删除）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker swarm join-token worker&lt;/code&gt; 重新查看加入swarm 集群的token&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;docker service logs serviceID&lt;/code&gt; 查看service日志&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;tips&#34;&gt;tips&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;基本上各大云服务器厂商都不支持搭建 docker swarm， 我尝试搭建，使用一台阿里云和两台腾讯云搭建docker swarm 集群，后面发现创建的分布式容器 之间无法通过创建的 overlay网络进行连接（ping通），但如果是虚拟机就没有任何问题。&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-              <category>docker</category>
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
       
       <item>
         <title>使用k8s部署应用</title>
@@ -8732,6 +8662,76 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
 &lt;li&gt;在宿主机上打开80端口并把容器的80端口转发到宿主机上&lt;/li&gt;
 &lt;li&gt;启动容器，运行指定的命令（一个默认shell脚本去启动nginx）&lt;/li&gt;
 &lt;/ol&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>docker</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>docker swam使用</title>
+        <link>https://www.zhugeqing.top/docker/docker-swam/</link>
+        <pubDate>Tue, 07 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Tue, 07 Dec 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/docker/docker-swam/</guid>
+        <description>介绍 弥补docker-compose无法部署在 多台机器的缺点 横向扩展 容器失败退出时如何新建容器确保服务正常运行 尽量确保零宕机时间 管理密码，Key等敏感数据 初步使用 docker info 查看docker engine有没有激活swarm模式，默认是Swarm: inactive（也就是未激活） 激活swam的两种方法：初始化一个swarm集群，自己成为manager 和 加入一个已经存在的swarm集群 docker swarm init 初始化一个swar</description>
+        <content:encoded>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;弥补docker-compose无法部署在 多台机器的缺点&lt;/li&gt;
+&lt;li&gt;横向扩展&lt;/li&gt;
+&lt;li&gt;容器失败退出时如何新建容器确保服务正常运行&lt;/li&gt;
+&lt;li&gt;尽量确保零宕机时间&lt;/li&gt;
+&lt;li&gt;管理密码，Key等敏感数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;初步使用&#34;&gt;初步使用&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;docker info&lt;/code&gt; 查看docker engine有没有激活swarm模式，默认是&lt;code&gt;Swarm: inactive（也就是未激活）&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;激活swam的两种方法：&lt;code&gt;初始化一个swarm集群，自己成为manager&lt;/code&gt; 和 &lt;code&gt;加入一个已经存在的swarm集群&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker swarm init&lt;/code&gt; 初始化一个swarm集群，自己成为manager&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建swarm集群的根证书，manager节点的证书，其它节点加入集群需要的token，创建Raft数据库用于存储证书，配置，密码等数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker swarm join &lt;/code&gt; 加入一个swarm集群&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker node ls&lt;/code&gt; manager 查看当前集群节点&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker service create nginx:latest&lt;/code&gt; 创建一个由nginx:latest镜像构成的 service&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ndash;name web 指定名字为web&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker service ls&lt;/code&gt; 查看service&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker service ps serviceID&lt;/code&gt; 查看service的大致信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker service update serviceID --replicas 3&lt;/code&gt; 修改service 的replicas&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker service scale serviceID=4 也可以修改replicas&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;code&gt;docker service rm serviceID&lt;/code&gt; 删除service（同时容器也会被删除）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker swarm join-token worker&lt;/code&gt; 重新查看加入swarm 集群的token&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker service logs serviceID&lt;/code&gt; 查看service日志&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tips&#34;&gt;tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;基本上各大云服务器厂商都不支持搭建 docker swarm， 我尝试搭建，使用一台阿里云和两台腾讯云搭建docker swarm 集群，后面发现创建的分布式容器 之间无法通过创建的 overlay网络进行连接（ping通），但如果是虚拟机就没有任何问题。&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
