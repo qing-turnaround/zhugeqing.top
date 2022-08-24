@@ -1103,7 +1103,7 @@ Dockerfile有其特定的语法规则&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;code&gt;或者使用docker build -t hell:1.0 .&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;第三种方式load&#34;&gt;第三种方式（load）&lt;/h3&gt;
-&lt;p&gt;将镜像文件导出：&lt;code&gt;docker image save nginx:1.21.4 -o nginx_1.12.4_image&lt;/code&gt;（选项-o表示输出）&lt;br /&gt;
+&lt;p&gt;将镜像文件导出：&lt;code&gt;docker image save -o nginx_1.12.4_image.tar.gz nginx:1.21.4 &lt;/code&gt;（选项-o表示输出）&lt;br /&gt;
 将镜像文件导入：&lt;code&gt;docker image load -i nginx_1.12.4_image&lt;/code&gt;（选项-i表示输入）&lt;/p&gt;
 &lt;h3 id=&#34;第四种方式commit&#34;&gt;第四种方式（commit）&lt;/h3&gt;
 &lt;ol&gt;

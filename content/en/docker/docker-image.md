@@ -57,7 +57,7 @@ print("你好,诸葛青！")
 `或者使用docker build -t hell:1.0 .`
 
 ### 第三种方式（load）
-将镜像文件导出：`docker image save nginx:1.21.4 -o nginx_1.12.4_image`（选项-o表示输出）
+将镜像文件导出：`docker image save -o nginx_1.12.4_image.tar.gz nginx:1.21.4 `（选项-o表示输出）
 将镜像文件导入：`docker image load -i nginx_1.12.4_image`（选项-i表示输入）
 
 

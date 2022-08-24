@@ -1932,7 +1932,7 @@ Dockerfile有其特定的语法规则</p>
 </ol>
 <p><code>或者使用docker build -t hell:1.0 .</code></p>
 <h3 id="第三种方式load">第三种方式（load）</h3>
-<p>将镜像文件导出：<code>docker image save nginx:1.21.4 -o nginx_1.12.4_image</code>（选项-o表示输出）<br />
+<p>将镜像文件导出：<code>docker image save -o nginx_1.12.4_image.tar.gz nginx:1.21.4 </code>（选项-o表示输出）<br />
 将镜像文件导入：<code>docker image load -i nginx_1.12.4_image</code>（选项-i表示输入）</p>
 <h3 id="第四种方式commit">第四种方式（commit）</h3>
 <ol>

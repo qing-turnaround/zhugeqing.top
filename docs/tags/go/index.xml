@@ -12,62 +12,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>[备案号：湘ICP备2021009076号](https://beian.miit.gov.cn/)  ![](beian.png)[湘公网安备 43132202001066号](http://www.beian.gov.cn/)</copyright>
-    <lastBuildDate>Sun, 03 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate>
     <sy:updatePeriod>weekly&#39;</sy:updatePeriod>
     
         <atom:link href="https://www.zhugeqing.top/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
 
-      
-      <item>
-        <title>Go GC</title>
-        <link>https://www.zhugeqing.top/golang/gc/</link>
-        <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
-        
-        <atom:modified>Sun, 03 Apr 2022 00:00:00 +0000</atom:modified>
-        <guid>https://www.zhugeqing.top/golang/gc/</guid>
-        <description>Go语言垃圾回收的过程 触发垃圾回收 标记准备阶段 并发标记阶段 标记结束阶段 垃圾清扫阶段 标记准备阶段 在标记准备阶段，首先需要进行STW STW：Stop The World，停止程序goroutinue的运行</description>
-        <content:encoded>&lt;h2 id=&#34;go语言垃圾回收的过程&#34;&gt;Go语言垃圾回收的过程&lt;/h2&gt;
-&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
-&lt;li&gt;触发垃圾回收&lt;/li&gt;
-&lt;li&gt;标记准备阶段&lt;/li&gt;
-&lt;li&gt;并发标记阶段&lt;/li&gt;
-&lt;li&gt;标记结束阶段&lt;/li&gt;
-&lt;li&gt;垃圾清扫阶段&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;标记准备阶段&#34;&gt;标记准备阶段&lt;/h2&gt;
-&lt;div class=&#34;box&#34;&gt;&lt;ul&gt;
-&lt;li&gt;在标记准备阶段，首先需要进行STW&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;STW：Stop The World，停止程序goroutinue的运行&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&#34;box&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;box&#34;&gt;&lt;/div&gt;
-</content:encoded>
-        <dc:creator>诸葛青</dc:creator>
-        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
-        
-        
-        
-          
-            
-              <category>Go</category>
-            
-          
-        
-        
-        
-          
-            
-          
-        
-      </item>
       
       <item>
         <title>Go Channel</title>
