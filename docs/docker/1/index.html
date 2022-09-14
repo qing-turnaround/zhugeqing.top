@@ -1973,6 +1973,14 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
 <li>在宿主机上打开80端口并把容器的80端口转发到宿主机上</li>
 <li>启动容器，运行指定的命令（一个默认shell脚本去启动nginx）</li>
 </ol>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://dockertips.readthedocs.io/en/latest/docker-install/docker-intro.html">https://dockertips.readthedocs.io/en/latest/docker-install/docker-intro.html</a></li>
+</ul>
+<h2 id="小知识">小知识</h2>
+<ul>
+<li>docker run 的-it参数，-i 即 stdin，-t 即 tty， tty 就是 Linux 给用户提供的一个常驻小程序，用于接收用户的标准输入，返回操作系统的标准输出。为了能够在 tty 中输入信息，还需要同时开启 stdin（标准输入流）。</li>
+</ul>
 
     </article>
     
@@ -2683,6 +2691,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#连接容器的shell">连接容器的shell</a></li>
     <li><a href="#容器即是进程">容器即是进程</a></li>
     <li><a href="#docker-run背后的故事">docker run背后的故事</a></li>
+    <li><a href="#参考">参考</a></li>
+    <li><a href="#小知识">小知识</a></li>
   </ul>
 </nav>
   </div>

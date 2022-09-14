@@ -1522,6 +1522,14 @@ root      868528  859209  0 23:15 pts/0    00:00:00 grep --color=auto nginx
 &lt;li&gt;在宿主机上打开80端口并把容器的80端口转发到宿主机上&lt;/li&gt;
 &lt;li&gt;启动容器，运行指定的命令（一个默认shell脚本去启动nginx）&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dockertips.readthedocs.io/en/latest/docker-install/docker-intro.html&#34;&gt;https://dockertips.readthedocs.io/en/latest/docker-install/docker-intro.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;小知识&#34;&gt;小知识&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;docker run 的-it参数，-i 即 stdin，-t 即 tty， tty 就是 Linux 给用户提供的一个常驻小程序，用于接收用户的标准输入，返回操作系统的标准输出。为了能够在 tty 中输入信息，还需要同时开启 stdin（标准输入流）。&lt;/li&gt;
+&lt;/ul&gt;
 </content:encoded>
         <dc:creator>诸葛青</dc:creator>
         <media:content url="https://www.zhugeqing.topimages/docker.svg" medium="image"><media:title type="html">featured image</media:title></media:content>
