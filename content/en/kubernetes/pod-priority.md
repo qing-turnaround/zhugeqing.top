@@ -1,6 +1,6 @@
 ---
 date: 2022-09-16
-description: "k8s Pod的PriorityClass 和抢占"
+description: "实战 k8s Pod的PriorityClass 和抢占"
 image: "images/kuber.jpg"
 title: "k8s PriorityClass"
 author: 诸葛青
