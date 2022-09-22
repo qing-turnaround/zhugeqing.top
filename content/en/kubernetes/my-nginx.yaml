@@ -1,21 +1,33 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-pod
+  name: podaffinity
 spec:
   containers:
-    - name: test-pod
+    - name: nginx
       image: nginx
-      command:
-        - "/bin/sh"
-      args:
-        - "-c"
-        - "touch /mnt/SUCCESS && exit 0 || exit 1" #创建一个SUCCESS文件后退出
-      volumeMounts:
-        - name: pv-pvc-test
-          mountPath: "/mnt"
-  restartPolicy: "Never"
-  volumes:
-    - name: pv-pvc-test
-      persistentVolumeClaim:
-      claimName: pvc-test #与PVC名称保持一致
+      imagePullPolicy: IfNotPresent
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: name
+                operator: In # 匹配规则为 key必须要在pod1或pod2中
+                values:
+                  - "pod1"
+                  - "pod2"
+          topologyKey: "topologyX"
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: name
+                  operator: In
+                  values:
+                    - "pod1"
+                    - "pod2"
+            topologyKey: "topologyY"
+ 
