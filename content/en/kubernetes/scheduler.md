@@ -224,3 +224,47 @@ spec:
 
 
 ## 实战污点和容忍度
+> https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/
+* 对于Pod的亲和性和反亲和性，可以分别使用PodAffinity 和 PodAntiAffinity，而对于Node的亲和性，也可以使用nodeSelector或者NodeAffinity，那么Node的反亲和性是怎么来做呢？答案是：`污点`（taint）
+
+* 当一个Node上有污点（taint），就表示它需要排斥某一类Pod，而如果Pod想调度到这个Node，就必须要设置一个容忍度，如果容忍度的规则 与 污点匹配的话，就可以调度到这Node。（就好比我们生活中，总有一些讨厌去的地方，但是我们都在尽量地容忍，比如有的不想去教室上课，但为了某种目的，我们最终还是要容忍着去上课）
+
+
+### 简单实战
+
+1. 给Node加上污点
+```shell
+# 给node1打上一个 key1：value1键值对 且效果为NodeSchedule的污点
+kubectl taint nodes node1 key1=value1:NoSchedule 
+# 上同
+kubectl taint nodes node2 key2=value2:NoSchedule
+```
+
+2. 编写yaml文件
+```yaml:taint.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taint-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      imagePullPolicy: IfNotPresent
+  tolerations:
+    - key: key1
+      operator: Equal
+      value: value1
+      effect: NoSchedule
+```
+
+3. 最终结果：Pod运行在了Pod1上，因为Pod无法容忍node2节点（没有针对node2设置tolerations）
+
+### 注意事项
+* 对于tolerations的operator可以使用两种，如果 operator 是 Exists （此时容忍度不能指定 value），key就需要存在；如果operator 是 Equal ，则它们的 value 应该相等
+
+* 对于污点effect可以这种三种，`NoSchedule`：如果不能容忍污点，就不能调度到该node；`perferNoSchedule`：如果不能容忍污点，“尽量”不要调度到这个node，`NoExcute`：如果不能容忍污点，就无法在该node上运行，即使污点是在运行之后加的，也会将之前的pod进行驱逐。
+
+* operator 是 Exists，并且没有设置Key，就代表这个容忍度能容忍任何污点
+
+* 如果effect为空，则代表可以匹配任何的effect

@@ -2,7 +2,7 @@
 date: 2022-09-16
 description: "实战 k8s PV 和 PVC"
 image: "images/kuber.jpg"
-title: "k8s PV 和 PVC"
+title: "实战k8s PV 和 PVC"
 author: 诸葛青
 authorEmoji: 😃
 pinned: false

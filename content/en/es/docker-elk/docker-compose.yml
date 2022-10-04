@@ -1,0 +1,94 @@
+# 声明版本
+version: "3"
+services:
+  cerebro:
+    image: lmenezes/cerebro:0.8.3
+    container_name: cerebro
+    ports:
+      - "9000:9000"
+    command:
+      - -Dhosts.0.host=http://elasticsearch:9200
+    networks:
+      - esnet
+  elasticsearch:
+    image: zhugeqing/elasticsearch:7.9.3 # 可以自行修改版本，不过ELK组件的版本都要一致
+    container_name: es1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - es1-data:/usr/share/elasticsearch/data
+    environment:
+      cluster.name: es
+      node.name: es1
+      http.port: 9200
+      transport.tcp.port: 9300
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      bootstrap.memory_lock: true
+      discovery.seed_hosts: es1,es2
+      network.publish_host: elasticsearch
+      cluster.initial_master_nodes: es1,es2
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    networks:
+      - esnet
+  elasticsearch2:
+    image: zhugeqing/elasticsearch:7.9.3 # 可以自行修改版本，不过ELK组件的版本都要一致
+    container_name: es2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - es2-data:/usr/share/elasticsearch/data
+    environment:
+      cluster.name: es
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      http.port: 9201
+      transport.tcp.port: 9301
+      node.name: es2
+      bootstrap.memory_lock: true
+      discovery.seed_hosts: es1,es2
+      network.publish_host: elasticsearch
+      cluster.initial_master_nodes: es1,es2
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    networks:
+      - esnet
+  logstash:
+    image: zhugeqing/logstash:7.9.3
+    container_name: logstash
+    ports:
+      - "5044:5044"
+      - "5000:5000"
+      - "9600:9600"
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logstash/movies.csv:/usr/share/logstash/movies.csv
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - esnet
+  kibana:
+    image: zhugeqing/kibana:7.9.3
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    volumes:
+      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    networks:
+      - esnet
+
+volumes:
+  es1-data:
+    driver: local
+  es2-data:
+    driver: local
+
+networks:
+  esnet:
+    driver: bridge

@@ -25,6 +25,7 @@ Linux版本为centos 7.x，建议全部看完再进行操作
 ## 在同一个网络的机器
 > 把脚本放入对应机器执行即可（记得修改基本里面的一些参数，比如IP地址）
 > 这里用虚拟机 中ip地址做示例，master IP为 192.168.200.128，node1为 192.168.200.129
+> kubernete版本选择 v1.23.4-0
 ### Master节点
 ```Shell:master.sh
 #!/bin/bash
@@ -142,7 +143,7 @@ EOF
 }
 
 function install_kubelet_kubeadmin_kubectl() {
-  yum install kubelet-1.19.4 kubeadm-1.19.4 kubectl-1.19.4 -y
+  yum install kubelet-1.23.4 kubeadm-1.23.4 kubectl-1.23.4 -y
   systemctl enable kubelet.service
 
   info "确认kubelet kubeadmin kubectl是否安装成功"
@@ -150,6 +151,7 @@ function install_kubelet_kubeadmin_kubectl() {
   yum list installed | grep kubeadm
   yum list installed | grep kubectl
   kubelet --version
+
 }
 
 function kubeadmin_init() {
@@ -160,8 +162,9 @@ hostnamectl set-hostname master
 cat >> /etc/hosts << EOF 
 ${ip} master
 192.168.200.129 node1
+192.168.200.130 node2
 EOF
-  kubeadm init --apiserver-advertise-address="${ip}" --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.19.4 --service-cidr=10.96.0.0/12 --pod-network-cidr=10.244.0.0/16
+  kubeadm init --apiserver-advertise-address="${ip}" --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.23.4 --service-cidr=10.96.0.0/12 --pod-network-cidr=10.244.0.0/16
   mkdir -p "$HOME"/.kube
   cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
   chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
@@ -193,6 +196,7 @@ fi
 
 
 ### Work Node
+> 下面为node1 
 ```Shell
 #!/bin/bash
 set -e
@@ -304,7 +308,7 @@ EOF
 }
 
 function install_kubelet_kubeadmin_kubectl() {
-  yum install kubelet-1.19.4 kubeadm-1.19.4 kubectl-1.19.4 -y
+  yum install kubelet-1.23.4 kubeadm-1.23.4 kubectl-1.23.4 -y
   systemctl enable kubelet.service
 
   info "确认kubelet kubeadmin kubectl是否安装成功"
@@ -321,6 +325,7 @@ hostnamectl set-hostname node1
 cat >> /etc/hosts << EOF 
 192.168.200.128 master
 192.168.200.129 node1
+192.168.200.130 node2
 EOF
 ## 修改
 mkdir -p /etc/cni/net.d/
@@ -346,6 +351,160 @@ if [[ "$is_k8s" == 'yes' ]];then
 fi
 ```
 
+> 下面为node2
+```shell
+#!/bin/bash
+set -e
+
+# 安装日志
+install_log=/var/log/install_k8s.log
+tm=$(date +'%Y%m%d %T')
+
+# 日志颜色
+COLOR_G="\x1b[0;32m"  # green
+RESET="\x1b[0m"
+
+function info(){
+    echo -e "${COLOR_G}[$tm] [Info] ${1}${RESET}"
+}
+
+function run_cmd(){
+  sh -c "$1 | $(tee -a "$install_log")"
+}
+
+function run_function(){
+  $1 | tee -a "$install_log"
+}
+
+function install_docker(){
+  info "1.使用脚本自动安装docker..."
+  curl -sSL https://get.daocloud.io/docker | sh
+
+  info "2.启动 Docker CE..."
+  systemctl enable docker
+  systemctl start docker
+
+  info "3.添加镜像加速器..."
+  if [ ! -f "/etc/docker/daemon.json" ];then
+    touch /etc/docker/daemon.json
+  fi
+  cat <<EOF > /etc/docker/daemon.json
+{
+  "registry-mirrors": ["https://registry.cn-hangzhou.aliyuncs.com"],
+  "exec-opts": ["native.cgroupdriver=systemd"]
+}
+EOF
+
+  info "4.重新启动服务..."
+  systemctl daemon-reload
+  systemctl restart docker
+
+  info "5.测试 Docker 是否安装正确..."
+  docker run hello-world
+
+  info "6.检测..."
+  docker info
+}
+
+function install_k8s() {
+    info "初始化k8s部署环境..."
+    init_env
+
+    info "添加k8s安装源..."
+    add_aliyun_repo
+
+    info "安装kubelet kubeadmin kubectl..."
+    install_kubelet_kubeadmin_kubectl
+
+    info "安装kubernetes master..."
+    yum -y install net-tools
+    if [[ ! "$(ps aux | grep 'kubernetes' | grep -v 'grep')" ]];then
+      kubeadmin_init
+    else
+      info "kubernetes master已经安装..."
+    fi
+
+}
+
+# 初始化部署环境
+function init_env() {
+  info "关闭防火墙"
+  systemctl stop firewalld
+  systemctl disable firewalld
+
+  info "关闭selinux"
+  sed -i 's/^SELINUX=enforcing$/SELINUX=disabled/g' /etc/selinux/config
+  source /etc/selinux/config
+
+  info "关闭swap（k8s禁止虚拟内存以提高性能）"
+  swapoff -a
+  sed -i '/swap/s/^\(.*\)$/#\1/g' /etc/fstab
+
+  info "设置网桥参数"
+  cat <<-EOF > /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+  sysctl --system  #生效
+  sysctl -w net.ipv4.ip_forward=1
+}
+
+# 添加aliyun安装源
+function add_aliyun_repo() {
+  cat > /etc/yum.repos.d/kubernetes.repo <<- EOF
+[kubernetes]
+name=Kubernetes
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
+}
+
+function install_kubelet_kubeadmin_kubectl() {
+  yum install kubelet-1.23.4 kubeadm-1.23.4 kubectl-1.23.4 -y
+  systemctl enable kubelet.service
+
+  info "确认kubelet kubeadmin kubectl是否安装成功"
+  yum list installed | grep kubelet
+  yum list installed | grep kubeadm
+  yum list installed | grep kubectl
+  kubelet --version
+}
+
+function kubeadmin_init() {
+  sleep 1
+# 修改
+hostnamectl set-hostname node2
+cat >> /etc/hosts << EOF 
+192.168.200.128 master
+192.168.200.129 node1
+192.168.200.130 node2
+EOF
+## 修改
+mkdir -p /etc/cni/net.d/
+read -p "请将 master 节点的 admin.conf 拷贝到 node2（20秒后自动跳过，在master上执行 scp /etc/kubernetes/admin.conf root@node2:/etc/kubernetes/）:" -t 20 a
+read -p "请将master节点下面 /etc/cni/net.d/下面的所有文件拷贝到node节点上（20秒后自动跳过，在master上执行scp /etc/cni/net.d/* root@node2:/etc/cni/net.d/）" -t 20 a
+
+  mkdir -p "$HOME"/.kube
+  cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
+  chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
+}
+
+
+# 安装docker
+read -p "是否安装docker？默认为：no. Enter [yes/no]：" is_docker
+if [[ "$is_docker" == 'yes' ]];then
+  run_function "install_docker"
+fi
+
+# 安装k8s
+read -p "是否安装k8s？默认为：no. Enter [yes/no]：" is_k8s
+if [[ "$is_k8s" == 'yes' ]];then
+  run_function "install_k8s"
+fi
+```
 
 ## 不同网络的机器
 > 把上面脚本放入对应机器，先不要执行！
@@ -421,5 +580,39 @@ status: {}
 * `chmod 777 master.sh` 赋予执行权限
 * `sh k8s.sh` 执行脚本
 * 当再开一个ssh终端连接master云服务器，当执行shell脚本出现`[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s`时候，在新开的终终端执行`cat etcd.yaml > /etc/kubernetes/manifests/etcd.yaml`
+
+
+
+## 报错处理
+
+### worknode 无法执行kubectl
+* work node节点上执行kubectl出现The connection to the server localhost:8080 was refused - did you specify the right host or port?
+> 解决：没有将admin.conf拷贝成功
+
+* 需要执行
+```shell
+mkdir -p "$HOME"/.kube
+cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
+chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
+```
+
+* 如果本机没有admin.conf，需要将master上的文件拷贝过来，例如：scp /etc/kubernetes/admin.conf root@node1:/etc/kubernetes/
+
+
+
+
+### 安装之后Pod无法访问外部域名，或者外部无法ping Pod
+> 参考文章：https://blog.csdn.net/qq_47855463/article/details/119682175
+
+* 安装的cni报错 `vxlan_network.go:198] failed to add vxlanRoute (10.244.1.0/24 -> 10.244.1.0): network is down`
+
+* 查看node1 和 node2，发现flannel网卡没有IP地址，删除网卡`ip link delete flannel.1`，重启network `systemctl restart network`，在控制平面节点上删除CNI`kubectl delete -f kube-flannel.yml`，重新安装
+`kubectl apply -f kube-flannel.yml`
+
+* 出现问题需要根据报错来处理，情况多样。
+
+
+
+
 
 
