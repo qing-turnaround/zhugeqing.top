@@ -1104,7 +1104,7 @@ PUT dynamic_mapping_test/_mapping
 &lt;/ul&gt;
 &lt;h2 id=&#34;中文分词&#34;&gt;中文分词&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;选型，使用Ik分词器，地址：https://github.com/medcl/elasticsearch-analysis-ikhttps://github.com/medcl/elasticsearch-analysis-ik&lt;/p&gt;
+&lt;p&gt;选型，使用Ik分词器，地址：https://github.com/medcl/elasticsearch-analysis-ik&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;ik-中-analyzer-ik_max_word-和-ik_smart-什么区别&#34;&gt;IK 中 analyzer ik_max_word 和 ik_smart 什么区别&lt;/h3&gt;
 &lt;ul&gt;

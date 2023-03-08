@@ -1103,8 +1103,8 @@ Dockerfile有其特定的语法规则&lt;/p&gt;
         
         <atom:modified>Fri, 10 Dec 2021 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/docker/docker-install/</guid>
-        <description>安装consul 1 docker run --name consul -d -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8600:8600/udp consul consul agent -dev -client=0.0.0.0 安装Elasticsearch 创建相关映射目录 mkdir -p /docker/elasticsearch/data chmod 777 -R /docker/elasticsearch 安装es 1 2 3 4 5 6 7 8 #!/bin/bash docker run --name elasticsearch -p 9200:9200 -p 9300:9300 \ -e &amp;#34;discovery.type=single-node&amp;#34; \ -e ES_JAVA_OPTS=&amp;#34;-Xms128m -Xmx256m&amp;#34; \ -v es-conf:/usr/share/elasticsearch/config \ -v es-data:/usr/share/elasticsearch/data \ -v es-plugins:/usr/share/elasticsearch/plugins \ -d elasticsearch:7.10.1 安装kibana docker run -d --name kibana -p 5601:5601 -e &amp;quot;ELASTICSEARCH_HOSTS=http://192.168.200.129:9200&amp;quot; kibana:7.10.1 安装rocketmq 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73</description>
-        <content:encoded>&lt;h2 id=&#34;安装consul&#34;&gt;安装consul&lt;/h2&gt;
+        <description>安装Consul 1 docker run --name consul -d -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8600:8600/udp consul consul agent -dev -client=0.0.0.0 安装Elasticsearch 创建相关映射目录 mkdir -p /docker/elasticsearch/data chmod 777 -R /docker/elasticsearch 安装es 1 2 3 4 5 6 7 8 #!/bin/bash docker run --name elasticsearch -p 9200:9200 -p 9300:9300 \ -e &amp;#34;discovery.type=single-node&amp;#34; \ -e ES_JAVA_OPTS=&amp;#34;-Xms128m -Xmx256m&amp;#34; \ -v es-conf:/usr/share/elasticsearch/config \ -v es-data:/usr/share/elasticsearch/data \ -v es-plugins:/usr/share/elasticsearch/plugins \ -d elasticsearch:7.10.1 安装Kibana docker run -d --name kibana -p 5601:5601 -e &amp;quot;ELASTICSEARCH_HOSTS=http://192.168.200.129:9200&amp;quot; kibana:7.10.1 安装Rocketmq 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73</description>
+        <content:encoded>&lt;h2 id=&#34;安装consul&#34;&gt;安装Consul&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1146,9 +1146,9 @@ chmod 777 -R /docker/elasticsearch&lt;/p&gt;
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;-d elasticsearch:7.10.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;安装kibana&#34;&gt;安装kibana&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;安装kibana&#34;&gt;安装Kibana&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;docker run -d --name kibana -p 5601:5601 -e &amp;quot;ELASTICSEARCH_HOSTS=http://192.168.200.129:9200&amp;quot; kibana:7.10.1&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装rocketmq&#34;&gt;安装rocketmq&lt;/h2&gt;
+&lt;h2 id=&#34;安装rocketmq&#34;&gt;安装Rocketmq&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1349,13 +1349,32 @@ cat &amp;gt; /docker/rocketmq/docker-compose.yml &lt;span class=&#34;s&#34;&gt;&
 rocketmq_start
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;安装jaeger&#34;&gt;安装jaeger&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;安装jaeger&#34;&gt;安装Jaeger&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;docker run -d --name jaeger -p 6831:6831/udp -p 16686:16686 jaegertracing/all-in-one
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;安装etcd&#34;&gt;安装Etcd&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Shell&#34; data-lang=&#34;Shell&#34;&gt;docker run -d --name etcd &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -p 2379:2379 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -p 2380:2380 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --env &lt;span class=&#34;nv&#34;&gt;ALLOW_NONE_AUTHENTICATION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;yes &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --env &lt;span class=&#34;nv&#34;&gt;ETCD_ADVERTISE_CLIENT_URLS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http://0.0.0.0:2379 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  bitnami/etcd:latest
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content:encoded>

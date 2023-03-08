@@ -12,9 +12,9 @@ themeOptions = ["hacker", "dark", "light", "solarized", "kimbie"] # 选择不同
 # 不允许出现在主页的目录名
 notAllowedTypesInHome = ["read","math","compare","exercise","touge","interview","databases","contact", "about","archive", "presentation", "resume","intelligence","devil_footprints","write","novel","article","problems"]
 # 不允许出现在主页侧边栏的目录名
-notAllowedTypesInHomeSidebar = ["golang","docker","linux","read","article","Redis","tips","problems","interview","recommend_site","data_structure_and_sort","databases","math","exercise","compare","touge","about","gallery","archive","recommend_sites","intelligence","devil_footprints","write","novel"]
+notAllowedTypesInHomeSidebar = ["c++", "es","after","golang","docker","linux","read","article","Redis","tips","problems","interview","recommend_site","data_structure_and_sort","databases","math","exercise","compare","touge","about","gallery","archive","recommend_sites","intelligence","devil_footprints","write","novel"]
 # 不允许被日志记录的目录名（以后删除日志）
-notAllowedTypesInArchive = ["touge","gallery","archive","write","exercise","about"]
+notAllowedTypesInArchive = ["after","touge","gallery","archive","write","exercise","about"]
 
 notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery","write"]
 # 主页大小

@@ -1865,7 +1865,7 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <h2 id="安装consul">安装consul</h2>
+      <h2 id="安装consul">安装Consul</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1907,9 +1907,9 @@ chmod 777 -R /docker/elasticsearch</p>
 </span><span class="se"></span>-d elasticsearch:7.10.1
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="安装kibana">安装kibana</h2>
+</div><h2 id="安装kibana">安装Kibana</h2>
 <p><code>docker run -d --name kibana -p 5601:5601 -e &quot;ELASTICSEARCH_HOSTS=http://192.168.200.129:9200&quot; kibana:7.10.1</code></p>
-<h2 id="安装rocketmq">安装rocketmq</h2>
+<h2 id="安装rocketmq">安装Rocketmq</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2110,13 +2110,32 @@ cat &gt; /docker/rocketmq/docker-compose.yml <span class="s">&lt;&lt; EOF
 rocketmq_start
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="安装jaeger">安装jaeger</h2>
+</div><h2 id="安装jaeger">安装Jaeger</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">docker run -d --name jaeger -p 6831:6831/udp -p 16686:16686 jaegertracing/all-in-one
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装etcd">安装Etcd</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">docker run -d --name etcd <span class="se">\
+</span><span class="se"></span>  -p 2379:2379 <span class="se">\
+</span><span class="se"></span>  -p 2380:2380 <span class="se">\
+</span><span class="se"></span>  --env <span class="nv">ALLOW_NONE_AUTHENTICATION</span><span class="o">=</span>yes <span class="se">\
+</span><span class="se"></span>  --env <span class="nv">ETCD_ADVERTISE_CLIENT_URLS</span><span class="o">=</span>http://0.0.0.0:2379 <span class="se">\
+</span><span class="se"></span>  bitnami/etcd:latest
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -2823,11 +2842,12 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="toc " data-dir="ltr" data-folding="true" data-ani="true">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#安装consul">安装consul</a></li>
+    <li><a href="#安装consul">安装Consul</a></li>
     <li><a href="#安装elasticsearch">安装Elasticsearch</a></li>
-    <li><a href="#安装kibana">安装kibana</a></li>
-    <li><a href="#安装rocketmq">安装rocketmq</a></li>
-    <li><a href="#安装jaeger">安装jaeger</a></li>
+    <li><a href="#安装kibana">安装Kibana</a></li>
+    <li><a href="#安装rocketmq">安装Rocketmq</a></li>
+    <li><a href="#安装jaeger">安装Jaeger</a></li>
+    <li><a href="#安装etcd">安装Etcd</a></li>
   </ul>
 </nav>
   </div>

@@ -12,7 +12,7 @@ series:
 - 
 ---
 
-## 安装consul
+## 安装Consul
 ```shell
 docker run --name consul -d -p 8500:8500 -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8600:8600/udp consul consul agent -dev -client=0.0.0.0 
 ```
@@ -34,11 +34,11 @@ docker run --name elasticsearch -p 9200:9200 -p 9300:9300 \
 -d elasticsearch:7.10.1
 ```
 
-## 安装kibana
+## 安装Kibana
 `docker run -d --name kibana -p 5601:5601 -e "ELASTICSEARCH_HOSTS=http://192.168.200.129:9200" kibana:7.10.1`
 
 
-## 安装rocketmq 
+## 安装Rocketmq 
 ```Shell 
 #!/bin/bash
 function rocketmq_mkdir() {
@@ -139,7 +139,17 @@ function rocketmq_start() {
 rocketmq_start
 ```
 
-## 安装jaeger
+## 安装Jaeger
 ```Shell
 docker run -d --name jaeger -p 6831:6831/udp -p 16686:16686 jaegertracing/all-in-one
+```
+
+## 安装Etcd 
+```Shell
+docker run -d --name etcd \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  --env ALLOW_NONE_AUTHENTICATION=yes \
+  --env ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379 \
+  bitnami/etcd:latest
 ```

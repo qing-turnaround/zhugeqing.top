@@ -28,7 +28,7 @@ series:
     * pattern Analyzer：按照正则表达式进行分词
 
 ## 中文分词
-> 选型，使用Ik分词器，地址：https://github.com/medcl/elasticsearch-analysis-ikhttps://github.com/medcl/elasticsearch-analysis-ik
+> 选型，使用Ik分词器，地址：https://github.com/medcl/elasticsearch-analysis-ik
 
 ### IK 中 analyzer ik_max_word 和 ik_smart 什么区别
 
