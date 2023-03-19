@@ -91,7 +91,7 @@
 &lt;p&gt;在当s1进行扩容之后，它的cap为多少呢，如果是背过八股文的，肯定知道是&lt;code&gt;5&lt;/code&gt;（&lt;code&gt;当新切片需要的容量cap大于两倍扩容的容量，则直接按照新切片需要的容量扩容&lt;/code&gt;）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;当我们实际运行后 会发现，答案是&lt;code&gt;6&lt;/code&gt;，为什么？&lt;a href=&#34;#%E6%BA%90%E7%A0%81%E4%BD%8D%E7%BD%AE%E8%A1%A5%E5%85%85&#34;&gt;扩容源码&lt;/a&gt;是在逗我？&lt;/p&gt;
+&lt;p&gt;当我们实际运行后 会发现，答案是&lt;code&gt;6&lt;/code&gt;，为什么？&lt;a href=&#34;#go-117%E6%89%A9%E5%AE%B9%E6%BA%90%E7%A0%81&#34;&gt;扩容源码&lt;/a&gt;是在逗我？&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;让我们再细看一下源码，当完成我们所说的&lt;code&gt;八股文策略&lt;/code&gt;之后，后面还有一部分源码，&lt;/p&gt;
