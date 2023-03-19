@@ -26,14 +26,14 @@
         
         <atom:modified>Sun, 19 Mar 2023 00:00:00 +0000</atom:modified>
         <guid>https://www.zhugeqing.top/golang/append/</guid>
-        <description>关于Go的面试中，有一个经常被问到的问题 面试官：你知道Go语言切片是怎么样进行扩容的吗？ 背完八股文且自信满满的小明：Go切片扩容分为两种情况 当新切片需要的容量cap大于两倍扩容的容量，则直接按照新切片需要的容量扩容； 当原 slice 容量 &amp;lt; 1024 的时候，新 slice 容量变成原来的 2 倍； 当原 slice 容量 &amp;gt; 1024，进入一个循环，每次容量变成原来的1.25倍,直到大于期望容量。 面试官：你确定Go语言 切片扩容都是这样的吗？ 此时小明有</description>
+        <description>关于Go的面试中，有一个经常被问到的问题 面试官：你知道Go语言切片是怎么样进行扩容的吗？ 背完八股文且自信满满的小明：Go切片扩容分为三种情况 当新切片需要的容量cap大于两倍扩容的容量，则直接按照新切片需要的容量扩容； 当原 slice 容量 &amp;lt; 1024 的时候，新 slice 容量变成原来的 2 倍； 当原 slice 容量 &amp;gt; 1024，进入一个循环，每次容量变成原来的1.25倍,直到大于期望容量。 面试官：你确定Go语言 切片扩容都是这样的吗？ 此时小明有</description>
         <content:encoded>&lt;h2 id=&#34;关于go的面试中有一个经常被问到的问题&#34;&gt;关于Go的面试中，有一个经常被问到的问题&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;面试官：&lt;code&gt;你知道Go语言切片是怎么样进行扩容的吗？&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;背完八股文且自信满满的小明：Go切片扩容分为两种情况&lt;/p&gt;
+&lt;p&gt;背完八股文且自信满满的小明：Go切片扩容分为三种情况&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;当新切片需要的容量cap大于两倍扩容的容量，则直接按照新切片需要的容量扩容；&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;当原 slice 容量 &amp;lt; 1024 的时候，新 slice 容量变成原来的 2 倍；&lt;/code&gt;&lt;/li&gt;
