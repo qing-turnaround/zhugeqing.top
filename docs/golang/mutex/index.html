@@ -1323,7 +1323,7 @@
 
 
     
-<meta name="description" content="Go Mutex" />
+<meta name="description" content="Go Mutex以及优化" />
 
 
 <meta name="keywords" content="Go">
@@ -1340,7 +1340,7 @@
 <meta property="og:title" content="并发原语之Mutex">
 <meta property="og:url" content="https://www.zhugeqing.top/golang/mutex/">
 <meta property="og:type" content="article">
-<meta property="og:description" content="Go Mutex">
+<meta property="og:description" content="Go Mutex以及优化">
 
   
     <meta property="og:image" content="https://www.zhugeqing.top/images/Go.jpg">
@@ -1348,7 +1348,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:app:name:iphone" content="诸葛青的编程之旅">
     <meta property="twitter:title" content="并发原语之Mutex">
-    <meta property="twitter:description" content="Go Mutex">
+    <meta property="twitter:description" content="Go Mutex以及优化">
   
 
 <meta name="generator" content="Hugo 0.89.2" />
@@ -1378,7 +1378,7 @@
     "datePublished": "2022-04-01T00:00:00Z",
     "dateModified": "2022-04-01T00:00:00Z",
     "url" : "https://www.zhugeqing.top/golang/mutex/",
-    "description": "Go Mutex",
+    "description": "Go Mutex以及优化",
     "keywords": ["Go"],
     "image" : "https://www.zhugeqing.top/images/Go.jpg",
     "author": {
@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Apr 1, 2022 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;2&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;3&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1933,10 +1933,39 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="mutex底层实现">Mutex底层实现</h2>
+<blockquote>
+<p>sync.Mutex 设计考量，效率优先（正常模式） 和 兼顾公平（饥饿模式）<br />
+好几年前的理解，有空更新</p>
+</blockquote>
 <ul>
 <li>Mutex一共有两个字段，一个为<code>state</code>，为int32类型，其中有三个比特为<code>mutexLocked</code>（记录这个锁是否被持有），<code>mutexWoken</code>（是否有唤醒的 goroutine），<code>mutexStarving</code>（记录是否处于饥饿模式），其余比特用于记录等待此锁的 goroutine 数（最大为<code>1&lt;&lt;(32-3)-1</code>个）</li>
 <li>在正常模式下，当一个 goroutine 未获得锁时会先进行自旋几次，如果还是没有获得到锁，就加入等待队列的尾部，等待队列会按照FIFO的顺序排队。当锁处于未被持有的状态时，等待队列的第一个 goroutine会被唤醒，然后需要与后来的处于自旋状态的 goroutine 进行竞争，这时，后来的 goroutine 会更有优势获得锁，一方面是它们仍在cpu上运行，另一方面是处于自旋状态的 goroutine 可以有多个，而被唤醒的 goroutine 只有一个，所以被唤醒的goroutine 大概率会失败。然后这个 goroutine 会被重新插入到队列的首部。但是当一个 goroutine 加锁等待时间超过了 1ms 以后，Mutex会进入饥饿模式。</li>
 <li>在饥饿模式下，Mutex的所有权会从执行Unlock的 goroutine 直接传递给等待队列的头部的 goroutine，后来的goroutine也不会再进行自旋操作，而是直接加入等待队列的尾部，当等待队列的头部goroutine 加锁等待时间小于 1ms 或者是等待队列为空时，Mutex会重新切换为正常模式</li>
+</ul>
+<h2 id="优化锁">优化锁</h2>
+<h3 id="缩小临界区">缩小临界区</h3>
+<ul>
+<li>通常我们可能在使用<code>mutex.Lock()</code> 之后加上 <code>defer mutex.Unlock()</code>, 但这可能让临界区代码增大，从而降低性能，可以在锁 保护完一段 逻辑之后立马释放锁（但是需要注意以后修改代码，不要遗漏解锁操作）</li>
+</ul>
+<h3 id="减小锁的粒度分段锁">减小锁的粒度——分段锁</h3>
+<ul>
+<li>一把大锁 ——》多把小锁，空间换时间的思想（比如我们为了并发安全的map，可能会使用分段锁Map）</li>
+</ul>
+<h3 id="让锁做读写分离">让锁做读写分离</h3>
+<ul>
+<li>sync.Mutex -&gt; sync.RWMutex</li>
+<li>使用sync.Map</li>
+</ul>
+<h3 id="无锁化">无锁化</h3>
+<ul>
+<li>可以使用一些原子操作代替锁</li>
+</ul>
+<h2 id="锁的一些避坑">锁的一些避坑</h2>
+<ul>
+<li>锁是不能拷贝的（我们传递锁的话，需要传递指针）</li>
+<li>sync.Mutex是不可重入的（再次加锁之前，必须执行释放锁的操作）</li>
+<li>atomic.Value 只保证<code>存储对象时</code>是并发安全的，要么存放只读对象，要么对 对象的操作是并发安全的</li>
+<li><code>我们可以使用go run -race ...</code> 来检测并发竞争问题</li>
 </ul>
 
     </article>
@@ -2644,6 +2673,15 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
     <li><a href="#使用示例">使用示例</a></li>
     <li><a href="#mutex底层实现">Mutex底层实现</a></li>
+    <li><a href="#优化锁">优化锁</a>
+      <ul>
+        <li><a href="#缩小临界区">缩小临界区</a></li>
+        <li><a href="#减小锁的粒度分段锁">减小锁的粒度——分段锁</a></li>
+        <li><a href="#让锁做读写分离">让锁做读写分离</a></li>
+        <li><a href="#无锁化">无锁化</a></li>
+      </ul>
+    </li>
+    <li><a href="#锁的一些避坑">锁的一些避坑</a></li>
   </ul>
 </nav>
   </div>
