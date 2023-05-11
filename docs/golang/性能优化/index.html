@@ -1843,7 +1843,7 @@
 <div class="single__infos">
   <time class="single__info" title="Written At">📅&nbsp;Jun 11, 2021 </time>
   
-  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;4&nbsp;min read </span>
+  &nbsp;&middot;&nbsp; <span class="single__info" title="Reading Time"> ☕&nbsp;5&nbsp;min read </span>
   
   &nbsp;&middot;&nbsp; <span class="single__info" title="WRITTEN BY">😃&nbsp;诸葛青</span>
   
@@ -1946,7 +1946,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="性能测试">性能测试</h3>
+</div><h3 id="性能测试代码">性能测试代码</h3>
 <ul>
 <li>对应性能而言，有略微的提升</li>
 </ul>
@@ -2010,11 +2010,36 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
+</div><h3 id="测试结果">测试结果</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">goos</span><span class="p">:</span> <span class="nx">windows</span>
+<span class="nx">goarch</span><span class="p">:</span> <span class="nx">amd64</span>
+<span class="nx">pkg</span><span class="p">:</span> <span class="nx">benchmarkgo</span><span class="o">/</span><span class="nx">slice</span>
+<span class="nx">cpu</span><span class="p">:</span> <span class="nf">Intel</span><span class="p">(</span><span class="nx">R</span><span class="p">)</span> <span class="nf">Core</span><span class="p">(</span><span class="nx">TM</span><span class="p">)</span> <span class="nx">i5</span><span class="o">-</span><span class="mi">8265</span><span class="nx">U</span> <span class="nx">CPU</span> <span class="err">@</span> <span class="mf">1.60</span><span class="nx">GHz</span>
+<span class="nx">BenchmarkAutoBounds</span>
+<span class="nx">BenchmarkAutoBounds</span><span class="o">-</span><span class="mi">8</span>     	      <span class="mi">97</span>	  <span class="mi">14825133</span> <span class="nx">ns</span><span class="o">/</span><span class="nx">op</span>
+<span class="nx">BenchmarkManualBounds</span>
+<span class="nx">BenchmarkManualBounds</span><span class="o">-</span><span class="mi">8</span>   	      <span class="mi">96</span>	  <span class="mi">12906167</span> <span class="nx">ns</span><span class="o">/</span><span class="nx">op</span>
+<span class="nx">PASS</span>
+</code></pre></td></tr></table>
+</div>
 </div><h2 id="使用stringsbuilder-而不是-bytesbuffer">使用strings.Builder 而不是 bytes.Buffer</h2>
 <ul>
 <li>在有一些场景下，我们可能需要一些可变字符串（Go字符串是不可修改的），这里我们推荐strings.Builder</li>
 </ul>
-<h3 id="性能测试代码">性能测试代码</h3>
+<h3 id="性能测试代码-1">性能测试代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2159,7 +2184,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="测试结果">测试结果</h3>
+</div><h3 id="测试结果-1">测试结果</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2184,7 +2209,7 @@
 <span class="nx">PASS</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="函数视情况返回值-而不是-指针">函数视情况返回值 而不是 指针</h2>
+</div><h2 id="函数视情况返回--值-而不是-指针">函数视情况返回  值 而不是 指针</h2>
 <ul>
 <li><code>使用指针会使逃逸分析把变量分配到堆上</code></li>
 <li><code>分配在栈上的对象会随着栈帧销毁而回收，不会给GC带来压力</code></li>
@@ -2194,7 +2219,7 @@
 <blockquote>
 <p>比如，非必要情况下，slice不要包含指针</p>
 </blockquote>
-<h3 id="性能测试代码-1">性能测试代码</h3>
+<h3 id="性能测试代码-2">性能测试代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2276,6 +2301,10 @@
 </span><span class="lnt">77
 </span><span class="lnt">78
 </span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-go:pointer_test.go" data-lang="go:pointer_test.go"><span class="kn">package</span> <span class="nx">pointer</span>
@@ -2312,14 +2341,18 @@
 
 <span class="kd">func</span> <span class="nf">BenchmarkPointer</span><span class="p">(</span><span class="nx">b</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-		<span class="nf">newItemPointer</span><span class="p">()</span>
+		<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">100000</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+			<span class="nf">newItemPointer</span><span class="p">()</span>
+		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="p">}</span>
 
 
 <span class="kd">func</span> <span class="nf">BenchmarkValue</span><span class="p">(</span><span class="nx">b</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-		<span class="nf">newItem</span><span class="p">()</span>
+		<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">100000</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+			<span class="nf">newItem</span><span class="p">()</span>
+		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="p">}</span>
 
@@ -2359,12 +2392,56 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
+</div><h3 id="性能测试结果">性能测试结果</h3>
+<ul>
+<li>性能提升比较明显</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">goos</span><span class="p">:</span> <span class="nx">windows</span>
+<span class="nx">goarch</span><span class="p">:</span> <span class="nx">amd64</span>
+<span class="nx">pkg</span><span class="p">:</span> <span class="nx">benchmarkgo</span><span class="o">/</span><span class="nx">pointer</span>
+<span class="nx">cpu</span><span class="p">:</span> <span class="nf">Intel</span><span class="p">(</span><span class="nx">R</span><span class="p">)</span> <span class="nf">Core</span><span class="p">(</span><span class="nx">TM</span><span class="p">)</span> <span class="nx">i5</span><span class="o">-</span><span class="mi">8265</span><span class="nx">U</span> <span class="nx">CPU</span> <span class="err">@</span> <span class="mf">1.60</span><span class="nx">GHz</span>
+<span class="nx">BenchmarkPointer</span>
+<span class="nx">BenchmarkPointer</span><span class="o">-</span><span class="mi">8</span>        	   <span class="mi">43636</span>	     <span class="mi">28056</span> <span class="nx">ns</span><span class="o">/</span><span class="nx">op</span>
+<span class="nx">BenchmarkValue</span>
+<span class="nx">BenchmarkValue</span><span class="o">-</span><span class="mi">8</span>          	   <span class="mi">40360</span>	     <span class="mi">27858</span> <span class="nx">ns</span><span class="o">/</span><span class="nx">op</span>
+<span class="nx">BenchmarkPointerSlice</span>
+<span class="nx">BenchmarkPointerSlice</span><span class="o">-</span><span class="mi">8</span>   	   <span class="mi">68882</span>	     <span class="mi">17765</span> <span class="nx">ns</span><span class="o">/</span><span class="nx">op</span>
+<span class="nx">BenchmarkValueSlice</span>
+<span class="nx">BenchmarkValueSlice</span><span class="o">-</span><span class="mi">8</span>     	 <span class="mi">3876868</span>	       <span class="mf">342.0</span> <span class="nx">ns</span><span class="o">/</span><span class="nx">op</span>
+<span class="nx">BenchmarkInterValue</span>
+<span class="nx">BenchmarkInterValue</span><span class="o">-</span><span class="mi">8</span>     	<span class="mi">1000000000</span>	         <span class="mf">0.4142</span> <span class="nx">ns</span><span class="o">/</span><span class="nx">op</span>
+<span class="nx">BenchmarkInterPointer</span>
+<span class="nx">BenchmarkInterPointer</span><span class="o">-</span><span class="mi">8</span>   	<span class="mi">604677177</span>	         <span class="mf">1.902</span> <span class="nx">ns</span><span class="o">/</span><span class="nx">op</span>
+<span class="nx">PASS</span>
+</code></pre></td></tr></table>
+</div>
 </div><h2 id="使用atomic优化">使用atomic优化</h2>
 <ul>
 <li>如果我们使用sync.Mutex 只是需要保护某一个变量，那么就不如使用atomic包</li>
 <li>我们应该使用sync.Mutex 保护某一段逻辑</li>
 </ul>
-<h3 id="性能测试-1">性能测试</h3>
+<h3 id="性能测试">性能测试</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2451,7 +2528,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="测试结果-1">测试结果</h3>
+</div><h3 id="测试结果-2">测试结果</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2478,15 +2555,14 @@
 </div>
 </div><h2 id="使用syncpool来进行优化">使用sync.Pool来进行优化</h2>
 <ul>
-<li>sync.Pool 只适用于 请求级别生命周期的对象(也就是短的存活周期)</li>
+<li>sync.Pool 只适用于 请求级别生命周期的对象(也就是短的存活周期，不是所有对象都适用于使用sync.Pool)</li>
 <li>将对象放入sync.Pool，就不要再使用了</li>
 <li>可以把sync.Pool 理解为C里面的malloc 和 free，如果不清楚对象的生命周期，就不要使用sync.Pool</li>
 </ul>
 <blockquote>
-<p>向Go语言的fmt，json都使用了sync.Pool，还有一些优秀的开源项目Gin.Context, echo.Context<br />
-不是所有对象都适用于使用sync.Pool</p>
+<p>像Go语言的fmt，json都使用了sync.Pool，还有一些优秀的开源项目Gin.Context, echo.Context都使用到了sync.Pool做优化</p>
 </blockquote>
-<h3 id="性能测试代码-2">性能测试代码</h3>
+<h3 id="性能测试代码-3">性能测试代码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2555,7 +2631,7 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="性能测试结果">性能测试结果</h3>
+</div><h3 id="性能测试结果-1">性能测试结果</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -3278,30 +3354,32 @@ document.addEventListener('DOMContentLoaded', function () {
     <li><a href="#slice-边界检查消除bounds-check-elimination">Slice 边界检查消除（Bounds Check Elimination）</a>
       <ul>
         <li><a href="#为什么需要边界检查消除">为什么需要边界检查消除</a></li>
-        <li><a href="#性能测试">性能测试</a></li>
-      </ul>
-    </li>
-    <li><a href="#使用stringsbuilder-而不是-bytesbuffer">使用strings.Builder 而不是 bytes.Buffer</a>
-      <ul>
         <li><a href="#性能测试代码">性能测试代码</a></li>
         <li><a href="#测试结果">测试结果</a></li>
       </ul>
     </li>
-    <li><a href="#函数视情况返回值-而不是-指针">函数视情况返回值 而不是 指针</a>
+    <li><a href="#使用stringsbuilder-而不是-bytesbuffer">使用strings.Builder 而不是 bytes.Buffer</a>
       <ul>
         <li><a href="#性能测试代码-1">性能测试代码</a></li>
+        <li><a href="#测试结果-1">测试结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#函数视情况返回--值-而不是-指针">函数视情况返回  值 而不是 指针</a>
+      <ul>
+        <li><a href="#性能测试代码-2">性能测试代码</a></li>
+        <li><a href="#性能测试结果">性能测试结果</a></li>
       </ul>
     </li>
     <li><a href="#使用atomic优化">使用atomic优化</a>
       <ul>
-        <li><a href="#性能测试-1">性能测试</a></li>
-        <li><a href="#测试结果-1">测试结果</a></li>
+        <li><a href="#性能测试">性能测试</a></li>
+        <li><a href="#测试结果-2">测试结果</a></li>
       </ul>
     </li>
     <li><a href="#使用syncpool来进行优化">使用sync.Pool来进行优化</a>
       <ul>
-        <li><a href="#性能测试代码-2">性能测试代码</a></li>
-        <li><a href="#性能测试结果">性能测试结果</a></li>
+        <li><a href="#性能测试代码-3">性能测试代码</a></li>
+        <li><a href="#性能测试结果-1">性能测试结果</a></li>
       </ul>
     </li>
     <li><a href="#更多的优化技巧">更多的优化技巧</a></li>
