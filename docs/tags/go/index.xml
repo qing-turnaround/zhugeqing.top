@@ -6909,6 +6909,755 @@ C 如果没有路由满足，调用&lt;code&gt;NotFoundHandler&lt;/code&gt;的&l
       </item>
       
       <item>
+        <title>性能优化</title>
+        <link>https://www.zhugeqing.top/golang/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
+        <pubDate>Fri, 11 Jun 2021 00:00:00 +0000</pubDate>
+        
+        <atom:modified>Fri, 11 Jun 2021 00:00:00 +0000</atom:modified>
+        <guid>https://www.zhugeqing.top/golang/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
+        <description>学习Go性能优化之前 过早的优化是万恶之源 保证优化的收益 &amp;gt; 投入的成本 如果不写Beanchmark测试性能，那就不要优化（一定要有benchmark做对照） Slice 边界检查消除（Bounds Check Elimination） 为什么需要边界检查消除 代码如下，在bce中，我们添加了一行_ = s[100]，那么就相当于做了一次Slice 的边界检查，而bce后面的下标访问 都是要小于 100的，所以后面就不再需要检查； 相反nor</description>
+        <content:encoded>&lt;h2 id=&#34;学习go性能优化之前&#34;&gt;学习Go性能优化之前&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;过早的优化是万恶之源&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;保证优化的收益 &amp;gt; 投入的成本&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;如果不写Beanchmark测试性能，那就不要优化（一定要有benchmark做对照）&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;slice-边界检查消除bounds-check-elimination&#34;&gt;Slice 边界检查消除（Bounds Check Elimination）&lt;/h2&gt;
+&lt;h3 id=&#34;为什么需要边界检查消除&#34;&gt;为什么需要边界检查消除&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;代码如下，在bce中，我们添加了一行&lt;code&gt;_ = s[100]&lt;/code&gt;，那么就相当于做了一次Slice 的边界检查，而bce后面的下标访问 都是要小于 100的，所以后面就不再需要检查；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;相反normal中，每一次下标访问，都需要进行边界检查&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我们可以通过&lt;code&gt;go run -gcflags=&amp;quot;-d=ssa/check_bce/debug=1&amp;quot; main.go&lt;/code&gt; 来进行验证，bce函数只做了一次Slice 边界检查&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go:main.go&#34; data-lang=&#34;go:main.go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;bce&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;normal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;性能测试&#34;&gt;性能测试&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;对应性能而言，有略微的提升&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;size&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10000000&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkAutoBounds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkManualBounds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1000000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// Bce
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;使用stringsbuilder-而不是-bytesbuffer&#34;&gt;使用strings.Builder 而不是 bytes.Buffer&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在有一些场景下，我们可能需要一些可变字符串（Go字符串是不可修改的），这里我们推荐strings.Builder&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;性能测试代码&#34;&gt;性能测试代码&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;64
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;65
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;66
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;67
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;68
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;69
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go:strings_test.go&#34; data-lang=&#34;go:strings_test.go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;bytes&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;strings&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;useBuf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;bytes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Buffer&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;useBuf2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;bytes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Buffer&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Grow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;useBuilder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;strings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Builder&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;useBuilder2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;strings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Builder&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Grow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;WriteString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+	&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkStringBuilder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;useBuilder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkBuffer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;useBuf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkStringBuilder2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;useBuilder2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkBuffer2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;useBuf2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;测试结果&#34;&gt;测试结果&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;BenchmarkStringBuilder&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkStringBuilder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;    	  &lt;span class=&#34;mi&#34;&gt;275892&lt;/span&gt;	      &lt;span class=&#34;mi&#34;&gt;4428&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;op&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkBuffer&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkBuffer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;           	  &lt;span class=&#34;mi&#34;&gt;105836&lt;/span&gt;	     &lt;span class=&#34;mi&#34;&gt;11217&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;op&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkStringBuilder2&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkStringBuilder2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;   	  &lt;span class=&#34;mi&#34;&gt;388788&lt;/span&gt;	      &lt;span class=&#34;mi&#34;&gt;3383&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;op&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkBuffer2&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkBuffer2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;          	  &lt;span class=&#34;mi&#34;&gt;122707&lt;/span&gt;	     &lt;span class=&#34;mi&#34;&gt;10263&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;op&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;PASS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;函数视情况返回值-而不是-指针&#34;&gt;函数视情况返回值 而不是 指针&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;使用指针会使逃逸分析把变量分配到堆上&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;分配在栈上的对象会随着栈帧销毁而回收，不会给GC带来压力&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;在栈上进行小对象拷贝的性能很好，比将小对象分配到堆上要好非常多&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;这个也适用于函数的接收者，&lt;code&gt;只有当我们需要 修改的对象 想让函数外部感知的时候，才使用指针&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比如，非必要情况下，slice不要包含指针&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;性能测试代码-1&#34;&gt;性能测试代码&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;64
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;65
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;66
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;67
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;68
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;69
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;70
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;71
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;72
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;73
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;74
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;75
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;76
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;77
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;78
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;79
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go:pointer_test.go&#34; data-lang=&#34;go:pointer_test.go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pointer&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;newItemPointer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;newItemPointerSlice&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;newItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;newItemSlice&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([]&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkPointer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;newItemPointer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkValue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;newItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkPointerSlice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;newItemPointerSlice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkValueSlice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;newItemSlice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;InterValue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;InterPointer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;item&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkInterValue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;newItem&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;InterValue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkInterPointer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;newItemPointer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;InterPointer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;使用atomic优化&#34;&gt;使用atomic优化&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如果我们使用sync.Mutex 只是需要保护某一个变量，那么就不如使用atomic包&lt;/li&gt;
+&lt;li&gt;我们应该使用sync.Mutex 保护某一段逻辑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;性能测试-1&#34;&gt;性能测试&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go:atomic_test.go&#34; data-lang=&#34;go:atomic_test.go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;atomic&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;sync&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;sync/atomic&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;counterWithMutex&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int64&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;mu&lt;/span&gt;   &lt;span class=&#34;nx&#34;&gt;sync&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Mutex&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;counterWithAtomic&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int64&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkAtomic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;counterWithAtomic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;atomicAdd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkMutex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;counterWithMutex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nf&#34;&gt;mutexAdd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;atomicAdd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;counterWithAtomic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;atomic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;AddInt64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;mutexAdd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;counterWithMutex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Lock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Unlock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;测试结果-1&#34;&gt;测试结果&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;goos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;windows&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;goarch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;amd64&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;pkg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;benchmarkgo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;atomic&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;cpu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Intel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Core&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;TM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8265&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;U&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CPU&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;@&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.60&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;GHz&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkAtomic&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkAtomic&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;   	&lt;span class=&#34;mi&#34;&gt;124368026&lt;/span&gt;	         &lt;span class=&#34;mf&#34;&gt;8.257&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;op&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkMutex&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkMutex&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;    	&lt;span class=&#34;mi&#34;&gt;100000000&lt;/span&gt;	        &lt;span class=&#34;mf&#34;&gt;27.26&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;op&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;PASS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;使用syncpool来进行优化&#34;&gt;使用sync.Pool来进行优化&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;sync.Pool 只适用于 请求级别生命周期的对象(也就是短的存活周期)&lt;/li&gt;
+&lt;li&gt;将对象放入sync.Pool，就不要再使用了&lt;/li&gt;
+&lt;li&gt;可以把sync.Pool 理解为C里面的malloc 和 free，如果不清楚对象的生命周期，就不要使用sync.Pool&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;向Go语言的fmt，json都使用了sync.Pool，还有一些优秀的开源项目Gin.Context, echo.Context&lt;br /&gt;
+不是所有对象都适用于使用sync.Pool&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;性能测试代码-2&#34;&gt;性能测试代码&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go:main.go&#34; data-lang=&#34;go:main.go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pool&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;sync&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkPool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;pool&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sync&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Pool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;New&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;interface&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;pool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Put&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;BenchmarkNoPool&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;性能测试结果&#34;&gt;性能测试结果&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;goos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;windows&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;goarch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;amd64&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;pkg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;benchmarkgo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pool&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;cpu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Intel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;Core&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;TM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;i5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8265&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;U&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CPU&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;@&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1.60&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;GHz&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkPool&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkPool&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;     	   &lt;span class=&#34;mi&#34;&gt;68640&lt;/span&gt;	     &lt;span class=&#34;mi&#34;&gt;17052&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;op&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkNoPool&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;BenchmarkNoPool&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;   	   &lt;span class=&#34;mi&#34;&gt;14181&lt;/span&gt;	     &lt;span class=&#34;mi&#34;&gt;84785&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;op&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;PASS&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;更多的优化技巧&#34;&gt;更多的优化技巧&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用更优秀的第三方包，比如第三方的json （https://github.com/bytedance/sonic）&lt;/li&gt;
+&lt;li&gt;使用goroutine池 （https://github.com/bytedance/sonic）&lt;/li&gt;
+&lt;li&gt;根据Beanchmark再做优化&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded>
+        <dc:creator>诸葛青</dc:creator>
+        <media:content url="https://www.zhugeqing.top/images/Go.jpg" medium="image"><media:title type="html">featured image</media:title></media:content>
+        
+        
+        
+          
+            
+              <category>Go</category>
+            
+          
+        
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
         <title>Goland</title>
         <link>https://www.zhugeqing.top/golang/goland/</link>
         <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
